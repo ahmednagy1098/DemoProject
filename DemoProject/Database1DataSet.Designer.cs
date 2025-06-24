@@ -418,6 +418,8 @@ namespace DemoProject {
             
             private global::System.Data.DataColumn columnActual_activity;
             
+            private global::System.Data.DataColumn columnPdf_Path_license_8;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public StationsDataTable() {
@@ -589,6 +591,14 @@ namespace DemoProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Pdf_Path_license_8Column {
+                get {
+                    return this.columnPdf_Path_license_8;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -641,7 +651,8 @@ namespace DemoProject {
                         string civil_aviation_authority, 
                         string traffic_study, 
                         string Surveying_position, 
-                        string Actual_activity) {
+                        string Actual_activity, 
+                        string Pdf_Path_license_8) {
                 StationsRow rowStationsRow = ((StationsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
@@ -660,7 +671,8 @@ namespace DemoProject {
                         civil_aviation_authority,
                         traffic_study,
                         Surveying_position,
-                        Actual_activity};
+                        Actual_activity,
+                        Pdf_Path_license_8};
                 rowStationsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowStationsRow);
                 return rowStationsRow;
@@ -707,6 +719,7 @@ namespace DemoProject {
                 this.columntraffic_study = base.Columns["traffic_study"];
                 this.columnSurveying_position = base.Columns["Surveying_position"];
                 this.columnActual_activity = base.Columns["Actual_activity"];
+                this.columnPdf_Path_license_8 = base.Columns["Pdf_Path_license_8"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -746,6 +759,8 @@ namespace DemoProject {
                 base.Columns.Add(this.columnSurveying_position);
                 this.columnActual_activity = new global::System.Data.DataColumn("Actual_activity", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnActual_activity);
+                this.columnPdf_Path_license_8 = new global::System.Data.DataColumn("Pdf_Path_license_8", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPdf_Path_license_8);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
@@ -767,6 +782,7 @@ namespace DemoProject {
                 this.columntraffic_study.MaxLength = 100;
                 this.columnSurveying_position.MaxLength = 100;
                 this.columnActual_activity.MaxLength = 100;
+                this.columnPdf_Path_license_8.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2003,6 +2019,22 @@ namespace DemoProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Pdf_Path_license_8 {
+                get {
+                    try {
+                        return ((string)(this[this.tableStations.Pdf_Path_license_8Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Pdf_Path_license_8\' in table \'Stations\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableStations.Pdf_Path_license_8Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsID_SignNull() {
                 return this.IsNull(this.tableStations.ID_SignColumn);
             }
@@ -2191,6 +2223,18 @@ namespace DemoProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetActual_activityNull() {
                 this[this.tableStations.Actual_activityColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPdf_Path_license_8Null() {
+                return this.IsNull(this.tableStations.Pdf_Path_license_8Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPdf_Path_license_8Null() {
+                this[this.tableStations.Pdf_Path_license_8Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -2635,34 +2679,36 @@ namespace DemoProject.Database1DataSetTableAdapters {
             tableMapping.ColumnMappings.Add("traffic_study", "traffic_study");
             tableMapping.ColumnMappings.Add("Surveying_position", "Surveying_position");
             tableMapping.ColumnMappings.Add("Actual_activity", "Actual_activity");
+            tableMapping.ColumnMappings.Add("Pdf_Path_license_8", "Pdf_Path_license_8");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Stations] WHERE (([ID] = @Original_ID) AND ((@IsNull_ID_Sign =" +
-                " 1 AND [ID_Sign] IS NULL) OR ([ID_Sign] = @Original_ID_Sign)) AND ((@IsNull_ID_L" +
-                "and_Sign = 1 AND [ID_Land_Sign] IS NULL) OR ([ID_Land_Sign] = @Original_ID_Land_" +
-                "Sign)) AND ((@IsNull_station_name = 1 AND [station_name] IS NULL) OR ([station_n" +
-                "ame] = @Original_station_name)) AND ((@IsNull_address = 1 AND [address] IS NULL)" +
-                " OR ([address] = @Original_address)) AND ((@IsNull_coordinates_1 = 1 AND [coordi" +
-                "nates_1] IS NULL) OR ([coordinates_1] = @Original_coordinates_1)) AND ((@IsNull_" +
-                "coordinates_2 = 1 AND [coordinates_2] IS NULL) OR ([coordinates_2] = @Original_c" +
-                "oordinates_2)) AND ((@IsNull_government = 1 AND [government] IS NULL) OR ([gover" +
-                "nment] = @Original_government)) AND ((@IsNull_land_contracts = 1 AND [land_contr" +
-                "acts] IS NULL) OR ([land_contracts] = @Original_land_contracts)) AND ((@IsNull_l" +
-                "icense_type_8 = 1 AND [license_type_8] IS NULL) OR ([license_type_8] = @Original" +
-                "_license_type_8)) AND ((@IsNull_civil_defense_approval = 1 AND [civil_defense_ap" +
-                "proval] IS NULL) OR ([civil_defense_approval] = @Original_civil_defense_approval" +
-                ")) AND ((@IsNull_environmental_approval = 1 AND [environmental_approval] IS NULL" +
-                ") OR ([environmental_approval] = @Original_environmental_approval)) AND ((@IsNul" +
-                "l_ministry_of_petroleum_approval = 1 AND [ministry_of_petroleum_approval] IS NUL" +
-                "L) OR ([ministry_of_petroleum_approval] = @Original_ministry_of_petroleum_approv" +
-                "al)) AND ((@IsNull_civil_aviation_authority = 1 AND [civil_aviation_authority] I" +
-                "S NULL) OR ([civil_aviation_authority] = @Original_civil_aviation_authority)) AN" +
-                "D ((@IsNull_traffic_study = 1 AND [traffic_study] IS NULL) OR ([traffic_study] =" +
-                " @Original_traffic_study)) AND ((@IsNull_Surveying_position = 1 AND [Surveying_p" +
-                "osition] IS NULL) OR ([Surveying_position] = @Original_Surveying_position)) AND " +
-                "((@IsNull_Actual_activity = 1 AND [Actual_activity] IS NULL) OR ([Actual_activit" +
-                "y] = @Original_Actual_activity)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Stations] WHERE (([ID] = @Original_ID) AND ((@IsNull_ID_Sign = 1 AND" +
+                " [ID_Sign] IS NULL) OR ([ID_Sign] = @Original_ID_Sign)) AND ((@IsNull_ID_Land_Si" +
+                "gn = 1 AND [ID_Land_Sign] IS NULL) OR ([ID_Land_Sign] = @Original_ID_Land_Sign))" +
+                " AND ((@IsNull_station_name = 1 AND [station_name] IS NULL) OR ([station_name] =" +
+                " @Original_station_name)) AND ((@IsNull_address = 1 AND [address] IS NULL) OR ([" +
+                "address] = @Original_address)) AND ((@IsNull_coordinates_1 = 1 AND [coordinates_" +
+                "1] IS NULL) OR ([coordinates_1] = @Original_coordinates_1)) AND ((@IsNull_coordi" +
+                "nates_2 = 1 AND [coordinates_2] IS NULL) OR ([coordinates_2] = @Original_coordin" +
+                "ates_2)) AND ((@IsNull_government = 1 AND [government] IS NULL) OR ([government]" +
+                " = @Original_government)) AND ((@IsNull_land_contracts = 1 AND [land_contracts] " +
+                "IS NULL) OR ([land_contracts] = @Original_land_contracts)) AND ((@IsNull_license" +
+                "_type_8 = 1 AND [license_type_8] IS NULL) OR ([license_type_8] = @Original_licen" +
+                "se_type_8)) AND ((@IsNull_civil_defense_approval = 1 AND [civil_defense_approval" +
+                "] IS NULL) OR ([civil_defense_approval] = @Original_civil_defense_approval)) AND" +
+                " ((@IsNull_environmental_approval = 1 AND [environmental_approval] IS NULL) OR (" +
+                "[environmental_approval] = @Original_environmental_approval)) AND ((@IsNull_mini" +
+                "stry_of_petroleum_approval = 1 AND [ministry_of_petroleum_approval] IS NULL) OR " +
+                "([ministry_of_petroleum_approval] = @Original_ministry_of_petroleum_approval)) A" +
+                "ND ((@IsNull_civil_aviation_authority = 1 AND [civil_aviation_authority] IS NULL" +
+                ") OR ([civil_aviation_authority] = @Original_civil_aviation_authority)) AND ((@I" +
+                "sNull_traffic_study = 1 AND [traffic_study] IS NULL) OR ([traffic_study] = @Orig" +
+                "inal_traffic_study)) AND ((@IsNull_Surveying_position = 1 AND [Surveying_positio" +
+                "n] IS NULL) OR ([Surveying_position] = @Original_Surveying_position)) AND ((@IsN" +
+                "ull_Actual_activity = 1 AND [Actual_activity] IS NULL) OR ([Actual_activity] = @" +
+                "Original_Actual_activity)) AND ((@IsNull_Pdf_Path_license_8 = 1 AND [Pdf_Path_li" +
+                "cense_8] IS NULL) OR ([Pdf_Path_license_8] = @Original_Pdf_Path_license_8)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Sign", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Sign", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -2697,10 +2743,12 @@ namespace DemoProject.Database1DataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Surveying_position", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Surveying_position", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Actual_activity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Actual_activity", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Actual_activity", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Actual_activity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pdf_Path_license_8", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pdf_Path_license_8", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pdf_Path_license_8", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pdf_Path_license_8", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Stations] ([ID], [ID_Sign], [ID_Land_Sign], [station_name], [address], [coordinates_1], [coordinates_2], [government], [land_contracts], [license_type_8], [civil_defense_approval], [environmental_approval], [ministry_of_petroleum_approval], [civil_aviation_authority], [traffic_study], [Surveying_position], [Actual_activity]) VALUES (@ID, @ID_Sign, @ID_Land_Sign, @station_name, @address, @coordinates_1, @coordinates_2, @government, @land_contracts, @license_type_8, @civil_defense_approval, @environmental_approval, @ministry_of_petroleum_approval, @civil_aviation_authority, @traffic_study, @Surveying_position, @Actual_activity);
-SELECT ID, ID_Sign, ID_Land_Sign, station_name, address, coordinates_1, coordinates_2, government, land_contracts, license_type_8, civil_defense_approval, environmental_approval, ministry_of_petroleum_approval, civil_aviation_authority, traffic_study, Surveying_position, Actual_activity FROM Stations WHERE (ID = @ID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Stations] ([ID], [ID_Sign], [ID_Land_Sign], [station_name], [address], [coordinates_1], [coordinates_2], [government], [land_contracts], [license_type_8], [civil_defense_approval], [environmental_approval], [ministry_of_petroleum_approval], [civil_aviation_authority], [traffic_study], [Surveying_position], [Actual_activity], [Pdf_Path_license_8]) VALUES (@ID, @ID_Sign, @ID_Land_Sign, @station_name, @address, @coordinates_1, @coordinates_2, @government, @land_contracts, @license_type_8, @civil_defense_approval, @environmental_approval, @ministry_of_petroleum_approval, @civil_aviation_authority, @traffic_study, @Surveying_position, @Actual_activity, @Pdf_Path_license_8);
+SELECT ID, ID_Sign, ID_Land_Sign, station_name, address, coordinates_1, coordinates_2, government, land_contracts, license_type_8, civil_defense_approval, environmental_approval, ministry_of_petroleum_approval, civil_aviation_authority, traffic_study, Surveying_position, Actual_activity, Pdf_Path_license_8 FROM Stations WHERE (ID = @ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Sign", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Sign", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2719,45 +2767,48 @@ SELECT ID, ID_Sign, ID_Land_Sign, station_name, address, coordinates_1, coordina
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@traffic_study", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "traffic_study", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Surveying_position", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Surveying_position", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Actual_activity", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Actual_activity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pdf_Path_license_8", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pdf_Path_license_8", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Stations] SET [ID] = @ID, [ID_Sign] = @ID_Sign, [ID_Land_Sign] = @I" +
-                "D_Land_Sign, [station_name] = @station_name, [address] = @address, [coordinates_" +
-                "1] = @coordinates_1, [coordinates_2] = @coordinates_2, [government] = @governmen" +
-                "t, [land_contracts] = @land_contracts, [license_type_8] = @license_type_8, [civi" +
-                "l_defense_approval] = @civil_defense_approval, [environmental_approval] = @envir" +
-                "onmental_approval, [ministry_of_petroleum_approval] = @ministry_of_petroleum_app" +
-                "roval, [civil_aviation_authority] = @civil_aviation_authority, [traffic_study] =" +
-                " @traffic_study, [Surveying_position] = @Surveying_position, [Actual_activity] =" +
-                " @Actual_activity WHERE (([ID] = @Original_ID) AND ((@IsNull_ID_Sign = 1 AND [ID" +
-                "_Sign] IS NULL) OR ([ID_Sign] = @Original_ID_Sign)) AND ((@IsNull_ID_Land_Sign =" +
-                " 1 AND [ID_Land_Sign] IS NULL) OR ([ID_Land_Sign] = @Original_ID_Land_Sign)) AND" +
-                " ((@IsNull_station_name = 1 AND [station_name] IS NULL) OR ([station_name] = @Or" +
-                "iginal_station_name)) AND ((@IsNull_address = 1 AND [address] IS NULL) OR ([addr" +
-                "ess] = @Original_address)) AND ((@IsNull_coordinates_1 = 1 AND [coordinates_1] I" +
-                "S NULL) OR ([coordinates_1] = @Original_coordinates_1)) AND ((@IsNull_coordinate" +
-                "s_2 = 1 AND [coordinates_2] IS NULL) OR ([coordinates_2] = @Original_coordinates" +
-                "_2)) AND ((@IsNull_government = 1 AND [government] IS NULL) OR ([government] = @" +
-                "Original_government)) AND ((@IsNull_land_contracts = 1 AND [land_contracts] IS N" +
-                "ULL) OR ([land_contracts] = @Original_land_contracts)) AND ((@IsNull_license_typ" +
-                "e_8 = 1 AND [license_type_8] IS NULL) OR ([license_type_8] = @Original_license_t" +
-                "ype_8)) AND ((@IsNull_civil_defense_approval = 1 AND [civil_defense_approval] IS" +
-                " NULL) OR ([civil_defense_approval] = @Original_civil_defense_approval)) AND ((@" +
-                "IsNull_environmental_approval = 1 AND [environmental_approval] IS NULL) OR ([env" +
-                "ironmental_approval] = @Original_environmental_approval)) AND ((@IsNull_ministry" +
-                "_of_petroleum_approval = 1 AND [ministry_of_petroleum_approval] IS NULL) OR ([mi" +
-                "nistry_of_petroleum_approval] = @Original_ministry_of_petroleum_approval)) AND (" +
-                "(@IsNull_civil_aviation_authority = 1 AND [civil_aviation_authority] IS NULL) OR" +
-                " ([civil_aviation_authority] = @Original_civil_aviation_authority)) AND ((@IsNul" +
-                "l_traffic_study = 1 AND [traffic_study] IS NULL) OR ([traffic_study] = @Original" +
-                "_traffic_study)) AND ((@IsNull_Surveying_position = 1 AND [Surveying_position] I" +
-                "S NULL) OR ([Surveying_position] = @Original_Surveying_position)) AND ((@IsNull_" +
-                "Actual_activity = 1 AND [Actual_activity] IS NULL) OR ([Actual_activity] = @Orig" +
-                "inal_Actual_activity)));\r\nSELECT ID, ID_Sign, ID_Land_Sign, station_name, addres" +
-                "s, coordinates_1, coordinates_2, government, land_contracts, license_type_8, civ" +
-                "il_defense_approval, environmental_approval, ministry_of_petroleum_approval, civ" +
-                "il_aviation_authority, traffic_study, Surveying_position, Actual_activity FROM S" +
-                "tations WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [Stations] SET [ID] = @ID, [ID_Sign] = @ID_Sign, [ID_Land_Sign] = @ID_Land" +
+                "_Sign, [station_name] = @station_name, [address] = @address, [coordinates_1] = @" +
+                "coordinates_1, [coordinates_2] = @coordinates_2, [government] = @government, [la" +
+                "nd_contracts] = @land_contracts, [license_type_8] = @license_type_8, [civil_defe" +
+                "nse_approval] = @civil_defense_approval, [environmental_approval] = @environment" +
+                "al_approval, [ministry_of_petroleum_approval] = @ministry_of_petroleum_approval," +
+                " [civil_aviation_authority] = @civil_aviation_authority, [traffic_study] = @traf" +
+                "fic_study, [Surveying_position] = @Surveying_position, [Actual_activity] = @Actu" +
+                "al_activity, [Pdf_Path_license_8] = @Pdf_Path_license_8 WHERE (([ID] = @Original" +
+                "_ID) AND ((@IsNull_ID_Sign = 1 AND [ID_Sign] IS NULL) OR ([ID_Sign] = @Original_" +
+                "ID_Sign)) AND ((@IsNull_ID_Land_Sign = 1 AND [ID_Land_Sign] IS NULL) OR ([ID_Lan" +
+                "d_Sign] = @Original_ID_Land_Sign)) AND ((@IsNull_station_name = 1 AND [station_n" +
+                "ame] IS NULL) OR ([station_name] = @Original_station_name)) AND ((@IsNull_addres" +
+                "s = 1 AND [address] IS NULL) OR ([address] = @Original_address)) AND ((@IsNull_c" +
+                "oordinates_1 = 1 AND [coordinates_1] IS NULL) OR ([coordinates_1] = @Original_co" +
+                "ordinates_1)) AND ((@IsNull_coordinates_2 = 1 AND [coordinates_2] IS NULL) OR ([" +
+                "coordinates_2] = @Original_coordinates_2)) AND ((@IsNull_government = 1 AND [gov" +
+                "ernment] IS NULL) OR ([government] = @Original_government)) AND ((@IsNull_land_c" +
+                "ontracts = 1 AND [land_contracts] IS NULL) OR ([land_contracts] = @Original_land" +
+                "_contracts)) AND ((@IsNull_license_type_8 = 1 AND [license_type_8] IS NULL) OR (" +
+                "[license_type_8] = @Original_license_type_8)) AND ((@IsNull_civil_defense_approv" +
+                "al = 1 AND [civil_defense_approval] IS NULL) OR ([civil_defense_approval] = @Ori" +
+                "ginal_civil_defense_approval)) AND ((@IsNull_environmental_approval = 1 AND [env" +
+                "ironmental_approval] IS NULL) OR ([environmental_approval] = @Original_environme" +
+                "ntal_approval)) AND ((@IsNull_ministry_of_petroleum_approval = 1 AND [ministry_o" +
+                "f_petroleum_approval] IS NULL) OR ([ministry_of_petroleum_approval] = @Original_" +
+                "ministry_of_petroleum_approval)) AND ((@IsNull_civil_aviation_authority = 1 AND " +
+                "[civil_aviation_authority] IS NULL) OR ([civil_aviation_authority] = @Original_c" +
+                "ivil_aviation_authority)) AND ((@IsNull_traffic_study = 1 AND [traffic_study] IS" +
+                " NULL) OR ([traffic_study] = @Original_traffic_study)) AND ((@IsNull_Surveying_p" +
+                "osition = 1 AND [Surveying_position] IS NULL) OR ([Surveying_position] = @Origin" +
+                "al_Surveying_position)) AND ((@IsNull_Actual_activity = 1 AND [Actual_activity] " +
+                "IS NULL) OR ([Actual_activity] = @Original_Actual_activity)) AND ((@IsNull_Pdf_P" +
+                "ath_license_8 = 1 AND [Pdf_Path_license_8] IS NULL) OR ([Pdf_Path_license_8] = @" +
+                "Original_Pdf_Path_license_8)));\r\nSELECT ID, ID_Sign, ID_Land_Sign, station_name," +
+                " address, coordinates_1, coordinates_2, government, land_contracts, license_type" +
+                "_8, civil_defense_approval, environmental_approval, ministry_of_petroleum_approv" +
+                "al, civil_aviation_authority, traffic_study, Surveying_position, Actual_activity" +
+                ", Pdf_Path_license_8 FROM Stations WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Sign", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Sign", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2776,6 +2827,7 @@ SELECT ID, ID_Sign, ID_Land_Sign, station_name, address, coordinates_1, coordina
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@traffic_study", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "traffic_study", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Surveying_position", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Surveying_position", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Actual_activity", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Actual_activity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pdf_Path_license_8", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pdf_Path_license_8", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Sign", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Sign", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Sign", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Sign", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -2809,6 +2861,8 @@ SELECT ID, ID_Sign, ID_Land_Sign, station_name, address, coordinates_1, coordina
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Surveying_position", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Surveying_position", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Actual_activity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Actual_activity", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Actual_activity", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Actual_activity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pdf_Path_license_8", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pdf_Path_license_8", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pdf_Path_license_8", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pdf_Path_license_8", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2824,7 +2878,9 @@ SELECT ID, ID_Sign, ID_Land_Sign, station_name, address, coordinates_1, coordina
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[9];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT ID, ID_Sign, ID_Land_Sign, station_name, address, coordinates_1, coordinates_2, government, land_contracts, license_type_8, civil_defense_approval, environmental_approval, ministry_of_petroleum_approval, civil_aviation_authority, traffic_study, Surveying_position, Actual_activity FROM dbo.Stations";
+            this._commandCollection[0].CommandText = @"SELECT        ID, ID_Sign, ID_Land_Sign, station_name, address, coordinates_1, coordinates_2, government, land_contracts, license_type_8, civil_defense_approval, environmental_approval, ministry_of_petroleum_approval, 
+                         civil_aviation_authority, traffic_study, Surveying_position, Actual_activity, Pdf_Path_license_8
+FROM            Stations";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -2942,7 +2998,8 @@ SELECT ID, ID_Sign, ID_Land_Sign, station_name, address, coordinates_1, coordina
                     string Original_civil_aviation_authority, 
                     string Original_traffic_study, 
                     string Original_Surveying_position, 
-                    string Original_Actual_activity) {
+                    string Original_Actual_activity, 
+                    string Original_Pdf_Path_license_8) {
             if ((Original_ID == null)) {
                 throw new global::System.ArgumentNullException("Original_ID");
             }
@@ -3077,6 +3134,14 @@ SELECT ID, ID_Sign, ID_Land_Sign, station_name, address, coordinates_1, coordina
                 this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[32].Value = ((string)(Original_Actual_activity));
             }
+            if ((Original_Pdf_Path_license_8 == null)) {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[34].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((string)(Original_Pdf_Path_license_8));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3114,7 +3179,8 @@ SELECT ID, ID_Sign, ID_Land_Sign, station_name, address, coordinates_1, coordina
                     string civil_aviation_authority, 
                     string traffic_study, 
                     string Surveying_position, 
-                    string Actual_activity) {
+                    string Actual_activity, 
+                    string Pdf_Path_license_8) {
             if ((ID == null)) {
                 throw new global::System.ArgumentNullException("ID");
             }
@@ -3217,6 +3283,12 @@ SELECT ID, ID_Sign, ID_Land_Sign, station_name, address, coordinates_1, coordina
             else {
                 this.Adapter.InsertCommand.Parameters[16].Value = ((string)(Actual_activity));
             }
+            if ((Pdf_Path_license_8 == null)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(Pdf_Path_license_8));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3255,6 +3327,7 @@ SELECT ID, ID_Sign, ID_Land_Sign, station_name, address, coordinates_1, coordina
                     string traffic_study, 
                     string Surveying_position, 
                     string Actual_activity, 
+                    string Pdf_Path_license_8, 
                     string Original_ID, 
                     string Original_ID_Sign, 
                     string Original_ID_Land_Sign, 
@@ -3271,7 +3344,8 @@ SELECT ID, ID_Sign, ID_Land_Sign, station_name, address, coordinates_1, coordina
                     string Original_civil_aviation_authority, 
                     string Original_traffic_study, 
                     string Original_Surveying_position, 
-                    string Original_Actual_activity) {
+                    string Original_Actual_activity, 
+                    string Original_Pdf_Path_license_8) {
             if ((ID == null)) {
                 throw new global::System.ArgumentNullException("ID");
             }
@@ -3374,139 +3448,153 @@ SELECT ID, ID_Sign, ID_Land_Sign, station_name, address, coordinates_1, coordina
             else {
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Actual_activity));
             }
+            if ((Pdf_Path_license_8 == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Pdf_Path_license_8));
+            }
             if ((Original_ID == null)) {
                 throw new global::System.ArgumentNullException("Original_ID");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_ID));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_ID));
             }
             if ((Original_ID_Sign == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_ID_Sign));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_ID_Sign));
             }
             if ((Original_ID_Land_Sign == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_ID_Land_Sign));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_ID_Land_Sign));
             }
             if ((Original_station_name == null)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_station_name));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_station_name));
             }
             if ((Original_address == null)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_address));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_address));
             }
             if ((Original_coordinates_1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_coordinates_1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_coordinates_1));
             }
             if ((Original_coordinates_2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_coordinates_2));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_coordinates_2));
             }
             if ((Original_government == null)) {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_government));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_government));
             }
             if ((Original_land_contracts == null)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_land_contracts));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_land_contracts));
             }
             if ((Original_license_type_8 == null)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_license_type_8));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_license_type_8));
             }
             if ((Original_civil_defense_approval == null)) {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(Original_civil_defense_approval));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_civil_defense_approval));
             }
             if ((Original_environmental_approval == null)) {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_environmental_approval));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_environmental_approval));
             }
             if ((Original_ministry_of_petroleum_approval == null)) {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_ministry_of_petroleum_approval));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_ministry_of_petroleum_approval));
             }
             if ((Original_civil_aviation_authority == null)) {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(Original_civil_aviation_authority));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_civil_aviation_authority));
             }
             if ((Original_traffic_study == null)) {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((string)(Original_traffic_study));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(Original_traffic_study));
             }
             if ((Original_Surveying_position == null)) {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((string)(Original_Surveying_position));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((string)(Original_Surveying_position));
             }
             if ((Original_Actual_activity == null)) {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((string)(Original_Actual_activity));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(Original_Actual_activity));
+            }
+            if ((Original_Pdf_Path_license_8 == null)) {
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(Original_Pdf_Path_license_8));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3545,6 +3633,7 @@ SELECT ID, ID_Sign, ID_Land_Sign, station_name, address, coordinates_1, coordina
                     string traffic_study, 
                     string Surveying_position, 
                     string Actual_activity, 
+                    string Pdf_Path_license_8, 
                     string Original_ID, 
                     string Original_ID_Sign, 
                     string Original_ID_Land_Sign, 
@@ -3561,8 +3650,9 @@ SELECT ID, ID_Sign, ID_Land_Sign, station_name, address, coordinates_1, coordina
                     string Original_civil_aviation_authority, 
                     string Original_traffic_study, 
                     string Original_Surveying_position, 
-                    string Original_Actual_activity) {
-            return this.Update(Original_ID, ID_Sign, ID_Land_Sign, station_name, address, coordinates_1, coordinates_2, government, land_contracts, license_type_8, civil_defense_approval, environmental_approval, ministry_of_petroleum_approval, civil_aviation_authority, traffic_study, Surveying_position, Actual_activity, Original_ID, Original_ID_Sign, Original_ID_Land_Sign, Original_station_name, Original_address, Original_coordinates_1, Original_coordinates_2, Original_government, Original_land_contracts, Original_license_type_8, Original_civil_defense_approval, Original_environmental_approval, Original_ministry_of_petroleum_approval, Original_civil_aviation_authority, Original_traffic_study, Original_Surveying_position, Original_Actual_activity);
+                    string Original_Actual_activity, 
+                    string Original_Pdf_Path_license_8) {
+            return this.Update(Original_ID, ID_Sign, ID_Land_Sign, station_name, address, coordinates_1, coordinates_2, government, land_contracts, license_type_8, civil_defense_approval, environmental_approval, ministry_of_petroleum_approval, civil_aviation_authority, traffic_study, Surveying_position, Actual_activity, Pdf_Path_license_8, Original_ID, Original_ID_Sign, Original_ID_Land_Sign, Original_station_name, Original_address, Original_coordinates_1, Original_coordinates_2, Original_government, Original_land_contracts, Original_license_type_8, Original_civil_defense_approval, Original_environmental_approval, Original_ministry_of_petroleum_approval, Original_civil_aviation_authority, Original_traffic_study, Original_Surveying_position, Original_Actual_activity, Original_Pdf_Path_license_8);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

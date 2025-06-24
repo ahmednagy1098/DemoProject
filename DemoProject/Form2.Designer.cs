@@ -58,6 +58,7 @@
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.advancedDataGridView1 = new Zuby.ADGV.AdvancedDataGridView();
             this.IndexTable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pdf_Path_license_8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pdf8 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ID_Sign = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_Land_Sign = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,11 +82,6 @@
             this.stationsBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.stationsTableAdapter = new DemoProject.Database1DataSetTableAdapters.StationsTableAdapter();
-            this.tableTableAdapter = new DemoProject.Database1DataSetTableAdapters.TableTableAdapter();
-            this.tableAdapterManager = new DemoProject.Database1DataSetTableAdapters.TableAdapterManager();
-            this.statusTableAdapter = new DemoProject.Database1DataSetTableAdapters.statusTableAdapter();
-            this.surveying_position_statesTableAdapter = new DemoProject.Database1DataSetTableAdapters.Surveying_position_statesTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -103,6 +99,12 @@
             this.traffic_study_TB = new Guna.UI2.WinForms.Guna2TextBox();
             this.Survying_TB = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.stationsTableAdapter = new DemoProject.Database1DataSetTableAdapters.StationsTableAdapter();
+            this.tableTableAdapter = new DemoProject.Database1DataSetTableAdapters.TableTableAdapter();
+            this.tableAdapterManager = new DemoProject.Database1DataSetTableAdapters.TableAdapterManager();
+            this.statusTableAdapter = new DemoProject.Database1DataSetTableAdapters.statusTableAdapter();
+            this.surveying_position_statesTableAdapter = new DemoProject.Database1DataSetTableAdapters.Surveying_position_statesTableAdapter();
+            this.pdfViewer1 = new Spire.PdfViewer.Forms.PdfViewer();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -478,6 +480,7 @@
             this.advancedDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IndexTable,
+            this.Pdf_Path_license_8,
             this.Pdf8,
             this.ID_Sign,
             this.ID_Land_Sign,
@@ -518,7 +521,9 @@
             this.advancedDataGridView1.TabIndex = 23;
             this.advancedDataGridView1.SortStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.SortEventArgs>(this.advancedDataGridView1_SortStringChanged);
             this.advancedDataGridView1.FilterStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.FilterEventArgs>(this.advancedDataGridView1_FilterStringChanged);
+            this.advancedDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advancedDataGridView1_CellClick);
             this.advancedDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advancedDataGridView1_CellContentClick);
+            this.advancedDataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.advancedDataGridView1_CellFormatting);
             this.advancedDataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.advancedDataGridView1_DataBindingComplete);
             this.advancedDataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.advancedDataGridView1_DataError);
             // 
@@ -530,6 +535,16 @@
             this.IndexTable.Name = "IndexTable";
             this.IndexTable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
+            // Pdf_Path_license_8
+            // 
+            this.Pdf_Path_license_8.DataPropertyName = "Pdf_Path_license_8";
+            this.Pdf_Path_license_8.HeaderText = "Pdf_Path_license_8";
+            this.Pdf_Path_license_8.MinimumWidth = 24;
+            this.Pdf_Path_license_8.Name = "Pdf_Path_license_8";
+            this.Pdf_Path_license_8.ReadOnly = true;
+            this.Pdf_Path_license_8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Pdf_Path_license_8.Visible = false;
+            // 
             // Pdf8
             // 
             this.Pdf8.DataPropertyName = "ID";
@@ -537,6 +552,7 @@
             this.Pdf8.MinimumWidth = 24;
             this.Pdf8.Name = "Pdf8";
             this.Pdf8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Pdf8.UseColumnTextForButtonValue = true;
             // 
             // ID_Sign
             // 
@@ -767,31 +783,6 @@
             this.guna2CircleButton2.TabIndex = 11;
             this.guna2CircleButton2.UseTransparentBackground = true;
             this.guna2CircleButton2.Visible = false;
-            // 
-            // stationsTableAdapter
-            // 
-            this.stationsTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableTableAdapter
-            // 
-            this.tableTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.StationsTableAdapter = this.stationsTableAdapter;
-            this.tableAdapterManager.statusTableAdapter = null;
-            this.tableAdapterManager.Surveying_position_statesTableAdapter = null;
-            this.tableAdapterManager.TableTableAdapter = this.tableTableAdapter;
-            this.tableAdapterManager.UpdateOrder = DemoProject.Database1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // statusTableAdapter
-            // 
-            this.statusTableAdapter.ClearBeforeFill = true;
-            // 
-            // surveying_position_statesTableAdapter
-            // 
-            this.surveying_position_statesTableAdapter.ClearBeforeFill = true;
             // 
             // label1
             // 
@@ -1073,11 +1064,53 @@
             this.panel5.Size = new System.Drawing.Size(937, 99);
             this.panel5.TabIndex = 40;
             // 
+            // stationsTableAdapter
+            // 
+            this.stationsTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableTableAdapter
+            // 
+            this.tableTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.StationsTableAdapter = this.stationsTableAdapter;
+            this.tableAdapterManager.statusTableAdapter = null;
+            this.tableAdapterManager.Surveying_position_statesTableAdapter = null;
+            this.tableAdapterManager.TableTableAdapter = this.tableTableAdapter;
+            this.tableAdapterManager.UpdateOrder = DemoProject.Database1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // statusTableAdapter
+            // 
+            this.statusTableAdapter.ClearBeforeFill = true;
+            // 
+            // surveying_position_statesTableAdapter
+            // 
+            this.surveying_position_statesTableAdapter.ClearBeforeFill = true;
+            // 
+            // pdfViewer1
+            // 
+            this.pdfViewer1.FindTextHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(153)))), ((int)(((byte)(193)))), ((int)(((byte)(218)))));
+            this.pdfViewer1.FormFillEnabled = false;
+            this.pdfViewer1.IgnoreCase = false;
+            this.pdfViewer1.IsToolBarVisible = true;
+            this.pdfViewer1.Location = new System.Drawing.Point(360, 612);
+            this.pdfViewer1.MultiPagesThreshold = 60;
+            this.pdfViewer1.Name = "pdfViewer1";
+            this.pdfViewer1.OnRenderPageExceptionEvent = null;
+            this.pdfViewer1.Size = new System.Drawing.Size(820, 142);
+            this.pdfViewer1.TabIndex = 41;
+            this.pdfViewer1.Text = "pdfViewer1";
+            this.pdfViewer1.Threshold = 60;
+            this.pdfViewer1.ViewerBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1386, 776);
+            this.Controls.Add(this.pdfViewer1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.advancedDataGridView1);
             this.Controls.Add(this.guna2CircleButton2);
@@ -1171,7 +1204,9 @@
         private Guna.UI2.WinForms.Guna2TextBox traffic_study_TB;
         private Guna.UI2.WinForms.Guna2TextBox Survying_TB;
         private System.Windows.Forms.Panel panel5;
+        private Spire.PdfViewer.Forms.PdfViewer pdfViewer1;
         private System.Windows.Forms.DataGridViewTextBoxColumn IndexTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pdf_Path_license_8;
         private System.Windows.Forms.DataGridViewButtonColumn Pdf8;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Sign;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Land_Sign;

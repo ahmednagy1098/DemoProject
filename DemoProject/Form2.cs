@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -241,6 +242,54 @@ namespace DemoProject
             {
                 UpdateColumnCounters(); // Your method using row.Visible
                 filterApplied = false;
+            }
+        }
+
+        private void advancedDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && advancedDataGridView1.Columns[e.ColumnIndex].Name == "Pdf8")
+            {
+                // Get the path from the "PdfPath" column in the same row
+                string pdfPath = advancedDataGridView1.Rows[e.RowIndex].Cells["Pdf_Path_license_8"].Value?.ToString();
+
+                if (!string.IsNullOrEmpty(pdfPath))
+                {
+                    try
+                    {
+                        // Open the PDF using the default associated application
+                        System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                        {
+                            FileName = pdfPath,
+                            UseShellExecute = true
+                        });
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Could not open the PDF: " + ex.Message);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("PDF path is invalid or file not found.");
+                }
+            }
+        }
+
+        private void advancedDataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (advancedDataGridView1.Columns[e.ColumnIndex].Name == "Pdf8")
+            {
+                string pdfPath = advancedDataGridView1.Rows[e.RowIndex].Cells["Pdf_Path_license_8"]?.Value?.ToString();
+                if (string.IsNullOrEmpty(pdfPath))
+                {
+                    e.Value = "غير متاح";  // Button text
+                    e.CellStyle.ForeColor = Color.Gray;
+                }
+                else
+                {
+                    e.Value = "متاح";
+                    e.CellStyle.ForeColor = Color.Black;
+                }
             }
         }
     }
