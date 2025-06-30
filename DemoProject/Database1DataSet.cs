@@ -4,5 +4,8 @@
 
     partial class Database1DataSet
     {
+        partial class StationsDataTable
+        {
+        }
     }
 }

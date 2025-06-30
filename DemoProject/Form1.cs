@@ -93,6 +93,44 @@ namespace DemoProject
             };
             resetTimer.Start();
         }
+
+        private void PassWordTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r')
+            {
+                if (UserNameTB.Text == "المدير العام" && PassWordTB.Text == "123")
+                {
+                    this.Hide();
+                    ShowAlert("مرحبا بك", AlertForm.AlertType.Success);
+                    Form2 Menu = new Form2();
+                    Menu.Show();
+
+                }
+                else
+                {
+                    ShowAlert("يرجي كتابة اسم المستخدم وكلمة السر بشكل صحيح", AlertForm.AlertType.Error);
+                }
+            }
+        }
+
+        private void UserNameTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r')
+            {
+                if (UserNameTB.Text == "المدير العام" && PassWordTB.Text == "123")
+                {
+                    this.Hide();
+                    ShowAlert("مرحبا بك", AlertForm.AlertType.Success);
+                    Form2 Menu = new Form2();
+                    Menu.Show();
+
+                }
+                else
+                {
+                    ShowAlert("يرجي كتابة اسم المستخدم وكلمة السر بشكل صحيح", AlertForm.AlertType.Error);
+                }
+            }
+        }
         //private void btnSuccess_Click(object sender, EventArgs e)
         //{
         //    ShowAlert("Success Alert", AlertForm.AlertType.Success);

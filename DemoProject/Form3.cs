@@ -19,7 +19,13 @@ namespace DemoProject
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'database1DataSet.Stations' table. You can move, or remove it, as needed.
+            this.stationsTableAdapter.Fill(this.database1DataSet.Stations);
+            // TODO: This line of code loads data into the 'database1DataSet.Stations' table. You can move, or remove it, as needed.
+            this.stationsTableAdapter.Fill(this.database1DataSet.Stations);
 
+            this.reportViewer1.RefreshReport();
+            
         }
     }
 }

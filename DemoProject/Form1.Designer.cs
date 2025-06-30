@@ -74,6 +74,7 @@
             this.UserNameTB.Size = new System.Drawing.Size(221, 26);
             this.UserNameTB.TabIndex = 0;
             this.UserNameTB.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+            this.UserNameTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UserNameTB_KeyPress);
             // 
             // PassWordTB
             // 
@@ -101,6 +102,7 @@
             this.PassWordTB.SelectedText = "";
             this.PassWordTB.Size = new System.Drawing.Size(221, 26);
             this.PassWordTB.TabIndex = 1;
+            this.PassWordTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PassWordTB_KeyPress);
             // 
             // guna2HtmlLabel1
             // 

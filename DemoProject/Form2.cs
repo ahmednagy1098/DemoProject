@@ -123,13 +123,13 @@ namespace DemoProject
 
         private void menutranstion_Tick(object sender, EventArgs e)
         {
-            if(MenuExpand == false)
+            if (MenuExpand == false)
             {
                 MenuContainer.Height += 10;
-                if(MenuContainer.Height >= 108) {
+                if (MenuContainer.Height >= 108) {
                     menutranstion.Stop();
                     MenuExpand = true;
-                }        
+                }
             }
             else
             {
@@ -164,13 +164,13 @@ namespace DemoProject
 
         private void advancedDataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            if(e.Exception.Message == "DataGridViewComboBoxCell value is not valid.")
+            if (e.Exception.Message == "DataGridViewComboBoxCell value is not valid.")
             {
                 object value = advancedDataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
                 if (!((DataGridViewComboBoxColumn)advancedDataGridView1.Columns[e.ColumnIndex]).Items.Contains(value))
                 {
-                    ((DataGridViewComboBoxColumn)advancedDataGridView1.Columns[e.ColumnIndex]).Items.Add(value);
                     e.ThrowException = false;
+                    ((DataGridViewComboBoxColumn)advancedDataGridView1.Columns[e.ColumnIndex]).Items.Add(value);
                 }
             }
         }
@@ -181,17 +181,17 @@ namespace DemoProject
         }
         private void UpdateColumnCounters()
         {
-           /* Lands_TB.Text = "0";
-            Survying_TB.Text = "0";
-            license_8_TB.Text = "0";
-            civil_defense_TB.Text = "0";
-            environmental_TB.Text = "0";
-            ministry_of_petroleum_TB.Text = "0";
-            civil_aviation_authority_TB.Text = "0";
-            traffic_study_TB.Text = "0";*/
+            /* Lands_TB.Text = "0";
+             Survying_TB.Text = "0";
+             license_8_TB.Text = "0";
+             civil_defense_TB.Text = "0";
+             environmental_TB.Text = "0";
+             ministry_of_petroleum_TB.Text = "0";
+             civil_aviation_authority_TB.Text = "0";
+             traffic_study_TB.Text = "0";*/
             foreach (DataGridViewColumn column in advancedDataGridView1.Columns)
             {
-                if (column.Name != "land_contracts" && 
+                if (column.Name != "land_contracts" &&
                     column.Name != "license_type_8" &&
                     column.Name != "civil_defense_approval" &&
                     column.Name != "environmental_approval" &&
@@ -211,15 +211,15 @@ namespace DemoProject
                         if (value != null && !string.IsNullOrWhiteSpace(value.ToString()))
                         {
                             count++;
-                            if(column.Name== "land_contracts"){Lands_TB.Text = count.ToString();}
-                            if (column.Name == "Surveying_position"){Survying_TB.Text = count.ToString();}
-                            if (column.Name == "license_type_8") {license_8_TB.Text= count.ToString(); }
+                            if (column.Name == "land_contracts") { Lands_TB.Text = count.ToString(); }
+                            if (column.Name == "Surveying_position") { Survying_TB.Text = count.ToString(); }
+                            if (column.Name == "license_type_8") { license_8_TB.Text = count.ToString(); }
                             if (column.Name == "civil_defense_approval") { civil_defense_TB.Text = count.ToString(); }
                             if (column.Name == "environmental_approval") { environmental_TB.Text = count.ToString(); }
                             if (column.Name == "ministry_of_petroleum_approval") { ministry_of_petroleum_TB.Text = count.ToString(); }
                             if (column.Name == "civil_aviation_authority") { civil_aviation_authority_TB.Text = count.ToString(); }
                             if (column.Name == "traffic_study") { traffic_study_TB.Text = count.ToString(); }
-                        } 
+                        }
                     }
                 }
             }
@@ -247,19 +247,33 @@ namespace DemoProject
 
         private void advancedDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && advancedDataGridView1.Columns[e.ColumnIndex].Name == "Pdf8")
+            if (e.RowIndex >= 0 &&
+                (advancedDataGridView1.Columns[e.ColumnIndex].Name == "Pdf8"||
+                advancedDataGridView1.Columns[e.ColumnIndex].Name == "PdfLand" ||
+                advancedDataGridView1.Columns[e.ColumnIndex].Name == "PdfCivilDefense" ||
+                advancedDataGridView1.Columns[e.ColumnIndex].Name == "PdfEnvironmental" ||
+                advancedDataGridView1.Columns[e.ColumnIndex].Name == "PdfPetroleum" ||
+                advancedDataGridView1.Columns[e.ColumnIndex].Name == "PdfCivilAviation" ||
+                advancedDataGridView1.Columns[e.ColumnIndex].Name == "PdfTrafficStudy"
+                ))
             {
                 // Get the path from the "PdfPath" column in the same row
-                string pdfPath = advancedDataGridView1.Rows[e.RowIndex].Cells["Pdf_Path_license_8"].Value?.ToString();
+                string pdfPathLicense_8 = advancedDataGridView1.Rows[e.RowIndex].Cells["Pdf_Path_license_8"].Value?.ToString();
+                string pdfPathLandContracts = advancedDataGridView1.Rows[e.RowIndex].Cells["Pdf_Path_land_contracts"].Value?.ToString();
+                string pdfPathCivilDefense = advancedDataGridView1.Rows[e.RowIndex].Cells["Pdf_Path_civil_defense"].Value?.ToString();
+                string pdfPathEnvironmental = advancedDataGridView1.Rows[e.RowIndex].Cells["Pdf_Path_environmental"].Value?.ToString();
+                string pdfPathMinistryOfPetroleum = advancedDataGridView1.Rows[e.RowIndex].Cells["Pdf_Path_ministry_of_petroleum"].Value?.ToString();
+                string pdfPathCivilAviation = advancedDataGridView1.Rows[e.RowIndex].Cells["Pdf_Path_civil_aviation"].Value?.ToString();
+                string pdfPathTrafficStudy = advancedDataGridView1.Rows[e.RowIndex].Cells["Pdf_Path_traffic_study"].Value?.ToString();
 
-                if (!string.IsNullOrEmpty(pdfPath))
+                if (!string.IsNullOrEmpty(pdfPathLicense_8) && advancedDataGridView1.Columns[e.ColumnIndex].Name == "Pdf8")
                 {
                     try
                     {
                         // Open the PDF using the default associated application
                         System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
                         {
-                            FileName = pdfPath,
+                            FileName = pdfPathLicense_8,
                             UseShellExecute = true
                         });
                     }
@@ -268,9 +282,105 @@ namespace DemoProject
                         MessageBox.Show("Could not open the PDF: " + ex.Message);
                     }
                 }
+                else if (!string.IsNullOrEmpty(pdfPathLandContracts) && advancedDataGridView1.Columns[e.ColumnIndex].Name == "PdfLand")
+                {
+                    try
+                    {
+                        // Open the PDF using the default associated application
+                        System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                        {
+                            FileName = pdfPathLandContracts,
+                            UseShellExecute = true
+                        });
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Could not open the PDF: " + ex.Message);
+                    }
+                }
+                else if (!string.IsNullOrEmpty(pdfPathCivilDefense) && advancedDataGridView1.Columns[e.ColumnIndex].Name == "PdfCivilDefense")
+                {
+                    try
+                    {
+                        // Open the PDF using the default associated application
+                        System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                        {
+                            FileName = pdfPathCivilDefense,
+                            UseShellExecute = true
+                        });
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Could not open the PDF: " + ex.Message);
+                    }
+                }
+                else if (!string.IsNullOrEmpty(pdfPathEnvironmental) && advancedDataGridView1.Columns[e.ColumnIndex].Name == "PdfEnvironmental")
+                {
+                    try
+                    {
+                        // Open the PDF using the default associated application
+                        System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                        {
+                            FileName = pdfPathEnvironmental,
+                            UseShellExecute = true
+                        });
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Could not open the PDF: " + ex.Message);
+                    }
+                }
+                else if (!string.IsNullOrEmpty(pdfPathMinistryOfPetroleum) && advancedDataGridView1.Columns[e.ColumnIndex].Name == "PdfPetroleum")
+                {
+                    try
+                    {
+                        // Open the PDF using the default associated application
+                        System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                        {
+                            FileName = pdfPathMinistryOfPetroleum,
+                            UseShellExecute = true
+                        });
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Could not open the PDF: " + ex.Message);
+                    }
+                }
+                else if (!string.IsNullOrEmpty(pdfPathCivilAviation) && advancedDataGridView1.Columns[e.ColumnIndex].Name == "PdfCivilAviation")
+                {
+                    try
+                    {
+                        // Open the PDF using the default associated application
+                        System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                        {
+                            FileName = pdfPathCivilAviation,
+                            UseShellExecute = true
+                        });
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Could not open the PDF: " + ex.Message);
+                    }
+                }
+                else if (!string.IsNullOrEmpty(pdfPathTrafficStudy) && advancedDataGridView1.Columns[e.ColumnIndex].Name == "PdfTrafficStudy")
+                {
+                    try
+                    {
+                        // Open the PDF using the default associated application
+                        System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                        {
+                            FileName = pdfPathTrafficStudy,
+                            UseShellExecute = true
+                        });
+                    }
+                    catch (Exception ex)
+                    {
+                        ShowAlert("لا يمكن فتح الملف" + ex.Message , AlertForm.AlertType.Error);
+                    }
+                }
                 else
                 {
-                    MessageBox.Show("PDF path is invalid or file not found.");
+                    ShowAlert("مسار المستند غير صحيح لم يتم العثور علية", AlertForm.AlertType.Error);
                 }
             }
         }
@@ -291,6 +401,101 @@ namespace DemoProject
                     e.CellStyle.ForeColor = Color.Black;
                 }
             }
+            if (advancedDataGridView1.Columns[e.ColumnIndex].Name == "PdfLand")
+            {
+                string pdfPath = advancedDataGridView1.Rows[e.RowIndex].Cells["Pdf_Path_land_contracts"]?.Value?.ToString();
+                if (string.IsNullOrEmpty(pdfPath))
+                {
+                    e.Value = "غير متاح";  // Button text
+                    e.CellStyle.ForeColor = Color.Gray;
+                }
+                else
+                {
+                    e.Value = "متاح";
+                    e.CellStyle.ForeColor = Color.Black;
+                }
+            }
+            if (advancedDataGridView1.Columns[e.ColumnIndex].Name == "PdfCivilDefense")
+            {
+                string pdfPath = advancedDataGridView1.Rows[e.RowIndex].Cells["Pdf_Path_civil_defense"]?.Value?.ToString();
+                if (string.IsNullOrEmpty(pdfPath))
+                {
+                    e.Value = "غير متاح";  // Button text
+                    e.CellStyle.ForeColor = Color.Gray;
+                }
+                else
+                {
+                    e.Value = "متاح";
+                    e.CellStyle.ForeColor = Color.Black;
+                }
+            }
+            if (advancedDataGridView1.Columns[e.ColumnIndex].Name == "PdfEnvironmental")
+            {
+                string pdfPath = advancedDataGridView1.Rows[e.RowIndex].Cells["Pdf_Path_environmental"]?.Value?.ToString();
+                if (string.IsNullOrEmpty(pdfPath))
+                {
+                    e.Value = "غير متاح";  // Button text
+                    e.CellStyle.ForeColor = Color.Gray;
+                }
+                else
+                {
+                    e.Value = "متاح";
+                    e.CellStyle.ForeColor = Color.Black;
+                }
+            }
+            if (advancedDataGridView1.Columns[e.ColumnIndex].Name == "PdfPetroleum")
+            {
+                string pdfPath = advancedDataGridView1.Rows[e.RowIndex].Cells["Pdf_Path_ministry_of_petroleum"]?.Value?.ToString();
+                if (string.IsNullOrEmpty(pdfPath))
+                {
+                    e.Value = "غير متاح";  // Button text
+                    e.CellStyle.ForeColor = Color.Gray;
+                }
+                else
+                {
+                    e.Value = "متاح";
+                    e.CellStyle.ForeColor = Color.Black;
+                }
+            }
+            if (advancedDataGridView1.Columns[e.ColumnIndex].Name == "PdfCivilAviation")
+            {
+                string pdfPath = advancedDataGridView1.Rows[e.RowIndex].Cells["Pdf_Path_civil_aviation"]?.Value?.ToString();
+                if (string.IsNullOrEmpty(pdfPath))
+                {
+                    e.Value = "غير متاح";  // Button text
+                    e.CellStyle.ForeColor = Color.Gray;
+                }
+                else
+                {
+                    e.Value = "متاح";
+                    e.CellStyle.ForeColor = Color.Black;
+                }
+            }
+            if (advancedDataGridView1.Columns[e.ColumnIndex].Name == "PdfTrafficStudy")
+            {
+                string pdfPath = advancedDataGridView1.Rows[e.RowIndex].Cells["Pdf_Path_traffic_study"]?.Value?.ToString();
+                if (string.IsNullOrEmpty(pdfPath))
+                {
+                    e.Value = "غير متاح";  // Button text
+                    e.CellStyle.ForeColor = Color.Gray;
+                }
+                else
+                {
+                    e.Value = "متاح";
+                    e.CellStyle.ForeColor = Color.Black;
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form3 report = new Form3();
+            report.Show();
+        }
+
+        private void Survying_TB_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

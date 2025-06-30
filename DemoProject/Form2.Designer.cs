@@ -58,8 +58,20 @@
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.advancedDataGridView1 = new Zuby.ADGV.AdvancedDataGridView();
             this.IndexTable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pdf_Path_land_contracts = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pdf_Path_civil_defense = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pdf_Path_environmental = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pdf_Path_ministry_of_petroleum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pdf_Path_civil_aviation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pdf_Path_traffic_study = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pdf_Path_license_8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pdf8 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.PdfLand = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.PdfCivilDefense = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.PdfEnvironmental = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.PdfPetroleum = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.PdfCivilAviation = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.PdfTrafficStudy = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ID_Sign = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_Land_Sign = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.station_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,14 +80,21 @@
             this.coordinates_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.government = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Republican_decision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.land_contracts = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.statusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.license_type_8 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.statusBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.civil_defense_approval = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.statusBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.environmental_approval = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.statusBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.ministry_of_petroleum_approval = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.statusBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.civil_aviation_authority = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.statusBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.traffic_study = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.statusBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
             this.Surveying_position = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.surveying_position_statesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Actual_activity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,12 +118,14 @@
             this.traffic_study_TB = new Guna.UI2.WinForms.Guna2TextBox();
             this.Survying_TB = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
             this.stationsTableAdapter = new DemoProject.Database1DataSetTableAdapters.StationsTableAdapter();
             this.tableTableAdapter = new DemoProject.Database1DataSetTableAdapters.TableTableAdapter();
             this.tableAdapterManager = new DemoProject.Database1DataSetTableAdapters.TableAdapterManager();
             this.statusTableAdapter = new DemoProject.Database1DataSetTableAdapters.statusTableAdapter();
             this.surveying_position_statesTableAdapter = new DemoProject.Database1DataSetTableAdapters.Surveying_position_statesTableAdapter();
-            this.pdfViewer1 = new Spire.PdfViewer.Forms.PdfViewer();
+            this.guna2TextBox5 = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -121,6 +142,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.surveying_position_statesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stationsBindingSource3)).BeginInit();
             this.panel5.SuspendLayout();
@@ -145,7 +172,7 @@
             this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.guna2CirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox2.Image")));
             this.guna2CirclePictureBox2.ImageRotate = 0F;
-            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(921, 39);
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(690, 39);
             this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
             this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox2.Size = new System.Drawing.Size(67, 66);
@@ -171,7 +198,7 @@
             this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 21.75F);
             this.guna2TextBox2.ForeColor = System.Drawing.Color.White;
             this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Location = new System.Drawing.Point(725, 47);
+            this.guna2TextBox2.Location = new System.Drawing.Point(494, 47);
             this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.guna2TextBox2.Name = "guna2TextBox2";
             this.guna2TextBox2.PlaceholderText = "";
@@ -188,7 +215,7 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1386, 36);
+            this.guna2Panel1.Size = new System.Drawing.Size(1380, 36);
             this.guna2Panel1.TabIndex = 18;
             // 
             // nightControlBox1
@@ -199,14 +226,14 @@
             this.nightControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
             this.nightControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nightControlBox1.DefaultLocation = true;
-            this.nightControlBox1.DisableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.nightControlBox1.DisableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
             this.nightControlBox1.DisableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.nightControlBox1.EnableCloseColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.EnableMaximizeButton = true;
+            this.nightControlBox1.EnableMaximizeButton = false;
             this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.nightControlBox1.EnableMinimizeButton = true;
             this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.Location = new System.Drawing.Point(1247, 0);
+            this.nightControlBox1.Location = new System.Drawing.Point(1241, 0);
             this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
             this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -224,7 +251,7 @@
             this.flowLayoutPanel1.Controls.Add(this.panel3);
             this.flowLayoutPanel1.Controls.Add(this.panel4);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(1208, 36);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1202, 36);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(178, 740);
             this.flowLayoutPanel1.TabIndex = 20;
@@ -359,7 +386,7 @@
             this.button6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button6.Size = new System.Drawing.Size(176, 35);
             this.button6.TabIndex = 22;
-            this.button6.Text = "1";
+            this.button6.Text = "تقرير 1";
             this.button6.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // button7
@@ -378,7 +405,7 @@
             this.button7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button7.Size = new System.Drawing.Size(176, 35);
             this.button7.TabIndex = 22;
-            this.button7.Text = "2";
+            this.button7.Text = "تقرير 2";
             this.button7.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // panel3
@@ -409,8 +436,9 @@
             this.button2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button2.Size = new System.Drawing.Size(168, 34);
             this.button2.TabIndex = 22;
-            this.button2.Text = "التقارير";
+            this.button2.Text = "عرض ملفات";
             this.button2.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel4
             // 
@@ -467,9 +495,9 @@
             this.advancedDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.advancedDataGridView1.AutoGenerateColumns = false;
-            this.advancedDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.advancedDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.advancedDataGridView1.BackgroundColor = System.Drawing.Color.Turquoise;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Turquoise;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -480,8 +508,20 @@
             this.advancedDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IndexTable,
+            this.Pdf_Path_land_contracts,
+            this.Pdf_Path_civil_defense,
+            this.Pdf_Path_environmental,
+            this.Pdf_Path_ministry_of_petroleum,
+            this.Pdf_Path_civil_aviation,
+            this.Pdf_Path_traffic_study,
             this.Pdf_Path_license_8,
             this.Pdf8,
+            this.PdfLand,
+            this.PdfCivilDefense,
+            this.PdfEnvironmental,
+            this.PdfPetroleum,
+            this.PdfCivilAviation,
+            this.PdfTrafficStudy,
             this.ID_Sign,
             this.ID_Land_Sign,
             this.station_name,
@@ -489,6 +529,7 @@
             this.coordinates_1,
             this.coordinates_2,
             this.government,
+            this.Republican_decision,
             this.land_contracts,
             this.license_type_8,
             this.civil_defense_approval,
@@ -516,7 +557,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.advancedDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.advancedDataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.advancedDataGridView1.Size = new System.Drawing.Size(1168, 313);
+            this.advancedDataGridView1.Size = new System.Drawing.Size(1162, 313);
             this.advancedDataGridView1.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.advancedDataGridView1.TabIndex = 23;
             this.advancedDataGridView1.SortStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.SortEventArgs>(this.advancedDataGridView1_SortStringChanged);
@@ -534,6 +575,67 @@
             this.IndexTable.MinimumWidth = 24;
             this.IndexTable.Name = "IndexTable";
             this.IndexTable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.IndexTable.Width = 71;
+            // 
+            // Pdf_Path_land_contracts
+            // 
+            this.Pdf_Path_land_contracts.DataPropertyName = "Pdf_Path_land_contracts";
+            this.Pdf_Path_land_contracts.HeaderText = "Pdf_Path_land_contracts";
+            this.Pdf_Path_land_contracts.MinimumWidth = 24;
+            this.Pdf_Path_land_contracts.Name = "Pdf_Path_land_contracts";
+            this.Pdf_Path_land_contracts.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Pdf_Path_land_contracts.Visible = false;
+            this.Pdf_Path_land_contracts.Width = 152;
+            // 
+            // Pdf_Path_civil_defense
+            // 
+            this.Pdf_Path_civil_defense.DataPropertyName = "Pdf_Path_civil_defense";
+            this.Pdf_Path_civil_defense.HeaderText = "Pdf_Path_civil_defense";
+            this.Pdf_Path_civil_defense.MinimumWidth = 24;
+            this.Pdf_Path_civil_defense.Name = "Pdf_Path_civil_defense";
+            this.Pdf_Path_civil_defense.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Pdf_Path_civil_defense.Visible = false;
+            this.Pdf_Path_civil_defense.Width = 144;
+            // 
+            // Pdf_Path_environmental
+            // 
+            this.Pdf_Path_environmental.DataPropertyName = "Pdf_Path_environmental";
+            this.Pdf_Path_environmental.HeaderText = "Pdf_Path_environmental";
+            this.Pdf_Path_environmental.MinimumWidth = 24;
+            this.Pdf_Path_environmental.Name = "Pdf_Path_environmental";
+            this.Pdf_Path_environmental.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Pdf_Path_environmental.Visible = false;
+            this.Pdf_Path_environmental.Width = 148;
+            // 
+            // Pdf_Path_ministry_of_petroleum
+            // 
+            this.Pdf_Path_ministry_of_petroleum.DataPropertyName = "Pdf_Path_ministry_of_petroleum";
+            this.Pdf_Path_ministry_of_petroleum.HeaderText = "Pdf_Path_ministry_of_petroleum";
+            this.Pdf_Path_ministry_of_petroleum.MinimumWidth = 24;
+            this.Pdf_Path_ministry_of_petroleum.Name = "Pdf_Path_ministry_of_petroleum";
+            this.Pdf_Path_ministry_of_petroleum.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Pdf_Path_ministry_of_petroleum.Visible = false;
+            this.Pdf_Path_ministry_of_petroleum.Width = 183;
+            // 
+            // Pdf_Path_civil_aviation
+            // 
+            this.Pdf_Path_civil_aviation.DataPropertyName = "Pdf_Path_civil_aviation";
+            this.Pdf_Path_civil_aviation.HeaderText = "Pdf_Path_civil_aviation";
+            this.Pdf_Path_civil_aviation.MinimumWidth = 24;
+            this.Pdf_Path_civil_aviation.Name = "Pdf_Path_civil_aviation";
+            this.Pdf_Path_civil_aviation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Pdf_Path_civil_aviation.Visible = false;
+            this.Pdf_Path_civil_aviation.Width = 143;
+            // 
+            // Pdf_Path_traffic_study
+            // 
+            this.Pdf_Path_traffic_study.DataPropertyName = "Pdf_Path_traffic_study";
+            this.Pdf_Path_traffic_study.HeaderText = "Pdf_Path_traffic_study";
+            this.Pdf_Path_traffic_study.MinimumWidth = 24;
+            this.Pdf_Path_traffic_study.Name = "Pdf_Path_traffic_study";
+            this.Pdf_Path_traffic_study.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Pdf_Path_traffic_study.Visible = false;
+            this.Pdf_Path_traffic_study.Width = 139;
             // 
             // Pdf_Path_license_8
             // 
@@ -544,6 +646,7 @@
             this.Pdf_Path_license_8.ReadOnly = true;
             this.Pdf_Path_license_8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.Pdf_Path_license_8.Visible = false;
+            this.Pdf_Path_license_8.Width = 127;
             // 
             // Pdf8
             // 
@@ -553,6 +656,61 @@
             this.Pdf8.Name = "Pdf8";
             this.Pdf8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.Pdf8.UseColumnTextForButtonValue = true;
+            this.Pdf8.Width = 88;
+            // 
+            // PdfLand
+            // 
+            this.PdfLand.DataPropertyName = "ID";
+            this.PdfLand.HeaderText = "مستند الأرض";
+            this.PdfLand.MinimumWidth = 24;
+            this.PdfLand.Name = "PdfLand";
+            this.PdfLand.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.PdfLand.Width = 80;
+            // 
+            // PdfCivilDefense
+            // 
+            this.PdfCivilDefense.DataPropertyName = "ID";
+            this.PdfCivilDefense.HeaderText = "مستند الحماية المدنية";
+            this.PdfCivilDefense.MinimumWidth = 24;
+            this.PdfCivilDefense.Name = "PdfCivilDefense";
+            this.PdfCivilDefense.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.PdfCivilDefense.Width = 115;
+            // 
+            // PdfEnvironmental
+            // 
+            this.PdfEnvironmental.DataPropertyName = "ID";
+            this.PdfEnvironmental.HeaderText = "مستند البيئة";
+            this.PdfEnvironmental.MinimumWidth = 24;
+            this.PdfEnvironmental.Name = "PdfEnvironmental";
+            this.PdfEnvironmental.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.PdfEnvironmental.Width = 79;
+            // 
+            // PdfPetroleum
+            // 
+            this.PdfPetroleum.DataPropertyName = "ID";
+            this.PdfPetroleum.HeaderText = "مستند وزارة البترول";
+            this.PdfPetroleum.MinimumWidth = 24;
+            this.PdfPetroleum.Name = "PdfPetroleum";
+            this.PdfPetroleum.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.PdfPetroleum.Width = 112;
+            // 
+            // PdfCivilAviation
+            // 
+            this.PdfCivilAviation.DataPropertyName = "ID";
+            this.PdfCivilAviation.HeaderText = "مستند وزارة الطيران";
+            this.PdfCivilAviation.MinimumWidth = 24;
+            this.PdfCivilAviation.Name = "PdfCivilAviation";
+            this.PdfCivilAviation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.PdfCivilAviation.Width = 112;
+            // 
+            // PdfTrafficStudy
+            // 
+            this.PdfTrafficStudy.DataPropertyName = "ID";
+            this.PdfTrafficStudy.HeaderText = "مستند الدراسة المرورية";
+            this.PdfTrafficStudy.MinimumWidth = 24;
+            this.PdfTrafficStudy.Name = "PdfTrafficStudy";
+            this.PdfTrafficStudy.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.PdfTrafficStudy.Width = 123;
             // 
             // ID_Sign
             // 
@@ -561,6 +719,7 @@
             this.ID_Sign.MinimumWidth = 24;
             this.ID_Sign.Name = "ID_Sign";
             this.ID_Sign.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ID_Sign.Width = 70;
             // 
             // ID_Land_Sign
             // 
@@ -569,6 +728,7 @@
             this.ID_Land_Sign.MinimumWidth = 24;
             this.ID_Land_Sign.Name = "ID_Land_Sign";
             this.ID_Land_Sign.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ID_Land_Sign.Width = 95;
             // 
             // station_name
             // 
@@ -577,6 +737,7 @@
             this.station_name.MinimumWidth = 24;
             this.station_name.Name = "station_name";
             this.station_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.station_name.Width = 76;
             // 
             // address
             // 
@@ -585,6 +746,7 @@
             this.address.MinimumWidth = 24;
             this.address.Name = "address";
             this.address.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.address.Width = 64;
             // 
             // coordinates_1
             // 
@@ -593,6 +755,7 @@
             this.coordinates_1.MinimumWidth = 24;
             this.coordinates_1.Name = "coordinates_1";
             this.coordinates_1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.coordinates_1.Width = 89;
             // 
             // coordinates_2
             // 
@@ -601,6 +764,7 @@
             this.coordinates_2.MinimumWidth = 24;
             this.coordinates_2.Name = "coordinates_2";
             this.coordinates_2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.coordinates_2.Width = 90;
             // 
             // government
             // 
@@ -613,11 +777,21 @@
             this.government.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.government.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.government.ValueMember = "government";
+            this.government.Width = 72;
             // 
             // tableBindingSource
             // 
             this.tableBindingSource.DataMember = "Table";
-            this.tableBindingSource.DataSource = this.database1DataSet;
+            this.tableBindingSource.DataSource = this.database1DataSetBindingSource;
+            // 
+            // Republican_decision
+            // 
+            this.Republican_decision.DataPropertyName = "Republican_decision";
+            this.Republican_decision.HeaderText = "القرار الجمهوري";
+            this.Republican_decision.MinimumWidth = 24;
+            this.Republican_decision.Name = "Republican_decision";
+            this.Republican_decision.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Republican_decision.Width = 96;
             // 
             // land_contracts
             // 
@@ -630,16 +804,17 @@
             this.land_contracts.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.land_contracts.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.land_contracts.ValueMember = "statues";
+            this.land_contracts.Width = 77;
             // 
             // statusBindingSource
             // 
             this.statusBindingSource.DataMember = "status";
-            this.statusBindingSource.DataSource = this.database1DataSet;
+            this.statusBindingSource.DataSource = this.database1DataSetBindingSource;
             // 
             // license_type_8
             // 
             this.license_type_8.DataPropertyName = "license_type_8";
-            this.license_type_8.DataSource = this.statusBindingSource;
+            this.license_type_8.DataSource = this.statusBindingSource1;
             this.license_type_8.DisplayMember = "statues";
             this.license_type_8.HeaderText = "نموذج 8";
             this.license_type_8.MinimumWidth = 24;
@@ -647,11 +822,17 @@
             this.license_type_8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.license_type_8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.license_type_8.ValueMember = "statues";
+            this.license_type_8.Width = 64;
+            // 
+            // statusBindingSource1
+            // 
+            this.statusBindingSource1.DataMember = "status";
+            this.statusBindingSource1.DataSource = this.database1DataSetBindingSource;
             // 
             // civil_defense_approval
             // 
             this.civil_defense_approval.DataPropertyName = "civil_defense_approval";
-            this.civil_defense_approval.DataSource = this.statusBindingSource;
+            this.civil_defense_approval.DataSource = this.statusBindingSource2;
             this.civil_defense_approval.DisplayMember = "statues";
             this.civil_defense_approval.HeaderText = "الحماية المدنية";
             this.civil_defense_approval.MinimumWidth = 24;
@@ -659,11 +840,17 @@
             this.civil_defense_approval.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.civil_defense_approval.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.civil_defense_approval.ValueMember = "statues";
+            this.civil_defense_approval.Width = 88;
+            // 
+            // statusBindingSource2
+            // 
+            this.statusBindingSource2.DataMember = "status";
+            this.statusBindingSource2.DataSource = this.database1DataSetBindingSource;
             // 
             // environmental_approval
             // 
             this.environmental_approval.DataPropertyName = "environmental_approval";
-            this.environmental_approval.DataSource = this.statusBindingSource;
+            this.environmental_approval.DataSource = this.statusBindingSource3;
             this.environmental_approval.DisplayMember = "statues";
             this.environmental_approval.HeaderText = "وزارة البيئة";
             this.environmental_approval.MinimumWidth = 24;
@@ -671,11 +858,17 @@
             this.environmental_approval.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.environmental_approval.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.environmental_approval.ValueMember = "statues";
+            this.environmental_approval.Width = 77;
+            // 
+            // statusBindingSource3
+            // 
+            this.statusBindingSource3.DataMember = "status";
+            this.statusBindingSource3.DataSource = this.database1DataSetBindingSource;
             // 
             // ministry_of_petroleum_approval
             // 
             this.ministry_of_petroleum_approval.DataPropertyName = "ministry_of_petroleum_approval";
-            this.ministry_of_petroleum_approval.DataSource = this.statusBindingSource;
+            this.ministry_of_petroleum_approval.DataSource = this.statusBindingSource4;
             this.ministry_of_petroleum_approval.DisplayMember = "statues";
             this.ministry_of_petroleum_approval.HeaderText = "وزارة البترول";
             this.ministry_of_petroleum_approval.MinimumWidth = 24;
@@ -683,11 +876,17 @@
             this.ministry_of_petroleum_approval.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ministry_of_petroleum_approval.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.ministry_of_petroleum_approval.ValueMember = "statues";
+            this.ministry_of_petroleum_approval.Width = 85;
+            // 
+            // statusBindingSource4
+            // 
+            this.statusBindingSource4.DataMember = "status";
+            this.statusBindingSource4.DataSource = this.database1DataSetBindingSource;
             // 
             // civil_aviation_authority
             // 
             this.civil_aviation_authority.DataPropertyName = "civil_aviation_authority";
-            this.civil_aviation_authority.DataSource = this.statusBindingSource;
+            this.civil_aviation_authority.DataSource = this.statusBindingSource5;
             this.civil_aviation_authority.DisplayMember = "statues";
             this.civil_aviation_authority.HeaderText = "الطيران المدني";
             this.civil_aviation_authority.MinimumWidth = 24;
@@ -695,11 +894,17 @@
             this.civil_aviation_authority.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.civil_aviation_authority.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.civil_aviation_authority.ValueMember = "statues";
+            this.civil_aviation_authority.Width = 89;
+            // 
+            // statusBindingSource5
+            // 
+            this.statusBindingSource5.DataMember = "status";
+            this.statusBindingSource5.DataSource = this.database1DataSetBindingSource;
             // 
             // traffic_study
             // 
             this.traffic_study.DataPropertyName = "traffic_study";
-            this.traffic_study.DataSource = this.statusBindingSource;
+            this.traffic_study.DataSource = this.statusBindingSource6;
             this.traffic_study.DisplayMember = "statues";
             this.traffic_study.HeaderText = "الدراسة المرورية";
             this.traffic_study.MinimumWidth = 24;
@@ -707,6 +912,12 @@
             this.traffic_study.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.traffic_study.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.traffic_study.ValueMember = "statues";
+            this.traffic_study.Width = 96;
+            // 
+            // statusBindingSource6
+            // 
+            this.statusBindingSource6.DataMember = "status";
+            this.statusBindingSource6.DataSource = this.database1DataSetBindingSource;
             // 
             // Surveying_position
             // 
@@ -719,6 +930,7 @@
             this.Surveying_position.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Surveying_position.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.Surveying_position.ValueMember = "Surveying_position_state";
+            this.Surveying_position.Width = 92;
             // 
             // surveying_position_statesBindingSource
             // 
@@ -733,6 +945,7 @@
             this.Actual_activity.Name = "Actual_activity";
             this.Actual_activity.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Actual_activity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Actual_activity.Width = 88;
             // 
             // stationsBindingSource3
             // 
@@ -787,36 +1000,40 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(810, 12);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(841, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.Size = new System.Drawing.Size(70, 18);
             this.label1.TabIndex = 24;
             this.label1.Text = "عقود الأرض";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(712, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(49, 18);
             this.label2.TabIndex = 25;
             this.label2.Text = "نموذج 8";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(596, 12);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 13);
+            this.label3.Size = new System.Drawing.Size(79, 18);
             this.label3.TabIndex = 26;
             this.label3.Text = "الحماية المدنية";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(489, 12);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.Size = new System.Drawing.Size(66, 18);
             this.label4.TabIndex = 27;
             this.label4.Text = "وزارة البيئة";
             // 
@@ -867,15 +1084,15 @@
             this.Lands_TB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.Lands_TB.FillColor = System.Drawing.SystemColors.Control;
             this.Lands_TB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Lands_TB.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Lands_TB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lands_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Lands_TB.Location = new System.Drawing.Point(800, 39);
+            this.Lands_TB.Location = new System.Drawing.Point(797, 29);
             this.Lands_TB.Name = "Lands_TB";
             this.Lands_TB.PlaceholderText = "";
             this.Lands_TB.ReadOnly = true;
             this.Lands_TB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Lands_TB.SelectedText = "";
-            this.Lands_TB.Size = new System.Drawing.Size(68, 20);
+            this.Lands_TB.Size = new System.Drawing.Size(114, 30);
             this.Lands_TB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.Lands_TB.TabIndex = 32;
             // 
@@ -1039,10 +1256,14 @@
             this.Survying_TB.Size = new System.Drawing.Size(68, 20);
             this.Survying_TB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.Survying_TB.TabIndex = 39;
+            this.Survying_TB.TextChanged += new System.EventHandler(this.Survying_TB_TextChanged);
             this.Survying_TB.Load += new System.EventHandler(this.Survying_TB_Load);
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.guna2TextBox5);
+            this.panel5.Controls.Add(this.guna2TextBox4);
+            this.panel5.Controls.Add(this.guna2TextBox3);
             this.panel5.Controls.Add(this.Survying_TB);
             this.panel5.Controls.Add(this.traffic_study_TB);
             this.panel5.Controls.Add(this.civil_aviation_authority_TB);
@@ -1061,8 +1282,54 @@
             this.panel5.Controls.Add(this.label1);
             this.panel5.Location = new System.Drawing.Point(27, 507);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(937, 99);
+            this.panel5.Size = new System.Drawing.Size(937, 179);
             this.panel5.TabIndex = 40;
+            // 
+            // guna2TextBox4
+            // 
+            this.guna2TextBox4.Animated = true;
+            this.guna2TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox4.DefaultText = "";
+            this.guna2TextBox4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox4.FillColor = System.Drawing.SystemColors.Control;
+            this.guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox4.Location = new System.Drawing.Point(35, 101);
+            this.guna2TextBox4.Name = "guna2TextBox4";
+            this.guna2TextBox4.PlaceholderText = "";
+            this.guna2TextBox4.ReadOnly = true;
+            this.guna2TextBox4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.guna2TextBox4.SelectedText = "";
+            this.guna2TextBox4.Size = new System.Drawing.Size(96, 20);
+            this.guna2TextBox4.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.guna2TextBox4.TabIndex = 41;
+            // 
+            // guna2TextBox3
+            // 
+            this.guna2TextBox3.Animated = true;
+            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox3.DefaultText = "";
+            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox3.FillColor = System.Drawing.SystemColors.Control;
+            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox3.Location = new System.Drawing.Point(35, 75);
+            this.guna2TextBox3.Name = "guna2TextBox3";
+            this.guna2TextBox3.PlaceholderText = "";
+            this.guna2TextBox3.ReadOnly = true;
+            this.guna2TextBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.guna2TextBox3.SelectedText = "";
+            this.guna2TextBox3.Size = new System.Drawing.Size(96, 20);
+            this.guna2TextBox3.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.guna2TextBox3.TabIndex = 40;
             // 
             // stationsTableAdapter
             // 
@@ -1089,28 +1356,34 @@
             // 
             this.surveying_position_statesTableAdapter.ClearBeforeFill = true;
             // 
-            // pdfViewer1
+            // guna2TextBox5
             // 
-            this.pdfViewer1.FindTextHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(153)))), ((int)(((byte)(193)))), ((int)(((byte)(218)))));
-            this.pdfViewer1.FormFillEnabled = false;
-            this.pdfViewer1.IgnoreCase = false;
-            this.pdfViewer1.IsToolBarVisible = true;
-            this.pdfViewer1.Location = new System.Drawing.Point(360, 612);
-            this.pdfViewer1.MultiPagesThreshold = 60;
-            this.pdfViewer1.Name = "pdfViewer1";
-            this.pdfViewer1.OnRenderPageExceptionEvent = null;
-            this.pdfViewer1.Size = new System.Drawing.Size(820, 142);
-            this.pdfViewer1.TabIndex = 41;
-            this.pdfViewer1.Text = "pdfViewer1";
-            this.pdfViewer1.Threshold = 60;
-            this.pdfViewer1.ViewerBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.guna2TextBox5.Animated = true;
+            this.guna2TextBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox5.DefaultText = "";
+            this.guna2TextBox5.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox5.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox5.FillColor = System.Drawing.SystemColors.Control;
+            this.guna2TextBox5.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox5.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox5.Location = new System.Drawing.Point(35, 127);
+            this.guna2TextBox5.Name = "guna2TextBox5";
+            this.guna2TextBox5.PlaceholderText = "";
+            this.guna2TextBox5.ReadOnly = true;
+            this.guna2TextBox5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.guna2TextBox5.SelectedText = "";
+            this.guna2TextBox5.Size = new System.Drawing.Size(96, 20);
+            this.guna2TextBox5.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.guna2TextBox5.TabIndex = 42;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1386, 776);
-            this.Controls.Add(this.pdfViewer1);
+            this.ClientSize = new System.Drawing.Size(1380, 776);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.advancedDataGridView1);
             this.Controls.Add(this.guna2CircleButton2);
@@ -1121,6 +1394,7 @@
             this.Controls.Add(this.guna2CirclePictureBox1);
             this.Controls.Add(this.guna2TextBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Form2";
@@ -1142,6 +1416,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.surveying_position_statesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stationsBindingSource3)).EndInit();
             this.panel5.ResumeLayout(false);
@@ -1180,10 +1460,8 @@
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
         private System.Windows.Forms.BindingSource stationsBindingSource3;
-        private System.Windows.Forms.BindingSource tableBindingSource;
         private Database1DataSetTableAdapters.TableTableAdapter tableTableAdapter;
         private Database1DataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingSource statusBindingSource;
         private Database1DataSetTableAdapters.statusTableAdapter statusTableAdapter;
         private System.Windows.Forms.BindingSource surveying_position_statesBindingSource;
         private Database1DataSetTableAdapters.Surveying_position_statesTableAdapter surveying_position_statesTableAdapter;
@@ -1204,10 +1482,22 @@
         private Guna.UI2.WinForms.Guna2TextBox traffic_study_TB;
         private Guna.UI2.WinForms.Guna2TextBox Survying_TB;
         private System.Windows.Forms.Panel panel5;
-        private Spire.PdfViewer.Forms.PdfViewer pdfViewer1;
+        private System.Windows.Forms.BindingSource tableBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn IndexTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pdf_Path_land_contracts;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pdf_Path_civil_defense;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pdf_Path_environmental;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pdf_Path_ministry_of_petroleum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pdf_Path_civil_aviation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pdf_Path_traffic_study;
         private System.Windows.Forms.DataGridViewTextBoxColumn Pdf_Path_license_8;
         private System.Windows.Forms.DataGridViewButtonColumn Pdf8;
+        private System.Windows.Forms.DataGridViewButtonColumn PdfLand;
+        private System.Windows.Forms.DataGridViewButtonColumn PdfCivilDefense;
+        private System.Windows.Forms.DataGridViewButtonColumn PdfEnvironmental;
+        private System.Windows.Forms.DataGridViewButtonColumn PdfPetroleum;
+        private System.Windows.Forms.DataGridViewButtonColumn PdfCivilAviation;
+        private System.Windows.Forms.DataGridViewButtonColumn PdfTrafficStudy;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Sign;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Land_Sign;
         private System.Windows.Forms.DataGridViewTextBoxColumn station_name;
@@ -1215,14 +1505,25 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn coordinates_1;
         private System.Windows.Forms.DataGridViewTextBoxColumn coordinates_2;
         private System.Windows.Forms.DataGridViewComboBoxColumn government;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Republican_decision;
         private System.Windows.Forms.DataGridViewComboBoxColumn land_contracts;
+        private System.Windows.Forms.BindingSource statusBindingSource;
         private System.Windows.Forms.DataGridViewComboBoxColumn license_type_8;
+        private System.Windows.Forms.BindingSource statusBindingSource1;
         private System.Windows.Forms.DataGridViewComboBoxColumn civil_defense_approval;
+        private System.Windows.Forms.BindingSource statusBindingSource2;
         private System.Windows.Forms.DataGridViewComboBoxColumn environmental_approval;
+        private System.Windows.Forms.BindingSource statusBindingSource3;
         private System.Windows.Forms.DataGridViewComboBoxColumn ministry_of_petroleum_approval;
+        private System.Windows.Forms.BindingSource statusBindingSource4;
         private System.Windows.Forms.DataGridViewComboBoxColumn civil_aviation_authority;
+        private System.Windows.Forms.BindingSource statusBindingSource5;
         private System.Windows.Forms.DataGridViewComboBoxColumn traffic_study;
+        private System.Windows.Forms.BindingSource statusBindingSource6;
         private System.Windows.Forms.DataGridViewComboBoxColumn Surveying_position;
         private System.Windows.Forms.DataGridViewTextBoxColumn Actual_activity;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox5;
     }
 }

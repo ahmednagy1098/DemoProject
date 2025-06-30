@@ -1,6 +1,6 @@
 ﻿namespace DemoProject
 {
-    partial class AlertForm
+    partial class ENGReportForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlertForm));
-            this.SuspendLayout();
-            // 
-            // AlertForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "AlertForm";
-            this.Text = "AlertForm";
-            this.Load += new System.EventHandler(this.AlertForm_Load);
-            this.ResumeLayout(false);
-
+            this.Text = "ENGReportForm";
         }
 
         #endregion
