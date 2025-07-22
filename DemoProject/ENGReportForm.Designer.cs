@@ -251,6 +251,7 @@
             // guna2GradientTileButton2
             // 
             this.guna2GradientTileButton2.Animated = true;
+            this.guna2GradientTileButton2.AnimatedGIF = true;
             this.guna2GradientTileButton2.BackColor = System.Drawing.Color.Transparent;
             this.guna2GradientTileButton2.BorderColor = System.Drawing.Color.Transparent;
             this.guna2GradientTileButton2.BorderRadius = 10;
@@ -278,6 +279,7 @@
             // guna2GradientTileButton1
             // 
             this.guna2GradientTileButton1.Animated = true;
+            this.guna2GradientTileButton1.AnimatedGIF = true;
             this.guna2GradientTileButton1.BackColor = System.Drawing.Color.Transparent;
             this.guna2GradientTileButton1.BorderColor = System.Drawing.Color.White;
             this.guna2GradientTileButton1.BorderRadius = 10;
