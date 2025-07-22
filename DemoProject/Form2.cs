@@ -13,6 +13,38 @@ namespace DemoProject
 {
     public partial class Form2 : Form
     {
+        public void ShowMyUserControl()
+        {
+            engineeringManagementControl1.BringToFront();
+            engineeringManagementControl1.Visible = true;
+            focus3.Visible = true;
+            focus1.Visible = false;
+            focus2.Visible = false;
+        }
+        public void ShowMyUserControl2()
+        {
+            settingControl1.BringToFront();
+            settingControl1.Visible = true;
+            focus3.Visible = false;
+            focus1.Visible = false;
+            focus2.Visible = false;
+        }
+        public void ShowMyUserControl3()
+        {
+            projectsControl1.BringToFront();
+            projectsControl1.Visible = true;
+            focus3.Visible = false;
+            focus1.Visible = false;
+            focus2.Visible = false;
+        }
+        public void ShowMyUserControl4()
+        {
+            roadsControl1.BringToFront();
+            roadsControl1.Visible = true;
+            focus3.Visible = false;
+            focus1.Visible = false;
+            focus2.Visible = false;
+        }
         public Form2()
         {
             InitializeComponent();
@@ -44,77 +76,9 @@ namespace DemoProject
         }
         private void Form2_Load(object sender, EventArgs e)
         {
-            //رقم المعاملة
-            // TODO: This line of code loads data into the 'database1DataSet.Surveying_position_states' table. You can move, or remove it, as needed.
-            this.surveying_position_statesTableAdapter.Fill(this.database1DataSet.Surveying_position_states);
-            // TODO: This line of code loads data into the 'database1DataSet.status' table. You can move, or remove it, as needed.
-            this.statusTableAdapter.Fill(this.database1DataSet.status);
-            // TODO: This line of code loads data into the 'database1DataSet.status' table. You can move, or remove it, as needed.
-            this.statusTableAdapter.Fill(this.database1DataSet.status);
-            // TODO: This line of code loads data into the 'database1DataSet.Table' table. You can move, or remove it, as needed.
-            this.tableTableAdapter.Fill(this.database1DataSet.Table);
-            // TODO: This line of code loads data into the 'database1DataSet.Stations' table. You can move, or remove it, as needed.
-            this.stationsTableAdapter.Fill(this.database1DataSet.Stations);
-            var Survying = this.stationsTableAdapter.Count_All_Values_Surveying();
-            var Lands = this.stationsTableAdapter.Count_All_Values_Lands();
-            var license_8 = this.stationsTableAdapter.Count_All_Values_License_type_8();
-            var civil_defense = this.stationsTableAdapter.Count_All_Values_civil_defense();
-            var environmental = this.stationsTableAdapter.Count_All_Values_environmental();
-            var ministry_of_petroleum = this.stationsTableAdapter.Count_All_Values_ministry_of_petroleum();
-            var civil_aviation_authority = this.stationsTableAdapter.Count_All_Values_civil_aviation_authority();
-            var traffic_study = this.stationsTableAdapter.Count_All_Values_traffic_study();
-            if (Survying == null)
-            {
-                ShowAlert("لا يوجد بيانات لحساب عدد الرفع المساحي", AlertForm.AlertType.Error);
-                Survying_TB.Text = "0";
-            }
-            if (license_8 == null)
-            {
-                ShowAlert("لا يوجد بيانات لحساب عدد نموذج 8", AlertForm.AlertType.Error);
-                license_8_TB.Text = "0";
-            }
-            if (civil_defense == null)
-            {
-                ShowAlert("لا يوجد بيانات لحساب عدد الحماية المدنية", AlertForm.AlertType.Error);
-                civil_defense_TB.Text = "0";
-            }
-            if (environmental == null)
-            {
-                ShowAlert("لا يوجد بيانات لحساب عدد وزارة البيئة", AlertForm.AlertType.Error);
-                environmental_TB.Text = "0";
-            }
-            if (ministry_of_petroleum == null)
-            {
-                ShowAlert("لا يوجد بيانات لحساب عدد وزارة البترول", AlertForm.AlertType.Error);
-                ministry_of_petroleum_TB.Text = "0";
-            }
-            if (civil_aviation_authority == null)
-            {
-                ShowAlert("لا يوجد بيانات لحساب عدد الطيران المدني", AlertForm.AlertType.Error);
-                civil_aviation_authority_TB.Text = "0";
-            }
-            if (traffic_study == null)
-            {
-                ShowAlert("لا يوجد بيانات لحساب عدد الدراسة المرورية", AlertForm.AlertType.Error);
-                traffic_study_TB.Text = "0";
-            }
-            if (Lands == null)
-            {
-                ShowAlert("لا يوجد بيانات لحساب عدد عقود الأراضي", AlertForm.AlertType.Error);
-                Lands_TB.Text = "0";
-            }
-            else
-            {
-                //var column = this.advancedDataGridView1.Columns["landcontractsDataGridViewTextBoxColumn1"];
-                Survying_TB.Text = Survying.ToString();
-                Lands_TB.Text = Lands.ToString();
-                license_8_TB.Text = license_8.ToString();
-                civil_defense_TB.Text = civil_defense.ToString();
-                civil_aviation_authority_TB.Text = civil_aviation_authority.ToString();
-                traffic_study_TB.Text = traffic_study.ToString();
-                environmental_TB.Text = environmental.ToString();
-                ministry_of_petroleum_TB.Text = ministry_of_petroleum.ToString();
-            }
+           
+           
+            
         }
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
@@ -144,7 +108,11 @@ namespace DemoProject
 
         private void Menu_Click(object sender, EventArgs e)
         {
+            focus2.Visible = false;
+            focus1.Visible = false;
+            focus3.Visible = true;
             menutranstion.Start();
+            
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -170,7 +138,7 @@ namespace DemoProject
                 if (!((DataGridViewComboBoxColumn)advancedDataGridView1.Columns[e.ColumnIndex]).Items.Contains(value))
                 {
                     e.ThrowException = false;
-                    ((DataGridViewComboBoxColumn)advancedDataGridView1.Columns[e.ColumnIndex]).Items.Add(value);
+                    //((DataGridViewComboBoxColumn)advancedDataGridView1.Columns[e.ColumnIndex]).Items.Add(value);
                 }
             }
         }
@@ -247,7 +215,8 @@ namespace DemoProject
 
         private void advancedDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 &&
+            if (e.ColumnIndex > 0 &&
+                e.RowIndex >= 0 &&
                 (advancedDataGridView1.Columns[e.ColumnIndex].Name == "Pdf8"||
                 advancedDataGridView1.Columns[e.ColumnIndex].Name == "PdfLand" ||
                 advancedDataGridView1.Columns[e.ColumnIndex].Name == "PdfCivilDefense" ||
@@ -496,6 +465,98 @@ namespace DemoProject
         private void Survying_TB_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2CheckBox4_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (PdfEnviroment_CB.Checked == false)
+            {
+                foreach (DataGridViewColumn column in advancedDataGridView1.Columns)
+                {
+                    if (column.Name == "PdfEnvironmental")
+                    {
+                        column.Visible = false;
+                    }
+                }
+            }
+            else
+            {
+                foreach (DataGridViewColumn column in advancedDataGridView1.Columns)
+                {
+                    if (column.Name == "PdfEnvironmental")
+                    {
+                        column.Visible = true;
+                    }
+                }
+            }
+        }
+
+        private void PdfStudy_CB_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (PdfStudy_CB.Checked == false)
+            {
+                foreach (DataGridViewColumn column in advancedDataGridView1.Columns)
+                {
+                    if (column.Name == "PdfTrafficStudy")
+                    {
+                        column.Visible = false;
+                    }
+                }
+            }
+            else
+            {
+                foreach (DataGridViewColumn column in advancedDataGridView1.Columns)
+                {
+                    if (column.Name == "PdfTrafficStudy")
+                    {
+                        column.Visible = true;
+                    }
+                }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form1 Login = new Form1();
+            Login.Show();
+            this.Close();
+        }
+
+        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            engineeringManagementControl1.Visible = false;
+            engineeringManagementControl1.SendToBack();
+            systemAdministratorControl1.Visible = true;
+            systemAdministratorControl1.BringToFront();
+            focus2.Visible = false;
+            focus1.Visible = true;
+            focus3.Visible = false;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            engineeringManagementControl1.Visible = false;
+            engineeringManagementControl1.SendToBack();
+            systemAdministratorControl1.Visible = false;
+            systemAdministratorControl1.SendToBack();
+            settingControl1.Visible = false;
+            settingControl1.SendToBack();
+            focus2.Visible = true;
+            focus1.Visible = false;
+            focus3.Visible = false;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            engineeringManagementControl1.Visible = true;
+            engineeringManagementControl1.BringToFront();
+            systemAdministratorControl1.Visible = false;
+            systemAdministratorControl1.SendToBack();
         }
     }
 }

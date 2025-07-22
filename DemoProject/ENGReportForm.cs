@@ -16,5 +16,46 @@ namespace DemoProject
         {
             InitializeComponent();
         }
+
+        private void guna2GradientTileButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GradientTileButton1_Click_1(object sender, EventArgs e)
+        {
+            Form2 eng = new Form2();
+            eng.Show();
+            this.Hide();
+            this.Close();
+            eng.ShowMyUserControl();
+        }
+
+        private void guna2GradientTileButton4_Click(object sender, EventArgs e)
+        {
+            Form2 eng = new Form2();
+            eng.Show();
+            this.Hide();
+            this.Close();
+            eng.ShowMyUserControl2();
+        }
+
+        private void guna2GradientTileButton3_Click(object sender, EventArgs e)
+        {
+            Form2 eng = new Form2();
+            eng.Show();
+            this.Hide();
+            this.Close();
+            eng.ShowMyUserControl3();
+        }
+
+        private void guna2GradientTileButton2_Click(object sender, EventArgs e)
+        {
+            Form2 eng = new Form2();
+            eng.Show();
+            this.Hide();
+            this.Close();
+            eng.ShowMyUserControl4();
+        }
     }
 }

@@ -54,7 +54,8 @@ namespace DemoProject
             {            
                 this.Hide();
                 ShowAlert("مرحبا بك", AlertForm.AlertType.Success);
-                Form2 Menu = new Form2();
+
+                ENGReportForm Menu = new ENGReportForm();
                 Menu.Show();
              
             }
@@ -102,7 +103,8 @@ namespace DemoProject
                 {
                     this.Hide();
                     ShowAlert("مرحبا بك", AlertForm.AlertType.Success);
-                    Form2 Menu = new Form2();
+                    ENGReportForm Menu = new ENGReportForm();
+
                     Menu.Show();
 
                 }
@@ -121,7 +123,8 @@ namespace DemoProject
                 {
                     this.Hide();
                     ShowAlert("مرحبا بك", AlertForm.AlertType.Success);
-                    Form2 Menu = new Form2();
+                    ENGReportForm Menu = new ENGReportForm();
+
                     Menu.Show();
 
                 }
