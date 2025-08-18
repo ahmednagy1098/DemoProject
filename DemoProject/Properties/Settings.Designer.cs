@@ -44,5 +44,41 @@ namespace DemoProject.Properties {
                 return ((string)(this["Database2ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LastFilter {
+            get {
+                return ((string)(this["LastFilter"]));
+            }
+            set {
+                this["LastFilter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LastSort {
+            get {
+                return ((string)(this["LastSort"]));
+            }
+            set {
+                this["LastSort"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LastFilterUI {
+            get {
+                return ((string)(this["LastFilterUI"]));
+            }
+            set {
+                this["LastFilterUI"] = value;
+            }
+        }
     }
 }

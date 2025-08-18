@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -40,17 +40,20 @@
             this.panel1 = new ReaLTaiizor.Controls.Panel();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.panel2 = new ReaLTaiizor.Controls.Panel();
-            this.focus1 = new System.Windows.Forms.Panel();
-            this.focus2 = new System.Windows.Forms.Panel();
+            this.focusSetting = new System.Windows.Forms.Panel();
+            this.focusAdmin = new System.Windows.Forms.Panel();
+            this.button5 = new ReaLTaiizor.Controls.Button();
+            this.focusInvest = new System.Windows.Forms.Panel();
             this.button1 = new ReaLTaiizor.Controls.Button();
             this.button4 = new ReaLTaiizor.Controls.Button();
             this.MenuContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.panel6 = new ReaLTaiizor.Controls.Panel();
-            this.focus3 = new System.Windows.Forms.Panel();
+            this.focusENG = new System.Windows.Forms.Panel();
             this.Menu = new ReaLTaiizor.Controls.Button();
             this.button6 = new ReaLTaiizor.Controls.Button();
             this.button7 = new ReaLTaiizor.Controls.Button();
             this.panel3 = new ReaLTaiizor.Controls.Panel();
+            this.foucsRoad = new System.Windows.Forms.Panel();
             this.button2 = new ReaLTaiizor.Controls.Button();
             this.panel4 = new ReaLTaiizor.Controls.Panel();
             this.button3 = new ReaLTaiizor.Controls.Button();
@@ -106,6 +109,20 @@
             this.advancedDataGridView1 = new Zuby.ADGV.AdvancedDataGridView();
             this.projectsControl1 = new DemoProject.ProjectsControl();
             this.roadsControl1 = new DemoProject.RoadsControl();
+            this.database1DataSet = new DemoProject.Database1DataSet();
+            this.pagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pagesTableAdapter = new DemoProject.Database1DataSetTableAdapters.pagesTableAdapter();
+            this.functionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.functionsTableAdapter = new DemoProject.Database1DataSetTableAdapters.functionsTableAdapter();
+            this.accessBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.accessTableAdapter = new DemoProject.Database1DataSetTableAdapters.accessTableAdapter();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usersTableAdapter = new DemoProject.Database1DataSetTableAdapters.usersTableAdapter();
+            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rolesTableAdapter = new DemoProject.Database1DataSetTableAdapters.rolesTableAdapter();
+            this.investmentsControl1 = new DemoProject.InvestmentsControl();
+            this.guna2CircleProgressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -119,6 +136,12 @@
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.functionsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accessBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2CirclePictureBox1
@@ -251,35 +274,63 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.focus1);
-            this.panel2.Controls.Add(this.focus2);
+            this.panel2.Controls.Add(this.focusSetting);
+            this.panel2.Controls.Add(this.focusAdmin);
+            this.panel2.Controls.Add(this.button5);
+            this.panel2.Controls.Add(this.focusInvest);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button4);
             this.panel2.EdgeColor = System.Drawing.Color.Transparent;
             this.panel2.Location = new System.Drawing.Point(3, 65);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
-            this.panel2.Size = new System.Drawing.Size(168, 80);
+            this.panel2.Size = new System.Drawing.Size(168, 120);
             this.panel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.panel2.TabIndex = 22;
             this.panel2.Text = "panel2";
             // 
-            // focus1
+            // focusSetting
             // 
-            this.focus1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.focus1.Location = new System.Drawing.Point(5, 2);
-            this.focus1.Name = "focus1";
-            this.focus1.Size = new System.Drawing.Size(10, 35);
-            this.focus1.TabIndex = 48;
-            this.focus1.Visible = false;
+            this.focusSetting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.focusSetting.Location = new System.Drawing.Point(5, 40);
+            this.focusSetting.Name = "focusSetting";
+            this.focusSetting.Size = new System.Drawing.Size(10, 35);
+            this.focusSetting.TabIndex = 49;
             // 
-            // focus2
+            // focusAdmin
             // 
-            this.focus2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.focus2.Location = new System.Drawing.Point(5, 41);
-            this.focus2.Name = "focus2";
-            this.focus2.Size = new System.Drawing.Size(10, 35);
-            this.focus2.TabIndex = 47;
+            this.focusAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.focusAdmin.Location = new System.Drawing.Point(5, 2);
+            this.focusAdmin.Name = "focusAdmin";
+            this.focusAdmin.Size = new System.Drawing.Size(10, 35);
+            this.focusAdmin.TabIndex = 48;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.EnteredColor = System.Drawing.Color.Transparent;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.InactiveColor = System.Drawing.Color.Transparent;
+            this.button5.Location = new System.Drawing.Point(5, 41);
+            this.button5.Name = "button5";
+            this.button5.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.button5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button5.Size = new System.Drawing.Size(163, 34);
+            this.button5.TabIndex = 22;
+            this.button5.Text = "اعدادات";
+            this.button5.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // focusInvest
+            // 
+            this.focusInvest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.focusInvest.Location = new System.Drawing.Point(5, 83);
+            this.focusInvest.Name = "focusInvest";
+            this.focusInvest.Size = new System.Drawing.Size(10, 35);
+            this.focusInvest.TabIndex = 47;
             // 
             // button1
             // 
@@ -294,7 +345,7 @@
             this.button1.Name = "button1";
             this.button1.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button1.Size = new System.Drawing.Size(168, 34);
+            this.button1.Size = new System.Drawing.Size(163, 34);
             this.button1.TabIndex = 22;
             this.button1.Text = "مدير النظام";
             this.button1.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -309,13 +360,13 @@
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.InactiveColor = System.Drawing.Color.Transparent;
-            this.button4.Location = new System.Drawing.Point(5, 42);
+            this.button4.Location = new System.Drawing.Point(4, 83);
             this.button4.Name = "button4";
             this.button4.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.button4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button4.Size = new System.Drawing.Size(168, 34);
+            this.button4.Size = new System.Drawing.Size(164, 34);
             this.button4.TabIndex = 22;
-            this.button4.Text = "إدارة الاستثمار";
+            this.button4.Text = "ادارة الاستثمار";
             this.button4.TextAlignment = System.Drawing.StringAlignment.Center;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -326,7 +377,7 @@
             this.MenuContainer.Controls.Add(this.button6);
             this.MenuContainer.Controls.Add(this.button7);
             this.MenuContainer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.MenuContainer.Location = new System.Drawing.Point(0, 148);
+            this.MenuContainer.Location = new System.Drawing.Point(0, 188);
             this.MenuContainer.Margin = new System.Windows.Forms.Padding(0);
             this.MenuContainer.Name = "MenuContainer";
             this.MenuContainer.Size = new System.Drawing.Size(176, 35);
@@ -336,7 +387,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Transparent;
-            this.panel6.Controls.Add(this.focus3);
+            this.panel6.Controls.Add(this.focusENG);
             this.panel6.Controls.Add(this.Menu);
             this.panel6.EdgeColor = System.Drawing.Color.Transparent;
             this.panel6.Location = new System.Drawing.Point(0, 0);
@@ -348,14 +399,13 @@
             this.panel6.TabIndex = 26;
             this.panel6.Text = "panel6";
             // 
-            // focus3
+            // focusENG
             // 
-            this.focus3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.focus3.Location = new System.Drawing.Point(8, 1);
-            this.focus3.Name = "focus3";
-            this.focus3.Size = new System.Drawing.Size(10, 35);
-            this.focus3.TabIndex = 48;
-            this.focus3.Visible = false;
+            this.focusENG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.focusENG.Location = new System.Drawing.Point(8, 1);
+            this.focusENG.Name = "focusENG";
+            this.focusENG.Size = new System.Drawing.Size(10, 35);
+            this.focusENG.TabIndex = 48;
             // 
             // Menu
             // 
@@ -370,7 +420,7 @@
             this.Menu.Name = "Menu";
             this.Menu.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.Menu.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Menu.Size = new System.Drawing.Size(168, 36);
+            this.Menu.Size = new System.Drawing.Size(163, 36);
             this.Menu.TabIndex = 22;
             this.Menu.Text = "الإدارة الهندسية";
             this.Menu.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -414,19 +464,29 @@
             this.button7.TabIndex = 22;
             this.button7.Text = "المشاريع";
             this.button7.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.foucsRoad);
             this.panel3.Controls.Add(this.button2);
             this.panel3.EdgeColor = System.Drawing.Color.Transparent;
-            this.panel3.Location = new System.Drawing.Point(3, 186);
+            this.panel3.Location = new System.Drawing.Point(3, 226);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
-            this.panel3.Size = new System.Drawing.Size(168, 44);
+            this.panel3.Size = new System.Drawing.Size(168, 38);
             this.panel3.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.panel3.TabIndex = 23;
             this.panel3.Text = "panel3";
+            // 
+            // foucsRoad
+            // 
+            this.foucsRoad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.foucsRoad.Location = new System.Drawing.Point(5, 1);
+            this.foucsRoad.Name = "foucsRoad";
+            this.foucsRoad.Size = new System.Drawing.Size(10, 35);
+            this.foucsRoad.TabIndex = 49;
             // 
             // button2
             // 
@@ -437,13 +497,13 @@
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.InactiveColor = System.Drawing.Color.Transparent;
-            this.button2.Location = new System.Drawing.Point(5, 10);
+            this.button2.Location = new System.Drawing.Point(5, 2);
             this.button2.Name = "button2";
             this.button2.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.button2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button2.Size = new System.Drawing.Size(168, 34);
+            this.button2.Size = new System.Drawing.Size(163, 34);
             this.button2.TabIndex = 22;
-            this.button2.Text = "عرض تقارير";
+            this.button2.Text = "الطرق";
             this.button2.TextAlignment = System.Drawing.StringAlignment.Center;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -452,10 +512,10 @@
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.Controls.Add(this.button3);
             this.panel4.EdgeColor = System.Drawing.Color.Transparent;
-            this.panel4.Location = new System.Drawing.Point(3, 236);
+            this.panel4.Location = new System.Drawing.Point(3, 270);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
-            this.panel4.Size = new System.Drawing.Size(168, 44);
+            this.panel4.Size = new System.Drawing.Size(168, 35);
             this.panel4.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.panel4.TabIndex = 24;
             this.panel4.Text = "panel4";
@@ -469,11 +529,11 @@
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.InactiveColor = System.Drawing.Color.Transparent;
-            this.button3.Location = new System.Drawing.Point(5, 2);
+            this.button3.Location = new System.Drawing.Point(4, 0);
             this.button3.Name = "button3";
             this.button3.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.button3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button3.Size = new System.Drawing.Size(168, 34);
+            this.button3.Size = new System.Drawing.Size(164, 34);
             this.button3.TabIndex = 22;
             this.button3.Text = "تسجيل الخروج";
             this.button3.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -1160,14 +1220,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.advancedDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.advancedDataGridView1.BackgroundColor = System.Drawing.Color.Turquoise;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Turquoise;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.advancedDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Pdf_Path_land_contracts,
@@ -1194,14 +1254,14 @@
             this.advancedDataGridView1.Name = "advancedDataGridView1";
             this.advancedDataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.advancedDataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.advancedDataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.WhiteSmoke;
             this.advancedDataGridView1.Size = new System.Drawing.Size(1162, 313);
             this.advancedDataGridView1.SortStringChangedInvokeBeforeDatasourceUpdate = true;
@@ -1228,11 +1288,89 @@
             this.roadsControl1.Size = new System.Drawing.Size(1180, 740);
             this.roadsControl1.TabIndex = 51;
             // 
+            // database1DataSet
+            // 
+            this.database1DataSet.DataSetName = "Database1DataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pagesBindingSource
+            // 
+            this.pagesBindingSource.DataMember = "pages";
+            this.pagesBindingSource.DataSource = this.database1DataSet;
+            // 
+            // pagesTableAdapter
+            // 
+            this.pagesTableAdapter.ClearBeforeFill = true;
+            // 
+            // functionsBindingSource
+            // 
+            this.functionsBindingSource.DataMember = "functions";
+            this.functionsBindingSource.DataSource = this.database1DataSet;
+            // 
+            // functionsTableAdapter
+            // 
+            this.functionsTableAdapter.ClearBeforeFill = true;
+            // 
+            // accessBindingSource
+            // 
+            this.accessBindingSource.DataMember = "access";
+            this.accessBindingSource.DataSource = this.database1DataSet;
+            // 
+            // accessTableAdapter
+            // 
+            this.accessTableAdapter.ClearBeforeFill = true;
+            // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataMember = "users";
+            this.usersBindingSource.DataSource = this.database1DataSet;
+            // 
+            // usersTableAdapter
+            // 
+            this.usersTableAdapter.ClearBeforeFill = true;
+            // 
+            // rolesBindingSource
+            // 
+            this.rolesBindingSource.DataMember = "roles";
+            this.rolesBindingSource.DataSource = this.database1DataSet;
+            // 
+            // rolesTableAdapter
+            // 
+            this.rolesTableAdapter.ClearBeforeFill = true;
+            // 
+            // investmentsControl1
+            // 
+            this.investmentsControl1.Location = new System.Drawing.Point(0, 35);
+            this.investmentsControl1.Name = "investmentsControl1";
+            this.investmentsControl1.Size = new System.Drawing.Size(1180, 740);
+            this.investmentsControl1.TabIndex = 52;
+            // 
+            // guna2CircleProgressBar1
+            // 
+            this.guna2CircleProgressBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.guna2CircleProgressBar1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.guna2CircleProgressBar1.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleProgressBar1.Location = new System.Drawing.Point(438, 245);
+            this.guna2CircleProgressBar1.Minimum = 0;
+            this.guna2CircleProgressBar1.Name = "guna2CircleProgressBar1";
+            this.guna2CircleProgressBar1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleProgressBar1.Size = new System.Drawing.Size(150, 150);
+            this.guna2CircleProgressBar1.TabIndex = 53;
+            this.guna2CircleProgressBar1.Text = "guna2CircleProgressBar1";
+            this.guna2CircleProgressBar1.Visible = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 50;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1364, 749);
+            this.Controls.Add(this.guna2CircleProgressBar1);
+            this.Controls.Add(this.investmentsControl1);
             this.Controls.Add(this.roadsControl1);
             this.Controls.Add(this.projectsControl1);
             this.Controls.Add(this.guna2CirclePictureBox2);
@@ -1251,7 +1389,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
-            this.Text = "Form2";
+            this.Text = "القائمة الرئيسية";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
@@ -1269,6 +1407,12 @@
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.functionsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accessBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1319,9 +1463,9 @@
         private System.Windows.Forms.Label label11;
         private EngineeringManagementControl engineeringManagementControl1;
         private ReaLTaiizor.Controls.Button button4;
-        private System.Windows.Forms.Panel focus2;
-        private System.Windows.Forms.Panel focus1;
-        private System.Windows.Forms.Panel focus3;
+        private System.Windows.Forms.Panel focusInvest;
+        private System.Windows.Forms.Panel focusAdmin;
+        private System.Windows.Forms.Panel focusENG;
         private SystemAdministratorControl systemAdministratorControl1;
         private ReaLTaiizor.Controls.Panel panel1;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
@@ -1364,5 +1508,22 @@
         private Zuby.ADGV.AdvancedDataGridView advancedDataGridView1;
         private ProjectsControl projectsControl1;
         private RoadsControl roadsControl1;
+        private System.Windows.Forms.Panel focusSetting;
+        private ReaLTaiizor.Controls.Button button5;
+        private System.Windows.Forms.Panel foucsRoad;
+        private Database1DataSet database1DataSet;
+        private System.Windows.Forms.BindingSource pagesBindingSource;
+        private Database1DataSetTableAdapters.pagesTableAdapter pagesTableAdapter;
+        private System.Windows.Forms.BindingSource functionsBindingSource;
+        private Database1DataSetTableAdapters.functionsTableAdapter functionsTableAdapter;
+        private System.Windows.Forms.BindingSource accessBindingSource;
+        private Database1DataSetTableAdapters.accessTableAdapter accessTableAdapter;
+        private System.Windows.Forms.BindingSource usersBindingSource;
+        private Database1DataSetTableAdapters.usersTableAdapter usersTableAdapter;
+        private System.Windows.Forms.BindingSource rolesBindingSource;
+        private Database1DataSetTableAdapters.rolesTableAdapter rolesTableAdapter;
+        private InvestmentsControl investmentsControl1;
+        private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

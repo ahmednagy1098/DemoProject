@@ -4,6 +4,10 @@
 
     partial class Database1DataSet
     {
+        partial class investmentsDataTable
+        {
+        }
+
         partial class projectsDataTable
         {
         }

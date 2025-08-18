@@ -8,7 +8,6 @@ namespace DemoProject
     public partial class AlertForm : Form
     {
         private Timer timer;
-        private int fadeStep = 5;
         public AlertForm(string message, AlertType type)
         {
             InitializeComponent();
@@ -51,7 +50,6 @@ namespace DemoProject
                     this.BackColor = Color.FromArgb(0, 123, 255); // Blue
                     break;
             }
-
             this.Load += AlertForm_Load;
         }
         private void AlertForm_Load(object sender, EventArgs e)

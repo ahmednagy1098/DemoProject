@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.UserNameTB = new Guna.UI2.WinForms.Guna2TextBox();
             this.PassWordTB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -43,12 +43,26 @@
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.database1DataSet = new DemoProject.Database1DataSet();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usersTableAdapter = new DemoProject.Database1DataSetTableAdapters.usersTableAdapter();
+            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rolesTableAdapter = new DemoProject.Database1DataSetTableAdapters.rolesTableAdapter();
+            this.accessBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.accessTableAdapter = new DemoProject.Database1DataSetTableAdapters.accessTableAdapter();
+            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accessBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // UserNameTB
@@ -68,7 +82,7 @@
             this.UserNameTB.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.UserNameTB.ForeColor = System.Drawing.Color.Black;
             this.UserNameTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.UserNameTB.Location = new System.Drawing.Point(202, 128);
+            this.UserNameTB.Location = new System.Drawing.Point(192, 229);
             this.UserNameTB.Name = "UserNameTB";
             this.UserNameTB.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.UserNameTB.PlaceholderText = "اسم المستخدم";
@@ -97,7 +111,7 @@
             this.PassWordTB.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.PassWordTB.ForeColor = System.Drawing.Color.Black;
             this.PassWordTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.PassWordTB.Location = new System.Drawing.Point(202, 160);
+            this.PassWordTB.Location = new System.Drawing.Point(192, 261);
             this.PassWordTB.Name = "PassWordTB";
             this.PassWordTB.PasswordChar = '*';
             this.PassWordTB.PlaceholderForeColor = System.Drawing.Color.Gray;
@@ -108,16 +122,6 @@
             this.PassWordTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.PassWordTB.TabIndex = 1;
             this.PassWordTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PassWordTB_KeyPress);
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Algerian", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(284, 37);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(74, 41);
-            this.guna2HtmlLabel1.TabIndex = 2;
-            this.guna2HtmlLabel1.Text = "النظام";
             // 
             // guna2Button1
             // 
@@ -132,7 +136,7 @@
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.IndicateFocus = true;
-            this.guna2Button1.Location = new System.Drawing.Point(266, 190);
+            this.guna2Button1.Location = new System.Drawing.Point(256, 291);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(116, 27);
             this.guna2Button1.TabIndex = 3;
@@ -143,7 +147,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(227, 100);
+            this.label1.Location = new System.Drawing.Point(217, 210);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label1.Size = new System.Drawing.Size(178, 13);
@@ -231,7 +235,7 @@
             this.panel1.Controls.Add(this.guna2CircleButton1);
             this.panel1.EdgeColor = System.Drawing.Color.Transparent;
             this.panel1.ForeColor = System.Drawing.Color.Transparent;
-            this.panel1.Location = new System.Drawing.Point(158, 142);
+            this.panel1.Location = new System.Drawing.Point(148, 243);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
             this.panel1.Size = new System.Drawing.Size(38, 61);
@@ -244,7 +248,7 @@
             this.guna2PictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
             this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(429, 158);
+            this.guna2PictureBox3.Location = new System.Drawing.Point(419, 259);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
             this.guna2PictureBox3.Size = new System.Drawing.Size(24, 28);
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -257,7 +261,7 @@
             this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(428, 128);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(418, 229);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.Size = new System.Drawing.Size(24, 24);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -299,12 +303,71 @@
             this.guna2Panel1.Size = new System.Drawing.Size(637, 36);
             this.guna2Panel1.TabIndex = 19;
             // 
+            // database1DataSet
+            // 
+            this.database1DataSet.DataSetName = "Database1DataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataMember = "users";
+            this.usersBindingSource.DataSource = this.database1DataSet;
+            // 
+            // usersTableAdapter
+            // 
+            this.usersTableAdapter.ClearBeforeFill = true;
+            // 
+            // rolesBindingSource
+            // 
+            this.rolesBindingSource.DataMember = "roles";
+            this.rolesBindingSource.DataSource = this.database1DataSet;
+            // 
+            // rolesTableAdapter
+            // 
+            this.rolesTableAdapter.ClearBeforeFill = true;
+            // 
+            // accessBindingSource
+            // 
+            this.accessBindingSource.DataMember = "access";
+            this.accessBindingSource.DataSource = this.database1DataSet;
+            // 
+            // accessTableAdapter
+            // 
+            this.accessTableAdapter.ClearBeforeFill = true;
+            // 
+            // guna2CirclePictureBox2
+            // 
+            this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox2.Image")));
+            this.guna2CirclePictureBox2.ImageRotate = 0F;
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(231, 35);
+            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
+            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(161, 126);
+            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox2.TabIndex = 20;
+            this.guna2CirclePictureBox2.TabStop = false;
+            this.guna2CirclePictureBox2.UseTransparentBackground = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(231, 164);
+            this.label2.Name = "label2";
+            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label2.Size = new System.Drawing.Size(158, 29);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "طرح عام الشركة";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(637, 335);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.guna2CirclePictureBox2);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2PictureBox3);
@@ -312,7 +375,6 @@
             this.Controls.Add(this.guna2CirclePictureBox1);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.PassWordTB);
             this.Controls.Add(this.UserNameTB);
             this.Controls.Add(this.panel1);
@@ -329,6 +391,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accessBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,7 +405,6 @@
 
         private Guna.UI2.WinForms.Guna2TextBox UserNameTB;
         private Guna.UI2.WinForms.Guna2TextBox PassWordTB;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
@@ -350,6 +416,15 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Database1DataSet database1DataSet;
+        private System.Windows.Forms.BindingSource usersBindingSource;
+        private Database1DataSetTableAdapters.usersTableAdapter usersTableAdapter;
+        private System.Windows.Forms.BindingSource rolesBindingSource;
+        private Database1DataSetTableAdapters.rolesTableAdapter rolesTableAdapter;
+        private System.Windows.Forms.BindingSource accessBindingSource;
+        private Database1DataSetTableAdapters.accessTableAdapter accessTableAdapter;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
+        private System.Windows.Forms.Label label2;
     }
 }
 
