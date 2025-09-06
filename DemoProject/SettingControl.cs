@@ -508,5 +508,45 @@ namespace DemoProject
                 parentForm.Close();
             }
         }
+
+        private void advancedDataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void advancedDataGridView1_Scroll(object sender, ScrollEventArgs e)
+        {
+            advancedDataGridView1.Invalidate();
+        }
+
+        private void advancedDataGridView2_Scroll(object sender, ScrollEventArgs e)
+        {
+            advancedDataGridView2.Invalidate();
+        }
+
+        private void advancedDataGridView3_Scroll(object sender, ScrollEventArgs e)
+        {
+            advancedDataGridView3.Invalidate();
+        }
+
+        private void advancedDataGridView4_Scroll(object sender, ScrollEventArgs e)
+        {
+            advancedDataGridView4.Invalidate();
+        }
+
+        private void advancedDataGridView5_Scroll(object sender, ScrollEventArgs e)
+        {
+            advancedDataGridView5.Invalidate();
+        }
+
+        private void advancedDataGridView6_Scroll(object sender, ScrollEventArgs e)
+        {
+            advancedDataGridView6.Invalidate();
+        }
+
+        private void advancedDataGridView7_Scroll(object sender, ScrollEventArgs e)
+        {
+            advancedDataGridView7.Invalidate();
+        }
     }
 }

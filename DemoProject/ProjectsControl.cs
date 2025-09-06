@@ -200,6 +200,10 @@ namespace DemoProject
             plate_number_COB.DataSource = plateNumbers;
             Land_ID_COB.DataSource = landIds;
             Governorate_COB.DataSource = governorateNames;
+            AdjustComboBox(Land_Name_COB);
+            AdjustComboBox(plate_number_COB);
+            AdjustComboBox(Land_ID_COB);
+            AdjustComboBox(Governorate_COB);
         }
         Dictionary<string, bool> pageAccess = new Dictionary<string, bool>();
         Dictionary<string, bool> functionAccess = new Dictionary<string, bool>();
@@ -271,35 +275,63 @@ namespace DemoProject
             guna2Button3.Location = new Point(headerRight - 5, headerTop);
         }
 
-
-        private async void ProjectsControl_Load(object sender, EventArgs e)
+        private void AdjustComboBox(ComboBox comboBox)
         {
+            // 🔸 اضبط العرض حسب أطول عنصر
+            int width = comboBox.DropDownWidth;
+            using (Graphics g = comboBox.CreateGraphics())
+            {
+                System.Drawing.Font font = comboBox.Font;
+                int vertScrollBarWidth =
+                    (comboBox.Items.Count > comboBox.MaxDropDownItems)
+                    ? SystemInformation.VerticalScrollBarWidth : 0;
+
+                foreach (var item in comboBox.Items)
+                {
+                    int newWidth = TextRenderer.MeasureText(item.ToString(), font).Width + vertScrollBarWidth;
+                    if (width < newWidth) width = newWidth;
+                }
+            }
+            comboBox.DropDownWidth = width;
+
+            // 🔸 اضبط عدد العناصر اللي تظهر
+            comboBox.MaxDropDownItems = 20;
+            comboBox.DropDownHeight = 150;
+            // 🔸 اضبط ارتفاع كل عنصر (اختياري)
+            comboBox.ItemHeight = 22;
+        }
+        private void ProjectsControl_Load(object sender, EventArgs e)
+        {
+            guna2Button1.Visible = Add_Radio.Checked;
+            guna2Button1.Enabled = Add_Radio.Checked;
+            guna2Button2.Visible = Update_Radio.Checked;
+            guna2Button2.Enabled = Update_Radio.Checked;
             guna2Button3.Parent = guna2TabControl1.Parent; // Not inside the tab page
             guna2Button3.BringToFront();
             guna2Button3.Size = new Size(186, guna2TabControl1.ItemSize.Height - 1);
             PositionHeaderButton();
             loadcomboxes();
-            await LoadSourceDataAsync();
+            LoadProjectData();
             UpdateRowCount();
             GenerativePanalFlow();
             ApplyGuna2StyleToGrid(advancedDataGridView1);
             ArabicColumnGrid(); 
             LoadColumnsIntoCheckedListBox();
             // TODO: This line of code loads data into the 'database1DataSet.functions' table. You can move, or remove it, as needed.
-            this.functionsTableAdapter.Fill(this.database1DataSet.functions);
+            this.functionsTableAdapter.Fill(this.dATABASE2DataSet.functions);
             // TODO: This line of code loads data into the 'database1DataSet.pages' table. You can move, or remove it, as needed.
-            this.pagesTableAdapter.Fill(this.database1DataSet.pages);
+            this.pagesTableAdapter.Fill(this.dATABASE2DataSet.pages);
             // TODO: This line of code loads data into the 'database1DataSet.access' table. You can move, or remove it, as needed.
-            this.accessTableAdapter.Fill(this.database1DataSet.access);
+            this.accessTableAdapter.Fill(this.dATABASE2DataSet.access);
             // TODO: This line of code loads data into the 'database1DataSet.users' table. You can move, or remove it, as needed.
-            this.usersTableAdapter.Fill(this.database1DataSet.users);
+            this.usersTableAdapter.Fill(this.dATABASE2DataSet.users);
             // TODO: This line of code loads data into the 'database1DataSet.roles' table. You can move, or remove it, as needed.
-            this.rolesTableAdapter.Fill(this.database1DataSet.roles);
+            this.rolesTableAdapter.Fill(this.dATABASE2DataSet.roles);
             tabPage4.Tag = "Function:Add";
             tabPage5.Tag = "Function:Print";
             guna2Button3.Tag = "Function:Delete";
-            var userRow = database1DataSet.users.FirstOrDefault(u => u.id == UserId);
-            var role = database1DataSet.roles.FirstOrDefault(r => r.user_id == UserId);
+            var userRow = dATABASE2DataSet.users.FirstOrDefault(u => u.id == UserId);
+            var role = dATABASE2DataSet.roles.FirstOrDefault(r => r.user_id == UserId);
             if (userRow == null || role == null) return;
             var access = this.accessTableAdapter.GetDataAccsesByRole(role.id);
             foreach (var accessRow in access)
@@ -307,7 +339,7 @@ namespace DemoProject
                 // Get page name (if page_id exists)
                 if (!accessRow.Ispages_idNull())
                 {
-                    var pageRow = database1DataSet.pages.FirstOrDefault(p => p.id == accessRow.pages_id);
+                    var pageRow = dATABASE2DataSet.pages.FirstOrDefault(p => p.id == accessRow.pages_id);
                     if (pageRow != null && !string.IsNullOrWhiteSpace(pageRow.Page_name))
                     {
                         string pageName = pageRow.Page_name.Trim();
@@ -319,7 +351,7 @@ namespace DemoProject
                 // Get function name (if function_id exists)
                 if (!accessRow.Isfunction_idNull())
                 {
-                    var funcRow = database1DataSet.functions.FirstOrDefault(f => f.id == accessRow.function_id);
+                    var funcRow = dATABASE2DataSet.functions.FirstOrDefault(f => f.id == accessRow.function_id);
                     if (funcRow != null && !string.IsNullOrWhiteSpace(funcRow.Function_name))
                     {
                         string funcName = funcRow.Function_name.Trim();
@@ -335,6 +367,7 @@ namespace DemoProject
             // Set Arabic headers manually
             advancedDataGridView1.Columns["Land_Id"].HeaderText = "مسلسل القطعة";
             advancedDataGridView1.Columns["Project_Id"].HeaderText = "مسلسل المشروع";
+            advancedDataGridView1.Columns["Project_Id"].Visible = false;
             advancedDataGridView1.Columns["PlateNumber"].HeaderText = "رقم اللوحة";
             advancedDataGridView1.Columns["LandName"].HeaderText = "اسم قطعة الأرض";
             advancedDataGridView1.Columns["Land_Number"].HeaderText = "رقم قطعة الأرض";
@@ -384,13 +417,14 @@ namespace DemoProject
                 form.ShowLoading(false);   // or false
             }
         }
-        public async Task LoadSourceDataAsync()
+        public void LoadProjectData()
         {
             DataTable converted = null;
-            // Run heavy DB + LINQ work on background thread
-            TrueFunction();
-            await Task.Run(() =>
+            try
             {
+                TrueFunction();
+
+                // --- Part 1: Fetch and join data ---
                 var query = from p in projectsTableAdapter.GetData()
                             join g in governorateTableAdapter.GetData() on p.governorate_fk equals g.governorate_id
                             join l in landsTableAdapter.GetData() on p.land_fk equals l.land_id
@@ -399,8 +433,8 @@ namespace DemoProject
                                 Land_Id = l.land_id,
                                 PlateNumber = l.plate_number,
                                 Land_Number = l.land_number,
-                                LandName = l.land_name,
                                 Project_Id = p.project_id,
+                                LandName = l.land_name,
                                 ProjectName = p.project_name,
                                 GovernorateName = g.governorate,
                                 Total_stores = p.Total_stores,
@@ -463,9 +497,11 @@ namespace DemoProject
                                 Contract_expiry_date = p.Contract_expiry_date
                             };
 
-                var joinedList = query.ToList();
+                var joinedList = query.OrderBy(r => int.TryParse(r.Project_Id, out var n) ? n : int.MaxValue)
+                .ToList();
                 DataTable original = ToDataTable(joinedList);
-                // Convert string date column to DateTime type
+
+                // --- Convert string date column to DateTime type ---
                 DataTable tempConverted = original.Clone();
                 tempConverted.Columns["Contract_expiry_date"].DataType = typeof(DateTime);
 
@@ -489,25 +525,40 @@ namespace DemoProject
                     tempConverted.Rows.Add(newRow);
                 }
                 converted = tempConverted;
-            });
+                foreach (DataGridViewColumn col in advancedDataGridView1.Columns)
+                {
+                    if (col.ValueType == typeof(DateTime))
+                    {
+                        col.DefaultCellStyle.Format = "dd/MM/yyyy";
+                    }
+                }
+                // --- Bind data to DataGridView ---
+                advancedDataGridView1.DataSource = converted;
 
-            // ✅ UI binding must happen on UI thread
-            advancedDataGridView1.DataSource = converted;
+                if (!advancedDataGridView1.Columns.Contains("Select"))
+                {
+                    DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
+                    checkBoxColumn.HeaderText = "تحديد"; // "Select" in Arabic
+                    checkBoxColumn.Name = "Select";
+                    checkBoxColumn.Width = 60;
+                    checkBoxColumn.ReadOnly = false;
+                    checkBoxColumn.TrueValue = true;
+                    checkBoxColumn.FalseValue = false;
+                    advancedDataGridView1.Columns.Add(checkBoxColumn);
+                }
 
-            if (!advancedDataGridView1.Columns.Contains("Select"))
-            {
-                DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
-                checkBoxColumn.HeaderText = "تحديد"; // "Select" in Arabic
-                checkBoxColumn.Name = "Select";
-                checkBoxColumn.Width = 60;
-                checkBoxColumn.ReadOnly = false;
-                checkBoxColumn.TrueValue = true;
-                checkBoxColumn.FalseValue = false;
-                advancedDataGridView1.Columns.Add(checkBoxColumn);
+                advancedDataGridView1.Columns["Select"].DisplayIndex = 0;
             }
-            advancedDataGridView1.Columns["Select"].DisplayIndex = 0;
-            FalseFunction();
+            catch (Exception ex)
+            {
+                ShowAlert("حدث خطأ غير متوقع: " + ex.Message, AlertForm.AlertType.Error);
+            }
+            finally
+            {
+                FalseFunction();
+            }
         }
+
         public void LoadColumnsIntoCheckedListBox()
         {
             // Clear previous items
@@ -520,7 +571,10 @@ namespace DemoProject
             foreach (DataGridViewColumn column in advancedDataGridView1.Columns)
             {
                 string columnName = column.Name?.ToLower() ?? "";
-                if (columnName.Contains("file") || columnName.Contains("transaction_number")|| columnName.Contains("contract_expiry_date"))
+                if (columnName.Contains("file") ||
+                    columnName.Contains("transaction_number")||
+                    columnName.Contains("contract_expiry_date")||
+                    columnName.Contains("project_id"))
                 {
                     checkedListBox1.Items.Remove(column.HeaderText);
                     column.Visible = false; // hide it in the grid
@@ -650,16 +704,37 @@ namespace DemoProject
             }
         }
 
-        private async void guna2Button1_Click(object sender, EventArgs e)
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
-            var documents = this.documentsTableAdapter.GetData().Last().document_id;
-            int lastId = int.Parse(this.projectsTableAdapter.GetData()
-              .OrderByDescending(r => Convert.ToInt32(r.project_id))
-              .First()
-              .project_id);
+            DialogResult result = MessageBox.Show(
+               "هل أنت متأكد من أنك تريد اضافة هذه البيانات؟",
+               "تأكيد الاضافة",
+               MessageBoxButtons.YesNo,
+               MessageBoxIcon.Question
+           );
+            if (result != DialogResult.Yes)
+            {
+                return;
+            }
+            var lastDocumentId = 0;
+            var documents = this.documentsTableAdapter.GetData();
+            if (documents != null && documents.Count > 0)
+            {
+                 lastDocumentId = int.Parse(documents.Last().document_id.ToString());
+                // استخدم lastDocumentId هنا
+            }
+            else
+            {
+                // مفيش بيانات - ممكن تدي قيمة افتراضية
+                 lastDocumentId = -1; // أو 0 حسب اللي محتاجه
+            }
+            var row = this.projectsTableAdapter.GetData()
+            .OrderByDescending(r => Convert.ToInt32(r.project_id))
+            .FirstOrDefault();
 
+            int lastId = row != null ? Convert.ToInt32(row.project_id) : 0;
             int newId = lastId + 1;
-            var idNext = int.Parse(documents);
+            var idNext = int.Parse(lastDocumentId.ToString());
             var igover = this.governorateTableAdapter.GetDataByGovernorate(Governorate_COB.Text);
             var projects = this.projectsTableAdapter.GetData().FindByproject_id(serial_number_TB.Text);
             if (projects != null)
@@ -861,18 +936,22 @@ namespace DemoProject
                     this.documentsTableAdapter.Insert(
                         (++idNext).ToString(), 
                         approvalID,
-                        serial_number_TB.Text,
+                        newId.ToString(),
                         path 
                     );
                 }
             }
-            await LoadSourceDataAsync();
+            LoadProjectData();
             ShowAlert("تمت الاضافه بنجاح",AlertForm.AlertType.Success);
             UpdateRowCount();
         }
         private Dictionary<string, List<string>> approvalFiles = new Dictionary<string, List<string>>();// at class level
         public void Files(string approvalKey)
         {
+            try
+            {
+
+          
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "All files (*.*)|*.*";
             openFileDialog.Multiselect = true;
@@ -891,6 +970,11 @@ namespace DemoProject
 
                     AddFileIconToPanel(filePath, fileName, approvalKey); // existing
                 }
+            }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -1115,65 +1199,72 @@ namespace DemoProject
 
         private void Land_Name_COB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            bool hasText = !string.IsNullOrWhiteSpace(Land_Name_COB.Text);
-            Error_Land.Visible = !hasText;
-            string selectedLandName = Land_Name_COB.SelectedItem?.ToString();
-            if (string.IsNullOrEmpty(selectedLandName)) return;
+            //bool hasText = !string.IsNullOrWhiteSpace(Land_Name_COB.Text);
+            //Error_Land.Visible = !hasText;
+            //string selectedLandName = Land_Name_COB.SelectedItem?.ToString();
+            //if (string.IsNullOrEmpty(selectedLandName)) return;
 
-            var matches = LandData.AsEnumerable()
-                .Where(row => row["land_name"].ToString() == selectedLandName)
-                .ToList();
+            //var matches = LandData.AsEnumerable()
+            //    .Where(row => row["land_name"].ToString() == selectedLandName)
+            //    .ToList();
 
-            if (matches.Count == 1)
-            {
-                // Only one match — auto-select
-                var row = matches[0];
-                plate_number_COB.SelectedItem = row["plate_number"].ToString();
-                Land_ID_COB.SelectedItem = row["land_id"].ToString();
-                string govId = row["governorate_fk"].ToString();
-                Governorate_COB.SelectedItem = governorateLookup.ContainsKey(govId) ? governorateLookup[govId] : "غير معروف";
-            }
-            else if (matches.Count > 1)
-            {
-                // Multiple matches — populate the related combo boxes
-                var plateNumbers = matches.Select(r => r["plate_number"].ToString()).Distinct().ToList();
-                var landIds = matches.Select(r => r["land_id"].ToString()).Distinct().ToList();
-                var governorates = matches.Select(r =>
-                {
-                    string govId = r["governorate_fk"].ToString();
-                    return governorateLookup.ContainsKey(govId) ? governorateLookup[govId] : "غير معروف";
-                }).Distinct().ToList();
+            //if (matches.Count == 1)
+            //{
+            //    // Only one match — auto-select
+            //    var row = matches[0];
+            //    plate_number_COB.SelectedItem = row["plate_number"].ToString();
+            //    Land_ID_COB.SelectedItem = row["land_id"].ToString();
+            //    string govId = row["governorate_fk"].ToString();
+            //    Governorate_COB.SelectedItem = governorateLookup.ContainsKey(govId) ? governorateLookup[govId] : "غير معروف";
+            //}
+            //else if (matches.Count > 1)
+            //{
+            //    // Multiple matches — populate the related combo boxes
+            //    var plateNumbers = matches.Select(r => r["plate_number"].ToString()).Distinct().ToList();
+            //    var landIds = matches.Select(r => r["land_id"].ToString()).Distinct().ToList();
+            //    var governorates = matches.Select(r =>
+            //    {
+            //        string govId = r["governorate_fk"].ToString();
+            //        return governorateLookup.ContainsKey(govId) ? governorateLookup[govId] : "غير معروف";
+            //    }).Distinct().ToList();
 
-                plate_number_COB.DataSource = new BindingSource(plateNumbers, null);
-                Land_ID_COB.DataSource = new BindingSource(landIds, null);
-                Governorate_COB.DataSource = new BindingSource(governorates, null);
+            //    plate_number_COB.DataSource = new BindingSource(plateNumbers, null);
+            //    Land_ID_COB.DataSource = new BindingSource(landIds, null);
+            //    Governorate_COB.DataSource = new BindingSource(governorates, null);
 
-            }
+            //}
+            if (Land_Name_COB.SelectedItem != null)
+                SyncSelection(selectedName: Land_Name_COB.SelectedItem.ToString());
         }
 
             private void plate_number_COB_SelectedIndexChanged(object sender, EventArgs e)
             {
-            bool hasText = !string.IsNullOrWhiteSpace(plate_number_COB.Text);
-            string selectedPlate = plate_number_COB.SelectedItem?.ToString();
-            if (string.IsNullOrEmpty(selectedPlate)) return;
+            if (plate_number_COB.SelectedItem != null)
+                SyncSelection(selectedPlate: plate_number_COB.SelectedItem.ToString());
+            //bool hasText = !string.IsNullOrWhiteSpace(plate_number_COB.Text);
+            //string selectedPlate = plate_number_COB.SelectedItem?.ToString();
+            //if (string.IsNullOrEmpty(selectedPlate)) return;
 
-            var match = LandData.AsEnumerable()
-                .FirstOrDefault(row => row["plate_number"].ToString() == selectedPlate);
+            //var match = LandData.AsEnumerable()
+            //    .FirstOrDefault(row => row["plate_number"].ToString() == selectedPlate);
 
-            if (match != null)
-            {
-                string landId = match["land_id"].ToString();
-                string landName = match["land_name"].ToString();
-                string govId = match["governorate_fk"].ToString();
-                string governorateName = governorateLookup.ContainsKey(govId) ? governorateLookup[govId] : "غير معروف";
+            //if (match != null)
+            //{
+            //    string landId = match["land_id"].ToString();
+            //    string landName = match["land_name"].ToString();
+            //    string govId = match["governorate_fk"].ToString();
+            //    string governorateName = governorateLookup.ContainsKey(govId) ? governorateLookup[govId] : "غير معروف";
 
-                Land_Name_COB.SelectedItem = landName;
-                Land_ID_COB.SelectedItem = landId;
-                Governorate_COB.SelectedItem = governorateName;
-            }
+            //    Land_Name_COB.SelectedItem = landName;
+            //    Land_ID_COB.SelectedItem = landId;
+            //    Governorate_COB.SelectedItem = governorateName;
+            //    AdjustComboBox(Land_ID_COB);
+            //    AdjustComboBox(Land_Name_COB);
+            //    AdjustComboBox(Governorate_COB);
+            //}
 
-            Error_plate.Visible = !hasText;
-            }
+            //Error_plate.Visible = !hasText;
+        }
 
         private void ProjectsControl_Leave(object sender, EventArgs e)
         {
@@ -1206,8 +1297,20 @@ namespace DemoProject
                     count++;
                 }
             }
-
-            rowCountLabel.Text = $"عدد الصفوف: {count}";
+            HashSet<string> uniqueLands = new HashSet<string>();
+            foreach (DataGridViewRow row in advancedDataGridView1.Rows)
+            {
+                if (row.Visible && !row.IsNewRow)
+                {
+                    var value = row.Cells["Land_Id"].Value?.ToString();
+                    if (!string.IsNullOrEmpty(value))
+                    {
+                        uniqueLands.Add(value);
+                    }
+                }
+            }
+            rowCountLabel.Text = $"عدد الانشطة: {count}";
+            RowCountSeries.Text = $"عدد المشاريع: {uniqueLands.Count}";
         }
         private void advancedDataGridView1_SortStringChanged(object sender, Zuby.ADGV.AdvancedDataGridView.SortEventArgs e)
         {
@@ -1258,22 +1361,40 @@ namespace DemoProject
                 {
                     MessageBox.Show("الملف غير موجود أو المسار فارغ.");
                 }
+                
+            }
+            if (Update_Radio.Checked)
+            {
+                try
+                {
+                    if (e.RowIndex >= 0)
+                    {
+                        string serial = advancedDataGridView1.Rows[e.RowIndex].Cells["project_id"].Value.ToString();
+                        serial_number_TB.Text = serial;
+                        LoadProjectData(serial);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
             }
         }
-
-        private void serial_number_TB_TextChanged(object sender, EventArgs e)
+        private void LoadProjectData(string serialNumber)
         {
-            bool hasText = !string.IsNullOrWhiteSpace(serial_number_TB.Text);
+            bool hasText = !string.IsNullOrWhiteSpace(serialNumber);
             Error_Serial.Visible = !hasText;
-            var x = this.projectsTableAdapter.GetDataByIDProjects(serial_number_TB.Text);
-            
-            var gCivil_Defense = this.documentsTableAdapter.GetDataByProjectDoc(serial_number_TB.Text, "APP001");
-            var gEnvironmental = this.documentsTableAdapter.GetDataByProjectDoc(serial_number_TB.Text, "APP002");
-            var gPetroleum_Ministry = this.documentsTableAdapter.GetDataByProjectDoc(serial_number_TB.Text, "APP003");
-            var gCivil_Aviation = this.documentsTableAdapter.GetDataByProjectDoc(serial_number_TB.Text, "APP004");
-            var gTraffic_Study = this.documentsTableAdapter.GetDataByProjectDoc(serial_number_TB.Text, "APP005");
-            var gModel_8 = this.documentsTableAdapter.GetDataByProjectDoc(serial_number_TB.Text, "APP006");
-            var gTransaction_number = this.documentsTableAdapter.GetDataByProjectDoc(serial_number_TB.Text, "APP007");
+
+            var x = this.projectsTableAdapter.GetDataByIDProjects(serialNumber);
+
+            var gCivil_Defense = this.documentsTableAdapter.GetDataByProjectDoc(serialNumber, "APP001");
+            var gEnvironmental = this.documentsTableAdapter.GetDataByProjectDoc(serialNumber, "APP002");
+            var gPetroleum_Ministry = this.documentsTableAdapter.GetDataByProjectDoc(serialNumber, "APP003");
+            var gCivil_Aviation = this.documentsTableAdapter.GetDataByProjectDoc(serialNumber, "APP004");
+            var gTraffic_Study = this.documentsTableAdapter.GetDataByProjectDoc(serialNumber, "APP005");
+            var gModel_8 = this.documentsTableAdapter.GetDataByProjectDoc(serialNumber, "APP006");
+            var gTransaction_number = this.documentsTableAdapter.GetDataByProjectDoc(serialNumber, "APP007");
+
             if (x == null || x.Count == 0)
             {
                 Investment_Name_TB.Text = "";
@@ -1300,33 +1421,43 @@ namespace DemoProject
                 flowLayoutPanel7.Controls.Clear();
                 return;
             }
+
             var l = this.landsTableAdapter.GetDataBySerial(x.First().land_fk);
             Investment_Name_TB.Text = x.First().project_name;
             Transaction_number_TB.Text = x.First().Transaction_number;
-            Governorate_COB.SelectedItem = governorateLookup.TryGetValue
-            (x.First().governorate_fk.ToString(), out var govName)
-            ? govName
-            : "غير معروف";
+            Total_stores_TB.Text = x.First().Total_stores.ToString();
+            Total_rented_TB.Text = x.First().Total_rented.ToString();
+            Total_Not_rented_TB.Text = x.First().Total_Not_rented.ToString();
+            Secured_certificate_COM.SelectedItem = x.First().Secured_certificate;
+            Architectural_and_Structural_Board_COM.SelectedItem = x.First().Architectural_and_Structural_Board;
+            Consultant_Surveying_COM.SelectedItem = x.First().Consultant_Surveying;
+            Reconciliation_Form_Stamp_COM.SelectedItem = x.First().Reconciliation_Form_Stamp;
+            Governorate_COB.SelectedItem = governorateLookup.TryGetValue(
+                x.First().governorate_fk.ToString(), out var govName
+            ) ? govName : "غير معروف";
+
             if (x.First().land_fk == l.First().land_id)
             {
                 Land_Name_COB.SelectedItem = l.First().land_name;
                 plate_number_COB.SelectedItem = l.First().plate_number;
+                AdjustComboBox(Land_Name_COB);
+                AdjustComboBox(plate_number_COB);
             }
+
             Land_ID_COB.SelectedItem = x.First().land_fk;
-            string filePathEnvironmental = gEnvironmental.First().paths?.ToString();
-            string filePathCivil_Defense = gCivil_Defense.First().paths?.ToString();
-            string filePathPetroleum_Ministry = gPetroleum_Ministry.First().paths?.ToString();
-            string filePathCivil_Aviation = gCivil_Aviation.First().paths?.ToString();
-            string filePathTraffic_Study = gTraffic_Study.First().paths?.ToString();
-            string filePathModel_8 = gModel_8.First().paths?.ToString();
-            var firstItem = gTransaction_number.FirstOrDefault();
-            string filePathTransaction_number = firstItem == null
-                ? null
-                : firstItem.paths?.ToString();
+
+            // نفس الجزء بتاع تحميل الملفات
+            string filePathEnvironmental = gEnvironmental.FirstOrDefault()?.paths?.ToString();
+            string filePathCivil_Defense = gCivil_Defense.FirstOrDefault()?.paths?.ToString();
+            string filePathPetroleum_Ministry = gPetroleum_Ministry.FirstOrDefault()?.paths?.ToString();
+            string filePathCivil_Aviation = gCivil_Aviation.FirstOrDefault()?.paths?.ToString();
+            string filePathTraffic_Study = gTraffic_Study.FirstOrDefault()?.paths?.ToString();
+            string filePathModel_8 = gModel_8.FirstOrDefault()?.paths?.ToString();
+            string filePathTransaction_number = gTransaction_number.FirstOrDefault()?.paths?.ToString();
+
             if (!string.IsNullOrWhiteSpace(filePathEnvironmental))
             {
                 string FileName = Path.GetFileName(filePathEnvironmental);
-
                 if (!approvalFiles.ContainsKey(filePathEnvironmental))
                 {
                     approvalFiles["Environmental_COB"] = new List<string>();
@@ -1337,34 +1468,28 @@ namespace DemoProject
             if (!string.IsNullOrWhiteSpace(filePathPetroleum_Ministry))
             {
                 string FileName = Path.GetFileName(filePathPetroleum_Ministry);
-
                 if (!approvalFiles.ContainsKey(filePathPetroleum_Ministry))
                 {
                     approvalFiles["Petroleum_Ministry_COB"] = new List<string>();
                     approvalFiles["Petroleum_Ministry_COB"].Add(filePathPetroleum_Ministry);
-
                 }
                 AddFileIconToPanel(filePathPetroleum_Ministry, FileName, "Petroleum_Ministry_COB");
             }
             if (!string.IsNullOrWhiteSpace(filePathCivil_Defense))
             {
                 string FileName = Path.GetFileName(filePathCivil_Defense);
-
                 if (!approvalFiles.ContainsKey(filePathCivil_Defense))
                 {
                     approvalFiles["Civil_Defense_COB"] = new List<string>();
                     approvalFiles["Civil_Defense_COB"].Add(filePathCivil_Defense);
-
                 }
                 AddFileIconToPanel(filePathCivil_Defense, FileName, "Civil_Defense_COB");
             }
             if (!string.IsNullOrWhiteSpace(filePathCivil_Aviation))
             {
                 string FileName = Path.GetFileName(filePathCivil_Aviation);
-
                 if (!approvalFiles.ContainsKey(filePathCivil_Aviation))
                 {
-
                     approvalFiles["Civil_Aviation_COB"] = new List<string>();
                     approvalFiles["Civil_Aviation_COB"].Add(filePathCivil_Aviation);
                 }
@@ -1373,7 +1498,6 @@ namespace DemoProject
             if (!string.IsNullOrWhiteSpace(filePathTraffic_Study))
             {
                 string FileName = Path.GetFileName(filePathTraffic_Study);
-
                 if (!approvalFiles.ContainsKey(filePathTraffic_Study))
                 {
                     approvalFiles["Traffic_Study_COB"] = new List<string>();
@@ -1384,7 +1508,6 @@ namespace DemoProject
             if (!string.IsNullOrWhiteSpace(filePathModel_8))
             {
                 string FileName = Path.GetFileName(filePathModel_8);
-
                 if (!approvalFiles.ContainsKey(filePathModel_8))
                 {
                     approvalFiles["Model_8_COB"] = new List<string>();
@@ -1395,7 +1518,6 @@ namespace DemoProject
             if (!string.IsNullOrWhiteSpace(filePathTransaction_number))
             {
                 string FileName = Path.GetFileName(filePathTransaction_number);
-
                 if (!approvalFiles.ContainsKey(filePathTransaction_number))
                 {
                     approvalFiles["Transaction_number_TB"] = new List<string>();
@@ -1403,12 +1525,172 @@ namespace DemoProject
                 }
                 AddFileIconToPanel(filePathTransaction_number, FileName, "Transaction_number_TB");
             }
+
             Traffic_Study_COB.SelectedItem = x.First().Traffic_Study_Status.ToString() == "X" ? "X" : "✔";
             Petroleum_Ministry_COB.SelectedItem = x.First().Petroleum_Ministry_Approval_status.ToString() == "X" ? "X" : "✔";
             Environmental_COB.SelectedItem = x.First().Environmental_Approval_status.ToString() == "X" ? "X" : "✔";
             Model_8_COB.SelectedItem = x.First().Model_8_Status.ToString() == "X" ? "X" : "✔";
             Civil_Aviation_COB.SelectedItem = x.First().Civil_Aviation_Approval_status.ToString() == "X" ? "X" : "✔";
             Civil_Defense_COB.SelectedItem = x.First().Civil_Defense_Approval_status.ToString() == "X" ? "X" : "✔";
+        }
+
+        // TextChanged event
+     
+        // CellClick event
+    
+
+
+        private void serial_number_TB_TextChanged(object sender, EventArgs e)
+        {
+            //bool hasText = !string.IsNullOrWhiteSpace(serial_number_TB.Text);
+            //Error_Serial.Visible = !hasText;
+            //var x = this.projectsTableAdapter.GetDataByIDProjects(serial_number_TB.Text);
+            
+            //var gCivil_Defense = this.documentsTableAdapter.GetDataByProjectDoc(serial_number_TB.Text, "APP001");
+            //var gEnvironmental = this.documentsTableAdapter.GetDataByProjectDoc(serial_number_TB.Text, "APP002");
+            //var gPetroleum_Ministry = this.documentsTableAdapter.GetDataByProjectDoc(serial_number_TB.Text, "APP003");
+            //var gCivil_Aviation = this.documentsTableAdapter.GetDataByProjectDoc(serial_number_TB.Text, "APP004");
+            //var gTraffic_Study = this.documentsTableAdapter.GetDataByProjectDoc(serial_number_TB.Text, "APP005");
+            //var gModel_8 = this.documentsTableAdapter.GetDataByProjectDoc(serial_number_TB.Text, "APP006");
+            //var gTransaction_number = this.documentsTableAdapter.GetDataByProjectDoc(serial_number_TB.Text, "APP007");
+            //if (x == null || x.Count == 0)
+            //{
+            //    Investment_Name_TB.Text = "";
+            //    Transaction_number_TB.Text = "";
+
+            //    Governorate_COB.SelectedIndex = 0;
+            //    Land_Name_COB.SelectedIndex = 0;
+            //    Land_ID_COB.SelectedIndex = 0;
+            //    plate_number_COB.SelectedIndex = 0;
+
+            //    Traffic_Study_COB.SelectedIndex = -1;
+            //    Petroleum_Ministry_COB.SelectedIndex = -1;
+            //    Environmental_COB.SelectedIndex = -1;
+            //    Model_8_COB.SelectedIndex = -1;
+            //    Civil_Aviation_COB.SelectedIndex = -1;
+            //    Civil_Defense_COB.SelectedIndex = -1;
+
+            //    flowLayoutPanel1.Controls.Clear();
+            //    flowLayoutPanel2.Controls.Clear();
+            //    flowLayoutPanel3.Controls.Clear();
+            //    flowLayoutPanel4.Controls.Clear();
+            //    flowLayoutPanel5.Controls.Clear();
+            //    flowLayoutPanel6.Controls.Clear();
+            //    flowLayoutPanel7.Controls.Clear();
+            //    return;
+            //}
+            //var l = this.landsTableAdapter.GetDataBySerial(x.First().land_fk);
+            //Investment_Name_TB.Text = x.First().project_name;
+            //Transaction_number_TB.Text = x.First().Transaction_number;
+            //Governorate_COB.SelectedItem = governorateLookup.TryGetValue
+            //(x.First().governorate_fk.ToString(), out var govName)
+            //? govName
+            //: "غير معروف";
+            //if (x.First().land_fk == l.First().land_id)
+            //{
+            //    Land_Name_COB.SelectedItem = l.First().land_name;
+            //    plate_number_COB.SelectedItem = l.First().plate_number;
+            //    AdjustComboBox(Land_Name_COB);
+            //    AdjustComboBox(plate_number_COB);
+
+            //}
+            //Land_ID_COB.SelectedItem = x.First().land_fk;
+            //string filePathEnvironmental = gEnvironmental.First().paths?.ToString();
+            //string filePathCivil_Defense = gCivil_Defense.First().paths?.ToString();
+            //string filePathPetroleum_Ministry = gPetroleum_Ministry.First().paths?.ToString();
+            //string filePathCivil_Aviation = gCivil_Aviation.First().paths?.ToString();
+            //string filePathTraffic_Study = gTraffic_Study.First().paths?.ToString();
+            //string filePathModel_8 = gModel_8.First().paths?.ToString();
+            //var firstItem = gTransaction_number.FirstOrDefault();
+            //string filePathTransaction_number = firstItem == null
+            //    ? null
+            //    : firstItem.paths?.ToString();
+            //if (!string.IsNullOrWhiteSpace(filePathEnvironmental))
+            //{
+            //    string FileName = Path.GetFileName(filePathEnvironmental);
+
+            //    if (!approvalFiles.ContainsKey(filePathEnvironmental))
+            //    {
+            //        approvalFiles["Environmental_COB"] = new List<string>();
+            //        approvalFiles["Environmental_COB"].Add(filePathEnvironmental);
+            //    }
+            //    AddFileIconToPanel(filePathEnvironmental, FileName, "Environmental_COB");
+            //}
+            //if (!string.IsNullOrWhiteSpace(filePathPetroleum_Ministry))
+            //{
+            //    string FileName = Path.GetFileName(filePathPetroleum_Ministry);
+
+            //    if (!approvalFiles.ContainsKey(filePathPetroleum_Ministry))
+            //    {
+            //        approvalFiles["Petroleum_Ministry_COB"] = new List<string>();
+            //        approvalFiles["Petroleum_Ministry_COB"].Add(filePathPetroleum_Ministry);
+
+            //    }
+            //    AddFileIconToPanel(filePathPetroleum_Ministry, FileName, "Petroleum_Ministry_COB");
+            //}
+            //if (!string.IsNullOrWhiteSpace(filePathCivil_Defense))
+            //{
+            //    string FileName = Path.GetFileName(filePathCivil_Defense);
+
+            //    if (!approvalFiles.ContainsKey(filePathCivil_Defense))
+            //    {
+            //        approvalFiles["Civil_Defense_COB"] = new List<string>();
+            //        approvalFiles["Civil_Defense_COB"].Add(filePathCivil_Defense);
+
+            //    }
+            //    AddFileIconToPanel(filePathCivil_Defense, FileName, "Civil_Defense_COB");
+            //}
+            //if (!string.IsNullOrWhiteSpace(filePathCivil_Aviation))
+            //{
+            //    string FileName = Path.GetFileName(filePathCivil_Aviation);
+
+            //    if (!approvalFiles.ContainsKey(filePathCivil_Aviation))
+            //    {
+
+            //        approvalFiles["Civil_Aviation_COB"] = new List<string>();
+            //        approvalFiles["Civil_Aviation_COB"].Add(filePathCivil_Aviation);
+            //    }
+            //    AddFileIconToPanel(filePathCivil_Aviation, FileName, "Civil_Aviation_COB");
+            //}
+            //if (!string.IsNullOrWhiteSpace(filePathTraffic_Study))
+            //{
+            //    string FileName = Path.GetFileName(filePathTraffic_Study);
+
+            //    if (!approvalFiles.ContainsKey(filePathTraffic_Study))
+            //    {
+            //        approvalFiles["Traffic_Study_COB"] = new List<string>();
+            //        approvalFiles["Traffic_Study_COB"].Add(filePathTraffic_Study);
+            //    }
+            //    AddFileIconToPanel(filePathTraffic_Study, FileName, "Traffic_Study_COB");
+            //}
+            //if (!string.IsNullOrWhiteSpace(filePathModel_8))
+            //{
+            //    string FileName = Path.GetFileName(filePathModel_8);
+
+            //    if (!approvalFiles.ContainsKey(filePathModel_8))
+            //    {
+            //        approvalFiles["Model_8_COB"] = new List<string>();
+            //        approvalFiles["Model_8_COB"].Add(filePathEnvironmental);
+            //    }
+            //    AddFileIconToPanel(filePathModel_8, FileName, "Model_8_COB");
+            //}
+            //if (!string.IsNullOrWhiteSpace(filePathTransaction_number))
+            //{
+            //    string FileName = Path.GetFileName(filePathTransaction_number);
+
+            //    if (!approvalFiles.ContainsKey(filePathTransaction_number))
+            //    {
+            //        approvalFiles["Transaction_number_TB"] = new List<string>();
+            //        approvalFiles["Transaction_number_TB"].Add(filePathTransaction_number);
+            //    }
+            //    AddFileIconToPanel(filePathTransaction_number, FileName, "Transaction_number_TB");
+            //}
+            //Traffic_Study_COB.SelectedItem = x.First().Traffic_Study_Status.ToString() == "X" ? "X" : "✔";
+            //Petroleum_Ministry_COB.SelectedItem = x.First().Petroleum_Ministry_Approval_status.ToString() == "X" ? "X" : "✔";
+            //Environmental_COB.SelectedItem = x.First().Environmental_Approval_status.ToString() == "X" ? "X" : "✔";
+            //Model_8_COB.SelectedItem = x.First().Model_8_Status.ToString() == "X" ? "X" : "✔";
+            //Civil_Aviation_COB.SelectedItem = x.First().Civil_Aviation_Approval_status.ToString() == "X" ? "X" : "✔";
+            //Civil_Defense_COB.SelectedItem = x.First().Civil_Defense_Approval_status.ToString() == "X" ? "X" : "✔";
 
            
         }
@@ -1478,48 +1760,119 @@ namespace DemoProject
                 e.Handled = true; // Block the input
             }
         }
-
-        private void Land_ID_COB_SelectedIndexChanged(object sender, EventArgs e)
+        private void SyncSelection(string selectedLandId = null, string selectedPlate = null, string selectedName = null)
         {
-            string selectedLandID = Land_ID_COB.SelectedItem?.ToString();
-            if (string.IsNullOrEmpty(selectedLandID)) return;
-
-            var match = LandData.AsEnumerable()
-                .FirstOrDefault(row => row["land_id"].ToString() == selectedLandID);
-
-            if (match != null)
+            try
             {
-                string plate = match["plate_number"].ToString();
-                string name = match["land_name"].ToString();
-                string govId = match["governorate_fk"].ToString();
-                string governorateName = governorateLookup.ContainsKey(govId) ? governorateLookup[govId] : "غير معروف";
 
-                // Set selections only
-                plate_number_COB.SelectedItem = plate;
-                Land_Name_COB.SelectedItem = name;
-                Governorate_COB.SelectedItem = governorateName;
+           
+            // نحدد أي Row محتاجينه
+            var query = LandData.AsEnumerable();
+
+            if (!string.IsNullOrEmpty(selectedLandId))
+                query = query.Where(r => r["land_id"].ToString() == selectedLandId);
+
+            if (!string.IsNullOrEmpty(selectedPlate))
+                query = query.Where(r => r["plate_number"].ToString() == selectedPlate);
+
+            if (!string.IsNullOrEmpty(selectedName))
+                query = query.Where(r => r["land_name"].ToString() == selectedName);
+
+            var matches = query.ToList();
+            if (!matches.Any()) return;
+
+            // لو فيه match وحيد → نختاره كله
+            if (matches.Count == 1)
+            {
+                var row = matches[0];
+                Land_ID_COB.SelectedItem = row["land_id"].ToString();
+                plate_number_COB.SelectedItem = row["plate_number"].ToString();
+                Land_Name_COB.SelectedItem = row["land_name"].ToString();
+
+                string govId = row["governorate_fk"].ToString();
+                Governorate_COB.SelectedItem = governorateLookup.ContainsKey(govId) ? governorateLookup[govId] : "غير معروف";
+            }
+            else
+            {
+                // أكتر من احتمال:
+                // - نخلي الـ Plate ثابت لأنه مشترك
+                // - نخلي الـ ID و Name يفضلوا مفتوحين للمستخدم
+
+                if (!string.IsNullOrEmpty(selectedPlate))
+                    plate_number_COB.SelectedItem = selectedPlate;
+
+                if (!string.IsNullOrEmpty(selectedLandId))
+                    Land_ID_COB.SelectedItem = selectedLandId;
+                else
+                    Land_ID_COB.SelectedItem = matches[0]["land_id"].ToString();
+
+                if (!string.IsNullOrEmpty(selectedName))
+                    Land_Name_COB.SelectedItem = selectedName;
+                else
+                    Land_Name_COB.SelectedItem = matches[0]["land_name"].ToString();
+            }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,"Error");
             }
         }
+        private void Land_ID_COB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Land_ID_COB.SelectedItem != null)
+                SyncSelection(selectedLandId: Land_ID_COB.SelectedItem.ToString());
+            //string selectedLandID = Land_ID_COB.SelectedItem?.ToString();
+            //if (string.IsNullOrEmpty(selectedLandID)) return;
 
-        private async void guna2CircleButton1_Click(object sender, EventArgs e)
+            //var match = LandData.AsEnumerable()
+            //    .FirstOrDefault(row => row["land_id"].ToString() == selectedLandID);
+
+            //if (match != null)
+            //{
+            //    string plate = match["plate_number"].ToString();
+            //    string name = match["land_name"].ToString();
+            //    string govId = match["governorate_fk"].ToString();
+            //    string governorateName = governorateLookup.ContainsKey(govId) ? governorateLookup[govId] : "غير معروف";
+
+            //    // Set selections only
+            //    plate_number_COB.SelectedItem = plate;
+            //    Land_Name_COB.SelectedItem = name;
+            //    Governorate_COB.SelectedItem = governorateName;
+            //    AdjustComboBox(Land_Name_COB);
+            //    AdjustComboBox(plate_number_COB); 
+            //    AdjustComboBox(Governorate_COB);
+            //}
+        }
+
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
         {
             // advancedDataGridView1.FilterString = Properties.Settings.Default.LastFilter;
             //advancedDataGridView1.SortString = Properties.Settings.Default.LastSort;
             loadcomboxes();
-            await LoadSourceDataAsync();
+            LoadProjectData();
             GenerativePanalFlow();
             ApplyGuna2StyleToGrid(advancedDataGridView1);
             ArabicColumnGrid();
             LoadColumnsIntoCheckedListBox();
         }
 
-        private async void guna2Button2_Click(object sender, EventArgs e)
+        private void guna2Button2_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show(
+               "هل أنت متأكد من أنك تريد تعديل هذه البيانات؟",
+               "تأكيد التعديل",
+               MessageBoxButtons.YesNo,
+               MessageBoxIcon.Question
+           );
+            if (result != DialogResult.Yes)
+            {
+                return;
+            }
             var igover = this.governorateTableAdapter.GetDataByGovernorate(Governorate_COB.Text);
             var x = this.projectsTableAdapter.GetDataByIDProjects(serial_number_TB.Text);          
             if (x == null || x.Count == 0)
             {
-                ShowAlert("No data to update it", AlertForm.AlertType.Error);
+                ShowAlert("لا يوجد هذا البيان للتعديل", AlertForm.AlertType.Error);
                 return;
             }
             this.projectsTableAdapter.UpdateQuery(Investment_Name_TB.Text,
@@ -1562,8 +1915,8 @@ namespace DemoProject
                     );
                 }
             }
-            await LoadSourceDataAsync();
-            ShowAlert("Data updated Successfully", AlertForm.AlertType.Success);
+            LoadProjectData();
+            ShowAlert("تم التعديل بنجاح", AlertForm.AlertType.Success);
         }
 
         private void advancedDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -1576,7 +1929,7 @@ namespace DemoProject
             }
         }
 
-        private async void guna2Button3_Click(object sender, EventArgs e)
+        private void guna2Button3_Click(object sender, EventArgs e)
         {
             // Show confirmation dialog
             DialogResult result = MessageBox.Show(
@@ -1634,7 +1987,7 @@ namespace DemoProject
 
             if (deleted > 0)
             {
-                await LoadSourceDataAsync();
+                LoadProjectData();
                 ShowAlert($"{deleted} صف تم حذفه بنجاح", AlertForm.AlertType.Success);
             }
             else
@@ -1646,6 +1999,7 @@ namespace DemoProject
 
         private void skyButton2_Click_1(object sender, EventArgs e)
         {
+            TrueFunction();
             if (advancedDataGridView1.Rows.Count == 0)
             {
                 ShowAlert("لا يوجد بيانات", AlertForm.AlertType.Error);
@@ -1671,25 +2025,35 @@ namespace DemoProject
             // ✅ Set sheet direction to RTL
             sheet.DisplayRightToLeft = true;
 
-            int excelCol = 1;
+            int colCount = advancedDataGridView1.Columns.Cast<DataGridViewColumn>()
+                          .Count(c => c.Visible && c.Name.ToLower() != "select");
 
-            // ✅ Write headers and align right
+            // --- ✅ Add Title Row ---
+            var titleRange = sheet.Range[sheet.Cells[1, 1], sheet.Cells[1, colCount]];
+            titleRange.Merge();
+
+            // تنسيقات العنوان
+            titleRange.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+            titleRange.VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
+            titleRange.Value = fileNameTextBox.Text;
+            int excelCol = 1;
             for (int col = 0; col < advancedDataGridView1.Columns.Count; col++)
             {
                 var gridCol = advancedDataGridView1.Columns[col];
                 if (gridCol.Visible && gridCol.Name.ToLower() != "select")
                 {
-                    var cell = (Microsoft.Office.Interop.Excel.Range)sheet.Cells[1, excelCol];
+                    var cell = (Microsoft.Office.Interop.Excel.Range)sheet.Cells[2, excelCol];
                     cell.Value = gridCol.HeaderText;
                     cell.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignRight;
                     cell.Font.Bold = true;
+                    //Theme color gray
+
                     excelCol++;
                 }
-
             }
 
-            // ✅ Write data and align right
-            int excelRow = 2;
+            // ✅ Write data (Row 3 onwards)
+            int excelRow = 3;
             foreach (DataGridViewRow row in advancedDataGridView1.Rows)
             {
                 if (row.IsNewRow) continue;
@@ -1702,7 +2066,17 @@ namespace DemoProject
 
                     var value = row.Cells[col].Value;
                     var cell = (Microsoft.Office.Interop.Excel.Range)sheet.Cells[excelRow, excelCol];
-                    cell.Value = value != null ? value.ToString() : "";
+
+                    if (value is DateTime dtValue) // ✅ لو الخلية تاريخ
+                    {
+                        cell.Value = dtValue;
+                        cell.NumberFormat = "dd/MM/yyyy"; // 🔹 التنسيق المطلوب
+                    }
+                    else
+                    {
+                        cell.Value = value != null ? value.ToString() : "";
+                    }
+
                     cell.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignRight;
                     excelCol++;
                 }
@@ -1711,22 +2085,32 @@ namespace DemoProject
             }
 
             // ✅ Auto fit and formatting
+            sheet.Cells.Font.Size = 14;
+            sheet.Cells.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+            sheet.Cells.VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
             sheet.Columns.AutoFit();
             sheet.Rows.AutoFit();
-            sheet.Cells.Font.Size = 12;
+            titleRange.Font.Size = 28;
+            titleRange.Font.Bold = true;
+            titleRange.RowHeight = 80;
 
-            // ✅ Apply plain borders and remove styling
+
+
+            // ✅ Borders and background cleanup
             int totalRows = excelRow - 1;
-            int totalCols = excelCol - 1;
+            int totalCols = colCount;
             var fullRange = sheet.Range[sheet.Cells[1, 1], sheet.Cells[totalRows, totalCols]];
 
-            // Set borders
             fullRange.Borders.LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
             fullRange.Borders.Weight = Microsoft.Office.Interop.Excel.XlBorderWeight.xlThin;
-
-            // Set background to white (remove alternating rows, etc.)
             fullRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.White);
-
+            titleRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGray);
+            sheet.Cells.WrapText = false;
+            // Make headers gray too
+            var headerRange = sheet.Range[sheet.Cells[2, 1], sheet.Cells[2, colCount]];
+            headerRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGray);
+            headerRange.Font.Bold = true;
+            headerRange.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
             try
             {
                 workbook.SaveAs(fullPath);
@@ -1735,7 +2119,10 @@ namespace DemoProject
             catch (Exception ex)
             {
                 MessageBox.Show($"حدث خطأ أثناء حفظ الملف:\n{ex.Message}", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                FalseFunction();
             }
+
+            FalseFunction();
         }
 
         private void guna2CircleButton2_Click(object sender, EventArgs e)
@@ -1744,7 +2131,7 @@ namespace DemoProject
             long userId = SessionData.UserId;
             ENGReportForm menu = new ENGReportForm(name, userId);
             menu.Show();
-            menu.ShowMenuView();
+            menu.ShowEngView();
             // Close the current form that contains this UserControl
             Form parentForm = this.FindForm();
             if (parentForm != null)
@@ -1780,6 +2167,118 @@ namespace DemoProject
             {
                 e.Handled = true; // Block the input
             }
+        }
+
+        private void Add_Radio_CheckedChanged(object sender, EventArgs e)
+        {
+            guna2Button1.Visible = Add_Radio.Checked;
+            guna2Button2.Visible = !Add_Radio.Checked;
+            guna2Button1.Enabled = Add_Radio.Checked;
+            guna2Button2.Enabled = !Add_Radio.Checked;
+        }
+        private void Update_Radio_CheckedChanged(object sender, EventArgs e)
+        {
+            guna2Button2.Visible = Update_Radio.Checked;
+            guna2Button1.Visible = !Update_Radio.Checked;
+            guna2Button2.Enabled = Update_Radio.Checked;
+            guna2Button1.Enabled = !Update_Radio.Checked;
+        }
+        private Dictionary<string, string> columnMap = new Dictionary<string, string>
+        {
+            { "مسلسل القطعة", "Land_Id" },
+            { "مسلسل المشروع", "Project_Id" },
+            { "رقم اللوحة", "PlateNumber" },
+            { "اسم قطعة الأرض", "LandName" },
+            { "رقم قطعة الأرض", "Land_Number" },
+            { "اسم المشروع", "ProjectName" },
+            { "اسم المحافظة", "GovernorateName" },
+            { "حالة موافقة الحماية المدنية", "CivilDefenseStatus" },
+            { "حالة موافقة البيئة", "EnvironmentalStatus" },
+            { "حالة موافقة وزارة البترول", "PetroleumStatus" },
+            { "حالة موافقة الطيران المدني", "AviationStatus" },
+            { "حالة الدراسة المرورية", "TrafficStudyStatus" },
+            { "حالة نموذج 8 أو 10", "Model8Status" },
+            { "رقم المعاملة", "Transaction_number" },
+            { "تاريخ انتهاء العقد", "Contract_expiry_date" },
+            { "اجمالي محلات", "Total_stores" },
+            { "مؤجر", "Total_rented" },
+            { "غير مؤجر", "Total_Not_rented" },
+            { "الشهادة المؤمنه", "Secured_Certificate" },
+            { "لوحة المعماري والانشائي", "Architectural_and_Structural_Board" },
+            { "ختم نموذج التصالح", "Reconciliation_Form_Stamp" },
+            { "الرفع المساحي الاستشاري", "Consultant_Surveying" },
+            { "المكتب الاستشاري", "consulting_Office" }
+        };
+        private void skyButton4_Click(object sender, EventArgs e)
+        {
+            reportViewer1.Visible = true;
+            reportViewer1.LocalReport.DataSources.Clear();
+            DataTable original =new DataTable();
+
+            if (advancedDataGridView1.DataSource is BindingSource bs)
+            {
+                original = ((DataView)bs.List).ToTable();
+            }
+            else if (advancedDataGridView1.DataSource is DataView dv)
+            {
+                original = dv.ToTable();
+            }
+            else if (advancedDataGridView1.DataSource is DataTable dt)
+            {
+                original = dt.Copy();
+            }
+            else
+            {
+                ShowAlert("Unsupported DataSource type.",AlertForm.AlertType.Error);
+            }
+            DataTable filtered = new DataTable();
+
+            foreach (string headerText in checkedListBox1.CheckedItems)
+            {
+                if (columnMap.ContainsKey(headerText)) // map header → real column
+                {
+                    string colName = columnMap[headerText];
+                    filtered.Columns.Add(colName, original.Columns[colName].DataType);
+                }
+            }
+
+            foreach (DataRow row in original.Rows)
+            {
+                var newRow = filtered.NewRow();
+                foreach (string headerText in checkedListBox1.CheckedItems)
+                {
+                    if (columnMap.ContainsKey(headerText))
+                    {
+                        string colName = columnMap[headerText];
+                        newRow[colName] = row[colName];
+                    }
+                }
+                filtered.Rows.Add(newRow);
+            }
+
+            string rdlc = GenerateDynamicRDLC(filtered);
+
+            using (var stream = new MemoryStream(Encoding.UTF8.GetBytes(rdlc)))
+            {
+                reportViewer1.LocalReport.LoadReportDefinition(stream);
+            }
+
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(
+                new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", filtered));//change this data set to new one
+            reportViewer1.RefreshReport();
+        }
+        private string GenerateDynamicRDLC(DataTable dt)
+        {
+            using (var ms = ReportHelperEnhanced.GenerateDynamicRDLC(dt, columnMap, "DataSet1",Report_TB.Text))
+            {
+                return Encoding.UTF8.GetString(ms.ToArray());
+            }
+        }
+
+        private void advancedDataGridView1_Scroll(object sender, ScrollEventArgs e)
+        {
+            advancedDataGridView1.Invalidate();
         }
     }
 }

@@ -49,7 +49,7 @@ namespace DemoProject
                 PassWordTB.PasswordChar = '*';
             }
         }
-        private Database1DataSet.usersRow AuthenticateUser(string username, string password)
+        private DATABASE2DataSet.usersRow AuthenticateUser(string username, string password)
         {
             var users = this.usersTableAdapter.GetData();
             
@@ -91,12 +91,23 @@ namespace DemoProject
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dATABASE2DataSet.functions' table. You can move, or remove it, as needed.
+            this.functionsTableAdapter.Fill(this.dATABASE2DataSet.functions);
+            // TODO: This line of code loads data into the 'dATABASE2DataSet.access' table. You can move, or remove it, as needed.
+            this.accessTableAdapter.Fill(this.dATABASE2DataSet.access);
+            // TODO: This line of code loads data into the 'dATABASE2DataSet.users' table. You can move, or remove it, as needed.
+            this.usersTableAdapter.Fill(this.dATABASE2DataSet.users);
+            // TODO: This line of code loads data into the 'dATABASE2DataSet.roles' table. You can move, or remove it, as needed.
+            this.rolesTableAdapter.Fill(this.dATABASE2DataSet.roles);
+            // TODO: This line of code loads data into the 'dATABASE2DataSet.roles' table. You can move, or remove it, as needed.
+            this.rolesTableAdapter.Fill(this.dATABASE2DataSet.roles);
+            // TODO: This line of code loads data into the 'dATABASE2DataSet.pages' table. You can move, or remove it, as needed.
+            this.pagesTableAdapter.Fill(this.dATABASE2DataSet.pages);
             // TODO: This line of code loads data into the 'database1DataSet.access' table. You can move, or remove it, as needed.
-            this.accessTableAdapter.Fill(this.database1DataSet.access);
+
             // TODO: This line of code loads data into the 'database1DataSet.roles' table. You can move, or remove it, as needed.
-            this.rolesTableAdapter.Fill(this.database1DataSet.roles);
+
             // TODO: This line of code loads data into the 'database1DataSet.users' table. You can move, or remove it, as needed.
-            this.usersTableAdapter.Fill(this.database1DataSet.users);
 
         }
         private static int alertOffsetY = 0;
@@ -188,6 +199,14 @@ namespace DemoProject
                     ShowAlert("يرجي كتابة اسم المستخدم وكلمة السر بشكل صحيح", AlertForm.AlertType.Error);
                 }
             }
+        }
+
+        private void pagesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.pagesBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dATABASE2DataSet);
+
         }
         //private void btnSuccess_Click(object sender, EventArgs e)
         //{

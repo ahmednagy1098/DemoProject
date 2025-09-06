@@ -37,8 +37,8 @@ namespace DemoProject.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database2.mdf" +
-            ";Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=10.0.5.5\\MSSQLSERVER2019;Initial Catalog=DATABASE2;User ID=Tara7El3am" +
+            ";Password=\"Stest291o3p2ko13 \"")]
         public string Database2ConnectionString {
             get {
                 return ((string)(this["Database2ConnectionString"]));

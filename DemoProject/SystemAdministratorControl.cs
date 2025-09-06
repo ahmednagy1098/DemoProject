@@ -121,138 +121,134 @@ namespace DemoProject
                 form.ShowLoading(false);   // or false
             }
         }
-        public async Task LoadSystemAdministratorDataAsync()
+        public void LoadSystemAdministratorData()
         {
             TrueFunction();
-            await Task.Run(() =>
+
+            // 1. Load permissions / access control
+            this.functionsTableAdapter.Fill(this.dATABASE2DataSet.functions);
+            this.pagesTableAdapter.Fill(this.dATABASE2DataSet.pages);
+            this.accessTableAdapter.Fill(this.dATABASE2DataSet.access);
+            this.usersTableAdapter.Fill(this.dATABASE2DataSet.users);
+            this.rolesTableAdapter.Fill(this.dATABASE2DataSet.roles);
+
+            tabPage5.Tag = "Function:Print";
+
+            var userRow = dATABASE2DataSet.users.FirstOrDefault(u => u.id == UserId);
+            var role = dATABASE2DataSet.roles.FirstOrDefault(r => r.user_id == UserId);
+
+            if (userRow != null && role != null)
             {
-                // 1. Load permissions / access control
-                this.Invoke((MethodInvoker)(() =>
+                var access = this.accessTableAdapter.GetDataAccsesByRole(role.id);
+
+                foreach (var accessRow in access)
                 {
-                    this.functionsTableAdapter.Fill(this.database1DataSet.functions);
-                    this.pagesTableAdapter.Fill(this.database1DataSet.pages);
-                    this.accessTableAdapter.Fill(this.database1DataSet.access);
-                    this.usersTableAdapter.Fill(this.database1DataSet.users);
-                    this.rolesTableAdapter.Fill(this.database1DataSet.roles);
-
-                    tabPage5.Tag = "Function:Print";
-
-                    var userRow = database1DataSet.users.FirstOrDefault(u => u.id == UserId);
-                    var role = database1DataSet.roles.FirstOrDefault(r => r.user_id == UserId);
-
-                    if (userRow == null || role == null) return;
-
-                    var access = this.accessTableAdapter.GetDataAccsesByRole(role.id);
-
-                    foreach (var accessRow in access)
+                    // Get page name
+                    if (!accessRow.Ispages_idNull())
                     {
-                        // Get page name
-                        if (!accessRow.Ispages_idNull())
+                        var pageRow = dATABASE2DataSet.pages.FirstOrDefault(p => p.id == accessRow.pages_id);
+                        if (pageRow != null && !string.IsNullOrWhiteSpace(pageRow.Page_name))
                         {
-                            var pageRow = database1DataSet.pages.FirstOrDefault(p => p.id == accessRow.pages_id);
-                            if (pageRow != null && !string.IsNullOrWhiteSpace(pageRow.Page_name))
-                            {
-                                string pageName = pageRow.Page_name.Trim();
-                                if (!pageAccess.ContainsKey(pageName))
-                                    pageAccess.Add(pageName, true);
-                            }
-                        }
-
-                        // Get function name
-                        if (!accessRow.Isfunction_idNull())
-                        {
-                            var funcRow = database1DataSet.functions.FirstOrDefault(f => f.id == accessRow.function_id);
-                            if (funcRow != null && !string.IsNullOrWhiteSpace(funcRow.Function_name))
-                            {
-                                string funcName = funcRow.Function_name.Trim();
-                                if (!functionAccess.ContainsKey(funcName))
-                                    functionAccess.Add(funcName, true);
-                            }
+                            string pageName = pageRow.Page_name.Trim();
+                            if (!pageAccess.ContainsKey(pageName))
+                                pageAccess.Add(pageName, true);
                         }
                     }
 
-                    ApplyPermissions(this);
-                }));
-
-                // 2. Load the joined data for grid (the part I showed earlier)
-                var query =
-                    from p in projectsTableAdapter.GetData()
-                    join l in landsTableAdapter.GetData() on p.land_fk equals l.land_id into landGroup
-                    from l in landGroup.DefaultIfEmpty()
-                    join g in governorateTableAdapter.GetData() on p.governorate_fk equals g.governorate_id into govGroup
-                    from g in govGroup.DefaultIfEmpty()
-                    join inv in investmentsTableAdapter.GetData() on l.land_id equals inv.land_fk into invGroup
-                    from inv in invGroup.DefaultIfEmpty()
-                    select new
+                    // Get function name
+                    if (!accessRow.Isfunction_idNull())
                     {
-                        // بيانات الأرض
-                        مسلسل_الارض = l.land_id,
-                        رقم_القطعة = l.land_number,
-                        رقم_اللوحة = l?.plate_number,
-                        اسم_قطعة_الأرض = l?.land_name,
-                        المساحة_الكلية = l?.total_area,
-                        حالة_الرفع_المساحي = l?.Topographic_Survey_Status,
-                        حالة_لوحة_الأرض = l?.Land_Plate_Status,
-                        إحداثيات_شمال = l?.coordinates_N,
-                        إحداثيات_شرق = l?.coordinates_E,
-                        الرقم_المسلسل = l?.serial_number,
-                        القرار_الجمهوري = l?.Republican_Decree,
-                        حالة_القرار_الجمهوري = l?.Republican_Decree_Status,
-                        المكتب_الاستشاري = l?.consulting_Office,
-                        إجمالي_سعر_الأرض = l?.total_Land_Price,
-                        جهة_الولاية = l?.Ownership_Authority,
-                        العنوان = l?.Address,
-                        // بيانات المشروع
-                        اسم_المشروع = p?.project_name,
-                        موافقة_الحماية_المدنية = p?.Civil_Defense_Approval_status,
-                        موافقة_البيئة = p?.Environmental_Approval_status,
-                        الدراسة_المرورية = p?.Traffic_Study_Status,
-                        نموذج_8_أو_10 = p?.Model_8_Status,
-                        موافقة_البترول = p?.Petroleum_Ministry_Approval_status,
-                        موافقة_الطيران_المدني = p?.Civil_Aviation_Approval_status,
-                        رقم_المعاملة = p?.Transaction_number,
-                        تاريخ_انتهاء_العقد_المشروع = p?.Contract_expiry_date,
-                        اجمالي_المحلات = p?.Total_stores,
-                        مؤجر = p?.Total_rented,
-                        غير_مؤجر = p?.Total_Not_rented,
-                        // المحافظة
-                        اسم_المحافظة = g?.governorate,
-                        // بيانات الاستثمار
-                        كود_الاستثمار = inv?.investments_id,
-                        اسم_الاستثمار = inv?.investment_name,
-                        موقع_الاستثمار = inv?.Location,
-                        الحي_التابع = inv?.Dependent_neighborhood,
-                        نوع_النشاط = inv?.Activity_Type,
-                        اسم_النشاط = inv?.Activity_Name,
-                        رقم_المحل = inv?.Place_number,
-                        رقم_مذكرة_العرض = inv?.Offer_memorandum_number,
-                        رقم_العقد_الاستثمار = inv?.Contract_number,
-                        تاريخ_بداية_العقد_الاستثمار = inv?.Contract_start_date,
-                        تاريخ_انتهاء_العقد_الاستثمار = inv?.Contract_expiry_date,
-                        قيمة_الإيجار = inv?.Rental_value,
-                        ملف_مذكرة_العرض = inv?.Offer_memorandum_number_File,
-                        ملف_العقد = inv?.Contract_number_File
-                    };
+                        var funcRow = dATABASE2DataSet.functions.FirstOrDefault(f => f.id == accessRow.function_id);
+                        if (funcRow != null && !string.IsNullOrWhiteSpace(funcRow.Function_name))
+                        {
+                            string funcName = funcRow.Function_name.Trim();
+                            if (!functionAccess.ContainsKey(funcName))
+                                functionAccess.Add(funcName, true);
+                        }
+                    }
+                }
+            }
 
-                var joinedList = query.ToList();
-                DataTable original = ToDataTable(joinedList);
+            ApplyPermissions(this);
 
-                this.Invoke((MethodInvoker)(() =>
+            // 2. Load the joined data for grid
+            var query =
+                from p in projectsTableAdapter.GetData()
+                join l in landsTableAdapter.GetData() on p.land_fk equals l.land_id into landGroup
+                from l in landGroup.DefaultIfEmpty()
+                join g in governorateTableAdapter.GetData() on p.governorate_fk equals g.governorate_id into govGroup
+                from g in govGroup.DefaultIfEmpty()
+                join inv in investmentsTableAdapter.GetData() on l.land_id equals inv.land_fk into invGroup
+                from inv in invGroup.DefaultIfEmpty()
+                select new
                 {
-                    BindingSource bindingSource = new BindingSource();
-                    bindingSource.DataSource = original;
-                    advancedDataGridView1.DataSource = bindingSource;
+            // بيانات الأرض
+                    مسلسل_الارض = l.land_id,
+                    رقم_القطعة = l.land_number,
+                    رقم_اللوحة = l?.plate_number,
+                    اسم_قطعة_الأرض = l?.land_name,
+                    المساحة_الكلية = l?.total_area,
+                    حالة_الرفع_المساحي = l?.Topographic_Survey_Status,
+                    حالة_لوحة_الأرض = l?.Land_Plate_Status,
+                    إحداثيات_شمال = l?.coordinates_N,
+                    إحداثيات_شرق = l?.coordinates_E,
+                    الرقم_المسلسل = l?.serial_number,
+                    القرار_الجمهوري = l?.Republican_Decree,
+                    حالة_القرار_الجمهوري = l?.Republican_Decree_Status,
+                    المكتب_الاستشاري = l?.consulting_Office,
+                    إجمالي_سعر_الأرض = l?.total_Land_Price,
+                    جهة_الولاية = l?.Ownership_Authority,
+                    العنوان = l?.Address,
+            // بيانات المشروع
+                    اسم_المشروع = p?.project_name,
+                    موافقة_الحماية_المدنية = p?.Civil_Defense_Approval_status,
+                    موافقة_البيئة = p?.Environmental_Approval_status,
+                    الدراسة_المرورية = p?.Traffic_Study_Status,
+                    نموذج_8_أو_10 = p?.Model_8_Status,
+                    موافقة_البترول = p?.Petroleum_Ministry_Approval_status,
+                    موافقة_الطيران_المدني = p?.Civil_Aviation_Approval_status,
+                    رقم_المعاملة = p?.Transaction_number,
+                    تاريخ_انتهاء_العقد_المشروع = p?.Contract_expiry_date,
+                    اجمالي_المحلات = p?.Total_stores,
+                    مؤجر = p?.Total_rented,
+                    غير_مؤجر = p?.Total_Not_rented,
+            // المحافظة
+                    اسم_المحافظة = g?.governorate,
+            // بيانات الاستثمار
+                    كود_الاستثمار = inv?.investments_id,
+                    اسم_الاستثمار = inv?.investment_name,
+                    موقع_الاستثمار = inv?.Location,
+                    الحي_التابع = inv?.Dependent_neighborhood,
+                    نوع_النشاط = inv?.Activity_Type,
+                    اسم_النشاط = inv?.Activity_Name,
+                    رقم_المحل = inv?.Place_number,
+                    رقم_مذكرة_العرض = inv?.Offer_memorandum_number,
+                    رقم_العقد_الاستثمار = inv?.Contract_number,
+                    تاريخ_بداية_العقد_الاستثمار = inv?.Contract_start_date,
+                    تاريخ_انتهاء_العقد_الاستثمار = inv?.Contract_expiry_date,
+                    قيمة_الإيجار = inv?.Rental_value,
+                    ملف_مذكرة_العرض = inv?.Offer_memorandum_number_File,
+                    ملف_العقد = inv?.Contract_number_File
+                };
 
-                    UpdateRowCount();
-                    ApplyGuna2StyleToGrid(advancedDataGridView1);
-                    LoadColumnsIntoCheckedListBox();
-                }));
-            });
+            var joinedList = query.OrderBy(r => int.TryParse(r.مسلسل_الارض, out var n) ? n : int.MaxValue)
+                .ToList();
+            DataTable original = ToDataTable(joinedList);
+
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = original;
+            advancedDataGridView1.DataSource = bindingSource;
+
+            UpdateRowCount();
+            ApplyGuna2StyleToGrid(advancedDataGridView1);
+            LoadColumnsIntoCheckedListBox();
+
             FalseFunction();
         }
-        private async void SystemAdministratorControl_Load(object sender, EventArgs e)
+
+        private void SystemAdministratorControl_Load(object sender, EventArgs e)
         {
-            await LoadSystemAdministratorDataAsync();
+            LoadSystemAdministratorData();
         }
         public void LoadColumnsIntoCheckedListBox()
         {
@@ -356,71 +352,118 @@ namespace DemoProject
         }
         private void skyButton2_Click(object sender, EventArgs e)
         {
+            TrueFunction();
             if (advancedDataGridView1.Rows.Count == 0)
             {
-                ShowAlert("لا يوجد بيانات لحساب عدد الرفع المساحي", AlertForm.AlertType.Error);
+                ShowAlert("لا يوجد بيانات", AlertForm.AlertType.Error);
                 return;
             }
+
             string fileName = fileNameTextBox.Text.Trim();
             if (string.IsNullOrWhiteSpace(fileName))
             {
+                ShowAlert("يرجى إدخال اسم للملف قبل التصدير", AlertForm.AlertType.Warning);
                 MessageBox.Show("يرجى إدخال اسم للملف قبل التصدير", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string fullPath = Path.Combine(desktopPath, $"{fileName}.xlsx");
+
             var excelApp = new Microsoft.Office.Interop.Excel.Application();
             var workbook = excelApp.Workbooks.Add(Type.Missing);
             var sheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.ActiveSheet;
             sheet.Name = fileName;
+
             // ✅ Set sheet direction to RTL
             sheet.DisplayRightToLeft = true;
+
+            int colCount = advancedDataGridView1.Columns.Cast<DataGridViewColumn>()
+                          .Count(c => c.Visible && c.Name.ToLower() != "select");
+
+            // --- ✅ Add Title Row ---
+            var titleRange = sheet.Range[sheet.Cells[1, 1], sheet.Cells[1, colCount]];
+            titleRange.Merge();
+
+            // تنسيقات العنوان
+            titleRange.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+            titleRange.VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
+            titleRange.Value = fileNameTextBox.Text;
             int excelCol = 1;
-            // ✅ Write headers and align right
             for (int col = 0; col < advancedDataGridView1.Columns.Count; col++)
             {
                 var gridCol = advancedDataGridView1.Columns[col];
-                if (gridCol.Visible)
+                if (gridCol.Visible && gridCol.Name.ToLower() != "select")
                 {
-                    var cell = (Microsoft.Office.Interop.Excel.Range)sheet.Cells[1, excelCol];
+                    var cell = (Microsoft.Office.Interop.Excel.Range)sheet.Cells[2, excelCol];
                     cell.Value = gridCol.HeaderText;
                     cell.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignRight;
                     cell.Font.Bold = true;
+                    //Theme color gray
+
                     excelCol++;
                 }
             }
-            // ✅ Write data and align right
-            int excelRow = 2;
+
+            // ✅ Write data (Row 3 onwards)
+            int excelRow = 3;
             foreach (DataGridViewRow row in advancedDataGridView1.Rows)
             {
                 if (row.IsNewRow) continue;
+
                 excelCol = 1;
                 for (int col = 0; col < advancedDataGridView1.Columns.Count; col++)
                 {
                     var gridCol = advancedDataGridView1.Columns[col];
-                    if (!gridCol.Visible) continue;
+                    if (!gridCol.Visible || gridCol.Name.ToLower() == "select") continue;
 
                     var value = row.Cells[col].Value;
                     var cell = (Microsoft.Office.Interop.Excel.Range)sheet.Cells[excelRow, excelCol];
-                    cell.Value = value != null ? value.ToString() : "";
+
+                    if (value is DateTime dtValue) // ✅ لو الخلية تاريخ
+                    {
+                        cell.Value = dtValue;
+                        cell.NumberFormat = "dd/MM/yyyy"; // 🔹 التنسيق المطلوب
+                    }
+                    else
+                    {
+                        cell.Value = value != null ? value.ToString() : "";
+                    }
+
                     cell.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignRight;
                     excelCol++;
                 }
+
                 excelRow++;
             }
+
             // ✅ Auto fit and formatting
+            sheet.Cells.Font.Size = 14;
+            sheet.Cells.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+            sheet.Cells.VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
             sheet.Columns.AutoFit();
             sheet.Rows.AutoFit();
-            sheet.Cells.Font.Size = 12;
-            // ✅ Apply plain borders and remove styling
+            titleRange.Font.Size = 28;
+            titleRange.Font.Bold = true;
+            titleRange.RowHeight = 80;
+
+
+
+            // ✅ Borders and background cleanup
             int totalRows = excelRow - 1;
-            int totalCols = excelCol - 1;
+            int totalCols = colCount;
             var fullRange = sheet.Range[sheet.Cells[1, 1], sheet.Cells[totalRows, totalCols]];
-            // Set borders
+
             fullRange.Borders.LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
             fullRange.Borders.Weight = Microsoft.Office.Interop.Excel.XlBorderWeight.xlThin;
-            // Set background to white (remove alternating rows, etc.)
             fullRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.White);
+            titleRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGray);
+            sheet.Cells.WrapText = false;
+            // Make headers gray too
+            var headerRange = sheet.Range[sheet.Cells[2, 1], sheet.Cells[2, colCount]];
+            headerRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGray);
+            headerRange.Font.Bold = true;
+            headerRange.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
             try
             {
                 workbook.SaveAs(fullPath);
@@ -429,7 +472,10 @@ namespace DemoProject
             catch (Exception ex)
             {
                 MessageBox.Show($"حدث خطأ أثناء حفظ الملف:\n{ex.Message}", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                FalseFunction();
             }
+
+            FalseFunction();
         }
         private void skyButton3_Click(object sender, EventArgs e)
         {
@@ -547,6 +593,81 @@ namespace DemoProject
             b.DataSource = advancedDataGridView1.DataSource;
             b.Filter = advancedDataGridView1.FilterString;
             UpdateRowCount();
+        }
+
+        private void skyButton4_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void LoadDynamicReport(DataTable dt)
+        {
+            var stream = ReportHelper.GenerateDynamicRDLC(dt, "MyDataSet");
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.LoadReportDefinition(stream);
+            reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("MyDataSet", dt));
+            reportViewer1.RefreshReport();
+        }
+        private void skyButton4_Click_1(object sender, EventArgs e)
+        {
+            reportViewer1.Visible = true;
+
+            // 1- فلترة الأعمدة
+            DataTable original = ((DataView)((BindingSource)advancedDataGridView1.DataSource).List).ToTable();
+            DataTable filtered = new DataTable();
+            foreach (string col in checkedListBox1.CheckedItems)
+                filtered.Columns.Add(col, original.Columns[col].DataType);
+
+            foreach (DataRow row in original.Rows)
+            {
+                var newRow = filtered.NewRow();
+                foreach (string col in checkedListBox1.CheckedItems)
+                    newRow[col] = row[col];
+                filtered.Rows.Add(newRow);
+            }
+
+            // 2- توليد RDLC بسيط ديناميكي
+            string rdlc = GenerateDynamicRDLC(filtered);
+
+            using (var stream = new MemoryStream(Encoding.UTF8.GetBytes(rdlc)))
+            {
+                reportViewer1.LocalReport.LoadReportDefinition(stream);
+            }
+
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", filtered));
+            reportViewer1.RefreshReport();
+        }
+        private string GenerateDynamicRDLC(DataTable dt)
+        {
+            using (var ms = ReportHelper.GenerateDynamicRDLC(dt, "DataSet1"))
+            {
+                return Encoding.UTF8.GetString(ms.ToArray());
+            }
+        }
+
+        private void skyButton5_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void skyButton7_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void skyButton6_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void advancedDataGridView1_Scroll(object sender, ScrollEventArgs e)
+        {
+            advancedDataGridView1.Invalidate();
         }
     }
 }

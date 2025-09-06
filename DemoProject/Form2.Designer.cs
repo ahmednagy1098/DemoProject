@@ -30,10 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -59,71 +55,28 @@
             this.button3 = new ReaLTaiizor.Controls.Button();
             this.menutranstion = new System.Windows.Forms.Timer(this.components);
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.Lands_TB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.license_8_TB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.civil_defense_TB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.environmental_TB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.ministry_of_petroleum_TB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.civil_aviation_authority_TB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.traffic_study_TB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Survying_TB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.XMark_TB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.Exist_TB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.TrueMark_TB1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ID_Sign = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IndexTable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2CircleProgressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.dATABASE2DataSet = new DemoProject.DATABASE2DataSet();
+            this.accessBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.accessTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.accessTableAdapter();
+            this.functionsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.functionsTableAdapter();
+            this.pagesTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.pagesTableAdapter();
+            this.rolesTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.rolesTableAdapter();
+            this.usersTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.usersTableAdapter();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.functionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tableAdapterManager = new DemoProject.DATABASE2DataSetTableAdapters.TableAdapterManager();
+            this.roadsControl1 = new DemoProject.RoadsControl();
+            this.projectsControl1 = new DemoProject.ProjectsControl();
             this.engineeringManagementControl1 = new DemoProject.EngineeringManagementControl();
             this.systemAdministratorControl1 = new DemoProject.SystemAdministratorControl();
             this.settingControl1 = new DemoProject.SettingControl();
-            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.PdfStudy_CB = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.PdfEnviroment_CB = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.Republican_decision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PdfTrafficStudy = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.PdfCivilAviation = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.PdfPetroleum = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.PdfEnvironmental = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.PdfCivilDefense = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.PdfLand = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Pdf8 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Pdf_Path_license_8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pdf_Path_traffic_study = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pdf_Path_civil_aviation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pdf_Path_ministry_of_petroleum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pdf_Path_environmental = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pdf_Path_civil_defense = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pdf_Path_land_contracts = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_Sign = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IndexTable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.advancedDataGridView1 = new Zuby.ADGV.AdvancedDataGridView();
-            this.projectsControl1 = new DemoProject.ProjectsControl();
-            this.roadsControl1 = new DemoProject.RoadsControl();
-            this.database1DataSet = new DemoProject.Database1DataSet();
-            this.pagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pagesTableAdapter = new DemoProject.Database1DataSetTableAdapters.pagesTableAdapter();
-            this.functionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.functionsTableAdapter = new DemoProject.Database1DataSetTableAdapters.functionsTableAdapter();
-            this.accessBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.accessTableAdapter = new DemoProject.Database1DataSetTableAdapters.accessTableAdapter();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usersTableAdapter = new DemoProject.Database1DataSetTableAdapters.usersTableAdapter();
-            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rolesTableAdapter = new DemoProject.Database1DataSetTableAdapters.rolesTableAdapter();
             this.investmentsControl1 = new DemoProject.InvestmentsControl();
-            this.guna2CircleProgressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -132,60 +85,13 @@
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.functionsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dATABASE2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.functionsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(0, 35);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(164, 149);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox1.TabIndex = 15;
-            this.guna2CirclePictureBox1.TabStop = false;
-            this.guna2CirclePictureBox1.UseTransparentBackground = true;
-            // 
-            // guna2TextBox2
-            // 
-            this.guna2TextBox2.Animated = true;
-            this.guna2TextBox2.AutoRoundedCorners = true;
-            this.guna2TextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.guna2TextBox2.BorderRadius = 23;
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "الاسثتثمار         ";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.White;
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.Enabled = false;
-            this.guna2TextBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 21.75F);
-            this.guna2TextBox2.ForeColor = System.Drawing.Color.White;
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Location = new System.Drawing.Point(523, 48);
-            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PlaceholderText = "";
-            this.guna2TextBox2.ReadOnly = true;
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.Size = new System.Drawing.Size(229, 48);
-            this.guna2TextBox2.TabIndex = 17;
-            this.guna2TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2TextBox2.TextChanged += new System.EventHandler(this.guna2TextBox2_TextChanged);
             // 
             // guna2Panel1
             // 
@@ -194,7 +100,7 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1364, 36);
+            this.guna2Panel1.Size = new System.Drawing.Size(1360, 36);
             this.guna2Panel1.TabIndex = 18;
             // 
             // nightControlBox1
@@ -212,7 +118,7 @@
             this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.nightControlBox1.EnableMinimizeButton = true;
             this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.Location = new System.Drawing.Point(1225, 0);
+            this.nightControlBox1.Location = new System.Drawing.Point(1221, 0);
             this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
             this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -230,9 +136,9 @@
             this.flowLayoutPanel1.Controls.Add(this.panel3);
             this.flowLayoutPanel1.Controls.Add(this.panel4);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(1186, 36);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1182, 36);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(178, 713);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(178, 747);
             this.flowLayoutPanel1.TabIndex = 20;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -505,6 +411,7 @@
             this.button2.TabIndex = 22;
             this.button2.Text = "الطرق";
             this.button2.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel4
@@ -543,659 +450,6 @@
             // 
             this.menutranstion.Tick += new System.EventHandler(this.menutranstion_Tick);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(827, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 24);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "عقود الأرض";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(327, 4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 24);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "نموذج 8";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(696, 4);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 24);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "الحماية المدنية";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(179, 4);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 24);
-            this.label4.TabIndex = 27;
-            this.label4.Text = "وزارة البيئة";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(557, 4);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 24);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "وزارة البترول";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(38, 4);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(99, 24);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "الطيران المدني";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(408, 4);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 24);
-            this.label7.TabIndex = 30;
-            this.label7.Text = "الدراسة المرورية";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(819, 74);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(96, 24);
-            this.label8.TabIndex = 31;
-            this.label8.Text = "الرفع المساحي";
-            // 
-            // Lands_TB
-            // 
-            this.Lands_TB.Animated = true;
-            this.Lands_TB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Lands_TB.DefaultText = "";
-            this.Lands_TB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Lands_TB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Lands_TB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Lands_TB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Lands_TB.FillColor = System.Drawing.SystemColors.Control;
-            this.Lands_TB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Lands_TB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lands_TB.ForeColor = System.Drawing.Color.Black;
-            this.Lands_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Lands_TB.Location = new System.Drawing.Point(801, 32);
-            this.Lands_TB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Lands_TB.Name = "Lands_TB";
-            this.Lands_TB.PlaceholderText = "";
-            this.Lands_TB.ReadOnly = true;
-            this.Lands_TB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Lands_TB.SelectedText = "";
-            this.Lands_TB.Size = new System.Drawing.Size(114, 30);
-            this.Lands_TB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.Lands_TB.TabIndex = 32;
-            // 
-            // license_8_TB
-            // 
-            this.license_8_TB.Animated = true;
-            this.license_8_TB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.license_8_TB.DefaultText = "";
-            this.license_8_TB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.license_8_TB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.license_8_TB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.license_8_TB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.license_8_TB.FillColor = System.Drawing.SystemColors.Control;
-            this.license_8_TB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.license_8_TB.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.license_8_TB.ForeColor = System.Drawing.Color.Black;
-            this.license_8_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.license_8_TB.Location = new System.Drawing.Point(275, 32);
-            this.license_8_TB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.license_8_TB.Name = "license_8_TB";
-            this.license_8_TB.PlaceholderText = "";
-            this.license_8_TB.ReadOnly = true;
-            this.license_8_TB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.license_8_TB.SelectedText = "";
-            this.license_8_TB.Size = new System.Drawing.Size(114, 30);
-            this.license_8_TB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.license_8_TB.TabIndex = 33;
-            // 
-            // civil_defense_TB
-            // 
-            this.civil_defense_TB.Animated = true;
-            this.civil_defense_TB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.civil_defense_TB.DefaultText = "";
-            this.civil_defense_TB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.civil_defense_TB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.civil_defense_TB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.civil_defense_TB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.civil_defense_TB.FillColor = System.Drawing.SystemColors.Control;
-            this.civil_defense_TB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.civil_defense_TB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.civil_defense_TB.ForeColor = System.Drawing.Color.Black;
-            this.civil_defense_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.civil_defense_TB.Location = new System.Drawing.Point(670, 32);
-            this.civil_defense_TB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.civil_defense_TB.Name = "civil_defense_TB";
-            this.civil_defense_TB.PlaceholderText = "";
-            this.civil_defense_TB.ReadOnly = true;
-            this.civil_defense_TB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.civil_defense_TB.SelectedText = "";
-            this.civil_defense_TB.Size = new System.Drawing.Size(114, 30);
-            this.civil_defense_TB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.civil_defense_TB.TabIndex = 34;
-            // 
-            // environmental_TB
-            // 
-            this.environmental_TB.Animated = true;
-            this.environmental_TB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.environmental_TB.DefaultText = "";
-            this.environmental_TB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.environmental_TB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.environmental_TB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.environmental_TB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.environmental_TB.FillColor = System.Drawing.SystemColors.Control;
-            this.environmental_TB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.environmental_TB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.environmental_TB.ForeColor = System.Drawing.Color.Black;
-            this.environmental_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.environmental_TB.Location = new System.Drawing.Point(145, 32);
-            this.environmental_TB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.environmental_TB.Name = "environmental_TB";
-            this.environmental_TB.PlaceholderText = "";
-            this.environmental_TB.ReadOnly = true;
-            this.environmental_TB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.environmental_TB.SelectedText = "";
-            this.environmental_TB.Size = new System.Drawing.Size(114, 30);
-            this.environmental_TB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.environmental_TB.TabIndex = 35;
-            // 
-            // ministry_of_petroleum_TB
-            // 
-            this.ministry_of_petroleum_TB.Animated = true;
-            this.ministry_of_petroleum_TB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ministry_of_petroleum_TB.DefaultText = "";
-            this.ministry_of_petroleum_TB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.ministry_of_petroleum_TB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.ministry_of_petroleum_TB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.ministry_of_petroleum_TB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.ministry_of_petroleum_TB.FillColor = System.Drawing.SystemColors.Control;
-            this.ministry_of_petroleum_TB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ministry_of_petroleum_TB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ministry_of_petroleum_TB.ForeColor = System.Drawing.Color.Black;
-            this.ministry_of_petroleum_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ministry_of_petroleum_TB.Location = new System.Drawing.Point(538, 32);
-            this.ministry_of_petroleum_TB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ministry_of_petroleum_TB.Name = "ministry_of_petroleum_TB";
-            this.ministry_of_petroleum_TB.PlaceholderText = "";
-            this.ministry_of_petroleum_TB.ReadOnly = true;
-            this.ministry_of_petroleum_TB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ministry_of_petroleum_TB.SelectedText = "";
-            this.ministry_of_petroleum_TB.Size = new System.Drawing.Size(114, 30);
-            this.ministry_of_petroleum_TB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.ministry_of_petroleum_TB.TabIndex = 36;
-            // 
-            // civil_aviation_authority_TB
-            // 
-            this.civil_aviation_authority_TB.Animated = true;
-            this.civil_aviation_authority_TB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.civil_aviation_authority_TB.DefaultText = "";
-            this.civil_aviation_authority_TB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.civil_aviation_authority_TB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.civil_aviation_authority_TB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.civil_aviation_authority_TB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.civil_aviation_authority_TB.FillColor = System.Drawing.SystemColors.Control;
-            this.civil_aviation_authority_TB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.civil_aviation_authority_TB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.civil_aviation_authority_TB.ForeColor = System.Drawing.Color.Black;
-            this.civil_aviation_authority_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.civil_aviation_authority_TB.Location = new System.Drawing.Point(23, 32);
-            this.civil_aviation_authority_TB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.civil_aviation_authority_TB.Name = "civil_aviation_authority_TB";
-            this.civil_aviation_authority_TB.PlaceholderText = "";
-            this.civil_aviation_authority_TB.ReadOnly = true;
-            this.civil_aviation_authority_TB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.civil_aviation_authority_TB.SelectedText = "";
-            this.civil_aviation_authority_TB.Size = new System.Drawing.Size(114, 30);
-            this.civil_aviation_authority_TB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.civil_aviation_authority_TB.TabIndex = 37;
-            // 
-            // traffic_study_TB
-            // 
-            this.traffic_study_TB.Animated = true;
-            this.traffic_study_TB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.traffic_study_TB.DefaultText = "";
-            this.traffic_study_TB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.traffic_study_TB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.traffic_study_TB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.traffic_study_TB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.traffic_study_TB.FillColor = System.Drawing.SystemColors.Control;
-            this.traffic_study_TB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.traffic_study_TB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.traffic_study_TB.ForeColor = System.Drawing.Color.Black;
-            this.traffic_study_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.traffic_study_TB.Location = new System.Drawing.Point(406, 32);
-            this.traffic_study_TB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.traffic_study_TB.Name = "traffic_study_TB";
-            this.traffic_study_TB.PlaceholderText = "";
-            this.traffic_study_TB.ReadOnly = true;
-            this.traffic_study_TB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.traffic_study_TB.SelectedText = "";
-            this.traffic_study_TB.Size = new System.Drawing.Size(114, 30);
-            this.traffic_study_TB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.traffic_study_TB.TabIndex = 38;
-            // 
-            // Survying_TB
-            // 
-            this.Survying_TB.Animated = true;
-            this.Survying_TB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Survying_TB.DefaultText = "";
-            this.Survying_TB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Survying_TB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Survying_TB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Survying_TB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Survying_TB.FillColor = System.Drawing.SystemColors.Control;
-            this.Survying_TB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Survying_TB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Survying_TB.ForeColor = System.Drawing.Color.Black;
-            this.Survying_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Survying_TB.Location = new System.Drawing.Point(801, 102);
-            this.Survying_TB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Survying_TB.Name = "Survying_TB";
-            this.Survying_TB.PlaceholderText = "";
-            this.Survying_TB.ReadOnly = true;
-            this.Survying_TB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Survying_TB.SelectedText = "";
-            this.Survying_TB.Size = new System.Drawing.Size(114, 30);
-            this.Survying_TB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.Survying_TB.TabIndex = 39;
-            this.Survying_TB.TextChanged += new System.EventHandler(this.Survying_TB_TextChanged);
-            this.Survying_TB.Load += new System.EventHandler(this.Survying_TB_Load);
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.tableLayoutPanel1);
-            this.panel5.Controls.Add(this.Survying_TB);
-            this.panel5.Controls.Add(this.traffic_study_TB);
-            this.panel5.Controls.Add(this.civil_aviation_authority_TB);
-            this.panel5.Controls.Add(this.ministry_of_petroleum_TB);
-            this.panel5.Controls.Add(this.environmental_TB);
-            this.panel5.Controls.Add(this.civil_defense_TB);
-            this.panel5.Controls.Add(this.license_8_TB);
-            this.panel5.Controls.Add(this.Lands_TB);
-            this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.label7);
-            this.panel5.Controls.Add(this.label6);
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Controls.Add(this.label3);
-            this.panel5.Controls.Add(this.label2);
-            this.panel5.Controls.Add(this.label1);
-            this.panel5.Location = new System.Drawing.Point(26, 508);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(937, 223);
-            this.panel5.TabIndex = 40;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel1.Controls.Add(this.label10, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.XMark_TB, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Exist_TB, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label11, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.TrueMark_TB1, 0, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(490, 81);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(304, 71);
-            this.tableLayoutPanel1.TabIndex = 43;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(183, 1);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(15, 22);
-            this.label10.TabIndex = 44;
-            this.label10.Text = "x";
-            // 
-            // XMark_TB
-            // 
-            this.XMark_TB.Animated = true;
-            this.XMark_TB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.XMark_TB.DefaultText = "";
-            this.XMark_TB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.XMark_TB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.XMark_TB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.XMark_TB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.XMark_TB.FillColor = System.Drawing.SystemColors.Control;
-            this.XMark_TB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.XMark_TB.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.XMark_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.XMark_TB.Location = new System.Drawing.Point(104, 27);
-            this.XMark_TB.Name = "XMark_TB";
-            this.XMark_TB.PlaceholderText = "";
-            this.XMark_TB.ReadOnly = true;
-            this.XMark_TB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.XMark_TB.SelectedText = "";
-            this.XMark_TB.Size = new System.Drawing.Size(94, 30);
-            this.XMark_TB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.XMark_TB.TabIndex = 40;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(71, 1);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(26, 22);
-            this.label9.TabIndex = 43;
-            this.label9.Text = "✔";
-            // 
-            // Exist_TB
-            // 
-            this.Exist_TB.Animated = true;
-            this.Exist_TB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Exist_TB.DefaultText = "";
-            this.Exist_TB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Exist_TB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Exist_TB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Exist_TB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Exist_TB.FillColor = System.Drawing.SystemColors.Control;
-            this.Exist_TB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Exist_TB.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Exist_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Exist_TB.Location = new System.Drawing.Point(205, 27);
-            this.Exist_TB.Name = "Exist_TB";
-            this.Exist_TB.PlaceholderText = "";
-            this.Exist_TB.ReadOnly = true;
-            this.Exist_TB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Exist_TB.SelectedText = "";
-            this.Exist_TB.Size = new System.Drawing.Size(95, 30);
-            this.Exist_TB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.Exist_TB.TabIndex = 42;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(261, 1);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(39, 22);
-            this.label11.TabIndex = 45;
-            this.label11.Text = "موجود";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // TrueMark_TB1
-            // 
-            this.TrueMark_TB1.Animated = true;
-            this.TrueMark_TB1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TrueMark_TB1.DefaultText = "";
-            this.TrueMark_TB1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TrueMark_TB1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TrueMark_TB1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TrueMark_TB1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TrueMark_TB1.FillColor = System.Drawing.SystemColors.Control;
-            this.TrueMark_TB1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TrueMark_TB1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TrueMark_TB1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TrueMark_TB1.Location = new System.Drawing.Point(4, 27);
-            this.TrueMark_TB1.Name = "TrueMark_TB1";
-            this.TrueMark_TB1.PlaceholderText = "";
-            this.TrueMark_TB1.ReadOnly = true;
-            this.TrueMark_TB1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.TrueMark_TB1.SelectedText = "";
-            this.TrueMark_TB1.Size = new System.Drawing.Size(93, 30);
-            this.TrueMark_TB1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.TrueMark_TB1.TabIndex = 41;
-            // 
-            // engineeringManagementControl1
-            // 
-            this.engineeringManagementControl1.Location = new System.Drawing.Point(3, 36);
-            this.engineeringManagementControl1.Name = "engineeringManagementControl1";
-            this.engineeringManagementControl1.Size = new System.Drawing.Size(1180, 740);
-            this.engineeringManagementControl1.TabIndex = 46;
-            this.engineeringManagementControl1.Visible = false;
-            // 
-            // systemAdministratorControl1
-            // 
-            this.systemAdministratorControl1.Location = new System.Drawing.Point(0, 35);
-            this.systemAdministratorControl1.Name = "systemAdministratorControl1";
-            this.systemAdministratorControl1.Size = new System.Drawing.Size(1180, 740);
-            this.systemAdministratorControl1.TabIndex = 47;
-            this.systemAdministratorControl1.Visible = false;
-            // 
-            // settingControl1
-            // 
-            this.settingControl1.Location = new System.Drawing.Point(0, 35);
-            this.settingControl1.Name = "settingControl1";
-            this.settingControl1.Size = new System.Drawing.Size(1193, 740);
-            this.settingControl1.TabIndex = 48;
-            // 
-            // guna2CirclePictureBox2
-            // 
-            this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox2.Image")));
-            this.guna2CirclePictureBox2.ImageRotate = 0F;
-            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(715, 38);
-            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
-            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(67, 66);
-            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox2.TabIndex = 49;
-            this.guna2CirclePictureBox2.TabStop = false;
-            this.guna2CirclePictureBox2.UseTransparentBackground = true;
-            // 
-            // PdfStudy_CB
-            // 
-            this.PdfStudy_CB.AutoSize = true;
-            this.PdfStudy_CB.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.PdfStudy_CB.CheckedState.BorderRadius = 4;
-            this.PdfStudy_CB.CheckedState.BorderThickness = 0;
-            this.PdfStudy_CB.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.PdfStudy_CB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.PdfStudy_CB.Location = new System.Drawing.Point(961, 167);
-            this.PdfStudy_CB.Name = "PdfStudy_CB";
-            this.PdfStudy_CB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.PdfStudy_CB.Size = new System.Drawing.Size(128, 17);
-            this.PdfStudy_CB.TabIndex = 45;
-            this.PdfStudy_CB.Text = "مستند الدراسة المرورية";
-            this.PdfStudy_CB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.PdfStudy_CB.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.PdfStudy_CB.UncheckedState.BorderRadius = 4;
-            this.PdfStudy_CB.UncheckedState.BorderThickness = 0;
-            this.PdfStudy_CB.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.PdfStudy_CB.CheckStateChanged += new System.EventHandler(this.PdfStudy_CB_CheckStateChanged);
-            // 
-            // PdfEnviroment_CB
-            // 
-            this.PdfEnviroment_CB.AutoSize = true;
-            this.PdfEnviroment_CB.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.PdfEnviroment_CB.CheckedState.BorderRadius = 4;
-            this.PdfEnviroment_CB.CheckedState.BorderThickness = 0;
-            this.PdfEnviroment_CB.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.PdfEnviroment_CB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.PdfEnviroment_CB.Location = new System.Drawing.Point(1095, 167);
-            this.PdfEnviroment_CB.Name = "PdfEnviroment_CB";
-            this.PdfEnviroment_CB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.PdfEnviroment_CB.Size = new System.Drawing.Size(79, 17);
-            this.PdfEnviroment_CB.TabIndex = 44;
-            this.PdfEnviroment_CB.Text = "مستند البيئة";
-            this.PdfEnviroment_CB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.PdfEnviroment_CB.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.PdfEnviroment_CB.UncheckedState.BorderRadius = 4;
-            this.PdfEnviroment_CB.UncheckedState.BorderThickness = 0;
-            this.PdfEnviroment_CB.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.PdfEnviroment_CB.CheckStateChanged += new System.EventHandler(this.guna2CheckBox4_CheckStateChanged);
-            // 
-            // Republican_decision
-            // 
-            this.Republican_decision.DataPropertyName = "Republican_decision";
-            this.Republican_decision.HeaderText = "القرار الجمهوري";
-            this.Republican_decision.MinimumWidth = 24;
-            this.Republican_decision.Name = "Republican_decision";
-            this.Republican_decision.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Republican_decision.Width = 96;
-            // 
-            // PdfTrafficStudy
-            // 
-            this.PdfTrafficStudy.DataPropertyName = "ID";
-            this.PdfTrafficStudy.HeaderText = "مستند الدراسة المرورية";
-            this.PdfTrafficStudy.MinimumWidth = 24;
-            this.PdfTrafficStudy.Name = "PdfTrafficStudy";
-            this.PdfTrafficStudy.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.PdfTrafficStudy.Width = 123;
-            // 
-            // PdfCivilAviation
-            // 
-            this.PdfCivilAviation.DataPropertyName = "ID";
-            this.PdfCivilAviation.HeaderText = "مستند وزارة الطيران";
-            this.PdfCivilAviation.MinimumWidth = 24;
-            this.PdfCivilAviation.Name = "PdfCivilAviation";
-            this.PdfCivilAviation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.PdfCivilAviation.Width = 112;
-            // 
-            // PdfPetroleum
-            // 
-            this.PdfPetroleum.DataPropertyName = "ID";
-            this.PdfPetroleum.HeaderText = "مستند وزارة البترول";
-            this.PdfPetroleum.MinimumWidth = 24;
-            this.PdfPetroleum.Name = "PdfPetroleum";
-            this.PdfPetroleum.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.PdfPetroleum.Width = 112;
-            // 
-            // PdfEnvironmental
-            // 
-            this.PdfEnvironmental.DataPropertyName = "ID";
-            this.PdfEnvironmental.HeaderText = "مستند البيئة";
-            this.PdfEnvironmental.MinimumWidth = 24;
-            this.PdfEnvironmental.Name = "PdfEnvironmental";
-            this.PdfEnvironmental.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.PdfEnvironmental.Width = 79;
-            // 
-            // PdfCivilDefense
-            // 
-            this.PdfCivilDefense.DataPropertyName = "ID";
-            this.PdfCivilDefense.HeaderText = "مستند الحماية المدنية";
-            this.PdfCivilDefense.MinimumWidth = 24;
-            this.PdfCivilDefense.Name = "PdfCivilDefense";
-            this.PdfCivilDefense.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.PdfCivilDefense.Width = 115;
-            // 
-            // PdfLand
-            // 
-            this.PdfLand.DataPropertyName = "ID";
-            this.PdfLand.HeaderText = "مستند الأرض";
-            this.PdfLand.MinimumWidth = 24;
-            this.PdfLand.Name = "PdfLand";
-            this.PdfLand.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.PdfLand.Width = 80;
-            // 
-            // Pdf8
-            // 
-            this.Pdf8.DataPropertyName = "ID";
-            this.Pdf8.HeaderText = "مستند نموذج8";
-            this.Pdf8.MinimumWidth = 24;
-            this.Pdf8.Name = "Pdf8";
-            this.Pdf8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Pdf8.UseColumnTextForButtonValue = true;
-            this.Pdf8.Width = 88;
-            // 
-            // Pdf_Path_license_8
-            // 
-            this.Pdf_Path_license_8.DataPropertyName = "Pdf_Path_license_8";
-            this.Pdf_Path_license_8.HeaderText = "Pdf_Path_license_8";
-            this.Pdf_Path_license_8.MinimumWidth = 24;
-            this.Pdf_Path_license_8.Name = "Pdf_Path_license_8";
-            this.Pdf_Path_license_8.ReadOnly = true;
-            this.Pdf_Path_license_8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Pdf_Path_license_8.Visible = false;
-            this.Pdf_Path_license_8.Width = 127;
-            // 
-            // Pdf_Path_traffic_study
-            // 
-            this.Pdf_Path_traffic_study.DataPropertyName = "Pdf_Path_traffic_study";
-            this.Pdf_Path_traffic_study.HeaderText = "Pdf_Path_traffic_study";
-            this.Pdf_Path_traffic_study.MinimumWidth = 24;
-            this.Pdf_Path_traffic_study.Name = "Pdf_Path_traffic_study";
-            this.Pdf_Path_traffic_study.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Pdf_Path_traffic_study.Visible = false;
-            this.Pdf_Path_traffic_study.Width = 139;
-            // 
-            // Pdf_Path_civil_aviation
-            // 
-            this.Pdf_Path_civil_aviation.DataPropertyName = "Pdf_Path_civil_aviation";
-            this.Pdf_Path_civil_aviation.HeaderText = "Pdf_Path_civil_aviation";
-            this.Pdf_Path_civil_aviation.MinimumWidth = 24;
-            this.Pdf_Path_civil_aviation.Name = "Pdf_Path_civil_aviation";
-            this.Pdf_Path_civil_aviation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Pdf_Path_civil_aviation.Visible = false;
-            this.Pdf_Path_civil_aviation.Width = 143;
-            // 
-            // Pdf_Path_ministry_of_petroleum
-            // 
-            this.Pdf_Path_ministry_of_petroleum.DataPropertyName = "Pdf_Path_ministry_of_petroleum";
-            this.Pdf_Path_ministry_of_petroleum.HeaderText = "Pdf_Path_ministry_of_petroleum";
-            this.Pdf_Path_ministry_of_petroleum.MinimumWidth = 24;
-            this.Pdf_Path_ministry_of_petroleum.Name = "Pdf_Path_ministry_of_petroleum";
-            this.Pdf_Path_ministry_of_petroleum.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Pdf_Path_ministry_of_petroleum.Visible = false;
-            this.Pdf_Path_ministry_of_petroleum.Width = 183;
-            // 
-            // Pdf_Path_environmental
-            // 
-            this.Pdf_Path_environmental.DataPropertyName = "Pdf_Path_environmental";
-            this.Pdf_Path_environmental.HeaderText = "Pdf_Path_environmental";
-            this.Pdf_Path_environmental.MinimumWidth = 24;
-            this.Pdf_Path_environmental.Name = "Pdf_Path_environmental";
-            this.Pdf_Path_environmental.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Pdf_Path_environmental.Visible = false;
-            this.Pdf_Path_environmental.Width = 148;
-            // 
-            // Pdf_Path_civil_defense
-            // 
-            this.Pdf_Path_civil_defense.DataPropertyName = "Pdf_Path_civil_defense";
-            this.Pdf_Path_civil_defense.HeaderText = "Pdf_Path_civil_defense";
-            this.Pdf_Path_civil_defense.MinimumWidth = 24;
-            this.Pdf_Path_civil_defense.Name = "Pdf_Path_civil_defense";
-            this.Pdf_Path_civil_defense.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Pdf_Path_civil_defense.Visible = false;
-            this.Pdf_Path_civil_defense.Width = 144;
-            // 
-            // Pdf_Path_land_contracts
-            // 
-            this.Pdf_Path_land_contracts.DataPropertyName = "Pdf_Path_land_contracts";
-            this.Pdf_Path_land_contracts.HeaderText = "Pdf_Path_land_contracts";
-            this.Pdf_Path_land_contracts.MinimumWidth = 24;
-            this.Pdf_Path_land_contracts.Name = "Pdf_Path_land_contracts";
-            this.Pdf_Path_land_contracts.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Pdf_Path_land_contracts.Visible = false;
-            this.Pdf_Path_land_contracts.Width = 152;
-            // 
             // ID_Sign
             // 
             this.ID_Sign.DataPropertyName = "ID_Sign";
@@ -1214,147 +468,18 @@
             this.IndexTable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.IndexTable.Width = 71;
             // 
-            // advancedDataGridView1
-            // 
-            this.advancedDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.advancedDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.advancedDataGridView1.BackgroundColor = System.Drawing.Color.Turquoise;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Turquoise;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.advancedDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.advancedDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Pdf_Path_land_contracts,
-            this.Pdf_Path_civil_defense,
-            this.Pdf_Path_environmental,
-            this.Pdf_Path_ministry_of_petroleum,
-            this.Pdf_Path_civil_aviation,
-            this.Pdf_Path_traffic_study,
-            this.Pdf_Path_license_8,
-            this.Pdf8,
-            this.PdfLand,
-            this.PdfCivilDefense,
-            this.PdfEnvironmental,
-            this.PdfPetroleum,
-            this.PdfCivilAviation,
-            this.PdfTrafficStudy,
-            this.Republican_decision});
-            this.advancedDataGridView1.EnableHeadersVisualStyles = false;
-            this.advancedDataGridView1.FilterAndSortEnabled = true;
-            this.advancedDataGridView1.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.advancedDataGridView1.GridColor = System.Drawing.Color.Black;
-            this.advancedDataGridView1.Location = new System.Drawing.Point(12, 189);
-            this.advancedDataGridView1.MaxFilterButtonImageHeight = 23;
-            this.advancedDataGridView1.Name = "advancedDataGridView1";
-            this.advancedDataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.advancedDataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.advancedDataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.advancedDataGridView1.Size = new System.Drawing.Size(1162, 313);
-            this.advancedDataGridView1.SortStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.advancedDataGridView1.TabIndex = 23;
-            this.advancedDataGridView1.SortStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.SortEventArgs>(this.advancedDataGridView1_SortStringChanged);
-            this.advancedDataGridView1.FilterStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.FilterEventArgs>(this.advancedDataGridView1_FilterStringChanged);
-            this.advancedDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advancedDataGridView1_CellClick);
-            this.advancedDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advancedDataGridView1_CellContentClick);
-            this.advancedDataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.advancedDataGridView1_CellFormatting);
-            this.advancedDataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.advancedDataGridView1_DataBindingComplete);
-            this.advancedDataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.advancedDataGridView1_DataError);
-            // 
-            // projectsControl1
-            // 
-            this.projectsControl1.Location = new System.Drawing.Point(2, 37);
-            this.projectsControl1.Name = "projectsControl1";
-            this.projectsControl1.Size = new System.Drawing.Size(1180, 740);
-            this.projectsControl1.TabIndex = 50;
-            // 
-            // roadsControl1
-            // 
-            this.roadsControl1.Location = new System.Drawing.Point(0, 35);
-            this.roadsControl1.Name = "roadsControl1";
-            this.roadsControl1.Size = new System.Drawing.Size(1180, 740);
-            this.roadsControl1.TabIndex = 51;
-            // 
-            // database1DataSet
-            // 
-            this.database1DataSet.DataSetName = "Database1DataSet";
-            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pagesBindingSource
-            // 
-            this.pagesBindingSource.DataMember = "pages";
-            this.pagesBindingSource.DataSource = this.database1DataSet;
-            // 
-            // pagesTableAdapter
-            // 
-            this.pagesTableAdapter.ClearBeforeFill = true;
-            // 
-            // functionsBindingSource
-            // 
-            this.functionsBindingSource.DataMember = "functions";
-            this.functionsBindingSource.DataSource = this.database1DataSet;
-            // 
-            // functionsTableAdapter
-            // 
-            this.functionsTableAdapter.ClearBeforeFill = true;
-            // 
-            // accessBindingSource
-            // 
-            this.accessBindingSource.DataMember = "access";
-            this.accessBindingSource.DataSource = this.database1DataSet;
-            // 
-            // accessTableAdapter
-            // 
-            this.accessTableAdapter.ClearBeforeFill = true;
-            // 
-            // usersBindingSource
-            // 
-            this.usersBindingSource.DataMember = "users";
-            this.usersBindingSource.DataSource = this.database1DataSet;
-            // 
-            // usersTableAdapter
-            // 
-            this.usersTableAdapter.ClearBeforeFill = true;
-            // 
-            // rolesBindingSource
-            // 
-            this.rolesBindingSource.DataMember = "roles";
-            this.rolesBindingSource.DataSource = this.database1DataSet;
-            // 
-            // rolesTableAdapter
-            // 
-            this.rolesTableAdapter.ClearBeforeFill = true;
-            // 
-            // investmentsControl1
-            // 
-            this.investmentsControl1.Location = new System.Drawing.Point(0, 35);
-            this.investmentsControl1.Name = "investmentsControl1";
-            this.investmentsControl1.Size = new System.Drawing.Size(1180, 740);
-            this.investmentsControl1.TabIndex = 52;
-            // 
             // guna2CircleProgressBar1
             // 
+            this.guna2CircleProgressBar1.AutoScroll = true;
+            this.guna2CircleProgressBar1.BackColor = System.Drawing.Color.Transparent;
             this.guna2CircleProgressBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.guna2CircleProgressBar1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.guna2CircleProgressBar1.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleProgressBar1.Location = new System.Drawing.Point(438, 245);
+            this.guna2CircleProgressBar1.ForeColor = System.Drawing.Color.Transparent;
+            this.guna2CircleProgressBar1.Location = new System.Drawing.Point(465, 327);
             this.guna2CircleProgressBar1.Minimum = 0;
             this.guna2CircleProgressBar1.Name = "guna2CircleProgressBar1";
             this.guna2CircleProgressBar1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleProgressBar1.Size = new System.Drawing.Size(150, 150);
+            this.guna2CircleProgressBar1.Size = new System.Drawing.Size(188, 188);
             this.guna2CircleProgressBar1.TabIndex = 53;
             this.guna2CircleProgressBar1.Text = "guna2CircleProgressBar1";
             this.guna2CircleProgressBar1.Visible = false;
@@ -1364,35 +489,145 @@
             this.timer1.Interval = 50;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // dATABASE2DataSet
+            // 
+            this.dATABASE2DataSet.DataSetName = "DATABASE2DataSet";
+            this.dATABASE2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // accessBindingSource
+            // 
+            this.accessBindingSource.DataMember = "access";
+            this.accessBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // accessTableAdapter
+            // 
+            this.accessTableAdapter.ClearBeforeFill = true;
+            // 
+            // functionsTableAdapter
+            // 
+            this.functionsTableAdapter.ClearBeforeFill = true;
+            // 
+            // pagesTableAdapter
+            // 
+            this.pagesTableAdapter.ClearBeforeFill = true;
+            // 
+            // rolesTableAdapter
+            // 
+            this.rolesTableAdapter.ClearBeforeFill = true;
+            // 
+            // usersTableAdapter
+            // 
+            this.usersTableAdapter.ClearBeforeFill = true;
+            // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataMember = "users";
+            this.usersBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // rolesBindingSource
+            // 
+            this.rolesBindingSource.DataMember = "roles";
+            this.rolesBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // functionsBindingSource
+            // 
+            this.functionsBindingSource.DataMember = "functions";
+            this.functionsBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // pagesBindingSource
+            // 
+            this.pagesBindingSource.DataMember = "pages";
+            this.pagesBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.accessTableAdapter = this.accessTableAdapter;
+            this.tableAdapterManager.approvalsTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.documentsTableAdapter = null;
+            this.tableAdapterManager.functionsTableAdapter = this.functionsTableAdapter;
+            this.tableAdapterManager.governorateTableAdapter = null;
+            this.tableAdapterManager.investmentsTableAdapter = null;
+            this.tableAdapterManager.landsTableAdapter = null;
+            this.tableAdapterManager.pagesTableAdapter = this.pagesTableAdapter;
+            this.tableAdapterManager.projectsTableAdapter = null;
+            this.tableAdapterManager.roadsTableAdapter = null;
+            this.tableAdapterManager.rolesTableAdapter = this.rolesTableAdapter;
+            this.tableAdapterManager.UpdateOrder = DemoProject.DATABASE2DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.usersTableAdapter = this.usersTableAdapter;
+            // 
+            // roadsControl1
+            // 
+            this.roadsControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.roadsControl1.Location = new System.Drawing.Point(6, 36);
+            this.roadsControl1.Name = "roadsControl1";
+            this.roadsControl1.Size = new System.Drawing.Size(1177, 740);
+            this.roadsControl1.TabIndex = 51;
+            // 
+            // projectsControl1
+            // 
+            this.projectsControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.projectsControl1.Location = new System.Drawing.Point(0, 36);
+            this.projectsControl1.Name = "projectsControl1";
+            this.projectsControl1.Size = new System.Drawing.Size(1184, 740);
+            this.projectsControl1.TabIndex = 50;
+            // 
+            // engineeringManagementControl1
+            // 
+            this.engineeringManagementControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.engineeringManagementControl1.Location = new System.Drawing.Point(3, 36);
+            this.engineeringManagementControl1.Name = "engineeringManagementControl1";
+            this.engineeringManagementControl1.Size = new System.Drawing.Size(1180, 740);
+            this.engineeringManagementControl1.TabIndex = 46;
+            this.engineeringManagementControl1.Visible = false;
+            // 
+            // systemAdministratorControl1
+            // 
+            this.systemAdministratorControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.systemAdministratorControl1.Location = new System.Drawing.Point(-1, 36);
+            this.systemAdministratorControl1.Name = "systemAdministratorControl1";
+            this.systemAdministratorControl1.Size = new System.Drawing.Size(1184, 739);
+            this.systemAdministratorControl1.TabIndex = 47;
+            this.systemAdministratorControl1.Visible = false;
+            // 
+            // settingControl1
+            // 
+            this.settingControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.settingControl1.Location = new System.Drawing.Point(-11, 36);
+            this.settingControl1.Name = "settingControl1";
+            this.settingControl1.Size = new System.Drawing.Size(1193, 740);
+            this.settingControl1.TabIndex = 48;
+            // 
+            // investmentsControl1
+            // 
+            this.investmentsControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.investmentsControl1.Location = new System.Drawing.Point(-10, 36);
+            this.investmentsControl1.Name = "investmentsControl1";
+            this.investmentsControl1.Size = new System.Drawing.Size(1193, 740);
+            this.investmentsControl1.TabIndex = 52;
+            // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1364, 749);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1360, 783);
             this.Controls.Add(this.guna2CircleProgressBar1);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.systemAdministratorControl1);
+            this.Controls.Add(this.settingControl1);
             this.Controls.Add(this.investmentsControl1);
             this.Controls.Add(this.roadsControl1);
             this.Controls.Add(this.projectsControl1);
-            this.Controls.Add(this.guna2CirclePictureBox2);
-            this.Controls.Add(this.PdfStudy_CB);
-            this.Controls.Add(this.PdfEnviroment_CB);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.advancedDataGridView1);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.guna2TextBox2);
-            this.Controls.Add(this.guna2CirclePictureBox1);
             this.Controls.Add(this.engineeringManagementControl1);
-            this.Controls.Add(this.systemAdministratorControl1);
-            this.Controls.Add(this.settingControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "القائمة الرئيسية";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -1401,26 +636,17 @@
             this.panel6.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.functionsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dATABASE2DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.functionsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
@@ -1437,30 +663,6 @@
         private ReaLTaiizor.Controls.Panel panel4;
         private ReaLTaiizor.Controls.Button button3;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private Guna.UI2.WinForms.Guna2TextBox Lands_TB;
-        private Guna.UI2.WinForms.Guna2TextBox license_8_TB;
-        private Guna.UI2.WinForms.Guna2TextBox civil_defense_TB;
-        private Guna.UI2.WinForms.Guna2TextBox environmental_TB;
-        private Guna.UI2.WinForms.Guna2TextBox ministry_of_petroleum_TB;
-        private Guna.UI2.WinForms.Guna2TextBox civil_aviation_authority_TB;
-        private Guna.UI2.WinForms.Guna2TextBox traffic_study_TB;
-        private Guna.UI2.WinForms.Guna2TextBox Survying_TB;
-        private System.Windows.Forms.Panel panel5;
-        private Guna.UI2.WinForms.Guna2TextBox XMark_TB;
-        private Guna.UI2.WinForms.Guna2TextBox TrueMark_TB1;
-        private Guna.UI2.WinForms.Guna2TextBox Exist_TB;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label11;
         private EngineeringManagementControl engineeringManagementControl1;
         private ReaLTaiizor.Controls.Button button4;
         private System.Windows.Forms.Panel focusInvest;
@@ -1470,9 +672,6 @@
         private ReaLTaiizor.Controls.Panel panel1;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private SettingControl settingControl1;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
-        private Guna.UI2.WinForms.Guna2CheckBox PdfStudy_CB;
-        private Guna.UI2.WinForms.Guna2CheckBox PdfEnviroment_CB;
         private System.Windows.Forms.DataGridViewTextBoxColumn Actual_activity;
         private System.Windows.Forms.DataGridViewComboBoxColumn Surveying_position;
         private System.Windows.Forms.DataGridViewComboBoxColumn traffic_study;
@@ -1482,48 +681,33 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn civil_defense_approval;
         private System.Windows.Forms.DataGridViewComboBoxColumn license_type_8;
         private System.Windows.Forms.DataGridViewComboBoxColumn land_contracts;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Republican_decision;
         private System.Windows.Forms.DataGridViewComboBoxColumn government;
         private System.Windows.Forms.DataGridViewTextBoxColumn coordinates_2;
         private System.Windows.Forms.DataGridViewTextBoxColumn coordinates_1;
         private System.Windows.Forms.DataGridViewTextBoxColumn address;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Land_Sign;
-        private System.Windows.Forms.DataGridViewButtonColumn PdfTrafficStudy;
-        private System.Windows.Forms.DataGridViewButtonColumn PdfCivilAviation;
-        private System.Windows.Forms.DataGridViewButtonColumn PdfPetroleum;
-        private System.Windows.Forms.DataGridViewButtonColumn PdfEnvironmental;
-        private System.Windows.Forms.DataGridViewButtonColumn PdfCivilDefense;
-        private System.Windows.Forms.DataGridViewButtonColumn PdfLand;
-        private System.Windows.Forms.DataGridViewButtonColumn Pdf8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Pdf_Path_license_8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Pdf_Path_traffic_study;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Pdf_Path_civil_aviation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Pdf_Path_ministry_of_petroleum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Pdf_Path_environmental;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Pdf_Path_civil_defense;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Pdf_Path_land_contracts;
         private System.Windows.Forms.DataGridViewTextBoxColumn station_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Sign;
         private System.Windows.Forms.DataGridViewTextBoxColumn IndexTable;
-        private Zuby.ADGV.AdvancedDataGridView advancedDataGridView1;
         private ProjectsControl projectsControl1;
         private RoadsControl roadsControl1;
         private System.Windows.Forms.Panel focusSetting;
         private ReaLTaiizor.Controls.Button button5;
         private System.Windows.Forms.Panel foucsRoad;
-        private Database1DataSet database1DataSet;
-        private System.Windows.Forms.BindingSource pagesBindingSource;
-        private Database1DataSetTableAdapters.pagesTableAdapter pagesTableAdapter;
-        private System.Windows.Forms.BindingSource functionsBindingSource;
-        private Database1DataSetTableAdapters.functionsTableAdapter functionsTableAdapter;
-        private System.Windows.Forms.BindingSource accessBindingSource;
-        private Database1DataSetTableAdapters.accessTableAdapter accessTableAdapter;
-        private System.Windows.Forms.BindingSource usersBindingSource;
-        private Database1DataSetTableAdapters.usersTableAdapter usersTableAdapter;
-        private System.Windows.Forms.BindingSource rolesBindingSource;
-        private Database1DataSetTableAdapters.rolesTableAdapter rolesTableAdapter;
         private InvestmentsControl investmentsControl1;
         private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar1;
         private System.Windows.Forms.Timer timer1;
+        private DATABASE2DataSet dATABASE2DataSet;
+        private System.Windows.Forms.BindingSource accessBindingSource;
+        private DATABASE2DataSetTableAdapters.accessTableAdapter accessTableAdapter;
+        private DATABASE2DataSetTableAdapters.usersTableAdapter usersTableAdapter;
+        private System.Windows.Forms.BindingSource usersBindingSource;
+        private DATABASE2DataSetTableAdapters.rolesTableAdapter rolesTableAdapter;
+        private System.Windows.Forms.BindingSource rolesBindingSource;
+        private DATABASE2DataSetTableAdapters.functionsTableAdapter functionsTableAdapter;
+        private System.Windows.Forms.BindingSource functionsBindingSource;
+        private DATABASE2DataSetTableAdapters.pagesTableAdapter pagesTableAdapter;
+        private System.Windows.Forms.BindingSource pagesBindingSource;
+        private DATABASE2DataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }

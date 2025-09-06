@@ -43,26 +43,33 @@
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.database1DataSet = new DemoProject.Database1DataSet();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usersTableAdapter = new DemoProject.Database1DataSetTableAdapters.usersTableAdapter();
-            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rolesTableAdapter = new DemoProject.Database1DataSetTableAdapters.rolesTableAdapter();
-            this.accessBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.accessTableAdapter = new DemoProject.Database1DataSetTableAdapters.accessTableAdapter();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.dATABASE2DataSet = new DemoProject.DATABASE2DataSet();
+            this.pagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pagesTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.pagesTableAdapter();
+            this.tableAdapterManager = new DemoProject.DATABASE2DataSetTableAdapters.TableAdapterManager();
+            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rolesTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.rolesTableAdapter();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usersTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.usersTableAdapter();
+            this.accessBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.accessTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.accessTableAdapter();
+            this.functionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.functionsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.functionsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accessBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dATABASE2DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accessBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.functionsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // UserNameTB
@@ -73,7 +80,7 @@
             this.UserNameTB.BorderRadius = 12;
             this.UserNameTB.BorderThickness = 2;
             this.UserNameTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.UserNameTB.DefaultText = "المدير العام";
+            this.UserNameTB.DefaultText = "";
             this.UserNameTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.UserNameTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.UserNameTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -102,7 +109,7 @@
             this.PassWordTB.BorderRadius = 12;
             this.PassWordTB.BorderThickness = 2;
             this.PassWordTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.PassWordTB.DefaultText = "123";
+            this.PassWordTB.DefaultText = "";
             this.PassWordTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.PassWordTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.PassWordTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -284,7 +291,7 @@
             this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.nightControlBox1.EnableMinimizeButton = true;
             this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.Location = new System.Drawing.Point(498, 0);
+            this.nightControlBox1.Location = new System.Drawing.Point(504, 0);
             this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
             this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -300,40 +307,8 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(637, 36);
+            this.guna2Panel1.Size = new System.Drawing.Size(643, 36);
             this.guna2Panel1.TabIndex = 19;
-            // 
-            // database1DataSet
-            // 
-            this.database1DataSet.DataSetName = "Database1DataSet";
-            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usersBindingSource
-            // 
-            this.usersBindingSource.DataMember = "users";
-            this.usersBindingSource.DataSource = this.database1DataSet;
-            // 
-            // usersTableAdapter
-            // 
-            this.usersTableAdapter.ClearBeforeFill = true;
-            // 
-            // rolesBindingSource
-            // 
-            this.rolesBindingSource.DataMember = "roles";
-            this.rolesBindingSource.DataSource = this.database1DataSet;
-            // 
-            // rolesTableAdapter
-            // 
-            this.rolesTableAdapter.ClearBeforeFill = true;
-            // 
-            // accessBindingSource
-            // 
-            this.accessBindingSource.DataMember = "access";
-            this.accessBindingSource.DataSource = this.database1DataSet;
-            // 
-            // accessTableAdapter
-            // 
-            this.accessTableAdapter.ClearBeforeFill = true;
             // 
             // guna2CirclePictureBox2
             // 
@@ -360,12 +335,79 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "طرح عام الشركة";
             // 
+            // dATABASE2DataSet
+            // 
+            this.dATABASE2DataSet.DataSetName = "DATABASE2DataSet";
+            this.dATABASE2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pagesBindingSource
+            // 
+            this.pagesBindingSource.DataMember = "pages";
+            this.pagesBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // pagesTableAdapter
+            // 
+            this.pagesTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.accessTableAdapter = this.accessTableAdapter;
+            this.tableAdapterManager.approvalsTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.documentsTableAdapter = null;
+            this.tableAdapterManager.functionsTableAdapter = this.functionsTableAdapter;
+            this.tableAdapterManager.governorateTableAdapter = null;
+            this.tableAdapterManager.investmentsTableAdapter = null;
+            this.tableAdapterManager.landsTableAdapter = null;
+            this.tableAdapterManager.pagesTableAdapter = this.pagesTableAdapter;
+            this.tableAdapterManager.projectsTableAdapter = null;
+            this.tableAdapterManager.roadsTableAdapter = null;
+            this.tableAdapterManager.rolesTableAdapter = this.rolesTableAdapter;
+            this.tableAdapterManager.UpdateOrder = DemoProject.DATABASE2DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.usersTableAdapter = this.usersTableAdapter;
+            // 
+            // rolesBindingSource
+            // 
+            this.rolesBindingSource.DataMember = "roles";
+            this.rolesBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // rolesTableAdapter
+            // 
+            this.rolesTableAdapter.ClearBeforeFill = true;
+            // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataMember = "users";
+            this.usersBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // usersTableAdapter
+            // 
+            this.usersTableAdapter.ClearBeforeFill = true;
+            // 
+            // accessBindingSource
+            // 
+            this.accessBindingSource.DataMember = "access";
+            this.accessBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // accessTableAdapter
+            // 
+            this.accessTableAdapter.ClearBeforeFill = true;
+            // 
+            // functionsBindingSource
+            // 
+            this.functionsBindingSource.DataMember = "functions";
+            this.functionsBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // functionsTableAdapter
+            // 
+            this.functionsTableAdapter.ClearBeforeFill = true;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(637, 335);
+            this.ClientSize = new System.Drawing.Size(643, 337);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.guna2CirclePictureBox2);
             this.Controls.Add(this.guna2Panel1);
@@ -391,11 +433,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accessBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dATABASE2DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accessBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.functionsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -416,15 +460,20 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Database1DataSet database1DataSet;
-        private System.Windows.Forms.BindingSource usersBindingSource;
-        private Database1DataSetTableAdapters.usersTableAdapter usersTableAdapter;
-        private System.Windows.Forms.BindingSource rolesBindingSource;
-        private Database1DataSetTableAdapters.rolesTableAdapter rolesTableAdapter;
-        private System.Windows.Forms.BindingSource accessBindingSource;
-        private Database1DataSetTableAdapters.accessTableAdapter accessTableAdapter;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
         private System.Windows.Forms.Label label2;
+        private DATABASE2DataSet dATABASE2DataSet;
+        private System.Windows.Forms.BindingSource pagesBindingSource;
+        private DATABASE2DataSetTableAdapters.pagesTableAdapter pagesTableAdapter;
+        private DATABASE2DataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private DATABASE2DataSetTableAdapters.rolesTableAdapter rolesTableAdapter;
+        private System.Windows.Forms.BindingSource rolesBindingSource;
+        private DATABASE2DataSetTableAdapters.usersTableAdapter usersTableAdapter;
+        private System.Windows.Forms.BindingSource usersBindingSource;
+        private DATABASE2DataSetTableAdapters.accessTableAdapter accessTableAdapter;
+        private System.Windows.Forms.BindingSource accessBindingSource;
+        private DATABASE2DataSetTableAdapters.functionsTableAdapter functionsTableAdapter;
+        private System.Windows.Forms.BindingSource functionsBindingSource;
     }
 }
 

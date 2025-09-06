@@ -30,21 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SystemAdministratorControl));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.database1DataSet = new DemoProject.Database1DataSet();
-            this.projectsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.projectsTableAdapter = new DemoProject.Database1DataSetTableAdapters.projectsTableAdapter();
-            this.landsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.landsTableAdapter = new DemoProject.Database1DataSetTableAdapters.landsTableAdapter();
-            this.governorateBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.governorateTableAdapter = new DemoProject.Database1DataSetTableAdapters.governorateTableAdapter();
-            this.roadsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.roadsTableAdapter = new DemoProject.Database1DataSetTableAdapters.roadsTableAdapter();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.rowCountLabel = new ReaLTaiizor.Controls.BigLabel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.nightLabel11 = new ReaLTaiizor.Controls.NightLabel();
             this.fileNameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -58,27 +50,38 @@
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.nightLabel4 = new ReaLTaiizor.Controls.NightLabel();
             this.advancedDataGridView1 = new Zuby.ADGV.AdvancedDataGridView();
-            this.pagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pagesTableAdapter = new DemoProject.Database1DataSetTableAdapters.pagesTableAdapter();
-            this.functionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.functionsTableAdapter = new DemoProject.Database1DataSetTableAdapters.functionsTableAdapter();
-            this.accessBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.accessTableAdapter = new DemoProject.Database1DataSetTableAdapters.accessTableAdapter();
-            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rolesTableAdapter = new DemoProject.Database1DataSetTableAdapters.rolesTableAdapter();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usersTableAdapter = new DemoProject.Database1DataSetTableAdapters.usersTableAdapter();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.skyButton4 = new ReaLTaiizor.Controls.SkyButton();
+            this.dATABASE2DataSet = new DemoProject.DATABASE2DataSet();
+            this.accessBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.accessTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.accessTableAdapter();
+            this.approvalsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.approvalsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.approvalsTableAdapter();
+            this.documentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.documentsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.documentsTableAdapter();
+            this.functionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.functionsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.functionsTableAdapter();
+            this.governorateBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.governorateTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.governorateTableAdapter();
             this.investmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.investmentsTableAdapter = new DemoProject.Database1DataSetTableAdapters.investmentsTableAdapter();
-            this.rowCountLabel = new ReaLTaiizor.Controls.BigLabel();
+            this.investmentsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.investmentsTableAdapter();
+            this.landsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.landsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.landsTableAdapter();
+            this.pagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pagesTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.pagesTableAdapter();
+            this.projectsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projectsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.projectsTableAdapter();
+            this.roadsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.roadsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.roadsTableAdapter();
+            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rolesTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.rolesTableAdapter();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usersTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.usersTableAdapter();
+            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.landsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.governorateBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roadsBindingSource)).BeginInit();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -87,12 +90,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox6)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.functionsBindingSource)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dATABASE2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.approvalsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.functionsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.governorateBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.investmentsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.landsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roadsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.investmentsBindingSource)).BeginInit();
+            this.guna2Panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2CirclePictureBox1
@@ -150,50 +162,10 @@
             this.guna2TextBox2.Size = new System.Drawing.Size(201, 48);
             this.guna2TextBox2.TabIndex = 23;
             // 
-            // database1DataSet
-            // 
-            this.database1DataSet.DataSetName = "Database1DataSet";
-            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // projectsBindingSource
-            // 
-            this.projectsBindingSource.DataMember = "projects";
-            this.projectsBindingSource.DataSource = this.database1DataSet;
-            // 
-            // projectsTableAdapter
-            // 
-            this.projectsTableAdapter.ClearBeforeFill = true;
-            // 
-            // landsBindingSource
-            // 
-            this.landsBindingSource.DataMember = "lands";
-            this.landsBindingSource.DataSource = this.database1DataSet;
-            // 
-            // landsTableAdapter
-            // 
-            this.landsTableAdapter.ClearBeforeFill = true;
-            // 
-            // governorateBindingSource
-            // 
-            this.governorateBindingSource.DataMember = "governorate";
-            this.governorateBindingSource.DataSource = this.database1DataSet;
-            // 
-            // governorateTableAdapter
-            // 
-            this.governorateTableAdapter.ClearBeforeFill = true;
-            // 
-            // roadsBindingSource
-            // 
-            this.roadsBindingSource.DataMember = "roads";
-            this.roadsBindingSource.DataSource = this.database1DataSet;
-            // 
-            // roadsTableAdapter
-            // 
-            this.roadsTableAdapter.ClearBeforeFill = true;
-            // 
             // guna2TabControl1
             // 
             this.guna2TabControl1.Controls.Add(this.tabPage5);
+            this.guna2TabControl1.Controls.Add(this.tabPage1);
             this.guna2TabControl1.ItemSize = new System.Drawing.Size(235, 40);
             this.guna2TabControl1.Location = new System.Drawing.Point(3, 155);
             this.guna2TabControl1.Name = "guna2TabControl1";
@@ -223,7 +195,7 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.rowCountLabel);
+            this.tabPage5.Controls.Add(this.guna2Panel4);
             this.tabPage5.Controls.Add(this.guna2Panel3);
             this.tabPage5.Controls.Add(this.guna2Panel1);
             this.tabPage5.Controls.Add(this.advancedDataGridView1);
@@ -234,6 +206,18 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "عرض الجدول";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // rowCountLabel
+            // 
+            this.rowCountLabel.AutoSize = true;
+            this.rowCountLabel.BackColor = System.Drawing.Color.Transparent;
+            this.rowCountLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rowCountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.rowCountLabel.Location = new System.Drawing.Point(60, 2);
+            this.rowCountLabel.Name = "rowCountLabel";
+            this.rowCountLabel.Size = new System.Drawing.Size(102, 30);
+            this.rowCountLabel.TabIndex = 38;
+            this.rowCountLabel.Text = "bigLabel1";
             // 
             // guna2Panel3
             // 
@@ -471,14 +455,14 @@
             // 
             // advancedDataGridView1
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.advancedDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.advancedDataGridView1.FilterAndSortEnabled = true;
@@ -491,51 +475,27 @@
             this.advancedDataGridView1.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.advancedDataGridView1.TabIndex = 0;
             this.advancedDataGridView1.FilterStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.FilterEventArgs>(this.advancedDataGridView1_FilterStringChanged);
+            this.advancedDataGridView1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.advancedDataGridView1_Scroll);
             // 
-            // pagesBindingSource
+            // tabPage1
             // 
-            this.pagesBindingSource.DataMember = "pages";
-            this.pagesBindingSource.DataSource = this.database1DataSet;
+            this.tabPage1.Controls.Add(this.reportViewer1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 44);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1176, 533);
+            this.tabPage1.TabIndex = 5;
+            this.tabPage1.Text = "تقرير";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // pagesTableAdapter
+            // reportViewer1
             // 
-            this.pagesTableAdapter.ClearBeforeFill = true;
-            // 
-            // functionsBindingSource
-            // 
-            this.functionsBindingSource.DataMember = "functions";
-            this.functionsBindingSource.DataSource = this.database1DataSet;
-            // 
-            // functionsTableAdapter
-            // 
-            this.functionsTableAdapter.ClearBeforeFill = true;
-            // 
-            // accessBindingSource
-            // 
-            this.accessBindingSource.DataMember = "access";
-            this.accessBindingSource.DataSource = this.database1DataSet;
-            // 
-            // accessTableAdapter
-            // 
-            this.accessTableAdapter.ClearBeforeFill = true;
-            // 
-            // rolesBindingSource
-            // 
-            this.rolesBindingSource.DataMember = "roles";
-            this.rolesBindingSource.DataSource = this.database1DataSet;
-            // 
-            // rolesTableAdapter
-            // 
-            this.rolesTableAdapter.ClearBeforeFill = true;
-            // 
-            // usersBindingSource
-            // 
-            this.usersBindingSource.DataMember = "users";
-            this.usersBindingSource.DataSource = this.database1DataSet;
-            // 
-            // usersTableAdapter
-            // 
-            this.usersTableAdapter.ClearBeforeFill = true;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.Location = new System.Drawing.Point(3, 3);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(1170, 527);
+            this.reportViewer1.TabIndex = 0;
             // 
             // guna2CircleButton1
             // 
@@ -557,31 +517,171 @@
             this.guna2CircleButton1.Text = "رجوع";
             this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
             // 
+            // skyButton4
+            // 
+            this.skyButton4.BackColor = System.Drawing.Color.Transparent;
+            this.skyButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.skyButton4.DownBGColorA = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(153)))), ((int)(((byte)(205)))));
+            this.skyButton4.DownBGColorB = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(124)))), ((int)(((byte)(170)))));
+            this.skyButton4.DownBorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
+            this.skyButton4.DownBorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(149)))), ((int)(((byte)(194)))));
+            this.skyButton4.DownBorderColorC = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(93)))), ((int)(((byte)(131)))));
+            this.skyButton4.DownBorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(25)))), ((int)(((byte)(73)))), ((int)(((byte)(109)))));
+            this.skyButton4.DownForeColor = System.Drawing.Color.White;
+            this.skyButton4.DownShadowForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.skyButton4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.skyButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
+            this.skyButton4.HoverBGColorA = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(153)))), ((int)(((byte)(205)))));
+            this.skyButton4.HoverBGColorB = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(124)))), ((int)(((byte)(170)))));
+            this.skyButton4.HoverBorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
+            this.skyButton4.HoverBorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(149)))), ((int)(((byte)(194)))));
+            this.skyButton4.HoverBorderColorC = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(93)))), ((int)(((byte)(131)))));
+            this.skyButton4.HoverBorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(25)))), ((int)(((byte)(73)))), ((int)(((byte)(109)))));
+            this.skyButton4.HoverForeColor = System.Drawing.Color.White;
+            this.skyButton4.HoverShadowForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.skyButton4.Location = new System.Drawing.Point(218, 95);
+            this.skyButton4.Name = "skyButton4";
+            this.skyButton4.NormalBGColorA = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.skyButton4.NormalBGColorB = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.skyButton4.NormalBorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.skyButton4.NormalBorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.skyButton4.NormalBorderColorC = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.skyButton4.NormalBorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
+            this.skyButton4.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
+            this.skyButton4.NormalShadowForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.skyButton4.Size = new System.Drawing.Size(226, 54);
+            this.skyButton4.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.skyButton4.TabIndex = 61;
+            this.skyButton4.Text = "تقرير مباشر بدون تعديل";
+            this.skyButton4.Click += new System.EventHandler(this.skyButton4_Click_1);
+            // 
+            // dATABASE2DataSet
+            // 
+            this.dATABASE2DataSet.DataSetName = "DATABASE2DataSet";
+            this.dATABASE2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // accessBindingSource
+            // 
+            this.accessBindingSource.DataMember = "access";
+            this.accessBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // accessTableAdapter
+            // 
+            this.accessTableAdapter.ClearBeforeFill = true;
+            // 
+            // approvalsBindingSource
+            // 
+            this.approvalsBindingSource.DataMember = "approvals";
+            this.approvalsBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // approvalsTableAdapter
+            // 
+            this.approvalsTableAdapter.ClearBeforeFill = true;
+            // 
+            // documentsBindingSource
+            // 
+            this.documentsBindingSource.DataMember = "documents";
+            this.documentsBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // documentsTableAdapter
+            // 
+            this.documentsTableAdapter.ClearBeforeFill = true;
+            // 
+            // functionsBindingSource
+            // 
+            this.functionsBindingSource.DataMember = "functions";
+            this.functionsBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // functionsTableAdapter
+            // 
+            this.functionsTableAdapter.ClearBeforeFill = true;
+            // 
+            // governorateBindingSource
+            // 
+            this.governorateBindingSource.DataMember = "governorate";
+            this.governorateBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // governorateTableAdapter
+            // 
+            this.governorateTableAdapter.ClearBeforeFill = true;
+            // 
             // investmentsBindingSource
             // 
             this.investmentsBindingSource.DataMember = "investments";
-            this.investmentsBindingSource.DataSource = this.database1DataSet;
+            this.investmentsBindingSource.DataSource = this.dATABASE2DataSet;
             // 
             // investmentsTableAdapter
             // 
             this.investmentsTableAdapter.ClearBeforeFill = true;
             // 
-            // rowCountLabel
+            // landsBindingSource
             // 
-            this.rowCountLabel.AutoSize = true;
-            this.rowCountLabel.BackColor = System.Drawing.Color.Transparent;
-            this.rowCountLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rowCountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.rowCountLabel.Location = new System.Drawing.Point(6, 222);
-            this.rowCountLabel.Name = "rowCountLabel";
-            this.rowCountLabel.Size = new System.Drawing.Size(102, 30);
-            this.rowCountLabel.TabIndex = 38;
-            this.rowCountLabel.Text = "bigLabel1";
+            this.landsBindingSource.DataMember = "lands";
+            this.landsBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // landsTableAdapter
+            // 
+            this.landsTableAdapter.ClearBeforeFill = true;
+            // 
+            // pagesBindingSource
+            // 
+            this.pagesBindingSource.DataMember = "pages";
+            this.pagesBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // pagesTableAdapter
+            // 
+            this.pagesTableAdapter.ClearBeforeFill = true;
+            // 
+            // projectsBindingSource
+            // 
+            this.projectsBindingSource.DataMember = "projects";
+            this.projectsBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // projectsTableAdapter
+            // 
+            this.projectsTableAdapter.ClearBeforeFill = true;
+            // 
+            // roadsBindingSource
+            // 
+            this.roadsBindingSource.DataMember = "roads";
+            this.roadsBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // roadsTableAdapter
+            // 
+            this.roadsTableAdapter.ClearBeforeFill = true;
+            // 
+            // rolesBindingSource
+            // 
+            this.rolesBindingSource.DataMember = "roles";
+            this.rolesBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // rolesTableAdapter
+            // 
+            this.rolesTableAdapter.ClearBeforeFill = true;
+            // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataMember = "users";
+            this.usersBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // usersTableAdapter
+            // 
+            this.usersTableAdapter.ClearBeforeFill = true;
+            // 
+            // guna2Panel4
+            // 
+            this.guna2Panel4.Controls.Add(this.rowCountLabel);
+            this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.guna2Panel4.Location = new System.Drawing.Point(212, 219);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.Size = new System.Drawing.Size(220, 311);
+            this.guna2Panel4.TabIndex = 39;
             // 
             // SystemAdministratorControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.skyButton4);
             this.Controls.Add(this.guna2CircleButton1);
             this.Controls.Add(this.guna2TabControl1);
             this.Controls.Add(this.guna2CirclePictureBox1);
@@ -592,14 +692,8 @@
             this.Load += new System.EventHandler(this.SystemAdministratorControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.landsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.governorateBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roadsBindingSource)).EndInit();
             this.guna2TabControl1.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
@@ -608,12 +702,22 @@
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.functionsBindingSource)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dATABASE2DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.approvalsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.functionsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.governorateBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.investmentsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.landsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roadsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.investmentsBindingSource)).EndInit();
+            this.guna2Panel4.ResumeLayout(false);
+            this.guna2Panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -623,15 +727,6 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
-        private Database1DataSet database1DataSet;
-        private System.Windows.Forms.BindingSource projectsBindingSource;
-        private Database1DataSetTableAdapters.projectsTableAdapter projectsTableAdapter;
-        private System.Windows.Forms.BindingSource landsBindingSource;
-        private Database1DataSetTableAdapters.landsTableAdapter landsTableAdapter;
-        private System.Windows.Forms.BindingSource governorateBindingSource;
-        private Database1DataSetTableAdapters.governorateTableAdapter governorateTableAdapter;
-        private System.Windows.Forms.BindingSource roadsBindingSource;
-        private Database1DataSetTableAdapters.roadsTableAdapter roadsTableAdapter;
         private Guna.UI2.WinForms.Guna2TabControl guna2TabControl1;
         private System.Windows.Forms.TabPage tabPage5;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
@@ -647,19 +742,36 @@
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private ReaLTaiizor.Controls.NightLabel nightLabel4;
         private Zuby.ADGV.AdvancedDataGridView advancedDataGridView1;
-        private System.Windows.Forms.BindingSource pagesBindingSource;
-        private Database1DataSetTableAdapters.pagesTableAdapter pagesTableAdapter;
-        private System.Windows.Forms.BindingSource functionsBindingSource;
-        private Database1DataSetTableAdapters.functionsTableAdapter functionsTableAdapter;
-        private System.Windows.Forms.BindingSource accessBindingSource;
-        private Database1DataSetTableAdapters.accessTableAdapter accessTableAdapter;
-        private System.Windows.Forms.BindingSource rolesBindingSource;
-        private Database1DataSetTableAdapters.rolesTableAdapter rolesTableAdapter;
-        private System.Windows.Forms.BindingSource usersBindingSource;
-        private Database1DataSetTableAdapters.usersTableAdapter usersTableAdapter;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
-        private System.Windows.Forms.BindingSource investmentsBindingSource;
-        private Database1DataSetTableAdapters.investmentsTableAdapter investmentsTableAdapter;
         private ReaLTaiizor.Controls.BigLabel rowCountLabel;
+        private System.Windows.Forms.TabPage tabPage1;
+        private ReaLTaiizor.Controls.SkyButton skyButton4;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private DATABASE2DataSet dATABASE2DataSet;
+        private System.Windows.Forms.BindingSource accessBindingSource;
+        private DATABASE2DataSetTableAdapters.accessTableAdapter accessTableAdapter;
+        private System.Windows.Forms.BindingSource approvalsBindingSource;
+        private DATABASE2DataSetTableAdapters.approvalsTableAdapter approvalsTableAdapter;
+        private System.Windows.Forms.BindingSource documentsBindingSource;
+        private DATABASE2DataSetTableAdapters.documentsTableAdapter documentsTableAdapter;
+        private System.Windows.Forms.BindingSource functionsBindingSource;
+        private DATABASE2DataSetTableAdapters.functionsTableAdapter functionsTableAdapter;
+        private System.Windows.Forms.BindingSource governorateBindingSource;
+        private DATABASE2DataSetTableAdapters.governorateTableAdapter governorateTableAdapter;
+        private System.Windows.Forms.BindingSource investmentsBindingSource;
+        private DATABASE2DataSetTableAdapters.investmentsTableAdapter investmentsTableAdapter;
+        private System.Windows.Forms.BindingSource landsBindingSource;
+        private DATABASE2DataSetTableAdapters.landsTableAdapter landsTableAdapter;
+        private System.Windows.Forms.BindingSource pagesBindingSource;
+        private DATABASE2DataSetTableAdapters.pagesTableAdapter pagesTableAdapter;
+        private System.Windows.Forms.BindingSource projectsBindingSource;
+        private DATABASE2DataSetTableAdapters.projectsTableAdapter projectsTableAdapter;
+        private System.Windows.Forms.BindingSource roadsBindingSource;
+        private DATABASE2DataSetTableAdapters.roadsTableAdapter roadsTableAdapter;
+        private System.Windows.Forms.BindingSource rolesBindingSource;
+        private DATABASE2DataSetTableAdapters.rolesTableAdapter rolesTableAdapter;
+        private System.Windows.Forms.BindingSource usersBindingSource;
+        private DATABASE2DataSetTableAdapters.usersTableAdapter usersTableAdapter;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
     }
 }

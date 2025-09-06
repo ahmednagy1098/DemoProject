@@ -46,6 +46,11 @@
             this.Error_N = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.Error_E = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.dungeonLabel19 = new ReaLTaiizor.Controls.DungeonLabel();
+            this.dungeonLabel18 = new ReaLTaiizor.Controls.DungeonLabel();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Update_Radio = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.Add_Radio = new Guna.UI2.WinForms.Guna2RadioButton();
             this.Land_Number_Error = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.Error_total_area = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.Error_total_land = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -95,6 +100,8 @@
             this.dungeonLabel9 = new ReaLTaiizor.Controls.DungeonLabel();
             this.dungeonLabel8 = new ReaLTaiizor.Controls.DungeonLabel();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.RowCountSeries = new ReaLTaiizor.Controls.BigLabel();
             this.rowCountLabel = new ReaLTaiizor.Controls.BigLabel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.nightLabel5 = new ReaLTaiizor.Controls.NightLabel();
@@ -109,46 +116,31 @@
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.nightLabel4 = new ReaLTaiizor.Controls.NightLabel();
             this.advancedDataGridView1 = new Zuby.ADGV.AdvancedDataGridView();
-            this.landsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.database1DataSet1 = new DemoProject.Database1DataSet();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.crownLabel1 = new ReaLTaiizor.Controls.CrownLabel();
             this.guna2Shapes2 = new Guna.UI2.WinForms.Guna2Shapes();
             this.guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.database1DataSet = new DemoProject.Database1DataSet();
-            this.landsTableAdapter = new DemoProject.Database1DataSetTableAdapters.landsTableAdapter();
-            this.governorateTableAdapter1 = new DemoProject.Database1DataSetTableAdapters.governorateTableAdapter();
-            this.pagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pagesTableAdapter = new DemoProject.Database1DataSetTableAdapters.pagesTableAdapter();
-            this.functionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.functionsTableAdapter = new DemoProject.Database1DataSetTableAdapters.functionsTableAdapter();
+            this.skyButton4 = new ReaLTaiizor.Controls.SkyButton();
+            this.Report_TB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.dATABASE2DataSet = new DemoProject.DATABASE2DataSet();
             this.accessBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.accessTableAdapter = new DemoProject.Database1DataSetTableAdapters.accessTableAdapter();
-            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rolesTableAdapter = new DemoProject.Database1DataSetTableAdapters.rolesTableAdapter();
+            this.accessTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.accessTableAdapter();
+            this.functionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.functionsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.functionsTableAdapter();
+            this.pagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pagesTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.pagesTableAdapter();
+            this.landsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.landsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.landsTableAdapter();
+            this.governorateBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.governorateTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.governorateTableAdapter();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usersTableAdapter = new DemoProject.Database1DataSetTableAdapters.usersTableAdapter();
-            this.land_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.land_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serial_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.plate_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.land_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ownership_Authority = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total_area = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Topographic_Survey_Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Land_Plate_Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coordinates_N = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coordinates_E = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.governorate_fk = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Republican_Decree = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Republican_Decree_Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Republican_Decree_PDF = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.plate_numberFile = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.consulting_Office = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total_Land_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usersTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.usersTableAdapter();
+            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rolesTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.rolesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.tabPage4.SuspendLayout();
@@ -169,21 +161,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.Error_plate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Error_Serial)).BeginInit();
             this.tabPage5.SuspendLayout();
+            this.guna2Panel4.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.landsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
             this.guna2TabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.functionsBindingSource)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dATABASE2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.functionsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.landsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.governorateBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2TextBox2
@@ -283,7 +277,7 @@
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(1176, 533);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "أضافة";
+            this.tabPage4.Text = "أضافة او تعديل";
             this.tabPage4.UseVisualStyleBackColor = true;
             this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
             // 
@@ -334,13 +328,14 @@
             this.guna2Button2.ImageSize = new System.Drawing.Size(40, 40);
             this.guna2Button2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.guna2Button2.IndicateFocus = true;
-            this.guna2Button2.Location = new System.Drawing.Point(713, 472);
+            this.guna2Button2.Location = new System.Drawing.Point(501, 472);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(186, 46);
             this.guna2Button2.TabIndex = 69;
-            this.guna2Button2.Text = "تعديل البيانات";
+            this.guna2Button2.Text = "حفظ التعديل";
             this.guna2Button2.TextOffset = new System.Drawing.Point(-5, 0);
             this.guna2Button2.UseTransparentBackground = true;
+            this.guna2Button2.Visible = false;
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // Error_Republican_Decree
@@ -348,7 +343,7 @@
             this.Error_Republican_Decree.BackColor = System.Drawing.Color.Transparent;
             this.Error_Republican_Decree.Image = ((System.Drawing.Image)(resources.GetObject("Error_Republican_Decree.Image")));
             this.Error_Republican_Decree.ImageRotate = 0F;
-            this.Error_Republican_Decree.Location = new System.Drawing.Point(272, 231);
+            this.Error_Republican_Decree.Location = new System.Drawing.Point(225, 231);
             this.Error_Republican_Decree.Name = "Error_Republican_Decree";
             this.Error_Republican_Decree.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.Error_Republican_Decree.Size = new System.Drawing.Size(43, 37);
@@ -363,7 +358,7 @@
             this.Error_consulting.BackColor = System.Drawing.Color.Transparent;
             this.Error_consulting.Image = ((System.Drawing.Image)(resources.GetObject("Error_consulting.Image")));
             this.Error_consulting.ImageRotate = 0F;
-            this.Error_consulting.Location = new System.Drawing.Point(272, 190);
+            this.Error_consulting.Location = new System.Drawing.Point(225, 190);
             this.Error_consulting.Name = "Error_consulting";
             this.Error_consulting.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.Error_consulting.Size = new System.Drawing.Size(43, 37);
@@ -378,7 +373,7 @@
             this.Error_Land_Plate.BackColor = System.Drawing.Color.Transparent;
             this.Error_Land_Plate.Image = ((System.Drawing.Image)(resources.GetObject("Error_Land_Plate.Image")));
             this.Error_Land_Plate.ImageRotate = 0F;
-            this.Error_Land_Plate.Location = new System.Drawing.Point(272, 147);
+            this.Error_Land_Plate.Location = new System.Drawing.Point(225, 147);
             this.Error_Land_Plate.Name = "Error_Land_Plate";
             this.Error_Land_Plate.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.Error_Land_Plate.Size = new System.Drawing.Size(43, 37);
@@ -393,7 +388,7 @@
             this.Error_Topographic.BackColor = System.Drawing.Color.Transparent;
             this.Error_Topographic.Image = ((System.Drawing.Image)(resources.GetObject("Error_Topographic.Image")));
             this.Error_Topographic.ImageRotate = 0F;
-            this.Error_Topographic.Location = new System.Drawing.Point(272, 104);
+            this.Error_Topographic.Location = new System.Drawing.Point(225, 104);
             this.Error_Topographic.Name = "Error_Topographic";
             this.Error_Topographic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.Error_Topographic.Size = new System.Drawing.Size(43, 37);
@@ -408,7 +403,7 @@
             this.Error_N.BackColor = System.Drawing.Color.Transparent;
             this.Error_N.Image = ((System.Drawing.Image)(resources.GetObject("Error_N.Image")));
             this.Error_N.ImageRotate = 0F;
-            this.Error_N.Location = new System.Drawing.Point(228, 58);
+            this.Error_N.Location = new System.Drawing.Point(181, 58);
             this.Error_N.Name = "Error_N";
             this.Error_N.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.Error_N.Size = new System.Drawing.Size(43, 37);
@@ -423,7 +418,7 @@
             this.Error_E.BackColor = System.Drawing.Color.Transparent;
             this.Error_E.Image = ((System.Drawing.Image)(resources.GetObject("Error_E.Image")));
             this.Error_E.ImageRotate = 0F;
-            this.Error_E.Location = new System.Drawing.Point(228, 15);
+            this.Error_E.Location = new System.Drawing.Point(181, 15);
             this.Error_E.Name = "Error_E";
             this.Error_E.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.Error_E.Size = new System.Drawing.Size(43, 37);
@@ -435,6 +430,11 @@
             // 
             // guna2Panel2
             // 
+            this.guna2Panel2.Controls.Add(this.dungeonLabel19);
+            this.guna2Panel2.Controls.Add(this.dungeonLabel18);
+            this.guna2Panel2.Controls.Add(this.guna2TextBox1);
+            this.guna2Panel2.Controls.Add(this.Update_Radio);
+            this.guna2Panel2.Controls.Add(this.Add_Radio);
             this.guna2Panel2.Controls.Add(this.Land_Number_Error);
             this.guna2Panel2.Controls.Add(this.Error_total_area);
             this.guna2Panel2.Controls.Add(this.Error_total_land);
@@ -462,17 +462,110 @@
             this.guna2Panel2.Controls.Add(this.total_land_price_TB);
             this.guna2Panel2.Controls.Add(this.Address_TB);
             this.guna2Panel2.Controls.Add(this.Ownership_Authority_TB);
-            this.guna2Panel2.Location = new System.Drawing.Point(647, 6);
+            this.guna2Panel2.Location = new System.Drawing.Point(605, 6);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(521, 447);
+            this.guna2Panel2.Size = new System.Drawing.Size(565, 447);
             this.guna2Panel2.TabIndex = 41;
+            // 
+            // dungeonLabel19
+            // 
+            this.dungeonLabel19.AutoSize = true;
+            this.dungeonLabel19.BackColor = System.Drawing.Color.Transparent;
+            this.dungeonLabel19.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.dungeonLabel19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.dungeonLabel19.Location = new System.Drawing.Point(444, 31);
+            this.dungeonLabel19.Name = "dungeonLabel19";
+            this.dungeonLabel19.Size = new System.Drawing.Size(57, 20);
+            this.dungeonLabel19.TabIndex = 119;
+            this.dungeonLabel19.Text = "(اليمين)";
+            // 
+            // dungeonLabel18
+            // 
+            this.dungeonLabel18.AutoSize = true;
+            this.dungeonLabel18.BackColor = System.Drawing.Color.Transparent;
+            this.dungeonLabel18.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.dungeonLabel18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.dungeonLabel18.Location = new System.Drawing.Point(98, 317);
+            this.dungeonLabel18.Name = "dungeonLabel18";
+            this.dungeonLabel18.Size = new System.Drawing.Size(70, 20);
+            this.dungeonLabel18.TabIndex = 118;
+            this.dungeonLabel18.Text = "سعر المتر";
+            // 
+            // guna2TextBox1
+            // 
+            this.guna2TextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2TextBox1.Animated = true;
+            this.guna2TextBox1.AutoRoundedCorners = true;
+            this.guna2TextBox1.BorderRadius = 13;
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Location = new System.Drawing.Point(32, 341);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PlaceholderText = "ادخل سعر المتر";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.Size = new System.Drawing.Size(133, 29);
+            this.guna2TextBox1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.guna2TextBox1.TabIndex = 117;
+            this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+            this.guna2TextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guna2TextBox1_KeyPress);
+            // 
+            // Update_Radio
+            // 
+            this.Update_Radio.AutoSize = true;
+            this.Update_Radio.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Update_Radio.CheckedState.BorderThickness = 0;
+            this.Update_Radio.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Update_Radio.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.Update_Radio.CheckedState.InnerOffset = -4;
+            this.Update_Radio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Update_Radio.Location = new System.Drawing.Point(12, 6);
+            this.Update_Radio.Name = "Update_Radio";
+            this.Update_Radio.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Update_Radio.Size = new System.Drawing.Size(54, 24);
+            this.Update_Radio.TabIndex = 116;
+            this.Update_Radio.Text = "تعديل";
+            this.Update_Radio.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.Update_Radio.UncheckedState.BorderThickness = 2;
+            this.Update_Radio.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.Update_Radio.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.Update_Radio.CheckedChanged += new System.EventHandler(this.Update_Radio_CheckedChanged);
+            // 
+            // Add_Radio
+            // 
+            this.Add_Radio.AutoSize = true;
+            this.Add_Radio.Checked = true;
+            this.Add_Radio.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Add_Radio.CheckedState.BorderThickness = 0;
+            this.Add_Radio.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Add_Radio.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.Add_Radio.CheckedState.InnerOffset = -4;
+            this.Add_Radio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.Add_Radio.Location = new System.Drawing.Point(72, 6);
+            this.Add_Radio.Name = "Add_Radio";
+            this.Add_Radio.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Add_Radio.Size = new System.Drawing.Size(60, 24);
+            this.Add_Radio.TabIndex = 115;
+            this.Add_Radio.TabStop = true;
+            this.Add_Radio.Text = "اضافه";
+            this.Add_Radio.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.Add_Radio.UncheckedState.BorderThickness = 2;
+            this.Add_Radio.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.Add_Radio.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.Add_Radio.CheckedChanged += new System.EventHandler(this.Add_Radio_CheckedChanged);
             // 
             // Land_Number_Error
             // 
             this.Land_Number_Error.BackColor = System.Drawing.Color.Transparent;
             this.Land_Number_Error.Image = ((System.Drawing.Image)(resources.GetObject("Land_Number_Error.Image")));
             this.Land_Number_Error.ImageRotate = 0F;
-            this.Land_Number_Error.Location = new System.Drawing.Point(116, 102);
+            this.Land_Number_Error.Location = new System.Drawing.Point(184, 100);
             this.Land_Number_Error.Name = "Land_Number_Error";
             this.Land_Number_Error.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.Land_Number_Error.Size = new System.Drawing.Size(43, 37);
@@ -487,7 +580,7 @@
             this.Error_total_area.BackColor = System.Drawing.Color.Transparent;
             this.Error_total_area.Image = ((System.Drawing.Image)(resources.GetObject("Error_total_area.Image")));
             this.Error_total_area.ImageRotate = 0F;
-            this.Error_total_area.Location = new System.Drawing.Point(116, 398);
+            this.Error_total_area.Location = new System.Drawing.Point(184, 341);
             this.Error_total_area.Name = "Error_total_area";
             this.Error_total_area.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.Error_total_area.Size = new System.Drawing.Size(43, 37);
@@ -502,7 +595,7 @@
             this.Error_total_land.BackColor = System.Drawing.Color.Transparent;
             this.Error_total_land.Image = ((System.Drawing.Image)(resources.GetObject("Error_total_land.Image")));
             this.Error_total_land.ImageRotate = 0F;
-            this.Error_total_land.Location = new System.Drawing.Point(116, 346);
+            this.Error_total_land.Location = new System.Drawing.Point(174, 400);
             this.Error_total_land.Name = "Error_total_land";
             this.Error_total_land.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.Error_total_land.Size = new System.Drawing.Size(43, 37);
@@ -518,7 +611,7 @@
             this.dungeonLabel17.BackColor = System.Drawing.Color.Transparent;
             this.dungeonLabel17.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.dungeonLabel17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.dungeonLabel17.Location = new System.Drawing.Point(369, 107);
+            this.dungeonLabel17.Location = new System.Drawing.Point(438, 107);
             this.dungeonLabel17.Name = "dungeonLabel17";
             this.dungeonLabel17.Size = new System.Drawing.Size(82, 20);
             this.dungeonLabel17.TabIndex = 63;
@@ -529,7 +622,7 @@
             this.Error_Ownership.BackColor = System.Drawing.Color.Transparent;
             this.Error_Ownership.Image = ((System.Drawing.Image)(resources.GetObject("Error_Ownership.Image")));
             this.Error_Ownership.ImageRotate = 0F;
-            this.Error_Ownership.Location = new System.Drawing.Point(116, 285);
+            this.Error_Ownership.Location = new System.Drawing.Point(184, 276);
             this.Error_Ownership.Name = "Error_Ownership";
             this.Error_Ownership.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.Error_Ownership.Size = new System.Drawing.Size(43, 37);
@@ -544,7 +637,7 @@
             this.Error_Governorate.BackColor = System.Drawing.Color.Transparent;
             this.Error_Governorate.Image = ((System.Drawing.Image)(resources.GetObject("Error_Governorate.Image")));
             this.Error_Governorate.ImageRotate = 0F;
-            this.Error_Governorate.Location = new System.Drawing.Point(165, 235);
+            this.Error_Governorate.Location = new System.Drawing.Point(233, 233);
             this.Error_Governorate.Name = "Error_Governorate";
             this.Error_Governorate.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.Error_Governorate.Size = new System.Drawing.Size(43, 37);
@@ -569,7 +662,7 @@
             this.Land_Number_TB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Land_Number_TB.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Land_Number_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Land_Number_TB.Location = new System.Drawing.Point(165, 98);
+            this.Land_Number_TB.Location = new System.Drawing.Point(233, 98);
             this.Land_Number_TB.Name = "Land_Number_TB";
             this.Land_Number_TB.PlaceholderText = "هنا يتم ادخال رقم القطعة";
             this.Land_Number_TB.SelectedText = "";
@@ -582,7 +675,7 @@
             this.Error_Address.BackColor = System.Drawing.Color.Transparent;
             this.Error_Address.Image = ((System.Drawing.Image)(resources.GetObject("Error_Address.Image")));
             this.Error_Address.ImageRotate = 0F;
-            this.Error_Address.Location = new System.Drawing.Point(116, 193);
+            this.Error_Address.Location = new System.Drawing.Point(184, 184);
             this.Error_Address.Name = "Error_Address";
             this.Error_Address.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.Error_Address.Size = new System.Drawing.Size(43, 37);
@@ -597,7 +690,7 @@
             this.Error_Land.BackColor = System.Drawing.Color.Transparent;
             this.Error_Land.Image = ((System.Drawing.Image)(resources.GetObject("Error_Land.Image")));
             this.Error_Land.ImageRotate = 0F;
-            this.Error_Land.Location = new System.Drawing.Point(48, 150);
+            this.Error_Land.Location = new System.Drawing.Point(114, 141);
             this.Error_Land.Name = "Error_Land";
             this.Error_Land.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.Error_Land.Size = new System.Drawing.Size(43, 37);
@@ -612,7 +705,7 @@
             this.Error_plate.BackColor = System.Drawing.Color.Transparent;
             this.Error_plate.Image = ((System.Drawing.Image)(resources.GetObject("Error_plate.Image")));
             this.Error_plate.ImageRotate = 0F;
-            this.Error_plate.Location = new System.Drawing.Point(116, 64);
+            this.Error_plate.Location = new System.Drawing.Point(184, 57);
             this.Error_plate.Name = "Error_plate";
             this.Error_plate.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.Error_plate.Size = new System.Drawing.Size(43, 37);
@@ -627,7 +720,7 @@
             this.Error_Serial.BackColor = System.Drawing.Color.Transparent;
             this.Error_Serial.Image = ((System.Drawing.Image)(resources.GetObject("Error_Serial.Image")));
             this.Error_Serial.ImageRotate = 0F;
-            this.Error_Serial.Location = new System.Drawing.Point(80, 21);
+            this.Error_Serial.Location = new System.Drawing.Point(148, 14);
             this.Error_Serial.Name = "Error_Serial";
             this.Error_Serial.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.Error_Serial.Size = new System.Drawing.Size(43, 37);
@@ -652,7 +745,7 @@
             this.plate_number_TB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.plate_number_TB.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.plate_number_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.plate_number_TB.Location = new System.Drawing.Point(165, 55);
+            this.plate_number_TB.Location = new System.Drawing.Point(233, 55);
             this.plate_number_TB.Name = "plate_number_TB";
             this.plate_number_TB.PlaceholderText = "هنا يتم ادخال رقم اللوحة";
             this.plate_number_TB.SelectedText = "";
@@ -677,7 +770,7 @@
             this.total_area_TB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.total_area_TB.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.total_area_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.total_area_TB.Location = new System.Drawing.Point(165, 390);
+            this.total_area_TB.Location = new System.Drawing.Point(233, 341);
             this.total_area_TB.Name = "total_area_TB";
             this.total_area_TB.PlaceholderText = "هنا يتم ادخال المساحة الكلية";
             this.total_area_TB.SelectedText = "";
@@ -693,7 +786,7 @@
             this.dungeonLabel1.BackColor = System.Drawing.Color.Transparent;
             this.dungeonLabel1.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.dungeonLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.dungeonLabel1.Location = new System.Drawing.Point(369, 26);
+            this.dungeonLabel1.Location = new System.Drawing.Point(426, 9);
             this.dungeonLabel1.Name = "dungeonLabel1";
             this.dungeonLabel1.Size = new System.Drawing.Size(85, 20);
             this.dungeonLabel1.TabIndex = 0;
@@ -705,7 +798,7 @@
             this.dungeonLabel16.BackColor = System.Drawing.Color.Transparent;
             this.dungeonLabel16.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.dungeonLabel16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.dungeonLabel16.Location = new System.Drawing.Point(368, 399);
+            this.dungeonLabel16.Location = new System.Drawing.Point(438, 350);
             this.dungeonLabel16.Name = "dungeonLabel16";
             this.dungeonLabel16.Size = new System.Drawing.Size(100, 20);
             this.dungeonLabel16.TabIndex = 39;
@@ -717,7 +810,7 @@
             this.dungeonLabel2.BackColor = System.Drawing.Color.Transparent;
             this.dungeonLabel2.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.dungeonLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.dungeonLabel2.Location = new System.Drawing.Point(369, 64);
+            this.dungeonLabel2.Location = new System.Drawing.Point(446, 64);
             this.dungeonLabel2.Name = "dungeonLabel2";
             this.dungeonLabel2.Size = new System.Drawing.Size(74, 20);
             this.dungeonLabel2.TabIndex = 1;
@@ -729,7 +822,7 @@
             this.dungeonLabel3.BackColor = System.Drawing.Color.Transparent;
             this.dungeonLabel3.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.dungeonLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.dungeonLabel3.Location = new System.Drawing.Point(369, 150);
+            this.dungeonLabel3.Location = new System.Drawing.Point(426, 150);
             this.dungeonLabel3.Name = "dungeonLabel3";
             this.dungeonLabel3.Size = new System.Drawing.Size(123, 20);
             this.dungeonLabel3.TabIndex = 2;
@@ -741,7 +834,7 @@
             this.dungeonLabel4.BackColor = System.Drawing.Color.Transparent;
             this.dungeonLabel4.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.dungeonLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.dungeonLabel4.Location = new System.Drawing.Point(373, 193);
+            this.dungeonLabel4.Location = new System.Drawing.Point(432, 193);
             this.dungeonLabel4.Name = "dungeonLabel4";
             this.dungeonLabel4.Size = new System.Drawing.Size(54, 20);
             this.dungeonLabel4.TabIndex = 3;
@@ -753,7 +846,7 @@
             this.dungeonLabel5.BackColor = System.Drawing.Color.Transparent;
             this.dungeonLabel5.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.dungeonLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.dungeonLabel5.Location = new System.Drawing.Point(369, 235);
+            this.dungeonLabel5.Location = new System.Drawing.Point(432, 235);
             this.dungeonLabel5.Name = "dungeonLabel5";
             this.dungeonLabel5.Size = new System.Drawing.Size(69, 20);
             this.dungeonLabel5.TabIndex = 4;
@@ -765,7 +858,7 @@
             this.dungeonLabel6.BackColor = System.Drawing.Color.Transparent;
             this.dungeonLabel6.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.dungeonLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.dungeonLabel6.Location = new System.Drawing.Point(369, 285);
+            this.dungeonLabel6.Location = new System.Drawing.Point(432, 285);
             this.dungeonLabel6.Name = "dungeonLabel6";
             this.dungeonLabel6.Size = new System.Drawing.Size(77, 20);
             this.dungeonLabel6.TabIndex = 5;
@@ -777,7 +870,7 @@
             this.dungeonLabel7.BackColor = System.Drawing.Color.Transparent;
             this.dungeonLabel7.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.dungeonLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.dungeonLabel7.Location = new System.Drawing.Point(369, 346);
+            this.dungeonLabel7.Location = new System.Drawing.Point(422, 409);
             this.dungeonLabel7.Name = "dungeonLabel7";
             this.dungeonLabel7.Size = new System.Drawing.Size(127, 20);
             this.dungeonLabel7.TabIndex = 6;
@@ -798,9 +891,9 @@
             this.serial_number_TB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.serial_number_TB.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.serial_number_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.serial_number_TB.Location = new System.Drawing.Point(129, 17);
+            this.serial_number_TB.Location = new System.Drawing.Point(197, 14);
             this.serial_number_TB.Name = "serial_number_TB";
-            this.serial_number_TB.PlaceholderText = "هنا يتم ادخال رقم المسلسل وبحث سريع";
+            this.serial_number_TB.PlaceholderText = "هنا يتم ادخال رقم المسلسل";
             this.serial_number_TB.SelectedText = "";
             this.serial_number_TB.Size = new System.Drawing.Size(223, 29);
             this.serial_number_TB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
@@ -820,7 +913,7 @@
             this.Governorate_COB.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.Governorate_COB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.Governorate_COB.ItemHeight = 30;
-            this.Governorate_COB.Location = new System.Drawing.Point(214, 223);
+            this.Governorate_COB.Location = new System.Drawing.Point(282, 226);
             this.Governorate_COB.Name = "Governorate_COB";
             this.Governorate_COB.Size = new System.Drawing.Size(138, 36);
             this.Governorate_COB.Sorted = true;
@@ -845,7 +938,7 @@
             this.Land_Name_TB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Land_Name_TB.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Land_Name_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Land_Name_TB.Location = new System.Drawing.Point(95, 141);
+            this.Land_Name_TB.Location = new System.Drawing.Point(163, 141);
             this.Land_Name_TB.Name = "Land_Name_TB";
             this.Land_Name_TB.PlaceholderText = "هنا يتم ادخال اسم قطعة الأرض";
             this.Land_Name_TB.SelectedText = "";
@@ -866,10 +959,11 @@
             this.total_land_price_TB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.total_land_price_TB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.total_land_price_TB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.total_land_price_TB.Enabled = false;
             this.total_land_price_TB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.total_land_price_TB.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.total_land_price_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.total_land_price_TB.Location = new System.Drawing.Point(165, 337);
+            this.total_land_price_TB.Location = new System.Drawing.Point(223, 400);
             this.total_land_price_TB.Name = "total_land_price_TB";
             this.total_land_price_TB.PlaceholderText = "هنا يتم ادخال إجمالي سعر الأرض";
             this.total_land_price_TB.SelectedText = "";
@@ -894,7 +988,7 @@
             this.Address_TB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Address_TB.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Address_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Address_TB.Location = new System.Drawing.Point(165, 184);
+            this.Address_TB.Location = new System.Drawing.Point(233, 184);
             this.Address_TB.Name = "Address_TB";
             this.Address_TB.PlaceholderText = "هنا يتم ادخال العنوان";
             this.Address_TB.SelectedText = "";
@@ -918,7 +1012,7 @@
             this.Ownership_Authority_TB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Ownership_Authority_TB.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Ownership_Authority_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Ownership_Authority_TB.Location = new System.Drawing.Point(165, 276);
+            this.Ownership_Authority_TB.Location = new System.Drawing.Point(233, 276);
             this.Ownership_Authority_TB.Name = "Ownership_Authority_TB";
             this.Ownership_Authority_TB.PlaceholderText = "هنا يتم ادخال جهة الولاية";
             this.Ownership_Authority_TB.SelectedText = "";
@@ -1020,7 +1114,7 @@
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(186, 46);
             this.guna2Button1.TabIndex = 32;
-            this.guna2Button1.Text = "حفظ البيانات";
+            this.guna2Button1.Text = "حفظ الأضافة";
             this.guna2Button1.TextOffset = new System.Drawing.Point(-5, 0);
             this.guna2Button1.UseTransparentBackground = true;
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
@@ -1040,7 +1134,7 @@
             this.coordinates_N_TB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.coordinates_N_TB.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.coordinates_N_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.coordinates_N_TB.Location = new System.Drawing.Point(282, 49);
+            this.coordinates_N_TB.Location = new System.Drawing.Point(235, 49);
             this.coordinates_N_TB.Name = "coordinates_N_TB";
             this.coordinates_N_TB.PlaceholderText = "N هنا يتم أدخال الإحداثيات";
             this.coordinates_N_TB.SelectedText = "";
@@ -1064,7 +1158,7 @@
             this.coordinates_E_TB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.coordinates_E_TB.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.coordinates_E_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.coordinates_E_TB.Location = new System.Drawing.Point(277, 11);
+            this.coordinates_E_TB.Location = new System.Drawing.Point(230, 11);
             this.coordinates_E_TB.Name = "coordinates_E_TB";
             this.coordinates_E_TB.PlaceholderText = "E هنا يتم أدخال الإحداثيات";
             this.coordinates_E_TB.SelectedText = "";
@@ -1096,8 +1190,29 @@
             this.consulting_Office_COB.ItemHeight = 30;
             this.consulting_Office_COB.Items.AddRange(new object[] {
             "X",
-            "✔"});
-            this.consulting_Office_COB.Location = new System.Drawing.Point(326, 178);
+            "✓",
+            "ايدج",
+            "معماريون",
+            "نابة",
+            "برايم",
+            "يونيون",
+            "الخان",
+            "دزينر",
+            "بافليوم",
+            "طلعت",
+            "النيل",
+            "مرخص",
+            "فيوتشر",
+            "بيع",
+            "a",
+            "السبكى",
+            "سكوب",
+            "gm",
+            "ايدج+نابة",
+            "بافليوم +x",
+            "معماريون+x",
+            "معماريون +ايدج"});
+            this.consulting_Office_COB.Location = new System.Drawing.Point(279, 178);
             this.consulting_Office_COB.Name = "consulting_Office_COB";
             this.consulting_Office_COB.Size = new System.Drawing.Size(138, 36);
             this.consulting_Office_COB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
@@ -1118,8 +1233,8 @@
             this.Land_Plate_Status_COB.ItemHeight = 30;
             this.Land_Plate_Status_COB.Items.AddRange(new object[] {
             "X",
-            "✔"});
-            this.Land_Plate_Status_COB.Location = new System.Drawing.Point(326, 128);
+            "✓"});
+            this.Land_Plate_Status_COB.Location = new System.Drawing.Point(279, 128);
             this.Land_Plate_Status_COB.Name = "Land_Plate_Status_COB";
             this.Land_Plate_Status_COB.Size = new System.Drawing.Size(138, 36);
             this.Land_Plate_Status_COB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
@@ -1141,7 +1256,7 @@
             this.Republican_Decree_Status_COB.Items.AddRange(new object[] {
             "X",
             "✔"});
-            this.Republican_Decree_Status_COB.Location = new System.Drawing.Point(326, 220);
+            this.Republican_Decree_Status_COB.Location = new System.Drawing.Point(279, 220);
             this.Republican_Decree_Status_COB.Name = "Republican_Decree_Status_COB";
             this.Republican_Decree_Status_COB.Size = new System.Drawing.Size(138, 36);
             this.Republican_Decree_Status_COB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
@@ -1162,8 +1277,8 @@
             this.Topographic_Survey_Status_COB.ItemHeight = 30;
             this.Topographic_Survey_Status_COB.Items.AddRange(new object[] {
             "X",
-            "✔"});
-            this.Topographic_Survey_Status_COB.Location = new System.Drawing.Point(326, 86);
+            "✓"});
+            this.Topographic_Survey_Status_COB.Location = new System.Drawing.Point(279, 86);
             this.Topographic_Survey_Status_COB.Name = "Topographic_Survey_Status_COB";
             this.Topographic_Survey_Status_COB.Size = new System.Drawing.Size(138, 36);
             this.Topographic_Survey_Status_COB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
@@ -1177,7 +1292,7 @@
             this.dungeonLabel15.BackColor = System.Drawing.Color.Transparent;
             this.dungeonLabel15.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.dungeonLabel15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.dungeonLabel15.Location = new System.Drawing.Point(501, 20);
+            this.dungeonLabel15.Location = new System.Drawing.Point(454, 20);
             this.dungeonLabel15.Name = "dungeonLabel15";
             this.dungeonLabel15.Size = new System.Drawing.Size(17, 20);
             this.dungeonLabel15.TabIndex = 14;
@@ -1189,7 +1304,7 @@
             this.dungeonLabel14.BackColor = System.Drawing.Color.Transparent;
             this.dungeonLabel14.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.dungeonLabel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.dungeonLabel14.Location = new System.Drawing.Point(501, 58);
+            this.dungeonLabel14.Location = new System.Drawing.Point(454, 58);
             this.dungeonLabel14.Name = "dungeonLabel14";
             this.dungeonLabel14.Size = new System.Drawing.Size(20, 20);
             this.dungeonLabel14.TabIndex = 13;
@@ -1201,7 +1316,7 @@
             this.dungeonLabel13.BackColor = System.Drawing.Color.Transparent;
             this.dungeonLabel13.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.dungeonLabel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.dungeonLabel13.Location = new System.Drawing.Point(501, 236);
+            this.dungeonLabel13.Location = new System.Drawing.Point(454, 236);
             this.dungeonLabel13.Name = "dungeonLabel13";
             this.dungeonLabel13.Size = new System.Drawing.Size(76, 20);
             this.dungeonLabel13.TabIndex = 12;
@@ -1213,7 +1328,7 @@
             this.dungeonLabel12.BackColor = System.Drawing.Color.Transparent;
             this.dungeonLabel12.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.dungeonLabel12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.dungeonLabel12.Location = new System.Drawing.Point(501, 186);
+            this.dungeonLabel12.Location = new System.Drawing.Point(454, 186);
             this.dungeonLabel12.Name = "dungeonLabel12";
             this.dungeonLabel12.Size = new System.Drawing.Size(122, 20);
             this.dungeonLabel12.TabIndex = 11;
@@ -1225,7 +1340,7 @@
             this.dungeonLabel11.BackColor = System.Drawing.Color.Transparent;
             this.dungeonLabel11.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.dungeonLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.dungeonLabel11.Location = new System.Drawing.Point(501, 144);
+            this.dungeonLabel11.Location = new System.Drawing.Point(454, 144);
             this.dungeonLabel11.Name = "dungeonLabel11";
             this.dungeonLabel11.Size = new System.Drawing.Size(145, 20);
             this.dungeonLabel11.TabIndex = 10;
@@ -1237,7 +1352,7 @@
             this.dungeonLabel10.BackColor = System.Drawing.Color.Transparent;
             this.dungeonLabel10.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.dungeonLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.dungeonLabel10.Location = new System.Drawing.Point(501, 104);
+            this.dungeonLabel10.Location = new System.Drawing.Point(454, 104);
             this.dungeonLabel10.Name = "dungeonLabel10";
             this.dungeonLabel10.Size = new System.Drawing.Size(145, 20);
             this.dungeonLabel10.TabIndex = 9;
@@ -1249,7 +1364,7 @@
             this.dungeonLabel9.BackColor = System.Drawing.Color.Transparent;
             this.dungeonLabel9.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.dungeonLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.dungeonLabel9.Location = new System.Drawing.Point(524, 58);
+            this.dungeonLabel9.Location = new System.Drawing.Point(477, 58);
             this.dungeonLabel9.Name = "dungeonLabel9";
             this.dungeonLabel9.Size = new System.Drawing.Size(71, 20);
             this.dungeonLabel9.TabIndex = 8;
@@ -1261,7 +1376,7 @@
             this.dungeonLabel8.BackColor = System.Drawing.Color.Transparent;
             this.dungeonLabel8.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.dungeonLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.dungeonLabel8.Location = new System.Drawing.Point(524, 20);
+            this.dungeonLabel8.Location = new System.Drawing.Point(477, 20);
             this.dungeonLabel8.Name = "dungeonLabel8";
             this.dungeonLabel8.Size = new System.Drawing.Size(71, 20);
             this.dungeonLabel8.TabIndex = 7;
@@ -1270,7 +1385,7 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.rowCountLabel);
+            this.tabPage5.Controls.Add(this.guna2Panel4);
             this.tabPage5.Controls.Add(this.guna2Panel3);
             this.tabPage5.Controls.Add(this.guna2Panel1);
             this.tabPage5.Controls.Add(this.advancedDataGridView1);
@@ -1283,13 +1398,35 @@
             this.tabPage5.UseVisualStyleBackColor = true;
             this.tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
             // 
+            // guna2Panel4
+            // 
+            this.guna2Panel4.Controls.Add(this.RowCountSeries);
+            this.guna2Panel4.Controls.Add(this.rowCountLabel);
+            this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.guna2Panel4.Location = new System.Drawing.Point(218, 219);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.Size = new System.Drawing.Size(220, 311);
+            this.guna2Panel4.TabIndex = 40;
+            // 
+            // RowCountSeries
+            // 
+            this.RowCountSeries.AutoSize = true;
+            this.RowCountSeries.BackColor = System.Drawing.Color.Transparent;
+            this.RowCountSeries.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RowCountSeries.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.RowCountSeries.Location = new System.Drawing.Point(44, 41);
+            this.RowCountSeries.Name = "RowCountSeries";
+            this.RowCountSeries.Size = new System.Drawing.Size(102, 30);
+            this.RowCountSeries.TabIndex = 39;
+            this.RowCountSeries.Text = "bigLabel1";
+            // 
             // rowCountLabel
             // 
             this.rowCountLabel.AutoSize = true;
             this.rowCountLabel.BackColor = System.Drawing.Color.Transparent;
             this.rowCountLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rowCountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.rowCountLabel.Location = new System.Drawing.Point(12, 225);
+            this.rowCountLabel.Location = new System.Drawing.Point(44, 6);
             this.rowCountLabel.Name = "rowCountLabel";
             this.rowCountLabel.Size = new System.Drawing.Size(102, 30);
             this.rowCountLabel.TabIndex = 37;
@@ -1530,7 +1667,7 @@
             // 
             // advancedDataGridView1
             // 
-            this.advancedDataGridView1.AutoGenerateColumns = false;
+            this.advancedDataGridView1.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1540,27 +1677,6 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.advancedDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.advancedDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.advancedDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.land_id,
-            this.land_number,
-            this.serial_number,
-            this.plate_number,
-            this.land_name,
-            this.Address,
-            this.Ownership_Authority,
-            this.total_area,
-            this.Topographic_Survey_Status,
-            this.Land_Plate_Status,
-            this.coordinates_N,
-            this.coordinates_E,
-            this.governorate_fk,
-            this.Republican_Decree,
-            this.Republican_Decree_Status,
-            this.Republican_Decree_PDF,
-            this.plate_numberFile,
-            this.consulting_Office,
-            this.total_Land_Price});
-            this.advancedDataGridView1.DataSource = this.landsBindingSource;
             this.advancedDataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.advancedDataGridView1.FilterAndSortEnabled = true;
             this.advancedDataGridView1.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
@@ -1575,16 +1691,7 @@
             this.advancedDataGridView1.FilterStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.FilterEventArgs>(this.advancedDataGridView1_FilterStringChanged);
             this.advancedDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advancedDataGridView1_CellClick);
             this.advancedDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advancedDataGridView1_CellContentClick);
-            // 
-            // landsBindingSource
-            // 
-            this.landsBindingSource.DataMember = "lands";
-            this.landsBindingSource.DataSource = this.database1DataSet1;
-            // 
-            // database1DataSet1
-            // 
-            this.database1DataSet1.DataSetName = "Database1DataSet";
-            this.database1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.advancedDataGridView1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.advancedDataGridView1_Scroll);
             // 
             // guna2Button3
             // 
@@ -1605,7 +1712,7 @@
             this.guna2Button3.ImageSize = new System.Drawing.Size(30, 30);
             this.guna2Button3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.guna2Button3.IndicateFocus = true;
-            this.guna2Button3.Location = new System.Drawing.Point(237, 117);
+            this.guna2Button3.Location = new System.Drawing.Point(825, 38);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(186, 32);
             this.guna2Button3.TabIndex = 34;
@@ -1618,6 +1725,7 @@
             // 
             this.guna2TabControl1.Controls.Add(this.tabPage5);
             this.guna2TabControl1.Controls.Add(this.tabPage4);
+            this.guna2TabControl1.Controls.Add(this.tabPage1);
             this.guna2TabControl1.ItemSize = new System.Drawing.Size(235, 40);
             this.guna2TabControl1.Location = new System.Drawing.Point(7, 155);
             this.guna2TabControl1.Name = "guna2TabControl1";
@@ -1644,6 +1752,26 @@
             this.guna2TabControl1.TabIndex = 21;
             this.guna2TabControl1.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             this.guna2TabControl1.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.reportViewer1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 44);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1176, 533);
+            this.tabPage1.TabIndex = 5;
+            this.tabPage1.Text = "تقرير";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.Location = new System.Drawing.Point(3, 3);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(1170, 527);
+            this.reportViewer1.TabIndex = 2;
             // 
             // crownLabel1
             // 
@@ -1708,228 +1836,143 @@
             this.guna2CircleButton1.Text = "رجوع";
             this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
             // 
-            // database1DataSet
+            // skyButton4
             // 
-            this.database1DataSet.DataSetName = "Database1DataSet";
-            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.skyButton4.BackColor = System.Drawing.Color.Transparent;
+            this.skyButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.skyButton4.DownBGColorA = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(153)))), ((int)(((byte)(205)))));
+            this.skyButton4.DownBGColorB = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(124)))), ((int)(((byte)(170)))));
+            this.skyButton4.DownBorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
+            this.skyButton4.DownBorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(149)))), ((int)(((byte)(194)))));
+            this.skyButton4.DownBorderColorC = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(93)))), ((int)(((byte)(131)))));
+            this.skyButton4.DownBorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(25)))), ((int)(((byte)(73)))), ((int)(((byte)(109)))));
+            this.skyButton4.DownForeColor = System.Drawing.Color.White;
+            this.skyButton4.DownShadowForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.skyButton4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.skyButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
+            this.skyButton4.HoverBGColorA = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(153)))), ((int)(((byte)(205)))));
+            this.skyButton4.HoverBGColorB = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(124)))), ((int)(((byte)(170)))));
+            this.skyButton4.HoverBorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
+            this.skyButton4.HoverBorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(149)))), ((int)(((byte)(194)))));
+            this.skyButton4.HoverBorderColorC = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(93)))), ((int)(((byte)(131)))));
+            this.skyButton4.HoverBorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(25)))), ((int)(((byte)(73)))), ((int)(((byte)(109)))));
+            this.skyButton4.HoverForeColor = System.Drawing.Color.White;
+            this.skyButton4.HoverShadowForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.skyButton4.Location = new System.Drawing.Point(429, 95);
+            this.skyButton4.Name = "skyButton4";
+            this.skyButton4.NormalBGColorA = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.skyButton4.NormalBGColorB = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.skyButton4.NormalBorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.skyButton4.NormalBorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.skyButton4.NormalBorderColorC = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.skyButton4.NormalBorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
+            this.skyButton4.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
+            this.skyButton4.NormalShadowForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.skyButton4.Size = new System.Drawing.Size(226, 54);
+            this.skyButton4.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.skyButton4.TabIndex = 70;
+            this.skyButton4.Text = "تقرير مباشر بدون تعديل";
+            this.skyButton4.Click += new System.EventHandler(this.skyButton4_Click);
             // 
-            // landsTableAdapter
+            // Report_TB
             // 
-            this.landsTableAdapter.ClearBeforeFill = true;
+            this.Report_TB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Report_TB.Animated = true;
+            this.Report_TB.AutoRoundedCorners = true;
+            this.Report_TB.BorderRadius = 13;
+            this.Report_TB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Report_TB.DefaultText = "";
+            this.Report_TB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Report_TB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Report_TB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Report_TB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Report_TB.FillColor = System.Drawing.SystemColors.Control;
+            this.Report_TB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Report_TB.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Report_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Report_TB.Location = new System.Drawing.Point(221, 104);
+            this.Report_TB.Name = "Report_TB";
+            this.Report_TB.PlaceholderText = "قم بتسمية اسم التقرير";
+            this.Report_TB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Report_TB.SelectedText = "";
+            this.Report_TB.Size = new System.Drawing.Size(202, 29);
+            this.Report_TB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.Report_TB.TabIndex = 74;
             // 
-            // governorateTableAdapter1
+            // dATABASE2DataSet
             // 
-            this.governorateTableAdapter1.ClearBeforeFill = true;
-            // 
-            // pagesBindingSource
-            // 
-            this.pagesBindingSource.DataMember = "pages";
-            this.pagesBindingSource.DataSource = this.database1DataSet1;
-            // 
-            // pagesTableAdapter
-            // 
-            this.pagesTableAdapter.ClearBeforeFill = true;
-            // 
-            // functionsBindingSource
-            // 
-            this.functionsBindingSource.DataMember = "functions";
-            this.functionsBindingSource.DataSource = this.database1DataSet1;
-            // 
-            // functionsTableAdapter
-            // 
-            this.functionsTableAdapter.ClearBeforeFill = true;
+            this.dATABASE2DataSet.DataSetName = "DATABASE2DataSet";
+            this.dATABASE2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // accessBindingSource
             // 
             this.accessBindingSource.DataMember = "access";
-            this.accessBindingSource.DataSource = this.database1DataSet1;
+            this.accessBindingSource.DataSource = this.dATABASE2DataSet;
             // 
             // accessTableAdapter
             // 
             this.accessTableAdapter.ClearBeforeFill = true;
             // 
-            // rolesBindingSource
+            // functionsBindingSource
             // 
-            this.rolesBindingSource.DataMember = "roles";
-            this.rolesBindingSource.DataSource = this.database1DataSet1;
+            this.functionsBindingSource.DataMember = "functions";
+            this.functionsBindingSource.DataSource = this.dATABASE2DataSet;
             // 
-            // rolesTableAdapter
+            // functionsTableAdapter
             // 
-            this.rolesTableAdapter.ClearBeforeFill = true;
+            this.functionsTableAdapter.ClearBeforeFill = true;
+            // 
+            // pagesBindingSource
+            // 
+            this.pagesBindingSource.DataMember = "pages";
+            this.pagesBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // pagesTableAdapter
+            // 
+            this.pagesTableAdapter.ClearBeforeFill = true;
+            // 
+            // landsBindingSource
+            // 
+            this.landsBindingSource.DataMember = "lands";
+            this.landsBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // landsTableAdapter
+            // 
+            this.landsTableAdapter.ClearBeforeFill = true;
+            // 
+            // governorateBindingSource
+            // 
+            this.governorateBindingSource.DataMember = "governorate";
+            this.governorateBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // governorateTableAdapter
+            // 
+            this.governorateTableAdapter.ClearBeforeFill = true;
             // 
             // usersBindingSource
             // 
             this.usersBindingSource.DataMember = "users";
-            this.usersBindingSource.DataSource = this.database1DataSet1;
+            this.usersBindingSource.DataSource = this.dATABASE2DataSet;
             // 
             // usersTableAdapter
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
-            // land_id
+            // rolesBindingSource
             // 
-            this.land_id.DataPropertyName = "land_id";
-            this.land_id.HeaderText = "م";
-            this.land_id.MinimumWidth = 24;
-            this.land_id.Name = "land_id";
-            this.land_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.land_id.Visible = false;
+            this.rolesBindingSource.DataMember = "roles";
+            this.rolesBindingSource.DataSource = this.dATABASE2DataSet;
             // 
-            // land_number
+            // rolesTableAdapter
             // 
-            this.land_number.DataPropertyName = "land_number";
-            this.land_number.HeaderText = "رقم القطعة";
-            this.land_number.MinimumWidth = 24;
-            this.land_number.Name = "land_number";
-            this.land_number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // serial_number
-            // 
-            this.serial_number.DataPropertyName = "serial_number";
-            this.serial_number.HeaderText = "رقم المسلسل";
-            this.serial_number.MinimumWidth = 24;
-            this.serial_number.Name = "serial_number";
-            this.serial_number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // plate_number
-            // 
-            this.plate_number.DataPropertyName = "plate_number";
-            this.plate_number.HeaderText = "رقم اللوحة";
-            this.plate_number.MinimumWidth = 24;
-            this.plate_number.Name = "plate_number";
-            this.plate_number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // land_name
-            // 
-            this.land_name.DataPropertyName = "land_name";
-            this.land_name.HeaderText = "قطعة الأرض";
-            this.land_name.MinimumWidth = 24;
-            this.land_name.Name = "land_name";
-            this.land_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Address
-            // 
-            this.Address.DataPropertyName = "Address";
-            this.Address.HeaderText = "العنوان";
-            this.Address.MinimumWidth = 24;
-            this.Address.Name = "Address";
-            this.Address.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Address.Visible = false;
-            // 
-            // Ownership_Authority
-            // 
-            this.Ownership_Authority.DataPropertyName = "Ownership_Authority";
-            this.Ownership_Authority.HeaderText = "جهة الولاية";
-            this.Ownership_Authority.MinimumWidth = 24;
-            this.Ownership_Authority.Name = "Ownership_Authority";
-            this.Ownership_Authority.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Ownership_Authority.Visible = false;
-            // 
-            // total_area
-            // 
-            this.total_area.DataPropertyName = "total_area";
-            this.total_area.HeaderText = "المساحة";
-            this.total_area.MinimumWidth = 24;
-            this.total_area.Name = "total_area";
-            this.total_area.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Topographic_Survey_Status
-            // 
-            this.Topographic_Survey_Status.DataPropertyName = "Topographic_Survey_Status";
-            this.Topographic_Survey_Status.HeaderText = "الرفع المساحي";
-            this.Topographic_Survey_Status.MinimumWidth = 24;
-            this.Topographic_Survey_Status.Name = "Topographic_Survey_Status";
-            this.Topographic_Survey_Status.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Land_Plate_Status
-            // 
-            this.Land_Plate_Status.DataPropertyName = "Land_Plate_Status";
-            this.Land_Plate_Status.HeaderText = "استخراج اللوحة";
-            this.Land_Plate_Status.MinimumWidth = 24;
-            this.Land_Plate_Status.Name = "Land_Plate_Status";
-            this.Land_Plate_Status.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // coordinates_N
-            // 
-            this.coordinates_N.DataPropertyName = "coordinates_N";
-            this.coordinates_N.HeaderText = "N الاحداثيات";
-            this.coordinates_N.MinimumWidth = 24;
-            this.coordinates_N.Name = "coordinates_N";
-            this.coordinates_N.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.coordinates_N.Visible = false;
-            // 
-            // coordinates_E
-            // 
-            this.coordinates_E.DataPropertyName = "coordinates_E";
-            this.coordinates_E.HeaderText = "E الاحداثيات";
-            this.coordinates_E.MinimumWidth = 24;
-            this.coordinates_E.Name = "coordinates_E";
-            this.coordinates_E.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.coordinates_E.Visible = false;
-            // 
-            // governorate_fk
-            // 
-            this.governorate_fk.DataPropertyName = "governorate_fk";
-            this.governorate_fk.HeaderText = "المحافظة";
-            this.governorate_fk.MinimumWidth = 24;
-            this.governorate_fk.Name = "governorate_fk";
-            this.governorate_fk.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Republican_Decree
-            // 
-            this.Republican_Decree.DataPropertyName = "Republican_Decree";
-            this.Republican_Decree.HeaderText = "مستند القرار الجمهوري";
-            this.Republican_Decree.MinimumWidth = 24;
-            this.Republican_Decree.Name = "Republican_Decree";
-            this.Republican_Decree.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Republican_Decree.Visible = false;
-            // 
-            // Republican_Decree_Status
-            // 
-            this.Republican_Decree_Status.DataPropertyName = "Republican_Decree_Status";
-            this.Republican_Decree_Status.HeaderText = "القرار الجمهوري";
-            this.Republican_Decree_Status.MinimumWidth = 24;
-            this.Republican_Decree_Status.Name = "Republican_Decree_Status";
-            this.Republican_Decree_Status.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Republican_Decree_PDF
-            // 
-            this.Republican_Decree_PDF.HeaderText = "مستند القرار الجمهوري";
-            this.Republican_Decree_PDF.MinimumWidth = 24;
-            this.Republican_Decree_PDF.Name = "Republican_Decree_PDF";
-            this.Republican_Decree_PDF.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Republican_Decree_PDF.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Republican_Decree_PDF.Visible = false;
-            // 
-            // plate_numberFile
-            // 
-            this.plate_numberFile.DataPropertyName = "plate_numberFile";
-            this.plate_numberFile.HeaderText = "مستند رقم اللوحة";
-            this.plate_numberFile.MinimumWidth = 24;
-            this.plate_numberFile.Name = "plate_numberFile";
-            this.plate_numberFile.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.plate_numberFile.Visible = false;
-            // 
-            // consulting_Office
-            // 
-            this.consulting_Office.DataPropertyName = "consulting_Office";
-            this.consulting_Office.HeaderText = "المكتب الاستشاري";
-            this.consulting_Office.MinimumWidth = 24;
-            this.consulting_Office.Name = "consulting_Office";
-            this.consulting_Office.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // total_Land_Price
-            // 
-            this.total_Land_Price.DataPropertyName = "total_Land_Price";
-            this.total_Land_Price.HeaderText = "سعر قيمة الارض";
-            this.total_Land_Price.MinimumWidth = 24;
-            this.total_Land_Price.Name = "total_Land_Price";
-            this.total_Land_Price.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.rolesTableAdapter.ClearBeforeFill = true;
             // 
             // EngineeringManagementControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.Report_TB);
+            this.Controls.Add(this.skyButton4);
             this.Controls.Add(this.guna2CircleButton1);
             this.Controls.Add(this.crownLabel1);
             this.Controls.Add(this.guna2Shapes2);
@@ -1965,7 +2008,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Error_plate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Error_Serial)).EndInit();
             this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
+            this.guna2Panel4.ResumeLayout(false);
+            this.guna2Panel4.PerformLayout();
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
@@ -1974,15 +2018,16 @@
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.landsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).EndInit();
             this.guna2TabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.functionsBindingSource)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dATABASE2DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.functionsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.landsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.governorateBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1993,11 +2038,7 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn coordinatesDataGridViewTextBoxColumn;
-        private Database1DataSet database1DataSet;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.BindingSource landsBindingSource;
-        private Database1DataSet database1DataSet1;
-        private Database1DataSetTableAdapters.landsTableAdapter landsTableAdapter;
         private System.Windows.Forms.TabPage tabPage4;
         private ReaLTaiizor.Controls.NightLabel nightLabel3;
         private ReaLTaiizor.Controls.NightLabel nightLabel2;
@@ -2032,7 +2073,6 @@
         private ReaLTaiizor.Controls.SkyButton skyButton1;
         private ReaLTaiizor.Controls.NightLabel nightLabel4;
         private Guna.UI2.WinForms.Guna2TabControl guna2TabControl1;
-        private Database1DataSetTableAdapters.governorateTableAdapter governorateTableAdapter1;
         private Guna.UI2.WinForms.Guna2TextBox total_area_TB;
         private ReaLTaiizor.Controls.DungeonLabel dungeonLabel16;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
@@ -2070,16 +2110,6 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox Land_Number_Error;
         private ReaLTaiizor.Controls.DungeonLabel dungeonLabel17;
         private Guna.UI2.WinForms.Guna2TextBox Land_Number_TB;
-        private System.Windows.Forms.BindingSource pagesBindingSource;
-        private Database1DataSetTableAdapters.pagesTableAdapter pagesTableAdapter;
-        private System.Windows.Forms.BindingSource functionsBindingSource;
-        private Database1DataSetTableAdapters.functionsTableAdapter functionsTableAdapter;
-        private System.Windows.Forms.BindingSource accessBindingSource;
-        private Database1DataSetTableAdapters.accessTableAdapter accessTableAdapter;
-        private System.Windows.Forms.BindingSource rolesBindingSource;
-        private Database1DataSetTableAdapters.rolesTableAdapter rolesTableAdapter;
-        private System.Windows.Forms.BindingSource usersBindingSource;
-        private Database1DataSetTableAdapters.usersTableAdapter usersTableAdapter;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private ReaLTaiizor.Controls.BigLabel rowCountLabel;
@@ -2089,24 +2119,31 @@
         private Guna.UI2.WinForms.Guna2Shapes guna2Shapes2;
         private Guna.UI2.WinForms.Guna2Shapes guna2Shapes1;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn land_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn land_number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn serial_number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn plate_number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn land_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ownership_Authority;
-        private System.Windows.Forms.DataGridViewTextBoxColumn total_area;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Topographic_Survey_Status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Land_Plate_Status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coordinates_N;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coordinates_E;
-        private System.Windows.Forms.DataGridViewTextBoxColumn governorate_fk;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Republican_Decree;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Republican_Decree_Status;
-        private System.Windows.Forms.DataGridViewButtonColumn Republican_Decree_PDF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn plate_numberFile;
-        private System.Windows.Forms.DataGridViewTextBoxColumn consulting_Office;
-        private System.Windows.Forms.DataGridViewTextBoxColumn total_Land_Price;
+        private Guna.UI2.WinForms.Guna2RadioButton Update_Radio;
+        private Guna.UI2.WinForms.Guna2RadioButton Add_Radio;
+        private System.Windows.Forms.TabPage tabPage1;
+        private ReaLTaiizor.Controls.SkyButton skyButton4;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Guna.UI2.WinForms.Guna2TextBox Report_TB;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private ReaLTaiizor.Controls.DungeonLabel dungeonLabel18;
+        private DATABASE2DataSet dATABASE2DataSet;
+        private System.Windows.Forms.BindingSource accessBindingSource;
+        private DATABASE2DataSetTableAdapters.accessTableAdapter accessTableAdapter;
+        private System.Windows.Forms.BindingSource functionsBindingSource;
+        private DATABASE2DataSetTableAdapters.functionsTableAdapter functionsTableAdapter;
+        private System.Windows.Forms.BindingSource pagesBindingSource;
+        private DATABASE2DataSetTableAdapters.pagesTableAdapter pagesTableAdapter;
+        private System.Windows.Forms.BindingSource landsBindingSource;
+        private DATABASE2DataSetTableAdapters.landsTableAdapter landsTableAdapter;
+        private System.Windows.Forms.BindingSource governorateBindingSource;
+        private DATABASE2DataSetTableAdapters.governorateTableAdapter governorateTableAdapter;
+        private System.Windows.Forms.BindingSource usersBindingSource;
+        private DATABASE2DataSetTableAdapters.usersTableAdapter usersTableAdapter;
+        private System.Windows.Forms.BindingSource rolesBindingSource;
+        private DATABASE2DataSetTableAdapters.rolesTableAdapter rolesTableAdapter;
+        private ReaLTaiizor.Controls.DungeonLabel dungeonLabel19;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
+        private ReaLTaiizor.Controls.BigLabel RowCountSeries;
     }
 }

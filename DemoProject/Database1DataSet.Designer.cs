@@ -56,6 +56,8 @@ namespace DemoProject {
         
         private investmentsDataTable tableinvestments;
         
+        private TestViewReportDataTable tableTestViewReport;
+        
         private global::System.Data.DataRelation relationFK__lands__governora__0D44F85C;
         
         private global::System.Data.DataRelation relationFK__projects__govern__14E61A24;
@@ -64,15 +66,7 @@ namespace DemoProject {
         
         private global::System.Data.DataRelation relationFK__roles__user_id__69C6B1F5;
         
-        private global::System.Data.DataRelation relationFK__access__role_id__725BF7F6;
-        
-        private global::System.Data.DataRelation relationFK__access__user_id__753864A1;
-        
-        private global::System.Data.DataRelation relationFK__access__function__74444068;
-        
         private global::System.Data.DataRelation relationFK__functions__role___6CA31EA0;
-        
-        private global::System.Data.DataRelation relationFK__access__pages_id__73501C2F;
         
         private global::System.Data.DataRelation relationFK__pages__role_id__6F7F8B4B;
         
@@ -84,7 +78,15 @@ namespace DemoProject {
         
         private global::System.Data.DataRelation relationFK__investmen__land___4830B400;
         
-        private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
+        private global::System.Data.DataRelation relationFK__access__pages_id__73501C2F;
+        
+        private global::System.Data.DataRelation relationFK__access__function__74444068;
+        
+        private global::System.Data.DataRelation relationFK__access__user_id__753864A1;
+        
+        private global::System.Data.DataRelation relationFK__access__role_id__725BF7F6;
+        
+        private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.ExcludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -159,6 +161,9 @@ namespace DemoProject {
                 }
                 if ((ds.Tables["investments"] != null)) {
                     base.Tables.Add(new investmentsDataTable(ds.Tables["investments"]));
+                }
+                if ((ds.Tables["TestViewReport"] != null)) {
+                    base.Tables.Add(new TestViewReportDataTable(ds.Tables["TestViewReport"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -340,6 +345,16 @@ namespace DemoProject {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public TestViewReportDataTable TestViewReport {
+            get {
+                return this.tableTestViewReport;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -452,6 +467,9 @@ namespace DemoProject {
                 }
                 if ((ds.Tables["investments"] != null)) {
                     base.Tables.Add(new investmentsDataTable(ds.Tables["investments"]));
+                }
+                if ((ds.Tables["TestViewReport"] != null)) {
+                    base.Tables.Add(new TestViewReportDataTable(ds.Tables["TestViewReport"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -582,20 +600,26 @@ namespace DemoProject {
                     this.tableinvestments.InitVars();
                 }
             }
+            this.tableTestViewReport = ((TestViewReportDataTable)(base.Tables["TestViewReport"]));
+            if ((initTable == true)) {
+                if ((this.tableTestViewReport != null)) {
+                    this.tableTestViewReport.InitVars();
+                }
+            }
             this.relationFK__lands__governora__0D44F85C = this.Relations["FK__lands__governora__0D44F85C"];
             this.relationFK__projects__govern__14E61A24 = this.Relations["FK__projects__govern__14E61A24"];
             this.relationFK__projects__land_f__15DA3E5D = this.Relations["FK__projects__land_f__15DA3E5D"];
             this.relationFK__roles__user_id__69C6B1F5 = this.Relations["FK__roles__user_id__69C6B1F5"];
-            this.relationFK__access__role_id__725BF7F6 = this.Relations["FK__access__role_id__725BF7F6"];
-            this.relationFK__access__user_id__753864A1 = this.Relations["FK__access__user_id__753864A1"];
-            this.relationFK__access__function__74444068 = this.Relations["FK__access__function__74444068"];
             this.relationFK__functions__role___6CA31EA0 = this.Relations["FK__functions__role___6CA31EA0"];
-            this.relationFK__access__pages_id__73501C2F = this.Relations["FK__access__pages_id__73501C2F"];
             this.relationFK__pages__role_id__6F7F8B4B = this.Relations["FK__pages__role_id__6F7F8B4B"];
             this.relationFK__documents__proje__19AACF41 = this.Relations["FK__documents__proje__19AACF41"];
             this.relationFK__documents__appro__18B6AB08 = this.Relations["FK__documents__appro__18B6AB08"];
             this.relationFK__investmen__gover__473C8FC7 = this.Relations["FK__investmen__gover__473C8FC7"];
             this.relationFK__investmen__land___4830B400 = this.Relations["FK__investmen__land___4830B400"];
+            this.relationFK__access__pages_id__73501C2F = this.Relations["FK__access__pages_id__73501C2F"];
+            this.relationFK__access__function__74444068 = this.Relations["FK__access__function__74444068"];
+            this.relationFK__access__user_id__753864A1 = this.Relations["FK__access__user_id__753864A1"];
+            this.relationFK__access__role_id__725BF7F6 = this.Relations["FK__access__role_id__725BF7F6"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -605,7 +629,7 @@ namespace DemoProject {
             this.Prefix = "";
             this.Namespace = "http://tempuri.org/Database1DataSet.xsd";
             this.EnforceConstraints = true;
-            this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
+            this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.ExcludeSchema;
             this.tableStations = new StationsDataTable();
             base.Tables.Add(this.tableStations);
             this.tableTable = new TableDataTable();
@@ -638,6 +662,8 @@ namespace DemoProject {
             base.Tables.Add(this.tableroads);
             this.tableinvestments = new investmentsDataTable();
             base.Tables.Add(this.tableinvestments);
+            this.tableTestViewReport = new TestViewReportDataTable();
+            base.Tables.Add(this.tableTestViewReport);
             this.relationFK__lands__governora__0D44F85C = new global::System.Data.DataRelation("FK__lands__governora__0D44F85C", new global::System.Data.DataColumn[] {
                         this.tablegovernorate.governorate_idColumn}, new global::System.Data.DataColumn[] {
                         this.tablelands.governorate_fkColumn}, false);
@@ -654,26 +680,10 @@ namespace DemoProject {
                         this.tableusers.idColumn}, new global::System.Data.DataColumn[] {
                         this.tableroles.user_idColumn}, false);
             this.Relations.Add(this.relationFK__roles__user_id__69C6B1F5);
-            this.relationFK__access__role_id__725BF7F6 = new global::System.Data.DataRelation("FK__access__role_id__725BF7F6", new global::System.Data.DataColumn[] {
-                        this.tableroles.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableaccess.role_idColumn}, false);
-            this.Relations.Add(this.relationFK__access__role_id__725BF7F6);
-            this.relationFK__access__user_id__753864A1 = new global::System.Data.DataRelation("FK__access__user_id__753864A1", new global::System.Data.DataColumn[] {
-                        this.tableusers.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableaccess.user_idColumn}, false);
-            this.Relations.Add(this.relationFK__access__user_id__753864A1);
-            this.relationFK__access__function__74444068 = new global::System.Data.DataRelation("FK__access__function__74444068", new global::System.Data.DataColumn[] {
-                        this.tablefunctions.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableaccess.function_idColumn}, false);
-            this.Relations.Add(this.relationFK__access__function__74444068);
             this.relationFK__functions__role___6CA31EA0 = new global::System.Data.DataRelation("FK__functions__role___6CA31EA0", new global::System.Data.DataColumn[] {
                         this.tableroles.idColumn}, new global::System.Data.DataColumn[] {
                         this.tablefunctions.role_idColumn}, false);
             this.Relations.Add(this.relationFK__functions__role___6CA31EA0);
-            this.relationFK__access__pages_id__73501C2F = new global::System.Data.DataRelation("FK__access__pages_id__73501C2F", new global::System.Data.DataColumn[] {
-                        this.tablepages.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableaccess.pages_idColumn}, false);
-            this.Relations.Add(this.relationFK__access__pages_id__73501C2F);
             this.relationFK__pages__role_id__6F7F8B4B = new global::System.Data.DataRelation("FK__pages__role_id__6F7F8B4B", new global::System.Data.DataColumn[] {
                         this.tableroles.idColumn}, new global::System.Data.DataColumn[] {
                         this.tablepages.role_idColumn}, false);
@@ -694,6 +704,22 @@ namespace DemoProject {
                         this.tablelands.land_idColumn}, new global::System.Data.DataColumn[] {
                         this.tableinvestments.land_fkColumn}, false);
             this.Relations.Add(this.relationFK__investmen__land___4830B400);
+            this.relationFK__access__pages_id__73501C2F = new global::System.Data.DataRelation("FK__access__pages_id__73501C2F", new global::System.Data.DataColumn[] {
+                        this.tablepages.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableaccess.pages_idColumn}, false);
+            this.Relations.Add(this.relationFK__access__pages_id__73501C2F);
+            this.relationFK__access__function__74444068 = new global::System.Data.DataRelation("FK__access__function__74444068", new global::System.Data.DataColumn[] {
+                        this.tablefunctions.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableaccess.function_idColumn}, false);
+            this.Relations.Add(this.relationFK__access__function__74444068);
+            this.relationFK__access__user_id__753864A1 = new global::System.Data.DataRelation("FK__access__user_id__753864A1", new global::System.Data.DataColumn[] {
+                        this.tableusers.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableaccess.user_idColumn}, false);
+            this.Relations.Add(this.relationFK__access__user_id__753864A1);
+            this.relationFK__access__role_id__725BF7F6 = new global::System.Data.DataRelation("FK__access__role_id__725BF7F6", new global::System.Data.DataColumn[] {
+                        this.tableroles.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableaccess.role_idColumn}, false);
+            this.Relations.Add(this.relationFK__access__role_id__725BF7F6);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -789,6 +815,12 @@ namespace DemoProject {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializeinvestments() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeTestViewReport() {
             return false;
         }
         
@@ -894,6 +926,9 @@ namespace DemoProject {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void investmentsRowChangeEventHandler(object sender, investmentsRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void TestViewReportRowChangeEventHandler(object sender, TestViewReportRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -3266,6 +3301,8 @@ namespace DemoProject {
             
             private global::System.Data.DataColumn columnplate_numberFile;
             
+            private global::System.Data.DataColumn columnprice_per_meter;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public landsDataTable() {
@@ -3445,6 +3482,14 @@ namespace DemoProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn price_per_meterColumn {
+                get {
+                    return this.columnprice_per_meter;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3498,7 +3543,8 @@ namespace DemoProject {
                         string Ownership_Authority, 
                         string Address, 
                         string land_number, 
-                        string plate_numberFile) {
+                        string plate_numberFile, 
+                        int price_per_meter) {
                 landsRow rowlandsRow = ((landsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         land_id,
@@ -3518,7 +3564,8 @@ namespace DemoProject {
                         Ownership_Authority,
                         Address,
                         land_number,
-                        plate_numberFile};
+                        plate_numberFile,
+                        price_per_meter};
                 if ((parentgovernorateRowByFK__lands__governora__0D44F85C != null)) {
                     columnValuesArray[9] = parentgovernorateRowByFK__lands__governora__0D44F85C[0];
                 }
@@ -3569,6 +3616,7 @@ namespace DemoProject {
                 this.columnAddress = base.Columns["Address"];
                 this.columnland_number = base.Columns["land_number"];
                 this.columnplate_numberFile = base.Columns["plate_numberFile"];
+                this.columnprice_per_meter = base.Columns["price_per_meter"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3610,6 +3658,8 @@ namespace DemoProject {
                 base.Columns.Add(this.columnland_number);
                 this.columnplate_numberFile = new global::System.Data.DataColumn("plate_numberFile", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnplate_numberFile);
+                this.columnprice_per_meter = new global::System.Data.DataColumn("price_per_meter", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprice_per_meter);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnland_id}, true));
                 this.columnland_id.AllowDBNull = false;
@@ -5851,6 +5901,22 @@ namespace DemoProject {
             
             private global::System.Data.DataColumn columncouncil_of_ministers_decision_Image;
             
+            private global::System.Data.DataColumn columncontract_duration;
+            
+            private global::System.Data.DataColumn columncontract_end_date;
+            
+            private global::System.Data.DataColumn columnnature_of_operation;
+            
+            private global::System.Data.DataColumn columncompany_responsibility;
+            
+            private global::System.Data.DataColumn columnadditional_gates;
+            
+            private global::System.Data.DataColumn columnright_of_way;
+            
+            private global::System.Data.DataColumn columnDescription_of_the_route_from;
+            
+            private global::System.Data.DataColumn columnDescription_of_the_route_to;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public roadsDataTable() {
@@ -6038,6 +6104,70 @@ namespace DemoProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn contract_durationColumn {
+                get {
+                    return this.columncontract_duration;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn contract_end_dateColumn {
+                get {
+                    return this.columncontract_end_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn nature_of_operationColumn {
+                get {
+                    return this.columnnature_of_operation;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn company_responsibilityColumn {
+                get {
+                    return this.columncompany_responsibility;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn additional_gatesColumn {
+                get {
+                    return this.columnadditional_gates;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn right_of_wayColumn {
+                get {
+                    return this.columnright_of_way;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Description_of_the_route_fromColumn {
+                get {
+                    return this.columnDescription_of_the_route_from;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Description_of_the_route_toColumn {
+                get {
+                    return this.columnDescription_of_the_route_to;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6092,7 +6222,15 @@ namespace DemoProject {
                         string company_percentage, 
                         string road_authority_percentage, 
                         string contract_image, 
-                        string council_of_ministers_decision_Image) {
+                        string council_of_ministers_decision_Image, 
+                        string contract_duration, 
+                        System.DateTime contract_end_date, 
+                        string nature_of_operation, 
+                        string company_responsibility, 
+                        string additional_gates, 
+                        string right_of_way, 
+                        string Description_of_the_route_from, 
+                        string Description_of_the_route_to) {
                 roadsRow rowroadsRow = ((roadsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         road_id,
@@ -6113,7 +6251,15 @@ namespace DemoProject {
                         company_percentage,
                         road_authority_percentage,
                         contract_image,
-                        council_of_ministers_decision_Image};
+                        council_of_ministers_decision_Image,
+                        contract_duration,
+                        contract_end_date,
+                        nature_of_operation,
+                        company_responsibility,
+                        additional_gates,
+                        right_of_way,
+                        Description_of_the_route_from,
+                        Description_of_the_route_to};
                 rowroadsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowroadsRow);
                 return rowroadsRow;
@@ -6162,6 +6308,14 @@ namespace DemoProject {
                 this.columnroad_authority_percentage = base.Columns["road_authority_percentage"];
                 this.columncontract_image = base.Columns["contract_image"];
                 this.columncouncil_of_ministers_decision_Image = base.Columns["council_of_ministers_decision_Image"];
+                this.columncontract_duration = base.Columns["contract_duration"];
+                this.columncontract_end_date = base.Columns["contract_end_date"];
+                this.columnnature_of_operation = base.Columns["nature_of_operation"];
+                this.columncompany_responsibility = base.Columns["company_responsibility"];
+                this.columnadditional_gates = base.Columns["additional_gates"];
+                this.columnright_of_way = base.Columns["right_of_way"];
+                this.columnDescription_of_the_route_from = base.Columns["Description_of_the_route_from"];
+                this.columnDescription_of_the_route_to = base.Columns["Description_of_the_route_to"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6205,6 +6359,22 @@ namespace DemoProject {
                 base.Columns.Add(this.columncontract_image);
                 this.columncouncil_of_ministers_decision_Image = new global::System.Data.DataColumn("council_of_ministers_decision_Image", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncouncil_of_ministers_decision_Image);
+                this.columncontract_duration = new global::System.Data.DataColumn("contract_duration", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncontract_duration);
+                this.columncontract_end_date = new global::System.Data.DataColumn("contract_end_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncontract_end_date);
+                this.columnnature_of_operation = new global::System.Data.DataColumn("nature_of_operation", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnature_of_operation);
+                this.columncompany_responsibility = new global::System.Data.DataColumn("company_responsibility", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncompany_responsibility);
+                this.columnadditional_gates = new global::System.Data.DataColumn("additional_gates", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnadditional_gates);
+                this.columnright_of_way = new global::System.Data.DataColumn("right_of_way", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnright_of_way);
+                this.columnDescription_of_the_route_from = new global::System.Data.DataColumn("Description_of_the_route_from", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescription_of_the_route_from);
+                this.columnDescription_of_the_route_to = new global::System.Data.DataColumn("Description_of_the_route_to", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescription_of_the_route_to);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnroad_id}, true));
                 this.columnroad_id.AllowDBNull = false;
@@ -6225,6 +6395,13 @@ namespace DemoProject {
                 this.columnroad_authority_percentage.MaxLength = 255;
                 this.columncontract_image.MaxLength = 255;
                 this.columncouncil_of_ministers_decision_Image.MaxLength = 255;
+                this.columncontract_duration.MaxLength = 255;
+                this.columnnature_of_operation.MaxLength = 255;
+                this.columncompany_responsibility.MaxLength = 255;
+                this.columnadditional_gates.MaxLength = 255;
+                this.columnright_of_way.MaxLength = 255;
+                this.columnDescription_of_the_route_from.MaxLength = 255;
+                this.columnDescription_of_the_route_to.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6390,6 +6567,10 @@ namespace DemoProject {
             
             private global::System.Data.DataColumn columnContract_number_File;
             
+            private global::System.Data.DataColumn columnRental_expiry_date;
+            
+            private global::System.Data.DataColumn columninvestment_type;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public investmentsDataTable() {
@@ -6553,6 +6734,22 @@ namespace DemoProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Rental_expiry_dateColumn {
+                get {
+                    return this.columnRental_expiry_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn investment_typeColumn {
+                get {
+                    return this.columninvestment_type;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6604,7 +6801,9 @@ namespace DemoProject {
                         System.DateTime Contract_expiry_date, 
                         decimal Rental_value, 
                         string Offer_memorandum_number_File, 
-                        string Contract_number_File) {
+                        string Contract_number_File, 
+                        System.DateTime Rental_expiry_date, 
+                        string investment_type) {
                 investmentsRow rowinvestmentsRow = ((investmentsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         investments_id,
@@ -6622,7 +6821,9 @@ namespace DemoProject {
                         Contract_expiry_date,
                         Rental_value,
                         Offer_memorandum_number_File,
-                        Contract_number_File};
+                        Contract_number_File,
+                        Rental_expiry_date,
+                        investment_type};
                 if ((parentgovernorateRowByFK__investmen__gover__473C8FC7 != null)) {
                     columnValuesArray[3] = parentgovernorateRowByFK__investmen__gover__473C8FC7[0];
                 }
@@ -6674,6 +6875,8 @@ namespace DemoProject {
                 this.columnRental_value = base.Columns["Rental_value"];
                 this.columnOffer_memorandum_number_File = base.Columns["Offer_memorandum_number_File"];
                 this.columnContract_number_File = base.Columns["Contract_number_File"];
+                this.columnRental_expiry_date = base.Columns["Rental_expiry_date"];
+                this.columninvestment_type = base.Columns["investment_type"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6711,6 +6914,10 @@ namespace DemoProject {
                 base.Columns.Add(this.columnOffer_memorandum_number_File);
                 this.columnContract_number_File = new global::System.Data.DataColumn("Contract_number_File", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnContract_number_File);
+                this.columnRental_expiry_date = new global::System.Data.DataColumn("Rental_expiry_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRental_expiry_date);
+                this.columninvestment_type = new global::System.Data.DataColumn("investment_type", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columninvestment_type);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columninvestments_id}, true));
                 this.columninvestments_id.AllowDBNull = false;
@@ -6728,6 +6935,7 @@ namespace DemoProject {
                 this.columnContract_number.MaxLength = 255;
                 this.columnOffer_memorandum_number_File.MaxLength = 255;
                 this.columnContract_number_File.MaxLength = 255;
+                this.columninvestment_type.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6814,6 +7022,678 @@ namespace DemoProject {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "investmentsDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class TestViewReportDataTable : global::System.Data.TypedTableBase<TestViewReportRow> {
+            
+            private global::System.Data.DataColumn columnroad_id;
+            
+            private global::System.Data.DataColumn columnroad_name;
+            
+            private global::System.Data.DataColumn columnToll_Booth_Count;
+            
+            private global::System.Data.DataColumn columnAdministrative_Affiliation;
+            
+            private global::System.Data.DataColumn columnFinancial_Affiliation;
+            
+            private global::System.Data.DataColumn columncontract_type;
+            
+            private global::System.Data.DataColumn columncontract_status;
+            
+            private global::System.Data.DataColumn columncouncil_of_ministers_decision;
+            
+            private global::System.Data.DataColumn columncouncil_of_ministers_decision_Date;
+            
+            private global::System.Data.DataColumn columncontract_signing_date;
+            
+            private global::System.Data.DataColumn columnfranchise_Contract_Duration;
+            
+            private global::System.Data.DataColumn columnnumber_of_exits;
+            
+            private global::System.Data.DataColumn columnroad_length;
+            
+            private global::System.Data.DataColumn columnroad_length_including_branches;
+            
+            private global::System.Data.DataColumn columnnumber_of_operation_staff;
+            
+            private global::System.Data.DataColumn columncompany_percentage;
+            
+            private global::System.Data.DataColumn columnroad_authority_percentage;
+            
+            private global::System.Data.DataColumn columncontract_image;
+            
+            private global::System.Data.DataColumn columncouncil_of_ministers_decision_Image;
+            
+            private global::System.Data.DataColumn columncontract_duration;
+            
+            private global::System.Data.DataColumn columncontract_end_date;
+            
+            private global::System.Data.DataColumn columnnature_of_operation;
+            
+            private global::System.Data.DataColumn columncompany_responsibility;
+            
+            private global::System.Data.DataColumn columnadditional_gates;
+            
+            private global::System.Data.DataColumn columnright_of_way;
+            
+            private global::System.Data.DataColumn columnDescription_of_the_route_from;
+            
+            private global::System.Data.DataColumn columnDescription_of_the_route_to;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TestViewReportDataTable() {
+                this.TableName = "TestViewReport";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal TestViewReportDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected TestViewReportDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn road_idColumn {
+                get {
+                    return this.columnroad_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn road_nameColumn {
+                get {
+                    return this.columnroad_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Toll_Booth_CountColumn {
+                get {
+                    return this.columnToll_Booth_Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Administrative_AffiliationColumn {
+                get {
+                    return this.columnAdministrative_Affiliation;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Financial_AffiliationColumn {
+                get {
+                    return this.columnFinancial_Affiliation;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn contract_typeColumn {
+                get {
+                    return this.columncontract_type;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn contract_statusColumn {
+                get {
+                    return this.columncontract_status;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn council_of_ministers_decisionColumn {
+                get {
+                    return this.columncouncil_of_ministers_decision;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn council_of_ministers_decision_DateColumn {
+                get {
+                    return this.columncouncil_of_ministers_decision_Date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn contract_signing_dateColumn {
+                get {
+                    return this.columncontract_signing_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn franchise_Contract_DurationColumn {
+                get {
+                    return this.columnfranchise_Contract_Duration;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn number_of_exitsColumn {
+                get {
+                    return this.columnnumber_of_exits;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn road_lengthColumn {
+                get {
+                    return this.columnroad_length;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn road_length_including_branchesColumn {
+                get {
+                    return this.columnroad_length_including_branches;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn number_of_operation_staffColumn {
+                get {
+                    return this.columnnumber_of_operation_staff;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn company_percentageColumn {
+                get {
+                    return this.columncompany_percentage;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn road_authority_percentageColumn {
+                get {
+                    return this.columnroad_authority_percentage;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn contract_imageColumn {
+                get {
+                    return this.columncontract_image;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn council_of_ministers_decision_ImageColumn {
+                get {
+                    return this.columncouncil_of_ministers_decision_Image;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn contract_durationColumn {
+                get {
+                    return this.columncontract_duration;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn contract_end_dateColumn {
+                get {
+                    return this.columncontract_end_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn nature_of_operationColumn {
+                get {
+                    return this.columnnature_of_operation;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn company_responsibilityColumn {
+                get {
+                    return this.columncompany_responsibility;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn additional_gatesColumn {
+                get {
+                    return this.columnadditional_gates;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn right_of_wayColumn {
+                get {
+                    return this.columnright_of_way;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Description_of_the_route_fromColumn {
+                get {
+                    return this.columnDescription_of_the_route_from;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Description_of_the_route_toColumn {
+                get {
+                    return this.columnDescription_of_the_route_to;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TestViewReportRow this[int index] {
+                get {
+                    return ((TestViewReportRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event TestViewReportRowChangeEventHandler TestViewReportRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event TestViewReportRowChangeEventHandler TestViewReportRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event TestViewReportRowChangeEventHandler TestViewReportRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event TestViewReportRowChangeEventHandler TestViewReportRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddTestViewReportRow(TestViewReportRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TestViewReportRow AddTestViewReportRow(
+                        string road_id, 
+                        string road_name, 
+                        string Toll_Booth_Count, 
+                        string Administrative_Affiliation, 
+                        string Financial_Affiliation, 
+                        string contract_type, 
+                        string contract_status, 
+                        string council_of_ministers_decision, 
+                        System.DateTime council_of_ministers_decision_Date, 
+                        System.DateTime contract_signing_date, 
+                        System.DateTime franchise_Contract_Duration, 
+                        string number_of_exits, 
+                        string road_length, 
+                        string road_length_including_branches, 
+                        string number_of_operation_staff, 
+                        string company_percentage, 
+                        string road_authority_percentage, 
+                        string contract_image, 
+                        string council_of_ministers_decision_Image, 
+                        string contract_duration, 
+                        System.DateTime contract_end_date, 
+                        string nature_of_operation, 
+                        string company_responsibility, 
+                        string additional_gates, 
+                        string right_of_way, 
+                        string Description_of_the_route_from, 
+                        string Description_of_the_route_to) {
+                TestViewReportRow rowTestViewReportRow = ((TestViewReportRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        road_id,
+                        road_name,
+                        Toll_Booth_Count,
+                        Administrative_Affiliation,
+                        Financial_Affiliation,
+                        contract_type,
+                        contract_status,
+                        council_of_ministers_decision,
+                        council_of_ministers_decision_Date,
+                        contract_signing_date,
+                        franchise_Contract_Duration,
+                        number_of_exits,
+                        road_length,
+                        road_length_including_branches,
+                        number_of_operation_staff,
+                        company_percentage,
+                        road_authority_percentage,
+                        contract_image,
+                        council_of_ministers_decision_Image,
+                        contract_duration,
+                        contract_end_date,
+                        nature_of_operation,
+                        company_responsibility,
+                        additional_gates,
+                        right_of_way,
+                        Description_of_the_route_from,
+                        Description_of_the_route_to};
+                rowTestViewReportRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTestViewReportRow);
+                return rowTestViewReportRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TestViewReportRow FindByroad_id(string road_id) {
+                return ((TestViewReportRow)(this.Rows.Find(new object[] {
+                            road_id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                TestViewReportDataTable cln = ((TestViewReportDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new TestViewReportDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnroad_id = base.Columns["road_id"];
+                this.columnroad_name = base.Columns["road_name"];
+                this.columnToll_Booth_Count = base.Columns["Toll_Booth_Count"];
+                this.columnAdministrative_Affiliation = base.Columns["Administrative_Affiliation"];
+                this.columnFinancial_Affiliation = base.Columns["Financial_Affiliation"];
+                this.columncontract_type = base.Columns["contract_type"];
+                this.columncontract_status = base.Columns["contract_status"];
+                this.columncouncil_of_ministers_decision = base.Columns["council_of_ministers_decision"];
+                this.columncouncil_of_ministers_decision_Date = base.Columns["council_of_ministers_decision_Date"];
+                this.columncontract_signing_date = base.Columns["contract_signing_date"];
+                this.columnfranchise_Contract_Duration = base.Columns["franchise_Contract_Duration"];
+                this.columnnumber_of_exits = base.Columns["number_of_exits"];
+                this.columnroad_length = base.Columns["road_length"];
+                this.columnroad_length_including_branches = base.Columns["road_length_including_branches"];
+                this.columnnumber_of_operation_staff = base.Columns["number_of_operation_staff"];
+                this.columncompany_percentage = base.Columns["company_percentage"];
+                this.columnroad_authority_percentage = base.Columns["road_authority_percentage"];
+                this.columncontract_image = base.Columns["contract_image"];
+                this.columncouncil_of_ministers_decision_Image = base.Columns["council_of_ministers_decision_Image"];
+                this.columncontract_duration = base.Columns["contract_duration"];
+                this.columncontract_end_date = base.Columns["contract_end_date"];
+                this.columnnature_of_operation = base.Columns["nature_of_operation"];
+                this.columncompany_responsibility = base.Columns["company_responsibility"];
+                this.columnadditional_gates = base.Columns["additional_gates"];
+                this.columnright_of_way = base.Columns["right_of_way"];
+                this.columnDescription_of_the_route_from = base.Columns["Description_of_the_route_from"];
+                this.columnDescription_of_the_route_to = base.Columns["Description_of_the_route_to"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnroad_id = new global::System.Data.DataColumn("road_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnroad_id);
+                this.columnroad_name = new global::System.Data.DataColumn("road_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnroad_name);
+                this.columnToll_Booth_Count = new global::System.Data.DataColumn("Toll_Booth_Count", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnToll_Booth_Count);
+                this.columnAdministrative_Affiliation = new global::System.Data.DataColumn("Administrative_Affiliation", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAdministrative_Affiliation);
+                this.columnFinancial_Affiliation = new global::System.Data.DataColumn("Financial_Affiliation", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFinancial_Affiliation);
+                this.columncontract_type = new global::System.Data.DataColumn("contract_type", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncontract_type);
+                this.columncontract_status = new global::System.Data.DataColumn("contract_status", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncontract_status);
+                this.columncouncil_of_ministers_decision = new global::System.Data.DataColumn("council_of_ministers_decision", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncouncil_of_ministers_decision);
+                this.columncouncil_of_ministers_decision_Date = new global::System.Data.DataColumn("council_of_ministers_decision_Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncouncil_of_ministers_decision_Date);
+                this.columncontract_signing_date = new global::System.Data.DataColumn("contract_signing_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncontract_signing_date);
+                this.columnfranchise_Contract_Duration = new global::System.Data.DataColumn("franchise_Contract_Duration", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfranchise_Contract_Duration);
+                this.columnnumber_of_exits = new global::System.Data.DataColumn("number_of_exits", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumber_of_exits);
+                this.columnroad_length = new global::System.Data.DataColumn("road_length", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnroad_length);
+                this.columnroad_length_including_branches = new global::System.Data.DataColumn("road_length_including_branches", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnroad_length_including_branches);
+                this.columnnumber_of_operation_staff = new global::System.Data.DataColumn("number_of_operation_staff", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumber_of_operation_staff);
+                this.columncompany_percentage = new global::System.Data.DataColumn("company_percentage", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncompany_percentage);
+                this.columnroad_authority_percentage = new global::System.Data.DataColumn("road_authority_percentage", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnroad_authority_percentage);
+                this.columncontract_image = new global::System.Data.DataColumn("contract_image", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncontract_image);
+                this.columncouncil_of_ministers_decision_Image = new global::System.Data.DataColumn("council_of_ministers_decision_Image", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncouncil_of_ministers_decision_Image);
+                this.columncontract_duration = new global::System.Data.DataColumn("contract_duration", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncontract_duration);
+                this.columncontract_end_date = new global::System.Data.DataColumn("contract_end_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncontract_end_date);
+                this.columnnature_of_operation = new global::System.Data.DataColumn("nature_of_operation", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnature_of_operation);
+                this.columncompany_responsibility = new global::System.Data.DataColumn("company_responsibility", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncompany_responsibility);
+                this.columnadditional_gates = new global::System.Data.DataColumn("additional_gates", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnadditional_gates);
+                this.columnright_of_way = new global::System.Data.DataColumn("right_of_way", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnright_of_way);
+                this.columnDescription_of_the_route_from = new global::System.Data.DataColumn("Description_of_the_route_from", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescription_of_the_route_from);
+                this.columnDescription_of_the_route_to = new global::System.Data.DataColumn("Description_of_the_route_to", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescription_of_the_route_to);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnroad_id}, true));
+                this.columnroad_id.AllowDBNull = false;
+                this.columnroad_id.Unique = true;
+                this.columnroad_id.MaxLength = 255;
+                this.columnroad_name.MaxLength = 255;
+                this.columnToll_Booth_Count.MaxLength = 255;
+                this.columnAdministrative_Affiliation.MaxLength = 255;
+                this.columnFinancial_Affiliation.MaxLength = 255;
+                this.columncontract_type.MaxLength = 255;
+                this.columncontract_status.MaxLength = 255;
+                this.columncouncil_of_ministers_decision.MaxLength = 255;
+                this.columnnumber_of_exits.MaxLength = 255;
+                this.columnroad_length.MaxLength = 255;
+                this.columnroad_length_including_branches.MaxLength = 255;
+                this.columnnumber_of_operation_staff.MaxLength = 255;
+                this.columncompany_percentage.MaxLength = 255;
+                this.columnroad_authority_percentage.MaxLength = 255;
+                this.columncontract_image.MaxLength = 255;
+                this.columncouncil_of_ministers_decision_Image.MaxLength = 255;
+                this.columncontract_duration.MaxLength = 255;
+                this.columnnature_of_operation.MaxLength = 255;
+                this.columncompany_responsibility.MaxLength = 255;
+                this.columnadditional_gates.MaxLength = 255;
+                this.columnright_of_way.MaxLength = 255;
+                this.columnDescription_of_the_route_from.MaxLength = 255;
+                this.columnDescription_of_the_route_to.MaxLength = 255;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TestViewReportRow NewTestViewReportRow() {
+                return ((TestViewReportRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new TestViewReportRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(TestViewReportRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.TestViewReportRowChanged != null)) {
+                    this.TestViewReportRowChanged(this, new TestViewReportRowChangeEvent(((TestViewReportRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.TestViewReportRowChanging != null)) {
+                    this.TestViewReportRowChanging(this, new TestViewReportRowChangeEvent(((TestViewReportRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.TestViewReportRowDeleted != null)) {
+                    this.TestViewReportRowDeleted(this, new TestViewReportRowChangeEvent(((TestViewReportRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.TestViewReportRowDeleting != null)) {
+                    this.TestViewReportRowDeleting(this, new TestViewReportRowChangeEvent(((TestViewReportRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveTestViewReportRow(TestViewReportRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Database1DataSet ds = new Database1DataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "TestViewReportDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -8300,6 +9180,22 @@ namespace DemoProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int price_per_meter {
+                get {
+                    try {
+                        return ((int)(this[this.tablelands.price_per_meterColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'price_per_meter\' in table \'lands\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelands.price_per_meterColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public governorateRow governorateRow {
                 get {
                     return ((governorateRow)(this.GetParentRow(this.Table.ParentRelations["FK__lands__governora__0D44F85C"])));
@@ -8511,6 +9407,18 @@ namespace DemoProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setplate_numberFileNull() {
                 this[this.tablelands.plate_numberFileColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isprice_per_meterNull() {
+                return this.IsNull(this.tablelands.price_per_meterColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setprice_per_meterNull() {
+                this[this.tablelands.price_per_meterColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9330,17 +10238,6 @@ namespace DemoProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public accessRow[] GetaccessRows() {
-                if ((this.Table.ChildRelations["FK__access__role_id__725BF7F6"] == null)) {
-                    return new accessRow[0];
-                }
-                else {
-                    return ((accessRow[])(base.GetChildRows(this.Table.ChildRelations["FK__access__role_id__725BF7F6"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public functionsRow[] GetfunctionsRows() {
                 if ((this.Table.ChildRelations["FK__functions__role___6CA31EA0"] == null)) {
                     return new functionsRow[0];
@@ -9358,6 +10255,17 @@ namespace DemoProject {
                 }
                 else {
                     return ((pagesRow[])(base.GetChildRows(this.Table.ChildRelations["FK__pages__role_id__6F7F8B4B"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public accessRow[] GetaccessRows() {
+                if ((this.Table.ChildRelations["FK__access__role_id__725BF7F6"] == null)) {
+                    return new accessRow[0];
+                }
+                else {
+                    return ((accessRow[])(base.GetChildRows(this.Table.ChildRelations["FK__access__role_id__725BF7F6"])));
                 }
             }
         }
@@ -9453,23 +10361,12 @@ namespace DemoProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public rolesRow rolesRow {
+            public pagesRow pagesRow {
                 get {
-                    return ((rolesRow)(this.GetParentRow(this.Table.ParentRelations["FK__access__role_id__725BF7F6"])));
+                    return ((pagesRow)(this.GetParentRow(this.Table.ParentRelations["FK__access__pages_id__73501C2F"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__access__role_id__725BF7F6"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public usersRow usersRow {
-                get {
-                    return ((usersRow)(this.GetParentRow(this.Table.ParentRelations["FK__access__user_id__753864A1"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__access__user_id__753864A1"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__access__pages_id__73501C2F"]);
                 }
             }
             
@@ -9486,12 +10383,23 @@ namespace DemoProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public pagesRow pagesRow {
+            public usersRow usersRow {
                 get {
-                    return ((pagesRow)(this.GetParentRow(this.Table.ParentRelations["FK__access__pages_id__73501C2F"])));
+                    return ((usersRow)(this.GetParentRow(this.Table.ParentRelations["FK__access__user_id__753864A1"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__access__pages_id__73501C2F"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__access__user_id__753864A1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public rolesRow rolesRow {
+                get {
+                    return ((rolesRow)(this.GetParentRow(this.Table.ParentRelations["FK__access__role_id__725BF7F6"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__access__role_id__725BF7F6"]);
                 }
             }
             
@@ -10070,6 +10978,134 @@ namespace DemoProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string contract_duration {
+                get {
+                    try {
+                        return ((string)(this[this.tableroads.contract_durationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'contract_duration\' in table \'roads\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableroads.contract_durationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime contract_end_date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableroads.contract_end_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'contract_end_date\' in table \'roads\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableroads.contract_end_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string nature_of_operation {
+                get {
+                    try {
+                        return ((string)(this[this.tableroads.nature_of_operationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'nature_of_operation\' in table \'roads\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableroads.nature_of_operationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string company_responsibility {
+                get {
+                    try {
+                        return ((string)(this[this.tableroads.company_responsibilityColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'company_responsibility\' in table \'roads\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableroads.company_responsibilityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string additional_gates {
+                get {
+                    try {
+                        return ((string)(this[this.tableroads.additional_gatesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'additional_gates\' in table \'roads\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableroads.additional_gatesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string right_of_way {
+                get {
+                    try {
+                        return ((string)(this[this.tableroads.right_of_wayColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'right_of_way\' in table \'roads\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableroads.right_of_wayColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Description_of_the_route_from {
+                get {
+                    try {
+                        return ((string)(this[this.tableroads.Description_of_the_route_fromColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Description_of_the_route_from\' in table \'roads\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableroads.Description_of_the_route_fromColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Description_of_the_route_to {
+                get {
+                    try {
+                        return ((string)(this[this.tableroads.Description_of_the_route_toColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Description_of_the_route_to\' in table \'roads\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableroads.Description_of_the_route_toColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Isroad_nameNull() {
                 return this.IsNull(this.tableroads.road_nameColumn);
             }
@@ -10282,6 +11318,102 @@ namespace DemoProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setcouncil_of_ministers_decision_ImageNull() {
                 this[this.tableroads.council_of_ministers_decision_ImageColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iscontract_durationNull() {
+                return this.IsNull(this.tableroads.contract_durationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setcontract_durationNull() {
+                this[this.tableroads.contract_durationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iscontract_end_dateNull() {
+                return this.IsNull(this.tableroads.contract_end_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setcontract_end_dateNull() {
+                this[this.tableroads.contract_end_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isnature_of_operationNull() {
+                return this.IsNull(this.tableroads.nature_of_operationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setnature_of_operationNull() {
+                this[this.tableroads.nature_of_operationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iscompany_responsibilityNull() {
+                return this.IsNull(this.tableroads.company_responsibilityColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setcompany_responsibilityNull() {
+                this[this.tableroads.company_responsibilityColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isadditional_gatesNull() {
+                return this.IsNull(this.tableroads.additional_gatesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setadditional_gatesNull() {
+                this[this.tableroads.additional_gatesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isright_of_wayNull() {
+                return this.IsNull(this.tableroads.right_of_wayColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setright_of_wayNull() {
+                this[this.tableroads.right_of_wayColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDescription_of_the_route_fromNull() {
+                return this.IsNull(this.tableroads.Description_of_the_route_fromColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDescription_of_the_route_fromNull() {
+                this[this.tableroads.Description_of_the_route_fromColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDescription_of_the_route_toNull() {
+                return this.IsNull(this.tableroads.Description_of_the_route_toColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDescription_of_the_route_toNull() {
+                this[this.tableroads.Description_of_the_route_toColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -10553,6 +11685,38 @@ namespace DemoProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime Rental_expiry_date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableinvestments.Rental_expiry_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Rental_expiry_date\' in table \'investments\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableinvestments.Rental_expiry_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string investment_type {
+                get {
+                    try {
+                        return ((string)(this[this.tableinvestments.investment_typeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'investment_type\' in table \'investments\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableinvestments.investment_typeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public governorateRow governorateRow {
                 get {
                     return ((governorateRow)(this.GetParentRow(this.Table.ParentRelations["FK__investmen__gover__473C8FC7"])));
@@ -10751,6 +11915,797 @@ namespace DemoProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetContract_number_FileNull() {
                 this[this.tableinvestments.Contract_number_FileColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsRental_expiry_dateNull() {
+                return this.IsNull(this.tableinvestments.Rental_expiry_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetRental_expiry_dateNull() {
+                this[this.tableinvestments.Rental_expiry_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isinvestment_typeNull() {
+                return this.IsNull(this.tableinvestments.investment_typeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setinvestment_typeNull() {
+                this[this.tableinvestments.investment_typeColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class TestViewReportRow : global::System.Data.DataRow {
+            
+            private TestViewReportDataTable tableTestViewReport;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal TestViewReportRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableTestViewReport = ((TestViewReportDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string road_id {
+                get {
+                    return ((string)(this[this.tableTestViewReport.road_idColumn]));
+                }
+                set {
+                    this[this.tableTestViewReport.road_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string road_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableTestViewReport.road_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'road_name\' in table \'TestViewReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTestViewReport.road_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Toll_Booth_Count {
+                get {
+                    try {
+                        return ((string)(this[this.tableTestViewReport.Toll_Booth_CountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Toll_Booth_Count\' in table \'TestViewReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTestViewReport.Toll_Booth_CountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Administrative_Affiliation {
+                get {
+                    try {
+                        return ((string)(this[this.tableTestViewReport.Administrative_AffiliationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Administrative_Affiliation\' in table \'TestViewReport\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableTestViewReport.Administrative_AffiliationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Financial_Affiliation {
+                get {
+                    try {
+                        return ((string)(this[this.tableTestViewReport.Financial_AffiliationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Financial_Affiliation\' in table \'TestViewReport\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableTestViewReport.Financial_AffiliationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string contract_type {
+                get {
+                    try {
+                        return ((string)(this[this.tableTestViewReport.contract_typeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'contract_type\' in table \'TestViewReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTestViewReport.contract_typeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string contract_status {
+                get {
+                    try {
+                        return ((string)(this[this.tableTestViewReport.contract_statusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'contract_status\' in table \'TestViewReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTestViewReport.contract_statusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string council_of_ministers_decision {
+                get {
+                    try {
+                        return ((string)(this[this.tableTestViewReport.council_of_ministers_decisionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'council_of_ministers_decision\' in table \'TestViewReport\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTestViewReport.council_of_ministers_decisionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime council_of_ministers_decision_Date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableTestViewReport.council_of_ministers_decision_DateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'council_of_ministers_decision_Date\' in table \'TestViewRepor" +
+                                "t\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTestViewReport.council_of_ministers_decision_DateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime contract_signing_date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableTestViewReport.contract_signing_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'contract_signing_date\' in table \'TestViewReport\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableTestViewReport.contract_signing_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime franchise_Contract_Duration {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableTestViewReport.franchise_Contract_DurationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'franchise_Contract_Duration\' in table \'TestViewReport\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTestViewReport.franchise_Contract_DurationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string number_of_exits {
+                get {
+                    try {
+                        return ((string)(this[this.tableTestViewReport.number_of_exitsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'number_of_exits\' in table \'TestViewReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTestViewReport.number_of_exitsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string road_length {
+                get {
+                    try {
+                        return ((string)(this[this.tableTestViewReport.road_lengthColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'road_length\' in table \'TestViewReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTestViewReport.road_lengthColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string road_length_including_branches {
+                get {
+                    try {
+                        return ((string)(this[this.tableTestViewReport.road_length_including_branchesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'road_length_including_branches\' in table \'TestViewReport\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTestViewReport.road_length_including_branchesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string number_of_operation_staff {
+                get {
+                    try {
+                        return ((string)(this[this.tableTestViewReport.number_of_operation_staffColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'number_of_operation_staff\' in table \'TestViewReport\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTestViewReport.number_of_operation_staffColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string company_percentage {
+                get {
+                    try {
+                        return ((string)(this[this.tableTestViewReport.company_percentageColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'company_percentage\' in table \'TestViewReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTestViewReport.company_percentageColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string road_authority_percentage {
+                get {
+                    try {
+                        return ((string)(this[this.tableTestViewReport.road_authority_percentageColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'road_authority_percentage\' in table \'TestViewReport\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTestViewReport.road_authority_percentageColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string contract_image {
+                get {
+                    try {
+                        return ((string)(this[this.tableTestViewReport.contract_imageColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'contract_image\' in table \'TestViewReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTestViewReport.contract_imageColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string council_of_ministers_decision_Image {
+                get {
+                    try {
+                        return ((string)(this[this.tableTestViewReport.council_of_ministers_decision_ImageColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'council_of_ministers_decision_Image\' in table \'TestViewRepo" +
+                                "rt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTestViewReport.council_of_ministers_decision_ImageColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string contract_duration {
+                get {
+                    try {
+                        return ((string)(this[this.tableTestViewReport.contract_durationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'contract_duration\' in table \'TestViewReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTestViewReport.contract_durationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime contract_end_date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableTestViewReport.contract_end_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'contract_end_date\' in table \'TestViewReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTestViewReport.contract_end_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string nature_of_operation {
+                get {
+                    try {
+                        return ((string)(this[this.tableTestViewReport.nature_of_operationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'nature_of_operation\' in table \'TestViewReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTestViewReport.nature_of_operationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string company_responsibility {
+                get {
+                    try {
+                        return ((string)(this[this.tableTestViewReport.company_responsibilityColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'company_responsibility\' in table \'TestViewReport\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableTestViewReport.company_responsibilityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string additional_gates {
+                get {
+                    try {
+                        return ((string)(this[this.tableTestViewReport.additional_gatesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'additional_gates\' in table \'TestViewReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTestViewReport.additional_gatesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string right_of_way {
+                get {
+                    try {
+                        return ((string)(this[this.tableTestViewReport.right_of_wayColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'right_of_way\' in table \'TestViewReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTestViewReport.right_of_wayColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Description_of_the_route_from {
+                get {
+                    try {
+                        return ((string)(this[this.tableTestViewReport.Description_of_the_route_fromColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Description_of_the_route_from\' in table \'TestViewReport\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTestViewReport.Description_of_the_route_fromColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Description_of_the_route_to {
+                get {
+                    try {
+                        return ((string)(this[this.tableTestViewReport.Description_of_the_route_toColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Description_of_the_route_to\' in table \'TestViewReport\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTestViewReport.Description_of_the_route_toColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isroad_nameNull() {
+                return this.IsNull(this.tableTestViewReport.road_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setroad_nameNull() {
+                this[this.tableTestViewReport.road_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsToll_Booth_CountNull() {
+                return this.IsNull(this.tableTestViewReport.Toll_Booth_CountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetToll_Booth_CountNull() {
+                this[this.tableTestViewReport.Toll_Booth_CountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsAdministrative_AffiliationNull() {
+                return this.IsNull(this.tableTestViewReport.Administrative_AffiliationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetAdministrative_AffiliationNull() {
+                this[this.tableTestViewReport.Administrative_AffiliationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsFinancial_AffiliationNull() {
+                return this.IsNull(this.tableTestViewReport.Financial_AffiliationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetFinancial_AffiliationNull() {
+                this[this.tableTestViewReport.Financial_AffiliationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iscontract_typeNull() {
+                return this.IsNull(this.tableTestViewReport.contract_typeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setcontract_typeNull() {
+                this[this.tableTestViewReport.contract_typeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iscontract_statusNull() {
+                return this.IsNull(this.tableTestViewReport.contract_statusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setcontract_statusNull() {
+                this[this.tableTestViewReport.contract_statusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iscouncil_of_ministers_decisionNull() {
+                return this.IsNull(this.tableTestViewReport.council_of_ministers_decisionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setcouncil_of_ministers_decisionNull() {
+                this[this.tableTestViewReport.council_of_ministers_decisionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iscouncil_of_ministers_decision_DateNull() {
+                return this.IsNull(this.tableTestViewReport.council_of_ministers_decision_DateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setcouncil_of_ministers_decision_DateNull() {
+                this[this.tableTestViewReport.council_of_ministers_decision_DateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iscontract_signing_dateNull() {
+                return this.IsNull(this.tableTestViewReport.contract_signing_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setcontract_signing_dateNull() {
+                this[this.tableTestViewReport.contract_signing_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isfranchise_Contract_DurationNull() {
+                return this.IsNull(this.tableTestViewReport.franchise_Contract_DurationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setfranchise_Contract_DurationNull() {
+                this[this.tableTestViewReport.franchise_Contract_DurationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isnumber_of_exitsNull() {
+                return this.IsNull(this.tableTestViewReport.number_of_exitsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setnumber_of_exitsNull() {
+                this[this.tableTestViewReport.number_of_exitsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isroad_lengthNull() {
+                return this.IsNull(this.tableTestViewReport.road_lengthColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setroad_lengthNull() {
+                this[this.tableTestViewReport.road_lengthColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isroad_length_including_branchesNull() {
+                return this.IsNull(this.tableTestViewReport.road_length_including_branchesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setroad_length_including_branchesNull() {
+                this[this.tableTestViewReport.road_length_including_branchesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isnumber_of_operation_staffNull() {
+                return this.IsNull(this.tableTestViewReport.number_of_operation_staffColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setnumber_of_operation_staffNull() {
+                this[this.tableTestViewReport.number_of_operation_staffColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iscompany_percentageNull() {
+                return this.IsNull(this.tableTestViewReport.company_percentageColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setcompany_percentageNull() {
+                this[this.tableTestViewReport.company_percentageColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isroad_authority_percentageNull() {
+                return this.IsNull(this.tableTestViewReport.road_authority_percentageColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setroad_authority_percentageNull() {
+                this[this.tableTestViewReport.road_authority_percentageColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iscontract_imageNull() {
+                return this.IsNull(this.tableTestViewReport.contract_imageColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setcontract_imageNull() {
+                this[this.tableTestViewReport.contract_imageColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iscouncil_of_ministers_decision_ImageNull() {
+                return this.IsNull(this.tableTestViewReport.council_of_ministers_decision_ImageColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setcouncil_of_ministers_decision_ImageNull() {
+                this[this.tableTestViewReport.council_of_ministers_decision_ImageColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iscontract_durationNull() {
+                return this.IsNull(this.tableTestViewReport.contract_durationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setcontract_durationNull() {
+                this[this.tableTestViewReport.contract_durationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iscontract_end_dateNull() {
+                return this.IsNull(this.tableTestViewReport.contract_end_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setcontract_end_dateNull() {
+                this[this.tableTestViewReport.contract_end_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isnature_of_operationNull() {
+                return this.IsNull(this.tableTestViewReport.nature_of_operationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setnature_of_operationNull() {
+                this[this.tableTestViewReport.nature_of_operationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iscompany_responsibilityNull() {
+                return this.IsNull(this.tableTestViewReport.company_responsibilityColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setcompany_responsibilityNull() {
+                this[this.tableTestViewReport.company_responsibilityColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isadditional_gatesNull() {
+                return this.IsNull(this.tableTestViewReport.additional_gatesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setadditional_gatesNull() {
+                this[this.tableTestViewReport.additional_gatesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isright_of_wayNull() {
+                return this.IsNull(this.tableTestViewReport.right_of_wayColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setright_of_wayNull() {
+                this[this.tableTestViewReport.right_of_wayColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDescription_of_the_route_fromNull() {
+                return this.IsNull(this.tableTestViewReport.Description_of_the_route_fromColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDescription_of_the_route_fromNull() {
+                this[this.tableTestViewReport.Description_of_the_route_fromColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDescription_of_the_route_toNull() {
+                return this.IsNull(this.tableTestViewReport.Description_of_the_route_toColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDescription_of_the_route_toNull() {
+                this[this.tableTestViewReport.Description_of_the_route_toColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -11284,6 +13239,40 @@ namespace DemoProject {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public investmentsRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class TestViewReportRowChangeEvent : global::System.EventArgs {
+            
+            private TestViewReportRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TestViewReportRowChangeEvent(TestViewReportRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TestViewReportRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -15415,6 +17404,7 @@ SELECT governorate_id, governorate FROM governorate WHERE (governorate_id = @gov
             tableMapping.ColumnMappings.Add("Address", "Address");
             tableMapping.ColumnMappings.Add("land_number", "land_number");
             tableMapping.ColumnMappings.Add("plate_numberFile", "plate_numberFile");
+            tableMapping.ColumnMappings.Add("price_per_meter", "price_per_meter");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -15443,7 +17433,8 @@ SELECT governorate_id, governorate FROM governorate WHERE (governorate_id = @gov
                 "([Ownership_Authority] = @Original_Ownership_Authority)) AND ((@IsNull_land_numb" +
                 "er = 1 AND [land_number] IS NULL) OR ([land_number] = @Original_land_number)) AN" +
                 "D ((@IsNull_plate_numberFile = 1 AND [plate_numberFile] IS NULL) OR ([plate_numb" +
-                "erFile] = @Original_plate_numberFile)))";
+                "erFile] = @Original_plate_numberFile)) AND ((@IsNull_price_per_meter = 1 AND [pr" +
+                "ice_per_meter] IS NULL) OR ([price_per_meter] = @Original_price_per_meter)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_land_id", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "land_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_land_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "land_name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -15480,10 +17471,12 @@ SELECT governorate_id, governorate FROM governorate WHERE (governorate_id = @gov
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_land_number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "land_number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_plate_numberFile", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "plate_numberFile", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_plate_numberFile", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "plate_numberFile", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_price_per_meter", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price_per_meter", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_price_per_meter", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price_per_meter", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [lands] ([land_id], [land_name], [total_area], [Topographic_Survey_Status], [Land_Plate_Status], [coordinates_N], [coordinates_E], [serial_number], [plate_number], [governorate_fk], [Republican_Decree], [Republican_Decree_Status], [consulting_Office], [total_Land_Price], [Address], [Ownership_Authority], [land_number], [plate_numberFile]) VALUES (@land_id, @land_name, @total_area, @Topographic_Survey_Status, @Land_Plate_Status, @coordinates_N, @coordinates_E, @serial_number, @plate_number, @governorate_fk, @Republican_Decree, @Republican_Decree_Status, @consulting_Office, @total_Land_Price, @Address, @Ownership_Authority, @land_number, @plate_numberFile);
-SELECT land_id, land_name, total_area, Topographic_Survey_Status, Land_Plate_Status, coordinates_N, coordinates_E, serial_number, plate_number, governorate_fk, Republican_Decree, Republican_Decree_Status, consulting_Office, total_Land_Price, Address, Ownership_Authority, land_number, plate_numberFile FROM lands WHERE (land_id = @land_id)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [lands] ([land_id], [land_name], [total_area], [Topographic_Survey_Status], [Land_Plate_Status], [coordinates_N], [coordinates_E], [serial_number], [plate_number], [governorate_fk], [Republican_Decree], [Republican_Decree_Status], [consulting_Office], [total_Land_Price], [Address], [Ownership_Authority], [land_number], [plate_numberFile], [price_per_meter]) VALUES (@land_id, @land_name, @total_area, @Topographic_Survey_Status, @Land_Plate_Status, @coordinates_N, @coordinates_E, @serial_number, @plate_number, @governorate_fk, @Republican_Decree, @Republican_Decree_Status, @consulting_Office, @total_Land_Price, @Address, @Ownership_Authority, @land_number, @plate_numberFile, @price_per_meter);
+SELECT land_id, land_name, total_area, Topographic_Survey_Status, Land_Plate_Status, coordinates_N, coordinates_E, serial_number, plate_number, governorate_fk, Republican_Decree, Republican_Decree_Status, consulting_Office, total_Land_Price, Address, Ownership_Authority, land_number, plate_numberFile, price_per_meter FROM lands WHERE (land_id = @land_id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@land_id", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "land_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@land_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "land_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -15503,6 +17496,7 @@ SELECT land_id, land_name, total_area, Topographic_Survey_Status, Land_Plate_Sta
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ownership_Authority", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ownership_Authority", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@land_number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "land_number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@plate_numberFile", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "plate_numberFile", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@price_per_meter", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price_per_meter", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [lands] SET [land_id] = @land_id, [land_name] = @land_name, [total_area] =" +
@@ -15513,37 +17507,39 @@ SELECT land_id, land_name, total_area, Topographic_Survey_Status, Land_Plate_Sta
                 "cree, [Republican_Decree_Status] = @Republican_Decree_Status, [consulting_Office" +
                 "] = @consulting_Office, [total_Land_Price] = @total_Land_Price, [Address] = @Add" +
                 "ress, [Ownership_Authority] = @Ownership_Authority, [land_number] = @land_number" +
-                ", [plate_numberFile] = @plate_numberFile WHERE (([land_id] = @Original_land_id) " +
-                "AND ((@IsNull_land_name = 1 AND [land_name] IS NULL) OR ([land_name] = @Original" +
-                "_land_name)) AND ((@IsNull_total_area = 1 AND [total_area] IS NULL) OR ([total_a" +
-                "rea] = @Original_total_area)) AND ((@IsNull_Topographic_Survey_Status = 1 AND [T" +
-                "opographic_Survey_Status] IS NULL) OR ([Topographic_Survey_Status] = @Original_T" +
-                "opographic_Survey_Status)) AND ((@IsNull_Land_Plate_Status = 1 AND [Land_Plate_S" +
-                "tatus] IS NULL) OR ([Land_Plate_Status] = @Original_Land_Plate_Status)) AND ((@I" +
-                "sNull_coordinates_N = 1 AND [coordinates_N] IS NULL) OR ([coordinates_N] = @Orig" +
-                "inal_coordinates_N)) AND ((@IsNull_coordinates_E = 1 AND [coordinates_E] IS NULL" +
-                ") OR ([coordinates_E] = @Original_coordinates_E)) AND ((@IsNull_serial_number = " +
-                "1 AND [serial_number] IS NULL) OR ([serial_number] = @Original_serial_number)) A" +
-                "ND ((@IsNull_plate_number = 1 AND [plate_number] IS NULL) OR ([plate_number] = @" +
-                "Original_plate_number)) AND ((@IsNull_governorate_fk = 1 AND [governorate_fk] IS" +
-                " NULL) OR ([governorate_fk] = @Original_governorate_fk)) AND ((@IsNull_Republica" +
-                "n_Decree = 1 AND [Republican_Decree] IS NULL) OR ([Republican_Decree] = @Origina" +
-                "l_Republican_Decree)) AND ((@IsNull_Republican_Decree_Status = 1 AND [Republican" +
-                "_Decree_Status] IS NULL) OR ([Republican_Decree_Status] = @Original_Republican_D" +
-                "ecree_Status)) AND ((@IsNull_consulting_Office = 1 AND [consulting_Office] IS NU" +
-                "LL) OR ([consulting_Office] = @Original_consulting_Office)) AND ((@IsNull_total_" +
-                "Land_Price = 1 AND [total_Land_Price] IS NULL) OR ([total_Land_Price] = @Origina" +
-                "l_total_Land_Price)) AND ((@IsNull_Address = 1 AND [Address] IS NULL) OR ([Addre" +
-                "ss] = @Original_Address)) AND ((@IsNull_Ownership_Authority = 1 AND [Ownership_A" +
-                "uthority] IS NULL) OR ([Ownership_Authority] = @Original_Ownership_Authority)) A" +
-                "ND ((@IsNull_land_number = 1 AND [land_number] IS NULL) OR ([land_number] = @Ori" +
-                "ginal_land_number)) AND ((@IsNull_plate_numberFile = 1 AND [plate_numberFile] IS" +
-                " NULL) OR ([plate_numberFile] = @Original_plate_numberFile)));\r\nSELECT land_id, " +
-                "land_name, total_area, Topographic_Survey_Status, Land_Plate_Status, coordinates" +
-                "_N, coordinates_E, serial_number, plate_number, governorate_fk, Republican_Decre" +
-                "e, Republican_Decree_Status, consulting_Office, total_Land_Price, Address, Owner" +
-                "ship_Authority, land_number, plate_numberFile FROM lands WHERE (land_id = @land_" +
-                "id)";
+                ", [plate_numberFile] = @plate_numberFile, [price_per_meter] = @price_per_meter W" +
+                "HERE (([land_id] = @Original_land_id) AND ((@IsNull_land_name = 1 AND [land_name" +
+                "] IS NULL) OR ([land_name] = @Original_land_name)) AND ((@IsNull_total_area = 1 " +
+                "AND [total_area] IS NULL) OR ([total_area] = @Original_total_area)) AND ((@IsNul" +
+                "l_Topographic_Survey_Status = 1 AND [Topographic_Survey_Status] IS NULL) OR ([To" +
+                "pographic_Survey_Status] = @Original_Topographic_Survey_Status)) AND ((@IsNull_L" +
+                "and_Plate_Status = 1 AND [Land_Plate_Status] IS NULL) OR ([Land_Plate_Status] = " +
+                "@Original_Land_Plate_Status)) AND ((@IsNull_coordinates_N = 1 AND [coordinates_N" +
+                "] IS NULL) OR ([coordinates_N] = @Original_coordinates_N)) AND ((@IsNull_coordin" +
+                "ates_E = 1 AND [coordinates_E] IS NULL) OR ([coordinates_E] = @Original_coordina" +
+                "tes_E)) AND ((@IsNull_serial_number = 1 AND [serial_number] IS NULL) OR ([serial" +
+                "_number] = @Original_serial_number)) AND ((@IsNull_plate_number = 1 AND [plate_n" +
+                "umber] IS NULL) OR ([plate_number] = @Original_plate_number)) AND ((@IsNull_gove" +
+                "rnorate_fk = 1 AND [governorate_fk] IS NULL) OR ([governorate_fk] = @Original_go" +
+                "vernorate_fk)) AND ((@IsNull_Republican_Decree = 1 AND [Republican_Decree] IS NU" +
+                "LL) OR ([Republican_Decree] = @Original_Republican_Decree)) AND ((@IsNull_Republ" +
+                "ican_Decree_Status = 1 AND [Republican_Decree_Status] IS NULL) OR ([Republican_D" +
+                "ecree_Status] = @Original_Republican_Decree_Status)) AND ((@IsNull_consulting_Of" +
+                "fice = 1 AND [consulting_Office] IS NULL) OR ([consulting_Office] = @Original_co" +
+                "nsulting_Office)) AND ((@IsNull_total_Land_Price = 1 AND [total_Land_Price] IS N" +
+                "ULL) OR ([total_Land_Price] = @Original_total_Land_Price)) AND ((@IsNull_Address" +
+                " = 1 AND [Address] IS NULL) OR ([Address] = @Original_Address)) AND ((@IsNull_Ow" +
+                "nership_Authority = 1 AND [Ownership_Authority] IS NULL) OR ([Ownership_Authorit" +
+                "y] = @Original_Ownership_Authority)) AND ((@IsNull_land_number = 1 AND [land_num" +
+                "ber] IS NULL) OR ([land_number] = @Original_land_number)) AND ((@IsNull_plate_nu" +
+                "mberFile = 1 AND [plate_numberFile] IS NULL) OR ([plate_numberFile] = @Original_" +
+                "plate_numberFile)) AND ((@IsNull_price_per_meter = 1 AND [price_per_meter] IS NU" +
+                "LL) OR ([price_per_meter] = @Original_price_per_meter)));\r\nSELECT land_id, land_" +
+                "name, total_area, Topographic_Survey_Status, Land_Plate_Status, coordinates_N, c" +
+                "oordinates_E, serial_number, plate_number, governorate_fk, Republican_Decree, Re" +
+                "publican_Decree_Status, consulting_Office, total_Land_Price, Address, Ownership_" +
+                "Authority, land_number, plate_numberFile, price_per_meter FROM lands WHERE (land" +
+                "_id = @land_id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@land_id", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "land_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@land_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "land_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -15563,6 +17559,7 @@ SELECT land_id, land_name, total_area, Topographic_Survey_Status, Land_Plate_Sta
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ownership_Authority", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ownership_Authority", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@land_number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "land_number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@plate_numberFile", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "plate_numberFile", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@price_per_meter", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price_per_meter", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_land_id", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "land_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_land_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "land_name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_land_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "land_name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -15598,6 +17595,8 @@ SELECT land_id, land_name, total_area, Topographic_Survey_Status, Land_Plate_Sta
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_land_number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "land_number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_plate_numberFile", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "plate_numberFile", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_plate_numberFile", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "plate_numberFile", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_price_per_meter", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price_per_meter", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_price_per_meter", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price_per_meter", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15613,7 +17612,7 @@ SELECT land_id, land_name, total_area, Topographic_Survey_Status, Land_Plate_Sta
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT land_id, land_name, total_area, Topographic_Survey_Status, Land_Plate_Status, coordinates_N, coordinates_E, serial_number, plate_number, governorate_fk, Republican_Decree, Republican_Decree_Status, consulting_Office, total_Land_Price, Address, Ownership_Authority, land_number, plate_numberFile FROM lands";
+            this._commandCollection[0].CommandText = @"SELECT land_id, land_name, total_area, Topographic_Survey_Status, Land_Plate_Status, coordinates_N, coordinates_E, serial_number, plate_number, governorate_fk, Republican_Decree, Republican_Decree_Status, consulting_Office, total_Land_Price, Address, Ownership_Authority, land_number, plate_numberFile, price_per_meter FROM lands";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -15622,12 +17621,12 @@ SELECT land_id, land_name, total_area, Topographic_Survey_Status, Land_Plate_Sta
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@land_id", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "land_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT land_id, land_name, total_area, Topographic_Survey_Status, Land_Plate_Status, coordinates_N, coordinates_E, serial_number, plate_number, governorate_fk, Republican_Decree, Republican_Decree_Status, consulting_Office, total_Land_Price, Address, Ownership_Authority, land_number, plate_numberFile FROM lands WHERE (land_id = @land_id)";
+            this._commandCollection[2].CommandText = @"SELECT land_id, land_name, total_area, Topographic_Survey_Status, Land_Plate_Status, coordinates_N, coordinates_E, serial_number, plate_number, governorate_fk, Republican_Decree, Republican_Decree_Status, consulting_Office, total_Land_Price, Address, Ownership_Authority, land_number, plate_numberFile, price_per_meter FROM lands WHERE (land_id = @land_id)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@land_id", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "land_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT land_id, land_name, total_area, Topographic_Survey_Status, Land_Plate_Status, coordinates_N, coordinates_E, serial_number, plate_number, governorate_fk, Republican_Decree, Republican_Decree_Status, consulting_Office, total_Land_Price, Address, Ownership_Authority, land_number, plate_numberFile FROM lands WHERE (serial_number = @serial_number)";
+            this._commandCollection[3].CommandText = @"SELECT land_id, land_name, total_area, Topographic_Survey_Status, Land_Plate_Status, coordinates_N, coordinates_E, serial_number, plate_number, governorate_fk, Republican_Decree, Republican_Decree_Status, consulting_Office, total_Land_Price, Address, Ownership_Authority, land_number, plate_numberFile, price_per_meter FROM lands WHERE (serial_number = @serial_number)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@serial_number", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "serial_number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
@@ -15636,7 +17635,7 @@ SELECT land_id, land_name, total_area, Topographic_Survey_Status, Land_Plate_Sta
 SET                land_name = @land_name, total_area = @total_area, Topographic_Survey_Status = @Topographic_Survey_Status, Land_Plate_Status = @Land_Plate_Status, coordinates_N = @coordinates_N, 
                          coordinates_E = @coordinates_E, serial_number = @serial_number, plate_number = @plate_number, governorate_fk = @governorate_fk, Republican_Decree = @Republican_Decree, 
                          Republican_Decree_Status = @Republican_Decree_Status, consulting_Office = @consulting_Office, total_Land_Price = @total_Land_Price, Address = @Address, Ownership_Authority = @Ownership_Authority, 
-                         land_number = @land_number, plate_numberFile = @plate_numberFile 
+                         land_number = @land_number, plate_numberFile = @plate_numberFile, price_per_meter =@price_per_meter 
 WHERE        (serial_number = @serial_number)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@land_name", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "land_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -15656,6 +17655,7 @@ WHERE        (serial_number = @serial_number)";
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ownership_Authority", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Ownership_Authority", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@land_number", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "land_number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@plate_numberFile", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "plate_numberFile", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@price_per_meter", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "price_per_meter", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15767,7 +17767,8 @@ WHERE        (serial_number = @serial_number)";
                     string Original_Address, 
                     string Original_Ownership_Authority, 
                     string Original_land_number, 
-                    string Original_plate_numberFile) {
+                    string Original_plate_numberFile, 
+                    global::System.Nullable<int> Original_price_per_meter) {
             if ((Original_land_id == null)) {
                 throw new global::System.ArgumentNullException("Original_land_id");
             }
@@ -15910,6 +17911,14 @@ WHERE        (serial_number = @serial_number)";
                 this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[34].Value = ((string)(Original_plate_numberFile));
             }
+            if ((Original_price_per_meter.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[36].Value = ((int)(Original_price_per_meter.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -15948,7 +17957,8 @@ WHERE        (serial_number = @serial_number)";
                     string Address, 
                     string Ownership_Authority, 
                     string land_number, 
-                    string plate_numberFile) {
+                    string plate_numberFile, 
+                    global::System.Nullable<int> price_per_meter) {
             if ((land_id == null)) {
                 throw new global::System.ArgumentNullException("land_id");
             }
@@ -16057,6 +18067,12 @@ WHERE        (serial_number = @serial_number)";
             else {
                 this.Adapter.InsertCommand.Parameters[17].Value = ((string)(plate_numberFile));
             }
+            if ((price_per_meter.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((int)(price_per_meter.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16096,6 +18112,7 @@ WHERE        (serial_number = @serial_number)";
                     string Ownership_Authority, 
                     string land_number, 
                     string plate_numberFile, 
+                    global::System.Nullable<int> price_per_meter, 
                     string Original_land_id, 
                     string Original_land_name, 
                     string Original_total_area, 
@@ -16113,7 +18130,8 @@ WHERE        (serial_number = @serial_number)";
                     string Original_Address, 
                     string Original_Ownership_Authority, 
                     string Original_land_number, 
-                    string Original_plate_numberFile) {
+                    string Original_plate_numberFile, 
+                    global::System.Nullable<int> Original_price_per_meter) {
             if ((land_id == null)) {
                 throw new global::System.ArgumentNullException("land_id");
             }
@@ -16222,147 +18240,161 @@ WHERE        (serial_number = @serial_number)";
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(plate_numberFile));
             }
+            if ((price_per_meter.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(price_per_meter.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
             if ((Original_land_id == null)) {
                 throw new global::System.ArgumentNullException("Original_land_id");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_land_id));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_land_id));
             }
             if ((Original_land_name == null)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_land_name));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_land_name));
             }
             if ((Original_total_area == null)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_total_area));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_total_area));
             }
             if ((Original_Topographic_Survey_Status == null)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_Topographic_Survey_Status));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_Topographic_Survey_Status));
             }
             if ((Original_Land_Plate_Status == null)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_Land_Plate_Status));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_Land_Plate_Status));
             }
             if ((Original_coordinates_N == null)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_coordinates_N));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_coordinates_N));
             }
             if ((Original_coordinates_E == null)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_coordinates_E));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_coordinates_E));
             }
             if ((Original_serial_number == null)) {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_serial_number));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_serial_number));
             }
             if ((Original_plate_number == null)) {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_plate_number));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_plate_number));
             }
             if ((Original_governorate_fk == null)) {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_governorate_fk));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(Original_governorate_fk));
             }
             if ((Original_Republican_Decree == null)) {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_Republican_Decree));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_Republican_Decree));
             }
             if ((Original_Republican_Decree_Status == null)) {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_Republican_Decree_Status));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_Republican_Decree_Status));
             }
             if ((Original_consulting_Office == null)) {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_consulting_Office));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(Original_consulting_Office));
             }
             if ((Original_total_Land_Price.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((decimal)(Original_total_Land_Price.Value));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((decimal)(Original_total_Land_Price.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
             }
             if ((Original_Address == null)) {
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(Original_Address));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((string)(Original_Address));
             }
             if ((Original_Ownership_Authority == null)) {
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((string)(Original_Ownership_Authority));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((string)(Original_Ownership_Authority));
             }
             if ((Original_land_number == null)) {
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(Original_land_number));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((string)(Original_land_number));
             }
             if ((Original_plate_numberFile == null)) {
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(Original_plate_numberFile));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((string)(Original_plate_numberFile));
+            }
+            if ((Original_price_per_meter.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((int)(Original_price_per_meter.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[55].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -16402,6 +18434,7 @@ WHERE        (serial_number = @serial_number)";
                     string Ownership_Authority, 
                     string land_number, 
                     string plate_numberFile, 
+                    global::System.Nullable<int> price_per_meter, 
                     string Original_land_id, 
                     string Original_land_name, 
                     string Original_total_area, 
@@ -16419,8 +18452,9 @@ WHERE        (serial_number = @serial_number)";
                     string Original_Address, 
                     string Original_Ownership_Authority, 
                     string Original_land_number, 
-                    string Original_plate_numberFile) {
-            return this.Update(Original_land_id, land_name, total_area, Topographic_Survey_Status, Land_Plate_Status, coordinates_N, coordinates_E, serial_number, plate_number, governorate_fk, Republican_Decree, Republican_Decree_Status, consulting_Office, total_Land_Price, Address, Ownership_Authority, land_number, plate_numberFile, Original_land_id, Original_land_name, Original_total_area, Original_Topographic_Survey_Status, Original_Land_Plate_Status, Original_coordinates_N, Original_coordinates_E, Original_serial_number, Original_plate_number, Original_governorate_fk, Original_Republican_Decree, Original_Republican_Decree_Status, Original_consulting_Office, Original_total_Land_Price, Original_Address, Original_Ownership_Authority, Original_land_number, Original_plate_numberFile);
+                    string Original_plate_numberFile, 
+                    global::System.Nullable<int> Original_price_per_meter) {
+            return this.Update(Original_land_id, land_name, total_area, Topographic_Survey_Status, Land_Plate_Status, coordinates_N, coordinates_E, serial_number, plate_number, governorate_fk, Republican_Decree, Republican_Decree_Status, consulting_Office, total_Land_Price, Address, Ownership_Authority, land_number, plate_numberFile, price_per_meter, Original_land_id, Original_land_name, Original_total_area, Original_Topographic_Survey_Status, Original_Land_Plate_Status, Original_coordinates_N, Original_coordinates_E, Original_serial_number, Original_plate_number, Original_governorate_fk, Original_Republican_Decree, Original_Republican_Decree_Status, Original_consulting_Office, Original_total_Land_Price, Original_Address, Original_Ownership_Authority, Original_land_number, Original_plate_numberFile, Original_price_per_meter);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16473,7 +18507,8 @@ WHERE        (serial_number = @serial_number)";
                     string Address, 
                     string Ownership_Authority, 
                     string land_number, 
-                    string plate_numberFile) {
+                    string plate_numberFile, 
+                    global::System.Nullable<int> price_per_meter) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             if ((land_name == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
@@ -16576,6 +18611,12 @@ WHERE        (serial_number = @serial_number)";
             }
             else {
                 command.Parameters[16].Value = ((string)(plate_numberFile));
+            }
+            if ((price_per_meter.HasValue == true)) {
+                command.Parameters[17].Value = ((int)(price_per_meter.Value));
+            }
+            else {
+                command.Parameters[17].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -20150,42 +22191,64 @@ SELECT id, Page_name, role_id FROM pages WHERE (id = @id)";
             tableMapping.ColumnMappings.Add("road_authority_percentage", "road_authority_percentage");
             tableMapping.ColumnMappings.Add("contract_image", "contract_image");
             tableMapping.ColumnMappings.Add("council_of_ministers_decision_Image", "council_of_ministers_decision_Image");
+            tableMapping.ColumnMappings.Add("contract_duration", "contract_duration");
+            tableMapping.ColumnMappings.Add("contract_end_date", "contract_end_date");
+            tableMapping.ColumnMappings.Add("nature_of_operation", "nature_of_operation");
+            tableMapping.ColumnMappings.Add("company_responsibility", "company_responsibility");
+            tableMapping.ColumnMappings.Add("additional_gates", "additional_gates");
+            tableMapping.ColumnMappings.Add("right_of_way", "right_of_way");
+            tableMapping.ColumnMappings.Add("Description_of_the_route_from", "Description_of_the_route_from");
+            tableMapping.ColumnMappings.Add("Description_of_the_route_to", "Description_of_the_route_to");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[roads] WHERE (([road_id] = @Original_road_id) AND ((@IsNull_ro" +
-                "ad_name = 1 AND [road_name] IS NULL) OR ([road_name] = @Original_road_name)) AND" +
-                " ((@IsNull_Toll_Booth_Count = 1 AND [Toll_Booth_Count] IS NULL) OR ([Toll_Booth_" +
-                "Count] = @Original_Toll_Booth_Count)) AND ((@IsNull_Administrative_Affiliation =" +
-                " 1 AND [Administrative_Affiliation] IS NULL) OR ([Administrative_Affiliation] = " +
-                "@Original_Administrative_Affiliation)) AND ((@IsNull_Financial_Affiliation = 1 A" +
-                "ND [Financial_Affiliation] IS NULL) OR ([Financial_Affiliation] = @Original_Fina" +
-                "ncial_Affiliation)) AND ((@IsNull_contract_type = 1 AND [contract_type] IS NULL)" +
-                " OR ([contract_type] = @Original_contract_type)) AND ((@IsNull_contract_status =" +
-                " 1 AND [contract_status] IS NULL) OR ([contract_status] = @Original_contract_sta" +
-                "tus)) AND ((@IsNull_council_of_ministers_decision = 1 AND [council_of_ministers_" +
-                "decision] IS NULL) OR ([council_of_ministers_decision] = @Original_council_of_mi" +
-                "nisters_decision)) AND ((@IsNull_council_of_ministers_decision_Date = 1 AND [cou" +
-                "ncil_of_ministers_decision_Date] IS NULL) OR ([council_of_ministers_decision_Dat" +
-                "e] = @Original_council_of_ministers_decision_Date)) AND ((@IsNull_contract_signi" +
-                "ng_date = 1 AND [contract_signing_date] IS NULL) OR ([contract_signing_date] = @" +
-                "Original_contract_signing_date)) AND ((@IsNull_franchise_Contract_Duration = 1 A" +
-                "ND [franchise_Contract_Duration] IS NULL) OR ([franchise_Contract_Duration] = @O" +
-                "riginal_franchise_Contract_Duration)) AND ((@IsNull_number_of_exits = 1 AND [num" +
-                "ber_of_exits] IS NULL) OR ([number_of_exits] = @Original_number_of_exits)) AND (" +
-                "(@IsNull_road_length = 1 AND [road_length] IS NULL) OR ([road_length] = @Origina" +
-                "l_road_length)) AND ((@IsNull_road_length_including_branches = 1 AND [road_lengt" +
-                "h_including_branches] IS NULL) OR ([road_length_including_branches] = @Original_" +
-                "road_length_including_branches)) AND ((@IsNull_number_of_operation_staff = 1 AND" +
-                " [number_of_operation_staff] IS NULL) OR ([number_of_operation_staff] = @Origina" +
-                "l_number_of_operation_staff)) AND ((@IsNull_company_percentage = 1 AND [company_" +
-                "percentage] IS NULL) OR ([company_percentage] = @Original_company_percentage)) A" +
-                "ND ((@IsNull_road_authority_percentage = 1 AND [road_authority_percentage] IS NU" +
-                "LL) OR ([road_authority_percentage] = @Original_road_authority_percentage)) AND " +
-                "((@IsNull_contract_image = 1 AND [contract_image] IS NULL) OR ([contract_image] " +
-                "= @Original_contract_image)) AND ((@IsNull_council_of_ministers_decision_Image =" +
-                " 1 AND [council_of_ministers_decision_Image] IS NULL) OR ([council_of_ministers_" +
-                "decision_Image] = @Original_council_of_ministers_decision_Image)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [roads] WHERE (([road_id] = @Original_road_id) AND ((@IsNull_road_nam" +
+                "e = 1 AND [road_name] IS NULL) OR ([road_name] = @Original_road_name)) AND ((@Is" +
+                "Null_Toll_Booth_Count = 1 AND [Toll_Booth_Count] IS NULL) OR ([Toll_Booth_Count]" +
+                " = @Original_Toll_Booth_Count)) AND ((@IsNull_Administrative_Affiliation = 1 AND" +
+                " [Administrative_Affiliation] IS NULL) OR ([Administrative_Affiliation] = @Origi" +
+                "nal_Administrative_Affiliation)) AND ((@IsNull_Financial_Affiliation = 1 AND [Fi" +
+                "nancial_Affiliation] IS NULL) OR ([Financial_Affiliation] = @Original_Financial_" +
+                "Affiliation)) AND ((@IsNull_contract_type = 1 AND [contract_type] IS NULL) OR ([" +
+                "contract_type] = @Original_contract_type)) AND ((@IsNull_contract_status = 1 AND" +
+                " [contract_status] IS NULL) OR ([contract_status] = @Original_contract_status)) " +
+                "AND ((@IsNull_council_of_ministers_decision = 1 AND [council_of_ministers_decisi" +
+                "on] IS NULL) OR ([council_of_ministers_decision] = @Original_council_of_minister" +
+                "s_decision)) AND ((@IsNull_council_of_ministers_decision_Date = 1 AND [council_o" +
+                "f_ministers_decision_Date] IS NULL) OR ([council_of_ministers_decision_Date] = @" +
+                "Original_council_of_ministers_decision_Date)) AND ((@IsNull_contract_signing_dat" +
+                "e = 1 AND [contract_signing_date] IS NULL) OR ([contract_signing_date] = @Origin" +
+                "al_contract_signing_date)) AND ((@IsNull_franchise_Contract_Duration = 1 AND [fr" +
+                "anchise_Contract_Duration] IS NULL) OR ([franchise_Contract_Duration] = @Origina" +
+                "l_franchise_Contract_Duration)) AND ((@IsNull_number_of_exits = 1 AND [number_of" +
+                "_exits] IS NULL) OR ([number_of_exits] = @Original_number_of_exits)) AND ((@IsNu" +
+                "ll_road_length = 1 AND [road_length] IS NULL) OR ([road_length] = @Original_road" +
+                "_length)) AND ((@IsNull_road_length_including_branches = 1 AND [road_length_incl" +
+                "uding_branches] IS NULL) OR ([road_length_including_branches] = @Original_road_l" +
+                "ength_including_branches)) AND ((@IsNull_number_of_operation_staff = 1 AND [numb" +
+                "er_of_operation_staff] IS NULL) OR ([number_of_operation_staff] = @Original_numb" +
+                "er_of_operation_staff)) AND ((@IsNull_company_percentage = 1 AND [company_percen" +
+                "tage] IS NULL) OR ([company_percentage] = @Original_company_percentage)) AND ((@" +
+                "IsNull_road_authority_percentage = 1 AND [road_authority_percentage] IS NULL) OR" +
+                " ([road_authority_percentage] = @Original_road_authority_percentage)) AND ((@IsN" +
+                "ull_contract_image = 1 AND [contract_image] IS NULL) OR ([contract_image] = @Ori" +
+                "ginal_contract_image)) AND ((@IsNull_council_of_ministers_decision_Image = 1 AND" +
+                " [council_of_ministers_decision_Image] IS NULL) OR ([council_of_ministers_decisi" +
+                "on_Image] = @Original_council_of_ministers_decision_Image)) AND ((@IsNull_Descri" +
+                "ption_of_the_route_from = 1 AND [Description_of_the_route_from] IS NULL) OR ([De" +
+                "scription_of_the_route_from] = @Original_Description_of_the_route_from)) AND ((@" +
+                "IsNull_Description_of_the_route_to = 1 AND [Description_of_the_route_to] IS NULL" +
+                ") OR ([Description_of_the_route_to] = @Original_Description_of_the_route_to)) AN" +
+                "D ((@IsNull_additional_gates = 1 AND [additional_gates] IS NULL) OR ([additional" +
+                "_gates] = @Original_additional_gates)) AND ((@IsNull_company_responsibility = 1 " +
+                "AND [company_responsibility] IS NULL) OR ([company_responsibility] = @Original_c" +
+                "ompany_responsibility)) AND ((@IsNull_contract_duration = 1 AND [contract_durati" +
+                "on] IS NULL) OR ([contract_duration] = @Original_contract_duration)) AND ((@IsNu" +
+                "ll_contract_end_date = 1 AND [contract_end_date] IS NULL) OR ([contract_end_date" +
+                "] = @Original_contract_end_date)) AND ((@IsNull_nature_of_operation = 1 AND [nat" +
+                "ure_of_operation] IS NULL) OR ([nature_of_operation] = @Original_nature_of_opera" +
+                "tion)) AND ((@IsNull_right_of_way = 1 AND [right_of_way] IS NULL) OR ([right_of_" +
+                "way] = @Original_right_of_way)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_road_id", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "road_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_road_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "road_name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -20224,10 +22287,49 @@ SELECT id, Page_name, role_id FROM pages WHERE (id = @id)";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_contract_image", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contract_image", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_council_of_ministers_decision_Image", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "council_of_ministers_decision_Image", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_council_of_ministers_decision_Image", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "council_of_ministers_decision_Image", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Description_of_the_route_from", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description_of_the_route_from", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Description_of_the_route_from", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description_of_the_route_from", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Description_of_the_route_to", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description_of_the_route_to", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Description_of_the_route_to", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description_of_the_route_to", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_additional_gates", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "additional_gates", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_additional_gates", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "additional_gates", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_company_responsibility", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "company_responsibility", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_company_responsibility", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "company_responsibility", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_contract_duration", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contract_duration", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_contract_duration", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contract_duration", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_contract_end_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contract_end_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_contract_end_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contract_end_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nature_of_operation", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nature_of_operation", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nature_of_operation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nature_of_operation", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_right_of_way", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "right_of_way", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_right_of_way", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "right_of_way", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[roads] ([road_id], [road_name], [Toll_Booth_Count], [Administrative_Affiliation], [Financial_Affiliation], [contract_type], [contract_status], [council_of_ministers_decision], [council_of_ministers_decision_Date], [contract_signing_date], [franchise_Contract_Duration], [number_of_exits], [road_length], [road_length_including_branches], [number_of_operation_staff], [company_percentage], [road_authority_percentage], [contract_image], [council_of_ministers_decision_Image]) VALUES (@road_id, @road_name, @Toll_Booth_Count, @Administrative_Affiliation, @Financial_Affiliation, @contract_type, @contract_status, @council_of_ministers_decision, @council_of_ministers_decision_Date, @contract_signing_date, @franchise_Contract_Duration, @number_of_exits, @road_length, @road_length_including_branches, @number_of_operation_staff, @company_percentage, @road_authority_percentage, @contract_image, @council_of_ministers_decision_Image);
-SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financial_Affiliation, contract_type, contract_status, council_of_ministers_decision, council_of_ministers_decision_Date, contract_signing_date, franchise_Contract_Duration, number_of_exits, road_length, road_length_including_branches, number_of_operation_staff, company_percentage, road_authority_percentage, contract_image, council_of_ministers_decision_Image FROM roads WHERE (road_id = @road_id)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [roads] ([road_id], [road_name], [Toll_Booth_Count], [Administrative_" +
+                "Affiliation], [Financial_Affiliation], [contract_type], [contract_status], [coun" +
+                "cil_of_ministers_decision], [council_of_ministers_decision_Date], [contract_sign" +
+                "ing_date], [franchise_Contract_Duration], [number_of_exits], [road_length], [roa" +
+                "d_length_including_branches], [number_of_operation_staff], [company_percentage]," +
+                " [road_authority_percentage], [contract_image], [council_of_ministers_decision_I" +
+                "mage], [Description_of_the_route_from], [Description_of_the_route_to], [addition" +
+                "al_gates], [company_responsibility], [contract_duration], [contract_end_date], [" +
+                "nature_of_operation], [right_of_way]) VALUES (@road_id, @road_name, @Toll_Booth_" +
+                "Count, @Administrative_Affiliation, @Financial_Affiliation, @contract_type, @con" +
+                "tract_status, @council_of_ministers_decision, @council_of_ministers_decision_Dat" +
+                "e, @contract_signing_date, @franchise_Contract_Duration, @number_of_exits, @road" +
+                "_length, @road_length_including_branches, @number_of_operation_staff, @company_p" +
+                "ercentage, @road_authority_percentage, @contract_image, @council_of_ministers_de" +
+                "cision_Image, @Description_of_the_route_from, @Description_of_the_route_to, @add" +
+                "itional_gates, @company_responsibility, @contract_duration, @contract_end_date, " +
+                "@nature_of_operation, @right_of_way);\r\nSELECT road_id, road_name, Toll_Booth_Cou" +
+                "nt, Administrative_Affiliation, Financial_Affiliation, contract_type, contract_s" +
+                "tatus, council_of_ministers_decision, council_of_ministers_decision_Date, contra" +
+                "ct_signing_date, franchise_Contract_Duration, number_of_exits, road_length, road" +
+                "_length_including_branches, number_of_operation_staff, company_percentage, road_" +
+                "authority_percentage, contract_image, council_of_ministers_decision_Image, Descr" +
+                "iption_of_the_route_from, Description_of_the_route_to, additional_gates, company" +
+                "_responsibility, contract_duration, contract_end_date, nature_of_operation, righ" +
+                "t_of_way FROM roads WHERE (road_id = @road_id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_id", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "road_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "road_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -20248,59 +22350,87 @@ SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financi
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_authority_percentage", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "road_authority_percentage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contract_image", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contract_image", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@council_of_ministers_decision_Image", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "council_of_ministers_decision_Image", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description_of_the_route_from", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description_of_the_route_from", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description_of_the_route_to", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description_of_the_route_to", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@additional_gates", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "additional_gates", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@company_responsibility", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "company_responsibility", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contract_duration", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contract_duration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contract_end_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contract_end_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nature_of_operation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nature_of_operation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@right_of_way", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "right_of_way", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[roads] SET [road_id] = @road_id, [road_name] = @road_name, [Toll_Bo" +
-                "oth_Count] = @Toll_Booth_Count, [Administrative_Affiliation] = @Administrative_A" +
-                "ffiliation, [Financial_Affiliation] = @Financial_Affiliation, [contract_type] = " +
-                "@contract_type, [contract_status] = @contract_status, [council_of_ministers_deci" +
-                "sion] = @council_of_ministers_decision, [council_of_ministers_decision_Date] = @" +
-                "council_of_ministers_decision_Date, [contract_signing_date] = @contract_signing_" +
-                "date, [franchise_Contract_Duration] = @franchise_Contract_Duration, [number_of_e" +
-                "xits] = @number_of_exits, [road_length] = @road_length, [road_length_including_b" +
-                "ranches] = @road_length_including_branches, [number_of_operation_staff] = @numbe" +
-                "r_of_operation_staff, [company_percentage] = @company_percentage, [road_authorit" +
-                "y_percentage] = @road_authority_percentage, [contract_image] = @contract_image, " +
-                "[council_of_ministers_decision_Image] = @council_of_ministers_decision_Image WHE" +
-                "RE (([road_id] = @Original_road_id) AND ((@IsNull_road_name = 1 AND [road_name] " +
-                "IS NULL) OR ([road_name] = @Original_road_name)) AND ((@IsNull_Toll_Booth_Count " +
-                "= 1 AND [Toll_Booth_Count] IS NULL) OR ([Toll_Booth_Count] = @Original_Toll_Boot" +
-                "h_Count)) AND ((@IsNull_Administrative_Affiliation = 1 AND [Administrative_Affil" +
-                "iation] IS NULL) OR ([Administrative_Affiliation] = @Original_Administrative_Aff" +
-                "iliation)) AND ((@IsNull_Financial_Affiliation = 1 AND [Financial_Affiliation] I" +
-                "S NULL) OR ([Financial_Affiliation] = @Original_Financial_Affiliation)) AND ((@I" +
-                "sNull_contract_type = 1 AND [contract_type] IS NULL) OR ([contract_type] = @Orig" +
-                "inal_contract_type)) AND ((@IsNull_contract_status = 1 AND [contract_status] IS " +
-                "NULL) OR ([contract_status] = @Original_contract_status)) AND ((@IsNull_council_" +
-                "of_ministers_decision = 1 AND [council_of_ministers_decision] IS NULL) OR ([coun" +
-                "cil_of_ministers_decision] = @Original_council_of_ministers_decision)) AND ((@Is" +
-                "Null_council_of_ministers_decision_Date = 1 AND [council_of_ministers_decision_D" +
-                "ate] IS NULL) OR ([council_of_ministers_decision_Date] = @Original_council_of_mi" +
-                "nisters_decision_Date)) AND ((@IsNull_contract_signing_date = 1 AND [contract_si" +
-                "gning_date] IS NULL) OR ([contract_signing_date] = @Original_contract_signing_da" +
-                "te)) AND ((@IsNull_franchise_Contract_Duration = 1 AND [franchise_Contract_Durat" +
-                "ion] IS NULL) OR ([franchise_Contract_Duration] = @Original_franchise_Contract_D" +
-                "uration)) AND ((@IsNull_number_of_exits = 1 AND [number_of_exits] IS NULL) OR ([" +
-                "number_of_exits] = @Original_number_of_exits)) AND ((@IsNull_road_length = 1 AND" +
-                " [road_length] IS NULL) OR ([road_length] = @Original_road_length)) AND ((@IsNul" +
-                "l_road_length_including_branches = 1 AND [road_length_including_branches] IS NUL" +
-                "L) OR ([road_length_including_branches] = @Original_road_length_including_branch" +
-                "es)) AND ((@IsNull_number_of_operation_staff = 1 AND [number_of_operation_staff]" +
-                " IS NULL) OR ([number_of_operation_staff] = @Original_number_of_operation_staff)" +
-                ") AND ((@IsNull_company_percentage = 1 AND [company_percentage] IS NULL) OR ([co" +
-                "mpany_percentage] = @Original_company_percentage)) AND ((@IsNull_road_authority_" +
-                "percentage = 1 AND [road_authority_percentage] IS NULL) OR ([road_authority_perc" +
-                "entage] = @Original_road_authority_percentage)) AND ((@IsNull_contract_image = 1" +
-                " AND [contract_image] IS NULL) OR ([contract_image] = @Original_contract_image))" +
-                " AND ((@IsNull_council_of_ministers_decision_Image = 1 AND [council_of_ministers" +
-                "_decision_Image] IS NULL) OR ([council_of_ministers_decision_Image] = @Original_" +
-                "council_of_ministers_decision_Image)));\r\nSELECT road_id, road_name, Toll_Booth_C" +
-                "ount, Administrative_Affiliation, Financial_Affiliation, contract_type, contract" +
-                "_status, council_of_ministers_decision, council_of_ministers_decision_Date, cont" +
-                "ract_signing_date, franchise_Contract_Duration, number_of_exits, road_length, ro" +
-                "ad_length_including_branches, number_of_operation_staff, company_percentage, roa" +
-                "d_authority_percentage, contract_image, council_of_ministers_decision_Image FROM" +
-                " roads WHERE (road_id = @road_id)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [roads] SET [road_id] = @road_id, [road_name] = @road_name, [Toll_Booth_Co" +
+                "unt] = @Toll_Booth_Count, [Administrative_Affiliation] = @Administrative_Affilia" +
+                "tion, [Financial_Affiliation] = @Financial_Affiliation, [contract_type] = @contr" +
+                "act_type, [contract_status] = @contract_status, [council_of_ministers_decision] " +
+                "= @council_of_ministers_decision, [council_of_ministers_decision_Date] = @counci" +
+                "l_of_ministers_decision_Date, [contract_signing_date] = @contract_signing_date, " +
+                "[franchise_Contract_Duration] = @franchise_Contract_Duration, [number_of_exits] " +
+                "= @number_of_exits, [road_length] = @road_length, [road_length_including_branche" +
+                "s] = @road_length_including_branches, [number_of_operation_staff] = @number_of_o" +
+                "peration_staff, [company_percentage] = @company_percentage, [road_authority_perc" +
+                "entage] = @road_authority_percentage, [contract_image] = @contract_image, [counc" +
+                "il_of_ministers_decision_Image] = @council_of_ministers_decision_Image, [Descrip" +
+                "tion_of_the_route_from] = @Description_of_the_route_from, [Description_of_the_ro" +
+                "ute_to] = @Description_of_the_route_to, [additional_gates] = @additional_gates, " +
+                "[company_responsibility] = @company_responsibility, [contract_duration] = @contr" +
+                "act_duration, [contract_end_date] = @contract_end_date, [nature_of_operation] = " +
+                "@nature_of_operation, [right_of_way] = @right_of_way WHERE (([road_id] = @Origin" +
+                "al_road_id) AND ((@IsNull_road_name = 1 AND [road_name] IS NULL) OR ([road_name]" +
+                " = @Original_road_name)) AND ((@IsNull_Toll_Booth_Count = 1 AND [Toll_Booth_Coun" +
+                "t] IS NULL) OR ([Toll_Booth_Count] = @Original_Toll_Booth_Count)) AND ((@IsNull_" +
+                "Administrative_Affiliation = 1 AND [Administrative_Affiliation] IS NULL) OR ([Ad" +
+                "ministrative_Affiliation] = @Original_Administrative_Affiliation)) AND ((@IsNull" +
+                "_Financial_Affiliation = 1 AND [Financial_Affiliation] IS NULL) OR ([Financial_A" +
+                "ffiliation] = @Original_Financial_Affiliation)) AND ((@IsNull_contract_type = 1 " +
+                "AND [contract_type] IS NULL) OR ([contract_type] = @Original_contract_type)) AND" +
+                " ((@IsNull_contract_status = 1 AND [contract_status] IS NULL) OR ([contract_stat" +
+                "us] = @Original_contract_status)) AND ((@IsNull_council_of_ministers_decision = " +
+                "1 AND [council_of_ministers_decision] IS NULL) OR ([council_of_ministers_decisio" +
+                "n] = @Original_council_of_ministers_decision)) AND ((@IsNull_council_of_minister" +
+                "s_decision_Date = 1 AND [council_of_ministers_decision_Date] IS NULL) OR ([counc" +
+                "il_of_ministers_decision_Date] = @Original_council_of_ministers_decision_Date)) " +
+                "AND ((@IsNull_contract_signing_date = 1 AND [contract_signing_date] IS NULL) OR " +
+                "([contract_signing_date] = @Original_contract_signing_date)) AND ((@IsNull_franc" +
+                "hise_Contract_Duration = 1 AND [franchise_Contract_Duration] IS NULL) OR ([franc" +
+                "hise_Contract_Duration] = @Original_franchise_Contract_Duration)) AND ((@IsNull_" +
+                "number_of_exits = 1 AND [number_of_exits] IS NULL) OR ([number_of_exits] = @Orig" +
+                "inal_number_of_exits)) AND ((@IsNull_road_length = 1 AND [road_length] IS NULL) " +
+                "OR ([road_length] = @Original_road_length)) AND ((@IsNull_road_length_including_" +
+                "branches = 1 AND [road_length_including_branches] IS NULL) OR ([road_length_incl" +
+                "uding_branches] = @Original_road_length_including_branches)) AND ((@IsNull_numbe" +
+                "r_of_operation_staff = 1 AND [number_of_operation_staff] IS NULL) OR ([number_of" +
+                "_operation_staff] = @Original_number_of_operation_staff)) AND ((@IsNull_company_" +
+                "percentage = 1 AND [company_percentage] IS NULL) OR ([company_percentage] = @Ori" +
+                "ginal_company_percentage)) AND ((@IsNull_road_authority_percentage = 1 AND [road" +
+                "_authority_percentage] IS NULL) OR ([road_authority_percentage] = @Original_road" +
+                "_authority_percentage)) AND ((@IsNull_contract_image = 1 AND [contract_image] IS" +
+                " NULL) OR ([contract_image] = @Original_contract_image)) AND ((@IsNull_council_o" +
+                "f_ministers_decision_Image = 1 AND [council_of_ministers_decision_Image] IS NULL" +
+                ") OR ([council_of_ministers_decision_Image] = @Original_council_of_ministers_dec" +
+                "ision_Image)) AND ((@IsNull_Description_of_the_route_from = 1 AND [Description_o" +
+                "f_the_route_from] IS NULL) OR ([Description_of_the_route_from] = @Original_Descr" +
+                "iption_of_the_route_from)) AND ((@IsNull_Description_of_the_route_to = 1 AND [De" +
+                "scription_of_the_route_to] IS NULL) OR ([Description_of_the_route_to] = @Origina" +
+                "l_Description_of_the_route_to)) AND ((@IsNull_additional_gates = 1 AND [addition" +
+                "al_gates] IS NULL) OR ([additional_gates] = @Original_additional_gates)) AND ((@" +
+                "IsNull_company_responsibility = 1 AND [company_responsibility] IS NULL) OR ([com" +
+                "pany_responsibility] = @Original_company_responsibility)) AND ((@IsNull_contract" +
+                "_duration = 1 AND [contract_duration] IS NULL) OR ([contract_duration] = @Origin" +
+                "al_contract_duration)) AND ((@IsNull_contract_end_date = 1 AND [contract_end_dat" +
+                "e] IS NULL) OR ([contract_end_date] = @Original_contract_end_date)) AND ((@IsNul" +
+                "l_nature_of_operation = 1 AND [nature_of_operation] IS NULL) OR ([nature_of_oper" +
+                "ation] = @Original_nature_of_operation)) AND ((@IsNull_right_of_way = 1 AND [rig" +
+                "ht_of_way] IS NULL) OR ([right_of_way] = @Original_right_of_way)));\r\nSELECT road" +
+                "_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financial_Affiliat" +
+                "ion, contract_type, contract_status, council_of_ministers_decision, council_of_m" +
+                "inisters_decision_Date, contract_signing_date, franchise_Contract_Duration, numb" +
+                "er_of_exits, road_length, road_length_including_branches, number_of_operation_st" +
+                "aff, company_percentage, road_authority_percentage, contract_image, council_of_m" +
+                "inisters_decision_Image, Description_of_the_route_from, Description_of_the_route" +
+                "_to, additional_gates, company_responsibility, contract_duration, contract_end_d" +
+                "ate, nature_of_operation, right_of_way FROM roads WHERE (road_id = @road_id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_id", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "road_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "road_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -20321,6 +22451,14 @@ SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financi
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_authority_percentage", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "road_authority_percentage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contract_image", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contract_image", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@council_of_ministers_decision_Image", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "council_of_ministers_decision_Image", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description_of_the_route_from", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description_of_the_route_from", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description_of_the_route_to", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description_of_the_route_to", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@additional_gates", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "additional_gates", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@company_responsibility", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "company_responsibility", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contract_duration", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contract_duration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contract_end_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contract_end_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nature_of_operation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nature_of_operation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@right_of_way", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "right_of_way", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_road_id", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "road_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_road_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "road_name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_road_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "road_name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -20358,6 +22496,22 @@ SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financi
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_contract_image", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contract_image", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_council_of_ministers_decision_Image", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "council_of_ministers_decision_Image", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_council_of_ministers_decision_Image", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "council_of_ministers_decision_Image", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Description_of_the_route_from", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description_of_the_route_from", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Description_of_the_route_from", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description_of_the_route_from", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Description_of_the_route_to", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description_of_the_route_to", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Description_of_the_route_to", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description_of_the_route_to", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_additional_gates", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "additional_gates", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_additional_gates", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "additional_gates", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_company_responsibility", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "company_responsibility", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_company_responsibility", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "company_responsibility", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_contract_duration", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contract_duration", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_contract_duration", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contract_duration", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_contract_end_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contract_end_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_contract_end_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contract_end_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nature_of_operation", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nature_of_operation", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nature_of_operation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nature_of_operation", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_right_of_way", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "right_of_way", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_right_of_way", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "right_of_way", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20370,10 +22524,10 @@ SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financi
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financial_Affiliation, contract_type, contract_status, council_of_ministers_decision, council_of_ministers_decision_Date, contract_signing_date, franchise_Contract_Duration, number_of_exits, road_length, road_length_including_branches, number_of_operation_staff, company_percentage, road_authority_percentage, contract_image, council_of_ministers_decision_Image FROM dbo.roads";
+            this._commandCollection[0].CommandText = @"SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financial_Affiliation, contract_type, contract_status, council_of_ministers_decision, council_of_ministers_decision_Date, contract_signing_date, franchise_Contract_Duration, number_of_exits, road_length, road_length_including_branches, number_of_operation_staff, company_percentage, road_authority_percentage, contract_image, council_of_ministers_decision_Image, Description_of_the_route_from, Description_of_the_route_to, additional_gates, company_responsibility, contract_duration, contract_end_date, nature_of_operation, right_of_way FROM roads";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -20382,37 +22536,19 @@ SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financi
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_id", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "road_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financial_Affiliation, contract_type, contract_status, council_of_ministers_decision, council_of_ministers_decision_Date, contract_signing_date, franchise_Contract_Duration, number_of_exits, road_length, road_length_including_branches, number_of_operation_staff, company_percentage, road_authority_percentage, contract_image, council_of_ministers_decision_Image FROM dbo.roads where road_id = @road_id";
+            this._commandCollection[2].CommandText = @"SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financial_Affiliation, contract_type, contract_status, council_of_ministers_decision, council_of_ministers_decision_Date, contract_signing_date, franchise_Contract_Duration, number_of_exits, road_length, road_length_including_branches, number_of_operation_staff, company_percentage, road_authority_percentage, contract_image, council_of_ministers_decision_Image, Description_of_the_route_from, Description_of_the_route_to, additional_gates, company_responsibility, contract_duration, contract_end_date, nature_of_operation, right_of_way FROM roads";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_id", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "road_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"INSERT INTO [dbo].[roads] ([road_id], [road_name], [Toll_Booth_Count], [Administrative_Affiliation], [Financial_Affiliation], [contract_type], [contract_status], [council_of_ministers_decision], [council_of_ministers_decision_Date], [contract_signing_date], [franchise_Contract_Duration], [number_of_exits], [road_length], [road_length_including_branches], [number_of_operation_staff], [company_percentage], [road_authority_percentage], [contract_image], [council_of_ministers_decision_Image]) VALUES (@road_id, @road_name, @Toll_Booth_Count, @Administrative_Affiliation, @Financial_Affiliation, @contract_type, @contract_status, @council_of_ministers_decision, @council_of_ministers_decision_Date, @contract_signing_date, @franchise_Contract_Duration, @number_of_exits, @road_length, @road_length_including_branches, @number_of_operation_staff, @company_percentage, @road_authority_percentage, @contract_image, @council_of_ministers_decision_Image);
-";
+            this._commandCollection[3].CommandText = @"SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financial_Affiliation, contract_type, contract_status, council_of_ministers_decision, council_of_ministers_decision_Date, contract_signing_date, franchise_Contract_Duration, number_of_exits, road_length, road_length_including_branches, number_of_operation_staff, company_percentage, road_authority_percentage, contract_image, council_of_ministers_decision_Image, Description_of_the_route_from, Description_of_the_route_to, additional_gates, company_responsibility, contract_duration, contract_end_date, nature_of_operation, right_of_way FROM roads WHERE (road_id = @road_id)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_id", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "road_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_name", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "road_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Toll_Booth_Count", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Toll_Booth_Count", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Administrative_Affiliation", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Administrative_Affiliation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Financial_Affiliation", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Financial_Affiliation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contract_type", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "contract_type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contract_status", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "contract_status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@council_of_ministers_decision", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "council_of_ministers_decision", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@council_of_ministers_decision_Date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "council_of_ministers_decision_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contract_signing_date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "contract_signing_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@franchise_Contract_Duration", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "franchise_Contract_Duration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@number_of_exits", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "number_of_exits", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_length", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "road_length", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_length_including_branches", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "road_length_including_branches", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@number_of_operation_staff", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "number_of_operation_staff", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@company_percentage", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "company_percentage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_authority_percentage", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "road_authority_percentage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contract_image", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "contract_image", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@council_of_ministers_decision_Image", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "council_of_ministers_decision_Image", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"UPDATE [dbo].[roads] SET [road_name] = @road_name, [Toll_Booth_Count] = @Toll_Booth_Count, [Administrative_Affiliation] = @Administrative_Affiliation, [Financial_Affiliation] = @Financial_Affiliation, [contract_type] = @contract_type, [contract_status] = @contract_status, [council_of_ministers_decision] = @council_of_ministers_decision, [council_of_ministers_decision_Date] = @council_of_ministers_decision_Date, [contract_signing_date] = @contract_signing_date, [franchise_Contract_Duration] = @franchise_Contract_Duration, [number_of_exits] = @number_of_exits, [road_length] = @road_length, [road_length_including_branches] = @road_length_including_branches, [number_of_operation_staff] = @number_of_operation_staff, [company_percentage] = @company_percentage, [road_authority_percentage] = @road_authority_percentage, [contract_image] = @contract_image, [council_of_ministers_decision_Image] = @council_of_ministers_decision_Image WHERE road_id = @road_id";
+            this._commandCollection[4].CommandText = @"INSERT INTO [dbo].[roads] ([road_id], [road_name], [Toll_Booth_Count], [Administrative_Affiliation], [Financial_Affiliation], [contract_type], [contract_status], [council_of_ministers_decision], [council_of_ministers_decision_Date], [contract_signing_date], [franchise_Contract_Duration], [number_of_exits], [road_length], [road_length_including_branches], [number_of_operation_staff], [company_percentage], [road_authority_percentage], [contract_image], [council_of_ministers_decision_Image]) VALUES (@road_id, @road_name, @Toll_Booth_Count, @Administrative_Affiliation, @Financial_Affiliation, @contract_type, @contract_status, @council_of_ministers_decision, @council_of_ministers_decision_Date, @contract_signing_date, @franchise_Contract_Duration, @number_of_exits, @road_length, @road_length_including_branches, @number_of_operation_staff, @company_percentage, @road_authority_percentage, @contract_image, @council_of_ministers_decision_Image);
+";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_id", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "road_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_name", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "road_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Toll_Booth_Count", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Toll_Booth_Count", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Administrative_Affiliation", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Administrative_Affiliation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -20431,7 +22567,63 @@ SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financi
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_authority_percentage", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "road_authority_percentage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contract_image", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "contract_image", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@council_of_ministers_decision_Image", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "council_of_ministers_decision_Image", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_id", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "road_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = @"UPDATE [roads] SET [road_name] = @road_name, [Toll_Booth_Count] = @Toll_Booth_Count, [Administrative_Affiliation] = @Administrative_Affiliation, [Financial_Affiliation] = @Financial_Affiliation, [contract_type] = @contract_type, [contract_status] = @contract_status, [council_of_ministers_decision] = @council_of_ministers_decision, [council_of_ministers_decision_Date] = @council_of_ministers_decision_Date, [contract_signing_date] = @contract_signing_date, [franchise_Contract_Duration] = @franchise_Contract_Duration, [number_of_exits] = @number_of_exits, [road_length] = @road_length, [road_length_including_branches] = @road_length_including_branches, [number_of_operation_staff] = @number_of_operation_staff, [company_percentage] = @company_percentage, [road_authority_percentage] = @road_authority_percentage, [contract_image] = @contract_image, [council_of_ministers_decision_Image] = @council_of_ministers_decision_Image, [Description_of_the_route_from] = @Description_of_the_route_from, [Description_of_the_route_to] = @Description_of_the_route_to, [additional_gates] = @additional_gates, [company_responsibility] = @company_responsibility, [contract_duration] = @contract_duration, [contract_end_date] = @contract_end_date, [nature_of_operation] = @nature_of_operation, [right_of_way] = @right_of_way 
+WHERE road_id= @road_id";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_name", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "road_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Toll_Booth_Count", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Toll_Booth_Count", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Administrative_Affiliation", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Administrative_Affiliation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Financial_Affiliation", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Financial_Affiliation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contract_type", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "contract_type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contract_status", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "contract_status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@council_of_ministers_decision", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "council_of_ministers_decision", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@council_of_ministers_decision_Date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "council_of_ministers_decision_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contract_signing_date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "contract_signing_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@franchise_Contract_Duration", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "franchise_Contract_Duration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@number_of_exits", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "number_of_exits", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_length", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "road_length", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_length_including_branches", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "road_length_including_branches", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@number_of_operation_staff", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "number_of_operation_staff", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@company_percentage", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "company_percentage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_authority_percentage", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "road_authority_percentage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contract_image", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "contract_image", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@council_of_ministers_decision_Image", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "council_of_ministers_decision_Image", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description_of_the_route_from", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Description_of_the_route_from", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description_of_the_route_to", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Description_of_the_route_to", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@additional_gates", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "additional_gates", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@company_responsibility", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "company_responsibility", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contract_duration", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "contract_duration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contract_end_date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "contract_end_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nature_of_operation", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "nature_of_operation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@right_of_way", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "right_of_way", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_id", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "road_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = @"UPDATE  roads
+SET  road_name = @road_name, Toll_Booth_Count = @Toll_Booth_Count, Administrative_Affiliation = @Administrative_Affiliation, Financial_Affiliation = @Financial_Affiliation, contract_type = @contract_type,contract_status = @contract_status, council_of_ministers_decision = @council_of_ministers_decision, council_of_ministers_decision_Date = @council_of_ministers_decision_Date,contract_signing_date = @contract_signing_date, franchise_Contract_Duration = @franchise_Contract_Duration, number_of_exits = @number_of_exits,road_length =@road_length,road_length_including_branches = @road_length_including_branches,number_of_operation_staff = @number_of_operation_staff, company_percentage = @company_percentage,road_authority_percentage = @road_authority_percentage, contract_image = @contract_image, council_of_ministers_decision_Image = @council_of_ministers_decision_Image,contract_duration = @contract_duration,contract_end_date = @contract_end_date, nature_of_operation = @nature_of_operation, company_responsibility =, right_of_way =@right_of_way, additional_gates = @additional_gates,Description_of_the_route_from =@Description_of_the_route_from, Description_of_the_route_to = @Description_of_the_route_to
+WHERE (road_id = @road_id)";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_name", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "road_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Toll_Booth_Count", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Toll_Booth_Count", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Administrative_Affiliation", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Administrative_Affiliation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Financial_Affiliation", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Financial_Affiliation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contract_type", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "contract_type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contract_status", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "contract_status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@council_of_ministers_decision", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "council_of_ministers_decision", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@council_of_ministers_decision_Date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "council_of_ministers_decision_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contract_signing_date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "contract_signing_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@franchise_Contract_Duration", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "franchise_Contract_Duration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@number_of_exits", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "number_of_exits", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_length", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "road_length", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_length_including_branches", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "road_length_including_branches", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@number_of_operation_staff", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "number_of_operation_staff", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@company_percentage", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "company_percentage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_authority_percentage", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "road_authority_percentage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contract_image", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "contract_image", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@council_of_ministers_decision_Image", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "council_of_ministers_decision_Image", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@road_id", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "road_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20462,8 +22654,19 @@ SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Database1DataSet.roadsDataTable GetDataByID(string road_id) {
+        public virtual Database1DataSet.roadsDataTable GetDataAll() {
             this.Adapter.SelectCommand = this.CommandCollection[2];
+            Database1DataSet.roadsDataTable dataTable = new Database1DataSet.roadsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Database1DataSet.roadsDataTable GetDataByID(string road_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((road_id == null)) {
                 throw new global::System.ArgumentNullException("road_id");
             }
@@ -20527,7 +22730,15 @@ SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financi
                     string Original_company_percentage, 
                     string Original_road_authority_percentage, 
                     string Original_contract_image, 
-                    string Original_council_of_ministers_decision_Image) {
+                    string Original_council_of_ministers_decision_Image, 
+                    string Original_Description_of_the_route_from, 
+                    string Original_Description_of_the_route_to, 
+                    string Original_additional_gates, 
+                    string Original_company_responsibility, 
+                    string Original_contract_duration, 
+                    global::System.Nullable<global::System.DateTime> Original_contract_end_date, 
+                    string Original_nature_of_operation, 
+                    string Original_right_of_way) {
             if ((Original_road_id == null)) {
                 throw new global::System.ArgumentNullException("Original_road_id");
             }
@@ -20678,6 +22889,70 @@ SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financi
                 this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[36].Value = ((string)(Original_council_of_ministers_decision_Image));
             }
+            if ((Original_Description_of_the_route_from == null)) {
+                this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[38].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[38].Value = ((string)(Original_Description_of_the_route_from));
+            }
+            if ((Original_Description_of_the_route_to == null)) {
+                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[40].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[40].Value = ((string)(Original_Description_of_the_route_to));
+            }
+            if ((Original_additional_gates == null)) {
+                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[42].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[42].Value = ((string)(Original_additional_gates));
+            }
+            if ((Original_company_responsibility == null)) {
+                this.Adapter.DeleteCommand.Parameters[43].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[44].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[43].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[44].Value = ((string)(Original_company_responsibility));
+            }
+            if ((Original_contract_duration == null)) {
+                this.Adapter.DeleteCommand.Parameters[45].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[46].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[45].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[46].Value = ((string)(Original_contract_duration));
+            }
+            if ((Original_contract_end_date.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[47].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[48].Value = ((System.DateTime)(Original_contract_end_date.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[47].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[48].Value = global::System.DBNull.Value;
+            }
+            if ((Original_nature_of_operation == null)) {
+                this.Adapter.DeleteCommand.Parameters[49].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[50].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[49].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[50].Value = ((string)(Original_nature_of_operation));
+            }
+            if ((Original_right_of_way == null)) {
+                this.Adapter.DeleteCommand.Parameters[51].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[52].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[51].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[52].Value = ((string)(Original_right_of_way));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20717,7 +22992,15 @@ SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financi
                     string company_percentage, 
                     string road_authority_percentage, 
                     string contract_image, 
-                    string council_of_ministers_decision_Image) {
+                    string council_of_ministers_decision_Image, 
+                    string Description_of_the_route_from, 
+                    string Description_of_the_route_to, 
+                    string additional_gates, 
+                    string company_responsibility, 
+                    string contract_duration, 
+                    global::System.Nullable<global::System.DateTime> contract_end_date, 
+                    string nature_of_operation, 
+                    string right_of_way) {
             if ((road_id == null)) {
                 throw new global::System.ArgumentNullException("road_id");
             }
@@ -20832,6 +23115,54 @@ SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financi
             else {
                 this.Adapter.InsertCommand.Parameters[18].Value = ((string)(council_of_ministers_decision_Image));
             }
+            if ((Description_of_the_route_from == null)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(Description_of_the_route_from));
+            }
+            if ((Description_of_the_route_to == null)) {
+                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(Description_of_the_route_to));
+            }
+            if ((additional_gates == null)) {
+                this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[21].Value = ((string)(additional_gates));
+            }
+            if ((company_responsibility == null)) {
+                this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[22].Value = ((string)(company_responsibility));
+            }
+            if ((contract_duration == null)) {
+                this.Adapter.InsertCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(contract_duration));
+            }
+            if ((contract_end_date.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[24].Value = ((System.DateTime)(contract_end_date.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            if ((nature_of_operation == null)) {
+                this.Adapter.InsertCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(nature_of_operation));
+            }
+            if ((right_of_way == null)) {
+                this.Adapter.InsertCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[26].Value = ((string)(right_of_way));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20872,6 +23203,14 @@ SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financi
                     string road_authority_percentage, 
                     string contract_image, 
                     string council_of_ministers_decision_Image, 
+                    string Description_of_the_route_from, 
+                    string Description_of_the_route_to, 
+                    string additional_gates, 
+                    string company_responsibility, 
+                    string contract_duration, 
+                    global::System.Nullable<global::System.DateTime> contract_end_date, 
+                    string nature_of_operation, 
+                    string right_of_way, 
                     string Original_road_id, 
                     string Original_road_name, 
                     string Original_Toll_Booth_Count, 
@@ -20890,7 +23229,15 @@ SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financi
                     string Original_company_percentage, 
                     string Original_road_authority_percentage, 
                     string Original_contract_image, 
-                    string Original_council_of_ministers_decision_Image) {
+                    string Original_council_of_ministers_decision_Image, 
+                    string Original_Description_of_the_route_from, 
+                    string Original_Description_of_the_route_to, 
+                    string Original_additional_gates, 
+                    string Original_company_responsibility, 
+                    string Original_contract_duration, 
+                    global::System.Nullable<global::System.DateTime> Original_contract_end_date, 
+                    string Original_nature_of_operation, 
+                    string Original_right_of_way) {
             if ((road_id == null)) {
                 throw new global::System.ArgumentNullException("road_id");
             }
@@ -21005,155 +23352,267 @@ SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financi
             else {
                 this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(council_of_ministers_decision_Image));
             }
+            if ((Description_of_the_route_from == null)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Description_of_the_route_from));
+            }
+            if ((Description_of_the_route_to == null)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Description_of_the_route_to));
+            }
+            if ((additional_gates == null)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(additional_gates));
+            }
+            if ((company_responsibility == null)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(company_responsibility));
+            }
+            if ((contract_duration == null)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(contract_duration));
+            }
+            if ((contract_end_date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((System.DateTime)(contract_end_date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            if ((nature_of_operation == null)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(nature_of_operation));
+            }
+            if ((right_of_way == null)) {
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(right_of_way));
+            }
             if ((Original_road_id == null)) {
                 throw new global::System.ArgumentNullException("Original_road_id");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_road_id));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_road_id));
             }
             if ((Original_road_name == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_road_name));
-            }
-            if ((Original_Toll_Booth_Count == null)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_Toll_Booth_Count));
-            }
-            if ((Original_Administrative_Affiliation == null)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_Administrative_Affiliation));
-            }
-            if ((Original_Financial_Affiliation == null)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_Financial_Affiliation));
-            }
-            if ((Original_contract_type == null)) {
                 this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_contract_type));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_road_name));
             }
-            if ((Original_contract_status == null)) {
+            if ((Original_Toll_Booth_Count == null)) {
                 this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_contract_status));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_Toll_Booth_Count));
             }
-            if ((Original_council_of_ministers_decision == null)) {
+            if ((Original_Administrative_Affiliation == null)) {
                 this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_council_of_ministers_decision));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_Administrative_Affiliation));
             }
-            if ((Original_council_of_ministers_decision_Date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((System.DateTime)(Original_council_of_ministers_decision_Date.Value));
-            }
-            else {
+            if ((Original_Financial_Affiliation == null)) {
                 this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
-            if ((Original_contract_signing_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((System.DateTime)(Original_contract_signing_date.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_Financial_Affiliation));
+            }
+            if ((Original_contract_type == null)) {
                 this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
             }
-            if ((Original_franchise_Contract_Duration.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((System.DateTime)(Original_franchise_Contract_Duration.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(Original_contract_type));
+            }
+            if ((Original_contract_status == null)) {
                 this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
             }
-            if ((Original_number_of_exits == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_contract_status));
+            }
+            if ((Original_council_of_ministers_decision == null)) {
                 this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_number_of_exits));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_council_of_ministers_decision));
             }
-            if ((Original_road_length == null)) {
+            if ((Original_council_of_ministers_decision_Date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((System.DateTime)(Original_council_of_ministers_decision_Date.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(Original_road_length));
+            if ((Original_contract_signing_date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((System.DateTime)(Original_contract_signing_date.Value));
             }
-            if ((Original_road_length_including_branches == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((string)(Original_road_length_including_branches));
+            if ((Original_franchise_Contract_Duration.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((System.DateTime)(Original_franchise_Contract_Duration.Value));
             }
-            if ((Original_number_of_operation_staff == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((string)(Original_number_of_operation_staff));
-            }
-            if ((Original_company_percentage == null)) {
+            if ((Original_number_of_exits == null)) {
                 this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((string)(Original_company_percentage));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((string)(Original_number_of_exits));
             }
-            if ((Original_road_authority_percentage == null)) {
+            if ((Original_road_length == null)) {
                 this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((string)(Original_road_authority_percentage));
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((string)(Original_road_length));
             }
-            if ((Original_contract_image == null)) {
+            if ((Original_road_length_including_branches == null)) {
                 this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((string)(Original_contract_image));
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((string)(Original_road_length_including_branches));
             }
-            if ((Original_council_of_ministers_decision_Image == null)) {
+            if ((Original_number_of_operation_staff == null)) {
                 this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[55].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((string)(Original_council_of_ministers_decision_Image));
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((string)(Original_number_of_operation_staff));
+            }
+            if ((Original_company_percentage == null)) {
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[57].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((string)(Original_company_percentage));
+            }
+            if ((Original_road_authority_percentage == null)) {
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[59].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((string)(Original_road_authority_percentage));
+            }
+            if ((Original_contract_image == null)) {
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[61].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((string)(Original_contract_image));
+            }
+            if ((Original_council_of_ministers_decision_Image == null)) {
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[63].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((string)(Original_council_of_ministers_decision_Image));
+            }
+            if ((Original_Description_of_the_route_from == null)) {
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[65].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((string)(Original_Description_of_the_route_from));
+            }
+            if ((Original_Description_of_the_route_to == null)) {
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[67].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((string)(Original_Description_of_the_route_to));
+            }
+            if ((Original_additional_gates == null)) {
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[69].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[69].Value = ((string)(Original_additional_gates));
+            }
+            if ((Original_company_responsibility == null)) {
+                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[71].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[71].Value = ((string)(Original_company_responsibility));
+            }
+            if ((Original_contract_duration == null)) {
+                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[73].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[73].Value = ((string)(Original_contract_duration));
+            }
+            if ((Original_contract_end_date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[74].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[75].Value = ((System.DateTime)(Original_contract_end_date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[74].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[75].Value = global::System.DBNull.Value;
+            }
+            if ((Original_nature_of_operation == null)) {
+                this.Adapter.UpdateCommand.Parameters[76].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[77].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[76].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[77].Value = ((string)(Original_nature_of_operation));
+            }
+            if ((Original_right_of_way == null)) {
+                this.Adapter.UpdateCommand.Parameters[78].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[79].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[78].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[79].Value = ((string)(Original_right_of_way));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -21194,6 +23653,14 @@ SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financi
                     string road_authority_percentage, 
                     string contract_image, 
                     string council_of_ministers_decision_Image, 
+                    string Description_of_the_route_from, 
+                    string Description_of_the_route_to, 
+                    string additional_gates, 
+                    string company_responsibility, 
+                    string contract_duration, 
+                    global::System.Nullable<global::System.DateTime> contract_end_date, 
+                    string nature_of_operation, 
+                    string right_of_way, 
                     string Original_road_id, 
                     string Original_road_name, 
                     string Original_Toll_Booth_Count, 
@@ -21212,8 +23679,16 @@ SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financi
                     string Original_company_percentage, 
                     string Original_road_authority_percentage, 
                     string Original_contract_image, 
-                    string Original_council_of_ministers_decision_Image) {
-            return this.Update(Original_road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financial_Affiliation, contract_type, contract_status, council_of_ministers_decision, council_of_ministers_decision_Date, contract_signing_date, franchise_Contract_Duration, number_of_exits, road_length, road_length_including_branches, number_of_operation_staff, company_percentage, road_authority_percentage, contract_image, council_of_ministers_decision_Image, Original_road_id, Original_road_name, Original_Toll_Booth_Count, Original_Administrative_Affiliation, Original_Financial_Affiliation, Original_contract_type, Original_contract_status, Original_council_of_ministers_decision, Original_council_of_ministers_decision_Date, Original_contract_signing_date, Original_franchise_Contract_Duration, Original_number_of_exits, Original_road_length, Original_road_length_including_branches, Original_number_of_operation_staff, Original_company_percentage, Original_road_authority_percentage, Original_contract_image, Original_council_of_ministers_decision_Image);
+                    string Original_council_of_ministers_decision_Image, 
+                    string Original_Description_of_the_route_from, 
+                    string Original_Description_of_the_route_to, 
+                    string Original_additional_gates, 
+                    string Original_company_responsibility, 
+                    string Original_contract_duration, 
+                    global::System.Nullable<global::System.DateTime> Original_contract_end_date, 
+                    string Original_nature_of_operation, 
+                    string Original_right_of_way) {
+            return this.Update(Original_road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financial_Affiliation, contract_type, contract_status, council_of_ministers_decision, council_of_ministers_decision_Date, contract_signing_date, franchise_Contract_Duration, number_of_exits, road_length, road_length_including_branches, number_of_operation_staff, company_percentage, road_authority_percentage, contract_image, council_of_ministers_decision_Image, Description_of_the_route_from, Description_of_the_route_to, additional_gates, company_responsibility, contract_duration, contract_end_date, nature_of_operation, right_of_way, Original_road_id, Original_road_name, Original_Toll_Booth_Count, Original_Administrative_Affiliation, Original_Financial_Affiliation, Original_contract_type, Original_contract_status, Original_council_of_ministers_decision, Original_council_of_ministers_decision_Date, Original_contract_signing_date, Original_franchise_Contract_Duration, Original_number_of_exits, Original_road_length, Original_road_length_including_branches, Original_number_of_operation_staff, Original_company_percentage, Original_road_authority_percentage, Original_contract_image, Original_council_of_ministers_decision_Image, Original_Description_of_the_route_from, Original_Description_of_the_route_to, Original_additional_gates, Original_company_responsibility, Original_contract_duration, Original_contract_end_date, Original_nature_of_operation, Original_right_of_way);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21269,7 +23744,7 @@ SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financi
                     string road_authority_percentage, 
                     string contract_image, 
                     string council_of_ministers_decision_Image) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             if ((road_id == null)) {
                 throw new global::System.ArgumentNullException("road_id");
             }
@@ -21424,8 +23899,220 @@ SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financi
                     string road_authority_percentage, 
                     string contract_image, 
                     string council_of_ministers_decision_Image, 
+                    string Description_of_the_route_from, 
+                    string Description_of_the_route_to, 
+                    string additional_gates, 
+                    string company_responsibility, 
+                    string contract_duration, 
+                    string contract_end_date, 
+                    string nature_of_operation, 
+                    string right_of_way, 
                     string road_id) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            if ((road_name == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(road_name));
+            }
+            if ((Toll_Booth_Count == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(Toll_Booth_Count));
+            }
+            if ((Administrative_Affiliation == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(Administrative_Affiliation));
+            }
+            if ((Financial_Affiliation == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(Financial_Affiliation));
+            }
+            if ((contract_type == null)) {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[4].Value = ((string)(contract_type));
+            }
+            if ((contract_status == null)) {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[5].Value = ((string)(contract_status));
+            }
+            if ((council_of_ministers_decision == null)) {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[6].Value = ((string)(council_of_ministers_decision));
+            }
+            if ((council_of_ministers_decision_Date == null)) {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[7].Value = ((string)(council_of_ministers_decision_Date));
+            }
+            if ((contract_signing_date == null)) {
+                command.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[8].Value = ((string)(contract_signing_date));
+            }
+            if ((franchise_Contract_Duration == null)) {
+                command.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[9].Value = ((string)(franchise_Contract_Duration));
+            }
+            if ((number_of_exits == null)) {
+                command.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[10].Value = ((string)(number_of_exits));
+            }
+            if ((road_length == null)) {
+                command.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[11].Value = ((string)(road_length));
+            }
+            if ((road_length_including_branches == null)) {
+                command.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[12].Value = ((string)(road_length_including_branches));
+            }
+            if ((number_of_operation_staff == null)) {
+                command.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[13].Value = ((string)(number_of_operation_staff));
+            }
+            if ((company_percentage == null)) {
+                command.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[14].Value = ((string)(company_percentage));
+            }
+            if ((road_authority_percentage == null)) {
+                command.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[15].Value = ((string)(road_authority_percentage));
+            }
+            if ((contract_image == null)) {
+                command.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[16].Value = ((string)(contract_image));
+            }
+            if ((council_of_ministers_decision_Image == null)) {
+                command.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[17].Value = ((string)(council_of_ministers_decision_Image));
+            }
+            if ((Description_of_the_route_from == null)) {
+                command.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[18].Value = ((string)(Description_of_the_route_from));
+            }
+            if ((Description_of_the_route_to == null)) {
+                command.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[19].Value = ((string)(Description_of_the_route_to));
+            }
+            if ((additional_gates == null)) {
+                command.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[20].Value = ((string)(additional_gates));
+            }
+            if ((company_responsibility == null)) {
+                command.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[21].Value = ((string)(company_responsibility));
+            }
+            if ((contract_duration == null)) {
+                command.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[22].Value = ((string)(contract_duration));
+            }
+            if ((contract_end_date == null)) {
+                command.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[23].Value = ((string)(contract_end_date));
+            }
+            if ((nature_of_operation == null)) {
+                command.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[24].Value = ((string)(nature_of_operation));
+            }
+            if ((right_of_way == null)) {
+                command.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[25].Value = ((string)(right_of_way));
+            }
+            if ((road_id == null)) {
+                throw new global::System.ArgumentNullException("road_id");
+            }
+            else {
+                command.Parameters[26].Value = ((string)(road_id));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQueryNew(
+                    string road_name, 
+                    string Toll_Booth_Count, 
+                    string Administrative_Affiliation, 
+                    string Financial_Affiliation, 
+                    string contract_type, 
+                    string contract_status, 
+                    string council_of_ministers_decision, 
+                    string council_of_ministers_decision_Date, 
+                    string contract_signing_date, 
+                    string franchise_Contract_Duration, 
+                    string number_of_exits, 
+                    string road_length, 
+                    string road_length_including_branches, 
+                    string number_of_operation_staff, 
+                    string company_percentage, 
+                    string road_authority_percentage, 
+                    string contract_image, 
+                    string council_of_ministers_decision_Image, 
+                    string road_id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             if ((road_name == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -21695,6 +24382,8 @@ SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financi
             tableMapping.ColumnMappings.Add("Rental_value", "Rental_value");
             tableMapping.ColumnMappings.Add("Offer_memorandum_number_File", "Offer_memorandum_number_File");
             tableMapping.ColumnMappings.Add("Contract_number_File", "Contract_number_File");
+            tableMapping.ColumnMappings.Add("Rental_expiry_date", "Rental_expiry_date");
+            tableMapping.ColumnMappings.Add("investment_type", "investment_type");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -21721,7 +24410,10 @@ SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financi
                 "Null_Offer_memorandum_number_File = 1 AND [Offer_memorandum_number_File] IS NULL" +
                 ") OR ([Offer_memorandum_number_File] = @Original_Offer_memorandum_number_File)) " +
                 "AND ((@IsNull_Contract_number_File = 1 AND [Contract_number_File] IS NULL) OR ([" +
-                "Contract_number_File] = @Original_Contract_number_File)))";
+                "Contract_number_File] = @Original_Contract_number_File)) AND ((@IsNull_Rental_ex" +
+                "piry_date = 1 AND [Rental_expiry_date] IS NULL) OR ([Rental_expiry_date] = @Orig" +
+                "inal_Rental_expiry_date)) AND ((@IsNull_investment_type = 1 AND [investment_type" +
+                "] IS NULL) OR ([investment_type] = @Original_investment_type)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_investments_id", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "investments_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Location", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Location", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -21754,10 +24446,14 @@ SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financi
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Offer_memorandum_number_File", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Offer_memorandum_number_File", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Contract_number_File", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contract_number_File", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Contract_number_File", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contract_number_File", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Rental_expiry_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rental_expiry_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Rental_expiry_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rental_expiry_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_investment_type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "investment_type", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_investment_type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "investment_type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [investments] ([investments_id], [Location], [investment_name], [governorate_fk], [land_fk], [Dependent_neighborhood], [Activity_Type], [Activity_Name], [Place_number], [Offer_memorandum_number], [Contract_number], [Contract_start_date], [Contract_expiry_date], [Rental_value], [Offer_memorandum_number_File], [Contract_number_File]) VALUES (@investments_id, @Location, @investment_name, @governorate_fk, @land_fk, @Dependent_neighborhood, @Activity_Type, @Activity_Name, @Place_number, @Offer_memorandum_number, @Contract_number, @Contract_start_date, @Contract_expiry_date, @Rental_value, @Offer_memorandum_number_File, @Contract_number_File);
-SELECT investments_id, Location, investment_name, governorate_fk, land_fk, Dependent_neighborhood, Activity_Type, Activity_Name, Place_number, Offer_memorandum_number, Contract_number, Contract_start_date, Contract_expiry_date, Rental_value, Offer_memorandum_number_File, Contract_number_File FROM investments WHERE (investments_id = @investments_id)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [investments] ([investments_id], [Location], [investment_name], [governorate_fk], [land_fk], [Dependent_neighborhood], [Activity_Type], [Activity_Name], [Place_number], [Offer_memorandum_number], [Contract_number], [Contract_start_date], [Contract_expiry_date], [Rental_value], [Offer_memorandum_number_File], [Contract_number_File], [Rental_expiry_date], [investment_type]) VALUES (@investments_id, @Location, @investment_name, @governorate_fk, @land_fk, @Dependent_neighborhood, @Activity_Type, @Activity_Name, @Place_number, @Offer_memorandum_number, @Contract_number, @Contract_start_date, @Contract_expiry_date, @Rental_value, @Offer_memorandum_number_File, @Contract_number_File, @Rental_expiry_date, @investment_type);
+SELECT investments_id, Location, investment_name, governorate_fk, land_fk, Dependent_neighborhood, Activity_Type, Activity_Name, Place_number, Offer_memorandum_number, Contract_number, Contract_start_date, Contract_expiry_date, Rental_value, Offer_memorandum_number_File, Contract_number_File, Rental_expiry_date, investment_type FROM investments WHERE (investments_id = @investments_id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@investments_id", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "investments_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Location", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Location", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -21775,6 +24471,8 @@ SELECT investments_id, Location, investment_name, governorate_fk, land_fk, Depen
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rental_value", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "Rental_value", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Offer_memorandum_number_File", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Offer_memorandum_number_File", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contract_number_File", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contract_number_File", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rental_expiry_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rental_expiry_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@investment_type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "investment_type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [investments] SET [investments_id] = @investments_id, [Location] = @Locati" +
@@ -21785,35 +24483,39 @@ SELECT investments_id, Location, investment_name, governorate_fk, land_fk, Depen
                 "er] = @Contract_number, [Contract_start_date] = @Contract_start_date, [Contract_" +
                 "expiry_date] = @Contract_expiry_date, [Rental_value] = @Rental_value, [Offer_mem" +
                 "orandum_number_File] = @Offer_memorandum_number_File, [Contract_number_File] = @" +
-                "Contract_number_File WHERE (([investments_id] = @Original_investments_id) AND ((" +
-                "@IsNull_Location = 1 AND [Location] IS NULL) OR ([Location] = @Original_Location" +
-                ")) AND ((@IsNull_investment_name = 1 AND [investment_name] IS NULL) OR ([investm" +
-                "ent_name] = @Original_investment_name)) AND ((@IsNull_governorate_fk = 1 AND [go" +
-                "vernorate_fk] IS NULL) OR ([governorate_fk] = @Original_governorate_fk)) AND ((@" +
-                "IsNull_land_fk = 1 AND [land_fk] IS NULL) OR ([land_fk] = @Original_land_fk)) AN" +
-                "D ((@IsNull_Dependent_neighborhood = 1 AND [Dependent_neighborhood] IS NULL) OR " +
-                "([Dependent_neighborhood] = @Original_Dependent_neighborhood)) AND ((@IsNull_Act" +
-                "ivity_Type = 1 AND [Activity_Type] IS NULL) OR ([Activity_Type] = @Original_Acti" +
-                "vity_Type)) AND ((@IsNull_Activity_Name = 1 AND [Activity_Name] IS NULL) OR ([Ac" +
-                "tivity_Name] = @Original_Activity_Name)) AND ((@IsNull_Place_number = 1 AND [Pla" +
-                "ce_number] IS NULL) OR ([Place_number] = @Original_Place_number)) AND ((@IsNull_" +
-                "Offer_memorandum_number = 1 AND [Offer_memorandum_number] IS NULL) OR ([Offer_me" +
-                "morandum_number] = @Original_Offer_memorandum_number)) AND ((@IsNull_Contract_nu" +
-                "mber = 1 AND [Contract_number] IS NULL) OR ([Contract_number] = @Original_Contra" +
-                "ct_number)) AND ((@IsNull_Contract_start_date = 1 AND [Contract_start_date] IS N" +
-                "ULL) OR ([Contract_start_date] = @Original_Contract_start_date)) AND ((@IsNull_C" +
-                "ontract_expiry_date = 1 AND [Contract_expiry_date] IS NULL) OR ([Contract_expiry" +
-                "_date] = @Original_Contract_expiry_date)) AND ((@IsNull_Rental_value = 1 AND [Re" +
-                "ntal_value] IS NULL) OR ([Rental_value] = @Original_Rental_value)) AND ((@IsNull" +
-                "_Offer_memorandum_number_File = 1 AND [Offer_memorandum_number_File] IS NULL) OR" +
-                " ([Offer_memorandum_number_File] = @Original_Offer_memorandum_number_File)) AND " +
-                "((@IsNull_Contract_number_File = 1 AND [Contract_number_File] IS NULL) OR ([Cont" +
-                "ract_number_File] = @Original_Contract_number_File)));\r\nSELECT investments_id, L" +
-                "ocation, investment_name, governorate_fk, land_fk, Dependent_neighborhood, Activ" +
-                "ity_Type, Activity_Name, Place_number, Offer_memorandum_number, Contract_number," +
-                " Contract_start_date, Contract_expiry_date, Rental_value, Offer_memorandum_numbe" +
-                "r_File, Contract_number_File FROM investments WHERE (investments_id = @investmen" +
-                "ts_id)";
+                "Contract_number_File, [Rental_expiry_date] = @Rental_expiry_date, [investment_ty" +
+                "pe] = @investment_type WHERE (([investments_id] = @Original_investments_id) AND " +
+                "((@IsNull_Location = 1 AND [Location] IS NULL) OR ([Location] = @Original_Locati" +
+                "on)) AND ((@IsNull_investment_name = 1 AND [investment_name] IS NULL) OR ([inves" +
+                "tment_name] = @Original_investment_name)) AND ((@IsNull_governorate_fk = 1 AND [" +
+                "governorate_fk] IS NULL) OR ([governorate_fk] = @Original_governorate_fk)) AND (" +
+                "(@IsNull_land_fk = 1 AND [land_fk] IS NULL) OR ([land_fk] = @Original_land_fk)) " +
+                "AND ((@IsNull_Dependent_neighborhood = 1 AND [Dependent_neighborhood] IS NULL) O" +
+                "R ([Dependent_neighborhood] = @Original_Dependent_neighborhood)) AND ((@IsNull_A" +
+                "ctivity_Type = 1 AND [Activity_Type] IS NULL) OR ([Activity_Type] = @Original_Ac" +
+                "tivity_Type)) AND ((@IsNull_Activity_Name = 1 AND [Activity_Name] IS NULL) OR ([" +
+                "Activity_Name] = @Original_Activity_Name)) AND ((@IsNull_Place_number = 1 AND [P" +
+                "lace_number] IS NULL) OR ([Place_number] = @Original_Place_number)) AND ((@IsNul" +
+                "l_Offer_memorandum_number = 1 AND [Offer_memorandum_number] IS NULL) OR ([Offer_" +
+                "memorandum_number] = @Original_Offer_memorandum_number)) AND ((@IsNull_Contract_" +
+                "number = 1 AND [Contract_number] IS NULL) OR ([Contract_number] = @Original_Cont" +
+                "ract_number)) AND ((@IsNull_Contract_start_date = 1 AND [Contract_start_date] IS" +
+                " NULL) OR ([Contract_start_date] = @Original_Contract_start_date)) AND ((@IsNull" +
+                "_Contract_expiry_date = 1 AND [Contract_expiry_date] IS NULL) OR ([Contract_expi" +
+                "ry_date] = @Original_Contract_expiry_date)) AND ((@IsNull_Rental_value = 1 AND [" +
+                "Rental_value] IS NULL) OR ([Rental_value] = @Original_Rental_value)) AND ((@IsNu" +
+                "ll_Offer_memorandum_number_File = 1 AND [Offer_memorandum_number_File] IS NULL) " +
+                "OR ([Offer_memorandum_number_File] = @Original_Offer_memorandum_number_File)) AN" +
+                "D ((@IsNull_Contract_number_File = 1 AND [Contract_number_File] IS NULL) OR ([Co" +
+                "ntract_number_File] = @Original_Contract_number_File)) AND ((@IsNull_Rental_expi" +
+                "ry_date = 1 AND [Rental_expiry_date] IS NULL) OR ([Rental_expiry_date] = @Origin" +
+                "al_Rental_expiry_date)) AND ((@IsNull_investment_type = 1 AND [investment_type] " +
+                "IS NULL) OR ([investment_type] = @Original_investment_type)));\r\nSELECT investmen" +
+                "ts_id, Location, investment_name, governorate_fk, land_fk, Dependent_neighborhoo" +
+                "d, Activity_Type, Activity_Name, Place_number, Offer_memorandum_number, Contract" +
+                "_number, Contract_start_date, Contract_expiry_date, Rental_value, Offer_memorand" +
+                "um_number_File, Contract_number_File, Rental_expiry_date, investment_type FROM i" +
+                "nvestments WHERE (investments_id = @investments_id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@investments_id", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "investments_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Location", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Location", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -21831,6 +24533,8 @@ SELECT investments_id, Location, investment_name, governorate_fk, land_fk, Depen
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rental_value", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "Rental_value", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Offer_memorandum_number_File", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Offer_memorandum_number_File", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contract_number_File", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contract_number_File", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rental_expiry_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rental_expiry_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@investment_type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "investment_type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_investments_id", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "investments_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Location", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Location", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Location", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Location", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -21862,6 +24566,10 @@ SELECT investments_id, Location, investment_name, governorate_fk, land_fk, Depen
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Offer_memorandum_number_File", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Offer_memorandum_number_File", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Contract_number_File", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contract_number_File", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Contract_number_File", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contract_number_File", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Rental_expiry_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rental_expiry_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Rental_expiry_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rental_expiry_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_investment_type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "investment_type", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_investment_type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "investment_type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21877,9 +24585,7 @@ SELECT investments_id, Location, investment_name, governorate_fk, land_fk, Depen
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        investments_id, Location, investment_name, governorate_fk, land_fk, Dependent_neighborhood, Activity_Type, Activity_Name, Place_number, Offer_memorandum_number, Contract_number, Contract_start_date, 
-                         Contract_expiry_date, Rental_value, Offer_memorandum_number_File, Contract_number_File
-FROM            investments";
+            this._commandCollection[0].CommandText = @"SELECT investments_id, Location, investment_name, governorate_fk, land_fk, Dependent_neighborhood, Activity_Type, Activity_Name, Place_number, Offer_memorandum_number, Contract_number, Contract_start_date, Contract_expiry_date, Rental_value, Offer_memorandum_number_File, Contract_number_File, Rental_expiry_date, investment_type FROM investments";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -21888,10 +24594,7 @@ FROM            investments";
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@investments_id", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "investments_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT        investments_id, Location, investment_name, governorate_fk, land_fk, Dependent_neighborhood, Activity_Type, Activity_Name, Place_number, Offer_memorandum_number, Contract_number, Contract_start_date, 
-                         Contract_expiry_date, Rental_value, Offer_memorandum_number_File, Contract_number_File
-FROM            investments 
-where investments_id = @investments_id";
+            this._commandCollection[2].CommandText = @"SELECT investments_id, Location, investment_name, governorate_fk, land_fk, Dependent_neighborhood, Activity_Type, Activity_Name, Place_number, Offer_memorandum_number, Contract_number, Contract_start_date, Contract_expiry_date, Rental_value, Offer_memorandum_number_File, Contract_number_File, Rental_expiry_date, investment_type FROM investments WHERE (investments_id = @investments_id)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@investments_id", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "investments_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
@@ -22006,7 +24709,9 @@ where investments_id = @investments_id";
                     global::System.Nullable<global::System.DateTime> Original_Contract_expiry_date, 
                     global::System.Nullable<decimal> Original_Rental_value, 
                     string Original_Offer_memorandum_number_File, 
-                    string Original_Contract_number_File) {
+                    string Original_Contract_number_File, 
+                    global::System.Nullable<global::System.DateTime> Original_Rental_expiry_date, 
+                    string Original_investment_type) {
             if ((Original_investments_id == null)) {
                 throw new global::System.ArgumentNullException("Original_investments_id");
             }
@@ -22133,6 +24838,22 @@ where investments_id = @investments_id";
                 this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[30].Value = ((string)(Original_Contract_number_File));
             }
+            if ((Original_Rental_expiry_date.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[32].Value = ((System.DateTime)(Original_Rental_expiry_date.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            if ((Original_investment_type == null)) {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[34].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((string)(Original_investment_type));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -22169,7 +24890,9 @@ where investments_id = @investments_id";
                     global::System.Nullable<global::System.DateTime> Contract_expiry_date, 
                     global::System.Nullable<decimal> Rental_value, 
                     string Offer_memorandum_number_File, 
-                    string Contract_number_File) {
+                    string Contract_number_File, 
+                    global::System.Nullable<global::System.DateTime> Rental_expiry_date, 
+                    string investment_type) {
             if ((investments_id == null)) {
                 throw new global::System.ArgumentNullException("investments_id");
             }
@@ -22266,6 +24989,18 @@ where investments_id = @investments_id";
             else {
                 this.Adapter.InsertCommand.Parameters[15].Value = ((string)(Contract_number_File));
             }
+            if ((Rental_expiry_date.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((System.DateTime)(Rental_expiry_date.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((investment_type == null)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(investment_type));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -22303,6 +25038,8 @@ where investments_id = @investments_id";
                     global::System.Nullable<decimal> Rental_value, 
                     string Offer_memorandum_number_File, 
                     string Contract_number_File, 
+                    global::System.Nullable<global::System.DateTime> Rental_expiry_date, 
+                    string investment_type, 
                     string Original_investments_id, 
                     string Original_Location, 
                     string Original_investment_name, 
@@ -22318,7 +25055,9 @@ where investments_id = @investments_id";
                     global::System.Nullable<global::System.DateTime> Original_Contract_expiry_date, 
                     global::System.Nullable<decimal> Original_Rental_value, 
                     string Original_Offer_memorandum_number_File, 
-                    string Original_Contract_number_File) {
+                    string Original_Contract_number_File, 
+                    global::System.Nullable<global::System.DateTime> Original_Rental_expiry_date, 
+                    string Original_investment_type) {
             if ((investments_id == null)) {
                 throw new global::System.ArgumentNullException("investments_id");
             }
@@ -22415,131 +25154,159 @@ where investments_id = @investments_id";
             else {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Contract_number_File));
             }
+            if ((Rental_expiry_date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Rental_expiry_date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((investment_type == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(investment_type));
+            }
             if ((Original_investments_id == null)) {
                 throw new global::System.ArgumentNullException("Original_investments_id");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_investments_id));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_investments_id));
             }
             if ((Original_Location == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Location));
-            }
-            if ((Original_investment_name == null)) {
                 this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_investment_name));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Location));
             }
-            if ((Original_governorate_fk == null)) {
+            if ((Original_investment_name == null)) {
                 this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_governorate_fk));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_investment_name));
             }
-            if ((Original_land_fk == null)) {
+            if ((Original_governorate_fk == null)) {
                 this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_land_fk));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_governorate_fk));
             }
-            if ((Original_Dependent_neighborhood == null)) {
+            if ((Original_land_fk == null)) {
                 this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_Dependent_neighborhood));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_land_fk));
             }
-            if ((Original_Activity_Type == null)) {
+            if ((Original_Dependent_neighborhood == null)) {
                 this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_Activity_Type));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_Dependent_neighborhood));
             }
-            if ((Original_Activity_Name == null)) {
+            if ((Original_Activity_Type == null)) {
                 this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_Activity_Name));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_Activity_Type));
             }
-            if ((Original_Place_number == null)) {
+            if ((Original_Activity_Name == null)) {
                 this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_Place_number));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_Activity_Name));
             }
-            if ((Original_Offer_memorandum_number == null)) {
+            if ((Original_Place_number == null)) {
                 this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_Offer_memorandum_number));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_Place_number));
             }
-            if ((Original_Contract_number == null)) {
+            if ((Original_Offer_memorandum_number == null)) {
                 this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_Contract_number));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_Offer_memorandum_number));
             }
-            if ((Original_Contract_start_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((System.DateTime)(Original_Contract_start_date.Value));
-            }
-            else {
+            if ((Original_Contract_number == null)) {
                 this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
-            if ((Original_Contract_expiry_date.HasValue == true)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_Contract_number));
+            }
+            if ((Original_Contract_start_date.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((System.DateTime)(Original_Contract_expiry_date.Value));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((System.DateTime)(Original_Contract_start_date.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
-            if ((Original_Rental_value.HasValue == true)) {
+            if ((Original_Contract_expiry_date.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((decimal)(Original_Rental_value.Value));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((System.DateTime)(Original_Contract_expiry_date.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
-            if ((Original_Offer_memorandum_number_File == null)) {
+            if ((Original_Rental_value.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((decimal)(Original_Rental_value.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_Offer_memorandum_number_File));
-            }
-            if ((Original_Contract_number_File == null)) {
+            if ((Original_Offer_memorandum_number_File == null)) {
                 this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(Original_Contract_number_File));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(Original_Offer_memorandum_number_File));
+            }
+            if ((Original_Contract_number_File == null)) {
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((string)(Original_Contract_number_File));
+            }
+            if ((Original_Rental_expiry_date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((System.DateTime)(Original_Rental_expiry_date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
+            }
+            if ((Original_investment_type == null)) {
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(Original_investment_type));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -22577,6 +25344,8 @@ where investments_id = @investments_id";
                     global::System.Nullable<decimal> Rental_value, 
                     string Offer_memorandum_number_File, 
                     string Contract_number_File, 
+                    global::System.Nullable<global::System.DateTime> Rental_expiry_date, 
+                    string investment_type, 
                     string Original_investments_id, 
                     string Original_Location, 
                     string Original_investment_name, 
@@ -22592,8 +25361,10 @@ where investments_id = @investments_id";
                     global::System.Nullable<global::System.DateTime> Original_Contract_expiry_date, 
                     global::System.Nullable<decimal> Original_Rental_value, 
                     string Original_Offer_memorandum_number_File, 
-                    string Original_Contract_number_File) {
-            return this.Update(Original_investments_id, Location, investment_name, governorate_fk, land_fk, Dependent_neighborhood, Activity_Type, Activity_Name, Place_number, Offer_memorandum_number, Contract_number, Contract_start_date, Contract_expiry_date, Rental_value, Offer_memorandum_number_File, Contract_number_File, Original_investments_id, Original_Location, Original_investment_name, Original_governorate_fk, Original_land_fk, Original_Dependent_neighborhood, Original_Activity_Type, Original_Activity_Name, Original_Place_number, Original_Offer_memorandum_number, Original_Contract_number, Original_Contract_start_date, Original_Contract_expiry_date, Original_Rental_value, Original_Offer_memorandum_number_File, Original_Contract_number_File);
+                    string Original_Contract_number_File, 
+                    global::System.Nullable<global::System.DateTime> Original_Rental_expiry_date, 
+                    string Original_investment_type) {
+            return this.Update(Original_investments_id, Location, investment_name, governorate_fk, land_fk, Dependent_neighborhood, Activity_Type, Activity_Name, Place_number, Offer_memorandum_number, Contract_number, Contract_start_date, Contract_expiry_date, Rental_value, Offer_memorandum_number_File, Contract_number_File, Rental_expiry_date, investment_type, Original_investments_id, Original_Location, Original_investment_name, Original_governorate_fk, Original_land_fk, Original_Dependent_neighborhood, Original_Activity_Type, Original_Activity_Name, Original_Place_number, Original_Offer_memorandum_number, Original_Contract_number, Original_Contract_start_date, Original_Contract_expiry_date, Original_Rental_value, Original_Offer_memorandum_number_File, Original_Contract_number_File, Original_Rental_expiry_date, Original_investment_type);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22758,6 +25529,199 @@ where investments_id = @investments_id";
                 }
             }
             return returnValue;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class TestViewReportTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public TestViewReportTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "TestViewReport";
+            tableMapping.ColumnMappings.Add("road_id", "road_id");
+            tableMapping.ColumnMappings.Add("road_name", "road_name");
+            tableMapping.ColumnMappings.Add("Toll_Booth_Count", "Toll_Booth_Count");
+            tableMapping.ColumnMappings.Add("Administrative_Affiliation", "Administrative_Affiliation");
+            tableMapping.ColumnMappings.Add("Financial_Affiliation", "Financial_Affiliation");
+            tableMapping.ColumnMappings.Add("contract_type", "contract_type");
+            tableMapping.ColumnMappings.Add("contract_status", "contract_status");
+            tableMapping.ColumnMappings.Add("council_of_ministers_decision", "council_of_ministers_decision");
+            tableMapping.ColumnMappings.Add("council_of_ministers_decision_Date", "council_of_ministers_decision_Date");
+            tableMapping.ColumnMappings.Add("contract_signing_date", "contract_signing_date");
+            tableMapping.ColumnMappings.Add("franchise_Contract_Duration", "franchise_Contract_Duration");
+            tableMapping.ColumnMappings.Add("number_of_exits", "number_of_exits");
+            tableMapping.ColumnMappings.Add("road_length", "road_length");
+            tableMapping.ColumnMappings.Add("road_length_including_branches", "road_length_including_branches");
+            tableMapping.ColumnMappings.Add("number_of_operation_staff", "number_of_operation_staff");
+            tableMapping.ColumnMappings.Add("company_percentage", "company_percentage");
+            tableMapping.ColumnMappings.Add("road_authority_percentage", "road_authority_percentage");
+            tableMapping.ColumnMappings.Add("contract_image", "contract_image");
+            tableMapping.ColumnMappings.Add("council_of_ministers_decision_Image", "council_of_ministers_decision_Image");
+            tableMapping.ColumnMappings.Add("contract_duration", "contract_duration");
+            tableMapping.ColumnMappings.Add("contract_end_date", "contract_end_date");
+            tableMapping.ColumnMappings.Add("nature_of_operation", "nature_of_operation");
+            tableMapping.ColumnMappings.Add("company_responsibility", "company_responsibility");
+            tableMapping.ColumnMappings.Add("additional_gates", "additional_gates");
+            tableMapping.ColumnMappings.Add("right_of_way", "right_of_way");
+            tableMapping.ColumnMappings.Add("Description_of_the_route_from", "Description_of_the_route_from");
+            tableMapping.ColumnMappings.Add("Description_of_the_route_to", "Description_of_the_route_to");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::DemoProject.Properties.Settings.Default.Database2ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT road_id, road_name, Toll_Booth_Count, Administrative_Affiliation, Financial_Affiliation, contract_type, contract_status, council_of_ministers_decision, council_of_ministers_decision_Date, contract_signing_date, franchise_Contract_Duration, number_of_exits, road_length, road_length_including_branches, number_of_operation_staff, company_percentage, road_authority_percentage, contract_image, council_of_ministers_decision_Image, contract_duration, contract_end_date, nature_of_operation, company_responsibility, additional_gates, right_of_way, Description_of_the_route_from, Description_of_the_route_to FROM dbo.TestViewReport";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(Database1DataSet.TestViewReportDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual Database1DataSet.TestViewReportDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            Database1DataSet.TestViewReportDataTable dataTable = new Database1DataSet.TestViewReportDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
     }
     
@@ -23199,21 +26163,21 @@ where investments_id = @investments_id";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateUpdatedRows(Database1DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._governorateTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.governorate.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._governorateTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._usersTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.users.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._usersTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._governorateTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.governorate.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._governorateTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -23253,15 +26217,6 @@ where investments_id = @investments_id";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._functionsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.functions.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._functionsTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._pagesTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.pages.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -23271,57 +26226,21 @@ where investments_id = @investments_id";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._stationsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Stations.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._functionsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.functions.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._stationsTableAdapter.Update(updatedRows));
+                    result = (result + this._functionsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._tableTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Table.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._investmentsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.investments.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._tableTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._statusTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.status.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._statusTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._surveying_position_statesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Surveying_position_states.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._surveying_position_statesTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._accessTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.access.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._accessTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._roadsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.roads.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._roadsTableAdapter.Update(updatedRows));
+                    result = (result + this._investmentsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -23334,12 +26253,57 @@ where investments_id = @investments_id";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._investmentsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.investments.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._roadsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.roads.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._investmentsTableAdapter.Update(updatedRows));
+                    result = (result + this._roadsTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._stationsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Stations.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._stationsTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._surveying_position_statesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Surveying_position_states.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._surveying_position_statesTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._statusTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.status.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._statusTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._tableTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Table.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tableTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._accessTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.access.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._accessTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -23353,19 +26317,19 @@ where investments_id = @investments_id";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateInsertedRows(Database1DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._governorateTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.governorate.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._governorateTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._usersTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.users.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._usersTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._governorateTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.governorate.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._governorateTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -23401,14 +26365,6 @@ where investments_id = @investments_id";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._functionsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.functions.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._functionsTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._pagesTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.pages.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -23417,51 +26373,19 @@ where investments_id = @investments_id";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._stationsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Stations.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._functionsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.functions.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._stationsTableAdapter.Update(addedRows));
+                    result = (result + this._functionsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._tableTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Table.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._investmentsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.investments.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._tableTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._statusTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.status.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._statusTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._surveying_position_statesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Surveying_position_states.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._surveying_position_statesTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._accessTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.access.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._accessTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._roadsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.roads.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._roadsTableAdapter.Update(addedRows));
+                    result = (result + this._investmentsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -23473,11 +26397,51 @@ where investments_id = @investments_id";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._investmentsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.investments.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._roadsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.roads.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._investmentsTableAdapter.Update(addedRows));
+                    result = (result + this._roadsTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._stationsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Stations.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._stationsTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._surveying_position_statesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Surveying_position_states.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._surveying_position_statesTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._statusTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.status.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._statusTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._tableTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Table.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tableTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._accessTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.access.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._accessTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -23491,51 +26455,11 @@ where investments_id = @investments_id";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateDeletedRows(Database1DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._investmentsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.investments.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._investmentsTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._documentsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.documents.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._documentsTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._roadsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.roads.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._roadsTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._accessTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.access.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._accessTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._surveying_position_statesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Surveying_position_states.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._surveying_position_statesTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._statusTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.status.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._statusTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -23547,6 +26471,22 @@ where investments_id = @investments_id";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._statusTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.status.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._statusTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._surveying_position_statesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Surveying_position_states.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._surveying_position_statesTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._stationsTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Stations.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -23555,11 +26495,27 @@ where investments_id = @investments_id";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._pagesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.pages.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._roadsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.roads.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._pagesTableAdapter.Update(deletedRows));
+                    result = (result + this._roadsTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._documentsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.documents.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._documentsTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._investmentsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.investments.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._investmentsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -23568,6 +26524,14 @@ where investments_id = @investments_id";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._functionsTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._pagesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.pages.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._pagesTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -23603,19 +26567,19 @@ where investments_id = @investments_id";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._usersTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.users.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._usersTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._governorateTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.governorate.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._governorateTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._usersTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.users.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._usersTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

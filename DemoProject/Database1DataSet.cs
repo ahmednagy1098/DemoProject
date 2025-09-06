@@ -4,6 +4,10 @@
 
     partial class Database1DataSet
     {
+        partial class access1DataTable
+        {
+        }
+
         partial class investmentsDataTable
         {
         }
@@ -26,3 +30,13 @@
     }
 }
 
+
+namespace DemoProject.Database1DataSetTableAdapters
+{
+    partial class governorateTableAdapter
+    {
+    }
+
+    public partial class roadsTableAdapter {
+    }
+}

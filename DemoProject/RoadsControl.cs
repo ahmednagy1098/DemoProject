@@ -181,21 +181,74 @@ namespace DemoProject
 
             return dataTable;
         }
+        private Dictionary<string, string> columnMap = new Dictionary<string, string>
+        {
+            { "council_of_ministers_decision_Date", "تاريخ قرار مجلس الوزراء" },
+            { "franchise_Contract_Duration", "مدة عقد منح الالتزام" },
+            { "contract_signing_date", "تاريخ توقيع العقد" },
+            { "road_id", "مسلسل" },
+            { "road_name", "اسم الطريق او الموقف" },
+            { "Administrative_Affiliation", "التبعية الإدارية" },
+            { "Financial_Affiliation", "التبعية المالية" },
+            { "Toll_Booth_Count", "عدد البوابات" },
+            { "contract_type", "نوع العقد" },
+            { "contract_status", "حالة العقد" },
+            { "council_of_ministers_decision", "قرار مجلس الوزراء" },
+            { "council_of_ministers_decision_Image", "صورة قرار مجلس الوزراء" },
+            { "number_of_exits", "عدد المنافذ" },
+            { "road_length", "طول الطريق" },
+            { "road_length_including_branches", "طول الطريق بالروافد" },
+            { "number_of_operation_staff", "قوة التشغيل" },
+            { "company_percentage", "نسبة الشركة" },
+            { "road_authority_percentage", "نسبة هيئة الطرق او المحافظة" },
+            { "contract_image", "صورة العقد" },
+            { "contract_duration", "مدة العقد" },
+            { "contract_end_date", "تاريخ انتهاء العقد" },
+            { "nature_of_operation", "طبيعة التشغيل" },
+            { "company_responsibility", "مسؤولية الشركة" },
+            { "additional_gates", "بوابات إضافية" },
+            { "right_of_way", "حرم الطريق" },
+            { "Description_of_the_route_from", "وصف الطريق من" },
+            { "Description_of_the_route_to", "وصف الطريق إلى" }
+        };
+
         public void translateToArabic()
         {
             advancedDataGridView1.Columns["council_of_ministers_decision_Date"].HeaderText = "تاريخ قرار مجلس الوزراء";
             advancedDataGridView1.Columns["franchise_Contract_Duration"].HeaderText = "مدة عقد منح الالتزام";
-            advancedDataGridView1.Columns["contract_signing_date"].HeaderText = "تاريخ توقع العقد";
+            advancedDataGridView1.Columns["contract_signing_date"].HeaderText = "تاريخ توقيع العقد";
             advancedDataGridView1.Columns["road_id"].HeaderText = "مسلسل";
-            advancedDataGridView1.Columns["road_name"].HeaderText = "اسم الطريق";
-            advancedDataGridView1.Columns["Administrative_Affiliation"].HeaderText = "التبعية الادارية";
+            advancedDataGridView1.Columns["road_name"].HeaderText = "اسم الطريق او الموقف";
+            advancedDataGridView1.Columns["Administrative_Affiliation"].HeaderText = "التبعية الإدارية";
             advancedDataGridView1.Columns["Financial_Affiliation"].HeaderText = "التبعية المالية";
-            advancedDataGridView1.Columns["Toll_Booth_Count"].HeaderText = "عدد منافذ";
+            advancedDataGridView1.Columns["Toll_Booth_Count"].HeaderText = "عدد البوابات";
             advancedDataGridView1.Columns["contract_type"].HeaderText = "نوع العقد";
             advancedDataGridView1.Columns["contract_status"].HeaderText = "حالة العقد";
+            advancedDataGridView1.Columns["council_of_ministers_decision"].HeaderText = "قرار مجلس الوزراء";
             advancedDataGridView1.Columns["council_of_ministers_decision_Image"].HeaderText = "صورة قرار مجلس الوزراء";
+            advancedDataGridView1.Columns["number_of_exits"].HeaderText = "عدد المخارج";
+            advancedDataGridView1.Columns["road_length"].HeaderText = "طول الطريق";
+            advancedDataGridView1.Columns["road_length_including_branches"].HeaderText = "طول الطريق بالروافد";
+            advancedDataGridView1.Columns["number_of_operation_staff"].HeaderText = "قوة التشغيل";
+            advancedDataGridView1.Columns["company_percentage"].HeaderText = "نسبة الشركة";
+            advancedDataGridView1.Columns["road_authority_percentage"].HeaderText = "نسبة هيئة الطرق او المحافظة";
+            advancedDataGridView1.Columns["contract_image"].HeaderText = "صورة العقد";
+            advancedDataGridView1.Columns["contract_duration"].HeaderText = "مدة العقد";
+            advancedDataGridView1.Columns["contract_end_date"].HeaderText = "تاريخ انتهاء العقد";
+            advancedDataGridView1.Columns["nature_of_operation"].HeaderText = "طبيعة التشغيل";
+            advancedDataGridView1.Columns["company_responsibility"].HeaderText = "مسؤولية الشركة";
+            advancedDataGridView1.Columns["additional_gates"].HeaderText = "بوابات إضافية";
+            advancedDataGridView1.Columns["right_of_way"].HeaderText = "حرم الطريق";
+            advancedDataGridView1.Columns["Description_of_the_route_from"].HeaderText = "وصف الطريق من";
+            advancedDataGridView1.Columns["Description_of_the_route_to"].HeaderText = "وصف الطريق إلى";
+
+            // إخفاء العمود لو محتاج زي ما عملت
             advancedDataGridView1.Columns["council_of_ministers_decision_Image"].Visible = false;
+            advancedDataGridView1.Columns["contract_image"].Visible = false;
+            advancedDataGridView1.Columns["franchise_Contract_Duration"].Visible = false;
         }
+   
+
         private void TrueFunction()
         {
             if (this.ParentForm is Form2 form)
@@ -210,56 +263,55 @@ namespace DemoProject
                 form.ShowLoading(false);   // or false
             }
         }
-        public async Task LoadSourceDataAsync()
+        public void LoadRoadsData()
         {
             try
             {
                 TrueFunction();
-                // --- Part 1: Fetch & transform data in background ---
-                var result = await Task.Run(() =>
+                // --- Part 1: Fetch & transform data ---
+                var query = roadsTableAdapter.GetData()
+                .OrderBy(r => int.TryParse(r.road_id, out var n) ? n : int.MaxValue)
+                .ToList();
+                var joinedList = query.ToList();
+                // Convert to DataTable
+                DataTable original = ToDataTable(joinedList);
+                // Clone & fix Date columns
+                DataTable converted = original.Clone();
+                converted.Columns["council_of_ministers_decision_Date"].DataType = typeof(DateTime);
+                converted.Columns["franchise_Contract_Duration"].DataType = typeof(DateTime);
+                converted.Columns["contract_signing_date"].DataType = typeof(DateTime);
+                foreach (DataRow row in original.Rows)
                 {
-                    var query = roadsTableAdapter.GetData();
-                    var joinedList = query.ToList();
-
-                    // Convert to DataTable
-                    DataTable original = ToDataTable(joinedList);
-
-                    // Clone & fix Date columns
-                    DataTable converted = original.Clone();
-                    converted.Columns["council_of_ministers_decision_Date"].DataType = typeof(DateTime);
-                    converted.Columns["franchise_Contract_Duration"].DataType = typeof(DateTime);
-                    converted.Columns["contract_signing_date"].DataType = typeof(DateTime);
-
-                    foreach (DataRow row in original.Rows)
+                    var newRow = converted.NewRow();
+                    foreach (DataColumn col in original.Columns)
                     {
-                        var newRow = converted.NewRow();
-                        foreach (DataColumn col in original.Columns)
+                        if (col.ColumnName == "council_of_ministers_decision_Date" ||
+                            col.ColumnName == "franchise_Contract_Duration" ||
+                            col.ColumnName == "contract_signing_date")
                         {
-                            if (col.ColumnName == "council_of_ministers_decision_Date" ||
-                                col.ColumnName == "franchise_Contract_Duration" ||
-                                col.ColumnName == "contract_signing_date")
-                            {
-                                if (DateTime.TryParse(row[col].ToString(), out DateTime dt))
-                                    newRow[col.ColumnName] = dt;
-                                else
-                                    newRow[col.ColumnName] = DBNull.Value;
-                            }
+                            if (DateTime.TryParse(row[col].ToString(), out DateTime dt))
+                                newRow[col.ColumnName] = dt;
                             else
-                            {
-                                newRow[col.ColumnName] = row[col];
-                            }
+                                newRow[col.ColumnName] = DBNull.Value;
                         }
-                        converted.Rows.Add(newRow);
+                        else
+                        {
+                            newRow[col.ColumnName] = row[col];
+                        }
                     }
-
-                    return converted;
-                });
-
-                // --- Part 2: Bind to UI (on UI thread) ---
+                    converted.Rows.Add(newRow);
+                }
+                foreach (DataGridViewColumn col in advancedDataGridView1.Columns)
+                {
+                    if (col.ValueType == typeof(DateTime))
+                    {
+                        col.DefaultCellStyle.Format = "dd/MM/yyyy";
+                    }
+                }
+                // --- Part 2: Bind to UI ---
                 BindingSource bindingSource = new BindingSource();
-                bindingSource.DataSource = result;
+                bindingSource.DataSource = converted;
                 advancedDataGridView1.DataSource = bindingSource;
-
                 if (!advancedDataGridView1.Columns.Contains("Select"))
                 {
                     DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
@@ -271,9 +323,7 @@ namespace DemoProject
                     checkBoxColumn.FalseValue = false;
                     advancedDataGridView1.Columns.Add(checkBoxColumn);
                 }
-
                 advancedDataGridView1.Columns["Select"].DisplayIndex = 0;
-
                 // Call translations after binding
                 translateToArabic();
             }
@@ -281,10 +331,11 @@ namespace DemoProject
             {
                 MessageBox.Show(ex.Message, "خطأ غير متوقع", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            FalseFunction();
+            finally
+            {
+                FalseFunction();
+            }
         }
-
-
         Dictionary<string, bool> pageAccess = new Dictionary<string, bool>();
         Dictionary<string, bool> functionAccess = new Dictionary<string, bool>();
         void ApplyPermissions(Control parent)
@@ -362,38 +413,43 @@ namespace DemoProject
 
             rowCountLabel.Text = $"عدد الصفوف: {count}";
         }
+
         private void PositionHeaderButton()
         {
             int headerRight = guna2TabControl1.Left + guna2TabControl1.Width - guna2Button3.Width - 5;
             int headerTop = guna2TabControl1.Top;
             guna2Button3.Location = new Point(headerRight - 5, headerTop);
         }
-        private async void _ٌRoadsControl_Load(object sender, EventArgs e)
+        private void _ٌRoadsControl_Load(object sender, EventArgs e)
         {
+            guna2Button1.Visible = Add_Radio.Checked;
+            guna2Button1.Enabled = Add_Radio.Checked;
+            guna2Button2.Visible = Update_Radio.Checked;
+            guna2Button2.Enabled = Update_Radio.Checked;
             guna2Button3.Parent = guna2TabControl1.Parent; // Not inside the tab page
             guna2Button3.BringToFront();
             guna2Button3.Size = new Size(186, guna2TabControl1.ItemSize.Height - 1);
             PositionHeaderButton();
-            await LoadSourceDataAsync();
+            LoadRoadsData();
             UpdateRowCount();
             GenerativePanalFlow();
             ApplyGuna2StyleToGrid(advancedDataGridView1);
             LoadColumnsIntoCheckedListBox();
             // TODO: This line of code loads data into the 'database1DataSet.functions' table. You can move, or remove it, as needed.
-            this.functionsTableAdapter.Fill(this.database1DataSet.functions);
+            this.functionsTableAdapter.Fill(this.dATABASE2DataSet.functions);
             // TODO: This line of code loads data into the 'database1DataSet.pages' table. You can move, or remove it, as needed.
-            this.pagesTableAdapter.Fill(this.database1DataSet.pages);
+            this.pagesTableAdapter.Fill(this.dATABASE2DataSet.pages);
             // TODO: This line of code loads data into the 'database1DataSet.access' table. You can move, or remove it, as needed.
-            this.accessTableAdapter.Fill(this.database1DataSet.access);
+            this.accessTableAdapter.Fill(this.dATABASE2DataSet.access);
             // TODO: This line of code loads data into the 'database1DataSet.users' table. You can move, or remove it, as needed.
-            this.usersTableAdapter.Fill(this.database1DataSet.users);
+            this.usersTableAdapter.Fill(this.dATABASE2DataSet.users);
             // TODO: This line of code loads data into the 'database1DataSet.roles' table. You can move, or remove it, as needed.
-            this.rolesTableAdapter.Fill(this.database1DataSet.roles);
+            this.rolesTableAdapter.Fill(this.dATABASE2DataSet.roles);
             tabPage4.Tag = "Function:Add";
             tabPage5.Tag = "Function:Print";
             guna2Button3.Tag = "Function:Delete";
-            var userRow = database1DataSet.users.FirstOrDefault(u => u.id == UserId);
-            var role = database1DataSet.roles.FirstOrDefault(r => r.user_id == UserId);
+            var userRow = dATABASE2DataSet.users.FirstOrDefault(u => u.id == UserId);
+            var role = dATABASE2DataSet.roles.FirstOrDefault(r => r.user_id == UserId);
             if (userRow == null || role == null) return;
             var access = this.accessTableAdapter.GetDataAccsesByRole(role.id);
             foreach (var accessRow in access)
@@ -401,7 +457,7 @@ namespace DemoProject
                 // Get page name (if page_id exists)
                 if (!accessRow.Ispages_idNull())
                 {
-                    var pageRow = database1DataSet.pages.FirstOrDefault(p => p.id == accessRow.pages_id);
+                    var pageRow = dATABASE2DataSet.pages.FirstOrDefault(p => p.id == accessRow.pages_id);
                     if (pageRow != null && !string.IsNullOrWhiteSpace(pageRow.Page_name))
                     {
                         string pageName = pageRow.Page_name.Trim();
@@ -413,7 +469,7 @@ namespace DemoProject
                 // Get function name (if function_id exists)
                 if (!accessRow.Isfunction_idNull())
                 {
-                    var funcRow = database1DataSet.functions.FirstOrDefault(f => f.id == accessRow.function_id);
+                    var funcRow = dATABASE2DataSet.functions.FirstOrDefault(f => f.id == accessRow.function_id);
                     if (funcRow != null && !string.IsNullOrWhiteSpace(funcRow.Function_name))
                     {
                         string funcName = funcRow.Function_name.Trim();
@@ -449,7 +505,17 @@ namespace DemoProject
    
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            var data = this.roadsTableAdapter.GetData().FindByroad_id(serial_number_TB.Text);
+            DialogResult result = MessageBox.Show(
+             "هل أنت متأكد من أنك تريد اضافة هذه البيانات؟",
+             "تأكيد الاضافة",
+             MessageBoxButtons.YesNo,
+             MessageBoxIcon.Question
+         );
+            if (result != DialogResult.Yes)
+            {
+                return;
+            }
+            var data = this.roadsTableAdapter.GetDataAll().FindByroad_id(serial_number_TB.Text);
             if (data !=null)
             {
                 ShowAlert("يرجى تعبئة الحقول المطلوبة", AlertForm.AlertType.Error);
@@ -505,19 +571,6 @@ namespace DemoProject
                 hasError = true;
             }
 
-            if (string.IsNullOrWhiteSpace(contract_status_COB.Text))
-            {
-                Error_contract_status.Visible = true;
-                contract_status_COB.Focus();
-                hasError = true;
-            }
-
-            if (string.IsNullOrWhiteSpace(contract_type_COB.Text))
-            {
-                Error_contract_type.Visible = true;
-                contract_type_COB.Focus();
-                hasError = true;
-            }
             if (string.IsNullOrWhiteSpace(road_length_TB.Text))
             {
                 road_length_Error.Visible = true;
@@ -555,110 +608,188 @@ namespace DemoProject
             }
             else
             {
-                int lastId = int.Parse(this.roadsTableAdapter.GetData()
-               .OrderByDescending(r => Convert.ToInt32(r.road_id))
-               .First()
-               .road_id);
-
+                // 3. Safely generate new ID
+                var roadsData = this.roadsTableAdapter.GetDataAll();
+                var lastRow = roadsData.OrderByDescending(r => Convert.ToInt32(r.road_id)).FirstOrDefault();
+                int lastId = lastRow != null ? Convert.ToInt32(lastRow.road_id) : 0;
                 int newId = lastId + 1;
-                roadsTableAdapter.Insert(
-                    newId.ToString(),
-                    Road_Name_TB.Text,
-                    Toll_Bath_Count_TB.Text,
-                    Administrative_Affiliation_TB.Text,
-                    Financial_Affiliation_TB.Text,
-                    contract_type_COB.Text,
-                    contract_status_COB.Text,
-                    council_of_ministers_decision_TB.Text,
-                    council_of_ministers_decision_Date_TB.Value,
-                    contract_signing_date_TB.Value,
-                    franchise_Contract_Duration_TB.Value,
-                    number_of_exits_TB.Text,
-                    road_length_TB.Text,
-                    road_length_including_branches_TB.Text,
-                    number_of_operation_staff_TB.Text,
-                    company_percentage_TB.Text,
-                    road_authority_percentage_TB.Text,
-                    approvalFiles.TryGetValue("contract_type_COB", out var filePathcontract) ? filePathcontract.ToString() : null,
-                    approvalFiles.TryGetValue("council_of_ministers_decision_TB", out var filePathdecision) ? filePathdecision.ToString() : null
-                    );
-                var query = this.roadsTableAdapter.GetData();
-                advancedDataGridView1.DataSource = query;
-                ShowAlert("تمت العملية بنجاح", AlertForm.AlertType.Success);
-                UpdateRowCount();
+                if (Road_Radio.Checked)
+                {
+                    roadsTableAdapter.Insert(
+                        newId.ToString(),
+                        Road_Name_TB.Text,
+                        Toll_Bath_Count_TB.Text,
+                        Administrative_Affiliation_TB.Text,
+                        Financial_Affiliation_TB.Text,
+                        "No Type",
+                        "No Status",
+                        council_of_ministers_decision_TB.Text,
+                        DateTime.Now,// NO Date to store so it store defult time now
+                        contract_signing_date_TB.Value,
+                        franchise_Contract_Duration_TB.Value,
+                        number_of_exits_TB.Text,
+                        road_length_TB.Text,
+                        road_length_including_branches_TB.Text,
+                        number_of_operation_staff_TB.Text,
+                        company_percentage_TB.Text,
+                        road_authority_percentage_TB.Text,
+                        approvalFiles.TryGetValue("contract_type_COB", out var filePathcontract) ? filePathcontract.ToString() : "",
+                        approvalFiles.TryGetValue("council_of_ministers_decision_TB", out var filePathdecision) ? filePathdecision.ToString() : "",
+                         Duration_Contract_TB.Text,
+                        franchise_Contract_Duration_TB.Value,
+                        nature_TB.Text,
+                        Companyresp_TB.Text,
+                        additional_TB.Text,                
+                        Ways_Right_TB.Text,
+                        DescRouteFrom_TB.Text,
+                        DescRouteTo_TB.Text
+                        );
+                    LoadRoadsData();
+                    ShowAlert("تمت العملية بنجاح", AlertForm.AlertType.Success);
+                    UpdateRowCount();
+                }
+                else if (Station_Radio.Checked)
+                {       
+                    roadsTableAdapter.Insert(
+                      newId.ToString(),
+                      Road_Name_TB.Text,
+                      "...",
+                      Administrative_Affiliation_TB.Text,
+                      Financial_Affiliation_TB.Text,
+                      "No Type",
+                      "No Status",
+                      "...",
+                      DateTime.Now,// NO Date to store so it store defult time now
+                      contract_signing_date_TB.Value,
+                      franchise_Contract_Duration_TB.Value,
+                      "...",
+                      "...",
+                      "...",
+                      number_of_operation_staff_TB.Text,
+                      company_percentage_TB.Text,
+                      road_authority_percentage_TB.Text,
+                      approvalFiles.TryGetValue("contract_type_COB", out var filePathcontract) ? filePathcontract.ToString() : "",
+                      "...", 
+                      Duration_Contract_TB.Text,
+                      franchise_Contract_Duration_TB.Value,
+                      "...",
+                      Companyresp_TB.Text,
+                      "...",
+                      "...",
+                      "...",
+                      "..."
+                      );
+                }
             }
 
         }
+        public void VisabalityOfFileds(bool Checked)
+        {
+            Toll_Bath_Count_TB.Enabled = Checked;
+            Toll_Bath_Count_TB.Text = "...";
 
+            nature_TB.Enabled = Checked;
+            nature_TB.Text = "...";
+
+            additional_TB.Enabled = Checked;
+            additional_TB.Text = "...";
+
+            number_of_exits_TB.Enabled = Checked;
+            number_of_exits_TB.Text = "...";
+
+            road_length_TB.Enabled = Checked;
+            road_length_TB.Text = "...";
+
+            Ways_Right_TB.Enabled = Checked;
+            Ways_Right_TB.Text = "...";
+
+            DescRouteFrom_TB.Enabled = Checked;
+            DescRouteFrom_TB.Text = "...";
+
+            DescRouteTo_TB.Enabled = Checked;
+            DescRouteTo_TB.Text = "...";
+
+            road_length_including_branches_TB.Enabled = Checked;
+            road_length_including_branches_TB.Text = "...";
+
+            council_of_ministers_decision_TB.Enabled = Checked;
+            council_of_ministers_decision_TB.Text = "...";
+
+            guna2Panel5.Visible = Checked;
+        }
         private void serial_number_TB_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(serial_number_TB.Text))
-            {
-                Error_Serial.Visible = false;
-            }
-            var x = this.roadsTableAdapter.GetDataByID(serial_number_TB.Text);
-            if (x == null || x.Count==0)
-            {
-                // No data found — clear all fields
-               // serial_number_TB.Text = "";
-                Road_Name_TB.Text = "";
-                Toll_Bath_Count_TB.Text = "";
-                Administrative_Affiliation_TB.Text = "";
-                Financial_Affiliation_TB.Text = "";
-                council_of_ministers_decision_TB.Text = "";
-                number_of_exits_TB.Text = "";
-                road_length_TB.Text = "";
-                company_percentage_TB.Text = "";
-                road_authority_percentage_TB.Text = "";
-                number_of_operation_staff_TB.Text = "";
-                road_length_including_branches_TB.Text = "";
-                contract_status_COB.SelectedIndex = -1;
-                contract_type_COB.SelectedIndex = -1;
-                flowLayoutPanel1.Controls.Clear();
-                flowLayoutPanel2.Controls.Clear();
-                return;
-            }
-            serial_number_TB.Text = x.First().road_id;
-            Road_Name_TB.Text = x.First().road_name;
-            Toll_Bath_Count_TB.Text = x.First().Toll_Booth_Count;
-            Administrative_Affiliation_TB.Text = x.First().Administrative_Affiliation;
-            Financial_Affiliation_TB.Text = x.First().Financial_Affiliation;
-            council_of_ministers_decision_TB.Text = x.First().council_of_ministers_decision;
-            number_of_exits_TB.Text = x.First().number_of_exits;
-            road_length_TB.Text = x.First().road_length;
-            company_percentage_TB.Text = x.First().company_percentage;
-            road_authority_percentage_TB.Text = x.First().road_authority_percentage;
-            number_of_operation_staff_TB.Text = x.First().number_of_operation_staff;
-            road_length_including_branches_TB.Text = x.First().road_length_including_branches;
-            contract_status_COB.Text = x.First().contract_status.ToString() == "X" ? "X" : "✔";
-            contract_type_COB.Text = x.First().contract_type.ToString() == "X" ? "X" : "✔"; ;
-            string filePathContract = x.First().contract_image?.ToString();
-            string filePathCouncil = x.First().council_of_ministers_decision_Image?.ToString();
-            if (!string.IsNullOrWhiteSpace(filePathContract))
-            {
-                string contractFileName = Path.GetFileName(filePathContract);
+            //if (!string.IsNullOrWhiteSpace(serial_number_TB.Text))
+            //{
+            //    Error_Serial.Visible = false;
+            //}
+            //var x = this.roadsTableAdapter.GetDataByID(serial_number_TB.Text);
+            //if (x == null || x.Count==0)
+            //{
+            //    // No data found — clear all fields
+            //   // serial_number_TB.Text = "";
+            //    Road_Name_TB.Text = "";
+            //    Toll_Bath_Count_TB.Text = "";
+            //    Administrative_Affiliation_TB.Text = "";
+            //    Financial_Affiliation_TB.Text = "";
+            //    council_of_ministers_decision_TB.Text = "";
+            //    number_of_exits_TB.Text = "";
+            //    road_length_TB.Text = "";
+            //    company_percentage_TB.Text = "";
+            //    road_authority_percentage_TB.Text = "";
+            //    number_of_operation_staff_TB.Text = "";
+            //    road_length_including_branches_TB.Text = "";
 
-                if (!approvalFiles.ContainsKey(filePathContract))
-                {
-                    approvalFiles["contract_type_COB"] = new List<string>();
-                    approvalFiles["contract_type_COB"].Add(filePathContract);
-                }
-                AddFileIconToPanel(filePathContract, contractFileName, "contract_type_COB");
-            }
+            //    flowLayoutPanel1.Controls.Clear();
+            //    flowLayoutPanel2.Controls.Clear();
+            //    return;
+            //}
+            //serial_number_TB.Text = x.First().road_id;
+            //Road_Name_TB.Text = x.First().road_name;
+            //Toll_Bath_Count_TB.Text = x.First().Toll_Booth_Count;
+            //Administrative_Affiliation_TB.Text = x.First().Administrative_Affiliation;
+            //Financial_Affiliation_TB.Text = x.First().Financial_Affiliation;
+            //council_of_ministers_decision_TB.Text = x.First().council_of_ministers_decision;
+            //number_of_exits_TB.Text = x.First().number_of_exits;
+            //road_length_TB.Text = x.First().road_length;
+            //company_percentage_TB.Text = x.First().company_percentage;
+            //road_authority_percentage_TB.Text = x.First().road_authority_percentage;
+            //number_of_operation_staff_TB.Text = x.First().number_of_operation_staff;
+            //Companyresp_TB.Text = x.First().company_responsibility;
+            //DescRouteTo_TB.Text = x.First().Description_of_the_route_to;
+            //DescRouteFrom_TB.Text = x.First().Description_of_the_route_from;
+            //Ways_Right_TB.Text = x.First().right_of_way;
+            //Duration_Contract_TB.Text = x.First().contract_duration;
+            //nature_TB.Text = x.First().nature_of_operation;
+            //additional_TB.Text = x.First().additional_gates;
+            //road_length_including_branches_TB.Text = x.First().road_length_including_branches;
+            //string filePathContract = x.First().contract_image?.ToString();
+            //string filePathCouncil = x.First().council_of_ministers_decision_Image?.ToString();
+            //if (!string.IsNullOrWhiteSpace(filePathContract))
+            //{
+            //    string contractFileName = Path.GetFileName(filePathContract);
 
-            // Add council_of_ministers_decision_Image to panel 2
-            if (!string.IsNullOrWhiteSpace(filePathCouncil))
-            {
-                string councilFileName = Path.GetFileName(filePathCouncil);
+            //    if (!approvalFiles.ContainsKey(filePathContract))
+            //    {
+            //        approvalFiles["contract_type_COB"] = new List<string>();
+            //        approvalFiles["contract_type_COB"].Add(filePathContract);
+            //    }
+            //    AddFileIconToPanel(filePathContract, contractFileName, "contract_type_COB");
+            //}
 
-                if (!approvalFiles.ContainsKey(filePathCouncil))
-                {
-                    approvalFiles["council_of_ministers_decision_TB"] = new List<string>();
-                    approvalFiles["council_of_ministers_decision_TB"].Add(filePathCouncil);
+            //// Add council_of_ministers_decision_Image to panel 2
+            //if (!string.IsNullOrWhiteSpace(filePathCouncil))
+            //{
+            //    string councilFileName = Path.GetFileName(filePathCouncil);
 
-                }
-                AddFileIconToPanel(filePathCouncil, councilFileName, "council_of_ministers_decision_TB");
-            }
+            //    if (!approvalFiles.ContainsKey(filePathCouncil))
+            //    {
+            //        approvalFiles["council_of_ministers_decision_TB"] = new List<string>();
+            //        approvalFiles["council_of_ministers_decision_TB"].Add(filePathCouncil);
+
+            //    }
+            //    AddFileIconToPanel(filePathCouncil, councilFileName, "council_of_ministers_decision_TB");
+            //}
 
         }
 
@@ -704,18 +835,11 @@ namespace DemoProject
 
         private void contract_status_COB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(contract_status_COB.Text))
-            {
-                Error_contract_status.Visible = false;
-            }
+
         }
 
         private void contract_type_COB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(contract_type_COB.Text))
-            {
-                Error_contract_type.Visible = false;
-            }
         }
 
         private void franchise_Contract_Duration_TB_TextChanged(object sender, EventArgs e)
@@ -728,7 +852,7 @@ namespace DemoProject
 
         private void skyButton2_Click_1(object sender, EventArgs e)
         {
-
+            TrueFunction();
             if (advancedDataGridView1.Rows.Count == 0)
             {
                 ShowAlert("لا يوجد بيانات", AlertForm.AlertType.Error);
@@ -754,25 +878,35 @@ namespace DemoProject
             // ✅ Set sheet direction to RTL
             sheet.DisplayRightToLeft = true;
 
-            int excelCol = 1;
+            int colCount = advancedDataGridView1.Columns.Cast<DataGridViewColumn>()
+                          .Count(c => c.Visible && c.Name.ToLower() != "select");
 
-            // ✅ Write headers and align right
+            // --- ✅ Add Title Row ---
+            var titleRange = sheet.Range[sheet.Cells[1, 1], sheet.Cells[1, colCount]];
+            titleRange.Merge();
+
+            // تنسيقات العنوان
+            titleRange.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+            titleRange.VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
+            titleRange.Value = fileNameTextBox.Text;
+            int excelCol = 1;
             for (int col = 0; col < advancedDataGridView1.Columns.Count; col++)
             {
                 var gridCol = advancedDataGridView1.Columns[col];
                 if (gridCol.Visible && gridCol.Name.ToLower() != "select")
                 {
-                    var cell = (Microsoft.Office.Interop.Excel.Range)sheet.Cells[1, excelCol];
+                    var cell = (Microsoft.Office.Interop.Excel.Range)sheet.Cells[2, excelCol];
                     cell.Value = gridCol.HeaderText;
                     cell.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignRight;
                     cell.Font.Bold = true;
+                    //Theme color gray
+
                     excelCol++;
                 }
-
             }
 
-            // ✅ Write data and align right
-            int excelRow = 2;
+            // ✅ Write data (Row 3 onwards)
+            int excelRow = 3;
             foreach (DataGridViewRow row in advancedDataGridView1.Rows)
             {
                 if (row.IsNewRow) continue;
@@ -785,7 +919,17 @@ namespace DemoProject
 
                     var value = row.Cells[col].Value;
                     var cell = (Microsoft.Office.Interop.Excel.Range)sheet.Cells[excelRow, excelCol];
-                    cell.Value = value != null ? value.ToString() : "";
+
+                    if (value is DateTime dtValue) // ✅ لو الخلية تاريخ
+                    {
+                        cell.Value = dtValue;
+                        cell.NumberFormat = "dd/MM/yyyy"; // 🔹 التنسيق المطلوب
+                    }
+                    else
+                    {
+                        cell.Value = value != null ? value.ToString() : "";
+                    }
+
                     cell.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignRight;
                     excelCol++;
                 }
@@ -794,22 +938,32 @@ namespace DemoProject
             }
 
             // ✅ Auto fit and formatting
+            sheet.Cells.Font.Size = 14;
+            sheet.Cells.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+            sheet.Cells.VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
             sheet.Columns.AutoFit();
             sheet.Rows.AutoFit();
-            sheet.Cells.Font.Size = 12;
+            titleRange.Font.Size = 28;
+            titleRange.Font.Bold = true;
+            titleRange.RowHeight = 80;
 
-            // ✅ Apply plain borders and remove styling
+
+
+            // ✅ Borders and background cleanup
             int totalRows = excelRow - 1;
-            int totalCols = excelCol - 1;
+            int totalCols = colCount;
             var fullRange = sheet.Range[sheet.Cells[1, 1], sheet.Cells[totalRows, totalCols]];
 
-            // Set borders
             fullRange.Borders.LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
             fullRange.Borders.Weight = Microsoft.Office.Interop.Excel.XlBorderWeight.xlThin;
-
-            // Set background to white (remove alternating rows, etc.)
             fullRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.White);
-
+            titleRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGray);
+            sheet.Cells.WrapText = false;
+            // Make headers gray too
+            var headerRange = sheet.Range[sheet.Cells[2, 1], sheet.Cells[2, colCount]];
+            headerRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGray);
+            headerRange.Font.Bold = true;
+            headerRange.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
             try
             {
                 workbook.SaveAs(fullPath);
@@ -818,9 +972,12 @@ namespace DemoProject
             catch (Exception ex)
             {
                 MessageBox.Show($"حدث خطأ أثناء حفظ الملف:\n{ex.Message}", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                FalseFunction();
             }
 
+            FalseFunction();
         }
+
 
         private void serial_number_TB_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -1122,29 +1279,39 @@ namespace DemoProject
             }
         }
 
-        private async void guna2Button2_Click(object sender, EventArgs e)
+        private void guna2Button2_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show(
+               "هل أنت متأكد من أنك تريد تعديل هذه البيانات؟",
+               "تأكيد التعديل",
+               MessageBoxButtons.YesNo,
+               MessageBoxIcon.Question
+           );
+            if (result != DialogResult.Yes)
+            {
+                return;
+            }
             var x = this.roadsTableAdapter.GetDataByID(serial_number_TB.Text);
             if (x == null || x.Count == 0)
             {
-                ShowAlert("No data to update it", AlertForm.AlertType.Error);
+                ShowAlert("لا يوجد هذا البيان للتعديل", AlertForm.AlertType.Error);
                 return;
             }
 
             string filePathcouncil = (approvalFiles != null && approvalFiles.Count > 0)
                            ? approvalFiles["council_of_ministers_decision_TB"].ToString()
-                           : null;
+                           : "";
             string filePathContract = (approvalFiles != null && approvalFiles.Count > 0)
                            ? approvalFiles["contract_type_COB"].ToString()
-                           : null;
+                           : "";
 
             this.roadsTableAdapter.UpdateQuery(
                 Road_Name_TB.Text,
                 Toll_Bath_Count_TB.Text,
                 Administrative_Affiliation_TB.Text,
                 Financial_Affiliation_TB.Text,
-                contract_type_COB.Text,
-                contract_status_COB.Text,
+                "No type",
+                "Not status",
                 council_of_ministers_decision_TB.Text,
                 contract_signing_date_TB.Value.ToString(),
                 contract_signing_date_TB.Value.ToString(),
@@ -1157,10 +1324,19 @@ namespace DemoProject
                 road_authority_percentage_TB.Text,
                 filePathContract,
                 filePathcouncil,
+                DescRouteFrom_TB.Text,
+                DescRouteTo_TB.Text,
+                additional_TB.Text,
+                Companyresp_TB.Text,
+                Duration_Contract_TB.Text,
+                franchise_Contract_Duration_TB.Value.ToString(),
+                nature_TB.Text,
+                Ways_Right_TB.Text,
                 serial_number_TB.Text
                 );
-            await LoadSourceDataAsync();
-            ShowAlert("Data updated Successfully", AlertForm.AlertType.Success);
+            LoadRoadsData();
+            ShowAlert("تم التعديل بنجاح", AlertForm.AlertType.Success);
+            UpdateRowCount();
         }
 
         private void advancedDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -1173,7 +1349,7 @@ namespace DemoProject
             }
         }
 
-        private async void guna2Button3_Click(object sender, EventArgs e)
+        private void guna2Button3_Click(object sender, EventArgs e)
         {
             // Confirm with user
             DialogResult result = MessageBox.Show(
@@ -1202,7 +1378,7 @@ namespace DemoProject
 
             if (deleted > 0)
             {
-                await LoadSourceDataAsync();
+                LoadRoadsData();
                 ShowAlert($"{deleted} صف تم حذفه بنجاح", AlertForm.AlertType.Success);
             }
             else
@@ -1235,13 +1411,293 @@ namespace DemoProject
             long userId = SessionData.UserId;
             ENGReportForm menu = new ENGReportForm(name, userId);
             menu.Show();
-            menu.ShowMenuView();
+            menu.ShowRoadView();
             // Close the current form that contains this UserControl
             Form parentForm = this.FindForm();
             if (parentForm != null)
             {
                 parentForm.Close(); // or parentForm.Hide(); if you just want to hide it
             }
+        }
+        //private DataTable LoadViewData()
+        //{
+
+        //    var query = testViewReportTableAdapter.GetData();
+        //    var joinedList = query.ToList();
+
+        //    // Convert to DataTable
+        //    DataTable original = ToDataTable(joinedList);
+
+        //    // Clone & fix Date columns
+        //    DataTable converted = original.Clone();
+        //    converted.Columns["council_of_ministers_decision_Date"].DataType = typeof(DateTime);
+        //    converted.Columns["franchise_Contract_Duration"].DataType = typeof(DateTime);
+        //    converted.Columns["contract_signing_date"].DataType = typeof(DateTime);
+
+        //    foreach (DataRow row in original.Rows)
+        //    {
+        //        var newRow = converted.NewRow();
+        //        foreach (DataColumn col in original.Columns)
+        //        {
+        //            if (col.ColumnName == "council_of_ministers_decision_Date" ||
+        //                col.ColumnName == "franchise_Contract_Duration" ||
+        //                col.ColumnName == "contract_signing_date")
+        //            {
+        //                if (DateTime.TryParse(row[col].ToString(), out DateTime dt))
+        //                    newRow[col.ColumnName] = dt;
+        //                else
+        //                    newRow[col.ColumnName] = DBNull.Value;
+        //            }
+        //            else
+        //            {
+        //                newRow[col.ColumnName] = row[col];
+        //            }
+        //        }
+        //        converted.Rows.Add(newRow);
+        //    }
+
+        //    // --- Part 2: Bind to UI ---
+        //    BindingSource bindingSource = new BindingSource();
+        //    bindingSource.DataSource = converted;
+        //    advancedDataGridView1.DataSource = bindingSource;
+
+        //    if (!advancedDataGridView1.Columns.Contains("Select"))
+        //    {
+        //        DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
+        //        checkBoxColumn.HeaderText = "تحديد";
+        //        checkBoxColumn.Name = "Select";
+        //        checkBoxColumn.Width = 60;
+        //        checkBoxColumn.ReadOnly = false;
+        //        checkBoxColumn.TrueValue = true;
+        //        checkBoxColumn.FalseValue = false;
+        //        advancedDataGridView1.Columns.Add(checkBoxColumn);
+        //    }
+
+        //    advancedDataGridView1.Columns["Select"].DisplayIndex = 0;
+
+        //    // Call translations after binding
+        //    translateToArabic();
+        //    return converted;
+        //}
+        //private DataTable FilterColumns(DataTable original)
+        //{
+        //    DataTable filtered = new DataTable();
+
+        //    // keep only checked columns
+        //    foreach (string headerText in checkedListBox1.CheckedItems)
+        //    {
+        //        if (columnMap.ContainsKey(headerText)) // header → real column
+        //        {
+        //            string colName = columnMap[headerText];
+        //            filtered.Columns.Add(colName, original.Columns[colName].DataType);
+        //        }
+        //    }
+
+        //    // copy rows
+        //    foreach (DataRow row in original.Rows)
+        //    {
+        //        DataRow newRow = filtered.NewRow();
+        //        foreach (string headerText in checkedListBox1.CheckedItems)
+        //        {
+        //            if (columnMap.ContainsKey(headerText))
+        //            {
+        //                string colName = columnMap[headerText];
+        //                newRow[colName] = row[colName];
+        //            }
+        //        }
+        //        filtered.Rows.Add(newRow);
+        //    }
+
+        //    return filtered;
+        //}
+        private void skyButton4_Click(object sender, EventArgs e)
+        {
+            reportViewer1.Visible = true;
+            reportViewer1.LocalReport.DataSources.Clear();
+            DataTable original = ((DataView)((BindingSource)advancedDataGridView1.DataSource).List).ToTable();
+            DataTable filtered = new DataTable();
+            foreach (string headerText in checkedListBox1.CheckedItems)
+            {
+                if (columnMap.ContainsKey(headerText)) // map header → real column
+                {
+                    string colName = columnMap[headerText];
+                    filtered.Columns.Add(colName, original.Columns[colName].DataType);
+                }
+            }
+            foreach (DataRow row in original.Rows)
+            {
+                var newRow = filtered.NewRow();
+                foreach (string headerText in checkedListBox1.CheckedItems)
+                {
+                    if (columnMap.ContainsKey(headerText))
+                    {
+                        string colName = columnMap[headerText];
+                        newRow[colName] = row[colName];
+                    }
+                }
+                filtered.Rows.Add(newRow);
+            }
+
+            string rdlc = GenerateDynamicRDLC(filtered);
+
+            using (var stream = new MemoryStream(Encoding.UTF8.GetBytes(rdlc)))
+            {
+                reportViewer1.LocalReport.LoadReportDefinition(stream);
+            }
+
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(
+                new Microsoft.Reporting.WinForms.ReportDataSource("DataSet2", filtered));//change this data set to new one
+            reportViewer1.RefreshReport();
+        }
+        private string GenerateDynamicRDLC(DataTable dt)
+        {
+            using (var ms = ReportHelperEnhanced.GenerateDynamicRDLC(dt, columnMap, "DataSet2",Report_TB.Text))
+            {
+                return Encoding.UTF8.GetString(ms.ToArray());
+            }
+        }
+
+        private void guna2RadioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            guna2Button1.Visible = Add_Radio.Checked;
+            guna2Button2.Visible = !Add_Radio.Checked;
+            guna2Button1.Enabled = Add_Radio.Checked;
+            guna2Button2.Enabled = !Add_Radio.Checked;
+        }
+
+        private void Update_Radio_CheckedChanged(object sender, EventArgs e)
+        {
+            guna2Button2.Visible = Update_Radio.Checked;
+            guna2Button1.Visible = !Update_Radio.Checked;
+            guna2Button2.Enabled = Update_Radio.Checked;
+            guna2Button1.Enabled = !Update_Radio.Checked;
+        }
+
+        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tabPage4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DescRouteTo_TB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DescRouteFrom_TB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2RadioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            VisabalityOfFileds(Road_Radio.Checked);
+        }
+
+        private void Station_Radio_CheckedChanged(object sender, EventArgs e)
+        {
+            VisabalityOfFileds(!Station_Radio.Checked);
+        }
+
+        private void advancedDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (Update_Radio.Checked) {
+                if (e.RowIndex >= 0)
+                {
+                    var serialNumber = advancedDataGridView1.Rows[e.RowIndex]
+                                         .Cells["road_id"].Value?.ToString();
+
+                    if (!string.IsNullOrEmpty(serialNumber))
+                    {
+                        serial_number_TB.Text = serialNumber;
+                        LoadRoadsDataFromViewUpdate(serialNumber);
+                    }
+                }
+            }
+        }
+        private void LoadRoadsDataFromViewUpdate(string serialNumber)
+        {
+            if (!string.IsNullOrWhiteSpace(serial_number_TB.Text))
+            {
+                Error_Serial.Visible = false;
+            }
+            var x = this.roadsTableAdapter.GetDataByID(serial_number_TB.Text);
+            if (x == null || x.Count == 0)
+            {
+                // No data found — clear all fields
+                // serial_number_TB.Text = "";
+                Road_Name_TB.Text = "";
+                Toll_Bath_Count_TB.Text = "";
+                Administrative_Affiliation_TB.Text = "";
+                Financial_Affiliation_TB.Text = "";
+                council_of_ministers_decision_TB.Text = "";
+                number_of_exits_TB.Text = "";
+                road_length_TB.Text = "";
+                company_percentage_TB.Text = "";
+                road_authority_percentage_TB.Text = "";
+                number_of_operation_staff_TB.Text = "";
+                road_length_including_branches_TB.Text = "";
+
+                flowLayoutPanel1.Controls.Clear();
+                flowLayoutPanel2.Controls.Clear();
+                return;
+            }
+            serial_number_TB.Text = x.First().road_id;
+            Road_Name_TB.Text = x.First().road_name;
+            Toll_Bath_Count_TB.Text = x.First().Toll_Booth_Count;
+            Administrative_Affiliation_TB.Text = x.First().Administrative_Affiliation;
+            Financial_Affiliation_TB.Text = x.First().Financial_Affiliation;
+            council_of_ministers_decision_TB.Text = x.First().council_of_ministers_decision;
+            number_of_exits_TB.Text = x.First().number_of_exits;
+            road_length_TB.Text = x.First().road_length;
+            company_percentage_TB.Text = x.First().company_percentage;
+            road_authority_percentage_TB.Text = x.First().road_authority_percentage;
+            number_of_operation_staff_TB.Text = x.First().number_of_operation_staff;
+            Companyresp_TB.Text = x.First().company_responsibility;
+            DescRouteTo_TB.Text = x.First().Description_of_the_route_to;
+            DescRouteFrom_TB.Text = x.First().Description_of_the_route_from;
+            Ways_Right_TB.Text = x.First().right_of_way;
+            Duration_Contract_TB.Text = x.First().contract_duration;
+            nature_TB.Text = x.First().nature_of_operation;
+            additional_TB.Text = x.First().additional_gates;
+            road_length_including_branches_TB.Text = x.First().road_length_including_branches;
+            string filePathContract = x.First().contract_image?.ToString();
+            string filePathCouncil = x.First().council_of_ministers_decision_Image?.ToString();
+            if (!string.IsNullOrWhiteSpace(filePathContract))
+            {
+                string contractFileName = Path.GetFileName(filePathContract);
+
+                if (!approvalFiles.ContainsKey(filePathContract))
+                {
+                    approvalFiles["contract_type_COB"] = new List<string>();
+                    approvalFiles["contract_type_COB"].Add(filePathContract);
+                }
+                AddFileIconToPanel(filePathContract, contractFileName, "contract_type_COB");
+            }
+
+            // Add council_of_ministers_decision_Image to panel 2
+            if (!string.IsNullOrWhiteSpace(filePathCouncil))
+            {
+                string councilFileName = Path.GetFileName(filePathCouncil);
+
+                if (!approvalFiles.ContainsKey(filePathCouncil))
+                {
+                    approvalFiles["council_of_ministers_decision_TB"] = new List<string>();
+                    approvalFiles["council_of_ministers_decision_TB"].Add(filePathCouncil);
+
+                }
+                AddFileIconToPanel(filePathCouncil, councilFileName, "council_of_ministers_decision_TB");
+            }
+        }
+
+        private void advancedDataGridView1_Scroll(object sender, ScrollEventArgs e)
+        {
+            advancedDataGridView1.Invalidate();
         }
     }
 }
