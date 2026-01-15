@@ -34,7 +34,9 @@
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new ReaLTaiizor.Controls.Panel();
+            this.focusBoard = new System.Windows.Forms.Panel();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.button8 = new ReaLTaiizor.Controls.Button();
             this.panel2 = new ReaLTaiizor.Controls.Panel();
             this.focusSetting = new System.Windows.Forms.Panel();
             this.focusAdmin = new System.Windows.Forms.Panel();
@@ -71,12 +73,14 @@
             this.functionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager = new DemoProject.DATABASE2DataSetTableAdapters.TableAdapterManager();
-            this.roadsControl1 = new DemoProject.RoadsControl();
-            this.projectsControl1 = new DemoProject.ProjectsControl();
-            this.engineeringManagementControl1 = new DemoProject.EngineeringManagementControl();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.dashBoardControl1 = new DemoProject.DashBoardControl();
             this.systemAdministratorControl1 = new DemoProject.SystemAdministratorControl();
             this.settingControl1 = new DemoProject.SettingControl();
             this.investmentsControl1 = new DemoProject.InvestmentsControl();
+            this.roadsControl1 = new DemoProject.RoadsControl();
+            this.engineeringManagementControl1 = new DemoProject.EngineeringManagementControl();
+            this.projectsControl1 = new DemoProject.ProjectsControl();
             this.guna2Panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -91,6 +95,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.functionsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).BeginInit();
+            this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -100,8 +105,9 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1360, 36);
+            this.guna2Panel1.Size = new System.Drawing.Size(1370, 36);
             this.guna2Panel1.TabIndex = 18;
+            this.guna2Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2Panel1_MouseDown);
             // 
             // nightControlBox1
             // 
@@ -114,11 +120,11 @@
             this.nightControlBox1.DisableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
             this.nightControlBox1.DisableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.nightControlBox1.EnableCloseColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.EnableMaximizeButton = false;
+            this.nightControlBox1.EnableMaximizeButton = true;
             this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.nightControlBox1.EnableMinimizeButton = true;
             this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.Location = new System.Drawing.Point(1221, 0);
+            this.nightControlBox1.Location = new System.Drawing.Point(1231, 0);
             this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
             this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -136,24 +142,34 @@
             this.flowLayoutPanel1.Controls.Add(this.panel3);
             this.flowLayoutPanel1.Controls.Add(this.panel4);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(1182, 36);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1192, 36);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(178, 747);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(178, 713);
             this.flowLayoutPanel1.TabIndex = 20;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.focusBoard);
             this.panel1.Controls.Add(this.guna2CircleButton1);
+            this.panel1.Controls.Add(this.button8);
             this.panel1.EdgeColor = System.Drawing.Color.Transparent;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(173, 56);
+            this.panel1.Size = new System.Drawing.Size(173, 72);
             this.panel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.panel1.TabIndex = 21;
             this.panel1.Text = "panel1";
+            // 
+            // focusBoard
+            // 
+            this.focusBoard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.focusBoard.Location = new System.Drawing.Point(5, 39);
+            this.focusBoard.Name = "focusBoard";
+            this.focusBoard.Size = new System.Drawing.Size(10, 35);
+            this.focusBoard.TabIndex = 49;
             // 
             // guna2CircleButton1
             // 
@@ -177,6 +193,25 @@
             this.guna2CircleButton1.TabIndex = 19;
             this.guna2CircleButton1.UseTransparentBackground = true;
             // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.Transparent;
+            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button8.EnteredColor = System.Drawing.Color.Transparent;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button8.InactiveColor = System.Drawing.Color.Transparent;
+            this.button8.Location = new System.Drawing.Point(3, 39);
+            this.button8.Name = "button8";
+            this.button8.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.button8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button8.Size = new System.Drawing.Size(168, 34);
+            this.button8.TabIndex = 25;
+            this.button8.Text = "لوحة الاحصائيات";
+            this.button8.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
@@ -187,7 +222,7 @@
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button4);
             this.panel2.EdgeColor = System.Drawing.Color.Transparent;
-            this.panel2.Location = new System.Drawing.Point(3, 65);
+            this.panel2.Location = new System.Drawing.Point(3, 81);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
             this.panel2.Size = new System.Drawing.Size(168, 120);
@@ -283,7 +318,7 @@
             this.MenuContainer.Controls.Add(this.button6);
             this.MenuContainer.Controls.Add(this.button7);
             this.MenuContainer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.MenuContainer.Location = new System.Drawing.Point(0, 188);
+            this.MenuContainer.Location = new System.Drawing.Point(0, 204);
             this.MenuContainer.Margin = new System.Windows.Forms.Padding(0);
             this.MenuContainer.Name = "MenuContainer";
             this.MenuContainer.Size = new System.Drawing.Size(176, 35);
@@ -378,7 +413,7 @@
             this.panel3.Controls.Add(this.foucsRoad);
             this.panel3.Controls.Add(this.button2);
             this.panel3.EdgeColor = System.Drawing.Color.Transparent;
-            this.panel3.Location = new System.Drawing.Point(3, 226);
+            this.panel3.Location = new System.Drawing.Point(3, 242);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
             this.panel3.Size = new System.Drawing.Size(168, 38);
@@ -419,7 +454,7 @@
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.Controls.Add(this.button3);
             this.panel4.EdgeColor = System.Drawing.Color.Transparent;
-            this.panel4.Location = new System.Drawing.Point(3, 270);
+            this.panel4.Location = new System.Drawing.Point(3, 286);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
             this.panel4.Size = new System.Drawing.Size(168, 35);
@@ -542,13 +577,16 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.accessTableAdapter = this.accessTableAdapter;
+            this.tableAdapterManager.Activity_LookupTableAdapter = null;
             this.tableAdapterManager.approvalsTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.documentsTableAdapter = null;
             this.tableAdapterManager.functionsTableAdapter = this.functionsTableAdapter;
             this.tableAdapterManager.governorateTableAdapter = null;
+            this.tableAdapterManager.Invesments_ListTableAdapter = null;
             this.tableAdapterManager.investmentsTableAdapter = null;
             this.tableAdapterManager.landsTableAdapter = null;
+            this.tableAdapterManager.Note_pageTableAdapter = null;
             this.tableAdapterManager.pagesTableAdapter = this.pagesTableAdapter;
             this.tableAdapterManager.projectsTableAdapter = null;
             this.tableAdapterManager.roadsTableAdapter = null;
@@ -556,77 +594,96 @@
             this.tableAdapterManager.UpdateOrder = DemoProject.DATABASE2DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.usersTableAdapter = this.usersTableAdapter;
             // 
-            // roadsControl1
+            // guna2Panel2
             // 
-            this.roadsControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.roadsControl1.Location = new System.Drawing.Point(6, 36);
-            this.roadsControl1.Name = "roadsControl1";
-            this.roadsControl1.Size = new System.Drawing.Size(1177, 740);
-            this.roadsControl1.TabIndex = 51;
+            this.guna2Panel2.Controls.Add(this.dashBoardControl1);
+            this.guna2Panel2.Controls.Add(this.systemAdministratorControl1);
+            this.guna2Panel2.Controls.Add(this.settingControl1);
+            this.guna2Panel2.Controls.Add(this.investmentsControl1);
+            this.guna2Panel2.Controls.Add(this.roadsControl1);
+            this.guna2Panel2.Controls.Add(this.engineeringManagementControl1);
+            this.guna2Panel2.Controls.Add(this.projectsControl1);
+            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 36);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(1192, 713);
+            this.guna2Panel2.TabIndex = 0;
             // 
-            // projectsControl1
+            // dashBoardControl1
             // 
-            this.projectsControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.projectsControl1.Location = new System.Drawing.Point(0, 36);
-            this.projectsControl1.Name = "projectsControl1";
-            this.projectsControl1.Size = new System.Drawing.Size(1184, 740);
-            this.projectsControl1.TabIndex = 50;
-            // 
-            // engineeringManagementControl1
-            // 
-            this.engineeringManagementControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.engineeringManagementControl1.Location = new System.Drawing.Point(3, 36);
-            this.engineeringManagementControl1.Name = "engineeringManagementControl1";
-            this.engineeringManagementControl1.Size = new System.Drawing.Size(1180, 740);
-            this.engineeringManagementControl1.TabIndex = 46;
-            this.engineeringManagementControl1.Visible = false;
+            this.dashBoardControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(28)))), ((int)(((byte)(63)))));
+            this.dashBoardControl1.Location = new System.Drawing.Point(0, 0);
+            this.dashBoardControl1.Name = "dashBoardControl1";
+            this.dashBoardControl1.Size = new System.Drawing.Size(1192, 752);
+            this.dashBoardControl1.TabIndex = 53;
+            this.dashBoardControl1.Load += new System.EventHandler(this.dashBoardControl1_Load);
             // 
             // systemAdministratorControl1
             // 
-            this.systemAdministratorControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.systemAdministratorControl1.Location = new System.Drawing.Point(-1, 36);
+            this.systemAdministratorControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.systemAdministratorControl1.Location = new System.Drawing.Point(0, 0);
             this.systemAdministratorControl1.Name = "systemAdministratorControl1";
-            this.systemAdministratorControl1.Size = new System.Drawing.Size(1184, 739);
+            this.systemAdministratorControl1.Size = new System.Drawing.Size(1192, 713);
             this.systemAdministratorControl1.TabIndex = 47;
             this.systemAdministratorControl1.Visible = false;
             // 
             // settingControl1
             // 
-            this.settingControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.settingControl1.Location = new System.Drawing.Point(-11, 36);
+            this.settingControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.settingControl1.Location = new System.Drawing.Point(0, 0);
             this.settingControl1.Name = "settingControl1";
-            this.settingControl1.Size = new System.Drawing.Size(1193, 740);
+            this.settingControl1.Size = new System.Drawing.Size(1192, 713);
             this.settingControl1.TabIndex = 48;
             // 
             // investmentsControl1
             // 
-            this.investmentsControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.investmentsControl1.Location = new System.Drawing.Point(-10, 36);
+            this.investmentsControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.investmentsControl1.Location = new System.Drawing.Point(0, 0);
             this.investmentsControl1.Name = "investmentsControl1";
-            this.investmentsControl1.Size = new System.Drawing.Size(1193, 740);
+            this.investmentsControl1.Size = new System.Drawing.Size(1192, 713);
             this.investmentsControl1.TabIndex = 52;
+            // 
+            // roadsControl1
+            // 
+            this.roadsControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.roadsControl1.Location = new System.Drawing.Point(0, 0);
+            this.roadsControl1.Name = "roadsControl1";
+            this.roadsControl1.Size = new System.Drawing.Size(1192, 713);
+            this.roadsControl1.TabIndex = 51;
+            // 
+            // engineeringManagementControl1
+            // 
+            this.engineeringManagementControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.engineeringManagementControl1.Location = new System.Drawing.Point(0, 0);
+            this.engineeringManagementControl1.Name = "engineeringManagementControl1";
+            this.engineeringManagementControl1.Size = new System.Drawing.Size(1192, 713);
+            this.engineeringManagementControl1.TabIndex = 46;
+            this.engineeringManagementControl1.Visible = false;
+            // 
+            // projectsControl1
+            // 
+            this.projectsControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.projectsControl1.Location = new System.Drawing.Point(0, 0);
+            this.projectsControl1.Name = "projectsControl1";
+            this.projectsControl1.Size = new System.Drawing.Size(1192, 713);
+            this.projectsControl1.TabIndex = 50;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1360, 783);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2CircleProgressBar1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.systemAdministratorControl1);
-            this.Controls.Add(this.settingControl1);
-            this.Controls.Add(this.investmentsControl1);
-            this.Controls.Add(this.roadsControl1);
-            this.Controls.Add(this.projectsControl1);
-            this.Controls.Add(this.engineeringManagementControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "القائمة الرئيسية";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
             this.Load += new System.EventHandler(this.Form2_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -642,6 +699,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.functionsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).EndInit();
+            this.guna2Panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -709,5 +767,9 @@
         private DATABASE2DataSetTableAdapters.pagesTableAdapter pagesTableAdapter;
         private System.Windows.Forms.BindingSource pagesBindingSource;
         private DATABASE2DataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private ReaLTaiizor.Controls.Button button8;
+        private DashBoardControl dashBoardControl1;
+        private System.Windows.Forms.Panel focusBoard;
     }
 }

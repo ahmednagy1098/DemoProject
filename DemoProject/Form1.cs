@@ -9,18 +9,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
-
+using System.Data.SqlClient;
+using Microsoft.AspNetCore.SignalR.Client;
 namespace DemoProject
 {
     
     public partial class Form1 : Form
     {
         //SoundPlayer playeWelcome = new SoundPlayer(@"C:\Users\PC1\Downloads\welcomeLog_Manager1.wav");
+        HubConnection hubConnection;
         public Form1()
         {
             InitializeComponent();
-
+            //hubConnection = new HubConnectionBuilder().WithUrl("https://localhost:7212/ChatHub").Build();
+            //hubConnection.Closed += HubConnection_Closed;
+            //hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+            //{
+            //    var newMessage = $"{user} : {message}";
+            //    ShowAlert(newMessage, AlertForm.AlertType.Success);
+            //});
         }
+        //private async Task HubConnection_Closed(Exception arg)
+        //{
+        //    await Task.Delay(new Random().Next(0,5) * 1000);
+        //    await hubConnection.StartAsync();
+        //}
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -69,8 +82,41 @@ namespace DemoProject
             {
                 SessionData.UserId = matchedUser.id;
                 SessionData.UserName = matchedUser.user_name;
+
                 this.Hide();
+                //try
+                //{
+                //    if (hubConnection.State == HubConnectionState.Disconnected)
+                //        await hubConnection.StartAsync();
+
+                //    await hubConnection.InvokeAsync(
+                //        "SendMessage",
+                //        SessionData.UserName,
+                //        "Logged In"
+                //    );
+
+                //}
+                //catch (Exception ex)
+                //{
+                //    ShowAlert(ex.Message, AlertForm.AlertType.Error);
+
+                //}
                 //playeWelcome.Play();
+                //hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+                //{
+                //    var newMessage = $"{user}:{message}";
+                //    ShowAlert(newMessage, AlertForm.AlertType.Success);
+                //});
+                //try
+                //{
+                //    await hubConnection.StartAsync();
+                    
+                //}
+                //catch (Exception ex)
+                //{
+                //    ShowAlert(ex.Message, AlertForm.AlertType.Error);
+
+                //}
                 ShowAlert("مرحبا بك", AlertForm.AlertType.Success);
                 ENGReportForm menu = new ENGReportForm(matchedUser.user_name,matchedUser.id);
                 menu.Show();
@@ -91,23 +137,33 @@ namespace DemoProject
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dATABASE2DataSet.functions' table. You can move, or remove it, as needed.
-            this.functionsTableAdapter.Fill(this.dATABASE2DataSet.functions);
-            // TODO: This line of code loads data into the 'dATABASE2DataSet.access' table. You can move, or remove it, as needed.
-            this.accessTableAdapter.Fill(this.dATABASE2DataSet.access);
-            // TODO: This line of code loads data into the 'dATABASE2DataSet.users' table. You can move, or remove it, as needed.
-            this.usersTableAdapter.Fill(this.dATABASE2DataSet.users);
-            // TODO: This line of code loads data into the 'dATABASE2DataSet.roles' table. You can move, or remove it, as needed.
-            this.rolesTableAdapter.Fill(this.dATABASE2DataSet.roles);
-            // TODO: This line of code loads data into the 'dATABASE2DataSet.roles' table. You can move, or remove it, as needed.
-            this.rolesTableAdapter.Fill(this.dATABASE2DataSet.roles);
-            // TODO: This line of code loads data into the 'dATABASE2DataSet.pages' table. You can move, or remove it, as needed.
-            this.pagesTableAdapter.Fill(this.dATABASE2DataSet.pages);
-            // TODO: This line of code loads data into the 'database1DataSet.access' table. You can move, or remove it, as needed.
-
-            // TODO: This line of code loads data into the 'database1DataSet.roles' table. You can move, or remove it, as needed.
-
-            // TODO: This line of code loads data into the 'database1DataSet.users' table. You can move, or remove it, as needed.
+            try
+            {
+                // TODO: This line of code loads data into the 'dATABASE2DataSet.functions' table. You can move, or remove it, as needed.
+                this.functionsTableAdapter.Fill(this.dATABASE2DataSet.functions);
+                // TODO: This line of code loads data into the 'dATABASE2DataSet.access' table. You can move, or remove it, as needed.
+                this.accessTableAdapter.Fill(this.dATABASE2DataSet.access);
+                // TODO: This line of code loads data into the 'dATABASE2DataSet.users' table. You can move, or remove it, as needed.
+                this.usersTableAdapter.Fill(this.dATABASE2DataSet.users);
+                // TODO: This line of code loads data into the 'dATABASE2DataSet.roles' table. You can move, or remove it, as needed.
+                this.rolesTableAdapter.Fill(this.dATABASE2DataSet.roles);
+                // TODO: This line of code loads data into the 'dATABASE2DataSet.pages' table. You can move, or remove it, as needed.
+                this.pagesTableAdapter.Fill(this.dATABASE2DataSet.pages);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("خطأ في الاتصال بقاعدة البيانات من السيرفر: " + ex.Message,
+                   "Database Error",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("حدث خطأ غير متوقع: " + ex.Message,
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
 
         }
         private static int alertOffsetY = 0;
@@ -181,6 +237,8 @@ namespace DemoProject
                     SessionData.UserId = matchedUser.id;
                     SessionData.UserName = matchedUser.user_name;
                     this.Hide();
+
+
                     ShowAlert("مرحبا بك", AlertForm.AlertType.Success);
                     ENGReportForm menu = new ENGReportForm(matchedUser.user_name, matchedUser.id);
                     menu.Show();

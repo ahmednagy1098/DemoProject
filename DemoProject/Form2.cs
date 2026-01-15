@@ -10,25 +10,27 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using Timer = System.Windows.Forms.Timer;
-
+using System.Runtime.InteropServices;
 namespace DemoProject
 {
     public partial class Form2 : Form
     {
         private string _username;
         private long _user_id;
-
-        public void ShowMyUserControl(string user, long id)
+        private string _investment_type;
+        public void ShowMyUserControl(string user, long id, string Investment_type)
         {
+            SessionData.Investment_Type = null;
             ShowLoading(true);
             engineeringManagementControl1.SetUserData(user, id); // Pass data to the control
+            investmentsControl1.SetUserData(user, id, Investment_type);
             projectsControl1.SetUserData(user, id);
             engineeringManagementControl1.BringToFront();
             settingControl1.SendToBack();
             projectsControl1.SendToBack();
             systemAdministratorControl1.SendToBack();
             roadsControl1.SendToBack();
-            
+            this.dashBoardControl1.SendToBack();
 
 
             ShowLoading(false);
@@ -37,131 +39,179 @@ namespace DemoProject
             systemAdministratorControl1.Visible = false;
             roadsControl1.Visible = false;
             projectsControl1.Visible = false;
-
+            dashBoardControl1.Visible = false;
             focusENG.Visible = true;
             focusSetting.Visible = false;
             foucsRoad.Visible = false;
             focusAdmin.Visible = false;
             focusInvest.Visible = false;
+            focusBoard.Visible = false;
 
         }
-        public void ShowMyUserControl2(string user, long id)
+        public void ShowMyUserControl2(string user, long id, string Investment_type)
         {
+            SessionData.Investment_Type = null;
             settingControl1.SetUserData(user, id);
+            investmentsControl1.SetUserData(user, id, Investment_type);
             settingControl1.BringToFront();
             projectsControl1.SendToBack();
             engineeringManagementControl1.SendToBack();
             systemAdministratorControl1.SendToBack();
             roadsControl1.SendToBack();
-
+            this.dashBoardControl1.SendToBack();
             settingControl1.Visible = true;
             systemAdministratorControl1.Visible = false;
             engineeringManagementControl1.Visible = false;
             roadsControl1.Visible = false;
             projectsControl1.Visible = false;
-
+            dashBoardControl1.Visible = false;
             focusSetting.Visible = true;
             foucsRoad.Visible = false;
             focusENG.Visible = false;
             focusAdmin.Visible = false;
             focusInvest.Visible = false;
+            focusBoard.Visible = false;
         }
-        public void ShowMyUserControl5(string user, long id)//admin
+        public void ShowMyUserControl5(string user, long id, string Investment_type)//admin
         {
+            SessionData.Investment_Type = null;
             ShowLoading(true);
             systemAdministratorControl1.SetUserData(user, id);
-            
-            
-          
+
+
+            investmentsControl1.SetUserData(user, id, Investment_type);
             systemAdministratorControl1.Visible = true;
             engineeringManagementControl1.Visible = false;
             settingControl1.Visible = false;
             roadsControl1.Visible = false;
             projectsControl1.Visible = false;
-
+            dashBoardControl1.Visible = false;
             systemAdministratorControl1.BringToFront();
             engineeringManagementControl1.SendToBack();
             settingControl1.SendToBack();
             roadsControl1.SendToBack();
             projectsControl1.SendToBack();
-
+            this.dashBoardControl1.SendToBack();
             focusAdmin.Visible = true;
             focusENG.Visible = false;
             focusInvest.Visible = false;           
             focusSetting.Visible = false;
             foucsRoad.Visible = false;
+            focusBoard.Visible = false;
             ShowLoading(false);
         }
-        public void ShowMyUserControl3(string user, long id)
+        public void ShowMyUserControl3(string user, long id,string Investment_type)
         {
-            investmentsControl1.SetUserData(user, id);
+            SessionData.Investment_Type = Investment_type;
+            
+            investmentsControl1.SetUserData(user, id, Investment_type);
             projectsControl1.Visible = false;
             investmentsControl1.Visible = true;
             systemAdministratorControl1.Visible = false;
             engineeringManagementControl1.Visible = false;
             settingControl1.Visible = false;
             roadsControl1.Visible = false;
-
+            dashBoardControl1.Visible = false;
             projectsControl1.SendToBack();
             investmentsControl1.BringToFront();
             systemAdministratorControl1.SendToBack();
             engineeringManagementControl1.SendToBack();
             settingControl1.SendToBack();
             roadsControl1.SendToBack();
-
+            this.dashBoardControl1.SendToBack();
             focusInvest.Visible = true;
             focusENG.Visible = false;
             focusAdmin.Visible = false;
             focusSetting.Visible = false;
             foucsRoad.Visible = false;
+            focusBoard.Visible = false;
         }
-        public void ShowMyUserControl4(string user, long id)
+        public void ShowMyUserControl7(string user, long id, string Investment_type)
         {
+            SessionData.Investment_Type = Investment_type;
+
+            investmentsControl1.SetUserData(user, id, Investment_type);
+            projectsControl1.Visible = false;
+            investmentsControl1.Visible = false;
+            systemAdministratorControl1.Visible = false;
+            engineeringManagementControl1.Visible = false;
+            settingControl1.Visible = false;
+            roadsControl1.Visible = false;
+            dashBoardControl1.Visible = true;
+            projectsControl1.SendToBack();
+            investmentsControl1.SendToBack();
+            systemAdministratorControl1.SendToBack();
+            engineeringManagementControl1.SendToBack();
+            settingControl1.SendToBack();
+            roadsControl1.SendToBack();
+            dashBoardControl1.BringToFront();
+            focusBoard.Visible = true;
+            focusAdmin.Visible = false;
+            focusENG.Visible = false;
+            focusInvest.Visible = false;
+            focusSetting.Visible = false;
+            foucsRoad.Visible = false;
+        }
+        public void ShowMyUserControl4(string user, long id, string Investment_type)
+        {
+            SessionData.Investment_Type = null;
             roadsControl1.SetUserData(user, id);
+            investmentsControl1.SetUserData(user, id, Investment_type);
             roadsControl1.Visible = true;
             systemAdministratorControl1.Visible = false;
             engineeringManagementControl1.Visible = false;
             settingControl1.Visible = false;    
             projectsControl1.Visible = false;
-
+            dashBoardControl1.Visible = false;
             systemAdministratorControl1.SendToBack();
             engineeringManagementControl1.SendToBack();
             settingControl1.SendToBack();
             roadsControl1.BringToFront();
             projectsControl1.SendToBack();
-
+            this.dashBoardControl1.SendToBack();
             foucsRoad.Visible = true;
             focusInvest.Visible = false;
             focusENG.Visible = false;
             focusAdmin.Visible = false;
-            focusSetting.Visible = false;   
+            focusSetting.Visible = false;
+            focusBoard.Visible = false;
         }
-        public void ShowMyUserControl6(string user, long id)
+        public void ShowMyUserControl6(string user, long id, string Investment_type)
         {
+            SessionData.Investment_Type = null;
+            investmentsControl1.SetUserData(user, id, Investment_type);
             projectsControl1.SetUserData(user, id);
             projectsControl1.Visible = true;
             systemAdministratorControl1.Visible = false;
             engineeringManagementControl1.Visible = false;
             settingControl1.Visible = false;
             roadsControl1.Visible = false;
-
+            dashBoardControl1.Visible = false;
             projectsControl1.BringToFront();
             systemAdministratorControl1.SendToBack();
             engineeringManagementControl1.SendToBack();
             settingControl1.SendToBack();
             roadsControl1.SendToBack();
+            dashBoardControl1.SendToBack();
 
             focusInvest.Visible = false;
             focusENG.Visible = true;
             focusAdmin.Visible = false;
             focusSetting.Visible = false;
             foucsRoad.Visible = false;
+            focusBoard.Visible = false;
         }
         public Form2(string username, long user_id)
         {
             InitializeComponent();
             _username = username;
             _user_id = user_id;
+            this.Text = String.Empty;
+            this.ControlBox = false;
+            this.DoubleBuffered = true;
+            //this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
+
         }
         private static int alertOffsetY = 0;
         bool MenuExpand = false;
@@ -213,8 +263,10 @@ namespace DemoProject
         }
         Dictionary<string, bool> pageAccess = new Dictionary<string, bool>();
         Dictionary<string, bool> functionAccess = new Dictionary<string, bool>();
+
         private void Form2_Load(object sender, EventArgs e)
         {
+ 
             // TODO: This line of code loads data into the 'dATABASE2DataSet.pages' table. You can move, or remove it, as needed.
             this.pagesTableAdapter.Fill(this.dATABASE2DataSet.pages);
             // TODO: This line of code loads data into the 'dATABASE2DataSet.functions' table. You can move, or remove it, as needed.
@@ -270,7 +322,7 @@ namespace DemoProject
             }
             ApplyPermissions(this);
 
-
+            
         }
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
@@ -301,7 +353,7 @@ namespace DemoProject
         private void Menu_Click(object sender, EventArgs e)
         {
             TrueFunction();
-            ShowMyUserControl(_username, _user_id);
+            ShowMyUserControl(_username, _user_id, "كل الاستثمارات");
             menutranstion.Start();
             FalseFunction();
         }
@@ -359,7 +411,7 @@ namespace DemoProject
         private void button2_Click(object sender, EventArgs e)
         {
             TrueFunction();
-            ShowMyUserControl4(_username, _user_id);
+            ShowMyUserControl4(_username, _user_id, "كل الاستثمارات");
             /*Form3 report = new Form3();
             report.Show();*/
             FalseFunction();
@@ -407,33 +459,33 @@ namespace DemoProject
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            ShowMyUserControl5(_username, _user_id);  
+            ShowMyUserControl5(_username, _user_id, "كل الاستثمارات");  
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            ShowMyUserControl3(_username, _user_id);
+            ShowMyUserControl3(_username, _user_id, _investment_type);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             TrueFunction();
-            ShowMyUserControl(_username, _user_id);
-            menutranstion.Start();
+            ShowMyUserControl(_username, _user_id, "كل الاستثمارات");
+            
             FalseFunction();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             TrueFunction();
-            ShowMyUserControl2(_username, _user_id);
+            ShowMyUserControl2(_username, _user_id, "كل الاستثمارات");
             FalseFunction();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
 
-            ShowMyUserControl6(_username, _user_id);
+            ShowMyUserControl6(_username, _user_id, "كل الاستثمارات");
            
         }
 
@@ -468,6 +520,41 @@ namespace DemoProject
             this.accessBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.dATABASE2DataSet);
 
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            ShowMyUserControl7(_username, _user_id, _investment_type);
+        }
+
+        private void dashBoardControl1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //DialogResult result = MessageBox.Show(
+            //"هل تريد إغلاق البرنامج؟",
+            //"تأكيد الإغلاق",
+            //MessageBoxButtons.YesNo,
+            //MessageBoxIcon.Question
+            //);
+
+            //if (result == DialogResult.No)
+            //{
+            //    e.Cancel = true; // ❌ prevent closing
+            //}
+        }
+        //Drag Form
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        private void guna2Panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

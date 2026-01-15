@@ -52,20 +52,12 @@
             this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
             this.dungeonLabel18 = new ReaLTaiizor.Controls.DungeonLabel();
             this.advancedDataGridView2 = new Zuby.ADGV.AdvancedDataGridView();
-            this.approvalidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.approvalsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.approvalsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dATABASE2DataSet = new DemoProject.DATABASE2DataSet();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.dungeonLabel5 = new ReaLTaiizor.Controls.DungeonLabel();
             this.User_Name_COB = new Guna.UI2.WinForms.Guna2ComboBox();
             this.advancedDataGridView4 = new Zuby.ADGV.AdvancedDataGridView();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rolenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.useridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Role_TB = new Guna.UI2.WinForms.Guna2TextBox();
             this.dungeonLabel2 = new ReaLTaiizor.Controls.DungeonLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -77,20 +69,12 @@
             this.Password_TB = new Guna.UI2.WinForms.Guna2TextBox();
             this.dungeonLabel1 = new ReaLTaiizor.Controls.DungeonLabel();
             this.advancedDataGridView3 = new Zuby.ADGV.AdvancedDataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.realNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.dungeonLabel17 = new ReaLTaiizor.Controls.DungeonLabel();
             this.advancedDataGridView1 = new Zuby.ADGV.AdvancedDataGridView();
-            this.governorateidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.governorateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.governorateBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.dungeonLabel8 = new ReaLTaiizor.Controls.DungeonLabel();
@@ -99,10 +83,6 @@
             this.Function_TB = new Guna.UI2.WinForms.Guna2TextBox();
             this.dungeonLabel9 = new ReaLTaiizor.Controls.DungeonLabel();
             this.advancedDataGridView6 = new Zuby.ADGV.AdvancedDataGridView();
-            this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.functionnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roleidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.functionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.Roles_Names_COB = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -110,10 +90,6 @@
             this.Page_TB = new Guna.UI2.WinForms.Guna2TextBox();
             this.dungeonLabel7 = new ReaLTaiizor.Controls.DungeonLabel();
             this.advancedDataGridView5 = new Zuby.ADGV.AdvancedDataGridView();
-            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pagenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roleidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
@@ -127,6 +103,30 @@
             this.dungeonLabel14 = new ReaLTaiizor.Controls.DungeonLabel();
             this.dungeonLabel12 = new ReaLTaiizor.Controls.DungeonLabel();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.governorateidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.governorateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.governorateBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dATABASE2DataSet = new DemoProject.DATABASE2DataSet();
+            this.approvalidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.approvalsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.approvalsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rolenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.useridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.realNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.functionnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roleidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.functionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pagenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roleidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.governorateTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.governorateTableAdapter();
             this.approvalsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.approvalsTableAdapter();
             this.usersTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.usersTableAdapter();
@@ -139,29 +139,29 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.approvalsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dATABASE2DataSet)).BeginInit();
             this.tabPage6.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.governorateBindingSource)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.functionsBindingSource)).BeginInit();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.governorateBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dATABASE2DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.approvalsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.functionsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -336,32 +336,6 @@
             this.advancedDataGridView2.TabIndex = 1;
             this.advancedDataGridView2.Scroll += new System.Windows.Forms.ScrollEventHandler(this.advancedDataGridView2_Scroll);
             // 
-            // approvalidDataGridViewTextBoxColumn
-            // 
-            this.approvalidDataGridViewTextBoxColumn.DataPropertyName = "approval_id";
-            this.approvalidDataGridViewTextBoxColumn.HeaderText = "المسلسل";
-            this.approvalidDataGridViewTextBoxColumn.MinimumWidth = 24;
-            this.approvalidDataGridViewTextBoxColumn.Name = "approvalidDataGridViewTextBoxColumn";
-            this.approvalidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // approvalsDataGridViewTextBoxColumn
-            // 
-            this.approvalsDataGridViewTextBoxColumn.DataPropertyName = "approvals";
-            this.approvalsDataGridViewTextBoxColumn.HeaderText = "الموافقات";
-            this.approvalsDataGridViewTextBoxColumn.MinimumWidth = 24;
-            this.approvalsDataGridViewTextBoxColumn.Name = "approvalsDataGridViewTextBoxColumn";
-            this.approvalsDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // approvalsBindingSource
-            // 
-            this.approvalsBindingSource.DataMember = "approvals";
-            this.approvalsBindingSource.DataSource = this.dATABASE2DataSet;
-            // 
-            // dATABASE2DataSet
-            // 
-            this.dATABASE2DataSet.DataSetName = "DATABASE2DataSet";
-            this.dATABASE2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.guna2Panel2);
@@ -486,35 +460,6 @@
             this.advancedDataGridView4.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.advancedDataGridView4.TabIndex = 3;
             this.advancedDataGridView4.Scroll += new System.Windows.Forms.ScrollEventHandler(this.advancedDataGridView4_Scroll);
-            // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "المسلسل";
-            this.idDataGridViewTextBoxColumn1.MinimumWidth = 24;
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // rolenameDataGridViewTextBoxColumn
-            // 
-            this.rolenameDataGridViewTextBoxColumn.DataPropertyName = "role_name";
-            this.rolenameDataGridViewTextBoxColumn.HeaderText = "المسؤلية";
-            this.rolenameDataGridViewTextBoxColumn.MinimumWidth = 24;
-            this.rolenameDataGridViewTextBoxColumn.Name = "rolenameDataGridViewTextBoxColumn";
-            this.rolenameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // useridDataGridViewTextBoxColumn
-            // 
-            this.useridDataGridViewTextBoxColumn.DataPropertyName = "user_id";
-            this.useridDataGridViewTextBoxColumn.HeaderText = "المستخدم";
-            this.useridDataGridViewTextBoxColumn.MinimumWidth = 24;
-            this.useridDataGridViewTextBoxColumn.Name = "useridDataGridViewTextBoxColumn";
-            this.useridDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // rolesBindingSource
-            // 
-            this.rolesBindingSource.DataMember = "roles";
-            this.rolesBindingSource.DataSource = this.dATABASE2DataSet;
             // 
             // Role_TB
             // 
@@ -740,51 +685,17 @@
             this.advancedDataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advancedDataGridView3_CellContentClick);
             this.advancedDataGridView3.Scroll += new System.Windows.Forms.ScrollEventHandler(this.advancedDataGridView3_Scroll);
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "المسلسل";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 24;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // usernameDataGridViewTextBoxColumn
-            // 
-            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "user_name";
-            this.usernameDataGridViewTextBoxColumn.HeaderText = "اسم المستخدم";
-            this.usernameDataGridViewTextBoxColumn.MinimumWidth = 24;
-            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
-            this.usernameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // passwordDataGridViewTextBoxColumn
-            // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "كلمة السر";
-            this.passwordDataGridViewTextBoxColumn.MinimumWidth = 24;
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            this.passwordDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // realNameDataGridViewTextBoxColumn
-            // 
-            this.realNameDataGridViewTextBoxColumn.DataPropertyName = "Real_Name";
-            this.realNameDataGridViewTextBoxColumn.HeaderText = "الاسم الفعلي";
-            this.realNameDataGridViewTextBoxColumn.MinimumWidth = 24;
-            this.realNameDataGridViewTextBoxColumn.Name = "realNameDataGridViewTextBoxColumn";
-            this.realNameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // usersBindingSource
-            // 
-            this.usersBindingSource.DataMember = "users";
-            this.usersBindingSource.DataSource = this.dATABASE2DataSet;
-            // 
             // guna2TabControl1
             // 
+            this.guna2TabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2TabControl1.Controls.Add(this.tabPage5);
             this.guna2TabControl1.Controls.Add(this.tabPage2);
             this.guna2TabControl1.Controls.Add(this.tabPage6);
             this.guna2TabControl1.Controls.Add(this.tabPage1);
             this.guna2TabControl1.Controls.Add(this.tabPage3);
-            this.guna2TabControl1.ItemSize = new System.Drawing.Size(235, 40);
+            this.guna2TabControl1.ItemSize = new System.Drawing.Size(200, 40);
             this.guna2TabControl1.Location = new System.Drawing.Point(7, 155);
             this.guna2TabControl1.Name = "guna2TabControl1";
             this.guna2TabControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -806,7 +717,7 @@
             this.guna2TabControl1.TabButtonSelectedState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.guna2TabControl1.TabButtonSelectedState.ForeColor = System.Drawing.Color.White;
             this.guna2TabControl1.TabButtonSelectedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(132)))), ((int)(((byte)(255)))));
-            this.guna2TabControl1.TabButtonSize = new System.Drawing.Size(235, 40);
+            this.guna2TabControl1.TabButtonSize = new System.Drawing.Size(200, 40);
             this.guna2TabControl1.TabIndex = 24;
             this.guna2TabControl1.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             this.guna2TabControl1.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop;
@@ -878,6 +789,7 @@
             this.guna2TextBox1.Size = new System.Drawing.Size(253, 194);
             this.guna2TextBox1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.guna2TextBox1.TabIndex = 29;
+            this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
             // dungeonLabel17
             // 
@@ -926,27 +838,6 @@
             this.advancedDataGridView1.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.advancedDataGridView1.TabIndex = 0;
             this.advancedDataGridView1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.advancedDataGridView1_Scroll);
-            // 
-            // governorateidDataGridViewTextBoxColumn
-            // 
-            this.governorateidDataGridViewTextBoxColumn.DataPropertyName = "governorate_id";
-            this.governorateidDataGridViewTextBoxColumn.HeaderText = "مسلسل";
-            this.governorateidDataGridViewTextBoxColumn.MinimumWidth = 24;
-            this.governorateidDataGridViewTextBoxColumn.Name = "governorateidDataGridViewTextBoxColumn";
-            this.governorateidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // governorateDataGridViewTextBoxColumn
-            // 
-            this.governorateDataGridViewTextBoxColumn.DataPropertyName = "governorate";
-            this.governorateDataGridViewTextBoxColumn.HeaderText = "المحافظة";
-            this.governorateDataGridViewTextBoxColumn.MinimumWidth = 24;
-            this.governorateDataGridViewTextBoxColumn.Name = "governorateDataGridViewTextBoxColumn";
-            this.governorateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // governorateBindingSource
-            // 
-            this.governorateBindingSource.DataMember = "governorate";
-            this.governorateBindingSource.DataSource = this.dATABASE2DataSet;
             // 
             // tabPage1
             // 
@@ -1108,35 +999,6 @@
             this.advancedDataGridView6.TabIndex = 4;
             this.advancedDataGridView6.Scroll += new System.Windows.Forms.ScrollEventHandler(this.advancedDataGridView6_Scroll);
             // 
-            // idDataGridViewTextBoxColumn3
-            // 
-            this.idDataGridViewTextBoxColumn3.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn3.HeaderText = "المسلسل";
-            this.idDataGridViewTextBoxColumn3.MinimumWidth = 24;
-            this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
-            this.idDataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // functionnameDataGridViewTextBoxColumn
-            // 
-            this.functionnameDataGridViewTextBoxColumn.DataPropertyName = "Function_name";
-            this.functionnameDataGridViewTextBoxColumn.HeaderText = "اسم الوظيفة";
-            this.functionnameDataGridViewTextBoxColumn.MinimumWidth = 24;
-            this.functionnameDataGridViewTextBoxColumn.Name = "functionnameDataGridViewTextBoxColumn";
-            this.functionnameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // roleidDataGridViewTextBoxColumn1
-            // 
-            this.roleidDataGridViewTextBoxColumn1.DataPropertyName = "role_id";
-            this.roleidDataGridViewTextBoxColumn1.HeaderText = "المسؤلية";
-            this.roleidDataGridViewTextBoxColumn1.MinimumWidth = 24;
-            this.roleidDataGridViewTextBoxColumn1.Name = "roleidDataGridViewTextBoxColumn1";
-            this.roleidDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // functionsBindingSource
-            // 
-            this.functionsBindingSource.DataMember = "functions";
-            this.functionsBindingSource.DataSource = this.dATABASE2DataSet;
-            // 
             // guna2Panel3
             // 
             this.guna2Panel3.Controls.Add(this.guna2Button5);
@@ -1285,35 +1147,6 @@
             this.advancedDataGridView5.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.advancedDataGridView5.TabIndex = 3;
             this.advancedDataGridView5.Scroll += new System.Windows.Forms.ScrollEventHandler(this.advancedDataGridView5_Scroll);
-            // 
-            // idDataGridViewTextBoxColumn2
-            // 
-            this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn2.HeaderText = "المسلسل";
-            this.idDataGridViewTextBoxColumn2.MinimumWidth = 24;
-            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
-            this.idDataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // pagenameDataGridViewTextBoxColumn
-            // 
-            this.pagenameDataGridViewTextBoxColumn.DataPropertyName = "Page_name";
-            this.pagenameDataGridViewTextBoxColumn.HeaderText = "اسم الصفحة";
-            this.pagenameDataGridViewTextBoxColumn.MinimumWidth = 24;
-            this.pagenameDataGridViewTextBoxColumn.Name = "pagenameDataGridViewTextBoxColumn";
-            this.pagenameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // roleidDataGridViewTextBoxColumn
-            // 
-            this.roleidDataGridViewTextBoxColumn.DataPropertyName = "role_id";
-            this.roleidDataGridViewTextBoxColumn.HeaderText = "المسؤلية";
-            this.roleidDataGridViewTextBoxColumn.MinimumWidth = 24;
-            this.roleidDataGridViewTextBoxColumn.Name = "roleidDataGridViewTextBoxColumn";
-            this.roleidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // pagesBindingSource
-            // 
-            this.pagesBindingSource.DataMember = "pages";
-            this.pagesBindingSource.DataSource = this.dATABASE2DataSet;
             // 
             // tabPage3
             // 
@@ -1558,6 +1391,177 @@
             this.guna2CircleButton1.Text = "رجوع";
             this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
             // 
+            // governorateidDataGridViewTextBoxColumn
+            // 
+            this.governorateidDataGridViewTextBoxColumn.DataPropertyName = "governorate_id";
+            this.governorateidDataGridViewTextBoxColumn.HeaderText = "مسلسل";
+            this.governorateidDataGridViewTextBoxColumn.MinimumWidth = 24;
+            this.governorateidDataGridViewTextBoxColumn.Name = "governorateidDataGridViewTextBoxColumn";
+            this.governorateidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // governorateDataGridViewTextBoxColumn
+            // 
+            this.governorateDataGridViewTextBoxColumn.DataPropertyName = "governorate";
+            this.governorateDataGridViewTextBoxColumn.HeaderText = "المحافظة";
+            this.governorateDataGridViewTextBoxColumn.MinimumWidth = 24;
+            this.governorateDataGridViewTextBoxColumn.Name = "governorateDataGridViewTextBoxColumn";
+            this.governorateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // governorateBindingSource
+            // 
+            this.governorateBindingSource.DataMember = "governorate";
+            this.governorateBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // dATABASE2DataSet
+            // 
+            this.dATABASE2DataSet.DataSetName = "DATABASE2DataSet";
+            this.dATABASE2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // approvalidDataGridViewTextBoxColumn
+            // 
+            this.approvalidDataGridViewTextBoxColumn.DataPropertyName = "approval_id";
+            this.approvalidDataGridViewTextBoxColumn.HeaderText = "المسلسل";
+            this.approvalidDataGridViewTextBoxColumn.MinimumWidth = 24;
+            this.approvalidDataGridViewTextBoxColumn.Name = "approvalidDataGridViewTextBoxColumn";
+            this.approvalidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // approvalsDataGridViewTextBoxColumn
+            // 
+            this.approvalsDataGridViewTextBoxColumn.DataPropertyName = "approvals";
+            this.approvalsDataGridViewTextBoxColumn.HeaderText = "الموافقات";
+            this.approvalsDataGridViewTextBoxColumn.MinimumWidth = 24;
+            this.approvalsDataGridViewTextBoxColumn.Name = "approvalsDataGridViewTextBoxColumn";
+            this.approvalsDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // approvalsBindingSource
+            // 
+            this.approvalsBindingSource.DataMember = "approvals";
+            this.approvalsBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "المسلسل";
+            this.idDataGridViewTextBoxColumn1.MinimumWidth = 24;
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // rolenameDataGridViewTextBoxColumn
+            // 
+            this.rolenameDataGridViewTextBoxColumn.DataPropertyName = "role_name";
+            this.rolenameDataGridViewTextBoxColumn.HeaderText = "المسؤلية";
+            this.rolenameDataGridViewTextBoxColumn.MinimumWidth = 24;
+            this.rolenameDataGridViewTextBoxColumn.Name = "rolenameDataGridViewTextBoxColumn";
+            this.rolenameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // useridDataGridViewTextBoxColumn
+            // 
+            this.useridDataGridViewTextBoxColumn.DataPropertyName = "user_id";
+            this.useridDataGridViewTextBoxColumn.HeaderText = "المستخدم";
+            this.useridDataGridViewTextBoxColumn.MinimumWidth = 24;
+            this.useridDataGridViewTextBoxColumn.Name = "useridDataGridViewTextBoxColumn";
+            this.useridDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // rolesBindingSource
+            // 
+            this.rolesBindingSource.DataMember = "roles";
+            this.rolesBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "المسلسل";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 24;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // usernameDataGridViewTextBoxColumn
+            // 
+            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "user_name";
+            this.usernameDataGridViewTextBoxColumn.HeaderText = "اسم المستخدم";
+            this.usernameDataGridViewTextBoxColumn.MinimumWidth = 24;
+            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            this.usernameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "كلمة السر";
+            this.passwordDataGridViewTextBoxColumn.MinimumWidth = 24;
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.passwordDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // realNameDataGridViewTextBoxColumn
+            // 
+            this.realNameDataGridViewTextBoxColumn.DataPropertyName = "Real_Name";
+            this.realNameDataGridViewTextBoxColumn.HeaderText = "الاسم الفعلي";
+            this.realNameDataGridViewTextBoxColumn.MinimumWidth = 24;
+            this.realNameDataGridViewTextBoxColumn.Name = "realNameDataGridViewTextBoxColumn";
+            this.realNameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataMember = "users";
+            this.usersBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // idDataGridViewTextBoxColumn3
+            // 
+            this.idDataGridViewTextBoxColumn3.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn3.HeaderText = "المسلسل";
+            this.idDataGridViewTextBoxColumn3.MinimumWidth = 24;
+            this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
+            this.idDataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // functionnameDataGridViewTextBoxColumn
+            // 
+            this.functionnameDataGridViewTextBoxColumn.DataPropertyName = "Function_name";
+            this.functionnameDataGridViewTextBoxColumn.HeaderText = "اسم الوظيفة";
+            this.functionnameDataGridViewTextBoxColumn.MinimumWidth = 24;
+            this.functionnameDataGridViewTextBoxColumn.Name = "functionnameDataGridViewTextBoxColumn";
+            this.functionnameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // roleidDataGridViewTextBoxColumn1
+            // 
+            this.roleidDataGridViewTextBoxColumn1.DataPropertyName = "role_id";
+            this.roleidDataGridViewTextBoxColumn1.HeaderText = "المسؤلية";
+            this.roleidDataGridViewTextBoxColumn1.MinimumWidth = 24;
+            this.roleidDataGridViewTextBoxColumn1.Name = "roleidDataGridViewTextBoxColumn1";
+            this.roleidDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // functionsBindingSource
+            // 
+            this.functionsBindingSource.DataMember = "functions";
+            this.functionsBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // idDataGridViewTextBoxColumn2
+            // 
+            this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn2.HeaderText = "المسلسل";
+            this.idDataGridViewTextBoxColumn2.MinimumWidth = 24;
+            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
+            this.idDataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // pagenameDataGridViewTextBoxColumn
+            // 
+            this.pagenameDataGridViewTextBoxColumn.DataPropertyName = "Page_name";
+            this.pagenameDataGridViewTextBoxColumn.HeaderText = "اسم الصفحة";
+            this.pagenameDataGridViewTextBoxColumn.MinimumWidth = 24;
+            this.pagenameDataGridViewTextBoxColumn.Name = "pagenameDataGridViewTextBoxColumn";
+            this.pagenameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // roleidDataGridViewTextBoxColumn
+            // 
+            this.roleidDataGridViewTextBoxColumn.DataPropertyName = "role_id";
+            this.roleidDataGridViewTextBoxColumn.HeaderText = "المسؤلية";
+            this.roleidDataGridViewTextBoxColumn.MinimumWidth = 24;
+            this.roleidDataGridViewTextBoxColumn.Name = "roleidDataGridViewTextBoxColumn";
+            this.roleidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // pagesBindingSource
+            // 
+            this.pagesBindingSource.DataMember = "pages";
+            this.pagesBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
             // governorateTableAdapter
             // 
             this.governorateTableAdapter.ClearBeforeFill = true;
@@ -1593,8 +1597,8 @@
             // 
             // SettingControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.guna2CircleButton1);
             this.Controls.Add(this.guna2TabControl1);
             this.Controls.Add(this.guna2CirclePictureBox1);
@@ -1608,35 +1612,35 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.approvalsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dATABASE2DataSet)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             this.guna2TabControl1.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.governorateBindingSource)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.functionsBindingSource)).EndInit();
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.governorateBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dATABASE2DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.approvalsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.functionsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessBindingSource)).EndInit();
             this.ResumeLayout(false);
 
