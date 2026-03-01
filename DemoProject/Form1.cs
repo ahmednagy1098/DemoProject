@@ -9,23 +9,62 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
-
+using System.Data.SqlClient;
+using Microsoft.AspNetCore.SignalR.Client;
+using System.Runtime.Caching;
 namespace DemoProject
 {
     
     public partial class Form1 : Form
     {
         //SoundPlayer playeWelcome = new SoundPlayer(@"C:\Users\PC1\Downloads\welcomeLog_Manager1.wav");
+        HubConnection hubConnection;
         public Form1()
         {
             InitializeComponent();
-
+            //hubConnection = new HubConnectionBuilder().WithUrl("https://localhost:7212/ChatHub").Build();
+            //hubConnection.Closed += HubConnection_Closed;
+            //hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+            //{
+            //    var newMessage = $"{user} : {message}";
+            //    ShowAlert(newMessage, AlertForm.AlertType.Success);
+            //});
         }
+        //private async Task HubConnection_Closed(Exception arg)
+        //{
+        //    await Task.Delay(new Random().Next(0,5) * 1000);
+        //    await hubConnection.StartAsync();
+        //}
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
+        public static class LoginCache
+        {
+            private static readonly MemoryCache cache = MemoryCache.Default;
+            private const string KEY = "LOGGED_USER";
 
+            public static void Set(DATABASE2DataSet.usersRow user)
+            {
+                cache.Set(KEY, user, DateTimeOffset.Now.AddHours(12));
+
+                // حفظ دائم
+                Properties.Settings.Default.LastUserId = user.id;
+                Properties.Settings.Default.Save();
+            }
+
+            public static DATABASE2DataSet.usersRow Get()
+            {
+                return cache.Get(KEY) as DATABASE2DataSet.usersRow;
+            }
+
+            public static void Clear()
+            {
+                cache.Remove(KEY);
+                Properties.Settings.Default.LastUserId = 0;
+                Properties.Settings.Default.Save();
+            }
+        }
         private void guna2CircleButton1_Click(object sender, EventArgs e)
         {//show
             if(PassWordTB.PasswordChar == '*')
@@ -61,7 +100,7 @@ namespace DemoProject
         
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            string inputUsername = UserNameTB.Text.Trim();
+             string inputUsername = UserNameTB.Text.Trim();
             string inputPassword = PassWordTB.Text.Trim();
             var matchedUser = AuthenticateUser(inputUsername, inputPassword);
 
@@ -69,11 +108,45 @@ namespace DemoProject
             {
                 SessionData.UserId = matchedUser.id;
                 SessionData.UserName = matchedUser.user_name;
-                this.Hide();
+
+                LoginCache.Set(matchedUser); // ✅ caching
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+                //try
+                //{
+                //    if (hubConnection.State == HubConnectionState.Disconnected)
+                //        await hubConnection.StartAsync();
+
+                //    await hubConnection.InvokeAsync(
+                //        "SendMessage",
+                //        SessionData.UserName,
+                //        "Logged In"
+                //    );
+
+                //}
+                //catch (Exception ex)
+                //{
+                //    ShowAlert(ex.Message, AlertForm.AlertType.Error);
+
+                //}
                 //playeWelcome.Play();
+                //hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+                //{
+                //    var newMessage = $"{user}:{message}";
+                //    ShowAlert(newMessage, AlertForm.AlertType.Success);
+                //});
+                //try
+                //{
+                //    await hubConnection.StartAsync();
+
+                //}
+                //catch (Exception ex)
+                //{
+                //    ShowAlert(ex.Message, AlertForm.AlertType.Error);
+
+                //}
                 ShowAlert("مرحبا بك", AlertForm.AlertType.Success);
-                ENGReportForm menu = new ENGReportForm(matchedUser.user_name,matchedUser.id);
-                menu.Show();
             }
             //else if (UserNameTB.Text=="المدير العام" && PassWordTB.Text =="123" )
             //{            
@@ -91,23 +164,54 @@ namespace DemoProject
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dATABASE2DataSet.functions' table. You can move, or remove it, as needed.
-            this.functionsTableAdapter.Fill(this.dATABASE2DataSet.functions);
-            // TODO: This line of code loads data into the 'dATABASE2DataSet.access' table. You can move, or remove it, as needed.
-            this.accessTableAdapter.Fill(this.dATABASE2DataSet.access);
-            // TODO: This line of code loads data into the 'dATABASE2DataSet.users' table. You can move, or remove it, as needed.
-            this.usersTableAdapter.Fill(this.dATABASE2DataSet.users);
-            // TODO: This line of code loads data into the 'dATABASE2DataSet.roles' table. You can move, or remove it, as needed.
-            this.rolesTableAdapter.Fill(this.dATABASE2DataSet.roles);
-            // TODO: This line of code loads data into the 'dATABASE2DataSet.roles' table. You can move, or remove it, as needed.
-            this.rolesTableAdapter.Fill(this.dATABASE2DataSet.roles);
-            // TODO: This line of code loads data into the 'dATABASE2DataSet.pages' table. You can move, or remove it, as needed.
-            this.pagesTableAdapter.Fill(this.dATABASE2DataSet.pages);
-            // TODO: This line of code loads data into the 'database1DataSet.access' table. You can move, or remove it, as needed.
+            try
+            {
+                // 🔐 Auto Login
+                long savedUserId = Properties.Settings.Default.LastUserId;
 
-            // TODO: This line of code loads data into the 'database1DataSet.roles' table. You can move, or remove it, as needed.
+                if (savedUserId > 0)
+                {
+                    var users = this.usersTableAdapter.GetData();
+                    var user = users.FirstOrDefault(u => u.id == savedUserId);
 
-            // TODO: This line of code loads data into the 'database1DataSet.users' table. You can move, or remove it, as needed.
+                    if (user != null)
+                    {
+                        SessionData.UserId = user.id;
+                        SessionData.UserName = user.user_name;
+
+                        ShowAlert("تم تسجيل الدخول تلقائياً", AlertForm.AlertType.Success);
+
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+
+                        return;
+                    }
+                }
+                // TODO: This line of code loads data into the 'dATABASE2DataSet.functions' table. You can move, or remove it, as needed.
+                this.functionsTableAdapter.Fill(this.dATABASE2DataSet.functions);
+                // TODO: This line of code loads data into the 'dATABASE2DataSet.access' table. You can move, or remove it, as needed.
+                this.accessTableAdapter.Fill(this.dATABASE2DataSet.access);
+                // TODO: This line of code loads data into the 'dATABASE2DataSet.users' table. You can move, or remove it, as needed.
+                this.usersTableAdapter.Fill(this.dATABASE2DataSet.users);
+                // TODO: This line of code loads data into the 'dATABASE2DataSet.roles' table. You can move, or remove it, as needed.
+                this.rolesTableAdapter.Fill(this.dATABASE2DataSet.roles);
+                // TODO: This line of code loads data into the 'dATABASE2DataSet.pages' table. You can move, or remove it, as needed.
+                this.pagesTableAdapter.Fill(this.dATABASE2DataSet.pages);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("خطأ في الاتصال بقاعدة البيانات من السيرفر: " + ex.Message,
+                   "Database Error",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("حدث خطأ غير متوقع: " + ex.Message,
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
 
         }
         private static int alertOffsetY = 0;
@@ -181,6 +285,8 @@ namespace DemoProject
                     SessionData.UserId = matchedUser.id;
                     SessionData.UserName = matchedUser.user_name;
                     this.Hide();
+
+
                     ShowAlert("مرحبا بك", AlertForm.AlertType.Success);
                     ENGReportForm menu = new ENGReportForm(matchedUser.user_name, matchedUser.id);
                     menu.Show();

@@ -144,7 +144,7 @@ namespace DemoProject
         {
             // Clear previous items
             checkedListBox1.Items.Clear();
-
+            checkedListBox1.Items.Add("اختيار الكل", true);
             // Make sure the DataGridView has a DataSource
             if (advancedDataGridView1.DataSource == null) return;
 
@@ -419,6 +419,8 @@ namespace DemoProject
             int headerRight = guna2TabControl1.Left + guna2TabControl1.Width - guna2Button3.Width - 5;
             int headerTop = guna2TabControl1.Top;
             guna2Button3.Location = new Point(headerRight - 5, headerTop);
+            Add_Radio.Location = new Point(headerRight - 680, headerTop);
+            Update_Radio.Location = new Point(headerRight - 730, headerTop);
         }
         private void _ٌRoadsControl_Load(object sender, EventArgs e)
         {
@@ -428,6 +430,10 @@ namespace DemoProject
             guna2Button2.Enabled = Update_Radio.Checked;
             guna2Button3.Parent = guna2TabControl1.Parent; // Not inside the tab page
             guna2Button3.BringToFront();
+            Add_Radio.Parent = guna2TabControl1.Parent;
+            Add_Radio.BringToFront();
+            Update_Radio.Parent = guna2TabControl1.Parent;
+            Update_Radio.BringToFront();
             guna2Button3.Size = new Size(186, guna2TabControl1.ItemSize.Height - 1);
             PositionHeaderButton();
             LoadRoadsData();
@@ -492,17 +498,39 @@ namespace DemoProject
             {
                 string header = checkedListBox1.Items[e.Index].ToString();
 
+                // --- Handle "اختيار الكل" (Select All) ---
+                if (header == "اختيار الكل")
+                {
+                    bool checkAll = e.NewValue == CheckState.Checked;
+
+                    // Apply check/uncheck to all items except the first one
+                    for (int i = 1; i < checkedListBox1.Items.Count; i++)
+                    {
+                        checkedListBox1.SetItemChecked(i, checkAll);
+                    }
+
+                    // Update all DataGridView columns visibility
+                    foreach (DataGridViewColumn column in advancedDataGridView1.Columns)
+                    {
+                        column.Visible = checkAll;
+                    }
+
+                    return;
+                }
+
+                // --- Handle normal single-item check/uncheck ---
                 foreach (DataGridViewColumn column in advancedDataGridView1.Columns)
                 {
                     if (column.HeaderText == header)
                     {
-                        column.Visible = checkedListBox1.GetItemChecked(e.Index);
+                        column.Visible = e.NewValue == CheckState.Checked;
                         break;
                     }
                 }
             });
         }
-   
+
+
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
@@ -635,7 +663,7 @@ namespace DemoProject
                         road_authority_percentage_TB.Text,
                         approvalFiles.TryGetValue("contract_type_COB", out var filePathcontract) ? filePathcontract.ToString() : "",
                         approvalFiles.TryGetValue("council_of_ministers_decision_TB", out var filePathdecision) ? filePathdecision.ToString() : "",
-                         Duration_Contract_TB.Text,
+                        Duration_Contract_TB.Text,
                         franchise_Contract_Duration_TB.Value,
                         nature_TB.Text,
                         Companyresp_TB.Text,
@@ -647,6 +675,27 @@ namespace DemoProject
                     LoadRoadsData();
                     ShowAlert("تمت العملية بنجاح", AlertForm.AlertType.Success);
                     UpdateRowCount();
+                    Road_Name_TB.Text = "";
+                    Toll_Bath_Count_TB.Text = "" ;
+                    Administrative_Affiliation_TB.Text="";
+                    Financial_Affiliation_TB.Text="";
+                    council_of_ministers_decision_TB.Text = "";
+                    number_of_exits_TB.Text="";
+                    road_length_TB.Text="";
+                    road_length_including_branches_TB.Text = "";
+                    number_of_operation_staff_TB.Text="";
+                    company_percentage_TB.Text="";
+                    road_authority_percentage_TB.Text="";
+                    approvalFiles = null;
+                    Duration_Contract_TB.Text="";
+                    nature_TB.Text="";
+                    Companyresp_TB.Text="";
+                    additional_TB.Text="";
+                    Ways_Right_TB.Text="";
+                    DescRouteFrom_TB.Text="";
+                    DescRouteTo_TB.Text = "";
+                    flowLayoutPanel1.Controls.Clear();
+                    flowLayoutPanel2.Controls.Clear();
                 }
                 else if (Station_Radio.Checked)
                 {       
@@ -679,6 +728,30 @@ namespace DemoProject
                       "...",
                       "..."
                       );
+                    Road_Name_TB.Text = "";
+                    Toll_Bath_Count_TB.Text = "";
+                    Administrative_Affiliation_TB.Text = "";
+                    Financial_Affiliation_TB.Text = "";
+                    council_of_ministers_decision_TB.Text = "";
+                    number_of_exits_TB.Text = "";
+                    road_length_TB.Text = "";
+                    road_length_including_branches_TB.Text = "";
+                    number_of_operation_staff_TB.Text = "";
+                    company_percentage_TB.Text = "";
+                    road_authority_percentage_TB.Text = "";
+                    approvalFiles = null;
+                    Duration_Contract_TB.Text = "";
+                    nature_TB.Text = "";
+                    Companyresp_TB.Text = "";
+                    additional_TB.Text = "";
+                    Ways_Right_TB.Text = "";
+                    DescRouteFrom_TB.Text = "";
+                    DescRouteTo_TB.Text = "";
+                    flowLayoutPanel1.Controls.Clear();
+                    flowLayoutPanel2.Controls.Clear();
+                    LoadRoadsData();
+                    ShowAlert("تمت العملية بنجاح", AlertForm.AlertType.Success);
+                    UpdateRowCount();
                 }
             }
 
@@ -1337,6 +1410,27 @@ namespace DemoProject
             LoadRoadsData();
             ShowAlert("تم التعديل بنجاح", AlertForm.AlertType.Success);
             UpdateRowCount();
+            Road_Name_TB.Text = "";
+            Toll_Bath_Count_TB.Text = "";
+            Administrative_Affiliation_TB.Text = "";
+            Financial_Affiliation_TB.Text = "";
+            council_of_ministers_decision_TB.Text = "";
+            number_of_exits_TB.Text = "";
+            road_length_TB.Text = "";
+            road_length_including_branches_TB.Text = "";
+            number_of_operation_staff_TB.Text = "";
+            company_percentage_TB.Text = "";
+            road_authority_percentage_TB.Text = "";
+            approvalFiles = null;
+            Duration_Contract_TB.Text = "";
+            nature_TB.Text = "";
+            Companyresp_TB.Text = "";
+            additional_TB.Text = "";
+            Ways_Right_TB.Text = "";
+            DescRouteFrom_TB.Text = "";
+            DescRouteTo_TB.Text = "";
+            flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel2.Controls.Clear();
         }
 
         private void advancedDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -1560,14 +1654,45 @@ namespace DemoProject
 
         private void guna2RadioButton1_CheckedChanged(object sender, EventArgs e)
         {
+            if (Add_Radio.Checked)
+            {
+                guna2TabControl1.SelectedTab = tabPage4;
+
+            }
             guna2Button1.Visible = Add_Radio.Checked;
             guna2Button2.Visible = !Add_Radio.Checked;
             guna2Button1.Enabled = Add_Radio.Checked;
             guna2Button2.Enabled = !Add_Radio.Checked;
+            Road_Name_TB.Text = "";
+            Toll_Bath_Count_TB.Text = "";
+            Administrative_Affiliation_TB.Text = "";
+            Financial_Affiliation_TB.Text = "";
+            council_of_ministers_decision_TB.Text = "";
+            number_of_exits_TB.Text = "";
+            road_length_TB.Text = "";
+            road_length_including_branches_TB.Text = "";
+            number_of_operation_staff_TB.Text = "";
+            company_percentage_TB.Text = "";
+            road_authority_percentage_TB.Text = "";
+            approvalFiles = null;
+            Duration_Contract_TB.Text = "";
+            nature_TB.Text = "";
+            Companyresp_TB.Text = "";
+            additional_TB.Text = "";
+            Ways_Right_TB.Text = "";
+            DescRouteFrom_TB.Text = "";
+            DescRouteTo_TB.Text = "";
+            flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel2.Controls.Clear();
         }
 
         private void Update_Radio_CheckedChanged(object sender, EventArgs e)
         {
+            if (Update_Radio.Checked)
+            {
+                guna2TabControl1.SelectedTab = tabPage4;
+
+            }
             guna2Button2.Visible = Update_Radio.Checked;
             guna2Button1.Visible = !Update_Radio.Checked;
             guna2Button2.Enabled = Update_Radio.Checked;
@@ -1698,6 +1823,57 @@ namespace DemoProject
         private void advancedDataGridView1_Scroll(object sender, ScrollEventArgs e)
         {
             advancedDataGridView1.Invalidate();
+        }
+
+        private void guna2CircleButton2_Click(object sender, EventArgs e)
+        {
+            advancedDataGridView1.CleanSort();
+            advancedDataGridView1.CleanFilter();
+            guna2Button1.Visible = Add_Radio.Checked;
+            guna2Button1.Enabled = Add_Radio.Checked;
+            guna2Button2.Visible = Update_Radio.Checked;
+            guna2Button2.Enabled = Update_Radio.Checked;
+            guna2Button3.Parent = guna2TabControl1.Parent; // Not inside the tab page
+            guna2Button3.BringToFront();
+            guna2Button3.Size = new Size(186, guna2TabControl1.ItemSize.Height - 1);
+            PositionHeaderButton();
+            LoadRoadsData();
+            UpdateRowCount();
+            GenerativePanalFlow();
+            ApplyGuna2StyleToGrid(advancedDataGridView1);
+            LoadColumnsIntoCheckedListBox();
+            Road_Name_TB.Text = "";
+            Toll_Bath_Count_TB.Text = "";
+            Administrative_Affiliation_TB.Text = "";
+            Financial_Affiliation_TB.Text = "";
+            council_of_ministers_decision_TB.Text = "";
+            number_of_exits_TB.Text = "";
+            road_length_TB.Text = "";
+            road_length_including_branches_TB.Text = "";
+            number_of_operation_staff_TB.Text = "";
+            company_percentage_TB.Text = "";
+            road_authority_percentage_TB.Text = "";
+            approvalFiles = null;
+            Duration_Contract_TB.Text = "";
+            nature_TB.Text = "";
+            Companyresp_TB.Text = "";
+            additional_TB.Text = "";
+            Ways_Right_TB.Text = "";
+            DescRouteFrom_TB.Text = "";
+            DescRouteTo_TB.Text = "";
+            flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel2.Controls.Clear();
+
+        }
+
+        private void guna2TabControl1_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            if (e.TabPage == tabPage4 && Add_Radio.Checked == false && Update_Radio.Checked == false)
+                e.Cancel = true;
+            else if (e.TabPage == tabPage4 && (Add_Radio.Checked == true || Update_Radio.Checked == true))
+            {
+                e.Cancel = false;
+            }
         }
     }
 }

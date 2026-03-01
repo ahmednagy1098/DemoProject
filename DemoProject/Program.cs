@@ -16,7 +16,17 @@ namespace DemoProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            Form1 login = new Form1();
+
+            if (login.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new ENGReportForm(
+                    SessionData.UserName,
+                    SessionData.UserId
+                ));
+            }
+
         }
     }
 }
