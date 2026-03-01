@@ -16239,7 +16239,7 @@ SELECT land_id, land_number, land_name, total_area, Topographic_Survey_Status, L
 SET                land_number = @land_number, land_name = @land_name, total_area = @total_area, Topographic_Survey_Status = @Topographic_Survey_Status, Land_Plate_Status = @Land_Plate_Status, coordinates_N = @coordinates_N, 
                          coordinates_E = @coordinates_E, serial_number = @serial_number, plate_number = @plate_number, plate_numberFile = @plate_numberFile, governorate_fk = @governorate_fk, Republican_Decree = @Republican_Decree, 
                          Republican_Decree_Status = @Republican_Decree_Status, consulting_Office = @consulting_Office, total_Land_Price = @total_Land_Price, Ownership_Authority = @Ownership_Authority, Address = @Address, 
-                         price_per_meter = @price_per_meter, City_Name =@City_Name, Dependent_neighborhood =@Dependent_neighborhood, Dependent_road =@Dependent_road
+                         price_per_meter = @price_per_meter, City_Name = @City_Name, Dependent_neighborhood = @Dependent_neighborhood, Dependent_road = @Dependent_road, Notes =@Notes
 WHERE        (land_id = @land_id)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@land_number", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "land_number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -16263,6 +16263,7 @@ WHERE        (land_id = @land_id)";
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@City_Name", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "City_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Dependent_neighborhood", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Dependent_neighborhood", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Dependent_road", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Dependent_road", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Notes", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Notes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@land_id", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "land_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -17256,6 +17257,7 @@ WHERE        (land_id = @land_id)";
                     string City_Name, 
                     string Dependent_neighborhood, 
                     string Dependent_road, 
+                    string Notes, 
                     string land_id) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             if ((land_number == null)) {
@@ -17384,11 +17386,17 @@ WHERE        (land_id = @land_id)";
             else {
                 command.Parameters[20].Value = ((string)(Dependent_road));
             }
+            if ((Notes == null)) {
+                command.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[21].Value = ((string)(Notes));
+            }
             if ((land_id == null)) {
                 throw new global::System.ArgumentNullException("land_id");
             }
             else {
-                command.Parameters[21].Value = ((string)(land_id));
+                command.Parameters[22].Value = ((string)(land_id));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

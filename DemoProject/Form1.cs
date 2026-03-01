@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Media;
 using System.Data.SqlClient;
 using Microsoft.AspNetCore.SignalR.Client;
+using System.Runtime.Caching;
 namespace DemoProject
 {
     
@@ -38,7 +39,32 @@ namespace DemoProject
         {
 
         }
+        public static class LoginCache
+        {
+            private static readonly MemoryCache cache = MemoryCache.Default;
+            private const string KEY = "LOGGED_USER";
 
+            public static void Set(DATABASE2DataSet.usersRow user)
+            {
+                cache.Set(KEY, user, DateTimeOffset.Now.AddHours(12));
+
+                // حفظ دائم
+                Properties.Settings.Default.LastUserId = user.id;
+                Properties.Settings.Default.Save();
+            }
+
+            public static DATABASE2DataSet.usersRow Get()
+            {
+                return cache.Get(KEY) as DATABASE2DataSet.usersRow;
+            }
+
+            public static void Clear()
+            {
+                cache.Remove(KEY);
+                Properties.Settings.Default.LastUserId = 0;
+                Properties.Settings.Default.Save();
+            }
+        }
         private void guna2CircleButton1_Click(object sender, EventArgs e)
         {//show
             if(PassWordTB.PasswordChar == '*')
@@ -74,7 +100,7 @@ namespace DemoProject
         
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            string inputUsername = UserNameTB.Text.Trim();
+             string inputUsername = UserNameTB.Text.Trim();
             string inputPassword = PassWordTB.Text.Trim();
             var matchedUser = AuthenticateUser(inputUsername, inputPassword);
 
@@ -83,7 +109,10 @@ namespace DemoProject
                 SessionData.UserId = matchedUser.id;
                 SessionData.UserName = matchedUser.user_name;
 
-                this.Hide();
+                LoginCache.Set(matchedUser); // ✅ caching
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
                 //try
                 //{
                 //    if (hubConnection.State == HubConnectionState.Disconnected)
@@ -110,7 +139,7 @@ namespace DemoProject
                 //try
                 //{
                 //    await hubConnection.StartAsync();
-                    
+
                 //}
                 //catch (Exception ex)
                 //{
@@ -118,8 +147,6 @@ namespace DemoProject
 
                 //}
                 ShowAlert("مرحبا بك", AlertForm.AlertType.Success);
-                ENGReportForm menu = new ENGReportForm(matchedUser.user_name,matchedUser.id);
-                menu.Show();
             }
             //else if (UserNameTB.Text=="المدير العام" && PassWordTB.Text =="123" )
             //{            
@@ -139,6 +166,27 @@ namespace DemoProject
         {
             try
             {
+                // 🔐 Auto Login
+                long savedUserId = Properties.Settings.Default.LastUserId;
+
+                if (savedUserId > 0)
+                {
+                    var users = this.usersTableAdapter.GetData();
+                    var user = users.FirstOrDefault(u => u.id == savedUserId);
+
+                    if (user != null)
+                    {
+                        SessionData.UserId = user.id;
+                        SessionData.UserName = user.user_name;
+
+                        ShowAlert("تم تسجيل الدخول تلقائياً", AlertForm.AlertType.Success);
+
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+
+                        return;
+                    }
+                }
                 // TODO: This line of code loads data into the 'dATABASE2DataSet.functions' table. You can move, or remove it, as needed.
                 this.functionsTableAdapter.Fill(this.dATABASE2DataSet.functions);
                 // TODO: This line of code loads data into the 'dATABASE2DataSet.access' table. You can move, or remove it, as needed.

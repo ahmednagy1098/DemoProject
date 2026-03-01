@@ -126,6 +126,7 @@ namespace DemoProject
             foucsRoad.Visible = false;
             focusBoard.Visible = false;
         }
+
         public void ShowMyUserControl7(string user, long id, string Investment_type)
         {
             SessionData.Investment_Type = Investment_type;
@@ -434,8 +435,11 @@ namespace DemoProject
 
         private void button3_Click(object sender, EventArgs e)
         {
+            
             Form1 Login = new Form1();
             Login.Show();
+            Form1.LoginCache.Clear();
+            Application.Restart();
             this.Close();
         }
 

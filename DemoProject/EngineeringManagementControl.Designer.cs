@@ -30,13 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EngineeringManagementControl));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.guna2TextBox7 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             this.dungeonLabel20 = new ReaLTaiizor.Controls.DungeonLabel();
             this.dungeonLabel22 = new ReaLTaiizor.Controls.DungeonLabel();
@@ -45,6 +46,7 @@
             this.dungeonLabel21 = new ReaLTaiizor.Controls.DungeonLabel();
             this.guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2TextBox8 = new Guna.UI2.WinForms.Guna2TextBox();
             this.dungeonLabel8 = new ReaLTaiizor.Controls.DungeonLabel();
             this.dungeonLabel15 = new ReaLTaiizor.Controls.DungeonLabel();
             this.coordinates_E_TB = new Guna.UI2.WinForms.Guna2TextBox();
@@ -64,7 +66,6 @@
             this.dungeonLabel12 = new ReaLTaiizor.Controls.DungeonLabel();
             this.consulting_Office_COB = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dungeonLabel13 = new ReaLTaiizor.Controls.DungeonLabel();
-            this.Republican_Decree_Status_COB = new Guna.UI2.WinForms.Guna2ComboBox();
             this.nightLabel6 = new ReaLTaiizor.Controls.NightLabel();
             this.guna2ImageButton3 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
@@ -106,27 +107,30 @@
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.Republican_Decree_Status_COB = new Guna.UI2.WinForms.Guna2ComboBox();
             this.Update_Radio = new Guna.UI2.WinForms.Guna2RadioButton();
             this.Add_Radio = new Guna.UI2.WinForms.Guna2RadioButton();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dreamButton2 = new ReaLTaiizor.Controls.DreamButton();
             this.dreamButton3 = new ReaLTaiizor.Controls.DreamButton();
             this.dreamButton1 = new ReaLTaiizor.Controls.DreamButton();
-            this.bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.Lands_Count = new ReaLTaiizor.Controls.BigLabel();
+            this.guna2Shapes4 = new Guna.UI2.WinForms.Guna2Shapes();
+            this.bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
             this.Plates_Count = new ReaLTaiizor.Controls.BigLabel();
+            this.guna2Shapes3 = new Guna.UI2.WinForms.Guna2Shapes();
             this.RowCountSeries = new ReaLTaiizor.Controls.BigLabel();
+            this.guna2CirclePictureBox4 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.skyButton2 = new ReaLTaiizor.Controls.SkyButton();
             this.rowCountLabel = new ReaLTaiizor.Controls.BigLabel();
-            this.guna2TextBox6 = new Guna.UI2.WinForms.Guna2TextBox();
             this.nightLabel5 = new ReaLTaiizor.Controls.NightLabel();
+            this.guna2TextBox6 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2CirclePictureBox5 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.fileNameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.skyButton1 = new ReaLTaiizor.Controls.SkyButton();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.skyButton2 = new ReaLTaiizor.Controls.SkyButton();
-            this.guna2CirclePictureBox5 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.skyButton3 = new ReaLTaiizor.Controls.SkyButton();
-            this.guna2CirclePictureBox4 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.nightLabel4 = new ReaLTaiizor.Controls.NightLabel();
             this.advancedDataGridView1 = new Zuby.ADGV.AdvancedDataGridView();
@@ -167,8 +171,10 @@
             this.projectsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.projectsTableAdapter();
             this.notepageBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.note_pageTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.Note_pageTableAdapter();
-            this.guna2Shapes3 = new Guna.UI2.WinForms.Guna2Shapes();
-            this.guna2Shapes4 = new Guna.UI2.WinForms.Guna2Shapes();
+            this.crownLabel2 = new ReaLTaiizor.Controls.CrownLabel();
+            this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.fKinvestmenland4830B400BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.investmentsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.investmentsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.tabPage4.SuspendLayout();
@@ -191,10 +197,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.Error_plate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Error_Serial)).BeginInit();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).BeginInit();
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).BeginInit();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -212,6 +218,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.activityLookupBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.notepageBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKinvestmenland4830B400BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2TextBox2
@@ -276,6 +283,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.guna2TextBox7);
             this.tabPage4.Controls.Add(this.guna2Panel7);
             this.tabPage4.Controls.Add(this.guna2Panel6);
             this.tabPage4.Controls.Add(this.nightLabel6);
@@ -289,6 +297,7 @@
             this.tabPage4.Controls.Add(this.guna2ImageButton1);
             this.tabPage4.Controls.Add(this.guna2Button1);
             this.tabPage4.Controls.Add(this.flowLayoutPanel1);
+            this.tabPage4.Controls.Add(this.Republican_Decree_Status_COB);
             this.tabPage4.Location = new System.Drawing.Point(4, 44);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -296,6 +305,30 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.UseVisualStyleBackColor = true;
             this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
+            // 
+            // guna2TextBox7
+            // 
+            this.guna2TextBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2TextBox7.Animated = true;
+            this.guna2TextBox7.AutoRoundedCorners = true;
+            this.guna2TextBox7.BorderRadius = 13;
+            this.guna2TextBox7.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox7.DefaultText = "";
+            this.guna2TextBox7.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox7.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox7.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox7.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox7.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox7.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox7.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox7.Location = new System.Drawing.Point(18, 88);
+            this.guna2TextBox7.Name = "guna2TextBox7";
+            this.guna2TextBox7.PlaceholderText = "ملاحظات";
+            this.guna2TextBox7.SelectedText = "";
+            this.guna2TextBox7.Size = new System.Drawing.Size(157, 29);
+            this.guna2TextBox7.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.guna2TextBox7.TabIndex = 80;
+            this.guna2TextBox7.Visible = false;
             // 
             // guna2Panel7
             // 
@@ -417,6 +450,7 @@
             // 
             // guna2Panel6
             // 
+            this.guna2Panel6.Controls.Add(this.guna2TextBox8);
             this.guna2Panel6.Controls.Add(this.dungeonLabel8);
             this.guna2Panel6.Controls.Add(this.dungeonLabel15);
             this.guna2Panel6.Controls.Add(this.coordinates_E_TB);
@@ -436,11 +470,33 @@
             this.guna2Panel6.Controls.Add(this.dungeonLabel12);
             this.guna2Panel6.Controls.Add(this.consulting_Office_COB);
             this.guna2Panel6.Controls.Add(this.dungeonLabel13);
-            this.guna2Panel6.Controls.Add(this.Republican_Decree_Status_COB);
             this.guna2Panel6.Location = new System.Drawing.Point(181, 6);
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.Size = new System.Drawing.Size(418, 265);
             this.guna2Panel6.TabIndex = 78;
+            // 
+            // guna2TextBox8
+            // 
+            this.guna2TextBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2TextBox8.Animated = true;
+            this.guna2TextBox8.AutoRoundedCorners = true;
+            this.guna2TextBox8.BorderRadius = 13;
+            this.guna2TextBox8.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox8.DefaultText = "";
+            this.guna2TextBox8.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox8.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox8.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox8.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox8.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox8.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox8.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox8.Location = new System.Drawing.Point(140, 224);
+            this.guna2TextBox8.Name = "guna2TextBox8";
+            this.guna2TextBox8.PlaceholderText = "هنا يتم رقم عقد الارض او القرار";
+            this.guna2TextBox8.SelectedText = "";
+            this.guna2TextBox8.Size = new System.Drawing.Size(187, 29);
+            this.guna2TextBox8.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.guna2TextBox8.TabIndex = 69;
             // 
             // dungeonLabel8
             // 
@@ -763,28 +819,6 @@
             this.dungeonLabel13.Size = new System.Drawing.Size(76, 20);
             this.dungeonLabel13.TabIndex = 12;
             this.dungeonLabel13.Text = "عقد الأرض";
-            // 
-            // Republican_Decree_Status_COB
-            // 
-            this.Republican_Decree_Status_COB.AutoRoundedCorners = true;
-            this.Republican_Decree_Status_COB.BackColor = System.Drawing.Color.Transparent;
-            this.Republican_Decree_Status_COB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.Republican_Decree_Status_COB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Republican_Decree_Status_COB.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Republican_Decree_Status_COB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Republican_Decree_Status_COB.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.Republican_Decree_Status_COB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.Republican_Decree_Status_COB.ItemHeight = 30;
-            this.Republican_Decree_Status_COB.Items.AddRange(new object[] {
-            "X",
-            "✔"});
-            this.Republican_Decree_Status_COB.Location = new System.Drawing.Point(154, 217);
-            this.Republican_Decree_Status_COB.Name = "Republican_Decree_Status_COB";
-            this.Republican_Decree_Status_COB.Size = new System.Drawing.Size(138, 36);
-            this.Republican_Decree_Status_COB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.Republican_Decree_Status_COB.TabIndex = 21;
-            this.Republican_Decree_Status_COB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Republican_Decree_Status_COB.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
             // 
             // nightLabel6
             // 
@@ -1499,6 +1533,28 @@
             this.flowLayoutPanel1.TabIndex = 34;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
+            // Republican_Decree_Status_COB
+            // 
+            this.Republican_Decree_Status_COB.AutoRoundedCorners = true;
+            this.Republican_Decree_Status_COB.BackColor = System.Drawing.Color.Transparent;
+            this.Republican_Decree_Status_COB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.Republican_Decree_Status_COB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Republican_Decree_Status_COB.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Republican_Decree_Status_COB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Republican_Decree_Status_COB.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.Republican_Decree_Status_COB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.Republican_Decree_Status_COB.ItemHeight = 30;
+            this.Republican_Decree_Status_COB.Items.AddRange(new object[] {
+            "X",
+            "✔"});
+            this.Republican_Decree_Status_COB.Location = new System.Drawing.Point(37, 230);
+            this.Republican_Decree_Status_COB.Name = "Republican_Decree_Status_COB";
+            this.Republican_Decree_Status_COB.Size = new System.Drawing.Size(138, 36);
+            this.Republican_Decree_Status_COB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.Republican_Decree_Status_COB.TabIndex = 21;
+            this.Republican_Decree_Status_COB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Republican_Decree_Status_COB.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
+            // 
             // Update_Radio
             // 
             this.Update_Radio.AutoSize = true;
@@ -1611,18 +1667,31 @@
             this.dreamButton1.UseVisualStyleBackColor = true;
             this.dreamButton1.Click += new System.EventHandler(this.dreamButton1_Click);
             // 
-            // bigLabel1
+            // guna2Panel1
             // 
-            this.bigLabel1.AutoSize = true;
-            this.bigLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.bigLabel1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bigLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.bigLabel1.Location = new System.Drawing.Point(620, 75);
-            this.bigLabel1.Name = "bigLabel1";
-            this.bigLabel1.Size = new System.Drawing.Size(102, 30);
-            this.bigLabel1.TabIndex = 42;
-            this.bigLabel1.Text = "bigLabel1";
-            this.bigLabel1.Visible = false;
+            this.guna2Panel1.Controls.Add(this.Lands_Count);
+            this.guna2Panel1.Controls.Add(this.guna2Shapes4);
+            this.guna2Panel1.Controls.Add(this.bigLabel1);
+            this.guna2Panel1.Controls.Add(this.Plates_Count);
+            this.guna2Panel1.Controls.Add(this.guna2Shapes3);
+            this.guna2Panel1.Controls.Add(this.RowCountSeries);
+            this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox4);
+            this.guna2Panel1.Controls.Add(this.skyButton2);
+            this.guna2Panel1.Controls.Add(this.rowCountLabel);
+            this.guna2Panel1.Controls.Add(this.nightLabel5);
+            this.guna2Panel1.Controls.Add(this.guna2TextBox6);
+            this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox5);
+            this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
+            this.guna2Panel1.Controls.Add(this.fileNameTextBox);
+            this.guna2Panel1.Controls.Add(this.skyButton1);
+            this.guna2Panel1.Controls.Add(this.skyButton3);
+            this.guna2Panel1.Controls.Add(this.checkedListBox1);
+            this.guna2Panel1.Controls.Add(this.nightLabel4);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.guna2Panel1.Location = new System.Drawing.Point(159, 219);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(1014, 311);
+            this.guna2Panel1.TabIndex = 1;
             // 
             // Lands_Count
             // 
@@ -1636,6 +1705,37 @@
             this.Lands_Count.TabIndex = 41;
             this.Lands_Count.Text = "bigLabel2";
             // 
+            // guna2Shapes4
+            // 
+            this.guna2Shapes4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Shapes4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2Shapes4.BorderThickness = 0;
+            this.guna2Shapes4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2Shapes4.LineOrientation = System.Windows.Forms.Orientation.Vertical;
+            this.guna2Shapes4.Location = new System.Drawing.Point(230, 7);
+            this.guna2Shapes4.Name = "guna2Shapes4";
+            this.guna2Shapes4.PolygonSkip = 1;
+            this.guna2Shapes4.Rotate = 0F;
+            this.guna2Shapes4.RoundedRadius = 10;
+            this.guna2Shapes4.Shape = Guna.UI2.WinForms.Enums.ShapeType.Rounded;
+            this.guna2Shapes4.Size = new System.Drawing.Size(29, 181);
+            this.guna2Shapes4.TabIndex = 62;
+            this.guna2Shapes4.Text = "guna2Shapes4";
+            this.guna2Shapes4.Zoom = 100;
+            // 
+            // bigLabel1
+            // 
+            this.bigLabel1.AutoSize = true;
+            this.bigLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.bigLabel1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bigLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.bigLabel1.Location = new System.Drawing.Point(620, 75);
+            this.bigLabel1.Name = "bigLabel1";
+            this.bigLabel1.Size = new System.Drawing.Size(102, 30);
+            this.bigLabel1.TabIndex = 42;
+            this.bigLabel1.Text = "bigLabel1";
+            this.bigLabel1.Visible = false;
+            // 
             // Plates_Count
             // 
             this.Plates_Count.AutoSize = true;
@@ -1647,6 +1747,24 @@
             this.Plates_Count.Size = new System.Drawing.Size(102, 30);
             this.Plates_Count.TabIndex = 40;
             this.Plates_Count.Text = "bigLabel1";
+            // 
+            // guna2Shapes3
+            // 
+            this.guna2Shapes3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Shapes3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2Shapes3.BorderThickness = 0;
+            this.guna2Shapes3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2Shapes3.LineOrientation = System.Windows.Forms.Orientation.Vertical;
+            this.guna2Shapes3.Location = new System.Drawing.Point(578, 8);
+            this.guna2Shapes3.Name = "guna2Shapes3";
+            this.guna2Shapes3.PolygonSkip = 1;
+            this.guna2Shapes3.Rotate = 0F;
+            this.guna2Shapes3.RoundedRadius = 10;
+            this.guna2Shapes3.Shape = Guna.UI2.WinForms.Enums.ShapeType.Rounded;
+            this.guna2Shapes3.Size = new System.Drawing.Size(29, 180);
+            this.guna2Shapes3.TabIndex = 61;
+            this.guna2Shapes3.Text = "guna2Shapes3";
+            this.guna2Shapes3.Zoom = 100;
             // 
             // RowCountSeries
             // 
@@ -1660,6 +1778,56 @@
             this.RowCountSeries.TabIndex = 39;
             this.RowCountSeries.Text = "bigLabel1";
             // 
+            // guna2CirclePictureBox4
+            // 
+            this.guna2CirclePictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox4.Image")));
+            this.guna2CirclePictureBox4.ImageRotate = 0F;
+            this.guna2CirclePictureBox4.Location = new System.Drawing.Point(400, 38);
+            this.guna2CirclePictureBox4.Name = "guna2CirclePictureBox4";
+            this.guna2CirclePictureBox4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox4.Size = new System.Drawing.Size(24, 24);
+            this.guna2CirclePictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.guna2CirclePictureBox4.TabIndex = 57;
+            this.guna2CirclePictureBox4.TabStop = false;
+            // 
+            // skyButton2
+            // 
+            this.skyButton2.BackColor = System.Drawing.Color.Transparent;
+            this.skyButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.skyButton2.DownBGColorA = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(153)))), ((int)(((byte)(205)))));
+            this.skyButton2.DownBGColorB = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(124)))), ((int)(((byte)(170)))));
+            this.skyButton2.DownBorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
+            this.skyButton2.DownBorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(149)))), ((int)(((byte)(194)))));
+            this.skyButton2.DownBorderColorC = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(93)))), ((int)(((byte)(131)))));
+            this.skyButton2.DownBorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(25)))), ((int)(((byte)(73)))), ((int)(((byte)(109)))));
+            this.skyButton2.DownForeColor = System.Drawing.Color.White;
+            this.skyButton2.DownShadowForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.skyButton2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.skyButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
+            this.skyButton2.HoverBGColorA = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(153)))), ((int)(((byte)(205)))));
+            this.skyButton2.HoverBGColorB = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(124)))), ((int)(((byte)(170)))));
+            this.skyButton2.HoverBorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
+            this.skyButton2.HoverBorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(149)))), ((int)(((byte)(194)))));
+            this.skyButton2.HoverBorderColorC = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(93)))), ((int)(((byte)(131)))));
+            this.skyButton2.HoverBorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(25)))), ((int)(((byte)(73)))), ((int)(((byte)(109)))));
+            this.skyButton2.HoverForeColor = System.Drawing.Color.White;
+            this.skyButton2.HoverShadowForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.skyButton2.Location = new System.Drawing.Point(368, 51);
+            this.skyButton2.Name = "skyButton2";
+            this.skyButton2.NormalBGColorA = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.skyButton2.NormalBGColorB = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.skyButton2.NormalBorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.skyButton2.NormalBorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.skyButton2.NormalBorderColorC = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.skyButton2.NormalBorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
+            this.skyButton2.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
+            this.skyButton2.NormalShadowForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.skyButton2.Size = new System.Drawing.Size(91, 54);
+            this.skyButton2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.skyButton2.TabIndex = 54;
+            this.skyButton2.Text = "Excel";
+            this.skyButton2.Click += new System.EventHandler(this.skyButton2_Click);
+            // 
             // rowCountLabel
             // 
             this.rowCountLabel.AutoSize = true;
@@ -1671,6 +1839,18 @@
             this.rowCountLabel.Size = new System.Drawing.Size(102, 30);
             this.rowCountLabel.TabIndex = 37;
             this.rowCountLabel.Text = "bigLabel1";
+            // 
+            // nightLabel5
+            // 
+            this.nightLabel5.AutoSize = true;
+            this.nightLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.nightLabel5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nightLabel5.ForeColor = System.Drawing.Color.Black;
+            this.nightLabel5.Location = new System.Drawing.Point(297, 7);
+            this.nightLabel5.Name = "nightLabel5";
+            this.nightLabel5.Size = new System.Drawing.Size(248, 25);
+            this.nightLabel5.TabIndex = 53;
+            this.nightLabel5.Text = "انشاء نسخه من الجدول (تقرير)";
             // 
             // guna2TextBox6
             // 
@@ -1699,17 +1879,29 @@
             this.guna2TextBox6.TabIndex = 60;
             this.guna2TextBox6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.guna2TextBox6_KeyDown);
             // 
-            // nightLabel5
+            // guna2CirclePictureBox5
             // 
-            this.nightLabel5.AutoSize = true;
-            this.nightLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.nightLabel5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nightLabel5.ForeColor = System.Drawing.Color.Black;
-            this.nightLabel5.Location = new System.Drawing.Point(297, 7);
-            this.nightLabel5.Name = "nightLabel5";
-            this.nightLabel5.Size = new System.Drawing.Size(248, 25);
-            this.nightLabel5.TabIndex = 53;
-            this.nightLabel5.Text = "انشاء نسخه من الجدول (تقرير)";
+            this.guna2CirclePictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox5.Image")));
+            this.guna2CirclePictureBox5.ImageRotate = 0F;
+            this.guna2CirclePictureBox5.Location = new System.Drawing.Point(299, 38);
+            this.guna2CirclePictureBox5.Name = "guna2CirclePictureBox5";
+            this.guna2CirclePictureBox5.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox5.Size = new System.Drawing.Size(24, 24);
+            this.guna2CirclePictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.guna2CirclePictureBox5.TabIndex = 58;
+            this.guna2CirclePictureBox5.TabStop = false;
+            this.guna2CirclePictureBox5.Visible = false;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(506, 35);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(25, 27);
+            this.guna2PictureBox1.TabIndex = 59;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.Visible = false;
             // 
             // fileNameTextBox
             // 
@@ -1775,68 +1967,6 @@
             this.skyButton1.Visible = false;
             this.skyButton1.Click += new System.EventHandler(this.skyButton1_Click);
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(506, 35);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(25, 27);
-            this.guna2PictureBox1.TabIndex = 59;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.Visible = false;
-            // 
-            // skyButton2
-            // 
-            this.skyButton2.BackColor = System.Drawing.Color.Transparent;
-            this.skyButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.skyButton2.DownBGColorA = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(153)))), ((int)(((byte)(205)))));
-            this.skyButton2.DownBGColorB = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(124)))), ((int)(((byte)(170)))));
-            this.skyButton2.DownBorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
-            this.skyButton2.DownBorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(149)))), ((int)(((byte)(194)))));
-            this.skyButton2.DownBorderColorC = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(93)))), ((int)(((byte)(131)))));
-            this.skyButton2.DownBorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(25)))), ((int)(((byte)(73)))), ((int)(((byte)(109)))));
-            this.skyButton2.DownForeColor = System.Drawing.Color.White;
-            this.skyButton2.DownShadowForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.skyButton2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skyButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
-            this.skyButton2.HoverBGColorA = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(153)))), ((int)(((byte)(205)))));
-            this.skyButton2.HoverBGColorB = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(124)))), ((int)(((byte)(170)))));
-            this.skyButton2.HoverBorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
-            this.skyButton2.HoverBorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(149)))), ((int)(((byte)(194)))));
-            this.skyButton2.HoverBorderColorC = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(93)))), ((int)(((byte)(131)))));
-            this.skyButton2.HoverBorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(25)))), ((int)(((byte)(73)))), ((int)(((byte)(109)))));
-            this.skyButton2.HoverForeColor = System.Drawing.Color.White;
-            this.skyButton2.HoverShadowForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.skyButton2.Location = new System.Drawing.Point(368, 51);
-            this.skyButton2.Name = "skyButton2";
-            this.skyButton2.NormalBGColorA = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.skyButton2.NormalBGColorB = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.skyButton2.NormalBorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.skyButton2.NormalBorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.skyButton2.NormalBorderColorC = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.skyButton2.NormalBorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
-            this.skyButton2.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
-            this.skyButton2.NormalShadowForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.skyButton2.Size = new System.Drawing.Size(91, 54);
-            this.skyButton2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.skyButton2.TabIndex = 54;
-            this.skyButton2.Text = "Excel";
-            this.skyButton2.Click += new System.EventHandler(this.skyButton2_Click);
-            // 
-            // guna2CirclePictureBox5
-            // 
-            this.guna2CirclePictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox5.Image")));
-            this.guna2CirclePictureBox5.ImageRotate = 0F;
-            this.guna2CirclePictureBox5.Location = new System.Drawing.Point(299, 38);
-            this.guna2CirclePictureBox5.Name = "guna2CirclePictureBox5";
-            this.guna2CirclePictureBox5.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox5.Size = new System.Drawing.Size(24, 24);
-            this.guna2CirclePictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.guna2CirclePictureBox5.TabIndex = 58;
-            this.guna2CirclePictureBox5.TabStop = false;
-            this.guna2CirclePictureBox5.Visible = false;
-            // 
             // skyButton3
             // 
             this.skyButton3.BackColor = System.Drawing.Color.Transparent;
@@ -1876,44 +2006,6 @@
             this.skyButton3.Visible = false;
             this.skyButton3.Click += new System.EventHandler(this.skyButton3_Click);
             // 
-            // guna2CirclePictureBox4
-            // 
-            this.guna2CirclePictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox4.Image")));
-            this.guna2CirclePictureBox4.ImageRotate = 0F;
-            this.guna2CirclePictureBox4.Location = new System.Drawing.Point(400, 38);
-            this.guna2CirclePictureBox4.Name = "guna2CirclePictureBox4";
-            this.guna2CirclePictureBox4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox4.Size = new System.Drawing.Size(24, 24);
-            this.guna2CirclePictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.guna2CirclePictureBox4.TabIndex = 57;
-            this.guna2CirclePictureBox4.TabStop = false;
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.Controls.Add(this.Lands_Count);
-            this.guna2Panel1.Controls.Add(this.guna2Shapes4);
-            this.guna2Panel1.Controls.Add(this.bigLabel1);
-            this.guna2Panel1.Controls.Add(this.Plates_Count);
-            this.guna2Panel1.Controls.Add(this.guna2Shapes3);
-            this.guna2Panel1.Controls.Add(this.RowCountSeries);
-            this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox4);
-            this.guna2Panel1.Controls.Add(this.skyButton2);
-            this.guna2Panel1.Controls.Add(this.rowCountLabel);
-            this.guna2Panel1.Controls.Add(this.nightLabel5);
-            this.guna2Panel1.Controls.Add(this.guna2TextBox6);
-            this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox5);
-            this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
-            this.guna2Panel1.Controls.Add(this.fileNameTextBox);
-            this.guna2Panel1.Controls.Add(this.skyButton1);
-            this.guna2Panel1.Controls.Add(this.skyButton3);
-            this.guna2Panel1.Controls.Add(this.checkedListBox1);
-            this.guna2Panel1.Controls.Add(this.nightLabel4);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2Panel1.Location = new System.Drawing.Point(159, 219);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1014, 311);
-            this.guna2Panel1.TabIndex = 1;
-            // 
             // checkedListBox1
             // 
             this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1939,14 +2031,14 @@
             // advancedDataGridView1
             // 
             this.advancedDataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.advancedDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.advancedDataGridView1.FilterAndSortEnabled = true;
@@ -2128,14 +2220,14 @@
             // advancedDataGridView2
             // 
             this.advancedDataGridView2.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.advancedDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridView2.Dock = System.Windows.Forms.DockStyle.Top;
             this.advancedDataGridView2.FilterAndSortEnabled = true;
@@ -2397,46 +2489,56 @@
             // 
             this.note_pageTableAdapter.ClearBeforeFill = true;
             // 
-            // guna2Shapes3
+            // crownLabel2
             // 
-            this.guna2Shapes3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Shapes3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
-            this.guna2Shapes3.BorderThickness = 0;
-            this.guna2Shapes3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
-            this.guna2Shapes3.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.guna2Shapes3.Location = new System.Drawing.Point(578, 8);
-            this.guna2Shapes3.Name = "guna2Shapes3";
-            this.guna2Shapes3.PolygonSkip = 1;
-            this.guna2Shapes3.Rotate = 0F;
-            this.guna2Shapes3.RoundedRadius = 10;
-            this.guna2Shapes3.Shape = Guna.UI2.WinForms.Enums.ShapeType.Rounded;
-            this.guna2Shapes3.Size = new System.Drawing.Size(29, 180);
-            this.guna2Shapes3.TabIndex = 61;
-            this.guna2Shapes3.Text = "guna2Shapes3";
-            this.guna2Shapes3.Zoom = 100;
+            this.crownLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.crownLabel2.AutoSize = true;
+            this.crownLabel2.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.crownLabel2.ForeColor = System.Drawing.Color.Orange;
+            this.crownLabel2.Location = new System.Drawing.Point(859, 124);
+            this.crownLabel2.Name = "crownLabel2";
+            this.crownLabel2.Size = new System.Drawing.Size(182, 28);
+            this.crownLabel2.TabIndex = 118;
+            this.crownLabel2.Text = "اضف سطر جديد في الجدول";
             // 
-            // guna2Shapes4
+            // guna2CircleButton3
             // 
-            this.guna2Shapes4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Shapes4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
-            this.guna2Shapes4.BorderThickness = 0;
-            this.guna2Shapes4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
-            this.guna2Shapes4.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.guna2Shapes4.Location = new System.Drawing.Point(230, 7);
-            this.guna2Shapes4.Name = "guna2Shapes4";
-            this.guna2Shapes4.PolygonSkip = 1;
-            this.guna2Shapes4.Rotate = 0F;
-            this.guna2Shapes4.RoundedRadius = 10;
-            this.guna2Shapes4.Shape = Guna.UI2.WinForms.Enums.ShapeType.Rounded;
-            this.guna2Shapes4.Size = new System.Drawing.Size(29, 181);
-            this.guna2Shapes4.TabIndex = 62;
-            this.guna2Shapes4.Text = "guna2Shapes4";
-            this.guna2Shapes4.Zoom = 100;
+            this.guna2CircleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2CircleButton3.Animated = true;
+            this.guna2CircleButton3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton3.BackgroundImage")));
+            this.guna2CircleButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2CircleButton3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2CircleButton3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2CircleButton3.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton3.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton3.IndicateFocus = true;
+            this.guna2CircleButton3.Location = new System.Drawing.Point(1047, 121);
+            this.guna2CircleButton3.Name = "guna2CircleButton3";
+            this.guna2CircleButton3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton3.Size = new System.Drawing.Size(38, 31);
+            this.guna2CircleButton3.TabIndex = 117;
+            this.guna2CircleButton3.UseTransparentBackground = true;
+            this.guna2CircleButton3.Click += new System.EventHandler(this.guna2CircleButton3_Click);
+            // 
+            // fKinvestmenland4830B400BindingSource
+            // 
+            this.fKinvestmenland4830B400BindingSource.DataMember = "FK__investmen__land___4830B400";
+            this.fKinvestmenland4830B400BindingSource.DataSource = this.landsBindingSource;
+            // 
+            // investmentsTableAdapter
+            // 
+            this.investmentsTableAdapter.ClearBeforeFill = true;
             // 
             // EngineeringManagementControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.crownLabel2);
+            this.Controls.Add(this.guna2CircleButton3);
             this.Controls.Add(this.guna2CircleButton2);
             this.Controls.Add(this.Report_TB);
             this.Controls.Add(this.skyButton4);
@@ -2481,11 +2583,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.Error_plate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Error_Serial)).EndInit();
             this.tabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).EndInit();
             this.guna2TabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -2504,6 +2606,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.activityLookupBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.notepageBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKinvestmenland4830B400BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2648,5 +2751,11 @@
         private DATABASE2DataSetTableAdapters.Note_pageTableAdapter note_pageTableAdapter;
         private Guna.UI2.WinForms.Guna2Shapes guna2Shapes3;
         private Guna.UI2.WinForms.Guna2Shapes guna2Shapes4;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox7;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox8;
+        private ReaLTaiizor.Controls.CrownLabel crownLabel2;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton3;
+        private System.Windows.Forms.BindingSource fKinvestmenland4830B400BindingSource;
+        private DATABASE2DataSetTableAdapters.investmentsTableAdapter investmentsTableAdapter;
     }
 }

@@ -563,6 +563,7 @@
             this.guna2GradientTileButton12.Text = "محلات المواقف";
             this.guna2GradientTileButton12.UseTransparentBackground = true;
             this.guna2GradientTileButton12.Visible = false;
+            this.guna2GradientTileButton12.Click += new System.EventHandler(this.guna2GradientTileButton12_Click);
             // 
             // guna2GradientTileButton13
             // 
@@ -588,7 +589,7 @@
             this.guna2GradientTileButton13.Name = "guna2GradientTileButton13";
             this.guna2GradientTileButton13.Size = new System.Drawing.Size(698, 110);
             this.guna2GradientTileButton13.TabIndex = 75;
-            this.guna2GradientTileButton13.Text = "محلات الطرق";
+            this.guna2GradientTileButton13.Text = "محلات الطرق و المحاور";
             this.guna2GradientTileButton13.UseTransparentBackground = true;
             this.guna2GradientTileButton13.Visible = false;
             this.guna2GradientTileButton13.Click += new System.EventHandler(this.guna2GradientTileButton13_Click);

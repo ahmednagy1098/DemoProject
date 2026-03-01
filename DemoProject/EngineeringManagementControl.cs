@@ -10,6 +10,7 @@ using System.IO;
 using System.Windows.Forms;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+
 namespace DemoProject
 {
     public partial class EngineeringManagementControl : UserControl
@@ -18,6 +19,41 @@ namespace DemoProject
         public string username; 
         private TextBox editingTextBox = null;
         private DataTable originalData;
+        HashSet<string> landColumns = new HashSet<string>
+        {
+            "serial_number",
+            "land_name",
+            "land_number",
+            "plate_number",
+            "total_area",
+            "Topographic_Survey_Status",
+            "Land_Plate_Status",
+            "coordinates_E",
+            "coordinates_N",
+            "plate_numberFile",
+            "Republican_Decree",
+            "Republican_Decree_Status",
+            "consulting_Office",
+            "total_Land_Price",
+            "Ownership_Authority",
+            "Address",
+            "price_per_meter",
+            "Dependent_neighborhood",
+            "Dependent_road",
+            "City_Name",
+            "Notes"
+        };
+
+                HashSet<string> projectColumns = new HashSet<string>
+        {
+            "project_name"
+        };
+
+                HashSet<string> readOnlyColumns = new HashSet<string>
+        {
+            "governorate_fk"
+        };
+
         public void SetUserData(string user, long id)
         {
             this.username = user;
@@ -155,8 +191,8 @@ namespace DemoProject
                             l.serial_number,
                             l.plate_number,
 
-                            Republican_Decree = l.Republican_Decree,
-                            plate_numberFile = l.plate_numberFile,
+                            Republican_Decree = l.IsRepublican_DecreeNull() ? "" : l.Republican_Decree,
+                            plate_numberFile = l.Isplate_numberFileNull()?"":l.plate_numberFile,
                         };
             var joinedList = query.OrderBy(r => int.TryParse(r.land_id, out var n) ? n : int.MaxValue)
                 .ToList();
@@ -200,7 +236,8 @@ namespace DemoProject
                          || (land.Field<string>("land_id") ?? "").StartsWith("#")
                          || (land.Field<string>("land_id") ?? "").StartsWith("*")
                          || (land.Field<string>("land_id") ?? "") == "0"
-                         || (land.Field<string>("land_id") ?? "").StartsWith("$"))
+                         || (land.Field<string>("land_id") ?? "").StartsWith("$")
+                         || (land.Field<string>("land_id") ?? "").StartsWith("M"))
                     select new
                     {
                         serial_number = land.Isserial_numberNull() ? "" : land.serial_number,
@@ -214,7 +251,8 @@ namespace DemoProject
                         coordinates_E = land.Iscoordinates_ENull() ? "" : "\u200E" + land.coordinates_E,
                         coordinates_N = land.Iscoordinates_NNull() ? "" : "\u200E" + land.coordinates_N,
                         plate_numberFile = land.Isplate_numberFileNull() ? "" : land.plate_numberFile,
-                        governorate_fk = gov == null || gov.IsgovernorateNull() ? "" : gov.governorate,
+                        //governorate_fk = gov == null || gov.IsgovernorateNull() ? "" : gov.governorate,
+                        governorate_fk = land.Isgovernorate_fkNull() ? "" : land.governorate_fk,
                         Republican_Decree = land.IsRepublican_DecreeNull() ? "" : land.Republican_Decree,
                         Republican_Decree_Status = land.IsRepublican_Decree_StatusNull() ? "" : land.Republican_Decree_Status,
                         consulting_Office = land.Isconsulting_OfficeNull() ? "" : land.consulting_Office,
@@ -267,6 +305,23 @@ namespace DemoProject
                     checkBoxColumn.FalseValue = false;
                     advancedDataGridView1.Columns.Add(checkBoxColumn);
                 }
+                if (advancedDataGridView1.Columns.Contains("governorate_fk"))
+                {
+                    DataGridViewComboBoxColumn govCombo = new DataGridViewComboBoxColumn
+                    {
+                        Name = "governorate_fk",
+                        HeaderText = "المحافظة",
+                        DataPropertyName = "governorate_fk",
+                        DataSource = Governorates,          // ✔ نستخدم المتغير الموجود
+                        DisplayMember = "governorate",       // الاسم المعروض
+                        ValueMember = "governorate_id",      // القيمة المخزنة
+                        FlatStyle = FlatStyle.Flat
+                    };
+
+                    int index = advancedDataGridView1.Columns["governorate_fk"].Index;
+                    advancedDataGridView1.Columns.Remove("governorate_fk");
+                    advancedDataGridView1.Columns.Insert(index, govCombo);
+                }
                 originalData = table;
                 advancedDataGridView1.Columns["Select"].DisplayIndex = 0;
             }
@@ -303,7 +358,6 @@ namespace DemoProject
             advancedDataGridView1.Columns["price_per_meter"].HeaderText = "سعر المتر";
             advancedDataGridView1.Columns["plate_numberFile"].Visible = false;
             advancedDataGridView1.Columns["Republican_Decree"].Visible = false;
-
             advancedDataGridView2.Columns["land_id"].HeaderText = "رقم الكود";
             advancedDataGridView2.Columns["land_name"].HeaderText = "اسم قطعة الأرض";
             advancedDataGridView2.Columns["land_number"].HeaderText = "رقم القطعة";
@@ -319,10 +373,6 @@ namespace DemoProject
             advancedDataGridView1.Columns["coordinates_E"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             advancedDataGridView1.Columns["coordinates_N"].DefaultCellStyle.WrapMode = DataGridViewTriState.False;
             advancedDataGridView1.Columns["coordinates_E"].DefaultCellStyle.WrapMode = DataGridViewTriState.False;
-
-
-
-
         }
         public void ApplyGuna2StyleToGrid(DataGridView dgv)
         {
@@ -767,6 +817,7 @@ namespace DemoProject
             // TODO: This line of code loads data into the 'database1DataSet.roles' table. You can move, or remove it, as needed.
             this.rolesTableAdapter.Fill(this.dATABASE2DataSet.roles);
             tabPage4.Tag = "Function:Add";
+            guna2CircleButton3.Tag = "Function:Add";
             tabPage5.Tag = "Function:Print";
             guna2Button3.Tag = "Function:Delete";
             var userRow = dATABASE2DataSet.users.FirstOrDefault(u => u.id == UserId);
@@ -806,8 +857,8 @@ namespace DemoProject
         }
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            bool hasText = !string.IsNullOrWhiteSpace(Republican_Decree_Status_COB.Text);
-            Error_Republican_Decree.Visible = !hasText;
+           /* bool hasText = !string.IsNullOrWhiteSpace(Republican_Decree_Status_COB.Text);
+            Error_Republican_Decree.Visible = !hasText;*/
         }
         private void tabPage4_Click(object sender, EventArgs e)
         {
@@ -1314,12 +1365,12 @@ namespace DemoProject
                 consulting_Office_COB.Focus();
                 hasError = true;
             }
-            if (string.IsNullOrWhiteSpace(Republican_Decree_Status_COB.Text))
+           /* if (string.IsNullOrWhiteSpace(Republican_Decree_Status_COB.Text))
             {
                 Error_Republican_Decree.Visible = true;
                 Republican_Decree_Status_COB.Focus();
                 hasError = true;
-            }
+            }*/
             if (hasError)
             {
                 ShowAlert("يرجى تعبئة الحقول المطلوبة", AlertForm.AlertType.Error);
@@ -1348,7 +1399,8 @@ namespace DemoProject
                         plateFilePath,
                         IDGovernorate,
                         LandfilePath,
-                        Republican_Decree_Status_COB.Text,
+                        //Republican_Decree_Status_COB.Text,
+                        guna2TextBox8.Text,
                         consulting_Office_COB.Text,
                         decimal.Parse(total_land_price_TB.Text),
                         Ownership_Authority_TB.Text,
@@ -1376,7 +1428,8 @@ namespace DemoProject
                 Topographic_Survey_Status_COB.SelectedIndex = -1;
                 Land_Plate_Status_COB.SelectedIndex = -1;
                 consulting_Office_COB.SelectedIndex = -1;
-                Republican_Decree_Status_COB.SelectedIndex = -1;
+                //Republican_Decree_Status_COB.SelectedIndex = -1;
+                guna2TextBox8.Text = "";
                 flowLayoutPanel1.Controls.Clear();
                 lastAddedFilePaths.Clear();
                 plateFilePath = null;
@@ -1519,7 +1572,16 @@ namespace DemoProject
                         Land_Number_TB.Text = GetSafeCellValue(selectedRow, "land_number");
                         Land_Name_TB.Text = GetSafeCellValue(selectedRow, "land_name");
                         Address_TB.Text = GetSafeCellValue(selectedRow, "Address");
-                        Governorate_COB.Text = GetSafeCellValue(selectedRow, "governorate_fk");
+                        string govId = GetSafeCellValue(selectedRow, "governorate_fk");
+
+                        if (!string.IsNullOrWhiteSpace(govId))
+                        {
+                            Governorate_COB.SelectedValue = govId;
+                        }
+                        else
+                        {
+                            Governorate_COB.SelectedIndex = -1;
+                        }
                         Ownership_Authority_TB.Text = GetSafeCellValue(selectedRow, "Ownership_Authority");
                         total_land_price_TB.Text = GetSafeCellValue(selectedRow, "total_Land_Price");
                         total_area_TB.Text = GetSafeCellValue(selectedRow, "total_area");
@@ -1528,6 +1590,7 @@ namespace DemoProject
                         guna2TextBox3.Text= GetSafeCellValue(selectedRow, "City_Name");
                         guna2TextBox4.Text= GetSafeCellValue(selectedRow, "Dependent_neighborhood");
                         guna2TextBox5.Text = GetSafeCellValue(selectedRow, "Dependent_road");
+                        guna2TextBox8.Text= GetSafeCellValue(selectedRow, "Republican_Decree_Status"); 
                         string topoStatus = CleanString(GetSafeCellValue(selectedRow, "Topographic_Survey_Status"));
                         int idx1 = Topographic_Survey_Status_COB.FindStringExact(topoStatus);
                         if (idx1 >= 0) Topographic_Survey_Status_COB.SelectedIndex = idx1;
@@ -1540,9 +1603,9 @@ namespace DemoProject
                         int idx3 = consulting_Office_COB.FindStringExact(office);
                         if (idx3 >= 0) consulting_Office_COB.SelectedIndex = idx3;
 
-                        string decreeStatus = CleanString(GetSafeCellValue(selectedRow, "Republican_Decree_Status"));
-                        int idx4 = Republican_Decree_Status_COB.FindStringExact(decreeStatus);
-                        if (idx4 >= 0) Republican_Decree_Status_COB.SelectedIndex = idx4;
+                        //string decreeStatus = CleanString(GetSafeCellValue(selectedRow, "Republican_Decree_Status"));
+                        //int idx4 = Republican_Decree_Status_COB.FindStringExact(decreeStatus);
+                        //if (idx4 >= 0) Republican_Decree_Status_COB.SelectedIndex = idx4;
                         plateFilePath = GetSafeCellValue(selectedRow, "plate_numberFile");
                         LandfilePath = GetSafeCellValue(selectedRow, "Republican_Decree");
 
@@ -1755,7 +1818,7 @@ namespace DemoProject
         private void nightLabel1_Click(object sender, EventArgs e)
         {
         }
-        private void nightLabel2_Click(object sender, EventArgs e)
+        private void nightLabel2_Click(object sender, EventArgs e)            
         {
         }
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -1796,7 +1859,8 @@ namespace DemoProject
                 plateFilePath,
                 IDGovernorate,
                 LandfilePath,
-                Republican_Decree_Status_COB.Text,
+                //Republican_Decree_Status_COB.Text,
+                guna2TextBox8.Text,
                 consulting_Office_COB.Text,
                 decimal.Parse(total_land_price_TB.Text),
                 Ownership_Authority_TB.Text,
@@ -1805,6 +1869,7 @@ namespace DemoProject
                 guna2TextBox4.Text,
                 guna2TextBox3.Text,
                 guna2TextBox5.Text,
+                guna2TextBox7.Text,
                 LAND_ID
                 );
 
@@ -1822,7 +1887,8 @@ namespace DemoProject
             plate_number_TB.Text ="";
             plateFilePath = null;
             LandfilePath = null;
-            Republican_Decree_Status_COB.SelectedItem = -1;
+            //Republican_Decree_Status_COB.SelectedItem = -1;
+            guna2TextBox8.Text = "";
             consulting_Office_COB.SelectedItem = -1;
             total_land_price_TB.Text = "";
             Ownership_Authority_TB.Text = "";
@@ -1963,7 +2029,8 @@ namespace DemoProject
             plate_number_TB.Text = "";
             plateFilePath = null;
             LandfilePath = null;
-            Republican_Decree_Status_COB.SelectedItem = -1;
+            //Republican_Decree_Status_COB.SelectedItem = -1;
+            guna2TextBox8.Text = "";
             consulting_Office_COB.SelectedItem = -1;
             total_land_price_TB.Text = "";
             Ownership_Authority_TB.Text = "";
@@ -2122,7 +2189,8 @@ namespace DemoProject
             plate_number_TB.Text = "";
             plateFilePath = null;
             LandfilePath = null;
-            Republican_Decree_Status_COB.SelectedIndex = -1;
+            //Republican_Decree_Status_COB.SelectedIndex = -1;
+            guna2TextBox8.Text = "";
             consulting_Office_COB.SelectedIndex = -1;
             total_land_price_TB.Text = "";
             Ownership_Authority_TB.Text = "";
@@ -2210,43 +2278,94 @@ namespace DemoProject
                 if (columnName.Equals("select", StringComparison.OrdinalIgnoreCase))
                     return;
 
-                // ✅ Get latest text from active editor if available
-                string newValue = editingTextBox?.Text ??
-                                  advancedDataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value?.ToString();
+                DataGridViewCell cell =
+                    advancedDataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
 
-                editingTextBox = null; // clear reference (editor is destroyed after edit ends)
+                string landId = advancedDataGridView1.Rows[e.RowIndex]
+                                .Cells["land_id"].Value?.ToString();
 
-                string landId = advancedDataGridView1.Rows[e.RowIndex].Cells["land_id"].Value?.ToString();
-                if (string.IsNullOrEmpty(landId)) return;
+                if (string.IsNullOrEmpty(landId))
+                    return;
 
-                // ✅ Handle coordinates with LTR mark
-                if ((columnName == "coordinates_N" || columnName == "coordinates_E") && !string.IsNullOrEmpty(newValue))
+                // =================================================
+                // GOVERNORATE (ComboBox Column)
+                // =================================================
+                if (columnName == "governorate_fk")
                 {
-                    newValue = "\u200E" + newValue;
-                    advancedDataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = newValue;
+                    // Value = governorate_id
+                    string selectedGovId = cell.Value?.ToString();
+
+                    var table = landsTableAdapter.GetDataByLandId(landId);
+                    if (table.Rows.Count == 0) return;
+
+                    if (string.IsNullOrEmpty(selectedGovId))
+                        table[0]["governorate_fk"] = DBNull.Value;
+                    else
+                        table[0]["governorate_fk"] = selectedGovId;
+
+                    landsTableAdapter.Update(table[0]);
+                    return;
                 }
 
-                var table = landsTableAdapter.GetDataByLandId(landId);
+                // =================================================
+                // NORMAL TEXT / NUMERIC COLUMNS
+                // =================================================
+                string newValue = editingTextBox?.Text ?? cell.Value?.ToString();
+                editingTextBox = null;
 
-                if (table.Rows.Count > 0)
+                if (landColumns.Contains(columnName))
                 {
+                   
+                    var table = landsTableAdapter.GetDataByLandId(landId);
+                    if (table.Rows.Count == 0) return;
+
                     var row = table[0];
 
                     if (string.IsNullOrEmpty(newValue))
                         row[columnName] = DBNull.Value;
                     else
-                        row[columnName] = newValue.Replace("\u200E", ""); // optional: clean before saving
+                        row[columnName] = newValue.Replace("\u200E", "");
 
+                    if ((columnName == "coordinates_N" || columnName == "coordinates_E") && !string.IsNullOrEmpty(newValue))
+                    {
+                        newValue = "\u200E" + newValue;
+                        advancedDataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = newValue;
+                    }
                     landsTableAdapter.Update(row);
                 }
+                // =================================================
+                // PROJECT TABLE
+                // =================================================
+                else if (projectColumns.Contains(columnName))
+                {
+                    var projTable = projectsTableAdapter.GetDataByIDProjects(landId);
+                    if (projTable.Rows.Count == 0) return;
+
+                    var projRow = projTable[0];
+
+                    if (string.IsNullOrEmpty(newValue))
+                        projRow[columnName] = DBNull.Value;
+                    else
+                        projRow[columnName] = newValue;
+
+                    projectsTableAdapter.Update(projRow);
+                }
+                // =================================================
+                // READ ONLY
+                // =================================================
                 else
                 {
-                    MessageBox.Show("لم يتم التسجيل بشكل صحيح");
+                    MessageBox.Show("هذا الحقل للعرض فقط");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("حدث خطأ أثناء الحفظ: " + ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    "حدث خطأ أثناء الحفظ:\n" + ex.Message,
+                    "خطأ",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
         }
 
@@ -2255,6 +2374,13 @@ namespace DemoProject
             if (advancedDataGridView1.CurrentCell == null)
                 return;
 
+            if (advancedDataGridView1.CurrentCell.OwningColumn.Name == "governorate_fk"
+        && e.Control is ComboBox cb)
+            {
+                cb.DropDownStyle = ComboBoxStyle.DropDownList;
+                cb.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                cb.AutoCompleteSource = AutoCompleteSource.ListItems;
+            }
             string columnName = advancedDataGridView1.Columns[advancedDataGridView1.CurrentCell.ColumnIndex].Name;
 
             // Only apply to coordinates columns
@@ -2365,6 +2491,64 @@ namespace DemoProject
             GenerativePanalFlow();
             flagforHideColumnsEnG();
             LoadColumnsIntoCheckedListBox();
+        }
+        private string GetNextLandId()
+        {
+            var table = landsTableAdapter.GetData();
+
+            int maxId = 0;
+            foreach (var row in table)
+            {
+                if (int.TryParse(row.land_id, out int id))
+                    if (id > maxId) maxId = id;
+            }
+
+            return (maxId + 1).ToString();
+        }
+        private void guna2CircleButton3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 1️⃣ إنشاء صف جديد في جدول lands
+                var landTable = landsTableAdapter.GetData();
+                var newRow = landTable.NewlandsRow();
+
+                // 2️⃣ توليد land_id جديد (حسب طريقتك)
+                newRow.land_id = GetNextLandId();   // ⬅️ دالة هنكتبها تحت
+                newRow.land_name = "";
+                newRow.serial_number = "";
+                newRow.total_area = "0";
+                newRow.Republican_Decree = " ";
+                newRow.plate_numberFile = " ";
+                newRow.Notes = "تم اضافة قطعة ارض جديدة";
+                landTable.AddlandsRow(newRow);
+                landsTableAdapter.Update(landTable);
+
+                // 3️⃣ إضافة الصف إلى الـ DataGridView
+                DataTable gridTable = (DataTable)((BindingSource)advancedDataGridView1.DataSource).DataSource;
+
+                DataRow gridRow = gridTable.NewRow();
+                gridRow["land_id"] = int.Parse(newRow.land_id);
+                gridRow["land_name"] = "";
+                gridRow["total_area"] = 0;
+
+                gridTable.Rows.Add(gridRow);
+
+                // 4️⃣ تحديد الصف الجديد تلقائيًا
+                int rowIndex = advancedDataGridView1.Rows.Count - 1;
+                advancedDataGridView1.CurrentCell =
+                    advancedDataGridView1.Rows[rowIndex].Cells["land_name"];
+                advancedDataGridView1.BeginEdit(true);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "حدث خطأ أثناء إضافة صف جديد:\n" + ex.Message,
+                    "خطأ",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
         }
     }
 }

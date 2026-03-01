@@ -43,7 +43,7 @@ namespace DemoProject
             eng.ShowMyUserControl2(_username, _user_id, "كل الاستثمارات");
             eng.Show();
             this.Hide();
-            this.Close();         
+            //this.Close(); 
         }
         private void guna2GradientTileButton3_Click(object sender, EventArgs e)
         {
@@ -51,7 +51,8 @@ namespace DemoProject
             //eng.ShowMyUserControl3(_username, _user_id);
             //eng.Show();
             //this.Hide();
-            //this.Close();guna2GradientTileButton1.Visible = false;
+            //this.Close();  
+            guna2GradientTileButton1.Visible = false;
             guna2CircleButton2.Visible = true;
             guna2GradientTileButton2.Visible = false;
             guna2GradientTileButton22.Visible = false;
@@ -179,7 +180,7 @@ namespace DemoProject
                 Form2 eng = new Form2(_username, _user_id);
                 eng.Show();
                 this.Hide();
-                this.Close();
+                //this.Close(); 
                 eng.ShowMyUserControl5(_username, _user_id, "كل الاستثمارات");
             }
             catch (SqlException ex)
@@ -197,7 +198,7 @@ namespace DemoProject
             eng.ShowMyUserControl(_username, _user_id, "كل الاستثمارات");
             eng.Show();
             this.Hide();
-            this.Close();
+           // this.Close();
         }
         private void guna2GradientTileButton7_Click(object sender, EventArgs e)
         {
@@ -205,7 +206,7 @@ namespace DemoProject
             eng.ShowMyUserControl6(_username, _user_id, "كل الاستثمارات");
             eng.Show();
             this.Hide();
-            this.Close();
+            //this.Close();
         }
         private void guna2GradientTileButton8_Click(object sender, EventArgs e)
         {
@@ -213,7 +214,7 @@ namespace DemoProject
             eng.ShowMyUserControl4(_username, _user_id, "كل الاستثمارات");
             eng.Show();
             this.Hide();
-            this.Close();
+            //this.Close();
         }
         private void guna2GradientTileButton9_Click(object sender, EventArgs e)
         {
@@ -439,32 +440,42 @@ namespace DemoProject
             eng.ShowMyUserControl3(_username, _user_id, "اسفل كباري");
             eng.Show();
             this.Hide();
-            this.Close(); guna2GradientTileButton1.Visible = false;
+            //this.Close();  
+            guna2GradientTileButton1.Visible = false;
         }
 
         private void guna2GradientTileButton13_Click(object sender, EventArgs e)
         {
-            guna2GradientTileButton16.Visible = true;
-            guna2GradientTileButton17.Visible = false;
-            guna2GradientTileButton15.Visible = false;
 
-            guna2CircleButton1.Visible = true;
-            guna2CircleButton2.Visible =false;
-            guna2GradientTileButton2.Visible = false;
-            guna2GradientTileButton22.Visible = false;
-            guna2GradientTileButton3.Visible = false;
-            guna2GradientTileButton4.Visible = false;
-            guna2GradientTileButton5.Visible = false;
-            guna2GradientTileButton6.Visible = false;
-            guna2GradientTileButton7.Visible = false;
+            //guna2GradientTileButton16.Visible = true;
+            //guna2GradientTileButton17.Visible = false;
+            //guna2GradientTileButton15.Visible = false;
+
+            //guna2CircleButton1.Visible = true;
+            //guna2CircleButton2.Visible =false;
+            //guna2GradientTileButton2.Visible = false;
+            //guna2GradientTileButton22.Visible = false;
+            //guna2GradientTileButton3.Visible = false;
+            //guna2GradientTileButton4.Visible = false;
+            //guna2GradientTileButton5.Visible = false;
+            //guna2GradientTileButton6.Visible = false;
+            //guna2GradientTileButton7.Visible = false;
+            //guna2GradientTileButton1.Visible = false;
+            //guna2GradientTileButton9.Visible = false;
+            //guna2GradientTileButton10.Visible = false;
+            //guna2GradientTileButton14.Visible = false;
+            //guna2GradientTileButton11.Visible = false;
+            //guna2GradientTileButton21.Visible = false;
+            //guna2GradientTileButton12.Visible = false;
+            //guna2GradientTileButton13.Visible = false;
+
+            Form2 eng = new Form2(_username, _user_id);
+            SessionData.Investment_para1 = guna2GradientTileButton15.Text;
+            eng.ShowMyUserControl3(_username, _user_id, "استثمارات على الطرق");
+            eng.Show();
+            this.Hide();
+            //this.Close();  
             guna2GradientTileButton1.Visible = false;
-            guna2GradientTileButton9.Visible = false;
-            guna2GradientTileButton10.Visible = false;
-            guna2GradientTileButton14.Visible = false;
-            guna2GradientTileButton11.Visible = false;
-            guna2GradientTileButton21.Visible = false;
-            guna2GradientTileButton12.Visible = false;
-            guna2GradientTileButton13.Visible = false;
 
         }
 
@@ -474,7 +485,8 @@ namespace DemoProject
             eng.ShowMyUserControl3(_username, _user_id, "مولات");
             eng.Show();
             this.Hide();
-            this.Close(); guna2GradientTileButton1.Visible = false;
+            //this.Close();
+            guna2GradientTileButton1.Visible = false;
         }
 
         private void guna2GradientTileButton14_Click(object sender, EventArgs e)
@@ -483,7 +495,8 @@ namespace DemoProject
             eng.ShowMyUserControl3(_username, _user_id, "محلات شل اوت داخل");
             eng.Show();
             this.Hide();
-            this.Close(); guna2GradientTileButton1.Visible = false;
+            //this.Close();
+            guna2GradientTileButton1.Visible = false;
         }
 
         private void guna2GradientTileButton15_Click(object sender, EventArgs e)
@@ -493,7 +506,8 @@ namespace DemoProject
             eng.ShowMyUserControl3(_username, _user_id, "استثمارات على الطرق");
             eng.Show();
             this.Hide();
-            this.Close(); guna2GradientTileButton1.Visible = false;
+            //this.Close();  
+            guna2GradientTileButton1.Visible = false;
         }
 
         private void guna2GradientTileButton16_Click(object sender, EventArgs e)
@@ -503,7 +517,8 @@ namespace DemoProject
             eng.ShowMyUserControl3(_username, _user_id, "استثمارات على الطرق");
             eng.Show();
             this.Hide();
-            this.Close(); guna2GradientTileButton1.Visible = false;
+            //this.Close(); 
+            guna2GradientTileButton1.Visible = false;
         }
 
         private void guna2GradientTileButton17_Click(object sender, EventArgs e)
@@ -513,7 +528,8 @@ namespace DemoProject
             eng.ShowMyUserControl3(_username, _user_id, "استثمارات على الطرق");
             eng.Show();
             this.Hide();
-            this.Close(); guna2GradientTileButton1.Visible = false;
+            //this.Close();
+            guna2GradientTileButton1.Visible = false;
         }
 
         private void guna2CircleButton1_Click(object sender, EventArgs e)
@@ -553,7 +569,8 @@ namespace DemoProject
             eng.ShowMyUserControl3(_username, _user_id, "محلات شل اوت خارج");
             eng.Show();
             this.Hide();
-            this.Close(); guna2GradientTileButton1.Visible = false;
+            //this.Close();
+            guna2GradientTileButton1.Visible = false;
         }
 
         private void guna2GradientTileButton19_Click(object sender, EventArgs e)
@@ -563,7 +580,8 @@ namespace DemoProject
             eng.ShowMyUserControl3(_username, _user_id, "محلات شل اوت خارج");
             eng.Show();
             this.Hide();
-            this.Close(); guna2GradientTileButton1.Visible = false;
+            //this.Close(); 
+            guna2GradientTileButton1.Visible = false;
         }
 
         private void guna2GradientTileButton18_Click(object sender, EventArgs e)
@@ -573,7 +591,7 @@ namespace DemoProject
             eng.ShowMyUserControl3(_username, _user_id, "محلات شل اوت خارج");
             eng.Show();
             this.Hide();
-            this.Close(); 
+            ////this.Close();   
             guna2GradientTileButton1.Visible = false;
         }
 
@@ -584,7 +602,7 @@ namespace DemoProject
             eng.ShowMyUserControl3(_username, _user_id, "كل الاستثمارات");
             eng.Show();
             this.Hide();
-            this.Close();
+            //this.Close(); 
             guna2GradientTileButton1.Visible = false;
         }
 
@@ -594,7 +612,7 @@ namespace DemoProject
             eng.ShowMyUserControl7(_username, _user_id, "كل الاستثمارات");
             eng.Show();
             this.Hide();
-            this.Close();
+            //this.Close(); 
             guna2GradientTileButton1.Visible = false;
         }
 
@@ -611,6 +629,16 @@ namespace DemoProject
           //  {
           //      e.Cancel = true; // ❌ prevent closing
           //  }
+        }
+
+        private void guna2GradientTileButton12_Click(object sender, EventArgs e)
+        {
+            Form2 eng = new Form2(_username, _user_id);
+            eng.ShowMyUserControl3(_username, _user_id, "مواقف");
+            eng.Show();
+            this.Hide();
+            //this.Close();
+            guna2GradientTileButton1.Visible = false;
         }
     }
 }

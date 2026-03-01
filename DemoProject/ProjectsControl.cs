@@ -386,7 +386,7 @@ namespace DemoProject
                 .Where(r => r.RowState != DataRowState.Deleted)
                 .Select(r => new
                 {
-                    ProjectName = r["LandName"]?.ToString(),
+                    project_name = r["LandName"]?.ToString(),
                     FilePath = r[columnName]?.ToString()
                 })
                 .ToList();
@@ -451,7 +451,7 @@ namespace DemoProject
             int index = 1;
             foreach (var item in filtered)
             {
-                listBox.Items.Add($"{index}. {item.ProjectName}");
+                listBox.Items.Add($"{index}. {item.project_name}");
                 index++;
             }
 
@@ -601,29 +601,29 @@ namespace DemoProject
             advancedDataGridView1.Columns["PlateNumber"].HeaderText = "رقم اللوحة";
             advancedDataGridView1.Columns["LandName"].HeaderText = "اسم قطعة الأرض";
             advancedDataGridView1.Columns["Land_Number"].HeaderText = "رقم قطعة الأرض";
-            advancedDataGridView1.Columns["ProjectName"].HeaderText = "اسم المشروع / نشاط";
+            advancedDataGridView1.Columns["project_name"].HeaderText = "اسم المشروع / نشاط";
             advancedDataGridView1.Columns["Address"].HeaderText = "العنوان";
             advancedDataGridView1.Columns["area"].HeaderText = "المساحة";
-            advancedDataGridView1.Columns["ProjectName"].Visible = false;
+            advancedDataGridView1.Columns["project_name"].Visible = false;
             advancedDataGridView1.Columns["LandName"].Visible = false;
             advancedDataGridView1.Columns["GovernorateName"].HeaderText = "اسم المحافظة";
             advancedDataGridView1.Columns["Name_Projects"].HeaderText = "اسم المكان";
             advancedDataGridView1.Columns["Civil_Defense_Approval_status"].HeaderText = "حالة موافقة الحماية المدنية";
             advancedDataGridView1.Columns["CivilDefenseFile"].HeaderText = "ملف موافقة الحماية المدنية";
 
-            advancedDataGridView1.Columns["EnvironmentalStatus"].HeaderText = "حالة موافقة البيئة";
+            advancedDataGridView1.Columns["Environmental_Approval_status"].HeaderText = "حالة موافقة البيئة";
             advancedDataGridView1.Columns["EnvironmentalFile"].HeaderText = "ملف موافقة البيئة";
 
-            advancedDataGridView1.Columns["PetroleumStatus"].HeaderText = "حالة موافقة وزارة البترول";
+            advancedDataGridView1.Columns["Petroleum_Ministry_Approval_status"].HeaderText = "حالة موافقة وزارة البترول";
             advancedDataGridView1.Columns["PetroleumFile"].HeaderText = "ملف موافقة وزارة البترول";
 
-            advancedDataGridView1.Columns["AviationStatus"].HeaderText = "حالة موافقة الطيران المدني";
+            advancedDataGridView1.Columns["Civil_Aviation_Approval_status"].HeaderText = "حالة موافقة الطيران المدني";
             advancedDataGridView1.Columns["AviationFile"].HeaderText = "ملف موافقة الطيران المدني";
 
-            advancedDataGridView1.Columns["TrafficStudyStatus"].HeaderText = "حالة الدراسة المرورية";
+            advancedDataGridView1.Columns["Traffic_Study_Status"].HeaderText = "حالة الدراسة المرورية";
             advancedDataGridView1.Columns["TrafficStudyFile"].HeaderText = "ملف الدراسة المرورية";
 
-            advancedDataGridView1.Columns["Model8Status"].HeaderText = "حالة نموذج 8 أو 10";
+            advancedDataGridView1.Columns["Model_8_Status"].HeaderText = "حالة نموذج 8 أو 10";
             advancedDataGridView1.Columns["Model8File"].HeaderText = "ملف نموذج 8 أو 10";
             advancedDataGridView1.Columns["Transaction_number"].HeaderText = "رخصة التشغيل";
             advancedDataGridView1.Columns["Transaction_numberFile"].HeaderText = "ملف رقم المعاملة";
@@ -672,7 +672,7 @@ namespace DemoProject
                         document_id = d.document_id,
                         Project_Id = p.project_id,
                         Name_Projects = p.Name_Projects,
-                        ProjectName = p.project_name,
+                        project_name = p.project_name,
                         MarketsFile = d.paths   // ملف واحد في كل صف
                     };
 
@@ -699,12 +699,12 @@ namespace DemoProject
 
                 advancedDataGridView2.Columns["Select"].DisplayIndex = 0;
                 advancedDataGridView2.Columns["Project_Id"].HeaderText = "مسلسل مشروع";
-                advancedDataGridView2.Columns["ProjectName"].HeaderText = "اسم المشروع / النشاط";
+                advancedDataGridView2.Columns["project_name"].HeaderText = "اسم المشروع / النشاط";
                 advancedDataGridView2.Columns["Name_Projects"].HeaderText = "اسم المكان";
                 advancedDataGridView2.Columns["MarketsFile"].HeaderText = "ملف المحل";
                 advancedDataGridView2.Columns["document_id"].Visible = false;
                 advancedDataGridView2.Columns["document_id"].HeaderText = "مسلسل المستند";
-                advancedDataGridView2.Columns["ProjectName"].Visible = false;
+                advancedDataGridView2.Columns["project_name"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -743,7 +743,7 @@ namespace DemoProject
                     {
                         Project_Id = p.project_id,
                         Name_Projects = p.Name_Projects,  // ✅ هنا جبنا العمود اللي طلبته
-                        ProjectName = p.project_name,
+                        project_name = p.project_name,
                         InvestmentName = i.investment_name,
                         Activity_Name = i.Activity_Name
                     };
@@ -808,7 +808,7 @@ namespace DemoProject
                         Land_Number = l.land_number,
                         Project_Id = p.project_id,
                         LandName = l.land_name,
-                        ProjectName = p.project_name,
+                        project_name = p.project_name,
                         Name_Projects = p.Name_Projects,
                         area = l.total_area,
                         Address = l.Address,
@@ -841,35 +841,35 @@ namespace DemoProject
                             d.ApprovalName == "موافقة الحماية المدنية")
                 .Select(d => d.Path)),
 
-                        EnvironmentalStatus = p.Environmental_Approval_status,
+                        Environmental_Approval_status = p.Environmental_Approval_status,
                         EnvironmentalFile = string.Join(" , ",
             docsWithApprovals
                 .Where(d => d.ProjectId == p.project_id &&
                             d.ApprovalName == "موافقة البيئة")
                 .Select(d => d.Path)),
 
-                        PetroleumStatus = p.Petroleum_Ministry_Approval_status,
+                        Petroleum_Ministry_Approval_status = p.Petroleum_Ministry_Approval_status,
                         PetroleumFile = string.Join(" , ",
             docsWithApprovals
                 .Where(d => d.ProjectId == p.project_id &&
                             d.ApprovalName == "موافقة وزارة البترول")
                 .Select(d => d.Path)),
 
-                        AviationStatus = p.Civil_Aviation_Approval_status,
+                        Civil_Aviation_Approval_status = p.Civil_Aviation_Approval_status,
                         AviationFile = string.Join(" , ",
             docsWithApprovals
                 .Where(d => d.ProjectId == p.project_id &&
                             d.ApprovalName == "موافقة الطيران المدني")
                 .Select(d => d.Path)),
 
-                        TrafficStudyStatus = p.Traffic_Study_Status,
+                        Traffic_Study_Status = p.Traffic_Study_Status,
                         TrafficStudyFile = string.Join(" , ",
             docsWithApprovals
                 .Where(d => d.ProjectId == p.project_id &&
                             d.ApprovalName == "الدراسة المرورية")
                 .Select(d => d.Path)),
 
-                        Model8Status = p.Model_8_Status,
+                        Model_8_Status = p.Model_8_Status,
                         Model8File = string.Join(" , ",
             docsWithApprovals
                 .Where(d => d.ProjectId == p.project_id &&
@@ -885,7 +885,23 @@ namespace DemoProject
                         Contract_expiry_date = p.Contract_expiry_date,
                         Secured_Certificate = p.IsSecured_certificateNull()?"": p.Secured_certificate
                     };
+                if (!advancedDataGridView1.Columns.Contains("Update"))
+                {
+                    DataGridViewButtonColumn btnUpdate = new DataGridViewButtonColumn
+                    {
+                        HeaderText = "تعديل",
+                        Name = "Update",
+                        Text = "تعديل",
+                        UseColumnTextForButtonValue = true,
+                        Width = 80
+                    };
 
+                    advancedDataGridView1.Columns.Add(btnUpdate);
+                }
+
+                // Make it last column
+                advancedDataGridView1.Columns["Update"].DisplayIndex =
+                    advancedDataGridView1.Columns.Count - 1;
                 var joinedList = query.OrderBy(r => int.TryParse(r.Project_Id, out var n) ? n : int.MaxValue).ToList();
                 DataTable original = ToDataTable(joinedList);
 
@@ -1455,21 +1471,49 @@ namespace DemoProject
         {
             try
             {
-                if (File.Exists(filePath))
-                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
+                if (string.IsNullOrWhiteSpace(filePath))
+                {
+                    ShowAlert("المسار فارغ", AlertForm.AlertType.Error);
+                    return;
+                }
+
+                string finalPath = filePath;
+
+                // لو الملف مش موجود في المسار الأساسي
+                if (!File.Exists(finalPath))
+                {
+                    // تحويل D:\sho8l -> Z:\
+                    if (filePath.StartsWith(@"D:\sho8l\", StringComparison.OrdinalIgnoreCase))
                     {
-                        FileName = filePath,
-                        UseShellExecute = true // ensures it opens with default app
+                        finalPath = @"Z:\" + filePath.Substring(@"D:\sho8l\".Length);
+                    }
+                    // تحويل Z:\ -> D:\sho8l\
+                    else if (filePath.StartsWith(@"Z:\", StringComparison.OrdinalIgnoreCase))
+                    {
+                        finalPath = @"D:\sho8l\" + filePath.Substring(3);
+                    }
+                }
+
+                // فتح الملف لو موجود
+                if (File.Exists(finalPath))
+                {
+                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                    {
+                        FileName = finalPath,
+                        UseShellExecute = true
                     });
+                }
                 else
-                    ShowAlert(filePath + "الملف غير موجود", AlertForm.AlertType.Error);
+                {
+                    ShowAlert("الملف غير موجود في أي مسار متاح", AlertForm.AlertType.Error);
+                }
             }
             catch (Exception ex)
             {
                 ShowAlert("فشل فتح الملف\n" + ex.Message, AlertForm.AlertType.Error);
-                //MessageBox.Show("Failed to open file:\n" + ex.Message);
             }
         }
+
         private bool IsImageFile(string filePath)
         {
             string ext = Path.GetExtension(filePath).ToLower();
@@ -1836,7 +1880,7 @@ namespace DemoProject
              select new
              {
                  ProjectId = p.project_id,
-                 ProjectName = p.project_name,
+                 project_name = p.project_name,
                  TotalStores = p.Total_stores,
                  ActualInvestments = invGroup.Count()
              };
@@ -2066,8 +2110,10 @@ namespace DemoProject
 
             var clickedColumn = advancedDataGridView1.Columns[e.ColumnIndex];
 
-            // Check if Status or Transaction column was clicked
-            if (clickedColumn.Name.Contains("Status") || clickedColumn.Name == "Transaction_number")
+            // Check if Status or Transaction column was clicke
+            if (clickedColumn.Name.Contains("status") ||
+                clickedColumn.Name.Contains("Status") ||
+                clickedColumn.Name == "Transaction_number")
             {
                 string filePath = "";
 
@@ -2078,23 +2124,23 @@ namespace DemoProject
                         filePath = advancedDataGridView1.Rows[e.RowIndex].Cells["CivilDefenseFile"].Value?.ToString();
                         break;
 
-                    case "EnvironmentalStatus":
+                    case "Environmental_Approval_status":
                         filePath = advancedDataGridView1.Rows[e.RowIndex].Cells["EnvironmentalFile"].Value?.ToString();
                         break;
 
-                    case "PetroleumStatus":
+                    case "Petroleum_Ministry_Approval_status":
                         filePath = advancedDataGridView1.Rows[e.RowIndex].Cells["PetroleumFile"].Value?.ToString();
                         break;
 
-                    case "AviationStatus":
+                    case "Civil_Aviation_Approval_status":
                         filePath = advancedDataGridView1.Rows[e.RowIndex].Cells["AviationFile"].Value?.ToString();
                         break;
 
-                    case "TrafficStudyStatus":
+                    case "Traffic_Study_Status":
                         filePath = advancedDataGridView1.Rows[e.RowIndex].Cells["TrafficStudyFile"].Value?.ToString();
                         break;
 
-                    case "Model8Status":
+                    case "Model_8_Status":
                         filePath = advancedDataGridView1.Rows[e.RowIndex].Cells["Model8File"].Value?.ToString();
                         break;
 
@@ -2147,37 +2193,63 @@ namespace DemoProject
                     .Where(r => ids.Contains(r.Field<string>("document_id")) &&
                      r.projects_fk == advancedDataGridView1.Rows[e.RowIndex].Cells["Project_Id"].Value?.ToString())
                     .CopyToDataTable();
-                 
+
                 // Show popup window with correct docs only
                 ShowFileListWindow(filtered);
             }
-            if (Update_Radio.Checked)
+            if (advancedDataGridView1.Columns[e.ColumnIndex].Name == "Update"
+             && e.RowIndex >= 0)
             {
                 try
                 {
-                    if (e.RowIndex >= 0)
+                    Update_Radio.Checked = true;
+                    string serial = advancedDataGridView1
+                        .Rows[e.RowIndex]
+                        .Cells["Project_Id"]   // make sure column name matches exactly
+                        .Value?.ToString();
+
+                    if (!string.IsNullOrWhiteSpace(serial))
                     {
-                        string serial = advancedDataGridView1.Rows[e.RowIndex].Cells["project_id"].Value.ToString();
-                        serial_number_TB.Text = serial;
-                       
+                        // Load data into controls
                         LoadProjectData(serial);
+
+                        // Go to TabPage 4
+                        guna2TabControl1.SelectedTab = tabPage4;
                     }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message);
                 }
-            }
-            else
-            {
-                if (e.RowIndex >= 0)
+                if (Update_Radio.Checked)
                 {
-                    string serial = advancedDataGridView1.Rows[e.RowIndex].Cells["project_id"].Value.ToString();
-                    guna2TextBox1.Text = serial;
-                    var x = this.projectsTableAdapter.GetDataByIDProjects(serial);
-                    guna2TextBox3.Text = x.First().Name_Projects;
-                    
+                    try
+                    {
+                        if (e.RowIndex >= 0)
+                        {
+                            string serial = advancedDataGridView1.Rows[e.RowIndex].Cells["project_id"].Value.ToString();
+                            serial_number_TB.Text = serial;
+                            guna2TextBox1.Text = serial;
+                            var x = this.projectsTableAdapter.GetDataByIDProjects(serial);
+                            guna2TextBox3.Text = x.First().Name_Projects;
+                            LoadProjectData(serial);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
                 }
+               
+                    if (e.RowIndex >= 0)
+                    {
+                        string serial = advancedDataGridView1.Rows[e.RowIndex].Cells["project_id"].Value.ToString();
+                        guna2TextBox1.Text = serial;
+                        var x = this.projectsTableAdapter.GetDataByIDProjects(serial);
+                        guna2TextBox3.Text = x.First().Name_Projects;
+
+                    }
+                
             }
         }
         public class DocInfo
@@ -2860,7 +2932,34 @@ namespace DemoProject
             // ------------------------------------------------------
             LoadProjectData();
             ShowAlert("تم التعديل بنجاح", AlertForm.AlertType.Success);
+            try
+            {
+                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                string mainFolder = Path.Combine(desktopPath, "ملفات و مستندات الطرح العام");
+                string projectFolder = Path.Combine(mainFolder, serial_number_TB.Text);
 
+                // إنشاء الفولدر لو مش موجود
+                if (!Directory.Exists(projectFolder))
+                    Directory.CreateDirectory(projectFolder);
+
+                foreach (var entry in approvalFiles)
+                {
+                    foreach (string sourcePath in entry.Value)
+                    {
+                        if (File.Exists(sourcePath))
+                        {
+                            string fileName = Path.GetFileName(sourcePath);
+                            string destinationPath = Path.Combine(projectFolder, fileName);
+
+                            File.Copy(sourcePath, destinationPath, true); // true = overwrite لو موجود
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ShowAlert("حدث خطأ أثناء نسخ الملفات:\n" + ex.Message, AlertForm.AlertType.Error);
+            }
             Governorate_COB.SelectedItem = -1;
             Investment_Name_TB.Text = "";
             Civil_Defense_COB.SelectedItem = -1;
@@ -3211,14 +3310,14 @@ namespace DemoProject
             { "رقم اللوحة", "PlateNumber" },
             { "اسم قطعة الأرض", "LandName" },
             { "رقم قطعة الأرض", "Land_Number" },
-            { "اسم المشروع / نشاط", "ProjectName" },
+            { "اسم المشروع / نشاط", "project_name" },
             { "اسم المحافظة", "GovernorateName" },
             { "حالة موافقة الحماية المدنية", "Civil_Defense_Approval_status" },
-            { "حالة موافقة البيئة", "EnvironmentalStatus" },
-            { "حالة موافقة وزارة البترول", "PetroleumStatus" },
-            { "حالة موافقة الطيران المدني", "AviationStatus" },
-            { "حالة الدراسة المرورية", "TrafficStudyStatus" },
-            { "حالة نموذج 8 أو 10", "Model8Status" },
+            { "حالة موافقة البيئة", "Environmental_Approval_status" },
+            { "حالة موافقة وزارة البترول", "Petroleum_Ministry_Approval_status" },
+            { "حالة موافقة الطيران المدني", "Civil_Aviation_Approval_status" },
+            { "حالة الدراسة المرورية", "Traffic_Study_Status" },
+            { "حالة نموذج 8 أو 10", "Model_8_Status" },
             { "رقم المعاملة", "Transaction_number" },
             { "تاريخ انتهاء العقد", "Contract_expiry_date" },
             { "اجمالي محلات", "Total_stores" },
@@ -3747,7 +3846,7 @@ namespace DemoProject
             if (row.IsNewRow) return;
 
             string notes = row.Cells["Secured_Certificate"].Value?.ToString()?.Trim() ?? "";
-
+            string transaction = row.Cells["Transaction_number"].Value?.ToString()?.Trim() ?? "";
             // RED CONDITION
             if (!string.IsNullOrEmpty(notes) && notes.Contains("الغاء"))
             {
@@ -3760,11 +3859,40 @@ namespace DemoProject
                 row.DefaultCellStyle.BackColor = Color.Yellow;
                 row.DefaultCellStyle.ForeColor = Color.Black;
             }
+            
             else
             {
                 // Reset (important when filtering or refreshing)
                 row.DefaultCellStyle.BackColor = grid.DefaultCellStyle.BackColor;
                 row.DefaultCellStyle.ForeColor = grid.DefaultCellStyle.ForeColor;
+            }
+            if (transaction == "✔")
+            {
+                string[] orangeColumns =
+                  {
+                    "Civil_Defense_Approval_status",
+                    "Environmental_Approval_status",
+                    "Petroleum_Ministry_Approval_status",
+                    "Civil_Aviation_Approval_status",
+                    "Traffic_Study_Status",
+                    "Model_8_Status"
+                };
+
+                foreach (string colName in orangeColumns)
+                {
+                    if (grid.Columns.Contains(colName))
+                    {
+                        var cell = row.Cells[colName];
+                        string cellValue = cell.Value?.ToString()?.Trim() ?? "";
+
+                        if (cellValue == "X")
+                        {
+                            cell.Style.BackColor = Color.Orange;
+                            cell.Style.ForeColor = Color.Black;
+                        }
+                    }
+                }
+
             }
         }
 

@@ -80,5 +80,17 @@ namespace DemoProject.Properties {
                 this["LastFilterUI"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public long LastUserId {
+            get {
+                return ((long)(this["LastUserId"]));
+            }
+            set {
+                this["LastUserId"] = value;
+            }
+        }
     }
 }
