@@ -130,6 +130,54 @@ namespace DemoProject
                 labelBridges.Text = $"عدد الكباري:{countBridges.ToString()}";
                 rowCountLabel.Text = $"عدد الصفوف : {count.ToString()}";
             }
+            if (SessionData.Investment_Type == "مواقف")
+            {
+                foreach (DataGridViewRow row in advancedDataGridView1.Rows)
+                {
+                    if (row.Visible && !row.IsNewRow)
+                    {
+                        count++;
+
+                        string investmentId = row.Cells["investments_id"].Value?.ToString();
+                        string neighborhood = row.Cells["Name_Projects"].Value?.ToString();
+
+                        // Check if it's a bridge (ID starts with #)
+                        if (!string.IsNullOrEmpty(investmentId) && investmentId.StartsWith("م"))
+                        {
+                            // Add neighborhood to HashSet (duplicates ignored automatically)
+                            if (!string.IsNullOrEmpty(neighborhood))
+                                uniqueBridgeNeighborhoods.Add(neighborhood);
+                        }
+                    }
+                }
+                int countBridges = uniqueBridgeNeighborhoods.Count;
+                labelBridges.Text = $"عدد المواقف:{countBridges.ToString()}";
+                rowCountLabel.Text = $"عدد الصفوف : {count.ToString()}";
+            }
+            if (SessionData.Investment_Type == "مناطق تنموية")
+            {
+                foreach (DataGridViewRow row in advancedDataGridView1.Rows)
+                {
+                    if (row.Visible && !row.IsNewRow)
+                    {
+                        count++;
+
+                        string investmentId = row.Cells["investments_id"].Value?.ToString();
+                        string neighborhood = row.Cells["Name_Projects"].Value?.ToString();
+
+                        // Check if it's a bridge (ID starts with #)
+                        if (!string.IsNullOrEmpty(investmentId) && investmentId.StartsWith("@"))
+                        {
+                            // Add neighborhood to HashSet (duplicates ignored automatically)
+                            if (!string.IsNullOrEmpty(neighborhood))
+                                uniqueBridgeNeighborhoods.Add(neighborhood);
+                        }
+                    }
+                }
+                int countBridges = uniqueBridgeNeighborhoods.Count;
+                labelBridges.Text = $"عدد المناطق:{countBridges.ToString()}";
+                rowCountLabel.Text = $"عدد الصفوف : {count.ToString()}";
+            }
             if (SessionData.Investment_Type == "مولات")
             {
                 foreach (DataGridViewRow row in advancedDataGridView1.Rows)
@@ -303,7 +351,11 @@ namespace DemoProject
             }
 
             // Case: استثمارات على الطرق / اسفل كباري
-            if (SessionData.Investment_Type == "استثمارات على الطرق" || SessionData.Investment_Type == "اسفل كباري" || SessionData.Investment_Type == "مولات")
+            if (SessionData.Investment_Type == "استثمارات على الطرق" ||
+                SessionData.Investment_Type == "اسفل كباري" ||
+                SessionData.Investment_Type == "مولات" ||
+                SessionData.Investment_Type == "مواقف" ||
+                SessionData.Investment_Type == "مناطق تنموية")
             {
                 bigLabel2.Visible = false;
             }
@@ -439,20 +491,37 @@ namespace DemoProject
         // 782-783-784 -785 -786 -787 (833 NEED TO BE CHECKED)
         private void LoadRoadsToCheckedListBox()
         {
-            var allProjects = projectsTableAdapter.GetData();
+            if (SessionData.Investment_Type != "مناطق تنموية") {
+                var allProjects = projectsTableAdapter.GetData();
 
-            // Get all project names where ID starts with &
-            var roads = allProjects
-                .Where(p => !p.Island_fkNull() && p.project_id.StartsWith("&"))
-                .Where(p => !p.IsName_ProjectsNull())
-                .Select(p => p.Name_Projects.Trim())
-                .Distinct()
-                .OrderBy(name => name)
-                .ToList();
+                // Get all project names where ID starts with &
+                var roads = allProjects
+                    .Where(p => !p.Island_fkNull() && p.project_id.StartsWith("&"))
+                    .Where(p => !p.IsName_ProjectsNull())
+                    .Select(p => p.Name_Projects.Trim())
+                    .Distinct()
+                    .OrderBy(name => name)
+                    .ToList();
 
-            checkedListBox2.Items.Clear();
-            foreach (var road in roads)
-                checkedListBox2.Items.Add(road, false);
+                checkedListBox2.Items.Clear();
+                foreach (var road in roads)
+                    checkedListBox2.Items.Add(road, false);
+            }
+            if (SessionData.Investment_Type == "مناطق تنموية")
+            {
+                checkedListBox2.Items.Clear();
+                checkedListBox2.Items.Add("مول", false);
+                checkedListBox2.Items.Add("غاز", false);
+                checkedListBox2.Items.Add("محلات", false);
+                checkedListBox2.Items.Add("ملاعب", false);
+                checkedListBox2.Items.Add("ساحة", false);
+                checkedListBox2.Items.Add("موقف", false);
+                checkedListBox2.Items.Add("ملاهي", false);
+                checkedListBox2.Items.Add("حدائق", false);
+                checkedListBox2.Items.Add("عمارات", false);
+                checkedListBox2.Items.Add("مركز صحي", false);
+                checkedListBox2.Items.Add("فضاء", false);
+            }
         }
         private string GetNameWithoutParentheses(string value)
         {
@@ -522,11 +591,14 @@ namespace DemoProject
             return $"{years} سنة {months} شهر {days} يوم";
         }
 
-        public void LoadInvestmentData()
+        public void LoadInvestmentData() // شل اوت خارج - مواقف - مناطق تنموية - كباري
         {
             try
             {
-                if (SessionData.Investment_Type != "محلات شل اوت خارج" && SessionData.Investment_Type != "كل الاستثمارات" && SessionData.Investment_Type != "مواقف")
+                if (SessionData.Investment_Type != "محلات شل اوت خارج" &&
+                    SessionData.Investment_Type != "كل الاستثمارات" && 
+                    SessionData.Investment_Type != "مواقف" &&
+                   SessionData.Investment_Type != "مناطق تنموية")
                 {
                     skyButton6.Visible = true;
 
@@ -672,10 +744,11 @@ namespace DemoProject
                     
                     originalData = converted;
                 }
+
                 if (SessionData.Investment_Type == "محلات شل اوت خارج" && SessionData.Investment_para1 == "شل اوت الطرق")
                 {
 
-
+                    skyButton6.Visible = false;
                     TrueFunction();
 
                     // --- Part 1: Fetch and join data ---
@@ -812,10 +885,11 @@ namespace DemoProject
                     
                     originalData = converted;
                 }
+
                 if (SessionData.Investment_Type == "محلات شل اوت خارج" && SessionData.Investment_para1 == "شل اوت المدن")
                 {
 
-
+                    skyButton6.Visible = false;
                     TrueFunction();
 
                     // --- Part 1: Fetch and join data ---
@@ -951,11 +1025,13 @@ namespace DemoProject
                     //advancedDataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     originalData = converted;
                 }
+
                 if (SessionData.Investment_Type == "محلات شل اوت خارج" && SessionData.Investment_para1 == "الكل")
                 {
                     TrueFunction();
+                    skyButton6.Visible = false;
                     // --- Part 1: Fetch and join data ---
-                      var query =
+                    var query =
                       from I in investmentsTableAdapter.GetData()
                           // --- Join lands first ---
                       join l in landsTableAdapter.GetData()
@@ -1086,6 +1162,7 @@ namespace DemoProject
                     //advancedDataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     originalData = converted;
                 }
+
                 if (SessionData.Investment_Type == "مواقف")
                 {
                     skyButton6.Visible = true;
@@ -1232,6 +1309,182 @@ namespace DemoProject
 
                     originalData = converted;
                 }
+
+                if (SessionData.Investment_Type == "مناطق تنموية")
+                {
+                    skyButton6.Visible = false;
+                    checkedListBox2.Visible = true;
+                    var documents = documentsTableAdapter.GetData().ToList();
+                    var approvals = approvalsTableAdapter.GetData().ToList();
+                    
+                    var docsWithApprovals = (
+                    from d in documents
+                    join a in approvals on d.approvals_fk equals a.approval_id
+                    select new
+                    {
+                        ProjectId = d.projects_fk,
+                        ApprovalName = a.approvals,
+                        Path = d.paths
+                    }
+                ).ToList();
+                    TrueFunction();
+
+                    // --- Part 1: Fetch and join data ---
+                    var query =
+                      from I in investmentsTableAdapter.GetData()
+                      join g in governorateTableAdapter.GetData()
+                          on I.Isgovernorate_fkNull() ? "-1" : I.governorate_fk equals g.governorate_id into gj
+                      from g in gj.DefaultIfEmpty() // LEFT JOIN for governorate
+                      join l in landsTableAdapter.GetData()
+                          on I.Island_fkNull() ? "-1" : I.land_fk equals l.land_id into lj
+                      from l in lj.DefaultIfEmpty() // LEFT JOIN for lands
+                      join p in projectsTableAdapter.GetData()
+                          on (l == null ? "-1" : l.land_id) equals p.land_fk into pj
+                      from p in pj.DefaultIfEmpty() // LEFT JOIN for projects
+                      join d in documentsTableAdapter.GetData()
+                      on p == null ? "-1" : p.project_id equals d.projects_fk into dj
+                      from d in dj
+                          .Where(x => x.approvals_fk == "APP009")
+                          .DefaultIfEmpty()
+                      where
+                           (string.IsNullOrEmpty(SessionData.Investment_Type)
+                            || (!I.Isinvestment_typeNull() && I.investment_type == SessionData.Investment_Type))
+                      select new
+                      {
+
+                          Project_Id = p == null ? "" : p.project_id,
+                          investments_id = I.investments_id,
+                          Land_Id = l != null && (l.land_id.StartsWith("%") || l.land_id.StartsWith("*")) ? " " : (l == null ? "" : l.land_id),
+                          PlateNumber = l == null || l.Isplate_numberNull() ? "" : l.plate_number,
+                          Land_Number = l == null || l.Island_numberNull() ? "" : l.land_number,
+                          land_name = l == null || l.Island_nameNull() ? "" : l.land_name,
+                          Model_8_Status = p.Model_8_Status,
+                          Model8File = string.Join(" , ",
+                            docsWithApprovals
+                                .Where(d => d.ProjectId == p.project_id &&
+                                            d.ApprovalName == "نموذج 8 أو 10")
+                                .Select(d => d.Path)),
+
+
+                          Civil_Defense_Approval_status = p.Civil_Defense_Approval_status,
+                          CivilDefenseFile = string.Join(" , ",
+                            docsWithApprovals
+                                .Where(d => d.ProjectId == p.project_id &&
+                                            d.ApprovalName == "موافقة الحماية المدنية")
+                                .Select(d => d.Path)),
+                          GovernorateName = g == null || g.IsgovernorateNull() ? "" : g.governorate,
+                          investment_type = I.Isinvestment_typeNull() ? "" : I.investment_type,
+                          //Name_Projects = p == null || p.IsName_ProjectsNull() ? "" : p.Name_Projects,
+                          Name_Projects = I.IsDependent_neighborhoodNull()
+                          ? ""
+                          : GetNameWithoutParentheses(I.Dependent_neighborhood),
+
+                          investment_name = I.Isinvestment_nameNull() ? "" : I.investment_name,
+                          //lAND_Dependent_neighborhood = l.IsDependent_neighborhoodNull() ? "" : l.Dependent_neighborhood,
+                          //Dependent_road = l.IsDependent_roadNull() ? "" : l.Dependent_road,
+                          //City_Name = l.IsCity_NameNull() ? "" : l.City_Name,
+                          //Architectural_and_Structural_Board = p.IsArchitectural_and_Structural_BoardNull()?"": p.Architectural_and_Structural_Board,
+                          Dependent_neighborhood = I.IsDependent_neighborhoodNull()
+                          ? ""
+                          : GetTextInsideParentheses(I.Dependent_neighborhood),
+                          Activity_Type = I.IsActivity_TypeNull() ? "" : I.Activity_Type,
+                          Location = I.IsLocationNull() ? "" : I.Location,
+                          Activity_Name = I.IsActivity_NameNull() ? "" : I.Activity_Name,
+                          //Description_Drawing_Place = I.IsDescription_Drawing_PlaceNull() ? "" : I.Description_Drawing_Place,
+                          Description_Drawing_Place = d == null || d.IspathsNull()
+                          ? ""
+                          : System.IO.Path.GetFileName(d.paths),
+                          Contract_start_date = I.IsContract_start_dateNull() ? (DateTime?)null : I.Contract_start_date,
+                          Contract_expiry_date = I.IsContract_expiry_dateNull() ? (DateTime?)null : I.Contract_expiry_date,
+                          Rental_expiry_date =
+                            (I.IsContract_start_dateNull() || I.IsContract_expiry_dateNull())
+                                ? ""
+                                : GetDateDifference(I.Contract_start_date, I.Contract_expiry_date),
+                          Rental_Status =
+                            !string.IsNullOrEmpty(I.IsRental_StatusNull() ? "" : I.Rental_Status)
+                                ? I.Rental_Status // keep existing status (e.g., "غير مؤجر تم الفسخ")
+                                : ((I.IsActivity_NameNull() ? "" : I.Activity_Name) == "لا يوجد"
+                                    ? (
+                                        string.IsNullOrEmpty(I.Isinvestment_nameNull() ? "" : I.investment_name) ||
+                                        string.IsNullOrEmpty(I.IsActivity_TypeNull() ? "" : I.Activity_Type)
+                                          ? "غير مؤجر (فارغ)"
+                                          : "منتظر العقد"
+                                      )
+                                    : "مؤجر"),
+                          Rental_value = I.IsRental_valueNull() ? 0 : I.Rental_value,
+                          Shops_Count = I.IsShops_CountNull() ? 0 : I.Shops_Count,
+                          Visible = I.IsVisable_ValueNull() ? false : I.Visable_Value,
+                          Place_number = I.IsPlace_numberNull() ? "" : I.Place_number,
+                          Contract_number = I.IsContract_numberNull() ? "" : I.Contract_number,
+                          Offer_memorandum_number = I.IsOffer_memorandum_numberNull() ? "" : I.Offer_memorandum_number,
+                          OfferfilePaths = I.IsOffer_memorandum_number_FileNull() ? "" : I.Offer_memorandum_number_File,
+                          ContractFilePaths = I.IsContract_number_FileNull() ? "" : I.Contract_number_File,
+                          Notes = I.IsNotesNull() ? "" : I.Notes,
+                          Contract_terms = I.IsContract_termsNull() ? "" : I.Contract_terms
+                      };
+
+                    var joinedList = query
+                     .Where(r => r.Visible == true)
+                     .GroupBy(r => r.investments_id)
+                     .Select(g => g.First()) // pick one of each investment_id
+                     .OrderBy(r => int.TryParse(r.investments_id, out var n) ? n : int.MaxValue)
+                     .ToList();
+                    DataTable original = ToDataTable(joinedList);
+
+                    // --- Convert string date columns to DateTime ---
+                    DataTable converted = original.Clone();
+                    converted.Columns["Contract_expiry_date"].DataType = typeof(DateTime);
+                    converted.Columns["Contract_start_date"].DataType = typeof(DateTime);
+
+                    foreach (DataRow row in original.Rows)
+                    {
+                        var newRow = converted.NewRow();
+                        foreach (DataColumn col in original.Columns)
+                        {
+                            if (col.ColumnName == "Contract_expiry_date" || col.ColumnName == "Contract_start_date")
+                            {
+                                if (DateTime.TryParse(row[col].ToString(), out DateTime dt))
+                                    newRow[col.ColumnName] = dt;
+                                else
+                                    newRow[col.ColumnName] = DBNull.Value;
+                            }
+                            else
+                            {
+                                newRow[col.ColumnName] = row[col];
+                            }
+                        }
+                        converted.Rows.Add(newRow);
+                    }
+                    foreach (DataGridViewColumn col in advancedDataGridView1.Columns)
+                    {
+                        if (col.ValueType == typeof(DateTime))
+                        {
+                            col.DefaultCellStyle.Format = "dd/MM/yyyy";
+                        }
+                    }
+
+                    // --- Bind data to DataGridView ---
+                    BindingSource bindingSource = new BindingSource();
+                    bindingSource.DataSource = converted;
+                    advancedDataGridView1.DataSource = bindingSource;
+
+                    if (!advancedDataGridView1.Columns.Contains("Select"))
+                    {
+                        DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
+                        checkBoxColumn.HeaderText = "تحديد"; // "Select" in Arabic
+                        checkBoxColumn.Name = "Select";
+                        checkBoxColumn.Width = 60;
+                        checkBoxColumn.ReadOnly = false;
+                        checkBoxColumn.TrueValue = true;
+                        checkBoxColumn.FalseValue = false;
+                        advancedDataGridView1.Columns.Add(checkBoxColumn);
+                    }
+
+                    advancedDataGridView1.Columns["Select"].DisplayIndex = 0;
+
+                    originalData = converted;
+                    LoadRoadsToCheckedListBox();
+                }
             }
             catch (Exception ex)
             {
@@ -1263,26 +1516,9 @@ namespace DemoProject
                   from d in dj
                       .Where(x => x.approvals_fk == "APP009")
                       .DefaultIfEmpty()
-                  where
-                        (
-                            SessionData.Investment_para1 == "الكل"
-                            // Case 1: show all — nothing excluded
-                            ||
-                            (SessionData.Investment_para1 == "محلات علي الطرق فقط"
-                                // Case 2: only numeric investments (not starting with '&')
-                                && I.investments_id.StartsWith("&"))
-                            ||
-                            (SessionData.Investment_para1 == "محلات شل اوت علي الطرق"
-                                // Case 3: only shell-out on roads (starting with '&')
-                                && I.Dependent_neighborhood == "*")
-                        )
-                        &&
-                        (
-                            string.IsNullOrEmpty(SessionData.Investment_Type)
-                            || (!I.Isinvestment_typeNull() &&
-                                (I.investment_type == SessionData.Investment_Type
-                                 || I.investment_type == "محلات شل اوت خارج"))
-                        )
+                     where
+                           (string.IsNullOrEmpty(SessionData.Investment_Type)
+                            || (!I.Isinvestment_typeNull() && I.investment_type == SessionData.Investment_Type))
                   select new
                   {
                       Project_Id = p == null ? "" : p.project_id,
@@ -1774,6 +2010,15 @@ namespace DemoProject
                 {
                     advancedDataGridView1.Columns["Dependent_neighborhood"].HeaderText = "الحي التابع";
                 }
+                if (SessionData.Investment_Type == "مناطق تنموية") {
+                    advancedDataGridView1.Columns["land_name"].HeaderText = "اسم قطعة الارض";
+                    advancedDataGridView1.Columns["Model_8_Status"].HeaderText = "نموذج 8 او 10";
+                    advancedDataGridView1.Columns["Model8File"].HeaderText = "ملف نموذج 8 او 10";
+                    advancedDataGridView1.Columns["Civil_Defense_Approval_status"].HeaderText = "الحماية المدنية";
+                    advancedDataGridView1.Columns["CivilDefenseFile"].HeaderText = "ملف الحماية المدنية";
+                    advancedDataGridView1.Columns["Model8File"].Visible = false;
+                    advancedDataGridView1.Columns["CivilDefenseFile"].Visible = false;
+                }
                 //advancedDataGridView1.Columns["Dependent_neighborhood"].HeaderText = "الحي التابع";    
                 //advancedDataGridView1.Columns["ProjectName"].HeaderText = "اسم المشروع";
                 advancedDataGridView1.Columns["GovernorateName"].HeaderText = "اسم المحافظة";
@@ -2006,6 +2251,7 @@ namespace DemoProject
         string NoPara1 = "";
         private void LoadInvestmentDataForSelectedRoads()
         {
+           
             if (SessionData.Investment_Type == "كل الاستثمارات") {
                 IsAllData = SessionData.Investment_Type;
                 NoPara1 = "كل الاستثمارات";
@@ -2042,27 +2288,8 @@ namespace DemoProject
                     .Where(x => x.approvals_fk == "APP009")
                     .DefaultIfEmpty()
                 where
-                    // --- Investment_para1 conditions ---
-                    (
-                        SessionData.Investment_para1 == "الكل"
-                        // Case 1: show all — nothing excluded
-                        ||
-                        (SessionData.Investment_para1 == "محلات علي الطرق فقط"
-                            // Case 2: only numeric investments (not starting with '&')
-                            && I.investments_id.StartsWith("&"))
-                        ||
-                        (SessionData.Investment_para1 == "محلات شل اوت علي الطرق"
-                            // Case 3: only shell-out on roads (starting with '&')
-                            && I.Dependent_neighborhood == "*")
-                    )
-                    &&
-                    // --- Investment_Type filter ---
-                    (
-                        string.IsNullOrEmpty(SessionData.Investment_Type)
-                        || (!I.Isinvestment_typeNull() &&
-                            (I.investment_type == SessionData.Investment_Type
-                             || I.investment_type == "محلات شل اوت خارج"))
-                    )
+                   (string.IsNullOrEmpty(SessionData.Investment_Type)
+                            || (!I.Isinvestment_typeNull() && I.investment_type == SessionData.Investment_Type))
                     &&
                     // --- Road filter: if none selected, show all roads ---
                     (
@@ -2144,6 +2371,175 @@ namespace DemoProject
                 SessionData.Investment_Type = IsAllData;
                 SessionData.Investment_para1 = NoPara1;
                 NoPara1="";
+                IsAllData = "";
+            }
+            UpdateRowCount();
+        }
+        private void LoadInvestmentDataForSelectedRoads2()
+        {
+
+            if (SessionData.Investment_Type == "كل الاستثمارات")
+            {
+                IsAllData = SessionData.Investment_Type;
+                NoPara1 = "كل الاستثمارات";
+                SessionData.Investment_para1 = "محلات علي الطرق فقط";
+                SessionData.Investment_Type = "استثمارات على الطرق";
+            }
+            // --- Get selected roads from CheckedListBox ---
+            var selectedTypes = checkedListBox2.CheckedItems
+             .Cast<string>()
+             .Select(x => x.Trim())
+             .ToList();
+            bool isAllSelected = selectedTypes.Contains("الكل");
+
+            // --- Fetch all required data ---
+            var allInvestments = investmentsTableAdapter.GetData();
+            var allGovernorates = governorateTableAdapter.GetData();
+            var allLands = landsTableAdapter.GetData();
+            var allProjects = projectsTableAdapter.GetData();
+            var documents = documentsTableAdapter.GetData().ToList();
+            var approvals = approvalsTableAdapter.GetData().ToList();
+            var docsWithApprovals = (
+                    from d in documents
+                    join a in approvals on d.approvals_fk equals a.approval_id
+                    select new
+                    {
+                        ProjectId = d.projects_fk,
+                        ApprovalName = a.approvals,
+                        Path = d.paths
+                    }
+                ).ToList();
+            // --- Build main query ---
+            var query =
+                from I in allInvestments
+                join g in allGovernorates
+                    on I.Isgovernorate_fkNull() ? "-1" : I.governorate_fk equals g.governorate_id into gj
+                from g in gj.DefaultIfEmpty() // LEFT JOIN for governorate
+                join l in allLands
+                    on I.Island_fkNull() ? "-1" : I.land_fk equals l.land_id into lj
+                from l in lj.DefaultIfEmpty() // LEFT JOIN for lands
+                join p in allProjects
+                    on (l == null ? "-1" : l.land_id) equals p.land_fk into pj
+                from p in pj.DefaultIfEmpty() // LEFT JOIN for projects
+                join d in documentsTableAdapter.GetData()
+                on p == null ? "-1" : p.project_id equals d.projects_fk into dj
+                from d in dj
+                    .Where(x => x.approvals_fk == "APP009")
+                    .DefaultIfEmpty()
+                where
+                   (string.IsNullOrEmpty(SessionData.Investment_Type)
+                            || (!I.Isinvestment_typeNull() && I.investment_type == SessionData.Investment_Type))
+                    &&
+                    // --- Road filter: if none selected, show all roads ---
+                    (
+                        isAllSelected
+                        || selectedTypes.Count == 0
+                        || (l != null && !l.Island_nameNull() &&
+                            selectedTypes.Any(type =>
+                        l.land_name.IndexOf(type, StringComparison.OrdinalIgnoreCase) >= 0)
+                    ))
+                select new
+                {
+                    Project_Id = p == null ? "" : p.project_id,
+                    investments_id = I.investments_id,
+                    Land_Id = l != null && (l.land_id.StartsWith("%") || l.land_id.StartsWith("*")) ? " " : (l == null ? "" : l.land_id),
+                    PlateNumber = l == null || l.Isplate_numberNull() ? "" : l.plate_number,
+                    Land_Number = l == null || l.Island_numberNull() ? "" : l.land_number,
+                    land_name = l == null || l.Island_nameNull() ? "" : l.land_name,
+                    Model_8_Status = p.Model_8_Status,
+                    Model8File = string.Join(" , ",
+                            docsWithApprovals
+                                .Where(d => d.ProjectId == p.project_id &&
+                                            d.ApprovalName == "نموذج 8 أو 10")
+                                .Select(d => d.Path)),
+
+
+                    Civil_Defense_Approval_status = p.Civil_Defense_Approval_status,
+                    CivilDefenseFile = string.Join(" , ",
+                            docsWithApprovals
+                                .Where(d => d.ProjectId == p.project_id &&
+                                            d.ApprovalName == "موافقة الحماية المدنية")
+                                .Select(d => d.Path)),
+                    GovernorateName = g == null || g.IsgovernorateNull() ? "" : g.governorate,
+                    investment_type = I.Isinvestment_typeNull() ? "" : I.investment_type,
+                    //Name_Projects = p == null || p.IsName_ProjectsNull() ? "" : p.Name_Projects,
+                    Name_Projects = I.IsDependent_neighborhoodNull()
+                          ? ""
+                          : GetNameWithoutParentheses(I.Dependent_neighborhood),
+
+                    investment_name = I.Isinvestment_nameNull() ? "" : I.investment_name,
+                    //lAND_Dependent_neighborhood = l.IsDependent_neighborhoodNull() ? "" : l.Dependent_neighborhood,
+                    //Dependent_road = l.IsDependent_roadNull() ? "" : l.Dependent_road,
+                    //City_Name = l.IsCity_NameNull() ? "" : l.City_Name,
+                    //Architectural_and_Structural_Board = p.IsArchitectural_and_Structural_BoardNull()?"": p.Architectural_and_Structural_Board,
+                    Dependent_neighborhood = I.IsDependent_neighborhoodNull()
+                          ? ""
+                          : GetTextInsideParentheses(I.Dependent_neighborhood),
+                    Activity_Type = I.IsActivity_TypeNull() ? "" : I.Activity_Type,
+                    Location = I.IsLocationNull() ? "" : I.Location,
+                    Activity_Name = I.IsActivity_NameNull() ? "" : I.Activity_Name,
+                    //Description_Drawing_Place = I.IsDescription_Drawing_PlaceNull() ? "" : I.Description_Drawing_Place,
+                    Description_Drawing_Place = d == null || d.IspathsNull()
+                          ? ""
+                          : System.IO.Path.GetFileName(d.paths),
+                    Contract_start_date = I.IsContract_start_dateNull() ? (DateTime?)null : I.Contract_start_date,
+                    Contract_expiry_date = I.IsContract_expiry_dateNull() ? (DateTime?)null : I.Contract_expiry_date,
+                    Rental_expiry_date =
+                            (I.IsContract_start_dateNull() || I.IsContract_expiry_dateNull())
+                                ? ""
+                                : GetDateDifference(I.Contract_start_date, I.Contract_expiry_date),
+                    Rental_Status =
+                            !string.IsNullOrEmpty(I.IsRental_StatusNull() ? "" : I.Rental_Status)
+                                ? I.Rental_Status // keep existing status (e.g., "غير مؤجر تم الفسخ")
+                                : ((I.IsActivity_NameNull() ? "" : I.Activity_Name) == "لا يوجد"
+                                    ? (
+                                        string.IsNullOrEmpty(I.Isinvestment_nameNull() ? "" : I.investment_name) ||
+                                        string.IsNullOrEmpty(I.IsActivity_TypeNull() ? "" : I.Activity_Type)
+                                          ? "غير مؤجر (فارغ)"
+                                          : "منتظر العقد"
+                                      )
+                                    : "مؤجر"),
+                    Rental_value = I.IsRental_valueNull() ? 0 : I.Rental_value,
+                    Shops_Count = I.IsShops_CountNull() ? 0 : I.Shops_Count,
+                    Visible = I.IsVisable_ValueNull() ? false : I.Visable_Value,
+                    Place_number = I.IsPlace_numberNull() ? "" : I.Place_number,
+                    Contract_number = I.IsContract_numberNull() ? "" : I.Contract_number,
+                    Offer_memorandum_number = I.IsOffer_memorandum_numberNull() ? "" : I.Offer_memorandum_number,
+                    OfferfilePaths = I.IsOffer_memorandum_number_FileNull() ? "" : I.Offer_memorandum_number_File,
+                    ContractFilePaths = I.IsContract_number_FileNull() ? "" : I.Contract_number_File,
+                    Notes = I.IsNotesNull() ? "" : I.Notes,
+                    Contract_terms = I.IsContract_termsNull() ? "" : I.Contract_terms
+                };
+
+            // --- Filter visible and sort ---
+            var joinedList = query
+                .Where(r => r.Visible == true)
+                .OrderBy(r => int.TryParse(r.investments_id, out var n) ? n : int.MaxValue)
+                .ToList();
+
+            // --- Handle “الكل” case separately ---
+            if (SessionData.Investment_para1 == "الكل")
+            {
+                joinedList = joinedList
+                    .Where(r => r.investments_id.StartsWith("@") || r.Dependent_neighborhood == "*")
+                    .OrderBy(r => int.TryParse(r.investments_id, out var n) ? n : int.MaxValue)
+                    .ToList();
+            }
+            else
+            {
+                joinedList = joinedList
+                    .OrderBy(r => int.TryParse(r.investments_id, out var n) ? n : int.MaxValue)
+                    .ToList();
+            }
+
+            // --- Convert to DataTable and bind ---
+            DataTable original = ToDataTable(joinedList);
+            advancedDataGridView1.DataSource = original;
+            if (IsAllData != "")
+            {
+                SessionData.Investment_Type = IsAllData;
+                SessionData.Investment_para1 = NoPara1;
+                NoPara1 = "";
                 IsAllData = "";
             }
             UpdateRowCount();
@@ -2400,6 +2796,7 @@ namespace DemoProject
                 // checkedListBox2.Visible = true;
                 //LoadRoadsToCheckedListBox();
             }
+
             if (SessionData.Investment_Type == "استثمارات على الطرق")
             {
                 checkedListBox2.Visible = true;
@@ -2417,6 +2814,8 @@ namespace DemoProject
 
                 LoadRoadsToCheckedListBox();
             }
+
+
             if (SessionData.Investment_Type == "محلات شل اوت داخل")
             {
                 checkedListBox2.Visible = false;
@@ -2433,6 +2832,7 @@ namespace DemoProject
                 LoadInvestmentDataMarketsIn();
              
             }
+
             if (SessionData.Investment_Type == "مولات")
             {
                 checkedListBox2.Visible = false;
@@ -2448,6 +2848,7 @@ namespace DemoProject
                 LoadInvestmentDataMALLS();
              
             }
+
             if (SessionData.Investment_Type != "محلات شل اوت داخل" && SessionData.Investment_Type != "مولات"
                 && SessionData.Investment_Type != "استثمارات على الطرق" 
                 && SessionData.Investment_Type != "كل الاستثمارات")
@@ -2464,6 +2865,7 @@ namespace DemoProject
          
 
             }
+
             UpdateRowCount();
             GenerativePanalFlow();
             ApplyGuna2StyleToGrid(advancedDataGridView1);
@@ -2566,7 +2968,8 @@ namespace DemoProject
                     || column.Name == "Visible"
                     || (column.Name == "investment_type" && SessionData.Investment_Type != "كل الاستثمارات")
                     || column.Name == "Dependent_neighborhood"
-                    
+                    || (column.Name == "Model8File")
+                    || (column.Name == "CivilDefenseFile")
                     )
                     continue;
 
@@ -3397,8 +3800,9 @@ namespace DemoProject
                  && SessionData.Investment_Type != "استثمارات على الطرق"
                  && SessionData.Investment_Type != "كل الاستثمارات")
             {
-                LoadInvestmentData();
                 checkedListBox2.Visible = false;
+                LoadInvestmentData();
+                
             }
             UpdateRowCount();
             GenerativePanalFlow();
@@ -3601,7 +4005,10 @@ namespace DemoProject
                         || column.Name == "Project_Id"
                         || column.Name == "Visible"
                         || column.Name =="investment_type"
-                        || column.Name =="Dependent_neighborhood")
+                        || column.Name == "Dependent_neighborhood"
+                        || column.Name == "Model8File"
+                        || column.Name == "CivilDefenseFile")
+
                             continue;
                         column.Visible = checkAll;
                     }
@@ -4232,6 +4639,7 @@ namespace DemoProject
         {
             try
             {
+                var clickedColumn = advancedDataGridView1.Columns[e.ColumnIndex];
                 // make sure user clicked a valid row and on the Activity_Name column
                 if (e.RowIndex >= 0 && advancedDataGridView1.Columns[e.ColumnIndex].Name == "Activity_Name")
                 {
@@ -4326,6 +4734,92 @@ namespace DemoProject
                         MessageBox.Show("لا يوجد ملف مطابق لهذا النشاط والمشروع", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
+                if (clickedColumn.Name.Contains("status") ||
+               clickedColumn.Name.Contains("Status") ||
+               clickedColumn.Name == "Transaction_number")
+                {
+                    string filePath = "";
+
+                    // pick correct file cell
+                    switch (clickedColumn.Name)
+                    {
+                        case "Civil_Defense_Approval_status":
+                            filePath = advancedDataGridView1.Rows[e.RowIndex].Cells["CivilDefenseFile"].Value?.ToString();
+                            break;
+
+                        case "Environmental_Approval_status":
+                            filePath = advancedDataGridView1.Rows[e.RowIndex].Cells["EnvironmentalFile"].Value?.ToString();
+                            break;
+
+                        case "Petroleum_Ministry_Approval_status":
+                            filePath = advancedDataGridView1.Rows[e.RowIndex].Cells["PetroleumFile"].Value?.ToString();
+                            break;
+
+                        case "Civil_Aviation_Approval_status":
+                            filePath = advancedDataGridView1.Rows[e.RowIndex].Cells["AviationFile"].Value?.ToString();
+                            break;
+
+                        case "Traffic_Study_Status":
+                            filePath = advancedDataGridView1.Rows[e.RowIndex].Cells["TrafficStudyFile"].Value?.ToString();
+                            break;
+
+                        case "Model_8_Status":
+                            filePath = advancedDataGridView1.Rows[e.RowIndex].Cells["Model8File"].Value?.ToString();
+                            break;
+
+                        case "Transaction_number":
+                            filePath = advancedDataGridView1.Rows[e.RowIndex].Cells["Transaction_numberFile"].Value?.ToString();
+                            break;
+                    }
+
+                    if (string.IsNullOrWhiteSpace(filePath))
+                    {
+                        MessageBox.Show("الملف غير موجود أو المسار فارغ.");
+                        return;
+                    }
+
+                    // Split multiple files
+                    string[] files = filePath
+                        .Split(new char[] { ',', ';', '|' }, StringSplitOptions.RemoveEmptyEntries)
+                        .Select(f => f.Trim())
+                        .ToArray();
+
+                    // if only 1 file → open directly
+                    if (files.Length == 1)
+                    {
+                        OpenFile(files[0]);
+                        return;
+                    }
+
+                    // MULTIPLE FILES → load matching rows from DB
+                    List<string> ids = new List<string>();
+
+                    // Loop database table
+                    var docs = documentsTableAdapter.GetData();
+                    foreach (var file in files)
+                    {
+                        string cleaned = file.Replace("\\", "/").ToLower();
+
+                        foreach (DataRow row in docs.Rows)
+                        {
+                            string dbPath = row["paths"].ToString().Replace("\\", "/").ToLower();
+
+                            if (dbPath == cleaned)
+                            {
+                                ids.Add(row["document_id"].ToString());
+                            }
+                        }
+                    }
+
+                    // Filter table with these IDs
+                    DataTable filtered = docs.AsEnumerable()
+                        .Where(r => ids.Contains(r.Field<string>("document_id")) &&
+                         r.projects_fk == advancedDataGridView1.Rows[e.RowIndex].Cells["Project_Id"].Value?.ToString())
+                        .CopyToDataTable();
+
+                    // Show popup window with correct docs only
+                    ShowFileListWindow(filtered);
+                }
             }
             catch (Exception ex)
             {
@@ -4347,7 +4841,130 @@ namespace DemoProject
             }
 
         }
+        public class DocInfo
+        {
+            public string FileName { get; set; }
+            public string FullPath { get; set; }
+            public int DocumentID { get; set; }
+        }
+        private void ShowFileListWindow(DataTable docs)
+        {
+            Form f = new Form();
+            f.Text = "اختر ملفًا لفتحه";
+            f.StartPosition = FormStartPosition.CenterParent;
+            f.Size = new Size(500, 300);
+            f.FormBorderStyle = FormBorderStyle.FixedDialog;
 
+            ListBox list = new ListBox();
+            list.Dock = DockStyle.Fill;
+            list.Font = new System.Drawing.Font("Segoe UI", 11);
+            list.DrawMode = DrawMode.OwnerDrawFixed;
+            list.ItemHeight = 30;
+
+            // store all info in dictionary
+            Dictionary<string, DocInfo> fileData = new Dictionary<string, DocInfo>();
+
+            foreach (DataRow row in docs.Rows)
+            {
+                string fullPath = row["paths"].ToString();
+                int docID = Convert.ToInt32(row["document_id"]);
+                string name = Path.GetFileName(fullPath);
+
+                list.Items.Add(name);
+
+                fileData[name] = new DocInfo
+                {
+                    FileName = name,
+                    FullPath = fullPath,
+                    DocumentID = docID
+                };
+            }
+
+            // Draw filename + [حذف]
+            list.DrawItem += (s, e) =>
+            {
+                e.DrawBackground();
+
+                if (e.Index >= 0)
+                {
+                    string name = list.Items[e.Index].ToString();
+
+                    // draw filename
+                    e.Graphics.DrawString(name, list.Font,
+                        Brushes.Black, e.Bounds.Left + 5, e.Bounds.Top + 5);
+
+                    // draw delete text
+                    string deleteText = "[حذف]";
+                    SizeF size = e.Graphics.MeasureString(deleteText, list.Font);
+
+                    float x = e.Bounds.Right - size.Width - 10;
+                    float y = e.Bounds.Top + 5;
+
+                    e.Graphics.DrawString(deleteText, list.Font, Brushes.Red, x, y);
+                }
+
+                e.DrawFocusRectangle();
+            };
+
+            // Handle clicks (detect delete area)
+            list.MouseClick += (s, e) =>
+            {
+                int index = list.IndexFromPoint(e.Location);
+                if (index < 0) return;
+
+                string name = list.Items[index].ToString();
+                DocInfo info = fileData[name];
+
+                string deleteText = "[حذف]";
+
+                System.Drawing.Rectangle itemRect = list.GetItemRectangle(index);
+                SizeF textSize = list.CreateGraphics().MeasureString(deleteText, list.Font);
+
+                System.Drawing.Rectangle deleteRect = new System.Drawing.Rectangle(
+                    itemRect.Right - (int)textSize.Width - 10,
+                    itemRect.Top,
+                    (int)textSize.Width + 10,
+                    itemRect.Height
+                );
+
+                // ✔ Delete clicked
+                if (deleteRect.Contains(e.Location))
+                {
+                    if (MessageBox.Show("هل تريد حذف المستند من القاعدة والملفات؟",
+                                        "تأكيد", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            // 1) Delete from database using TableAdapter
+                            this.documentsTableAdapter.DeleteQuery1(info.DocumentID.ToString());
+
+                            // 2) Delete physical file
+                            if (File.Exists(info.FullPath))
+                                File.Delete(info.FullPath);
+
+                            // 3) Remove from ListBox
+                            list.Items.RemoveAt(index);
+                            fileData.Remove(name);
+
+                            MessageBox.Show("تم حذف المستند بنجاح.");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("خطأ أثناء الحذف: " + ex.Message);
+                        }
+                    }
+
+                    return;
+                }
+
+                // ✔ Otherwise: open file
+                OpenFile(info.FullPath);
+                f.Close();
+            };
+
+            f.Controls.Add(list);
+            f.ShowDialog();
+        }
         private void tabPage4_Click(object sender, EventArgs e)
         {
 
@@ -4671,6 +5288,7 @@ namespace DemoProject
                     newValue = newValue.Replace("\u200E", "").Trim();
 
                     // 6️⃣ Detect numeric columns automatically
+
                     Type columnType = row.Table.Columns[columnName].DataType;
 
                     if (columnType == typeof(decimal) ||
@@ -4721,10 +5339,34 @@ namespace DemoProject
         }
         private void checkedListBox2_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            this.BeginInvoke((MethodInvoker)(() =>
-            {
-                LoadInvestmentDataForSelectedRoads();
-            }));
+           
+                this.BeginInvoke((MethodInvoker)(() =>
+                {
+                    if (SessionData.Investment_Type != "مناطق تنموية")
+                    {
+                        LoadInvestmentDataForSelectedRoads();
+                    }
+                    else if (SessionData.Investment_Type == "مناطق تنموية")
+                    {
+                        //this.BeginInvoke((MethodInvoker)(() =>
+                        //{
+                           // if (checkedListBox2.Items[e.Index].ToString() == "الكل")
+                            //{
+                              //  for (int i = 0; i < checkedListBox2.Items.Count; i++)
+                                //    checkedListBox2.SetItemChecked(i, i == e.Index);
+                            //}
+                            //else
+                            //{
+                            //    int allIndex = checkedListBox2.Items.IndexOf("الكل");
+                            //    if (allIndex >= 0)
+                            //        checkedListBox2.SetItemChecked(allIndex, false);
+                            //}
+
+                            LoadInvestmentDataForSelectedRoads2();
+
+                        //}));
+                    }
+                }));
         }
         private void checkedListBox2_MouseDown(object sender, MouseEventArgs e)
         {

@@ -305,6 +305,22 @@ namespace DemoProject
                     checkBoxColumn.FalseValue = false;
                     advancedDataGridView1.Columns.Add(checkBoxColumn);
                 }
+                if (!advancedDataGridView1.Columns.Contains("Update"))
+                {
+                    DataGridViewButtonColumn btnUpdate = new DataGridViewButtonColumn
+                    {
+                        HeaderText = "تعديل",
+                        Name = "Update",
+                        Text = "تعديل",
+                        UseColumnTextForButtonValue = true,
+                        DisplayIndex=0,
+                        Width = 80
+                    };
+
+                    advancedDataGridView1.Columns.Add(btnUpdate);
+                }
+                // Make it last column
+
                 if (advancedDataGridView1.Columns.Contains("governorate_fk"))
                 {
                     DataGridViewComboBoxColumn govCombo = new DataGridViewComboBoxColumn
@@ -1554,8 +1570,91 @@ namespace DemoProject
                     MessageBox.Show("الملف غير موجود أو المسار فارغ.");
                 }
             }
-            if (Update_Radio.Checked)
+            if (advancedDataGridView1.Columns[e.ColumnIndex].Name == "Update"
+             && e.RowIndex >= 0)
             {
+                try
+                {
+                    Update_Radio.Checked = true;
+                    string serial = advancedDataGridView1
+                        .Rows[e.RowIndex]
+                        .Cells["land_id"]   // make sure column name matches exactly
+                        .Value?.ToString();
+
+                    if (!string.IsNullOrWhiteSpace(serial))
+                    {
+                        // Load data into controls
+                        DataGridViewRow selectedRow = advancedDataGridView1.Rows[e.RowIndex];
+
+                        // Safe value retrieval with error handling
+                        LAND_ID = GetSafeCellValue(selectedRow, "land_id");
+                        guna2TextBox1.Text = GetSafeCellValue(selectedRow, "price_per_meter");
+                        serial_number_TB.Text = GetSafeCellValue(selectedRow, "serial_number");
+                        plate_number_TB.Text = GetSafeCellValue(selectedRow, "plate_number");
+                        Land_Number_TB.Text = GetSafeCellValue(selectedRow, "land_number");
+                        Land_Name_TB.Text = GetSafeCellValue(selectedRow, "land_name");
+                        Address_TB.Text = GetSafeCellValue(selectedRow, "Address");
+                        string govId = GetSafeCellValue(selectedRow, "governorate_fk");
+
+                        if (!string.IsNullOrWhiteSpace(govId))
+                        {
+                            Governorate_COB.SelectedValue = govId;
+                        }
+                        else
+                        {
+                            Governorate_COB.SelectedIndex = -1;
+                        }
+                        Ownership_Authority_TB.Text = GetSafeCellValue(selectedRow, "Ownership_Authority");
+                        total_land_price_TB.Text = GetSafeCellValue(selectedRow, "total_Land_Price");
+                        total_area_TB.Text = GetSafeCellValue(selectedRow, "total_area");
+                        coordinates_E_TB.Text = GetSafeCellValue(selectedRow, "coordinates_E");
+                        coordinates_N_TB.Text = GetSafeCellValue(selectedRow, "coordinates_N");
+                        guna2TextBox3.Text = GetSafeCellValue(selectedRow, "City_Name");
+                        guna2TextBox4.Text = GetSafeCellValue(selectedRow, "Dependent_neighborhood");
+                        guna2TextBox5.Text = GetSafeCellValue(selectedRow, "Dependent_road");
+                        guna2TextBox8.Text = GetSafeCellValue(selectedRow, "Republican_Decree_Status");
+                        string topoStatus = CleanString(GetSafeCellValue(selectedRow, "Topographic_Survey_Status"));
+                        int idx1 = Topographic_Survey_Status_COB.FindStringExact(topoStatus);
+                        if (idx1 >= 0) Topographic_Survey_Status_COB.SelectedIndex = idx1;
+
+                        string plateStatus = CleanString(GetSafeCellValue(selectedRow, "Land_Plate_Status"));
+                        int idx2 = Land_Plate_Status_COB.FindStringExact(plateStatus);
+                        if (idx2 >= 0) Land_Plate_Status_COB.SelectedIndex = idx2;
+
+                        string office = CleanString(GetSafeCellValue(selectedRow, "consulting_Office"));
+                        int idx3 = consulting_Office_COB.FindStringExact(office);
+                        if (idx3 >= 0) consulting_Office_COB.SelectedIndex = idx3;
+
+                        //string decreeStatus = CleanString(GetSafeCellValue(selectedRow, "Republican_Decree_Status"));
+                        //int idx4 = Republican_Decree_Status_COB.FindStringExact(decreeStatus);
+                        //if (idx4 >= 0) Republican_Decree_Status_COB.SelectedIndex = idx4;
+                        plateFilePath = GetSafeCellValue(selectedRow, "plate_numberFile");
+                        LandfilePath = GetSafeCellValue(selectedRow, "Republican_Decree");
+
+                        if (!string.IsNullOrWhiteSpace(LandfilePath))
+                        {
+                            lastAddedFilePaths.Add(LandfilePath);
+                            //flowLayoutPanel1.Controls.Clear(); // Clear previous icons if needed
+                            AddFileIconToPanel(LandfilePath, Path.GetFileName(LandfilePath));
+                        }
+                        if (!string.IsNullOrWhiteSpace(plateFilePath))
+                        {
+                            lastAddedFilePaths.Add(plateFilePath);
+                            //flowLayoutPanel1.Controls.Clear(); // Clear previous icons if needed
+                            AddFileIconToPanel(plateFilePath, Path.GetFileName(plateFilePath));
+                        }
+
+                        // Go to TabPage 4
+                        guna2TabControl1.SelectedTab = tabPage4;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+
+                if (Update_Radio.Checked)
+                {
                 flowLayoutPanel1.Controls.Clear(); // Clear previous icons if needed
                 lastAddedFilePaths.Clear();
                 try
@@ -1627,6 +1726,7 @@ namespace DemoProject
                 {
                     MessageBox.Show($"خطأ في تحميل البيانات: {ex.Message}");
                 }
+            }
             }
         }
         private string GetSafeCellValue(DataGridViewRow row, string columnName)

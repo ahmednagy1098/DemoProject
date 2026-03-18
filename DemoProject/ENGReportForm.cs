@@ -70,6 +70,7 @@ namespace DemoProject
             guna2GradientTileButton12.Visible = true;
             guna2GradientTileButton13.Visible = true;
             guna2GradientTileButton21.Visible = true;
+            guna2GradientTileButton23.Visible = true;
 
 
         }
@@ -232,6 +233,7 @@ namespace DemoProject
             guna2GradientTileButton13.Visible = false;
             guna2GradientTileButton14.Visible = false;
             guna2GradientTileButton21.Visible = false;
+            guna2GradientTileButton23.Visible = false;
             guna2GradientTileButton1.Visible = true;
             guna2GradientTileButton2.Visible = true;
             guna2GradientTileButton22.Visible = true;
@@ -284,6 +286,7 @@ namespace DemoProject
             guna2GradientTileButton18.Visible = false;
             guna2GradientTileButton19.Visible = false;
             guna2GradientTileButton20.Visible = false;
+            guna2GradientTileButton23.Visible = true;
         }
         public void ShowMenuView2()
         {
@@ -339,6 +342,7 @@ namespace DemoProject
             guna2GradientTileButton18.Visible = true;
             guna2GradientTileButton19.Visible = true;
             guna2GradientTileButton20.Visible = true;
+            guna2GradientTileButton23.Visible = false;
 
         }
         public void ShowEngView()
@@ -432,6 +436,7 @@ namespace DemoProject
             guna2GradientTileButton16.Visible = false;
             guna2GradientTileButton17.Visible = false;
             guna2GradientTileButton15.Visible = false;
+            guna2GradientTileButton23.Visible = false;
         }
 
         private void guna2GradientTileButton9_Click_1(object sender, EventArgs e)
@@ -541,7 +546,7 @@ namespace DemoProject
             guna2GradientTileButton18.Visible = false;
             guna2GradientTileButton19.Visible = false;
             guna2GradientTileButton20.Visible = false;
-
+            guna2GradientTileButton23.Visible = true;
             guna2CircleButton1.Visible = false;
             guna2CircleButton2.Visible = true;
             guna2GradientTileButton2.Visible = false;
@@ -639,6 +644,17 @@ namespace DemoProject
             this.Hide();
             //this.Close();
             guna2GradientTileButton1.Visible = false;
+        }
+
+        private void guna2GradientTileButton23_Click(object sender, EventArgs e)
+        {
+            Form2 eng = new Form2(_username, _user_id);
+            eng.ShowMyUserControl3(_username, _user_id, "مناطق تنموية");
+            eng.Show();
+            this.Hide();
+            //this.Close();
+            guna2GradientTileButton1.Visible = false;
+
         }
     }
 }

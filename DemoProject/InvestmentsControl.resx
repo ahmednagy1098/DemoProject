@@ -194948,7 +194948,7 @@
   <data name="guna2CircleButton3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        6AAAAOgBhtX2rwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAOWSURBVFhHtVZd
+        5wAAAOcB8BtYtQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAOWSURBVFhHtVZd
         TxNREOWN8q3Q7q5REyPqmyYmiEri3xCamPhbfNIYn1ERFKIxRhH5kFLaJYCiEOODie8aqMpH5UsoaWnL
         OOf2ttDbu3QrOMkJZbs75+ydmdMpcxsUqK+lkOkn23xEYfMTY4mxLYHPuNbB37fRlLdGPnbwINt7jhN3
         MWIMcokYi+2kkO+sTFN60McTFWRb9zhZUkleCvh0jLs0fsoj07oLKOeHvyrJDoJpCnqPyfT7B4V9F/kB
@@ -194967,6 +194967,12 @@
         7sk5XNEoK/sLKQCh/05VaIQAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="approvalsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>403, 212</value>
+  </metadata>
+  <metadata name="approvalsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>586, 212</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>78</value>
   </metadata>

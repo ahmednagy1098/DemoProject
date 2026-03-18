@@ -69,6 +69,7 @@
             this.guna2GradientTileButton20 = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.guna2GradientTileButton21 = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.guna2GradientTileButton22 = new Guna.UI2.WinForms.Guna2GradientTileButton();
+            this.guna2GradientTileButton23 = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dATABASE2DataSet)).BeginInit();
@@ -871,12 +872,41 @@
             this.guna2GradientTileButton22.UseTransparentBackground = true;
             this.guna2GradientTileButton22.Click += new System.EventHandler(this.guna2GradientTileButton22_Click);
             // 
+            // guna2GradientTileButton23
+            // 
+            this.guna2GradientTileButton23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2GradientTileButton23.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientTileButton23.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2GradientTileButton23.BorderRadius = 10;
+            this.guna2GradientTileButton23.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientTileButton23.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientTileButton23.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientTileButton23.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientTileButton23.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientTileButton23.FillColor = System.Drawing.Color.Lime;
+            this.guna2GradientTileButton23.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.guna2GradientTileButton23.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
+            this.guna2GradientTileButton23.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientTileButton23.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientTileButton23.Image")));
+            this.guna2GradientTileButton23.ImageOffset = new System.Drawing.Point(0, 10);
+            this.guna2GradientTileButton23.ImageSize = new System.Drawing.Size(50, 50);
+            this.guna2GradientTileButton23.IndicateFocus = true;
+            this.guna2GradientTileButton23.Location = new System.Drawing.Point(-275, 230);
+            this.guna2GradientTileButton23.Name = "guna2GradientTileButton23";
+            this.guna2GradientTileButton23.Size = new System.Drawing.Size(378, 110);
+            this.guna2GradientTileButton23.TabIndex = 86;
+            this.guna2GradientTileButton23.Text = "مناطق تنموية - الاراضي";
+            this.guna2GradientTileButton23.UseTransparentBackground = true;
+            this.guna2GradientTileButton23.Visible = false;
+            this.guna2GradientTileButton23.Click += new System.EventHandler(this.guna2GradientTileButton23_Click);
+            // 
             // ENGReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(812, 768);
+            this.Controls.Add(this.guna2GradientTileButton23);
             this.Controls.Add(this.guna2GradientTileButton22);
             this.Controls.Add(this.guna2GradientTileButton21);
             this.Controls.Add(this.guna2GradientTileButton20);
@@ -964,5 +994,6 @@
         private Guna.UI2.WinForms.Guna2GradientTileButton guna2GradientTileButton20;
         private Guna.UI2.WinForms.Guna2GradientTileButton guna2GradientTileButton21;
         private Guna.UI2.WinForms.Guna2GradientTileButton guna2GradientTileButton22;
+        private Guna.UI2.WinForms.Guna2GradientTileButton guna2GradientTileButton23;
     }
 }

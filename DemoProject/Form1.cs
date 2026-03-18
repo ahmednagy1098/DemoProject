@@ -113,49 +113,10 @@ namespace DemoProject
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();
-                //try
-                //{
-                //    if (hubConnection.State == HubConnectionState.Disconnected)
-                //        await hubConnection.StartAsync();
-
-                //    await hubConnection.InvokeAsync(
-                //        "SendMessage",
-                //        SessionData.UserName,
-                //        "Logged In"
-                //    );
-
-                //}
-                //catch (Exception ex)
-                //{
-                //    ShowAlert(ex.Message, AlertForm.AlertType.Error);
-
-                //}
-                //playeWelcome.Play();
-                //hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
-                //{
-                //    var newMessage = $"{user}:{message}";
-                //    ShowAlert(newMessage, AlertForm.AlertType.Success);
-                //});
-                //try
-                //{
-                //    await hubConnection.StartAsync();
-
-                //}
-                //catch (Exception ex)
-                //{
-                //    ShowAlert(ex.Message, AlertForm.AlertType.Error);
-
-                //}
+      
                 ShowAlert("مرحبا بك", AlertForm.AlertType.Success);
             }
-            //else if (UserNameTB.Text=="المدير العام" && PassWordTB.Text =="123" )
-            //{            
-            //    this.Hide();
-            //    ShowAlert("مرحبا بك", AlertForm.AlertType.Success);
-            //    ENGReportForm Menu = new ENGReportForm(matchedUser.user_name, matchedUser.password, matchedUser.id);
-            //    Menu.Show();
-             
-            //}
+
             else
             {
                 ShowAlert("يرجي كتابة اسم المستخدم وكلمة السر بشكل صحيح", AlertForm.AlertType.Error);
@@ -256,15 +217,7 @@ namespace DemoProject
                     ENGReportForm menu = new ENGReportForm(matchedUser.user_name, matchedUser.id);
                     menu.Show();
                 }
-               //else if (UserNameTB.Text == "المدير العام" && PassWordTB.Text == "123")
-               // {
-               //     this.Hide();
-               //     ShowAlert("مرحبا بك", AlertForm.AlertType.Success);
-               //     ENGReportForm Menu = new ENGReportForm(matchedUser.user_name, matchedUser.password, matchedUser.id);
-
-               //     Menu.Show();
-
-               // }
+   
                 else
                 {
                     ShowAlert("يرجي كتابة اسم المستخدم وكلمة السر بشكل صحيح", AlertForm.AlertType.Error);
@@ -291,15 +244,7 @@ namespace DemoProject
                     ENGReportForm menu = new ENGReportForm(matchedUser.user_name, matchedUser.id);
                     menu.Show();
                 }
-              /*else if (UserNameTB.Text == "المدير العام" && PassWordTB.Text == "123")
-                {
-                    this.Hide();
-                    ShowAlert("مرحبا بك", AlertForm.AlertType.Success);
-                    ENGReportForm Menu = new ENGReportForm(matchedUser.user_name, matchedUser.password, matchedUser.id);
 
-                    Menu.Show();
-
-                }*/
                 else
                 {
                     ShowAlert("يرجي كتابة اسم المستخدم وكلمة السر بشكل صحيح", AlertForm.AlertType.Error);
@@ -314,24 +259,6 @@ namespace DemoProject
             this.tableAdapterManager.UpdateAll(this.dATABASE2DataSet);
 
         }
-        //private void btnSuccess_Click(object sender, EventArgs e)
-        //{
-        //    ShowAlert("Success Alert", AlertForm.AlertType.Success);
-        //}
-
-        //private void btnWarning_Click(object sender, EventArgs e)
-        //{
-        //    ShowAlert("Warning Alert", AlertForm.AlertType.Warning);
-        //}
-
-        //private void btnError_Click(object sender, EventArgs e)
-        //{
-        //    ShowAlert("Error Alert", AlertForm.AlertType.Error);
-        //}
-
-        //private void btnInfo_Click(object sender, EventArgs e)
-        //{
-        //    ShowAlert("Info Alert", AlertForm.AlertType.Info);
-        //}
+      
     }
 }

@@ -612,9 +612,10 @@
             // dashBoardControl1
             // 
             this.dashBoardControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(28)))), ((int)(((byte)(63)))));
+            this.dashBoardControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dashBoardControl1.Location = new System.Drawing.Point(0, 0);
             this.dashBoardControl1.Name = "dashBoardControl1";
-            this.dashBoardControl1.Size = new System.Drawing.Size(1192, 752);
+            this.dashBoardControl1.Size = new System.Drawing.Size(1192, 713);
             this.dashBoardControl1.TabIndex = 53;
             this.dashBoardControl1.Load += new System.EventHandler(this.dashBoardControl1_Load);
             // 

@@ -834,6 +834,7 @@ namespace DemoProject
                         Architectural_and_Structural_Board = p.IsArchitectural_and_Structural_BoardNull()?"":p.Architectural_and_Structural_Board,
                         //Reconciliation_Form_Stamp = p.IsReconciliation_Form_StampNull()?"":p.Reconciliation_Form_Stamp,
                         Consultant_Surveying = p.Consultant_Surveying,
+
                         Civil_Defense_Approval_status = p.Civil_Defense_Approval_status,
                         CivilDefenseFile = string.Join(" , ",
             docsWithApprovals
@@ -885,23 +886,7 @@ namespace DemoProject
                         Contract_expiry_date = p.Contract_expiry_date,
                         Secured_Certificate = p.IsSecured_certificateNull()?"": p.Secured_certificate
                     };
-                if (!advancedDataGridView1.Columns.Contains("Update"))
-                {
-                    DataGridViewButtonColumn btnUpdate = new DataGridViewButtonColumn
-                    {
-                        HeaderText = "تعديل",
-                        Name = "Update",
-                        Text = "تعديل",
-                        UseColumnTextForButtonValue = true,
-                        Width = 80
-                    };
-
-                    advancedDataGridView1.Columns.Add(btnUpdate);
-                }
-
-                // Make it last column
-                advancedDataGridView1.Columns["Update"].DisplayIndex =
-                    advancedDataGridView1.Columns.Count - 1;
+                
                 var joinedList = query.OrderBy(r => int.TryParse(r.Project_Id, out var n) ? n : int.MaxValue).ToList();
                 DataTable original = ToDataTable(joinedList);
 
@@ -954,7 +939,20 @@ namespace DemoProject
                     };
                     advancedDataGridView1.Columns.Add(checkBoxColumn);
                 }
+                if (!advancedDataGridView1.Columns.Contains("Update"))
+                {
+                    DataGridViewButtonColumn btnUpdate = new DataGridViewButtonColumn
+                    {
+                        HeaderText = "تعديل",
+                        Name = "Update",
+                        Text = "تعديل",
+                        UseColumnTextForButtonValue = true,
+                        DisplayIndex=0,
+                        Width = 80
+                    };
 
+                    advancedDataGridView1.Columns.Add(btnUpdate);
+                }
                 advancedDataGridView1.Columns["Select"].DisplayIndex = 0;
                 originalData = converted;
                 loadDocs();
@@ -970,7 +968,7 @@ namespace DemoProject
         }
 
 
-        public void LoadColumnsIntoCheckedListBox()
+        public void LoadColumnsIntoCheckedListBox() // add from the columns to the list as items
         {
             // Clear previous items
             checkedListBox1.Items.Clear();
@@ -996,17 +994,17 @@ namespace DemoProject
                 }
                 checkedListBox1.Items.Add(column.HeaderText, column.Visible); // Show as checked if visible
             }
-        }
+        } 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-        }
+        } // not used yet
         // hide and show columns
         private void checkedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             this.BeginInvoke((MethodInvoker)delegate
             {
-                string header = checkedListBox1.Items[e.Index].ToString();
+                string header = checkedListBox1.Items[index: e.Index].ToString();
 
                 // --- Handle "اختيار الكل" (Select All) ---
                 if (header == "اختيار الكل")
@@ -1051,7 +1049,7 @@ namespace DemoProject
                 }
             });
         
-        }
+        } // items check lists if true then apper if false then hide
 
         private void skyButton3_Click(object sender, EventArgs e)
         {

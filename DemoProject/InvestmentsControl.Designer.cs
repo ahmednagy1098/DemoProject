@@ -190,6 +190,8 @@
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.crownLabel3 = new ReaLTaiizor.Controls.CrownLabel();
             this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.approvalsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.approvalsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.approvalsTableAdapter();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -231,6 +233,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.invesmentsListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.investmentsBindingSource)).BeginInit();
             this.guna2Panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.approvalsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2TabControl1
@@ -2838,6 +2841,15 @@
             this.guna2CircleButton3.UseTransparentBackground = true;
             this.guna2CircleButton3.Click += new System.EventHandler(this.guna2CircleButton3_Click);
             // 
+            // approvalsBindingSource
+            // 
+            this.approvalsBindingSource.DataMember = "approvals";
+            this.approvalsBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // approvalsTableAdapter
+            // 
+            this.approvalsTableAdapter.ClearBeforeFill = true;
+            // 
             // InvestmentsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2911,6 +2923,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.investmentsBindingSource)).EndInit();
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.approvalsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3076,5 +3089,7 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private ReaLTaiizor.Controls.CrownLabel crownLabel3;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton3;
+        private System.Windows.Forms.BindingSource approvalsBindingSource;
+        private DATABASE2DataSetTableAdapters.approvalsTableAdapter approvalsTableAdapter;
     }
 }
