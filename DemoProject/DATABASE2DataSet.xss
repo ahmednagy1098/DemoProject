@@ -21,7 +21,7 @@
     <Shape ID="DesignTable:documents" ZOrder="3" X="-55" Y="1262" Height="248" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:GetFullProjectData" ZOrder="12" X="502" Y="-30" Height="305" Width="254" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:Invesments_List" ZOrder="11" X="688" Y="324" Height="153" Width="235" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
-    <Shape ID="DesignTable:Note_page" ZOrder="8" X="997" Y="465" Height="134" Width="207" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
+    <Shape ID="DesignTable:Note_page" ZOrder="8" X="997" Y="416" Height="210" Width="207" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:FK__access__function__74444068" ZOrder="29" LineWidth="11">

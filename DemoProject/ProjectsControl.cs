@@ -39,26 +39,26 @@ namespace DemoProject
             Traffic_Study_COB.SelectedIndexChanged += COB_SelectedIndexChanged;
             Civil_Aviation_COB.SelectedIndexChanged += COB_SelectedIndexChanged;
             Environmental_COB.SelectedIndexChanged += COB_SelectedIndexChanged;
-            dreamButton1.Cursor = Cursors.Hand;
-            dreamButton1.Click += (s, e) => ShowDocumentList("CivilDefenseFile", "موافقات الحماية المدنية");
+            //dreamButton1.Cursor = Cursors.Hand;
+            //dreamButton1.Click += (s, e) => ShowDocumentList("CivilDefenseFile", "موافقات الحماية المدنية");
 
-            dreamButton3.Cursor = Cursors.Hand;
-            dreamButton3.Click += (s, e) => ShowDocumentList("EnvironmentalFile", "موافقات البيئة");
+            //dreamButton3.Cursor = Cursors.Hand;
+            //dreamButton3.Click += (s, e) => ShowDocumentList("EnvironmentalFile", "موافقات البيئة");
 
-            dreamButton4.Cursor = Cursors.Hand;
-            dreamButton4.Click += (s, e) => ShowDocumentList("PetroleumFile", "موافقات وزارة البترول");
+            //dreamButton4.Cursor = Cursors.Hand;
+            //dreamButton4.Click += (s, e) => ShowDocumentList("PetroleumFile", "موافقات وزارة البترول");
 
-            dreamButton2.Cursor = Cursors.Hand;
-            dreamButton2.Click += (s, e) => ShowDocumentList("AviationFile", "موافقات الطيران المدني");
+            //dreamButton2.Cursor = Cursors.Hand;
+            //dreamButton2.Click += (s, e) => ShowDocumentList("AviationFile", "موافقات الطيران المدني");
 
-            dreamButton5.Cursor = Cursors.Hand;
-            dreamButton5.Click += (s, e) => ShowDocumentList("TrafficStudyFile", "الدراسة المرورية");
+            //dreamButton5.Cursor = Cursors.Hand;
+            //dreamButton5.Click += (s, e) => ShowDocumentList("TrafficStudyFile", "الدراسة المرورية");
 
-            dreamButton6.Cursor = Cursors.Hand;
-            dreamButton6.Click += (s, e) => ShowDocumentList("Model8File", "نماذج 8 أو 10");
+            //dreamButton6.Cursor = Cursors.Hand;
+            //dreamButton6.Click += (s, e) => ShowDocumentList("Model8File", "نماذج 8 أو 10");
 
-            dreamButton16.Cursor = Cursors.Hand;
-            dreamButton16.Click += (s, e) => ShowDocumentList("Transaction_numberFile", "رخصة التشغيل");
+            //dreamButton16.Cursor = Cursors.Hand;
+            //dreamButton16.Click += (s, e) => ShowDocumentList("Transaction_numberFile", "رخصة التشغيل");
             
         }
         private static int alertOffsetY = 0;
@@ -297,8 +297,8 @@ namespace DemoProject
             int headerRight = guna2TabControl1.Left + guna2TabControl1.Width - guna2Button3.Width - 5;
             int headerTop = guna2TabControl1.Top;
             guna2Button3.Location = new Point(headerRight - 5, headerTop);
-            Add_Radio.Location = new Point(headerRight - 680, headerTop);
-            Update_Radio.Location = new Point(headerRight-730, headerTop);
+            //Add_Radio.Location = new Point(headerRight - 680, headerTop);
+            //Update_Radio.Location = new Point(headerRight-730, headerTop);
         }
 
         private void AdjustComboBox(ComboBox comboBox)
@@ -377,7 +377,7 @@ namespace DemoProject
             var dt = advancedDataGridView1.DataSource as DataTable;
             if (dt == null)
             {
-                MessageBox.Show("البيانات غير متاحة حالياً.", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               //MessageBox.Show("البيانات غير متاحة حالياً.", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -510,17 +510,7 @@ namespace DemoProject
 
         private void ProjectsControl_Load(object sender, EventArgs e)
         {
-            var xNote = this.note_pageTableAdapter.GetData();
-            var row = xNote.FindById(2);
-
-            if (row == null || row.IsNote_PageNull())
-            {
-                guna2TextBox6.Text = "";
-            }
-            else
-            {
-                guna2TextBox6.Text = row.Note_Page;
-            }
+          
             guna2TabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;
             guna2TabControl1.DrawItem += guna2TabControl1_DrawItem;
 
@@ -541,10 +531,13 @@ namespace DemoProject
             PositionHeaderButton();
             loadcomboxes();
             LoadProjectData();
+            LoadNotes();
+            SaveState();
             UpdateRowCount();
             GenerativePanalFlow();
             ApplyGuna2StyleToGrid(advancedDataGridView1);
             ApplyGuna2StyleToGrid(advancedDataGridView2);
+            ApplyGuna2StyleToGrid(advancedDataGridView3);
             ArabicColumnGrid(); 
             LoadColumnsIntoCheckedListBox();
             // TODO: This line of code loads data into the 'database1DataSet.functions' table. You can move, or remove it, as needed.
@@ -636,6 +629,13 @@ namespace DemoProject
            // advancedDataGridView1.Columns["Reconciliation_Form_Stamp"].HeaderText = "رخصة التشغيل";
             //advancedDataGridView1.Columns["Consultant_Surveying"].HeaderText = "الرفع المساحي الاستشاري";
             advancedDataGridView1.Columns["consulting_Office"].HeaderText = "المكتب الاستشاري";
+            advancedDataGridView3.Columns["Id"].HeaderText = "مسلسل مميز";
+            advancedDataGridView3.Columns["Note_Page"].HeaderText = "الملاحظات";
+            advancedDataGridView3.Columns["Code"].HeaderText = "مسلسل";
+            advancedDataGridView3.Columns["DateTime"].HeaderText = "التاريخ";
+            advancedDataGridView3.Columns["status"].HeaderText = "موقف الملحوظه";
+            advancedDataGridView3.Columns["Id"].Visible = false;
+
 
 
         }
@@ -1814,6 +1814,8 @@ namespace DemoProject
 
             // Update the row count
             UpdateRowCount();
+            if (isRestoring) return;
+            SaveState();
         }
         private void UpdateRowCount()
         {
@@ -1943,7 +1945,7 @@ namespace DemoProject
 
             // 🔹 Update your 6 labels (replace with your actual label names)
             dreamButton1.Text = $"موافقة الحماية المدنية";
-            dreamButton9.Text = $"{civilDefenseCount}"; // 
+            dreamButton9.Text = $"{ civilDefenseCount}"; // 
             dreamButton3.Text = $"موافقة البيئة";
             dreamButton10.Text = $"{environmentalCount}";
             dreamButton4.Text = $"موافقة البترول";
@@ -1967,6 +1969,9 @@ namespace DemoProject
             BindingSource b = new BindingSource();
             b.DataSource = advancedDataGridView1.DataSource;
             b.Filter = advancedDataGridView1.FilterString;
+            if (isRestoring) return;
+
+            SaveState();
         }
 
         private void guna2ImageButton4_Click(object sender, EventArgs e)
@@ -2730,17 +2735,7 @@ namespace DemoProject
 
         private void guna2CircleButton1_Click(object sender, EventArgs e)
         {
-            var xNote = this.note_pageTableAdapter.GetData();
-            var row = xNote.FindById(2);
-
-            if (row == null || row.IsNote_PageNull())
-            {
-                guna2TextBox6.Text = "";
-            }
-            else
-            {
-                guna2TextBox6.Text = row.Note_Page;
-            }
+           
             advancedDataGridView1.CleanSort();
             advancedDataGridView1.CleanFilter();
             guna2Button1.Visible = Add_Radio.Checked;
@@ -2753,9 +2748,12 @@ namespace DemoProject
             PositionHeaderButton();
             loadcomboxes();
             LoadProjectData();
+            LoadNotes();
             UpdateRowCount();
             GenerativePanalFlow();
             ApplyGuna2StyleToGrid(advancedDataGridView1);
+            ApplyGuna2StyleToGrid(advancedDataGridView2);
+            ApplyGuna2StyleToGrid(advancedDataGridView3);
             ArabicColumnGrid();
             LoadColumnsIntoCheckedListBox();
             Governorate_COB.SelectedItem = -1;
@@ -2784,6 +2782,8 @@ namespace DemoProject
             flowLayoutPanel5.Controls.Clear();
             flowLayoutPanel6.Controls.Clear();
             flowLayoutPanel7.Controls.Clear();
+            tabPage4.Text = "";
+
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -3330,8 +3330,7 @@ namespace DemoProject
     };
         private void skyButton4_Click(object sender, EventArgs e)
         {
-            reportViewer1.Visible = true;
-            reportViewer1.LocalReport.DataSources.Clear();
+
             DataTable original =new DataTable();
 
             if (advancedDataGridView1.DataSource is BindingSource bs)
@@ -3375,25 +3374,11 @@ namespace DemoProject
                 filtered.Rows.Add(newRow);
             }
 
-            string rdlc = GenerateDynamicRDLC(filtered);
 
-            using (var stream = new MemoryStream(Encoding.UTF8.GetBytes(rdlc)))
-            {
-                reportViewer1.LocalReport.LoadReportDefinition(stream);
-            }
 
-            reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(
-                new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", filtered));//change this data set to new one
-            reportViewer1.RefreshReport();
+
         }
-        private string GenerateDynamicRDLC(DataTable dt)
-        {
-            using (var ms = ReportHelperEnhanced.GenerateDynamicRDLC(dt, columnMap, "DataSet1",Report_TB.Text))
-            {
-                return Encoding.UTF8.GetString(ms.ToArray());
-            }
-        }
+
 
         private void advancedDataGridView1_Scroll(object sender, ScrollEventArgs e)
         {
@@ -3894,20 +3879,216 @@ namespace DemoProject
             }
         }
 
-        private void guna2TextBox6_KeyDown(object sender, KeyEventArgs e)
-        {
-            var x = this.note_pageTableAdapter.GetData();
-            var row = x.FindById(2);
 
-            if (row == null) return;
-
-            row.Note_Page = guna2TextBox6.Text;
-            this.note_pageTableAdapter.Update(x);
-        }
 
         private void dreamButton14_Click(object sender, EventArgs e)
         {
 
+        }
+
+
+
+        private void Add_Radio_Click(object sender, EventArgs e)
+        {
+        }
+        public void LoadNotes()
+        {
+            var query = from n in this.note_pageTableAdapter.GetData()
+                        where n.Page_Name == "PRO"
+                        select new
+                        {
+                            n.Id,
+                            Code = n.IsCodeNull() ? 0 : n.Code,
+                            Note_Page = n.IsNote_PageNull() ? "" : n.Note_Page,
+                            DateTime = n.IsDateTimeNull() ? (DateTime?)null : n.DateTime,
+                            status = n.IsStatusNull() ? "" : n.Status
+                        };
+            var OrderNoteId = query.OrderBy(n => n.Id).ToList();
+            DataTable table = ToDataTable(OrderNoteId);
+            BindingSource Binding = new BindingSource();
+            Binding.DataSource = table;
+            advancedDataGridView3.DataSource = Binding.DataSource;
+        }
+        private void guna2GradientCircleButton1_Click(object sender, EventArgs e)
+        {
+            var notes = this.note_pageTableAdapter.GetData();
+            this.note_pageTableAdapter.Insert(++notes.Last().Id, "", "PRO", DateTime.Today, "جديد", 0);
+            LoadNotes();
+            ApplyGuna2StyleToGrid(advancedDataGridView1);
+            ApplyGuna2StyleToGrid(advancedDataGridView2);
+            ApplyGuna2StyleToGrid(advancedDataGridView3);
+            GenerativePanalFlow();
+            LoadColumnsIntoCheckedListBox();
+        }
+        HashSet<string> NotesColumns = new HashSet<string>
+        {
+            "Id",
+            "Code",
+            "Note_Page",
+            "DateTime",
+            "status"
+
+        };
+        private TextBox editingTextBox = null;
+        private void advancedDataGridView3_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string columnName = advancedDataGridView3.Columns[e.ColumnIndex].Name;
+                DataGridViewCell cell =
+                  advancedDataGridView3.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+                string NoteId = advancedDataGridView3.Rows[e.RowIndex]
+                                .Cells["Id"].Value?.ToString();
+
+                if (string.IsNullOrEmpty(NoteId))
+                    return;
+                // NORMAL TEXT / NUMERIC COLUMNS
+                // =================================================
+                string newValue = editingTextBox?.Text ?? cell.Value?.ToString();
+                editingTextBox = null;
+
+                if (NotesColumns.Contains(columnName))
+                {
+
+                    var table = note_pageTableAdapter.GetDataByID(int.Parse(NoteId));
+                    if (table.Rows.Count == 0) return;
+
+                    var row = table[0];
+
+                    if (string.IsNullOrEmpty(newValue))
+                        row[columnName] = DBNull.Value;
+                    else
+                        row[columnName] = newValue.Replace("\u200E", "");
+
+                    note_pageTableAdapter.Update(row);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                   "حدث خطأ أثناء الحفظ:\n" + ex.Message,
+                   "خطأ",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Error
+               );
+            }
+        }
+
+        private void guna2CircleButton3_Click(object sender, EventArgs e)
+        {
+
+        }
+        class PageState
+        {
+            public int SelectedTabIndex { get; set; }
+            public string FilterString { get; set; }
+            public string SortString { get; set; }
+        }
+
+        List<PageState> history = new List<PageState>();
+        int currentIndex = -1;
+
+        bool isRestoring = false;
+        private PageState CaptureState()
+        {
+            return new PageState
+            {
+                SelectedTabIndex = guna2TabControl1.SelectedIndex,
+                FilterString = advancedDataGridView1.FilterString,
+                SortString = advancedDataGridView1.SortString
+            };
+        }
+        private void RestoreState(PageState state)
+        {
+            isRestoring = true;
+
+            guna2TabControl1.SelectedIndex = state.SelectedTabIndex;
+
+            var bs = advancedDataGridView1.DataSource as BindingSource;
+
+            if (bs != null)
+            {
+                ApplyFilterInternal(state.FilterString);
+                bs.Sort = state.SortString;
+            }
+
+            advancedDataGridView1.Refresh();
+            UpdateRowCount();
+            isRestoring = false;
+        }
+        private void ApplyFilterInternal(string filter)
+        {
+            if (originalData == null) return;
+
+            DataView view = new DataView(originalData);
+            view.RowFilter = filter;
+
+            BindingSource bs = new BindingSource();
+            bs.DataSource = view;
+
+            advancedDataGridView1.DataSource = bs;
+
+            UpdateRowCount();
+        }
+        private void SaveState()
+        {
+            try
+            {
+
+
+                if (isRestoring) return;
+
+                var state = new PageState
+                {
+                    SelectedTabIndex = guna2TabControl1.SelectedIndex,
+                    FilterString = ((BindingSource)advancedDataGridView1.DataSource)?
+                                        .DataSource is DataView dv ? dv.RowFilter : null,
+                    SortString = ((BindingSource)advancedDataGridView1.DataSource)?.Sort
+                };
+
+                if (currentIndex < history.Count - 1)
+                    history.RemoveRange(currentIndex + 1, history.Count - currentIndex - 1);
+
+                history.Add(state);
+                currentIndex++;
+            }
+            catch (Exception EX)
+            {
+                return;
+            }
+        }
+
+        private void guna2CircleButton6_Click(object sender, EventArgs e)
+        {
+            if (currentIndex <= 0) return;
+
+            currentIndex--;
+
+            RestoreState(history[currentIndex]);
+            UpdateRowCount();
+        }
+
+        private void guna2CircleButton7_Click(object sender, EventArgs e)
+        {
+            if (currentIndex >= history.Count - 1) return;
+
+            currentIndex++;
+
+            RestoreState(history[currentIndex]);
+            UpdateRowCount();
+        }
+
+        private void guna2TabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           if(guna2TabControl1.SelectedTab!=tabPage5)
+            {
+                dreamButton22.Visible = false;
+            }
+            else { dreamButton22.Visible = true; }
+            if (isRestoring) return;
+
+            SaveState();
         }
     }
 }

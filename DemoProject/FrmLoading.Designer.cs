@@ -28,12 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.metroProgressSpinner1 = new MetroFramework.Controls.MetroProgressSpinner();
+            this.SuspendLayout();
+            // 
+            // metroProgressSpinner1
+            // 
+            this.metroProgressSpinner1.Location = new System.Drawing.Point(199, 63);
+            this.metroProgressSpinner1.Maximum = 100;
+            this.metroProgressSpinner1.Name = "metroProgressSpinner1";
+            this.metroProgressSpinner1.Size = new System.Drawing.Size(78, 70);
+            this.metroProgressSpinner1.TabIndex = 0;
+            this.metroProgressSpinner1.UseSelectable = true;
+            // 
+            // FrmLoading
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FrmLoading";
+            this.ClientSize = new System.Drawing.Size(513, 189);
+            this.Controls.Add(this.metroProgressSpinner1);
+            this.MaximizeBox = false;
+            this.Name = "FrmLoading";
+            this.Resizable = false;
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = ".... تحميل";
+            this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Right;
+            this.Load += new System.EventHandler(this.FrmLoading_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private MetroFramework.Controls.MetroProgressSpinner metroProgressSpinner1;
     }
 }

@@ -113,6 +113,7 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(812, 36);
             this.guna2Panel1.TabIndex = 20;
+            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // guna2PictureBox2
             // 
@@ -870,6 +871,7 @@
             this.guna2GradientTileButton22.TabIndex = 85;
             this.guna2GradientTileButton22.Text = "لوحة الاحصائيات";
             this.guna2GradientTileButton22.UseTransparentBackground = true;
+            this.guna2GradientTileButton22.Visible = false;
             this.guna2GradientTileButton22.Click += new System.EventHandler(this.guna2GradientTileButton22_Click);
             // 
             // guna2GradientTileButton23

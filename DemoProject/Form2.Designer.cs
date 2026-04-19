@@ -170,6 +170,7 @@
             this.focusBoard.Name = "focusBoard";
             this.focusBoard.Size = new System.Drawing.Size(10, 35);
             this.focusBoard.TabIndex = 49;
+            this.focusBoard.Visible = false;
             // 
             // guna2CircleButton1
             // 
@@ -186,12 +187,13 @@
             this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton1.ForeColor = System.Drawing.Color.Transparent;
             this.guna2CircleButton1.IndicateFocus = true;
-            this.guna2CircleButton1.Location = new System.Drawing.Point(143, 3);
+            this.guna2CircleButton1.Location = new System.Drawing.Point(0, 0);
             this.guna2CircleButton1.Name = "guna2CircleButton1";
             this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton1.Size = new System.Drawing.Size(30, 30);
             this.guna2CircleButton1.TabIndex = 19;
             this.guna2CircleButton1.UseTransparentBackground = true;
+            this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
             // 
             // button8
             // 
@@ -210,6 +212,7 @@
             this.button8.TabIndex = 25;
             this.button8.Text = "لوحة الاحصائيات";
             this.button8.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.button8.Visible = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // panel2
@@ -686,6 +689,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
             this.Load += new System.EventHandler(this.Form2_Load);
+            this.Resize += new System.EventHandler(this.Form2_Resize);
             this.guna2Panel1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

@@ -18,6 +18,43 @@ namespace DemoProject
         private string _username;
         private long _user_id;
         private string _investment_type;
+
+        private Size originalFormSize;
+        private Dictionary<Control, Rectangle> originalControls = new Dictionary<Control, Rectangle>();
+
+        //private void SaveOriginalSizes(Control parent)
+        //{
+        //    foreach (Control ctrl in parent.Controls)
+        //    {
+        //        originalControls[ctrl] = new Rectangle(ctrl.Location, ctrl.Size);
+
+        //        if (ctrl.Controls.Count > 0)
+        //            SaveOriginalSizes(ctrl);
+        //    }
+        //}
+        //private void ResizeControls(Control parent, float xRatio, float yRatio)
+        //{
+        //    foreach (Control ctrl in parent.Controls)
+        //    {
+        //        if (!originalControls.ContainsKey(ctrl)) continue;
+
+        //        Rectangle original = originalControls[ctrl];
+
+        //        ctrl.Location = new Point(
+        //            (int)(original.X * xRatio),
+        //            (int)(original.Y * yRatio));
+
+        //        ctrl.Size = new Size(
+        //            (int)(original.Width * xRatio),
+        //            (int)(original.Height * yRatio));
+
+        //        ctrl.Font = new Font(ctrl.Font.FontFamily,
+        //            ctrl.Font.Size * Math.Min(xRatio, yRatio));
+
+        //        if (ctrl.Controls.Count > 0)
+        //            ResizeControls(ctrl, xRatio, yRatio);
+        //    }
+        //}
         public void ShowMyUserControl(string user, long id, string Investment_type)
         {
             SessionData.Investment_Type = null;
@@ -322,8 +359,23 @@ namespace DemoProject
                 }
             }
             ApplyPermissions(this);
-
-            
+            button1.Visible = false;
+            button2.Visible = false;
+            button3.Visible = false;
+            button4.Visible = false;
+            button5.Visible = false;
+            button6.Visible = false;
+            button7.Visible = false;
+            button8.Visible = false;
+            Menu.Visible = false;
+            flowLayoutPanel1.Width = 36;
+            guna2CircleButton1.Location = new System.Drawing.Point(0, 0);
+            focusAdmin.Location = new Point(50, 2);
+            focusENG.Location = new Point(50, 1);
+            focusInvest.Location = new Point(50, 83);
+            focusSetting.Location = new Point(50, 40);
+            originalFormSize = this.Size;
+            //SaveOriginalSizes(this);
         }
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
@@ -559,6 +611,59 @@ namespace DemoProject
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        bool isClicked = true;
+
+
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            
+            if (isClicked == true)
+            {
+                button1.Visible = true;
+                button2.Visible = true;
+                button3.Visible = true;
+                button4.Visible = true;
+                button5.Visible = true;
+                button6.Visible = true;
+                button7.Visible = true;
+                button8.Visible = false;
+                Menu.Visible = true;
+                isClicked = false;
+                focusAdmin.Location = new Point(5,2);
+                focusENG.Location = new Point(8,1);
+                focusInvest.Location = new Point(5,83);
+                focusSetting.Location = new Point(5,40);
+                guna2CircleButton1.Location= new Point(143,0) ;
+                flowLayoutPanel1.Width = 178;
+                ApplyPermissions(this);
+            }
+            else {
+                button1.Visible = false;
+                button2.Visible = false;
+                button3.Visible = false;
+                button4.Visible = false;
+                button5.Visible = false;
+                button6.Visible = false;
+                button7.Visible = false;
+                button8.Visible = false;
+                Menu.Visible = false;
+                focusAdmin.Location = new Point(50, 2);
+                focusENG.Location = new Point(50, 1);
+                focusInvest.Location = new Point(50, 83);
+                focusSetting.Location = new Point(50, 40);
+                guna2CircleButton1.Location = new System.Drawing.Point(0, 0);
+                isClicked = true;
+                flowLayoutPanel1.Width = 36;
+            }
+        }
+
+        private void Form2_Resize(object sender, EventArgs e)
+        {
+            //float xRatio = (float)this.Width / originalFormSize.Width;
+            //float yRatio = (float)this.Height / originalFormSize.Height;
+
+            //ResizeControls(this, xRatio, yRatio);
         }
     }
 }

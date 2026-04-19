@@ -10,6 +10,7 @@ using System.IO;
 using System.Windows.Forms;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using System.Threading;
 
 namespace DemoProject
 {
@@ -43,8 +44,17 @@ namespace DemoProject
             "City_Name",
             "Notes"
         };
+        HashSet<string> NotesColumns = new HashSet<string>
+        {
+            "Id",
+            "Code",
+            "Note_Page",
+            "DateTime",
+            "status"
 
-                HashSet<string> projectColumns = new HashSet<string>
+        };
+
+        HashSet<string> projectColumns = new HashSet<string>
         {
             "project_name"
         };
@@ -62,10 +72,10 @@ namespace DemoProject
         public EngineeringManagementControl()
         {
             InitializeComponent();
-            Plates_Count.Cursor = Cursors.Hand;
-            Plates_Count.Click += (s, e) => ShowDocumentList("plate_numberFile", "مستند رقم اللوحة");
-            Lands_Count.Cursor = Cursors.Hand;
-            Lands_Count.Click += (s, e) => ShowDocumentList("Republican_Decree", "عقد الأرض");
+           // Plates_Count.Cursor = Cursors.Hand;
+            //Plates_Count.Click += (s, e) => ShowDocumentList("plate_numberFile", "مستند رقم اللوحة");
+           // Lands_Count.Cursor = Cursors.Hand;
+           // Lands_Count.Click += (s, e) => ShowDocumentList("Republican_Decree", "عقد الأرض");
         }
         public static DataTable ToDataTable<T>(IList<T> data)
         {
@@ -88,6 +98,10 @@ namespace DemoProject
         }
         Dictionary<string, bool> pageAccess = new Dictionary<string, bool>();
         Dictionary<string, bool> functionAccess = new Dictionary<string, bool>();
+
+        #region this is permission code for checking user Auhtentication by tags these tags are in the 
+
+    
         void ApplyPermissions(Control parent)
         {
             try
@@ -118,6 +132,7 @@ namespace DemoProject
                 MessageBox.Show(ex.Message,"خطأ غير متوقع",MessageBoxButtons.OK,MessageBoxIcon.Error);
             } 
         }
+        #endregion
         private void comboBox1_DrawItem(object sender, DrawItemEventArgs e)
         {
             try
@@ -162,27 +177,35 @@ namespace DemoProject
                 MessageBox.Show(ex.Message, "خطأ غير متوقع", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void TrueFunction()
+
+        public void LoadNotes()
         {
-            if (this.ParentForm is Form2 form)
-            {
-                form.ShowLoading(true);   // or false
-            }
-        }
-        private void FalseFunction()
-        {
-            if (this.ParentForm is Form2 form)
-            {
-                form.ShowLoading(false);   // or false
-            }
+            var query = from n in this.note_pageTableAdapter.GetData() 
+                        where n.Page_Name=="ENG"
+                        select new
+                        {
+                            n.Id,
+                            Code = n.IsCodeNull() ? 0 : n.Code,
+                            Note_Page = n.IsNote_PageNull()?"":n.Note_Page,
+                            DateTime = n.IsDateTimeNull() ? (DateTime?)null : n.DateTime,
+                            status=n.IsStatusNull()?"":n.Status
+                        };
+            var OrderNoteId = query.OrderBy(n => n.Id).ToList();
+            DataTable table = ToDataTable(OrderNoteId);
+            BindingSource Binding = new BindingSource();
+            Binding.DataSource = table;
+            advancedDataGridView3.DataSource = Binding.DataSource;
+
+
+
         }
         public void LoadDocs()
         {
             var query = from l in this.landsTableAdapter.GetData()
                         where !string.IsNullOrWhiteSpace(l.Republican_Decree)
-                              && l.Republican_Decree != "..."
+                              && l.Republican_Decree != "."
                               && !string.IsNullOrWhiteSpace(l.plate_numberFile)
-                              && l.plate_numberFile != "..."
+                              && l.plate_numberFile != "0"
                         select new
                         {
                             l.land_id,
@@ -213,16 +236,18 @@ namespace DemoProject
             }
             advancedDataGridView2.Columns["Select"].DisplayIndex = 0;
         }
+       
         public void LoadSourceData()
         {
             try
             {
-                TrueFunction();
+                
 
                 // --- Part 1: Fetch data ---
                 var LandData = landsTableAdapter.GetData();
                 var Governorates = governorateTableAdapter.GetData();
                 var Projects = projectsTableAdapter.GetData();
+                
 
                 var joinedData =
                     from land in LandData.AsEnumerable()
@@ -245,16 +270,32 @@ namespace DemoProject
                         project_name = proj == null || proj.Isproject_nameNull() ? "" : proj.project_name,
                         land_number = land.Island_numberNull() ? "" : land.land_number,
                         plate_number = land.Isplate_numberNull() ? "" : land.plate_number,
+                        Land_Plate_Status =
+                            (!land.Isplate_numberFileNull()
+                             && !string.IsNullOrWhiteSpace(land.plate_numberFile)
+                             && land.plate_numberFile != "0")
+                            ? "متوفر - (عرض اللوحة)"
+                            : "غير متوفر",
                         total_area = decimal.TryParse(land.total_area, out var areaVal) ? areaVal : 0,
                         Topographic_Survey_Status = land.IsTopographic_Survey_StatusNull() ? "" : land.Topographic_Survey_Status,
-                        Land_Plate_Status = land.IsLand_Plate_StatusNull() ? "" : land.Land_Plate_Status,
+                       // Land_Plate_Status = land.IsLand_Plate_StatusNull() ? "" : land.Land_Plate_Status,
                         coordinates_E = land.Iscoordinates_ENull() ? "" : "\u200E" + land.coordinates_E,
                         coordinates_N = land.Iscoordinates_NNull() ? "" : "\u200E" + land.coordinates_N,
                         plate_numberFile = land.Isplate_numberFileNull() ? "" : land.plate_numberFile,
                         //governorate_fk = gov == null || gov.IsgovernorateNull() ? "" : gov.governorate,
                         governorate_fk = land.Isgovernorate_fkNull() ? "" : land.governorate_fk,
                         Republican_Decree = land.IsRepublican_DecreeNull() ? "" : land.Republican_Decree,
-                        Republican_Decree_Status = land.IsRepublican_Decree_StatusNull() ? "" : land.Republican_Decree_Status,
+                        //Republican_Decree_Status = land.IsRepublican_Decree_StatusNull() ? "" : land.Republican_Decree_Status,
+                        Republican_Decree_Status =
+                        (
+                            !land.IsRepublican_DecreeNull() &&
+                            !string.IsNullOrWhiteSpace(land.Republican_Decree)
+                            && land.Republican_Decree != "." 
+                        ? $"متوفر - (عرض القرار {land.Republican_Decree_Status})"
+                        : "غير متوفر"
+                        )
+                        ,
+                       // (land.IsRepublican_Decree_StatusNull() ? "" : land.Republican_Decree_Status),
                         consulting_Office = land.Isconsulting_OfficeNull() ? "" : land.consulting_Office,
                         total_Land_Price = land.Istotal_Land_PriceNull() ? 0 : land.total_Land_Price,
                         Ownership_Authority = land.IsOwnership_AuthorityNull() ? "" : land.Ownership_Authority,
@@ -269,7 +310,7 @@ namespace DemoProject
 
 
                 var joinedList = joinedData
-                .OrderBy(r => r.land_id)
+                .OrderBy(r => r.land_id).Where(r =>!r.Notes.Contains("تم الغاء قطعة الارض"))
                 .ToList();
                 DataTable table = ToDataTable(joinedList);
 
@@ -339,6 +380,7 @@ namespace DemoProject
                     advancedDataGridView1.Columns.Insert(index, govCombo);
                 }
                 originalData = table;
+                SaveState();
                 advancedDataGridView1.Columns["Select"].DisplayIndex = 0;
             }
             catch (Exception ex)
@@ -346,7 +388,7 @@ namespace DemoProject
                 ShowAlert("خطأ غير متوقع", AlertForm.AlertType.Error);
                 MessageBox.Show(ex.Message, "خطأ غير متوقع", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            FalseFunction();
+          
             LoadDocs();
         }
 
@@ -361,7 +403,7 @@ namespace DemoProject
             advancedDataGridView1.Columns["Land_Plate_Status"].HeaderText = "استخراج اللوحة";
             advancedDataGridView1.Columns["coordinates_N"].HeaderText = "N الاحداثيات";
             advancedDataGridView1.Columns["coordinates_E"].HeaderText = "E الاحداثيات";
-            advancedDataGridView1.Columns["serial_number"].HeaderText = "رقم مسلسل";
+            advancedDataGridView1.Columns["serial_number"].HeaderText = "رقم مسلسل قطعة الارض";
             advancedDataGridView1.Columns["plate_number"].HeaderText = "رقم اللوحة";
             advancedDataGridView1.Columns["plate_numberFile"].HeaderText = "مستند رقم اللوحة";
             advancedDataGridView1.Columns["governorate_fk"].HeaderText = "المحافظة";
@@ -377,7 +419,7 @@ namespace DemoProject
             advancedDataGridView2.Columns["land_id"].HeaderText = "رقم الكود";
             advancedDataGridView2.Columns["land_name"].HeaderText = "اسم قطعة الأرض";
             advancedDataGridView2.Columns["land_number"].HeaderText = "رقم القطعة";
-            advancedDataGridView2.Columns["serial_number"].HeaderText = "رقم مسلسل";
+            advancedDataGridView2.Columns["serial_number"].HeaderText = "رقم مسلسل قطعة الارض";
             advancedDataGridView2.Columns["plate_number"].HeaderText = "رقم اللوحة";
             advancedDataGridView2.Columns["plate_numberFile"].HeaderText = "مستند رقم اللوحة";
             advancedDataGridView2.Columns["Republican_Decree"].HeaderText = "مستند عقد الارض";
@@ -385,6 +427,12 @@ namespace DemoProject
             advancedDataGridView1.Columns["Dependent_road"].HeaderText = "الطريق التابع";
             advancedDataGridView1.Columns["City_Name"].HeaderText = "المدينة";
             advancedDataGridView1.Columns["Notes"].HeaderText = "ملاحظات";
+            advancedDataGridView3.Columns["Id"].HeaderText = "مسلسل مميز";
+            advancedDataGridView3.Columns["Note_Page"].HeaderText = "الملاحظات";
+            advancedDataGridView3.Columns["Code"].HeaderText = "مسلسل";
+            advancedDataGridView3.Columns["DateTime"].HeaderText = "التاريخ";
+            advancedDataGridView3.Columns["status"].HeaderText = "موقف الملحوظه";
+            advancedDataGridView3.Columns["Id"].Visible = false;
             advancedDataGridView1.Columns["coordinates_N"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             advancedDataGridView1.Columns["coordinates_E"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             advancedDataGridView1.Columns["coordinates_N"].DefaultCellStyle.WrapMode = DataGridViewTriState.False;
@@ -473,17 +521,20 @@ namespace DemoProject
         public void flagforHideColumnsEnG()
         {   
         }
+        
         private void UpdateRowCount()
         {
             int count = 0;
             int count2 = 0;
+            int decreeZCounted = 0;
+            int plateZCounted = 0;
             // Existing counters
             HashSet<string> uniqueSeries = new HashSet<string>();
 
             // New counters
             HashSet<string> plateZ = new HashSet<string>();
             HashSet<string> decreeZ = new HashSet<string>();
-
+     
             foreach (DataGridViewRow row in advancedDataGridView1.Rows)
             {
                 if (!row.Visible || row.IsNewRow)
@@ -501,20 +552,38 @@ namespace DemoProject
                 if (!string.IsNullOrWhiteSpace(plate) && plate.Contains(@"z:\"))
                 {
                     plateZ.Add(plate);
+                    plateZCounted++;
                 }
                 // NEW 2️⃣: Republican_Decree contains "z"
-                var decree = row.Cells["Republican_Decree"].Value?.ToString()?.ToLower();
-                if (!string.IsNullOrWhiteSpace(decree) && decree.Contains(@"z:\"))
+                //var decree = row.Cells["Republican_Decree"].Value?.ToString()?.ToLower();
+                //if (!string.IsNullOrWhiteSpace(decree) && decree.Contains(@"z:\"))
+                //{
+                //    decreeZ.Add(decree);
+                //    decreeZCounted++;
+
+                //}
+
+                
+
+                var decree = row.Cells["Republican_Decree_Status"].Value?.ToString()?.ToLower();
+                if (!string.IsNullOrWhiteSpace(decree) && decree != "غير متوفر")
+                {
                     decreeZ.Add(decree);
+                    decreeZCounted++;
+
+                }
+
             }
 
             // Existing labels
-            rowCountLabel.Text = $"عدد الانشطة: {count}";
+            rowCountLabel.Text = $"عدد قطع الاراضي: {count}";
             RowCountSeries.Text = $"عدد الاراضي: {uniqueSeries.Count}";
 
             // NEW labels
-            Plates_Count.Text = $"عدد ملفات اللوح: {plateZ.Count}";
-            Lands_Count.Text = $"عدد عقود الارض: {decreeZ.Count}";
+            Plates_Count.Text = $"عدد لوحات الاراضي {plateZ.Count} لعدد {plateZCounted} قطعة ";
+          
+            Lands_Count.Text = $"عدد عقود الارض {decreeZ.Count} لعدد {decreeZCounted} قطعة ";
+           
             bigLabel1.Text = $"للانشطة عدد عقود لوح: {count2}";
 
         }
@@ -523,14 +592,14 @@ namespace DemoProject
             var bs = advancedDataGridView1.DataSource as BindingSource;
             if (bs == null)
             {
-                MessageBox.Show("البيانات غير متاحة حالياً.", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               // MessageBox.Show("البيانات غير متاحة حالياً.", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             var dv = bs.List as DataView;
             if (dv == null)
             {
-                MessageBox.Show("لا يمكن الوصول للبيانات.", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+              //  MessageBox.Show("لا يمكن الوصول للبيانات.", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -553,10 +622,16 @@ namespace DemoProject
                 MessageBox.Show("لا توجد اراضي متاحة حالياً.", "معلومات", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            var choice= new DialogResult();
 
-            var choice = ShowArabicMessageBox(
-                $"هل ترغب بعرض الاراضي التي تحتوي على {title}؟\nاختر (نعم) لعرض الاراضي التي تحتوي، (لا) لعرض الاراضي التي تفتقد المستند.",
-                "اختيار نوع العرض");
+            if (columnName == "plate_numberFile")
+            {
+                choice = ShowArabicMessageBox($"", "" , columnName);
+            }
+            else if (columnName == "Republican_Decree")
+            {
+                choice = ShowArabicMessageBox($"", "" , columnName);
+            }
 
             if (choice == DialogResult.Cancel)
                 return;
@@ -565,13 +640,15 @@ namespace DemoProject
 
             var filtered = showWithDocs
                 ? docs.Where(x => !string.IsNullOrEmpty(x.FilePath) && x.FilePath.Contains(@"Z:\")).ToList()
-                : docs.Where(x => string.IsNullOrEmpty(x.FilePath)|| x.FilePath.Contains(@"Y:\")|| x.FilePath.Contains(@"...")).ToList();
+                : docs.Where(x => string.IsNullOrEmpty(x.FilePath)|| x.FilePath.Contains(@"Y:\")|| x.FilePath =="0"||  x.FilePath.Contains(@".")).ToList();
 
             if (filtered.Count == 0)
             {
                 MessageBox.Show("لا توجد نتائج مطابقة.", "معلومات", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            //plateZCounted = plateZ.Count;
+            //decreeZCounted = decreeZ.Count;
 
             // Popup Form
             Form popup = new Form
@@ -588,16 +665,35 @@ namespace DemoProject
             };
 
             // Title Label
-            Label titleLabel = new Label
+            Label titleLabel = new Label();
+            if (showWithDocs)
             {
-                AutoSize = false,
-                Dock = DockStyle.Top,
-                Height = 60,
-                TextAlign = ContentAlignment.MiddleCenter,
-                Font = new System.Drawing.Font("Segoe UI", 12, FontStyle.Bold),
-                Text = $"{title} ({filtered.Count})"
-            };
 
+
+                //titleLabel = new Label
+                //{
+                //    AutoSize = false,
+                //    Dock = DockStyle.Top,
+                //    Height = 60,
+                //    TextAlign = ContentAlignment.MiddleCenter,
+                //    Font = new System.Drawing.Font("Segoe UI", 12, FontStyle.Bold),
+                //    Text = title == "مستند رقم اللوحة" ?
+                //       $"عدد {plateZCounted} {"لوحة"} لـ({filtered.Count}) قطعة ارض" :
+                //       $"عدد {decreeZCounted} {"عقد ارض"} لـ({filtered.Count}) قطعة ارض"
+                //};
+                //قطعة ارض ({filtered.Count})لـ {title} {decreeZCounted} عدد
+            }
+            else {
+                titleLabel = new Label
+                {
+                    AutoSize = false,
+                    Dock = DockStyle.Top,
+                    Height = 60,
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Font = new System.Drawing.Font("Segoe UI", 12, FontStyle.Bold),
+                    Text = $"{title} ({filtered.Count})"
+                };
+            }
             // DataGridView
             DataGridView dgv = new DataGridView
             {
@@ -643,7 +739,7 @@ namespace DemoProject
             // Export Excel Button
             Button exportButton = new Button
             {
-                Text = "تصدير Excel",
+                Text = "استخراج تقرير",
                 Dock = DockStyle.Right,
                 Width = 150,
                 Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold)
@@ -659,22 +755,111 @@ namespace DemoProject
                         return;
                     }
 
-                    var excelApp = new Microsoft.Office.Interop.Excel.Application();
-                    excelApp.Workbooks.Add();
-                    var sheet = (Microsoft.Office.Interop.Excel._Worksheet)excelApp.ActiveSheet;
-
-                    // Headers
-                    for (int col = 0; col < dgv.Columns.Count; col++)
-                        sheet.Cells[1, col + 1] = dgv.Columns[col].HeaderText;
-
-                    // Rows
-                    for (int row = 0; row < dgv.Rows.Count; row++)
+                    string titleRe = titleLabel.Text.Trim();
+                    if (string.IsNullOrWhiteSpace(titleRe))
                     {
-                        for (int col = 0; col < dgv.Columns.Count; col++)
-                            sheet.Cells[row + 2, col + 1] = dgv.Rows[row].Cells[col].Value?.ToString();
+                        MessageBox.Show("يرجى إدخال عنوان قبل التصدير", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
                     }
 
+                    var excelApp = new Microsoft.Office.Interop.Excel.Application();
+                    var workbook = excelApp.Workbooks.Add(Type.Missing);
+                    var sheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.ActiveSheet;
+
+                    // ✅ اسم الشيت
+                    sheet.Name = titleRe;
+
+                    // ✅ RTL
+                    sheet.DisplayRightToLeft = true;
+
+                    // ✅ عدد الأعمدة الفعلية
+                    int colCount = dgv.Columns.Cast<DataGridViewColumn>()
+                        .Count(c => c.Visible);
+
+                    // --- ✅ Title Row ---
+                    var titleRange = sheet.Range[sheet.Cells[1, 1], sheet.Cells[1, colCount]];
+                    titleRange.Merge();
+                    titleRange.Value = titleRe;
+                    titleRange.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+                    titleRange.VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
+                    titleRange.Font.Size = 28;
+                    titleRange.Font.Bold = true;
+                    titleRange.RowHeight = 80;
+                    titleRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGray);
+
+                    // --- ✅ Headers (Row 2)
+                    int excelCol = 1;
+                    for (int col = 0; col < dgv.Columns.Count; col++)
+                    {
+                        var gridCol = dgv.Columns[col];
+                        if (!gridCol.Visible) continue;
+
+                        var cell = (Microsoft.Office.Interop.Excel.Range)sheet.Cells[2, excelCol];
+                        cell.Value = gridCol.HeaderText;
+                        cell.Font.Bold = true;
+                        cell.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+
+                        excelCol++;
+                    }
+
+                    // --- ✅ Data (Row 3+)
+                    int excelRow = 3;
+                    foreach (DataGridViewRow row in dgv.Rows)
+                    {
+                        if (row.IsNewRow) continue;
+
+                        excelCol = 1;
+                        for (int col = 0; col < dgv.Columns.Count; col++)
+                        {
+                            var gridCol = dgv.Columns[col];
+                            if (!gridCol.Visible) continue;
+
+                            var value = row.Cells[col].Value;
+                            var cell = (Microsoft.Office.Interop.Excel.Range)sheet.Cells[excelRow, excelCol];
+
+                            if (value is DateTime dtValue)
+                            {
+                                cell.Value = dtValue;
+                                cell.NumberFormat = "dd/MM/yyyy";
+                            }
+                            else
+                            {
+                                cell.Value = value?.ToString() ?? "";
+                            }
+
+                            cell.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignRight;
+                            excelCol++;
+                        }
+
+                        excelRow++;
+                    }
+
+                    // --- ✅ Formatting
+                    sheet.Cells.Font.Size = 14;
+                    sheet.Cells.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+                    sheet.Cells.VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
+
                     sheet.Columns.AutoFit();
+                    sheet.Rows.AutoFit();
+
+                    // --- ✅ Borders + Clean UI
+                    int totalRows = excelRow - 1;
+                    int totalCols = colCount;
+
+                    var fullRange = sheet.Range[sheet.Cells[1, 1], sheet.Cells[totalRows, totalCols]];
+                    fullRange.Borders.LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
+                    fullRange.Borders.Weight = Microsoft.Office.Interop.Excel.XlBorderWeight.xlThin;
+                    fullRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.White);
+                    titleRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGray);
+
+                    // --- ✅ Header Style
+                    var headerRange = sheet.Range[sheet.Cells[2, 1], sheet.Cells[2, colCount]];
+                    headerRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGray);
+                    headerRange.Font.Bold = true;
+                    headerRange.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+
+                    sheet.Cells.WrapText = false;
+
                     excelApp.Visible = true;
 
                     MessageBox.Show("تم تصدير البيانات إلى Excel بنجاح!", "نجاح",
@@ -732,11 +917,11 @@ namespace DemoProject
 
             popup.ShowDialog(this);
         }
-        private DialogResult ShowArabicMessageBox(string text, string caption)
+        private DialogResult ShowArabicMessageBox(string text, string caption, string title)
         {
             Form prompt = new Form()
             {
-                Width = 420,
+                Width = 700,
                 Height = 200,
                 StartPosition = FormStartPosition.CenterParent,
                 Text = caption,
@@ -754,27 +939,36 @@ namespace DemoProject
                 Dock = DockStyle.Top,
                 TextAlign = ContentAlignment.MiddleCenter,
                 Font = new System.Drawing.Font("Segoe UI", 10),
-                Height = 80
+                Height = 1
             };
 
             FlowLayoutPanel buttonsPanel = new FlowLayoutPanel()
             {
                 Dock = DockStyle.Bottom,
                 FlowDirection = FlowDirection.RightToLeft,
-                Height = 50
+                Height = 100
             };
+            Button yesButton = new Button();
+            Button noButton = new Button();
+            
 
-            Button yesButton = new Button() { Text = "نعم", DialogResult = DialogResult.Yes, Width = 80, Height = 35 };
-            Button noButton = new Button() { Text = "لا", DialogResult = DialogResult.No, Width = 80, Height = 35 };
-            Button cancelButton = new Button() { Text = "إلغاء", DialogResult = DialogResult.Cancel, Width = 80, Height = 35 };
 
-            buttonsPanel.Controls.AddRange(new Control[] { yesButton, noButton, cancelButton });
+            if (title == "plate_numberFile") {
+                yesButton = new Button() { Text = "عرض الاراضي التي تمتلك لوح", DialogResult = DialogResult.Yes, Width = 330, Height = 70, Font = new System.Drawing.Font("Segoe UI", 15, FontStyle.Bold) };
+                noButton = new Button() { Text = "عرض الاراضي التي لا تمتلك لوح", DialogResult = DialogResult.No, Width = 330, Height = 70, Font = new System.Drawing.Font("Segoe UI", 15, FontStyle.Bold) };
+            }
+            else if (title == "Republican_Decree")
+            {
+                yesButton = new Button() { Text = "عرض الاراضي التي تمتلك عقود", DialogResult = DialogResult.Yes, Width = 330, Height = 70,  Font = new System.Drawing.Font("Segoe UI", 15, FontStyle.Bold) };
+                noButton = new Button() { Text = "عرض الاراضي التي لا تمتلك عقود", DialogResult = DialogResult.No, Width = 330, Height = 70,  Font = new System.Drawing.Font("Segoe UI", 15, FontStyle.Bold)};
+            }
+
+            buttonsPanel.Controls.AddRange(new Control[] { yesButton, noButton });
 
             prompt.Controls.Add(messageLabel);
             prompt.Controls.Add(buttonsPanel);
 
             prompt.AcceptButton = yesButton;
-            prompt.CancelButton = cancelButton;
 
             return prompt.ShowDialog();
         }
@@ -783,42 +977,34 @@ namespace DemoProject
             int headerRight = guna2TabControl1.Left + guna2TabControl1.Width - guna2Button3.Width - 5;
             int headerTop = guna2TabControl1.Top;
             guna2Button3.Location = new Point(headerRight-5, headerTop);
-            Add_Radio.Location = new Point(headerRight - 680, headerTop);
-            Update_Radio.Location = new Point(headerRight - 730, headerTop);
+           // Add_Radio.Location = new Point(headerRight - 680, headerTop);
+           // Update_Radio.Location = new Point(headerRight - 730, headerTop);
         }
 
         private void EngineeringManagementControl_Load(object sender, EventArgs e)
         {
-            //
-            var xNote = this.note_pageTableAdapter.GetData();
-            var row = xNote.FindById(1);
-
-            if (row == null || row.IsNote_PageNull())
-            {
-                guna2TextBox6.Text = "";
-            }
-            else
-            {
-                guna2TextBox6.Text = row.Note_Page;
-            }
-            TrueFunction();
+          
+       
             guna2Button1.Visible = Add_Radio.Checked;
             guna2Button1.Enabled = Add_Radio.Checked;
             guna2Button2.Visible = Update_Radio.Checked;
             guna2Button2.Enabled = Update_Radio.Checked;
             guna2Button3.Parent = guna2TabControl1.Parent; // Not inside the tab page
             guna2Button3.BringToFront();
-            Add_Radio.Parent = guna2TabControl1.Parent;
-            Update_Radio.Parent = guna2TabControl1.Parent;
+           // Add_Radio.Parent = guna2TabControl1.Parent;
+            //Update_Radio.Parent = guna2TabControl1.Parent;
             Add_Radio.BringToFront();
             Update_Radio.BringToFront();
             guna2Button3.Size = new Size(186, guna2TabControl1.ItemSize.Height-1);
             PositionHeaderButton();
             LoadSourceData();
+            LoadNotes();
+            SaveState();
             TranslateToArabic();
             UpdateRowCount();
             ApplyGuna2StyleToGrid(advancedDataGridView1);
             ApplyGuna2StyleToGrid(advancedDataGridView2);
+            ApplyGuna2StyleToGrid(advancedDataGridView3);
             GenerativePanalFlow();
             flagforHideColumnsEnG();
             LoadColumnsIntoCheckedListBox();
@@ -866,7 +1052,8 @@ namespace DemoProject
                 }
             }
             ApplyPermissions(this);
-            FalseFunction();
+         
+          
         }
         private void dungeonLabel8_Click(object sender, EventArgs e)
         {
@@ -881,6 +1068,7 @@ namespace DemoProject
         }
         private void tabPage5_Click(object sender, EventArgs e)
         {
+            
         }
         List<string> lastAddedFilePaths = new List<string>(); // at class level
         public void Files()
@@ -987,7 +1175,10 @@ namespace DemoProject
         }      
         private void skyButton2_Click(object sender, EventArgs e)
         {
-            TrueFunction();
+            //using (var waitForm = new FrmLoading(SaveReport))
+            //{
+            //    waitForm.ShowDialog(this);
+            //}
             if (advancedDataGridView1.Rows.Count == 0)
             {
                 ShowAlert("لا يوجد بيانات", AlertForm.AlertType.Error);
@@ -1001,7 +1192,7 @@ namespace DemoProject
                 MessageBox.Show("يرجى إدخال اسم للملف قبل التصدير", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            
+
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string fullPath = Path.Combine(desktopPath, $"{fileName}.xlsx");
 
@@ -1107,10 +1298,9 @@ namespace DemoProject
             catch (Exception ex)
             {
                 MessageBox.Show($"حدث خطأ أثناء حفظ الملف:\n{ex.Message}", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                FalseFunction();
+
             }
 
-            FalseFunction();
         }
         private static int alertOffsetY = 0; 
         private void ShowAlert(string msg, AlertForm.AlertType type)
@@ -1123,7 +1313,7 @@ namespace DemoProject
             alertOffsetY += alert.Height + 10;
             alert.Show();
             // Reset offset after a short delay to allow reuse
-            var resetTimer = new Timer();
+            var resetTimer = new System.Windows.Forms.Timer();
             resetTimer.Interval = 4000; // Slightly longer than fade (3 sec)
             resetTimer.Tick += (s, e) =>
             {
@@ -1550,7 +1740,7 @@ namespace DemoProject
                     MessageBox.Show("الملف غير موجود أو المسار فارغ.");
                 }
             }
-            if (clickedColumn.Name == "plate_number")
+            if (clickedColumn.Name == "Land_Plate_Status")
             {
                 // Get the file path from the cell value
                 string filePath = advancedDataGridView1.Rows[e.RowIndex].Cells["plate_numberFile"].Value?.ToString();
@@ -1646,6 +1836,7 @@ namespace DemoProject
 
                         // Go to TabPage 4
                         guna2TabControl1.SelectedTab = tabPage4;
+
                     }
                 }
                 catch (Exception ex)
@@ -2050,16 +2241,35 @@ namespace DemoProject
         }
         private void advancedDataGridView1_FilterStringChanged(object sender, Zuby.ADGV.AdvancedDataGridView.FilterEventArgs e)
         {
-            BindingSource b = new BindingSource();
-            b.DataSource = advancedDataGridView1.DataSource;
-            b.Filter = advancedDataGridView1.FilterString;
+            var bs = (BindingSource)advancedDataGridView1.DataSource;
+            if (bs == null) return;
+
+            // استخدم فلتر الجريد فقط
+            bs.Filter = e.FilterString;
+
+            bs.ResetBindings(false);
+            advancedDataGridView1.Refresh();
+
             UpdateRowCount();
+
+            if (isRestoring) return;
+            SaveState();
         }
         private void advancedDataGridView1_SortStringChanged(object sender, Zuby.ADGV.AdvancedDataGridView.SortEventArgs e)
         {
-            BindingSource b = new BindingSource();
-            b.DataSource = advancedDataGridView1.DataSource;
-            b.Filter = advancedDataGridView1.FilterString;
+            var bs = (BindingSource)advancedDataGridView1.DataSource;
+            if (bs == null) return;
+
+            // استخدم فلتر الجريد فقط
+            bs.Sort = e.SortString;
+
+            bs.ResetBindings(false);
+            advancedDataGridView1.Refresh();
+
+            UpdateRowCount();
+
+            if (isRestoring) return;
+            SaveState();
         }
         string plateFilePath = ""; // for c
         string LandfilePath = ""; // for column 2
@@ -2103,7 +2313,6 @@ namespace DemoProject
             if (Add_Radio.Checked)
             {
                 guna2TabControl1.SelectedTab = tabPage4;
-
             }
         }
 
@@ -2149,7 +2358,7 @@ namespace DemoProject
             { "استخراج اللوحة", "Land_Plate_Status" },
             { "N الاحداثيات", "coordinates_N" },
             { "E الاحداثيات", "coordinates_E" },
-            { "رقم مسلسل", "serial_number" },
+            { "رقم مسلسل قطعة الارض", "serial_number" },
             { "المحافظة", "governorate_fk" },
             { "عقد الأرض", "Republican_Decree_Status" },
             { "المنطقة", "Ownership_Authority" },
@@ -2160,8 +2369,6 @@ namespace DemoProject
         };
         private void skyButton4_Click(object sender, EventArgs e)
         {
-            reportViewer1.Visible = true;
-            reportViewer1.LocalReport.DataSources.Clear();
             DataTable original = ((DataView)((BindingSource)advancedDataGridView1.DataSource).List).ToTable();
             DataTable filtered = new DataTable();
 
@@ -2188,25 +2395,9 @@ namespace DemoProject
                 filtered.Rows.Add(newRow);
             }
 
-            string rdlc = GenerateDynamicRDLC(filtered);
 
-            using (var stream = new MemoryStream(Encoding.UTF8.GetBytes(rdlc)))
-            {
-                reportViewer1.LocalReport.LoadReportDefinition(stream);
-            }
+        }
 
-            reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(
-                new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", filtered));//change this data set to new one
-            reportViewer1.RefreshReport();
-        }
-        private string GenerateDynamicRDLC(DataTable dt)
-        {
-            using (var ms = ReportHelperEnhanced.GenerateDynamicRDLC(dt, columnMap, "DataSet1",Report_TB.Text))
-            {
-                return Encoding.UTF8.GetString(ms.ToArray());
-            }
-        }
         int Meter=0;
         int Total_Area = 0;
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
@@ -2246,22 +2437,145 @@ namespace DemoProject
             advancedDataGridView1.Invalidate();
         }
 
+        void SaveReport()
+        {
+           
+                Thread.Sleep(20);
+                //the operation
+                if (advancedDataGridView1.Rows.Count == 0)
+                {
+                    ShowAlert("لا يوجد بيانات", AlertForm.AlertType.Error);
+                    return;
+                }
+
+                string fileName = fileNameTextBox.Text.Trim();
+                if (string.IsNullOrWhiteSpace(fileName))
+                {
+                    ShowAlert("يرجى إدخال اسم للملف قبل التصدير", AlertForm.AlertType.Warning);
+                    MessageBox.Show("يرجى إدخال اسم للملف قبل التصدير", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+      
+                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                string fullPath = Path.Combine(desktopPath, $"{fileName}.xlsx");
+
+                var excelApp = new Microsoft.Office.Interop.Excel.Application();
+                var workbook = excelApp.Workbooks.Add(Type.Missing);
+                var sheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.ActiveSheet;
+                sheet.Name = fileName;
+
+                // ✅ Set sheet direction to RTL
+                sheet.DisplayRightToLeft = true;
+
+                int colCount = advancedDataGridView1.Columns.Cast<DataGridViewColumn>()
+                              .Count(c => c.Visible && c.Name.ToLower() != "select");
+
+                // --- ✅ Add Title Row ---
+                var titleRange = sheet.Range[sheet.Cells[1, 1], sheet.Cells[1, colCount]];
+                titleRange.Merge();
+
+                // تنسيقات العنوان
+                titleRange.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+                titleRange.VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
+                titleRange.Value = fileNameTextBox.Text;
+                int excelCol = 1;
+                for (int col = 0; col < advancedDataGridView1.Columns.Count; col++)
+                {
+                    var gridCol = advancedDataGridView1.Columns[col];
+                    if (gridCol.Visible && gridCol.Name.ToLower() != "select")
+                    {
+                        var cell = (Microsoft.Office.Interop.Excel.Range)sheet.Cells[2, excelCol];
+                        cell.Value = gridCol.HeaderText;
+                        cell.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignRight;
+                        cell.Font.Bold = true;
+                        //Theme color gray
+
+                        excelCol++;
+                    }
+                }
+
+                // ✅ Write data (Row 3 onwards)
+                int excelRow = 3;
+                foreach (DataGridViewRow row in advancedDataGridView1.Rows)
+                {
+                    if (row.IsNewRow) continue;
+
+                    excelCol = 1;
+                    for (int col = 0; col < advancedDataGridView1.Columns.Count; col++)
+                    {
+                        var gridCol = advancedDataGridView1.Columns[col];
+                        if (!gridCol.Visible || gridCol.Name.ToLower() == "select") continue;
+
+                        var value = row.Cells[col].Value;
+                        var cell = (Microsoft.Office.Interop.Excel.Range)sheet.Cells[excelRow, excelCol];
+
+                        if (value is DateTime dtValue) // ✅ لو الخلية تاريخ
+                        {
+                            cell.Value = dtValue;
+                            cell.NumberFormat = "dd/MM/yyyy"; // 🔹 التنسيق المطلوب
+                        }
+                        else
+                        {
+                            cell.Value = value != null ? value.ToString() : "";
+                        }
+
+                        cell.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignRight;
+                        excelCol++;
+                    }
+
+                    excelRow++;
+                }
+
+                // ✅ Auto fit and formatting
+                sheet.Cells.Font.Size = 14;
+                sheet.Cells.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+                sheet.Cells.VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
+                sheet.Columns.AutoFit();
+                sheet.Rows.AutoFit();
+                titleRange.Font.Size = 28;
+                titleRange.Font.Bold = true;
+                titleRange.RowHeight = 80;
+
+
+
+                // ✅ Borders and background cleanup
+                int totalRows = excelRow - 1;
+                int totalCols = colCount;
+                var fullRange = sheet.Range[sheet.Cells[1, 1], sheet.Cells[totalRows, totalCols]];
+
+                fullRange.Borders.LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
+                fullRange.Borders.Weight = Microsoft.Office.Interop.Excel.XlBorderWeight.xlThin;
+                fullRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.White);
+                titleRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGray);
+                sheet.Cells.WrapText = false;
+                // Make headers gray too
+                var headerRange = sheet.Range[sheet.Cells[2, 1], sheet.Cells[2, colCount]];
+                headerRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGray);
+                headerRange.Font.Bold = true;
+                headerRange.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+                try
+                {
+                    workbook.SaveAs(fullPath);
+                    excelApp.Visible = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"حدث خطأ أثناء حفظ الملف:\n{ex.Message}", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            
+        }
+
         private void guna2CircleButton2_Click(object sender, EventArgs e)
         {
-            var xNote = this.note_pageTableAdapter.GetData();
-            var row = xNote.FindById(1);
 
-            if (row == null || row.IsNote_PageNull())
-            {
-                guna2TextBox6.Text = "";
-            }
-            else
-            {
-                guna2TextBox6.Text = row.Note_Page;
-            }
+            //using (var waitForm = new FrmLoading(Save))
+            //{
+            //    waitForm.ShowDialog(this);
+            //}
             advancedDataGridView1.CleanFilter();
             advancedDataGridView1.CleanSort();
-            TrueFunction();
+
             guna2Button1.Visible = Add_Radio.Checked;
             guna2Button1.Enabled = Add_Radio.Checked;
             guna2Button2.Visible = Update_Radio.Checked;
@@ -2271,9 +2585,12 @@ namespace DemoProject
             guna2Button3.Size = new Size(186, guna2TabControl1.ItemSize.Height - 1);
             PositionHeaderButton();
             LoadSourceData();
+            LoadNotes();
             TranslateToArabic();
             UpdateRowCount();
             ApplyGuna2StyleToGrid(advancedDataGridView1);
+            ApplyGuna2StyleToGrid(advancedDataGridView2);
+            ApplyGuna2StyleToGrid(advancedDataGridView3);
             GenerativePanalFlow();
             flagforHideColumnsEnG();
             LoadColumnsIntoCheckedListBox();
@@ -2298,7 +2615,6 @@ namespace DemoProject
             guna2TextBox1.Text = "";
             flowLayoutPanel1.Controls.Clear();
             lastAddedFilePaths.Clear();
-            FalseFunction();
         }
 
         private void advancedDataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -2319,7 +2635,7 @@ namespace DemoProject
             string platePath = advancedDataGridView2.CurrentRow.Cells["plate_numberFile"].Value?.ToString();
 
             // Try to open Republican_Decree file
-            if (!string.IsNullOrWhiteSpace(decreePath) && decreePath != "...")
+            if (!string.IsNullOrWhiteSpace(decreePath) && decreePath != ".")
             {
                 try
                 {
@@ -2337,7 +2653,7 @@ namespace DemoProject
             }
 
             // Try to open plate_numberFile file
-            if (!string.IsNullOrWhiteSpace(platePath) && platePath != "...")
+            if (!string.IsNullOrWhiteSpace(platePath) && platePath != "0")
             {
                 try
                 {
@@ -2360,10 +2676,16 @@ namespace DemoProject
             advancedDataGridView2.Invalidate();
         }
 
+
+
         private void guna2TabControl1_Selecting(object sender, TabControlCancelEventArgs e)
         {
             if (e.TabPage == tabPage4 && Add_Radio.Checked == false && Update_Radio.Checked == false)
                 e.Cancel = true;
+            if (e.TabPage == tabPage2)
+            {
+                e.Cancel = true;
+            }
             else if (e.TabPage == tabPage4 && (Add_Radio.Checked == true || Update_Radio.Checked == true))
             {
                 e.Cancel = false;
@@ -2507,91 +2829,382 @@ namespace DemoProject
 
         private void advancedDataGridView1_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
-            var grid = advancedDataGridView1;
-            var row = grid.Rows[e.RowIndex];
+            //var grid = advancedDataGridView1;
+            //var row = grid.Rows[e.RowIndex];
 
-            if (row.IsNewRow) return;
+            //if (row.IsNewRow) return;
 
-            string notes = row.Cells["Notes"].Value?.ToString()?.Trim() ?? "";
+            //string notes = row.Cells["Notes"].Value?.ToString()?.Trim() ?? "";
 
-            // RED CONDITION
-            if (!string.IsNullOrEmpty(notes) && notes.Contains("الغاء"))
-            {
-                row.DefaultCellStyle.BackColor = Color.Red;
-                row.DefaultCellStyle.ForeColor = Color.White;
-            }
-            // YELLOW CONDITION
-            else if (!string.IsNullOrEmpty(notes) && notes.Contains("اضافة"))
-            {
-                row.DefaultCellStyle.BackColor = Color.Yellow;
-                row.DefaultCellStyle.ForeColor = Color.Black;
-            }
-            else
-            {
-                // Reset (important when filtering or refreshing)
-                row.DefaultCellStyle.BackColor = grid.DefaultCellStyle.BackColor;
-                row.DefaultCellStyle.ForeColor = grid.DefaultCellStyle.ForeColor;
-            }
-        }
-
-        private void guna2TextBox6_KeyDown(object sender, KeyEventArgs e)
-        {
-            var x = this.note_pageTableAdapter.GetData();
-            var row = x.FindById(1);
-
-            if (row == null) return;
-
-            row.Note_Page = guna2TextBox6.Text;
-            this.note_pageTableAdapter.Update(x);
+            //// RED CONDITION
+            //if (!string.IsNullOrEmpty(notes) && notes.Contains("الغاء"))
+            //{
+            //    row.DefaultCellStyle.BackColor = Color.Red;
+            //    row.DefaultCellStyle.ForeColor = Color.White;
+            //}
+            //// YELLOW CONDITION
+            //else if (!string.IsNullOrEmpty(notes) && notes.Contains("اضافة"))
+            //{
+            //    row.DefaultCellStyle.BackColor = Color.Yellow;
+            //    row.DefaultCellStyle.ForeColor = Color.Black;
+            //}
+            //else
+            //{
+            //    // Reset (important when filtering or refreshing)
+            //    row.DefaultCellStyle.BackColor = grid.DefaultCellStyle.BackColor;
+            //    row.DefaultCellStyle.ForeColor = grid.DefaultCellStyle.ForeColor;
+            //}
         }
 
         private void dreamButton1_Click(object sender, EventArgs e)
         {
-            dreamButton1.Text = "الكل ✅";
-            dreamButton2.Text = "الاراضي الجديده ☐";
-            dreamButton3.Text = "الاراضي الملغية ☐";
-            dreamButton1.Click += guna2CircleButton2_Click;
+            dreamButton1.Text = "الاراضي التابعة للشركة ✅";
+            dreamButton2.Text = "الاراضي التي تمت اضافتها حديثا ☐";
+            dreamButton3.Text = "الاراضي التي تم نقل ملكيتها ☐";
+            LoadSourceData();
+          
+            TranslateToArabic();
+            UpdateRowCount();
+            ApplyGuna2StyleToGrid(advancedDataGridView1);
+            GenerativePanalFlow();
+            flagforHideColumnsEnG();
         }
-
+     
         private void dreamButton2_Click(object sender, EventArgs e)
         {
-            dreamButton1.Text = "الكل ☐";
-            dreamButton2.Text = "الاراضي الجديده ✅";
-            dreamButton3.Text = "الاراضي الملغية ☐";
-            if (originalData != null)
+             dreamButton1.Text = "الاراضي التابعة للشركة ☐";
+            dreamButton2.Text = "الاراضي التي تمت اضافتها حديثا ✅";
+            dreamButton3.Text = "الاراضي التي تم نقل ملكيتها ☐";
+
+            try
             {
-                DataView view = new DataView(originalData);
-                view.RowFilter = "[Notes] = 'تم اضافة قطعة ارض جديدة' ";
-                advancedDataGridView1.DataSource = view;
+
+
+                // --- Part 1: Fetch data ---
+                var LandData = landsTableAdapter.GetData();
+                var Governorates = governorateTableAdapter.GetData();
+                var Projects = projectsTableAdapter.GetData();
+
+
+                var joinedData =
+                    from land in LandData.AsEnumerable()
+                    join gov in Governorates.AsEnumerable()
+                    on land.Field<string>("governorate_fk") equals gov.Field<string>("governorate_id") into gj
+                    from gov in gj.DefaultIfEmpty()
+                    join proj in Projects.AsEnumerable()
+                    on land.Field<string>("land_id") equals proj.Field<string>("project_id") into pj
+                    from proj in pj.DefaultIfEmpty()
+                    where !((land.Field<string>("land_id") ?? "").StartsWith("&")
+                         || (land.Field<string>("land_id") ?? "").StartsWith("#")
+                         || (land.Field<string>("land_id") ?? "").StartsWith("*")
+                         || (land.Field<string>("land_id") ?? "") == "0"
+                         || (land.Field<string>("land_id") ?? "").StartsWith("$")
+                         || (land.Field<string>("land_id") ?? "").StartsWith("M"))
+                    select new
+                    {
+                        serial_number = land.Isserial_numberNull() ? "" : land.serial_number,
+                        land_name = land.Island_nameNull() ? "" : land.land_name,
+                        project_name = proj == null || proj.Isproject_nameNull() ? "" : proj.project_name,
+                        land_number = land.Island_numberNull() ? "" : land.land_number,
+                        plate_number = land.Isplate_numberNull() ? "" : land.plate_number,
+                        Land_Plate_Status =
+                            (!land.Isplate_numberFileNull()
+                             && !string.IsNullOrWhiteSpace(land.plate_numberFile)
+                             && land.plate_numberFile != "0")
+                            ? "متوفر - (عرض اللوحة)"
+                            : "غير متوفر",
+                        total_area = decimal.TryParse(land.total_area, out var areaVal) ? areaVal : 0,
+                        Topographic_Survey_Status = land.IsTopographic_Survey_StatusNull() ? "" : land.Topographic_Survey_Status,
+                        // Land_Plate_Status = land.IsLand_Plate_StatusNull() ? "" : land.Land_Plate_Status,
+                        coordinates_E = land.Iscoordinates_ENull() ? "" : "\u200E" + land.coordinates_E,
+                        coordinates_N = land.Iscoordinates_NNull() ? "" : "\u200E" + land.coordinates_N,
+                        plate_numberFile = land.Isplate_numberFileNull() ? "" : land.plate_numberFile,
+                        //governorate_fk = gov == null || gov.IsgovernorateNull() ? "" : gov.governorate,
+                        governorate_fk = land.Isgovernorate_fkNull() ? "" : land.governorate_fk,
+                        Republican_Decree = land.IsRepublican_DecreeNull() ? "" : land.Republican_Decree,
+                        //Republican_Decree_Status = land.IsRepublican_Decree_StatusNull() ? "" : land.Republican_Decree_Status,
+                        Republican_Decree_Status =
+                        (
+                            !land.IsRepublican_DecreeNull() &&
+                            !string.IsNullOrWhiteSpace(land.Republican_Decree)
+                            && land.Republican_Decree != "."
+                        ? $"متوفر - (عرض القرار {land.Republican_Decree_Status})"
+                        : "غير متوفر"
+                        )
+                        ,
+                        // (land.IsRepublican_Decree_StatusNull() ? "" : land.Republican_Decree_Status),
+                        consulting_Office = land.Isconsulting_OfficeNull() ? "" : land.consulting_Office,
+                        total_Land_Price = land.Istotal_Land_PriceNull() ? 0 : land.total_Land_Price,
+                        Ownership_Authority = land.IsOwnership_AuthorityNull() ? "" : land.Ownership_Authority,
+                        Address = land.IsAddressNull() ? "" : land.Address,
+                        price_per_meter = land.Isprice_per_meterNull() ? 0 : land.price_per_meter,
+                        Dependent_neighborhood = land.IsDependent_neighborhoodNull() ? "" : land.Dependent_neighborhood,
+                        Dependent_road = land.IsDependent_roadNull() ? "" : land.Dependent_road,
+                        City_Name = land.IsCity_NameNull() ? "" : land.City_Name,
+                        land_id = int.TryParse(land.land_id, out var lid) ? lid : int.MaxValue,
+                        Notes = land.IsNotesNull() ? "" : land.Notes
+                    };
+
+
+                var joinedList = joinedData
+                .OrderBy(r => r.land_id).Where(r => r.Notes.Contains("تم اضافة قطعة ارض جديدة"))
+                .ToList();
+                DataTable table = ToDataTable(joinedList);
+
+                foreach (DataGridViewColumn col in advancedDataGridView1.Columns)
+                {
+                    if (col.ValueType == typeof(DateTime))
+                    {
+                        col.DefaultCellStyle.Format = "dd/MM/yyyy";
+                    }
+                }
+
+                // --- Part 2: Bind data to UI ---
+                Governorate_COB.DataSource = Governorates;
+                Governorate_COB.DisplayMember = "governorate";
+                Governorate_COB.ValueMember = "governorate_id";
+                AdjustComboBox(Governorate_COB);
+                BindingSource bindingSource = new BindingSource();
+                bindingSource.DataSource = table;
+                advancedDataGridView1.DataSource = bindingSource;
+                if (advancedDataGridView1.Columns.Contains("total_area"))
+                {
+                    advancedDataGridView1.Columns["total_area"].DefaultCellStyle.Format = "N2";
+
+                }
+                if (!advancedDataGridView1.Columns.Contains("Select"))
+                {
+                    DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
+                    checkBoxColumn.HeaderText = "تحديد";
+                    checkBoxColumn.Name = "Select";
+                    checkBoxColumn.Width = 60;
+                    checkBoxColumn.ReadOnly = false;
+                    checkBoxColumn.TrueValue = true;
+                    checkBoxColumn.FalseValue = false;
+                    advancedDataGridView1.Columns.Add(checkBoxColumn);
+                }
+                if (!advancedDataGridView1.Columns.Contains("Update"))
+                {
+                    DataGridViewButtonColumn btnUpdate = new DataGridViewButtonColumn
+                    {
+                        HeaderText = "تعديل",
+                        Name = "Update",
+                        Text = "تعديل",
+                        UseColumnTextForButtonValue = true,
+                        DisplayIndex = 0,
+                        Width = 80
+                    };
+
+                    advancedDataGridView1.Columns.Add(btnUpdate);
+                }
+                // Make it last column
+
+                if (advancedDataGridView1.Columns.Contains("governorate_fk"))
+                {
+                    DataGridViewComboBoxColumn govCombo = new DataGridViewComboBoxColumn
+                    {
+                        Name = "governorate_fk",
+                        HeaderText = "المحافظة",
+                        DataPropertyName = "governorate_fk",
+                        DataSource = Governorates,          // ✔ نستخدم المتغير الموجود
+                        DisplayMember = "governorate",       // الاسم المعروض
+                        ValueMember = "governorate_id",      // القيمة المخزنة
+                        FlatStyle = FlatStyle.Flat
+                    };
+
+                    int index = advancedDataGridView1.Columns["governorate_fk"].Index;
+                    advancedDataGridView1.Columns.Remove("governorate_fk");
+                    advancedDataGridView1.Columns.Insert(index, govCombo);
+                }
+                originalData = table;
+                SaveState();
+                advancedDataGridView1.Columns["Select"].DisplayIndex = 0;
             }
-            PositionHeaderButton();
+            catch (Exception ex)
+            {
+                ShowAlert("خطأ غير متوقع", AlertForm.AlertType.Error);
+                MessageBox.Show(ex.Message, "خطأ غير متوقع", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            LoadDocs();
+            
             TranslateToArabic();
             UpdateRowCount();
             ApplyGuna2StyleToGrid(advancedDataGridView1);
             GenerativePanalFlow();
             flagforHideColumnsEnG();
             LoadColumnsIntoCheckedListBox();
+            
         }
 
         private void dreamButton3_Click(object sender, EventArgs e)
         {
-            dreamButton1.Text = "الكل ☐";
-            dreamButton2.Text = "الاراضي الجديده ☐";
-            dreamButton3.Text = "الاراضي الملغية ✅";
-            if (originalData != null)
+            dreamButton1.Text = "الاراضي التابعة للشركة ☐";
+            dreamButton2.Text = "الاراضي التي تمت اضافتها حديثا ☐";
+            dreamButton3.Text = "الاراضي التي تم نقل ملكيتها ✅";
+
+            try
             {
-                DataView view = new DataView(originalData);
-                view.RowFilter = "[Notes] = 'تم الغاء قطعة الارض' ";
-                advancedDataGridView1.DataSource = view;
+
+
+                // --- Part 1: Fetch data ---
+                var LandData = landsTableAdapter.GetData();
+                var Governorates = governorateTableAdapter.GetData();
+                var Projects = projectsTableAdapter.GetData();
+
+
+                var joinedData =
+                    from land in LandData.AsEnumerable()
+                    join gov in Governorates.AsEnumerable()
+                    on land.Field<string>("governorate_fk") equals gov.Field<string>("governorate_id") into gj
+                    from gov in gj.DefaultIfEmpty()
+                    join proj in Projects.AsEnumerable()
+                    on land.Field<string>("land_id") equals proj.Field<string>("project_id") into pj
+                    from proj in pj.DefaultIfEmpty()
+                    where !((land.Field<string>("land_id") ?? "").StartsWith("&")
+                         || (land.Field<string>("land_id") ?? "").StartsWith("#")
+                         || (land.Field<string>("land_id") ?? "").StartsWith("*")
+                         || (land.Field<string>("land_id") ?? "") == "0"
+                         || (land.Field<string>("land_id") ?? "").StartsWith("$")
+                         || (land.Field<string>("land_id") ?? "").StartsWith("M"))
+                    select new
+                    {
+                        serial_number = land.Isserial_numberNull() ? "" : land.serial_number,
+                        land_name = land.Island_nameNull() ? "" : land.land_name,
+                        project_name = proj == null || proj.Isproject_nameNull() ? "" : proj.project_name,
+                        land_number = land.Island_numberNull() ? "" : land.land_number,
+                        plate_number = land.Isplate_numberNull() ? "" : land.plate_number,
+                        Land_Plate_Status =
+                            (!land.Isplate_numberFileNull()
+                             && !string.IsNullOrWhiteSpace(land.plate_numberFile)
+                             && land.plate_numberFile != "0")
+                            ? "متوفر - (عرض اللوحة)"
+                            : "غير متوفر",
+                        total_area = decimal.TryParse(land.total_area, out var areaVal) ? areaVal : 0,
+                        Topographic_Survey_Status = land.IsTopographic_Survey_StatusNull() ? "" : land.Topographic_Survey_Status,
+                        // Land_Plate_Status = land.IsLand_Plate_StatusNull() ? "" : land.Land_Plate_Status,
+                        coordinates_E = land.Iscoordinates_ENull() ? "" : "\u200E" + land.coordinates_E,
+                        coordinates_N = land.Iscoordinates_NNull() ? "" : "\u200E" + land.coordinates_N,
+                        plate_numberFile = land.Isplate_numberFileNull() ? "" : land.plate_numberFile,
+                        //governorate_fk = gov == null || gov.IsgovernorateNull() ? "" : gov.governorate,
+                        governorate_fk = land.Isgovernorate_fkNull() ? "" : land.governorate_fk,
+                        Republican_Decree = land.IsRepublican_DecreeNull() ? "" : land.Republican_Decree,
+                        //Republican_Decree_Status = land.IsRepublican_Decree_StatusNull() ? "" : land.Republican_Decree_Status,
+                        Republican_Decree_Status =
+                        (
+                            !land.IsRepublican_DecreeNull() &&
+                            !string.IsNullOrWhiteSpace(land.Republican_Decree)
+                            && land.Republican_Decree != "."
+                        ? $"متوفر - (عرض القرار {land.Republican_Decree_Status})"
+                        : "غير متوفر"
+                        )
+                        ,
+                        // (land.IsRepublican_Decree_StatusNull() ? "" : land.Republican_Decree_Status),
+                        consulting_Office = land.Isconsulting_OfficeNull() ? "" : land.consulting_Office,
+                        total_Land_Price = land.Istotal_Land_PriceNull() ? 0 : land.total_Land_Price,
+                        Ownership_Authority = land.IsOwnership_AuthorityNull() ? "" : land.Ownership_Authority,
+                        Address = land.IsAddressNull() ? "" : land.Address,
+                        price_per_meter = land.Isprice_per_meterNull() ? 0 : land.price_per_meter,
+                        Dependent_neighborhood = land.IsDependent_neighborhoodNull() ? "" : land.Dependent_neighborhood,
+                        Dependent_road = land.IsDependent_roadNull() ? "" : land.Dependent_road,
+                        City_Name = land.IsCity_NameNull() ? "" : land.City_Name,
+                        land_id = int.TryParse(land.land_id, out var lid) ? lid : int.MaxValue,
+                        Notes = land.IsNotesNull() ? "" : land.Notes
+                    };
+
+
+                var joinedList = joinedData
+                .OrderBy(r => r.land_id).Where(r => r.Notes.Contains("تم الغاء قطعة الارض")&& r.land_id!=215 &&r.land_id !=216)
+                .ToList();
+                DataTable table = ToDataTable(joinedList);
+
+                foreach (DataGridViewColumn col in advancedDataGridView1.Columns)
+                {
+                    if (col.ValueType == typeof(DateTime))
+                    {
+                        col.DefaultCellStyle.Format = "dd/MM/yyyy";
+                    }
+                }
+
+                // --- Part 2: Bind data to UI ---
+                Governorate_COB.DataSource = Governorates;
+                Governorate_COB.DisplayMember = "governorate";
+                Governorate_COB.ValueMember = "governorate_id";
+                AdjustComboBox(Governorate_COB);
+                BindingSource bindingSource = new BindingSource();
+                bindingSource.DataSource = table;
+                advancedDataGridView1.DataSource = bindingSource;
+                if (advancedDataGridView1.Columns.Contains("total_area"))
+                {
+                    advancedDataGridView1.Columns["total_area"].DefaultCellStyle.Format = "N2";
+
+                }
+                if (!advancedDataGridView1.Columns.Contains("Select"))
+                {
+                    DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
+                    checkBoxColumn.HeaderText = "تحديد";
+                    checkBoxColumn.Name = "Select";
+                    checkBoxColumn.Width = 60;
+                    checkBoxColumn.ReadOnly = false;
+                    checkBoxColumn.TrueValue = true;
+                    checkBoxColumn.FalseValue = false;
+                    advancedDataGridView1.Columns.Add(checkBoxColumn);
+                }
+                if (!advancedDataGridView1.Columns.Contains("Update"))
+                {
+                    DataGridViewButtonColumn btnUpdate = new DataGridViewButtonColumn
+                    {
+                        HeaderText = "تعديل",
+                        Name = "Update",
+                        Text = "تعديل",
+                        UseColumnTextForButtonValue = true,
+                        DisplayIndex = 0,
+                        Width = 80
+                    };
+
+                    advancedDataGridView1.Columns.Add(btnUpdate);
+                }
+                // Make it last column
+
+                if (advancedDataGridView1.Columns.Contains("governorate_fk"))
+                {
+                    DataGridViewComboBoxColumn govCombo = new DataGridViewComboBoxColumn
+                    {
+                        Name = "governorate_fk",
+                        HeaderText = "المحافظة",
+                        DataPropertyName = "governorate_fk",
+                        DataSource = Governorates,          // ✔ نستخدم المتغير الموجود
+                        DisplayMember = "governorate",       // الاسم المعروض
+                        ValueMember = "governorate_id",      // القيمة المخزنة
+                        FlatStyle = FlatStyle.Flat
+                    };
+
+                    int index = advancedDataGridView1.Columns["governorate_fk"].Index;
+                    advancedDataGridView1.Columns.Remove("governorate_fk");
+                    advancedDataGridView1.Columns.Insert(index, govCombo);
+                }
+                originalData = table;
+                SaveState();
+                advancedDataGridView1.Columns["Select"].DisplayIndex = 0;
             }
-            PositionHeaderButton(); 
+            catch (Exception ex)
+            {
+                ShowAlert("خطأ غير متوقع", AlertForm.AlertType.Error);
+                MessageBox.Show(ex.Message, "خطأ غير متوقع", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            LoadDocs();
+        
             TranslateToArabic();
             UpdateRowCount();
             ApplyGuna2StyleToGrid(advancedDataGridView1);
             GenerativePanalFlow();
             flagforHideColumnsEnG();
             LoadColumnsIntoCheckedListBox();
+
+
         }
+        
         private string GetNextLandId()
         {
             var table = landsTableAdapter.GetData();
@@ -2623,10 +3236,27 @@ namespace DemoProject
                 newRow.Notes = "تم اضافة قطعة ارض جديدة";
                 landTable.AddlandsRow(newRow);
                 landsTableAdapter.Update(landTable);
+                LoadSourceData();
+                TranslateToArabic();
+                UpdateRowCount();
+                ApplyGuna2StyleToGrid(advancedDataGridView1);
+                GenerativePanalFlow();
+                flagforHideColumnsEnG();
+                LoadColumnsIntoCheckedListBox();
 
                 // 3️⃣ إضافة الصف إلى الـ DataGridView
-                DataTable gridTable = (DataTable)((BindingSource)advancedDataGridView1.DataSource).DataSource;
+                var bs = (BindingSource)advancedDataGridView1.DataSource;
 
+                DataTable gridTable;
+
+                if (bs.DataSource is DataView dv)
+                {
+                    gridTable = dv.Table;   // ✅ الحل هنا
+                }
+                else
+                {
+                    gridTable = (DataTable)bs.DataSource;
+                }
                 DataRow gridRow = gridTable.NewRow();
                 gridRow["land_id"] = int.Parse(newRow.land_id);
                 gridRow["land_name"] = "";
@@ -2648,6 +3278,259 @@ namespace DemoProject
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
+            }
+        }
+
+        private void nightLabel4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Add_Radio_Click(object sender, EventArgs e)
+        {
+            guna2TabControl1.SelectedTab = tabPage4;
+
+        }
+
+        private void NoteButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void Lands_Count_Paint(object sender, PaintEventArgs e)
+        {
+           // ControlPaint.DrawBorder(e.Graphics,Lands_Count.ClientRectangle,Color.Black,ButtonBorderStyle.Solid);
+        }
+
+        private void Plates_Count_Paint(object sender, PaintEventArgs e)
+        {
+            //ControlPaint.DrawBorder(e.Graphics, Plates_Count.ClientRectangle, Color.Black, ButtonBorderStyle.Solid);
+        }
+
+        private void guna2TabControl1_Click(object sender, EventArgs e)
+        {
+            tabPage5.Text = "الجدول";
+        }
+
+        private void advancedDataGridView3_Scroll(object sender, ScrollEventArgs e)
+        {
+
+             advancedDataGridView3.Invalidate();
+            
+        }
+
+        private void advancedDataGridView3_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string columnName = advancedDataGridView3.Columns[e.ColumnIndex].Name;
+                DataGridViewCell cell =
+                  advancedDataGridView3.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+                string NoteId = advancedDataGridView3.Rows[e.RowIndex]
+                                .Cells["Id"].Value?.ToString();
+
+                if (string.IsNullOrEmpty(NoteId))
+                    return;
+                // NORMAL TEXT / NUMERIC COLUMNS
+                // =================================================
+                string newValue = editingTextBox?.Text ?? cell.Value?.ToString();
+                editingTextBox = null;
+
+                if (NotesColumns.Contains(columnName))
+                {
+
+                    var table = note_pageTableAdapter.GetDataByID(int.Parse(NoteId));
+                    if (table.Rows.Count == 0) return;
+
+                    var row = table[0];
+
+                    if (string.IsNullOrEmpty(newValue))
+                        row[columnName] = DBNull.Value;
+                    else
+                        row[columnName] = newValue.Replace("\u200E", "");
+
+                    note_pageTableAdapter.Update(row);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                   "حدث خطأ أثناء الحفظ:\n" + ex.Message,
+                   "خطأ",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Error
+               );
+            }
+        }
+
+        private void guna2GradientCircleButton1_Click(object sender, EventArgs e)
+        {
+            var notes = this.note_pageTableAdapter.GetData();
+            this.note_pageTableAdapter.Insert(++notes.Last().Id,"","ENG",DateTime.Today,"جديد",0);
+            LoadNotes();
+            TranslateToArabic();
+            ApplyGuna2StyleToGrid(advancedDataGridView1);
+            ApplyGuna2StyleToGrid(advancedDataGridView2);
+            ApplyGuna2StyleToGrid(advancedDataGridView3);
+            GenerativePanalFlow();
+            flagforHideColumnsEnG();
+            LoadColumnsIntoCheckedListBox();
+
+        }
+        class PageState
+        {
+            public int SelectedTabIndex { get; set; }
+            public string FilterString { get; set; }
+            public string SortString { get; set; }
+            public DataTable Data { get; set; }
+        }
+
+        List<PageState> history = new List<PageState>();
+        int currentIndex = -1;
+
+        bool isRestoring = false;
+
+        private void RestoreState(PageState state)
+        {
+            isRestoring = true;
+
+            guna2TabControl1.SelectedIndex = state.SelectedTabIndex;
+
+            if (state.Data != null)
+            {
+                originalData = state.Data.Copy();
+
+                DataView view = new DataView(originalData);
+                view.RowFilter = state.FilterString;
+
+                BindingSource bs = new BindingSource();
+                bs.DataSource = view;
+                bs.Sort = state.SortString;
+
+                advancedDataGridView1.DataSource = bs;
+            }
+
+            advancedDataGridView1.Refresh();
+            UpdateRowCount();
+
+            isRestoring = false;
+        }
+        private void ApplyFilterInternal(string filter)
+        {
+            if (originalData == null) return;
+
+            DataView view = new DataView(originalData);
+            view.RowFilter = filter;
+
+            BindingSource bs = new BindingSource();
+            bs.DataSource = view;
+
+            advancedDataGridView1.DataSource = bs;
+
+            UpdateRowCount();
+        }
+
+        private void SaveState()
+        {
+            if (isRestoring) return;
+
+            var bs = (BindingSource)advancedDataGridView1.DataSource;
+            var dv = bs?.DataSource as DataView;
+
+            var state = new PageState
+            {
+                SelectedTabIndex = guna2TabControl1.SelectedIndex,
+                FilterString = dv?.RowFilter,
+                SortString = bs?.Sort,
+                Data = originalData?.Copy() // 👈 نخزن نسخة
+            };
+
+            if (currentIndex < history.Count - 1)
+                history.RemoveRange(currentIndex + 1, history.Count - currentIndex - 1);
+
+            history.Add(state);
+            currentIndex++;
+        }
+
+        private void guna2CircleButton4_Click(object sender, EventArgs e)
+        {
+            if (currentIndex <= 0) return;
+
+            currentIndex--;
+           
+            RestoreState(history[currentIndex]);
+            UpdateRowCount();
+        }
+        private void guna2CircleButton5_Click(object sender, EventArgs e)
+        {
+            if (currentIndex >= history.Count - 1) return;
+
+            currentIndex++;
+
+            RestoreState(history[currentIndex]);
+            UpdateRowCount();
+        }
+
+
+
+        private void guna2GradientCircleButton1_Click_1(object sender, EventArgs e)
+        {
+            var notes = this.note_pageTableAdapter.GetData();
+            this.note_pageTableAdapter.Insert(++notes.Last().Id, "", "ENG", DateTime.Today, "جديد", 0);
+            LoadNotes();
+            TranslateToArabic();
+            ApplyGuna2StyleToGrid(advancedDataGridView1);
+            ApplyGuna2StyleToGrid(advancedDataGridView2);
+            ApplyGuna2StyleToGrid(advancedDataGridView3);
+            GenerativePanalFlow();
+            flagforHideColumnsEnG();
+            LoadColumnsIntoCheckedListBox();
+        }
+
+        private void Plates_Count_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void guna2TabControl1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (isRestoring) return;
+
+            SaveState();
+        }
+
+        private void advancedDataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            var grid = advancedDataGridView1;
+
+            if (e.RowIndex < 0) return;
+
+            var row = grid.Rows[e.RowIndex];
+            if (row.IsNewRow) return;
+
+            string notes = row.Cells["Notes"].Value?.ToString()?.Trim() ?? "";
+
+            if (!string.IsNullOrEmpty(notes) && notes.Contains("الغاء"))
+            {
+                row.DefaultCellStyle.BackColor = Color.Red;
+                row.DefaultCellStyle.ForeColor = Color.White;
+            }
+            else if (!string.IsNullOrEmpty(notes) && notes.Contains("اضافة"))
+            {
+                row.DefaultCellStyle.BackColor = Color.Yellow;
+                row.DefaultCellStyle.ForeColor = Color.Black;
+            }
+            else
+            {
+                row.DefaultCellStyle.BackColor = grid.DefaultCellStyle.BackColor;
+                row.DefaultCellStyle.ForeColor = grid.DefaultCellStyle.ForeColor;
             }
         }
     }

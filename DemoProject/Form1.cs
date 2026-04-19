@@ -208,16 +208,20 @@ namespace DemoProject
                 string inputUsername = UserNameTB.Text.Trim();
                 string inputPassword = PassWordTB.Text.Trim();
                 var matchedUser = AuthenticateUser(inputUsername, inputPassword);
-                if (matchedUser!=null)
+
+                if (matchedUser != null)
                 {
                     SessionData.UserId = matchedUser.id;
                     SessionData.UserName = matchedUser.user_name;
-                    this.Hide();
+
+                    LoginCache.Set(matchedUser); // ✅ caching
+
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+
                     ShowAlert("مرحبا بك", AlertForm.AlertType.Success);
-                    ENGReportForm menu = new ENGReportForm(matchedUser.user_name, matchedUser.id);
-                    menu.Show();
                 }
-   
+
                 else
                 {
                     ShowAlert("يرجي كتابة اسم المستخدم وكلمة السر بشكل صحيح", AlertForm.AlertType.Error);
@@ -233,16 +237,18 @@ namespace DemoProject
                 string inputUsername = UserNameTB.Text.Trim();
                 string inputPassword = PassWordTB.Text.Trim();
                 var matchedUser = AuthenticateUser(inputUsername, inputPassword);
+
                 if (matchedUser != null)
                 {
                     SessionData.UserId = matchedUser.id;
                     SessionData.UserName = matchedUser.user_name;
-                    this.Hide();
 
+                    LoginCache.Set(matchedUser); // ✅ caching
+
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
 
                     ShowAlert("مرحبا بك", AlertForm.AlertType.Success);
-                    ENGReportForm menu = new ENGReportForm(matchedUser.user_name, matchedUser.id);
-                    menu.Show();
                 }
 
                 else

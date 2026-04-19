@@ -30,10 +30,36 @@ namespace DemoProject
             public string Assets { get; set; }
             public int Units { get; set; }
         }
+        int allAsits = 0;
+        int rentedAsits = 0;
+        int nRentedAsits = 0;
+        int contractsWorking = 0;
         private void DashBoardControl_Load(object sender, EventArgs e)
         {
+            var investments =this.investmentsTableAdapter.GetData();
 
-    
+            foreach (var shops in investments)
+            {
+
+                if (shops.Visable_Value == true)
+                {
+                allAsits += shops.Shops_Count;
+                    if(shops.Activity_Name == "لا يوجد" && string.IsNullOrEmpty(shops.investment_name))
+                    {
+                        nRentedAsits += shops.Shops_Count;
+                    }
+                    if(shops.Activity_Name != "لا يوجد")
+                    {
+                        rentedAsits += shops.Shops_Count;
+                    }
+                }
+
+            }
+
+            AllAsits.Text = $"{allAsits}";
+            RentedAsits.Text = $"{rentedAsits}";
+            NRentedAsits.Text = $"{nRentedAsits}";
+
             DataTable dt = new DataTable();
             dt.Columns.Add("Assets", typeof(string));
             dt.Columns.Add("Units", typeof(int));

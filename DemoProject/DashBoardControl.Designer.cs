@@ -53,25 +53,33 @@
             this.DTimeStart = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.skyLabel1 = new ReaLTaiizor.Controls.SkyLabel();
             this.headerLabel1 = new ReaLTaiizor.Controls.HeaderLabel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.skyLabel2 = new ReaLTaiizor.Controls.SkyLabel();
             this.headerLabel2 = new ReaLTaiizor.Controls.HeaderLabel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.skyLabel3 = new ReaLTaiizor.Controls.SkyLabel();
             this.headerLabel3 = new ReaLTaiizor.Controls.HeaderLabel();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.skyLabel7 = new ReaLTaiizor.Controls.SkyLabel();
+            this.guna2PictureBox7 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.ContractsWorking = new ReaLTaiizor.Controls.SkyLabel();
             this.headerLabel7 = new ReaLTaiizor.Controls.HeaderLabel();
-            this.skyLabel6 = new ReaLTaiizor.Controls.SkyLabel();
+            this.NRentedAsits = new ReaLTaiizor.Controls.SkyLabel();
             this.headerLabel6 = new ReaLTaiizor.Controls.HeaderLabel();
-            this.skyLabel5 = new ReaLTaiizor.Controls.SkyLabel();
+            this.RentedAsits = new ReaLTaiizor.Controls.SkyLabel();
             this.headerLabel5 = new ReaLTaiizor.Controls.HeaderLabel();
-            this.skyLabel4 = new ReaLTaiizor.Controls.SkyLabel();
+            this.AllAsits = new ReaLTaiizor.Controls.SkyLabel();
             this.headerLabel4 = new ReaLTaiizor.Controls.HeaderLabel();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2PictureBox8 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.advancedDataGridView1 = new Zuby.ADGV.AdvancedDataGridView();
             this.headerLabel8 = new ReaLTaiizor.Controls.HeaderLabel();
             this.dATABASE2DataSet = new DemoProject.DATABASE2DataSet();
@@ -81,35 +89,27 @@
             this.headerLabel9 = new ReaLTaiizor.Controls.HeaderLabel();
             this.headerLabel10 = new ReaLTaiizor.Controls.HeaderLabel();
             this.headerLabel11 = new ReaLTaiizor.Controls.HeaderLabel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox7 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox8 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.headerLabel12 = new ReaLTaiizor.Controls.HeaderLabel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.guna2Panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.guna2Panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             this.guna2Panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dATABASE2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.investmentsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // chart1
@@ -339,6 +339,17 @@
             this.guna2Panel1.Size = new System.Drawing.Size(281, 60);
             this.guna2Panel1.TabIndex = 91;
             // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(227, 6);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(49, 47);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 93;
+            this.guna2PictureBox1.TabStop = false;
+            // 
             // skyLabel1
             // 
             this.skyLabel1.AutoSize = true;
@@ -373,6 +384,17 @@
             this.guna2Panel2.Size = new System.Drawing.Size(408, 60);
             this.guna2Panel2.TabIndex = 92;
             // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(350, 6);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(49, 47);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 94;
+            this.guna2PictureBox2.TabStop = false;
+            // 
             // skyLabel2
             // 
             this.skyLabel2.AutoSize = true;
@@ -406,6 +428,17 @@
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(462, 60);
             this.guna2Panel3.TabIndex = 93;
+            // 
+            // guna2PictureBox3
+            // 
+            this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
+            this.guna2PictureBox3.ImageRotate = 0F;
+            this.guna2PictureBox3.Location = new System.Drawing.Point(410, 5);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.Size = new System.Drawing.Size(49, 47);
+            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox3.TabIndex = 94;
+            this.guna2PictureBox3.TabStop = false;
             // 
             // skyLabel3
             // 
@@ -481,29 +514,73 @@
             this.guna2Panel4.Controls.Add(this.guna2PictureBox6);
             this.guna2Panel4.Controls.Add(this.guna2PictureBox5);
             this.guna2Panel4.Controls.Add(this.guna2PictureBox4);
-            this.guna2Panel4.Controls.Add(this.skyLabel7);
+            this.guna2Panel4.Controls.Add(this.ContractsWorking);
             this.guna2Panel4.Controls.Add(this.headerLabel7);
-            this.guna2Panel4.Controls.Add(this.skyLabel6);
+            this.guna2Panel4.Controls.Add(this.NRentedAsits);
             this.guna2Panel4.Controls.Add(this.headerLabel6);
-            this.guna2Panel4.Controls.Add(this.skyLabel5);
+            this.guna2Panel4.Controls.Add(this.RentedAsits);
             this.guna2Panel4.Controls.Add(this.headerLabel5);
-            this.guna2Panel4.Controls.Add(this.skyLabel4);
+            this.guna2Panel4.Controls.Add(this.AllAsits);
             this.guna2Panel4.Controls.Add(this.headerLabel4);
             this.guna2Panel4.Location = new System.Drawing.Point(15, 499);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(221, 223);
             this.guna2Panel4.TabIndex = 95;
             // 
-            // skyLabel7
+            // guna2PictureBox7
             // 
-            this.skyLabel7.AutoSize = true;
-            this.skyLabel7.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skyLabel7.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.skyLabel7.Location = new System.Drawing.Point(78, 195);
-            this.skyLabel7.Name = "skyLabel7";
-            this.skyLabel7.Size = new System.Drawing.Size(74, 18);
-            this.skyLabel7.TabIndex = 98;
-            this.skyLabel7.Text = "100000";
+            this.guna2PictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox7.Image")));
+            this.guna2PictureBox7.ImageRotate = 0F;
+            this.guna2PictureBox7.Location = new System.Drawing.Point(167, 168);
+            this.guna2PictureBox7.Name = "guna2PictureBox7";
+            this.guna2PictureBox7.Size = new System.Drawing.Size(49, 47);
+            this.guna2PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox7.TabIndex = 102;
+            this.guna2PictureBox7.TabStop = false;
+            // 
+            // guna2PictureBox6
+            // 
+            this.guna2PictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox6.Image")));
+            this.guna2PictureBox6.ImageRotate = 0F;
+            this.guna2PictureBox6.Location = new System.Drawing.Point(166, 110);
+            this.guna2PictureBox6.Name = "guna2PictureBox6";
+            this.guna2PictureBox6.Size = new System.Drawing.Size(49, 47);
+            this.guna2PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox6.TabIndex = 101;
+            this.guna2PictureBox6.TabStop = false;
+            // 
+            // guna2PictureBox5
+            // 
+            this.guna2PictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox5.Image")));
+            this.guna2PictureBox5.ImageRotate = 0F;
+            this.guna2PictureBox5.Location = new System.Drawing.Point(168, 56);
+            this.guna2PictureBox5.Name = "guna2PictureBox5";
+            this.guna2PictureBox5.Size = new System.Drawing.Size(49, 47);
+            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox5.TabIndex = 100;
+            this.guna2PictureBox5.TabStop = false;
+            // 
+            // guna2PictureBox4
+            // 
+            this.guna2PictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox4.Image")));
+            this.guna2PictureBox4.ImageRotate = 0F;
+            this.guna2PictureBox4.Location = new System.Drawing.Point(168, 3);
+            this.guna2PictureBox4.Name = "guna2PictureBox4";
+            this.guna2PictureBox4.Size = new System.Drawing.Size(49, 47);
+            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox4.TabIndex = 99;
+            this.guna2PictureBox4.TabStop = false;
+            // 
+            // ContractsWorking
+            // 
+            this.ContractsWorking.AutoSize = true;
+            this.ContractsWorking.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ContractsWorking.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.ContractsWorking.Location = new System.Drawing.Point(78, 195);
+            this.ContractsWorking.Name = "ContractsWorking";
+            this.ContractsWorking.Size = new System.Drawing.Size(74, 18);
+            this.ContractsWorking.TabIndex = 98;
+            this.ContractsWorking.Text = "100000";
             // 
             // headerLabel7
             // 
@@ -517,16 +594,16 @@
             this.headerLabel7.TabIndex = 97;
             this.headerLabel7.Text = "عدد العقود السارية";
             // 
-            // skyLabel6
+            // NRentedAsits
             // 
-            this.skyLabel6.AutoSize = true;
-            this.skyLabel6.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skyLabel6.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.skyLabel6.Location = new System.Drawing.Point(79, 139);
-            this.skyLabel6.Name = "skyLabel6";
-            this.skyLabel6.Size = new System.Drawing.Size(74, 18);
-            this.skyLabel6.TabIndex = 96;
-            this.skyLabel6.Text = "100000";
+            this.NRentedAsits.AutoSize = true;
+            this.NRentedAsits.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NRentedAsits.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.NRentedAsits.Location = new System.Drawing.Point(79, 139);
+            this.NRentedAsits.Name = "NRentedAsits";
+            this.NRentedAsits.Size = new System.Drawing.Size(74, 18);
+            this.NRentedAsits.TabIndex = 96;
+            this.NRentedAsits.Text = "100000";
             // 
             // headerLabel6
             // 
@@ -540,16 +617,16 @@
             this.headerLabel6.TabIndex = 95;
             this.headerLabel6.Text = "عدد الاصول الغير مؤجرة";
             // 
-            // skyLabel5
+            // RentedAsits
             // 
-            this.skyLabel5.AutoSize = true;
-            this.skyLabel5.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skyLabel5.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.skyLabel5.Location = new System.Drawing.Point(76, 85);
-            this.skyLabel5.Name = "skyLabel5";
-            this.skyLabel5.Size = new System.Drawing.Size(74, 18);
-            this.skyLabel5.TabIndex = 93;
-            this.skyLabel5.Text = "100000";
+            this.RentedAsits.AutoSize = true;
+            this.RentedAsits.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RentedAsits.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.RentedAsits.Location = new System.Drawing.Point(76, 85);
+            this.RentedAsits.Name = "RentedAsits";
+            this.RentedAsits.Size = new System.Drawing.Size(74, 18);
+            this.RentedAsits.TabIndex = 93;
+            this.RentedAsits.Text = "100000";
             // 
             // headerLabel5
             // 
@@ -563,16 +640,16 @@
             this.headerLabel5.TabIndex = 94;
             this.headerLabel5.Text = "عدد الاصول المؤجرة";
             // 
-            // skyLabel4
+            // AllAsits
             // 
-            this.skyLabel4.AutoSize = true;
-            this.skyLabel4.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skyLabel4.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.skyLabel4.Location = new System.Drawing.Point(81, 30);
-            this.skyLabel4.Name = "skyLabel4";
-            this.skyLabel4.Size = new System.Drawing.Size(74, 18);
-            this.skyLabel4.TabIndex = 92;
-            this.skyLabel4.Text = "100000";
+            this.AllAsits.AutoSize = true;
+            this.AllAsits.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AllAsits.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.AllAsits.Location = new System.Drawing.Point(81, 30);
+            this.AllAsits.Name = "AllAsits";
+            this.AllAsits.Size = new System.Drawing.Size(74, 18);
+            this.AllAsits.TabIndex = 92;
+            this.AllAsits.Text = "100000";
             // 
             // headerLabel4
             // 
@@ -596,6 +673,17 @@
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.Size = new System.Drawing.Size(551, 223);
             this.guna2Panel5.TabIndex = 96;
+            // 
+            // guna2PictureBox8
+            // 
+            this.guna2PictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox8.Image")));
+            this.guna2PictureBox8.ImageRotate = 0F;
+            this.guna2PictureBox8.Location = new System.Drawing.Point(5, 5);
+            this.guna2PictureBox8.Name = "guna2PictureBox8";
+            this.guna2PictureBox8.Size = new System.Drawing.Size(49, 42);
+            this.guna2PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox8.TabIndex = 101;
+            this.guna2PictureBox8.TabStop = false;
             // 
             // advancedDataGridView1
             // 
@@ -722,94 +810,6 @@
             this.headerLabel11.TabIndex = 100;
             this.headerLabel11.Text = "الي";
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(227, 6);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(49, 47);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 93;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(350, 6);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(49, 47);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 94;
-            this.guna2PictureBox2.TabStop = false;
-            // 
-            // guna2PictureBox3
-            // 
-            this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
-            this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(410, 5);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(49, 47);
-            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox3.TabIndex = 94;
-            this.guna2PictureBox3.TabStop = false;
-            // 
-            // guna2PictureBox4
-            // 
-            this.guna2PictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox4.Image")));
-            this.guna2PictureBox4.ImageRotate = 0F;
-            this.guna2PictureBox4.Location = new System.Drawing.Point(168, 3);
-            this.guna2PictureBox4.Name = "guna2PictureBox4";
-            this.guna2PictureBox4.Size = new System.Drawing.Size(49, 47);
-            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox4.TabIndex = 99;
-            this.guna2PictureBox4.TabStop = false;
-            // 
-            // guna2PictureBox5
-            // 
-            this.guna2PictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox5.Image")));
-            this.guna2PictureBox5.ImageRotate = 0F;
-            this.guna2PictureBox5.Location = new System.Drawing.Point(168, 56);
-            this.guna2PictureBox5.Name = "guna2PictureBox5";
-            this.guna2PictureBox5.Size = new System.Drawing.Size(49, 47);
-            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox5.TabIndex = 100;
-            this.guna2PictureBox5.TabStop = false;
-            // 
-            // guna2PictureBox6
-            // 
-            this.guna2PictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox6.Image")));
-            this.guna2PictureBox6.ImageRotate = 0F;
-            this.guna2PictureBox6.Location = new System.Drawing.Point(166, 110);
-            this.guna2PictureBox6.Name = "guna2PictureBox6";
-            this.guna2PictureBox6.Size = new System.Drawing.Size(49, 47);
-            this.guna2PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox6.TabIndex = 101;
-            this.guna2PictureBox6.TabStop = false;
-            // 
-            // guna2PictureBox7
-            // 
-            this.guna2PictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox7.Image")));
-            this.guna2PictureBox7.ImageRotate = 0F;
-            this.guna2PictureBox7.Location = new System.Drawing.Point(167, 168);
-            this.guna2PictureBox7.Name = "guna2PictureBox7";
-            this.guna2PictureBox7.Size = new System.Drawing.Size(49, 47);
-            this.guna2PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox7.TabIndex = 102;
-            this.guna2PictureBox7.TabStop = false;
-            // 
-            // guna2PictureBox8
-            // 
-            this.guna2PictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox8.Image")));
-            this.guna2PictureBox8.ImageRotate = 0F;
-            this.guna2PictureBox8.Location = new System.Drawing.Point(5, 5);
-            this.guna2PictureBox8.Name = "guna2PictureBox8";
-            this.guna2PictureBox8.Size = new System.Drawing.Size(49, 42);
-            this.guna2PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox8.TabIndex = 101;
-            this.guna2PictureBox8.TabStop = false;
-            // 
             // headerLabel12
             // 
             this.headerLabel12.AutoSize = true;
@@ -876,26 +876,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dATABASE2DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.investmentsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -923,13 +923,13 @@
         private ReaLTaiizor.Controls.HeaderLabel headerLabel3;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private ReaLTaiizor.Controls.SkyLabel skyLabel7;
+        private ReaLTaiizor.Controls.SkyLabel ContractsWorking;
         private ReaLTaiizor.Controls.HeaderLabel headerLabel7;
-        private ReaLTaiizor.Controls.SkyLabel skyLabel6;
+        private ReaLTaiizor.Controls.SkyLabel NRentedAsits;
         private ReaLTaiizor.Controls.HeaderLabel headerLabel6;
-        private ReaLTaiizor.Controls.SkyLabel skyLabel5;
+        private ReaLTaiizor.Controls.SkyLabel RentedAsits;
         private ReaLTaiizor.Controls.HeaderLabel headerLabel5;
-        private ReaLTaiizor.Controls.SkyLabel skyLabel4;
+        private ReaLTaiizor.Controls.SkyLabel AllAsits;
         private ReaLTaiizor.Controls.HeaderLabel headerLabel4;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private ReaLTaiizor.Controls.HeaderLabel headerLabel8;
