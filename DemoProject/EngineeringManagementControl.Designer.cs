@@ -1585,7 +1585,6 @@
             this.Add_Radio.UncheckedState.BorderThickness = 2;
             this.Add_Radio.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.Add_Radio.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.Add_Radio.Visible = false;
             this.Add_Radio.CheckedChanged += new System.EventHandler(this.Add_Radio_CheckedChanged);
             // 
             // tabPage5

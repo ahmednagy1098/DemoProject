@@ -119,6 +119,7 @@ namespace DemoProject
                         {
                             string funcName = tag.Substring(9).Trim();
                             ctrl.Enabled = functionAccess.ContainsKey(funcName);
+                            ctrl.Visible= functionAccess.ContainsKey(funcName);
                         }
                     }
                     // Recurse into nested controls
@@ -346,19 +347,27 @@ namespace DemoProject
                     checkBoxColumn.FalseValue = false;
                     advancedDataGridView1.Columns.Add(checkBoxColumn);
                 }
-                if (!advancedDataGridView1.Columns.Contains("Update"))
-                {
-                    DataGridViewButtonColumn btnUpdate = new DataGridViewButtonColumn
-                    {
-                        HeaderText = "تعديل",
-                        Name = "Update",
-                        Text = "تعديل",
-                        UseColumnTextForButtonValue = true,
-                        DisplayIndex=0,
-                        Width = 80
-                    };
+                var getAccesUserFunction = accessTableAdapter.GetDataByOFAccessFunctionUserId(UserId,4,5);
 
-                    advancedDataGridView1.Columns.Add(btnUpdate);
+                if (getAccesUserFunction.Count == 1)
+                {
+
+
+                    if (!advancedDataGridView1.Columns.Contains("Update"))
+                    {
+                        DataGridViewButtonColumn btnUpdate = new DataGridViewButtonColumn
+                        {
+                            HeaderText = "تعديل",
+                            Name = "Update",
+                            Text = "تعديل",
+                            Tag = "Function:Edit",
+                            UseColumnTextForButtonValue = true,
+                            DisplayIndex = 0,
+                            Width = 80
+                        };
+
+                        advancedDataGridView1.Columns.Add(btnUpdate);
+                    }
                 }
                 // Make it last column
 
@@ -1018,10 +1027,15 @@ namespace DemoProject
             this.usersTableAdapter.Fill(this.dATABASE2DataSet.users);
             // TODO: This line of code loads data into the 'database1DataSet.roles' table. You can move, or remove it, as needed.
             this.rolesTableAdapter.Fill(this.dATABASE2DataSet.roles);
-            tabPage4.Tag = "Function:Add";
+            tabPage4.Tag = "Function:Edit";
             guna2CircleButton3.Tag = "Function:Add";
+            Add_Radio.Tag = "Function:Addd";
+
             tabPage5.Tag = "Function:Print";
             guna2Button3.Tag = "Function:Delete";
+            crownLabel1.Tag = "Function:Delete";
+            guna2Shapes1.Tag = "Function:Delete";
+            guna2Shapes2.Tag = "Function:Delete";
             var userRow = dATABASE2DataSet.users.FirstOrDefault(u => u.id == UserId);
             var role = dATABASE2DataSet.roles.FirstOrDefault(r => r.user_id == UserId);
             if (userRow == null || role == null) return;
@@ -2983,19 +2997,26 @@ namespace DemoProject
                     checkBoxColumn.FalseValue = false;
                     advancedDataGridView1.Columns.Add(checkBoxColumn);
                 }
-                if (!advancedDataGridView1.Columns.Contains("Update"))
-                {
-                    DataGridViewButtonColumn btnUpdate = new DataGridViewButtonColumn
-                    {
-                        HeaderText = "تعديل",
-                        Name = "Update",
-                        Text = "تعديل",
-                        UseColumnTextForButtonValue = true,
-                        DisplayIndex = 0,
-                        Width = 80
-                    };
+                var getAccesUserFunction = accessTableAdapter.GetDataByOFAccessFunctionUserId(UserId, 4, 5);
 
-                    advancedDataGridView1.Columns.Add(btnUpdate);
+                if (getAccesUserFunction.Count == 1)
+                {
+                    if (!advancedDataGridView1.Columns.Contains("Update"))
+                    {
+                        DataGridViewButtonColumn btnUpdate = new DataGridViewButtonColumn
+                        {
+                            HeaderText = "تعديل",
+                            Name = "Update",
+                            Text = "تعديل",
+                            Tag = "Function:Edit",
+                            UseColumnTextForButtonValue = true,
+                            DisplayIndex = 0,
+                            Width = 80
+                        };
+
+                        advancedDataGridView1.Columns.Add(btnUpdate);
+                    }
+
                 }
                 // Make it last column
 
@@ -3150,19 +3171,26 @@ namespace DemoProject
                     checkBoxColumn.FalseValue = false;
                     advancedDataGridView1.Columns.Add(checkBoxColumn);
                 }
-                if (!advancedDataGridView1.Columns.Contains("Update"))
-                {
-                    DataGridViewButtonColumn btnUpdate = new DataGridViewButtonColumn
-                    {
-                        HeaderText = "تعديل",
-                        Name = "Update",
-                        Text = "تعديل",
-                        UseColumnTextForButtonValue = true,
-                        DisplayIndex = 0,
-                        Width = 80
-                    };
+                var getAccesUserFunction = accessTableAdapter.GetDataByOFAccessFunctionUserId(UserId, 4, 5);
 
-                    advancedDataGridView1.Columns.Add(btnUpdate);
+                if (getAccesUserFunction.Count == 1)
+                {
+                    if (!advancedDataGridView1.Columns.Contains("Update"))
+                    {
+                        DataGridViewButtonColumn btnUpdate = new DataGridViewButtonColumn
+                        {
+                            HeaderText = "تعديل",
+                            Name = "Update",
+                            Text = "تعديل",
+                            Tag = "Function:Edit",
+                            UseColumnTextForButtonValue = true,
+                            DisplayIndex = 0,
+                            Width = 80
+                        };
+
+                        advancedDataGridView1.Columns.Add(btnUpdate);
+                    }
+
                 }
                 // Make it last column
 
