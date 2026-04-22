@@ -254,19 +254,19 @@
             this.guna2TabControl1.TabButtonHoverState.ForeColor = System.Drawing.Color.White;
             this.guna2TabControl1.TabButtonHoverState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
             this.guna2TabControl1.TabButtonIdleState.BorderColor = System.Drawing.Color.Empty;
-            this.guna2TabControl1.TabButtonIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2TabControl1.TabButtonIdleState.FillColor = System.Drawing.Color.DeepSkyBlue;
             this.guna2TabControl1.TabButtonIdleState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.guna2TabControl1.TabButtonIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(160)))), ((int)(((byte)(167)))));
-            this.guna2TabControl1.TabButtonIdleState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2TabControl1.TabButtonIdleState.ForeColor = System.Drawing.Color.White;
+            this.guna2TabControl1.TabButtonIdleState.InnerColor = System.Drawing.Color.DeepSkyBlue;
             this.guna2TabControl1.TabButtonImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2TabControl1.TabButtonSelectedState.BorderColor = System.Drawing.Color.Empty;
-            this.guna2TabControl1.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(49)))));
+            this.guna2TabControl1.TabButtonSelectedState.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.guna2TabControl1.TabButtonSelectedState.FillColor = System.Drawing.Color.SteelBlue;
             this.guna2TabControl1.TabButtonSelectedState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.guna2TabControl1.TabButtonSelectedState.ForeColor = System.Drawing.Color.White;
-            this.guna2TabControl1.TabButtonSelectedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(132)))), ((int)(((byte)(255)))));
+            this.guna2TabControl1.TabButtonSelectedState.InnerColor = System.Drawing.Color.SteelBlue;
             this.guna2TabControl1.TabButtonSize = new System.Drawing.Size(200, 40);
             this.guna2TabControl1.TabIndex = 57;
-            this.guna2TabControl1.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2TabControl1.TabMenuBackColor = System.Drawing.Color.DeepSkyBlue;
             this.guna2TabControl1.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop;
             this.guna2TabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.guna2TabControl1_Selecting);
             // 
@@ -285,6 +285,7 @@
             this.tabPage5.Controls.Add(this.guna2Panel3);
             this.tabPage5.Controls.Add(this.guna2Panel1);
             this.tabPage5.Controls.Add(this.advancedDataGridView1);
+            this.tabPage5.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.tabPage5.Location = new System.Drawing.Point(4, 44);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -548,6 +549,7 @@
             this.bigLabel7.Size = new System.Drawing.Size(243, 42);
             this.bigLabel7.TabIndex = 63;
             this.bigLabel7.Text = "تمييز المحطات التي لها محلات مؤجر \r\nوغير مؤجر";
+            this.bigLabel7.Visible = false;
             // 
             // bigLabel6
             // 
@@ -560,6 +562,7 @@
             this.bigLabel6.Size = new System.Drawing.Size(28, 25);
             this.bigLabel6.TabIndex = 62;
             this.bigLabel6.Text = "ⓘ";
+            this.bigLabel6.Visible = false;
             // 
             // bigLabel5
             // 
@@ -905,6 +908,7 @@
             this.tabPage4.Controls.Add(this.guna2Panel2);
             this.tabPage4.Controls.Add(this.guna2Button1);
             this.tabPage4.Controls.Add(this.dungeonLabel12);
+            this.tabPage4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.tabPage4.Location = new System.Drawing.Point(4, 44);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -2109,6 +2113,7 @@
             this.tabPage2.Controls.Add(this.guna2Button4);
             this.tabPage2.Controls.Add(this.guna2TextBox1);
             this.tabPage2.Controls.Add(this.dungeonLabel18);
+            this.tabPage2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.tabPage2.Location = new System.Drawing.Point(4, 44);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -2318,7 +2323,7 @@
             this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.FillColor = System.Drawing.Color.Red;
+            this.guna2Button3.FillColor = System.Drawing.Color.DarkRed;
             this.guna2Button3.Font = new System.Drawing.Font("Algerian", 18F, System.Drawing.FontStyle.Bold);
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
             this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
