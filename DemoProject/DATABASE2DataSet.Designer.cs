@@ -14839,7 +14839,13 @@ SELECT investments_id, Location, investment_name, governorate_fk, land_fk, Depen
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@investments_id", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "investments_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"UPDATE [dbo].[investments] SET [Location] = @Location, [investment_name] = @investment_name, [governorate_fk] = @governorate_fk, [land_fk] = @land_fk, [Dependent_neighborhood] = @Dependent_neighborhood, [Activity_Type] = @Activity_Type, [Activity_Name] = @Activity_Name, [Place_number] = @Place_number, [Offer_memorandum_number] = @Offer_memorandum_number, [Contract_number] = @Contract_number, [Contract_start_date] = @Contract_start_date, [Contract_expiry_date] = @Contract_expiry_date, [Rental_value] = @Rental_value, [Offer_memorandum_number_File] = @Offer_memorandum_number_File, [Contract_number_File] = @Contract_number_File, [Rental_expiry_date] = @Rental_expiry_date, [investment_type] = @investment_type Where investments_id = @investments_id";
+            this._commandCollection[3].CommandText = @"UPDATE       investments
+SET                Location = @Location, investment_name = @investment_name, governorate_fk = @governorate_fk, land_fk = @land_fk, Dependent_neighborhood = @Dependent_neighborhood, Activity_Type = @Activity_Type, 
+                         Activity_Name = @Activity_Name, Place_number = @Place_number, Offer_memorandum_number = @Offer_memorandum_number, Contract_number = @Contract_number, Contract_start_date = @Contract_start_date, 
+                         Contract_expiry_date = @Contract_expiry_date, Rental_value = @Rental_value, Offer_memorandum_number_File = @Offer_memorandum_number_File, Contract_number_File = @Contract_number_File, 
+                         Rental_expiry_date = @Rental_expiry_date, investment_type = @investment_type, Rental_Status = @Rental_Status, Shops_Count = @Shops_Count, Visable_Value = @Visable_Value, Notes = @Notes, 
+                         Contract_terms = @Contract_terms
+WHERE        (investments_id = @investments_id)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Location", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Location", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@investment_name", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "investment_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -14853,11 +14859,16 @@ SELECT investments_id, Location, investment_name, governorate_fk, land_fk, Depen
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contract_number", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Contract_number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contract_start_date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Contract_start_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contract_expiry_date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Contract_expiry_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rental_value", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 10, 2, "Rental_value", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rental_value", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "Rental_value", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Offer_memorandum_number_File", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Offer_memorandum_number_File", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contract_number_File", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Contract_number_File", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rental_expiry_date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Rental_expiry_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@investment_type", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "investment_type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rental_Status", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Rental_Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Shops_Count", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Shops_Count", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Visable_Value", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Visable_Value", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Notes", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Notes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contract_terms", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Contract_terms", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@investments_id", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "investments_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -15864,6 +15875,11 @@ SELECT investments_id, Location, investment_name, governorate_fk, land_fk, Depen
                     string Contract_number_File, 
                     string Rental_expiry_date, 
                     string investment_type, 
+                    string Rental_Status, 
+                    global::System.Nullable<int> Shops_Count, 
+                    global::System.Nullable<bool> Visable_Value, 
+                    string Notes, 
+                    string Contract_terms, 
                     string investments_id) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((Location == null)) {
@@ -15968,11 +15984,41 @@ SELECT investments_id, Location, investment_name, governorate_fk, land_fk, Depen
             else {
                 command.Parameters[16].Value = ((string)(investment_type));
             }
+            if ((Rental_Status == null)) {
+                command.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[17].Value = ((string)(Rental_Status));
+            }
+            if ((Shops_Count.HasValue == true)) {
+                command.Parameters[18].Value = ((int)(Shops_Count.Value));
+            }
+            else {
+                command.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((Visable_Value.HasValue == true)) {
+                command.Parameters[19].Value = ((bool)(Visable_Value.Value));
+            }
+            else {
+                command.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((Notes == null)) {
+                command.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[20].Value = ((string)(Notes));
+            }
+            if ((Contract_terms == null)) {
+                command.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[21].Value = ((string)(Contract_terms));
+            }
             if ((investments_id == null)) {
                 throw new global::System.ArgumentNullException("investments_id");
             }
             else {
-                command.Parameters[17].Value = ((string)(investments_id));
+                command.Parameters[22].Value = ((string)(investments_id));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

@@ -70,6 +70,7 @@
             this.guna2GradientTileButton21 = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.guna2GradientTileButton22 = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.guna2GradientTileButton23 = new Guna.UI2.WinForms.Guna2GradientTileButton();
+            this.guna2GradientTileButton24 = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dATABASE2DataSet)).BeginInit();
@@ -95,7 +96,7 @@
             this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.nightControlBox1.EnableMinimizeButton = true;
             this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.Location = new System.Drawing.Point(673, 0);
+            this.nightControlBox1.Location = new System.Drawing.Point(961, 0);
             this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
             this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -111,7 +112,7 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(812, 36);
+            this.guna2Panel1.Size = new System.Drawing.Size(1100, 36);
             this.guna2Panel1.TabIndex = 20;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
@@ -124,7 +125,7 @@
             this.guna2PictureBox2.ImageRotate = 0F;
             this.guna2PictureBox2.Location = new System.Drawing.Point(0, 0);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(812, 768);
+            this.guna2PictureBox2.Size = new System.Drawing.Size(1100, 799);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox2.TabIndex = 23;
             this.guna2PictureBox2.TabStop = false;
@@ -152,7 +153,7 @@
             this.guna2GradientTileButton6.ImageOffset = new System.Drawing.Point(0, 15);
             this.guna2GradientTileButton6.ImageSize = new System.Drawing.Size(50, 50);
             this.guna2GradientTileButton6.IndicateFocus = true;
-            this.guna2GradientTileButton6.Location = new System.Drawing.Point(50, 147);
+            this.guna2GradientTileButton6.Location = new System.Drawing.Point(338, 147);
             this.guna2GradientTileButton6.Name = "guna2GradientTileButton6";
             this.guna2GradientTileButton6.Size = new System.Drawing.Size(774, 110);
             this.guna2GradientTileButton6.TabIndex = 33;
@@ -180,7 +181,7 @@
             this.guna2GradientTileButton2.ImageOffset = new System.Drawing.Point(0, 15);
             this.guna2GradientTileButton2.ImageSize = new System.Drawing.Size(50, 50);
             this.guna2GradientTileButton2.IndicateFocus = true;
-            this.guna2GradientTileButton2.Location = new System.Drawing.Point(50, 491);
+            this.guna2GradientTileButton2.Location = new System.Drawing.Point(338, 491);
             this.guna2GradientTileButton2.Name = "guna2GradientTileButton2";
             this.guna2GradientTileButton2.Size = new System.Drawing.Size(774, 110);
             this.guna2GradientTileButton2.TabIndex = 39;
@@ -208,7 +209,7 @@
             this.guna2GradientTileButton1.ImageOffset = new System.Drawing.Point(0, 15);
             this.guna2GradientTileButton1.ImageSize = new System.Drawing.Size(50, 50);
             this.guna2GradientTileButton1.IndicateFocus = true;
-            this.guna2GradientTileButton1.Location = new System.Drawing.Point(51, 263);
+            this.guna2GradientTileButton1.Location = new System.Drawing.Point(339, 263);
             this.guna2GradientTileButton1.Name = "guna2GradientTileButton1";
             this.guna2GradientTileButton1.Size = new System.Drawing.Size(774, 110);
             this.guna2GradientTileButton1.TabIndex = 40;
@@ -236,7 +237,7 @@
             this.guna2GradientTileButton3.ImageOffset = new System.Drawing.Point(0, 10);
             this.guna2GradientTileButton3.ImageSize = new System.Drawing.Size(50, 50);
             this.guna2GradientTileButton3.IndicateFocus = true;
-            this.guna2GradientTileButton3.Location = new System.Drawing.Point(50, 379);
+            this.guna2GradientTileButton3.Location = new System.Drawing.Point(338, 379);
             this.guna2GradientTileButton3.Name = "guna2GradientTileButton3";
             this.guna2GradientTileButton3.Size = new System.Drawing.Size(774, 110);
             this.guna2GradientTileButton3.TabIndex = 41;
@@ -264,7 +265,7 @@
             this.guna2GradientTileButton4.ImageOffset = new System.Drawing.Point(0, 15);
             this.guna2GradientTileButton4.ImageSize = new System.Drawing.Size(50, 50);
             this.guna2GradientTileButton4.IndicateFocus = true;
-            this.guna2GradientTileButton4.Location = new System.Drawing.Point(50, 37);
+            this.guna2GradientTileButton4.Location = new System.Drawing.Point(338, 37);
             this.guna2GradientTileButton4.Name = "guna2GradientTileButton4";
             this.guna2GradientTileButton4.Size = new System.Drawing.Size(774, 110);
             this.guna2GradientTileButton4.TabIndex = 42;
@@ -292,7 +293,7 @@
             this.guna2GradientTileButton5.ImageOffset = new System.Drawing.Point(0, 15);
             this.guna2GradientTileButton5.ImageSize = new System.Drawing.Size(50, 50);
             this.guna2GradientTileButton5.IndicateFocus = true;
-            this.guna2GradientTileButton5.Location = new System.Drawing.Point(50, 320);
+            this.guna2GradientTileButton5.Location = new System.Drawing.Point(338, 320);
             this.guna2GradientTileButton5.Name = "guna2GradientTileButton5";
             this.guna2GradientTileButton5.Size = new System.Drawing.Size(774, 110);
             this.guna2GradientTileButton5.TabIndex = 43;
@@ -321,7 +322,7 @@
             this.guna2GradientTileButton7.ImageOffset = new System.Drawing.Point(0, 15);
             this.guna2GradientTileButton7.ImageSize = new System.Drawing.Size(50, 50);
             this.guna2GradientTileButton7.IndicateFocus = true;
-            this.guna2GradientTileButton7.Location = new System.Drawing.Point(51, 436);
+            this.guna2GradientTileButton7.Location = new System.Drawing.Point(339, 436);
             this.guna2GradientTileButton7.Name = "guna2GradientTileButton7";
             this.guna2GradientTileButton7.Size = new System.Drawing.Size(774, 110);
             this.guna2GradientTileButton7.TabIndex = 44;
@@ -343,7 +344,7 @@
             this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton2.Image")));
             this.guna2CircleButton2.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2CircleButton2.Location = new System.Drawing.Point(29, 42);
+            this.guna2CircleButton2.Location = new System.Drawing.Point(317, 42);
             this.guna2CircleButton2.Name = "guna2CircleButton2";
             this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton2.Size = new System.Drawing.Size(86, 85);
@@ -373,7 +374,7 @@
             this.guna2GradientTileButton8.ImageOffset = new System.Drawing.Point(0, 15);
             this.guna2GradientTileButton8.ImageSize = new System.Drawing.Size(50, 50);
             this.guna2GradientTileButton8.IndicateFocus = true;
-            this.guna2GradientTileButton8.Location = new System.Drawing.Point(51, 263);
+            this.guna2GradientTileButton8.Location = new System.Drawing.Point(339, 263);
             this.guna2GradientTileButton8.Name = "guna2GradientTileButton8";
             this.guna2GradientTileButton8.Size = new System.Drawing.Size(774, 110);
             this.guna2GradientTileButton8.TabIndex = 70;
@@ -472,7 +473,7 @@
             this.guna2GradientTileButton9.ImageOffset = new System.Drawing.Point(0, 10);
             this.guna2GradientTileButton9.ImageSize = new System.Drawing.Size(50, 50);
             this.guna2GradientTileButton9.IndicateFocus = true;
-            this.guna2GradientTileButton9.Location = new System.Drawing.Point(110, 262);
+            this.guna2GradientTileButton9.Location = new System.Drawing.Point(398, 262);
             this.guna2GradientTileButton9.Name = "guna2GradientTileButton9";
             this.guna2GradientTileButton9.Size = new System.Drawing.Size(698, 110);
             this.guna2GradientTileButton9.TabIndex = 71;
@@ -500,7 +501,7 @@
             this.guna2GradientTileButton10.ImageOffset = new System.Drawing.Point(0, 10);
             this.guna2GradientTileButton10.ImageSize = new System.Drawing.Size(50, 50);
             this.guna2GradientTileButton10.IndicateFocus = true;
-            this.guna2GradientTileButton10.Location = new System.Drawing.Point(108, 497);
+            this.guna2GradientTileButton10.Location = new System.Drawing.Point(396, 497);
             this.guna2GradientTileButton10.Name = "guna2GradientTileButton10";
             this.guna2GradientTileButton10.Size = new System.Drawing.Size(698, 110);
             this.guna2GradientTileButton10.TabIndex = 72;
@@ -529,7 +530,7 @@
             this.guna2GradientTileButton11.ImageOffset = new System.Drawing.Point(0, 10);
             this.guna2GradientTileButton11.ImageSize = new System.Drawing.Size(50, 50);
             this.guna2GradientTileButton11.IndicateFocus = true;
-            this.guna2GradientTileButton11.Location = new System.Drawing.Point(107, 613);
+            this.guna2GradientTileButton11.Location = new System.Drawing.Point(395, 613);
             this.guna2GradientTileButton11.Name = "guna2GradientTileButton11";
             this.guna2GradientTileButton11.Size = new System.Drawing.Size(698, 110);
             this.guna2GradientTileButton11.TabIndex = 73;
@@ -558,7 +559,7 @@
             this.guna2GradientTileButton12.ImageOffset = new System.Drawing.Point(0, 10);
             this.guna2GradientTileButton12.ImageSize = new System.Drawing.Size(50, 50);
             this.guna2GradientTileButton12.IndicateFocus = true;
-            this.guna2GradientTileButton12.Location = new System.Drawing.Point(112, 149);
+            this.guna2GradientTileButton12.Location = new System.Drawing.Point(400, 149);
             this.guna2GradientTileButton12.Name = "guna2GradientTileButton12";
             this.guna2GradientTileButton12.Size = new System.Drawing.Size(698, 110);
             this.guna2GradientTileButton12.TabIndex = 74;
@@ -587,7 +588,7 @@
             this.guna2GradientTileButton13.ImageOffset = new System.Drawing.Point(0, 10);
             this.guna2GradientTileButton13.ImageSize = new System.Drawing.Size(50, 50);
             this.guna2GradientTileButton13.IndicateFocus = true;
-            this.guna2GradientTileButton13.Location = new System.Drawing.Point(110, 37);
+            this.guna2GradientTileButton13.Location = new System.Drawing.Point(398, 37);
             this.guna2GradientTileButton13.Name = "guna2GradientTileButton13";
             this.guna2GradientTileButton13.Size = new System.Drawing.Size(698, 110);
             this.guna2GradientTileButton13.TabIndex = 75;
@@ -615,7 +616,7 @@
             this.guna2GradientTileButton14.ImageOffset = new System.Drawing.Point(0, 10);
             this.guna2GradientTileButton14.ImageSize = new System.Drawing.Size(50, 50);
             this.guna2GradientTileButton14.IndicateFocus = true;
-            this.guna2GradientTileButton14.Location = new System.Drawing.Point(107, 385);
+            this.guna2GradientTileButton14.Location = new System.Drawing.Point(395, 385);
             this.guna2GradientTileButton14.Name = "guna2GradientTileButton14";
             this.guna2GradientTileButton14.Size = new System.Drawing.Size(698, 110);
             this.guna2GradientTileButton14.TabIndex = 76;
@@ -644,7 +645,7 @@
             this.guna2GradientTileButton15.ImageOffset = new System.Drawing.Point(0, 10);
             this.guna2GradientTileButton15.ImageSize = new System.Drawing.Size(50, 50);
             this.guna2GradientTileButton15.IndicateFocus = true;
-            this.guna2GradientTileButton15.Location = new System.Drawing.Point(112, 150);
+            this.guna2GradientTileButton15.Location = new System.Drawing.Point(400, 150);
             this.guna2GradientTileButton15.Name = "guna2GradientTileButton15";
             this.guna2GradientTileButton15.Size = new System.Drawing.Size(698, 110);
             this.guna2GradientTileButton15.TabIndex = 77;
@@ -673,7 +674,7 @@
             this.guna2GradientTileButton16.ImageOffset = new System.Drawing.Point(0, 10);
             this.guna2GradientTileButton16.ImageSize = new System.Drawing.Size(50, 50);
             this.guna2GradientTileButton16.IndicateFocus = true;
-            this.guna2GradientTileButton16.Location = new System.Drawing.Point(110, 262);
+            this.guna2GradientTileButton16.Location = new System.Drawing.Point(398, 262);
             this.guna2GradientTileButton16.Name = "guna2GradientTileButton16";
             this.guna2GradientTileButton16.Size = new System.Drawing.Size(698, 110);
             this.guna2GradientTileButton16.TabIndex = 78;
@@ -702,7 +703,7 @@
             this.guna2GradientTileButton17.ImageOffset = new System.Drawing.Point(0, 10);
             this.guna2GradientTileButton17.ImageSize = new System.Drawing.Size(50, 50);
             this.guna2GradientTileButton17.IndicateFocus = true;
-            this.guna2GradientTileButton17.Location = new System.Drawing.Point(106, 385);
+            this.guna2GradientTileButton17.Location = new System.Drawing.Point(394, 385);
             this.guna2GradientTileButton17.Name = "guna2GradientTileButton17";
             this.guna2GradientTileButton17.Size = new System.Drawing.Size(698, 110);
             this.guna2GradientTileButton17.TabIndex = 79;
@@ -724,7 +725,7 @@
             this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton1.Image")));
             this.guna2CircleButton1.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2CircleButton1.Location = new System.Drawing.Point(29, 43);
+            this.guna2CircleButton1.Location = new System.Drawing.Point(317, 43);
             this.guna2CircleButton1.Name = "guna2CircleButton1";
             this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton1.Size = new System.Drawing.Size(86, 85);
@@ -753,7 +754,7 @@
             this.guna2GradientTileButton18.ImageOffset = new System.Drawing.Point(0, 10);
             this.guna2GradientTileButton18.ImageSize = new System.Drawing.Size(50, 50);
             this.guna2GradientTileButton18.IndicateFocus = true;
-            this.guna2GradientTileButton18.Location = new System.Drawing.Point(106, 385);
+            this.guna2GradientTileButton18.Location = new System.Drawing.Point(394, 385);
             this.guna2GradientTileButton18.Name = "guna2GradientTileButton18";
             this.guna2GradientTileButton18.Size = new System.Drawing.Size(698, 110);
             this.guna2GradientTileButton18.TabIndex = 81;
@@ -781,7 +782,7 @@
             this.guna2GradientTileButton19.ImageOffset = new System.Drawing.Point(0, 10);
             this.guna2GradientTileButton19.ImageSize = new System.Drawing.Size(50, 50);
             this.guna2GradientTileButton19.IndicateFocus = true;
-            this.guna2GradientTileButton19.Location = new System.Drawing.Point(110, 501);
+            this.guna2GradientTileButton19.Location = new System.Drawing.Point(398, 501);
             this.guna2GradientTileButton19.Name = "guna2GradientTileButton19";
             this.guna2GradientTileButton19.Size = new System.Drawing.Size(698, 110);
             this.guna2GradientTileButton19.TabIndex = 82;
@@ -809,7 +810,7 @@
             this.guna2GradientTileButton20.ImageOffset = new System.Drawing.Point(0, 10);
             this.guna2GradientTileButton20.ImageSize = new System.Drawing.Size(50, 50);
             this.guna2GradientTileButton20.IndicateFocus = true;
-            this.guna2GradientTileButton20.Location = new System.Drawing.Point(109, 262);
+            this.guna2GradientTileButton20.Location = new System.Drawing.Point(397, 262);
             this.guna2GradientTileButton20.Name = "guna2GradientTileButton20";
             this.guna2GradientTileButton20.Size = new System.Drawing.Size(698, 110);
             this.guna2GradientTileButton20.TabIndex = 83;
@@ -837,7 +838,7 @@
             this.guna2GradientTileButton21.ImageOffset = new System.Drawing.Point(0, 10);
             this.guna2GradientTileButton21.ImageSize = new System.Drawing.Size(50, 50);
             this.guna2GradientTileButton21.IndicateFocus = true;
-            this.guna2GradientTileButton21.Location = new System.Drawing.Point(-274, 346);
+            this.guna2GradientTileButton21.Location = new System.Drawing.Point(14, 346);
             this.guna2GradientTileButton21.Name = "guna2GradientTileButton21";
             this.guna2GradientTileButton21.Size = new System.Drawing.Size(378, 110);
             this.guna2GradientTileButton21.TabIndex = 84;
@@ -865,7 +866,7 @@
             this.guna2GradientTileButton22.ImageOffset = new System.Drawing.Point(0, 15);
             this.guna2GradientTileButton22.ImageSize = new System.Drawing.Size(50, 50);
             this.guna2GradientTileButton22.IndicateFocus = true;
-            this.guna2GradientTileButton22.Location = new System.Drawing.Point(48, 604);
+            this.guna2GradientTileButton22.Location = new System.Drawing.Point(336, 604);
             this.guna2GradientTileButton22.Name = "guna2GradientTileButton22";
             this.guna2GradientTileButton22.Size = new System.Drawing.Size(774, 110);
             this.guna2GradientTileButton22.TabIndex = 85;
@@ -893,7 +894,7 @@
             this.guna2GradientTileButton23.ImageOffset = new System.Drawing.Point(0, 10);
             this.guna2GradientTileButton23.ImageSize = new System.Drawing.Size(50, 50);
             this.guna2GradientTileButton23.IndicateFocus = true;
-            this.guna2GradientTileButton23.Location = new System.Drawing.Point(-275, 230);
+            this.guna2GradientTileButton23.Location = new System.Drawing.Point(13, 230);
             this.guna2GradientTileButton23.Name = "guna2GradientTileButton23";
             this.guna2GradientTileButton23.Size = new System.Drawing.Size(378, 110);
             this.guna2GradientTileButton23.TabIndex = 86;
@@ -902,12 +903,42 @@
             this.guna2GradientTileButton23.Visible = false;
             this.guna2GradientTileButton23.Click += new System.EventHandler(this.guna2GradientTileButton23_Click);
             // 
+            // guna2GradientTileButton24
+            // 
+            this.guna2GradientTileButton24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2GradientTileButton24.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientTileButton24.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2GradientTileButton24.BorderRadius = 10;
+            this.guna2GradientTileButton24.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientTileButton24.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientTileButton24.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientTileButton24.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientTileButton24.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientTileButton24.FillColor = System.Drawing.Color.Purple;
+            this.guna2GradientTileButton24.FillColor2 = System.Drawing.Color.Magenta;
+            this.guna2GradientTileButton24.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
+            this.guna2GradientTileButton24.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientTileButton24.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientTileButton24.Image")));
+            this.guna2GradientTileButton24.ImageOffset = new System.Drawing.Point(0, 10);
+            this.guna2GradientTileButton24.ImageSize = new System.Drawing.Size(50, 50);
+            this.guna2GradientTileButton24.IndicateFocus = true;
+            this.guna2GradientTileButton24.Location = new System.Drawing.Point(14, 460);
+            this.guna2GradientTileButton24.Name = "guna2GradientTileButton24";
+            this.guna2GradientTileButton24.Size = new System.Drawing.Size(378, 110);
+            this.guna2GradientTileButton24.TabIndex = 87;
+            this.guna2GradientTileButton24.Tag = "3";
+            this.guna2GradientTileButton24.Text = "شل اوت هب";
+            this.guna2GradientTileButton24.UseTransparentBackground = true;
+            this.guna2GradientTileButton24.Visible = false;
+            this.guna2GradientTileButton24.Click += new System.EventHandler(this.guna2GradientTileButton24_Click);
+            // 
             // ENGReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(812, 768);
+            this.ClientSize = new System.Drawing.Size(1100, 799);
+            this.Controls.Add(this.guna2GradientTileButton24);
             this.Controls.Add(this.guna2GradientTileButton23);
             this.Controls.Add(this.guna2GradientTileButton22);
             this.Controls.Add(this.guna2GradientTileButton21);
@@ -997,5 +1028,6 @@
         private Guna.UI2.WinForms.Guna2GradientTileButton guna2GradientTileButton21;
         private Guna.UI2.WinForms.Guna2GradientTileButton guna2GradientTileButton22;
         private Guna.UI2.WinForms.Guna2GradientTileButton guna2GradientTileButton23;
+        private Guna.UI2.WinForms.Guna2GradientTileButton guna2GradientTileButton24;
     }
 }

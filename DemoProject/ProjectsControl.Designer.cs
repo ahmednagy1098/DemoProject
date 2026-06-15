@@ -189,6 +189,7 @@
             this.Model_8_COB = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dungeonLabel16 = new ReaLTaiizor.Controls.DungeonLabel();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.dreamButton26 = new ReaLTaiizor.Controls.DreamButton();
             this.dreamButton24 = new ReaLTaiizor.Controls.DreamButton();
             this.dreamButton23 = new ReaLTaiizor.Controls.DreamButton();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
@@ -214,9 +215,11 @@
             this.dreamButton3 = new ReaLTaiizor.Controls.DreamButton();
             this.skyButton1 = new ReaLTaiizor.Controls.SkyButton();
             this.dreamButton1 = new ReaLTaiizor.Controls.DreamButton();
+            this.dreamButton22 = new ReaLTaiizor.Controls.DreamButton();
             this.advancedDataGridView1 = new Zuby.ADGV.AdvancedDataGridView();
             this.dreamButton19 = new ReaLTaiizor.Controls.DreamButton();
             this.dreamButton14 = new ReaLTaiizor.Controls.DreamButton();
+            this.dreamButton25 = new ReaLTaiizor.Controls.DreamButton();
             this.dreamButton21 = new ReaLTaiizor.Controls.DreamButton();
             this.dreamButton13 = new ReaLTaiizor.Controls.DreamButton();
             this.dreamButton15 = new ReaLTaiizor.Controls.DreamButton();
@@ -228,7 +231,6 @@
             this.dreamButton20 = new ReaLTaiizor.Controls.DreamButton();
             this.dreamButton17 = new ReaLTaiizor.Controls.DreamButton();
             this.dreamButton18 = new ReaLTaiizor.Controls.DreamButton();
-            this.dreamButton22 = new ReaLTaiizor.Controls.DreamButton();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -237,8 +239,8 @@
             this.guna2GradientCircleButton1 = new Guna.UI2.WinForms.Guna2GradientCircleButton();
             this.advancedDataGridView3 = new Zuby.ADGV.AdvancedDataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.guna2CircleButton6 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton7 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2CircleButton6 = new Guna.UI2.WinForms.Guna2CircleButton();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dATABASE2DataSet)).BeginInit();
@@ -504,7 +506,7 @@
             this.guna2CircleButton2.ForeColor = System.Drawing.Color.Black;
             this.guna2CircleButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton2.Image")));
             this.guna2CircleButton2.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2CircleButton2.Location = new System.Drawing.Point(1254, 0);
+            this.guna2CircleButton2.Location = new System.Drawing.Point(1254, 7);
             this.guna2CircleButton2.Name = "guna2CircleButton2";
             this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton2.Size = new System.Drawing.Size(101, 85);
@@ -679,7 +681,6 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1329, 685);
             this.tabPage2.TabIndex = 6;
-            this.tabPage2.Text = "اضافة عقود";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // guna2Panel6
@@ -2605,10 +2606,12 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.dreamButton26);
             this.tabPage5.Controls.Add(this.dreamButton24);
             this.tabPage5.Controls.Add(this.dreamButton23);
             this.tabPage5.Controls.Add(this.guna2Panel4);
             this.tabPage5.Controls.Add(this.guna2Panel1);
+            this.tabPage5.Controls.Add(this.dreamButton22);
             this.tabPage5.Controls.Add(this.advancedDataGridView1);
             this.tabPage5.Controls.Add(this.dreamButton19);
             this.tabPage5.Controls.Add(this.dreamButton14);
@@ -2620,6 +2623,24 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "عرض الجدول";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // dreamButton26
+            // 
+            this.dreamButton26.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.dreamButton26.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.dreamButton26.ColorC = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.dreamButton26.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dreamButton26.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dreamButton26.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dreamButton26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dreamButton26.ForeColor = System.Drawing.Color.White;
+            this.dreamButton26.Location = new System.Drawing.Point(6, 500);
+            this.dreamButton26.Name = "dreamButton26";
+            this.dreamButton26.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dreamButton26.Size = new System.Drawing.Size(151, 63);
+            this.dreamButton26.TabIndex = 126;
+            this.dreamButton26.Text = "جاري الدراسة \r\nواستخراج حماية مدنية\r\n";
+            this.dreamButton26.UseVisualStyleBackColor = true;
             // 
             // dreamButton24
             // 
@@ -3090,6 +3111,25 @@
             this.dreamButton1.UseVisualStyleBackColor = true;
             this.dreamButton1.Visible = false;
             // 
+            // dreamButton22
+            // 
+            this.dreamButton22.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.dreamButton22.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.dreamButton22.ColorC = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.dreamButton22.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dreamButton22.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dreamButton22.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dreamButton22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dreamButton22.ForeColor = System.Drawing.Color.White;
+            this.dreamButton22.Location = new System.Drawing.Point(180, 535);
+            this.dreamButton22.Name = "dreamButton22";
+            this.dreamButton22.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dreamButton22.Size = new System.Drawing.Size(115, 93);
+            this.dreamButton22.TabIndex = 125;
+            this.dreamButton22.Text = "مطلوب موافقات\r\n لهذا المشروع\r\n رغم وجود\r\n رخصة تشغيل له";
+            this.dreamButton22.UseVisualStyleBackColor = true;
+            this.dreamButton22.Visible = false;
+            // 
             // advancedDataGridView1
             // 
             this.advancedDataGridView1.AllowUserToOrderColumns = true;
@@ -3112,7 +3152,6 @@
             this.advancedDataGridView1.Size = new System.Drawing.Size(1323, 491);
             this.advancedDataGridView1.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.advancedDataGridView1.TabIndex = 0;
-            this.advancedDataGridView1.Visible = false;
             this.advancedDataGridView1.SortStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.SortEventArgs>(this.advancedDataGridView1_SortStringChanged);
             this.advancedDataGridView1.FilterStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.FilterEventArgs>(this.advancedDataGridView1_FilterStringChanged);
             this.advancedDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advancedDataGridView1_CellClick);
@@ -3158,6 +3197,24 @@
             this.dreamButton14.UseVisualStyleBackColor = true;
             this.dreamButton14.Visible = false;
             this.dreamButton14.Click += new System.EventHandler(this.dreamButton14_Click_1);
+            // 
+            // dreamButton25
+            // 
+            this.dreamButton25.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.dreamButton25.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dreamButton25.ColorC = System.Drawing.Color.DarkOrange;
+            this.dreamButton25.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dreamButton25.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dreamButton25.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dreamButton25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dreamButton25.ForeColor = System.Drawing.Color.White;
+            this.dreamButton25.Location = new System.Drawing.Point(13, 7);
+            this.dreamButton25.Name = "dreamButton25";
+            this.dreamButton25.Size = new System.Drawing.Size(151, 39);
+            this.dreamButton25.TabIndex = 122;
+            this.dreamButton25.Text = "ملاحظات هامة";
+            this.dreamButton25.UseVisualStyleBackColor = true;
+            //this.dreamButton25.Click += new System.EventHandler(this.dreamButton25_Click);
             // 
             // dreamButton21
             // 
@@ -3358,24 +3415,6 @@
             this.dreamButton18.UseVisualStyleBackColor = true;
             this.dreamButton18.Visible = false;
             // 
-            // dreamButton22
-            // 
-            this.dreamButton22.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.dreamButton22.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.dreamButton22.ColorC = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.dreamButton22.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dreamButton22.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dreamButton22.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dreamButton22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dreamButton22.ForeColor = System.Drawing.Color.White;
-            this.dreamButton22.Location = new System.Drawing.Point(17, 7);
-            this.dreamButton22.Name = "dreamButton22";
-            this.dreamButton22.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dreamButton22.Size = new System.Drawing.Size(115, 93);
-            this.dreamButton22.TabIndex = 125;
-            this.dreamButton22.Text = "مطلوب موافقات\r\n لهذا المشروع\r\n رغم وجود\r\n رخصة تشغيل له";
-            this.dreamButton22.UseVisualStyleBackColor = true;
-            // 
             // guna2TabControl1
             // 
             this.guna2TabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -3425,7 +3464,6 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1329, 685);
             this.tabPage1.TabIndex = 7;
-            this.tabPage1.Text = "ملاحظات اضافية";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // panel1
@@ -3541,12 +3579,12 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.dreamButton25);
             this.panel2.Controls.Add(this.dreamButton13);
             this.panel2.Controls.Add(this.dreamButton21);
             this.panel2.Controls.Add(this.dreamButton15);
-            this.panel2.Controls.Add(this.dreamButton22);
+            this.panel2.Controls.Add(this.guna2CircleButton2);
             this.panel2.Controls.Add(this.dreamButton16);
-            this.panel2.Controls.Add(this.guna2CircleButton6);
             this.panel2.Controls.Add(this.dreamButton7);
             this.panel2.Controls.Add(this.dreamButton8);
             this.panel2.Controls.Add(this.dreamButton6);
@@ -3560,27 +3598,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1355, 113);
             this.panel2.TabIndex = 123;
-            // 
-            // guna2CircleButton6
-            // 
-            this.guna2CircleButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2CircleButton6.Animated = true;
-            this.guna2CircleButton6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton6.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton6.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.guna2CircleButton6.ForeColor = System.Drawing.Color.Black;
-            this.guna2CircleButton6.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton6.Image")));
-            this.guna2CircleButton6.ImageSize = new System.Drawing.Size(50, 50);
-            this.guna2CircleButton6.Location = new System.Drawing.Point(1235, 7);
-            this.guna2CircleButton6.Name = "guna2CircleButton6";
-            this.guna2CircleButton6.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton6.Size = new System.Drawing.Size(101, 93);
-            this.guna2CircleButton6.TabIndex = 120;
-            this.guna2CircleButton6.Text = "السابق";
-            this.guna2CircleButton6.Click += new System.EventHandler(this.guna2CircleButton6_Click);
             // 
             // guna2CircleButton7
             // 
@@ -3605,6 +3622,27 @@
             this.guna2CircleButton7.Visible = false;
             this.guna2CircleButton7.Click += new System.EventHandler(this.guna2CircleButton7_Click);
             // 
+            // guna2CircleButton6
+            // 
+            this.guna2CircleButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2CircleButton6.Animated = true;
+            this.guna2CircleButton6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2CircleButton6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2CircleButton6.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton6.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.guna2CircleButton6.ForeColor = System.Drawing.Color.Black;
+            this.guna2CircleButton6.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton6.Image")));
+            this.guna2CircleButton6.ImageSize = new System.Drawing.Size(50, 50);
+            this.guna2CircleButton6.Location = new System.Drawing.Point(1254, 0);
+            this.guna2CircleButton6.Name = "guna2CircleButton6";
+            this.guna2CircleButton6.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton6.Size = new System.Drawing.Size(101, 93);
+            this.guna2CircleButton6.TabIndex = 120;
+            this.guna2CircleButton6.Text = "السابق";
+            this.guna2CircleButton6.Click += new System.EventHandler(this.guna2CircleButton6_Click);
+            // 
             // ProjectsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3613,9 +3651,9 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.crownLabel2);
             this.Controls.Add(this.guna2CircleButton1);
-            this.Controls.Add(this.guna2CircleButton2);
             this.Controls.Add(this.Update_Radio);
             this.Controls.Add(this.crownLabel1);
+            this.Controls.Add(this.guna2CircleButton6);
             this.Controls.Add(this.guna2Shapes2);
             this.Controls.Add(this.guna2Shapes1);
             this.Controls.Add(this.guna2TabControl1);
@@ -3892,5 +3930,7 @@
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton7;
         private ReaLTaiizor.Controls.DreamButton dreamButton23;
         private ReaLTaiizor.Controls.DreamButton dreamButton24;
+        private ReaLTaiizor.Controls.DreamButton dreamButton25;
+        private ReaLTaiizor.Controls.DreamButton dreamButton26;
     }
 }

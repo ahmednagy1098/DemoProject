@@ -241,15 +241,33 @@ namespace DemoProject
         }
         public Form2(string username, long user_id)
         {
-            InitializeComponent();
-            _username = username;
-            _user_id = user_id;
-            this.Text = String.Empty;
-            this.ControlBox = false;
-            this.DoubleBuffered = true;
-            //this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            
+                InitializeComponent();
 
+                _username = username;
+                _user_id = user_id;
 
+                this.Text = String.Empty;
+                this.ControlBox = false;
+                this.DoubleBuffered = true;
+                this.AutoScaleMode = AutoScaleMode.Dpi;
+                this.MinimumSize = new Size(900, 600);
+                this.WindowState = FormWindowState.Maximized;
+
+                // 🔥 أهم جزء
+                MakeControlsResponsive();
+
+            
+        }
+        private void MakeControlsResponsive()
+        {
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is UserControl)
+                {
+                    ctrl.Dock = DockStyle.Fill;
+                }
+            }
         }
         private static int alertOffsetY = 0;
         bool MenuExpand = false;
@@ -376,6 +394,8 @@ namespace DemoProject
             focusSetting.Location = new Point(50, 40);
             originalFormSize = this.Size;
             //SaveOriginalSizes(this);
+            this.AutoScroll = true; // لو الشاشة صغيرة
+
         }
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {

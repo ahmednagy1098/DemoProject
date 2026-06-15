@@ -293,7 +293,8 @@ namespace DemoProject
                             !string.IsNullOrWhiteSpace(land.Republican_Decree)
                             && land.Republican_Decree != "." 
                         ? $"متوفر - (عرض القرار {land.Republican_Decree_Status})"
-                        : "غير متوفر"
+                        //: "غير متوفر"
+                        : land.Republican_Decree_Status == "0"? "لم يتم اصدار قرار به" : $"قرار رقم {land.Republican_Decree_Status}" + "غير متوفر"
                         )
                         ,
                        // (land.IsRepublican_Decree_StatusNull() ? "" : land.Republican_Decree_Status),
@@ -311,7 +312,7 @@ namespace DemoProject
 
 
                 var joinedList = joinedData
-                .OrderBy(r => r.land_id).Where(r =>!r.Notes.Contains("تم الغاء قطعة الارض"))
+                .OrderBy(r => r.land_id).Where(r =>!r.Notes.Contains("تم الغاء قطعة الارض")&& !r.Notes.Contains("تم تسلمها"))
                 .ToList();
                 DataTable table = ToDataTable(joinedList);
 
@@ -575,7 +576,7 @@ namespace DemoProject
                 
 
                 var decree = row.Cells["Republican_Decree_Status"].Value?.ToString()?.ToLower();
-                if (!string.IsNullOrWhiteSpace(decree) && decree != "غير متوفر")
+                if (!string.IsNullOrWhiteSpace(decree) && !decree.Contains("غير متوفر") && !decree.Contains("لم يتم"))
                 {
                     decreeZ.Add(decree);
                     decreeZCounted++;
@@ -2259,7 +2260,7 @@ namespace DemoProject
             if (bs == null) return;
 
             // استخدم فلتر الجريد فقط
-            bs.Filter = e.FilterString;
+            bs.Filter = e.FilterString.ToString();
 
             bs.ResetBindings(false);
             advancedDataGridView1.Refresh();
@@ -2875,6 +2876,7 @@ namespace DemoProject
             dreamButton1.Text = "الاراضي التابعة للشركة ✅";
             dreamButton2.Text = "الاراضي التي تمت اضافتها حديثا ☐";
             dreamButton3.Text = "الاراضي التي تم نقل ملكيتها ☐";
+            dreamButton4.Text = " الاراضي التي تم تسلمها ☐";
             LoadSourceData();
           
             TranslateToArabic();
@@ -2889,6 +2891,7 @@ namespace DemoProject
              dreamButton1.Text = "الاراضي التابعة للشركة ☐";
             dreamButton2.Text = "الاراضي التي تمت اضافتها حديثا ✅";
             dreamButton3.Text = "الاراضي التي تم نقل ملكيتها ☐";
+            dreamButton4.Text = " الاراضي التي تم تسلمها ☐";
 
             try
             {
@@ -2943,7 +2946,7 @@ namespace DemoProject
                             !string.IsNullOrWhiteSpace(land.Republican_Decree)
                             && land.Republican_Decree != "."
                         ? $"متوفر - (عرض القرار {land.Republican_Decree_Status})"
-                        : "غير متوفر"
+                        : land.Republican_Decree_Status == "0" ? "لم يتم اصدار قرار به" : $"قرار رقم {land.Republican_Decree_Status}" + "غير متوفر"
                         )
                         ,
                         // (land.IsRepublican_Decree_StatusNull() ? "" : land.Republican_Decree_Status),
@@ -3063,6 +3066,7 @@ namespace DemoProject
             dreamButton1.Text = "الاراضي التابعة للشركة ☐";
             dreamButton2.Text = "الاراضي التي تمت اضافتها حديثا ☐";
             dreamButton3.Text = "الاراضي التي تم نقل ملكيتها ✅";
+            dreamButton4.Text = " الاراضي التي تم تسلمها ☐";
 
             try
             {
@@ -3117,7 +3121,7 @@ namespace DemoProject
                             !string.IsNullOrWhiteSpace(land.Republican_Decree)
                             && land.Republican_Decree != "."
                         ? $"متوفر - (عرض القرار {land.Republican_Decree_Status})"
-                        : "غير متوفر"
+                        : land.Republican_Decree_Status == "0" ? "لم يتم اصدار قرار به" : $"قرار رقم {land.Republican_Decree_Status}" + "غير متوفر"
                         )
                         ,
                         // (land.IsRepublican_Decree_StatusNull() ? "" : land.Republican_Decree_Status),
@@ -3261,7 +3265,7 @@ namespace DemoProject
                 newRow.total_area = "0";
                 newRow.Republican_Decree = " ";
                 newRow.plate_numberFile = " ";
-                newRow.Notes = "تم اضافة قطعة ارض جديدة";
+                newRow.Notes = "تم اضافة قطعة ارض جديدة" + $"{DateTime.Now}";
                 landTable.AddlandsRow(newRow);
                 landsTableAdapter.Update(landTable);
                 LoadSourceData();
@@ -3555,11 +3559,195 @@ namespace DemoProject
                 row.DefaultCellStyle.BackColor = Color.Yellow;
                 row.DefaultCellStyle.ForeColor = Color.Black;
             }
+            else if (!string.IsNullOrEmpty(notes) && notes.Contains("تم تسلمها"))
+            {
+                row.DefaultCellStyle.BackColor = Color.MediumSeaGreen;
+                row.DefaultCellStyle.ForeColor = Color.White;
+            }
             else
             {
                 row.DefaultCellStyle.BackColor = grid.DefaultCellStyle.BackColor;
                 row.DefaultCellStyle.ForeColor = grid.DefaultCellStyle.ForeColor;
             }
+        }
+
+        private void dreamButton25_Click(object sender, EventArgs e)
+        {
+            guna2TabControl1.SelectedIndex = 1;
+        }
+
+        private void dreamButton4_Click(object sender, EventArgs e)
+        {
+            dreamButton1.Text = "الاراضي التابعة للشركة ☐";
+            dreamButton2.Text = "الاراضي التي تمت اضافتها حديثا ☐";
+            dreamButton3.Text = "الاراضي التي تم نقل ملكيتها ☐";
+            dreamButton4.Text = "الاراضي التي تم تسلمها ✅";
+
+            try
+            {
+
+
+                // --- Part 1: Fetch data ---
+                var LandData = landsTableAdapter.GetData();
+                var Governorates = governorateTableAdapter.GetData();
+                var Projects = projectsTableAdapter.GetData();
+
+
+                var joinedData =
+                    from land in LandData.AsEnumerable()
+                    join gov in Governorates.AsEnumerable()
+                    on land.Field<string>("governorate_fk") equals gov.Field<string>("governorate_id") into gj
+                    from gov in gj.DefaultIfEmpty()
+                    join proj in Projects.AsEnumerable()
+                    on land.Field<string>("land_id") equals proj.Field<string>("project_id") into pj
+                    from proj in pj.DefaultIfEmpty()
+                    where !((land.Field<string>("land_id") ?? "").StartsWith("&")
+                         || (land.Field<string>("land_id") ?? "").StartsWith("#")
+                         || (land.Field<string>("land_id") ?? "").StartsWith("*")
+                         || (land.Field<string>("land_id") ?? "") == "0"
+                         || (land.Field<string>("land_id") ?? "").StartsWith("$")
+                         || (land.Field<string>("land_id") ?? "").StartsWith("M"))
+                    select new
+                    {
+                        serial_number = land.Isserial_numberNull() ? "" : land.serial_number,
+                        land_name = land.Island_nameNull() ? "" : land.land_name,
+                        project_name = proj == null || proj.Isproject_nameNull() ? "" : proj.project_name,
+                        land_number = land.Island_numberNull() ? "" : land.land_number,
+                        plate_number = land.Isplate_numberNull() ? "" : land.plate_number,
+                        Land_Plate_Status =
+                            (!land.Isplate_numberFileNull()
+                             && !string.IsNullOrWhiteSpace(land.plate_numberFile)
+                             && land.plate_numberFile != "0")
+                            ? "متوفر - (عرض اللوحة)"
+                            : "غير متوفر",
+                        total_area = decimal.TryParse(land.total_area, out var areaVal) ? areaVal : 0,
+                        Topographic_Survey_Status = land.IsTopographic_Survey_StatusNull() ? "" : land.Topographic_Survey_Status,
+                        // Land_Plate_Status = land.IsLand_Plate_StatusNull() ? "" : land.Land_Plate_Status,
+                        coordinates_E = land.Iscoordinates_ENull() ? "" : "\u200E" + land.coordinates_E,
+                        coordinates_N = land.Iscoordinates_NNull() ? "" : "\u200E" + land.coordinates_N,
+                        plate_numberFile = land.Isplate_numberFileNull() ? "" : land.plate_numberFile,
+                        //governorate_fk = gov == null || gov.IsgovernorateNull() ? "" : gov.governorate,
+                        governorate_fk = land.Isgovernorate_fkNull() ? "" : land.governorate_fk,
+                        Republican_Decree = land.IsRepublican_DecreeNull() ? "" : land.Republican_Decree,
+                        //Republican_Decree_Status = land.IsRepublican_Decree_StatusNull() ? "" : land.Republican_Decree_Status,
+                        Republican_Decree_Status =
+                        (
+                            !land.IsRepublican_DecreeNull() &&
+                            !string.IsNullOrWhiteSpace(land.Republican_Decree)
+                            && land.Republican_Decree != "."
+                        ? $"متوفر - (عرض القرار {land.Republican_Decree_Status})"
+                        : land.Republican_Decree_Status == "0" ? "لم يتم اصدار قرار به" : $"قرار رقم {land.Republican_Decree_Status}" + "غير متوفر"
+                        )
+                        ,
+                        // (land.IsRepublican_Decree_StatusNull() ? "" : land.Republican_Decree_Status),
+                        consulting_Office = land.Isconsulting_OfficeNull() ? "" : land.consulting_Office,
+                        total_Land_Price = land.Istotal_Land_PriceNull() ? 0 : land.total_Land_Price,
+                        Ownership_Authority = land.IsOwnership_AuthorityNull() ? "" : land.Ownership_Authority,
+                        Address = land.IsAddressNull() ? "" : land.Address,
+                        price_per_meter = land.Isprice_per_meterNull() ? 0 : land.price_per_meter,
+                        Dependent_neighborhood = land.IsDependent_neighborhoodNull() ? "" : land.Dependent_neighborhood,
+                        Dependent_road = land.IsDependent_roadNull() ? "" : land.Dependent_road,
+                        City_Name = land.IsCity_NameNull() ? "" : land.City_Name,
+                        land_id = int.TryParse(land.land_id, out var lid) ? lid : int.MaxValue,
+                        Notes = land.IsNotesNull() ? "" : land.Notes
+                    };
+
+
+                var joinedList = joinedData
+                .OrderBy(r => r.land_id).Where(r => r.Notes.Contains("تم تسلمها") && r.land_id != 215 && r.land_id != 216)
+                .ToList();
+                DataTable table = ToDataTable(joinedList);
+
+                foreach (DataGridViewColumn col in advancedDataGridView1.Columns)
+                {
+                    if (col.ValueType == typeof(DateTime))
+                    {
+                        col.DefaultCellStyle.Format = "dd/MM/yyyy";
+                    }
+                }
+
+                // --- Part 2: Bind data to UI ---
+                Governorate_COB.DataSource = Governorates;
+                Governorate_COB.DisplayMember = "governorate";
+                Governorate_COB.ValueMember = "governorate_id";
+                AdjustComboBox(Governorate_COB);
+                BindingSource bindingSource = new BindingSource();
+                bindingSource.DataSource = table;
+                advancedDataGridView1.DataSource = bindingSource;
+                if (advancedDataGridView1.Columns.Contains("total_area"))
+                {
+                    advancedDataGridView1.Columns["total_area"].DefaultCellStyle.Format = "N2";
+
+                }
+                if (!advancedDataGridView1.Columns.Contains("Select"))
+                {
+                    DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
+                    checkBoxColumn.HeaderText = "تحديد";
+                    checkBoxColumn.Name = "Select";
+                    checkBoxColumn.Width = 60;
+                    checkBoxColumn.ReadOnly = false;
+                    checkBoxColumn.TrueValue = true;
+                    checkBoxColumn.FalseValue = false;
+                    advancedDataGridView1.Columns.Add(checkBoxColumn);
+                }
+                var getAccesUserFunction = accessTableAdapter.GetDataByOFAccessFunctionUserId(UserId, 4, 5);
+
+                if (getAccesUserFunction.Count == 1)
+                {
+                    if (!advancedDataGridView1.Columns.Contains("Update"))
+                    {
+                        DataGridViewButtonColumn btnUpdate = new DataGridViewButtonColumn
+                        {
+                            HeaderText = "تعديل",
+                            Name = "Update",
+                            Text = "تعديل",
+                            Tag = "Function:Edit",
+                            UseColumnTextForButtonValue = true,
+                            DisplayIndex = 0,
+                            Width = 80
+                        };
+
+                        advancedDataGridView1.Columns.Add(btnUpdate);
+                    }
+
+                }
+                // Make it last column
+
+                if (advancedDataGridView1.Columns.Contains("governorate_fk"))
+                {
+                    DataGridViewComboBoxColumn govCombo = new DataGridViewComboBoxColumn
+                    {
+                        Name = "governorate_fk",
+                        HeaderText = "المحافظة",
+                        DataPropertyName = "governorate_fk",
+                        DataSource = Governorates,          // ✔ نستخدم المتغير الموجود
+                        DisplayMember = "governorate",       // الاسم المعروض
+                        ValueMember = "governorate_id",      // القيمة المخزنة
+                        FlatStyle = FlatStyle.Flat
+                    };
+
+                    int index = advancedDataGridView1.Columns["governorate_fk"].Index;
+                    advancedDataGridView1.Columns.Remove("governorate_fk");
+                    advancedDataGridView1.Columns.Insert(index, govCombo);
+                }
+                originalData = table;
+                SaveState();
+                advancedDataGridView1.Columns["Select"].DisplayIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                ShowAlert("خطأ غير متوقع", AlertForm.AlertType.Error);
+                MessageBox.Show(ex.Message, "خطأ غير متوقع", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            LoadDocs();
+
+            TranslateToArabic();
+            UpdateRowCount();
+            ApplyGuna2StyleToGrid(advancedDataGridView1);
+            GenerativePanalFlow();
+            flagforHideColumnsEnG();
+            LoadColumnsIntoCheckedListBox();
         }
     }
 }
