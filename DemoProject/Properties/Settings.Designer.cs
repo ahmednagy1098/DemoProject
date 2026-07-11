@@ -86,7 +86,7 @@ namespace DemoProject.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=10.100.100.1\\MSSQLSERVER2019;Initial Catalog=DATABASE2;User ID=Tara7E" +
-            "l3am;Password=\"Stest291o3p2ko13 \"")]
+            "l3am;Password=\"Stest291o3p2ko13 \";TrustServerCertificate=True;")]
         public string Database2ConnectionString {
             get {
                 return ((string)(this["Database2ConnectionString"]));
