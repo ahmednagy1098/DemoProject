@@ -604,6 +604,7 @@ namespace DemoProject
                 advancedDataGridView1.Columns["Land_Number"].HeaderText = "رقم قطعة الأرض";
                 advancedDataGridView1.Columns["project_name"].HeaderText = "اسم المشروع / نشاط";
                 advancedDataGridView1.Columns["Address"].HeaderText = "العنوان";
+                advancedDataGridView1.Columns["Dependent_neighborhood"].HeaderText = "الحي التابع";
                 advancedDataGridView1.Columns["area"].HeaderText = "المساحة";
                 advancedDataGridView1.Columns["project_name"].Visible = false;
                 advancedDataGridView1.Columns["LandName"].Visible = false;
@@ -651,12 +652,14 @@ namespace DemoProject
             {
                 advancedDataGridView1.Columns["Name_Projects"].HeaderText = "اسم المكان";
                 advancedDataGridView1.Columns["land_fk"].HeaderText = "مسلسل القطعة الكود";
-               
-                 
-                       advancedDataGridView1.Columns["Project_Id"].HeaderText = "مسلسل المشروع";
+
+
+                advancedDataGridView1.Columns["Project_Id"].HeaderText = "مسلسل المشروع";
                 advancedDataGridView1.Columns["Project_Id"].Visible = false;
-            
-                          advancedDataGridView1.Columns["Address"].HeaderText = "العنوان";
+
+                advancedDataGridView1.Columns["Address"].HeaderText = "العنوان";
+                advancedDataGridView1.Columns["Dependent_neighborhood"].HeaderText = "الحي التابع";
+
                 advancedDataGridView1.Columns["GovernorateName"].HeaderText = "اسم المحافظة";
 
                 //advancedDataGridView1.Columns["consulting_Office"].HeaderText = "المكتب الاستشاري";
@@ -841,6 +844,7 @@ namespace DemoProject
                         LandName = l.Island_nameNull() ? "" : l.land_name,
                         Name_Projects = p.IsName_ProjectsNull() ? "" : p.Name_Projects,
                         Address = l.IsAddressNull() ? "" : l.Address,
+                        Dependent_neighborhood=l.IsDependent_neighborhoodNull()? "" :l.Dependent_neighborhood,
                         GovernorateName = g.IsgovernorateNull() ? "" : g.governorate,
                         PlateNumber = l.Isplate_numberNull() ? "" : l.plate_number,
                         Land_Number = l.Island_numberNull() ? "" : l.land_number,
@@ -4437,6 +4441,8 @@ namespace DemoProject
                         Project_Id = p.project_id,
 
                         Address = l.IsAddressNull()?"":l.Address,
+                        Dependent_neighborhood = l.IsDependent_neighborhoodNull() ? "" : l.Dependent_neighborhood,
+
                         GovernorateName = g.IsgovernorateNull()?"":g.governorate,
 
 
@@ -4704,6 +4710,7 @@ namespace DemoProject
                         LandName = l.Island_nameNull() ? "" : l.land_name,
                         Name_Projects = p.IsName_ProjectsNull() ? "" : p.Name_Projects,
                         Address = l.IsAddressNull() ? "" : l.Address,
+                        Dependent_neighborhood = l.IsDependent_neighborhoodNull() ? "" : l.Dependent_neighborhood,
                         GovernorateName = g.IsgovernorateNull() ? "" : g.governorate,
                         PlateNumber = l.Isplate_numberNull() ? "" : l.plate_number,
                         Land_Number = l.Island_numberNull() ? "" : l.land_number,
