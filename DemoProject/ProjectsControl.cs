@@ -35,6 +35,7 @@ namespace DemoProject
             InitializeComponent();
             Petroleum_Ministry_COB.SelectedIndexChanged += COB_SelectedIndexChanged;
             Civil_Defense_COB.SelectedIndexChanged += COB_SelectedIndexChanged;
+            Civil_Study_COB.SelectedIndexChanged += COB_SelectedIndexChanged;
             Model_8_COB.SelectedIndexChanged += COB_SelectedIndexChanged;
             Traffic_Study_COB.SelectedIndexChanged += COB_SelectedIndexChanged;
             Civil_Aviation_COB.SelectedIndexChanged += COB_SelectedIndexChanged;
@@ -611,6 +612,9 @@ namespace DemoProject
                 advancedDataGridView1.Columns["Civil_Defense_Approval_status"].HeaderText = "حالة موافقة الحماية المدنية";
                 advancedDataGridView1.Columns["CivilDefenseFile"].HeaderText = "ملف موافقة الحماية المدنية";
 
+                advancedDataGridView1.Columns["Civil_Defense_Study_status"].HeaderText = "حالة دراسة حماية المدنية";
+                advancedDataGridView1.Columns["CivilDefenseStudyFile"].HeaderText = "ملف دراسة حماية المدنية";
+
                 advancedDataGridView1.Columns["Environmental_Approval_status"].HeaderText = "حالة موافقة البيئة";
                 advancedDataGridView1.Columns["EnvironmentalFile"].HeaderText = "ملف موافقة البيئة";
 
@@ -870,6 +874,13 @@ namespace DemoProject
             docsWithApprovals
                 .Where(d => d.ProjectId == p.project_id &&
                             d.ApprovalName == "موافقة الحماية المدنية")
+                .Select(d => d.Path)),
+
+                        Civil_Defense_Study_status = p.Civil_Defense_Study_status,
+                        CivilDefenseStudyFile = string.Join(" , ",
+            docsWithApprovals
+                .Where(d => d.ProjectId == p.project_id &&
+                            d.ApprovalName == "دراسة حماية مدنيه")
                 .Select(d => d.Path)),
 
                         Environmental_Approval_status = p.Environmental_Approval_status,
@@ -1308,6 +1319,22 @@ namespace DemoProject
                 hasError = true;
             }
 
+            if (string.IsNullOrWhiteSpace(Civil_Study_COB.Text))
+            {
+                Error_Civil_Study.Visible = true;
+                Civil_Study_COB.Focus();
+                hasError = true;
+            }
+            if (Civil_Study_COB.Text== "✔"&&
+                (!approvalFiles.ContainsKey("Civil_Study_COB") ||
+                approvalFiles["Civil_Study_COB"] == null ||
+                approvalFiles["Civil_Study_COB"].Count == 0))
+            {
+                Error_Civil_Study.Visible = true;
+                Civil_Study_COB.Focus();
+                hasError = true;
+            }
+
             if (string.IsNullOrWhiteSpace(Environmental_COB.Text))
             {
                 Error_Environmental.Visible = true;
@@ -1416,13 +1443,16 @@ namespace DemoProject
                 "x",// Architectural_and_Structural_Board_COM.Text
                 "x",//Reconciliation_Form_Stamp_COM.Text
                 "x",//Consultant_Surveying_COM.Text
-                Name_Pro_TB.Text
+                Name_Pro_TB.Text,
+                Civil_Study_COB.Text
+                
                 );
             foreach (var entry in approvalFiles)
             {
                 string approvalID = entry.Key;
                 if (approvalID == "Petroleum_Ministry_COB") { approvalID = "APP003"; }
                 if (approvalID == "Civil_Defense_COB") { approvalID = "APP001"; }
+                if (approvalID == "Civil_Study_COB") { approvalID = "APP010"; }
                 if (approvalID == "Model_8_COB") { approvalID = "APP006"; }
                 if (approvalID == "Traffic_Study_COB") { approvalID = "APP005"; }
                 if (approvalID == "Civil_Aviation_COB") { approvalID = "APP004"; }
@@ -1448,6 +1478,7 @@ namespace DemoProject
             Governorate_COB.SelectedItem = -1;
             Investment_Name_TB.Text = "";
             Civil_Defense_COB.SelectedItem = -1;
+            Civil_Study_COB.SelectedItem = -1;
             Environmental_COB.SelectedItem = -1;
             Traffic_Study_COB.SelectedItem = -1;
             Model_8_COB.SelectedItem = -1;
@@ -1471,6 +1502,7 @@ namespace DemoProject
             flowLayoutPanel5.Controls.Clear();
             flowLayoutPanel6.Controls.Clear();
             flowLayoutPanel7.Controls.Clear();
+            flowLayoutPanel9.Controls.Clear();
         }
 
         List<string> AllfilePaths = new List<string>();
@@ -1607,6 +1639,9 @@ namespace DemoProject
                 case "Civil_Defense_COB":
                     flowLayoutPanel2.Controls.Add(container);
                     break;
+                case "Civil_Study_COB":
+                    flowLayoutPanel9.Controls.Add(container);
+                    break;
                 case "Model_8_COB":
                     flowLayoutPanel1.Controls.Add(container);
                     break;
@@ -1676,6 +1711,12 @@ namespace DemoProject
                     nightLabel9.Visible = isTrue;
                     if (isTrue && !approvalFiles.ContainsKey("Civil_Defense_COB")) Files("Civil_Defense_COB");
                     break;
+                case "Civil_Study_COB":
+                    flowLayoutPanel9.Visible = isTrue;
+                    guna2ImageButton12.Visible = isTrue;
+                    nightLabel15.Visible = isTrue;
+                    if (isTrue && !approvalFiles.ContainsKey("Civil_Study_COB")) Files("Civil_Study_COB");
+                    break;
                 case "Model_8_COB":
                     flowLayoutPanel1.Visible = isTrue;
                     guna2ImageButton2.Visible = isTrue;
@@ -1707,29 +1748,55 @@ namespace DemoProject
         private void guna2ImageButton5_Click(object sender, EventArgs e)
         {
             flowLayoutPanel3.Controls.Clear();
-
             if (approvalFiles.ContainsKey("Petroleum_Ministry_COB"))
             {
-                approvalFiles.Remove("Petroleum_Ministry_COB");
+                flowLayoutPanel3.Controls.Clear();
+
+                approvalFiles["Petroleum_Ministry_COB"] = new List<string>();
+
+                Petroleum_Ministry_COB.Text = "X";
             }
         }
 
         private void guna2ImageButton3_Click(object sender, EventArgs e)
         {
+
             flowLayoutPanel2.Controls.Clear();
             if (approvalFiles.ContainsKey("Civil_Defense_COB"))
             {
-                approvalFiles.Remove("Civil_Defense_COB");
+                flowLayoutPanel2.Controls.Clear();
+
+                approvalFiles["Civil_Defense_COB"] = new List<string>();
+
+                Civil_Defense_COB.Text = "X";
+            }
+        }
+        private void guna2ImageButton12_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel9.Controls.Clear();
+            if (approvalFiles.ContainsKey("Civil_Study_COB"))
+            {
+                flowLayoutPanel9.Controls.Clear();
+
+                approvalFiles["Civil_Study_COB"] = new List<string>();
+
+                Civil_Study_COB.Text = "X";
             }
         }
 
         private void guna2ImageButton2_Click(object sender, EventArgs e)
         {
+
             flowLayoutPanel1.Controls.Clear();
             if (approvalFiles.ContainsKey("Model_8_COB"))
             {
-                approvalFiles.Remove("Model_8_COB");
+                flowLayoutPanel1.Controls.Clear();
+
+                approvalFiles["Model_8_COB"] = new List<string>();
+
+                Model_8_COB.Text = "X";
             }
+
         }
 
         private void guna2ImageButton7_Click(object sender, EventArgs e)
@@ -1737,34 +1804,53 @@ namespace DemoProject
             flowLayoutPanel4.Controls.Clear();
             if (approvalFiles.ContainsKey("Traffic_Study_COB"))
             {
-                approvalFiles.Remove("Traffic_Study_COB");
+                flowLayoutPanel4.Controls.Clear();
+
+                approvalFiles["Traffic_Study_COB"] = new List<string>();
+
+                Traffic_Study_COB.Text = "X";
             }
         }
 
         private void guna2ImageButton11_Click(object sender, EventArgs e)
         {
+
             flowLayoutPanel6.Controls.Clear();
             if (approvalFiles.ContainsKey("Civil_Aviation_COB"))
             {
-                approvalFiles.Remove("Civil_Aviation_COB");
+                flowLayoutPanel6.Controls.Clear();
+
+                approvalFiles["Civil_Aviation_COB"] = new List<string>();
+
+                Civil_Aviation_COB.Text = "X";
             }
         }
 
         private void guna2ImageButton9_Click(object sender, EventArgs e)
         {
+
             flowLayoutPanel5.Controls.Clear();
             if (approvalFiles.ContainsKey("Environmental_COB"))
             {
-                approvalFiles.Remove("Environmental_COB");
+                flowLayoutPanel5.Controls.Clear();
+
+                approvalFiles["Environmental_COB"] = new List<string>();
+
+                Environmental_COB.Text = "X";
             }
         }
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
+
             flowLayoutPanel7.Controls.Clear();
             if (approvalFiles.ContainsKey("Transaction_number_TB"))
             {
-                approvalFiles.Remove("Transaction_number_TB");
+                flowLayoutPanel7.Controls.Clear();
+
+                approvalFiles["Transaction_number_TB"] = new List<string>();
+
+                Transaction_number_TB.Text = "X";
             }
         }
 
@@ -1964,25 +2050,28 @@ namespace DemoProject
                 select new
                 {
                     CivilDefenseFile = row.Cells["CivilDefenseFile"].Value?.ToString(),
+                    CivilDefenseStudyFile = row.Cells["CivilDefenseStudyFile"].Value?.ToString(),
                     EnvironmentalFile = row.Cells["EnvironmentalFile"].Value?.ToString(),
                     PetroleumFile = row.Cells["PetroleumFile"].Value?.ToString(),
                     AviationFile = row.Cells["AviationFile"].Value?.ToString(),
                     TrafficStudyFile = row.Cells["TrafficStudyFile"].Value?.ToString(),
                     Model8File = row.Cells["Model8File"].Value?.ToString(),
-                    Transaction_numberFile = row.Cells["Transaction_numberFile"].Value.ToString()
+                    Transaction_numberFile = row.Cells["Transaction_numberFile"].Value?.ToString()
                 };
 
-            int civilDefenseCount = projectsWithFiles.Count(x => !string.IsNullOrEmpty(x.CivilDefenseFile));
-            int environmentalCount = projectsWithFiles.Count(x => !string.IsNullOrEmpty(x.EnvironmentalFile));
-            int petroleumCount = projectsWithFiles.Count(x => !string.IsNullOrEmpty(x.PetroleumFile));
-            int aviationCount = projectsWithFiles.Count(x => !string.IsNullOrEmpty(x.AviationFile));
-            int trafficStudyCount = projectsWithFiles.Count(x => !string.IsNullOrEmpty(x.TrafficStudyFile));
-            int model8Count = projectsWithFiles.Count(x => !string.IsNullOrEmpty(x.Model8File));
-            int Transaction_numberCount = projectsWithFiles.Count(x => !string.IsNullOrEmpty(x.Transaction_numberFile));
 
 
-            // 🔹 Update your 6 labels (replace with your actual label names)
-            dreamButton1.Text = $"موافقة الحماية المدنية";
+                int civilDefenseCount = projectsWithFiles.Sum(x => CountFiles(x.CivilDefenseFile));
+                int civilDefenseStudyCount = projectsWithFiles.Sum(x => CountFiles(x.CivilDefenseStudyFile));
+                int environmentalCount = projectsWithFiles.Sum(x => CountFiles(x.EnvironmentalFile));
+                int petroleumCount = projectsWithFiles.Sum(x => CountFiles(x.PetroleumFile));
+                int aviationCount = projectsWithFiles.Sum(x => CountFiles(x.AviationFile));
+                int trafficStudyCount = projectsWithFiles.Sum(x => CountFiles(x.TrafficStudyFile));
+                int model8Count = projectsWithFiles.Sum(x => CountFiles(x.Model8File));
+                int Transaction_numberCount = projectsWithFiles.Sum(x => CountFiles(x.Transaction_numberFile));
+
+                // 🔹 Update your 6 labels (replace with your actual label names)
+                dreamButton1.Text = $"موافقة الحماية المدنية";
             dreamButton9.Text = $"{ civilDefenseCount}"; // 
             dreamButton3.Text = $"موافقة البيئة";
             dreamButton10.Text = $"{environmentalCount}";
@@ -1996,8 +2085,19 @@ namespace DemoProject
             dreamButton7.Text = $"{model8Count}";
             dreamButton16.Text = $"رخصة التشغيل";
             dreamButton15.Text = $"{Transaction_numberCount}";
+            dreamButton28.Text = $"دراسة الحماية المدنية";
+            dreamButton27.Text = $"{civilDefenseStudyCount}";
 
             }
+        }
+        private int CountFiles(string files)
+        {
+            if (string.IsNullOrWhiteSpace(files))
+                return 0;
+
+            return files
+                .Split(new[] { " , " }, StringSplitOptions.RemoveEmptyEntries)
+                .Length;
         }
         private void advancedDataGridView1_SortStringChanged(object sender, Zuby.ADGV.AdvancedDataGridView.SortEventArgs e)
         {
@@ -2165,6 +2265,10 @@ namespace DemoProject
                         filePath = advancedDataGridView1.Rows[e.RowIndex].Cells["CivilDefenseFile"].Value?.ToString();
                         break;
 
+                    case "Civil_Defense_Study_status":
+                        filePath = advancedDataGridView1.Rows[e.RowIndex].Cells["CivilDefenseStudyFile"].Value?.ToString();
+                        break;
+
                     case "Environmental_Approval_status":
                         filePath = advancedDataGridView1.Rows[e.RowIndex].Cells["EnvironmentalFile"].Value?.ToString();
                         break;
@@ -2307,6 +2411,7 @@ namespace DemoProject
             var x = this.projectsTableAdapter.GetDataByIDProjects(serialNumber);
 
             var gCivil_Defense = this.documentsTableAdapter.GetDataByProjectDoc(serialNumber, "APP001");
+            var gCivil_Study = this.documentsTableAdapter.GetDataByProjectDoc(serialNumber, "APP010");
             var gEnvironmental = this.documentsTableAdapter.GetDataByProjectDoc(serialNumber, "APP002");
             var gPetroleum_Ministry = this.documentsTableAdapter.GetDataByProjectDoc(serialNumber, "APP003");
             var gCivil_Aviation = this.documentsTableAdapter.GetDataByProjectDoc(serialNumber, "APP004");
@@ -2330,6 +2435,7 @@ namespace DemoProject
                 Model_8_COB.SelectedIndex = -1;
                 Civil_Aviation_COB.SelectedIndex = -1;
                 Civil_Defense_COB.SelectedIndex = -1;
+                Civil_Study_COB.SelectedIndex = -1;
 
                 flowLayoutPanel1.Controls.Clear();
                 flowLayoutPanel2.Controls.Clear();
@@ -2338,6 +2444,7 @@ namespace DemoProject
                 flowLayoutPanel5.Controls.Clear();
                 flowLayoutPanel6.Controls.Clear();
                 flowLayoutPanel7.Controls.Clear();
+                flowLayoutPanel9.Controls.Clear();
                 return;
             }
 
@@ -2370,6 +2477,7 @@ namespace DemoProject
             // نفس الجزء بتاع تحميل الملفات
             string filePathEnvironmental = gEnvironmental.FirstOrDefault()?.paths?.ToString();
             string filePathCivil_Defense = gCivil_Defense.FirstOrDefault()?.paths?.ToString();
+            string filePathCivil_Study = gCivil_Study.FirstOrDefault()?.paths?.ToString();
             string filePathPetroleum_Ministry = gPetroleum_Ministry.FirstOrDefault()?.paths?.ToString();
             string filePathCivil_Aviation = gCivil_Aviation.FirstOrDefault()?.paths?.ToString();
             string filePathTraffic_Study = gTraffic_Study.FirstOrDefault()?.paths?.ToString();
@@ -2379,7 +2487,7 @@ namespace DemoProject
             if (!string.IsNullOrWhiteSpace(filePathEnvironmental))
             {
                 string FileName = Path.GetFileName(filePathEnvironmental);
-                if (!approvalFiles.ContainsKey(filePathEnvironmental))
+                if (!approvalFiles.ContainsKey("Environmental_COB"))
                 {
                     approvalFiles["Environmental_COB"] = new List<string>();
                     approvalFiles["Environmental_COB"].Add(filePathEnvironmental);
@@ -2389,7 +2497,7 @@ namespace DemoProject
             if (!string.IsNullOrWhiteSpace(filePathPetroleum_Ministry))
             {
                 string FileName = Path.GetFileName(filePathPetroleum_Ministry);
-                if (!approvalFiles.ContainsKey(filePathPetroleum_Ministry))
+                if (!approvalFiles.ContainsKey("Petroleum_Ministry_COB"))
                 {
                     approvalFiles["Petroleum_Ministry_COB"] = new List<string>();
                     approvalFiles["Petroleum_Ministry_COB"].Add(filePathPetroleum_Ministry);
@@ -2399,17 +2507,28 @@ namespace DemoProject
             if (!string.IsNullOrWhiteSpace(filePathCivil_Defense))
             {
                 string FileName = Path.GetFileName(filePathCivil_Defense);
-                if (!approvalFiles.ContainsKey(filePathCivil_Defense))
+                if (!approvalFiles.ContainsKey("Civil_Defense_COB")
+)
                 {
                     approvalFiles["Civil_Defense_COB"] = new List<string>();
                     approvalFiles["Civil_Defense_COB"].Add(filePathCivil_Defense);
                 }
                 AddFileIconToPanel(filePathCivil_Defense, FileName, "Civil_Defense_COB");
             }
+            if (!string.IsNullOrWhiteSpace(filePathCivil_Study))
+            {
+                string FileName = Path.GetFileName(filePathCivil_Study);
+                if (!approvalFiles.ContainsKey("Civil_Study_COB"))
+                {
+                    approvalFiles["Civil_Study_COB"] = new List<string>();
+                    approvalFiles["Civil_Study_COB"].Add(filePathCivil_Study);
+                }
+                AddFileIconToPanel(filePathCivil_Study, FileName, "Civil_Study_COB");
+            }
             if (!string.IsNullOrWhiteSpace(filePathCivil_Aviation))
             {
                 string FileName = Path.GetFileName(filePathCivil_Aviation);
-                if (!approvalFiles.ContainsKey(filePathCivil_Aviation))
+                if (!approvalFiles.ContainsKey("Civil_Aviation_COB"))
                 {
                     approvalFiles["Civil_Aviation_COB"] = new List<string>();
                     approvalFiles["Civil_Aviation_COB"].Add(filePathCivil_Aviation);
@@ -2419,7 +2538,7 @@ namespace DemoProject
             if (!string.IsNullOrWhiteSpace(filePathTraffic_Study))
             {
                 string FileName = Path.GetFileName(filePathTraffic_Study);
-                if (!approvalFiles.ContainsKey(filePathTraffic_Study))
+                if (!approvalFiles.ContainsKey("Traffic_Study_COB"))
                 {
                     approvalFiles["Traffic_Study_COB"] = new List<string>();
                     approvalFiles["Traffic_Study_COB"].Add(filePathTraffic_Study);
@@ -2429,17 +2548,17 @@ namespace DemoProject
             if (!string.IsNullOrWhiteSpace(filePathModel_8))
             {
                 string FileName = Path.GetFileName(filePathModel_8);
-                if (!approvalFiles.ContainsKey(filePathModel_8))
+                if (!approvalFiles.ContainsKey("Model_8_COB"))
                 {
                     approvalFiles["Model_8_COB"] = new List<string>();
-                    approvalFiles["Model_8_COB"].Add(filePathEnvironmental);
+                    approvalFiles["Model_8_COB"].Add(filePathModel_8);
                 }
                 AddFileIconToPanel(filePathModel_8, FileName, "Model_8_COB");
             }
             if (!string.IsNullOrWhiteSpace(filePathTransaction_number))
             {
                 string FileName = Path.GetFileName(filePathTransaction_number);
-                if (!approvalFiles.ContainsKey(filePathTransaction_number))
+                if (!approvalFiles.ContainsKey("Transaction_number_TB"))
                 {
                     approvalFiles["Transaction_number_TB"] = new List<string>();
                     approvalFiles["Transaction_number_TB"].Add(filePathTransaction_number);
@@ -2459,6 +2578,8 @@ namespace DemoProject
                 x.First().Civil_Aviation_Approval_status.ToString() == "x" ? "X" : "✔";
             Civil_Defense_COB.SelectedItem = x.First().Civil_Defense_Approval_status.ToString() == "X" ||
                 x.First().Civil_Defense_Approval_status.ToString() =="x"? "X" : "✔";
+            Civil_Study_COB.SelectedItem = x.First().Civil_Defense_Study_status.ToString() == "X" ||
+                x.First().Civil_Defense_Study_status.ToString() =="x"? "X" : "✔";
         }
 
         // TextChanged event
@@ -2654,6 +2775,12 @@ namespace DemoProject
         
         }
 
+        private void Civil_Study_COB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bool hasText = !string.IsNullOrWhiteSpace(Civil_Study_COB.Text);
+            Error_Civil_Study.Visible = !hasText;
+        }
+
         private void Civil_Aviation_COB_SelectedIndexChanged(object sender, EventArgs e)
         {
             bool hasText = !string.IsNullOrWhiteSpace(Civil_Aviation_COB.Text);
@@ -2798,6 +2925,7 @@ namespace DemoProject
             Governorate_COB.SelectedItem = -1;
             Investment_Name_TB.Text = "";
             Civil_Defense_COB.SelectedItem = -1;
+            Civil_Study_COB.SelectedItem = -1;
             Environmental_COB.SelectedItem = -1;
             Traffic_Study_COB.SelectedItem = -1;
             Model_8_COB.SelectedItem = -1;
@@ -2821,6 +2949,7 @@ namespace DemoProject
             flowLayoutPanel5.Controls.Clear();
             flowLayoutPanel6.Controls.Clear();
             flowLayoutPanel7.Controls.Clear();
+            flowLayoutPanel9.Controls.Clear();
             tabPage4.Text = "";
 
         }
@@ -2857,6 +2986,7 @@ namespace DemoProject
             // ------------------------------------------------------
             // 4) Update Project Information
             // ------------------------------------------------------
+
             this.projectsTableAdapter.UpdateQuery(
                 Investment_Name_TB.Text,
                 igover.First().governorate_id,
@@ -2877,7 +3007,9 @@ namespace DemoProject
                 Reconciliation_Form_Stamp_COM.Text,
                 Consultant_Surveying_COM.Text,
                 Name_Pro_TB.Text,
+                Civil_Study_COB.Text,
                 serial_number_TB.Text
+
             );
 
             // ------------------------------------------------------
@@ -2887,6 +3019,7 @@ namespace DemoProject
     {
         { "Petroleum_Ministry_COB", "APP003" },
         { "Civil_Defense_COB",      "APP001" },
+        { "Civil_Study_COB",      "APP010" },
         { "Model_8_COB",            "APP006" },
         { "Traffic_Study_COB",      "APP005" },
         { "Civil_Aviation_COB",     "APP004" },
@@ -2897,6 +3030,7 @@ namespace DemoProject
             // ------------------------------------------------------
             // 6) For Each Approval → Sync Documents
             // ------------------------------------------------------
+
             foreach (var entry in approvalFiles)
             {
                 string approvalKey = entry.Key;
@@ -2979,6 +3113,7 @@ namespace DemoProject
                 if (!Directory.Exists(projectFolder))
                     Directory.CreateDirectory(projectFolder);
 
+
                 foreach (var entry in approvalFiles)
                 {
                     foreach (string sourcePath in entry.Value)
@@ -3000,6 +3135,7 @@ namespace DemoProject
             Governorate_COB.SelectedItem = -1;
             Investment_Name_TB.Text = "";
             Civil_Defense_COB.SelectedItem = -1;
+            Civil_Study_COB.SelectedItem = -1;
             Environmental_COB.SelectedItem = -1;
             Traffic_Study_COB.SelectedItem = -1;
             Model_8_COB.SelectedItem = -1;
@@ -3024,6 +3160,8 @@ namespace DemoProject
             flowLayoutPanel5.Controls.Clear();
             flowLayoutPanel6.Controls.Clear();
             flowLayoutPanel7.Controls.Clear();
+            flowLayoutPanel9.Controls.Clear();
+
         }
 
         private void advancedDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -3061,6 +3199,7 @@ namespace DemoProject
                 {
                     string projectId = row.Cells["Project_Id"].Value.ToString();
                     string CivilDefenseFileValue = row.Cells["CivilDefenseFile"].Value.ToString();
+                    string CivilDefenseStudyFileValue = row.Cells["CivilDefenseStudyFile"].Value.ToString();
                     string EnvironmentalFileValue = row.Cells["EnvironmentalFile"].Value.ToString();
                     string PetroleumFileValue = row.Cells["PetroleumFile"].Value.ToString();
                     string AviationFileValue = row.Cells["AviationFile"].Value.ToString();
@@ -3070,6 +3209,9 @@ namespace DemoProject
 
                     if (!string.IsNullOrWhiteSpace(CivilDefenseFileValue))
                         this.documentsTableAdapter.DeleteQuery("APP001", projectId);
+
+                    if (!string.IsNullOrWhiteSpace(CivilDefenseStudyFileValue))
+                        this.documentsTableAdapter.DeleteQuery("APP010", projectId);
 
                     if (!string.IsNullOrWhiteSpace(EnvironmentalFileValue))
                         this.documentsTableAdapter.DeleteQuery("APP002", projectId);
@@ -3304,6 +3446,7 @@ namespace DemoProject
             Governorate_COB.SelectedItem = -1;
             Investment_Name_TB.Text = "";
             Civil_Defense_COB.SelectedItem = -1;
+            Civil_Study_COB.SelectedItem = -1;
             Environmental_COB.SelectedItem = -1;
             Traffic_Study_COB.SelectedItem = -1;
             Model_8_COB.SelectedItem = -1;
@@ -3327,6 +3470,7 @@ namespace DemoProject
             flowLayoutPanel5.Controls.Clear();
             flowLayoutPanel6.Controls.Clear();
             flowLayoutPanel7.Controls.Clear();
+            flowLayoutPanel9.Controls.Clear();
 
         }
         private void Update_Radio_CheckedChanged(object sender, EventArgs e)
@@ -3353,6 +3497,7 @@ namespace DemoProject
             { "مؤجر", "Total_rented" },
             { "غير مؤجر", "Total_Not_rented" },
             { "حالة موافقة الحماية المدنية", "Civil_Defense_Approval_status" },
+            { "حالة دراسة الحماية المدنية", "Civil_Defense_Study_status" },
             { "حالة موافقة البيئة", "Environmental_Approval_status" },
             { "حالة موافقة وزارة البترول", "Petroleum_Ministry_Approval_status" },
             { "حالة موافقة الطيران المدني", "Civil_Aviation_Approval_status" },
@@ -3875,6 +4020,7 @@ namespace DemoProject
                     string[] orangeColumns =
                       {
                     "Civil_Defense_Approval_status",
+                    "Civil_Defense_Study_status",
                     "Environmental_Approval_status",
                     "Petroleum_Ministry_Approval_status",
                     "Civil_Aviation_Approval_status",
@@ -4047,6 +4193,7 @@ namespace DemoProject
                 newRow.Total_Not_rented = 0;
                 newRow.Contract_expiry_date = DateTime.Now;
                 newRow.Civil_Defense_Approval_status = "X";
+                newRow.Civil_Defense_Study_status = "X";
                 newRow.Environmental_Approval_status = "X";
                 newRow.Traffic_Study_Status = "X";
                 newRow.Model_8_Status = "X";
@@ -4435,6 +4582,7 @@ namespace DemoProject
             Governorate_COB.SelectedItem = -1;
             Investment_Name_TB.Text = "";
             Civil_Defense_COB.SelectedItem = -1;
+            Civil_Study_COB.SelectedItem = -1;
             Environmental_COB.SelectedItem = -1;
             Traffic_Study_COB.SelectedItem = -1;
             Model_8_COB.SelectedItem = -1;
@@ -4458,6 +4606,7 @@ namespace DemoProject
             flowLayoutPanel5.Controls.Clear();
             flowLayoutPanel6.Controls.Clear();
             flowLayoutPanel7.Controls.Clear();
+            flowLayoutPanel9.Controls.Clear();
             tabPage4.Text = "";
         }
 
@@ -4488,6 +4637,7 @@ namespace DemoProject
             Governorate_COB.SelectedItem = -1;
             Investment_Name_TB.Text = "";
             Civil_Defense_COB.SelectedItem = -1;
+            Civil_Study_COB.SelectedItem = -1;
             Environmental_COB.SelectedItem = -1;
             Traffic_Study_COB.SelectedItem = -1;
             Model_8_COB.SelectedItem = -1;
@@ -4511,6 +4661,7 @@ namespace DemoProject
             flowLayoutPanel5.Controls.Clear();
             flowLayoutPanel6.Controls.Clear();
             flowLayoutPanel7.Controls.Clear();
+            flowLayoutPanel9.Controls.Clear();
             tabPage4.Text = "";
         }
 
@@ -4586,6 +4737,13 @@ namespace DemoProject
             docsWithApprovals
                 .Where(d => d.ProjectId == p.project_id &&
                             d.ApprovalName == "موافقة الحماية المدنية")
+                .Select(d => d.Path)),
+
+                        Civil_Defense_Study_status = p.Civil_Defense_Study_status,
+                        CivilDefenseStudyFile = string.Join(" , ",
+            docsWithApprovals
+                .Where(d => d.ProjectId == p.project_id &&
+                            d.ApprovalName == "دراسة حماية مدنيه")
                 .Select(d => d.Path)),
 
                         Environmental_Approval_status = p.Environmental_Approval_status,
@@ -4748,6 +4906,7 @@ namespace DemoProject
             Governorate_COB.SelectedItem = -1;
             Investment_Name_TB.Text = "";
             Civil_Defense_COB.SelectedItem = -1;
+            Civil_Study_COB.SelectedItem = -1;
             Environmental_COB.SelectedItem = -1;
             Traffic_Study_COB.SelectedItem = -1;
             Model_8_COB.SelectedItem = -1;
@@ -4771,6 +4930,7 @@ namespace DemoProject
             flowLayoutPanel5.Controls.Clear();
             flowLayoutPanel6.Controls.Clear();
             flowLayoutPanel7.Controls.Clear();
+            flowLayoutPanel9.Controls.Clear();
             tabPage4.Text = "";
 
         }
@@ -4802,6 +4962,7 @@ namespace DemoProject
             Governorate_COB.SelectedItem = -1;
             Investment_Name_TB.Text = "";
             Civil_Defense_COB.SelectedItem = -1;
+            Civil_Study_COB.SelectedItem = -1;
             Environmental_COB.SelectedItem = -1;
             Traffic_Study_COB.SelectedItem = -1;
             Model_8_COB.SelectedItem = -1;
@@ -4825,7 +4986,10 @@ namespace DemoProject
             flowLayoutPanel5.Controls.Clear();
             flowLayoutPanel6.Controls.Clear();
             flowLayoutPanel7.Controls.Clear();
+            flowLayoutPanel9.Controls.Clear();
             tabPage4.Text = "";
         }
+
+
     }
 }

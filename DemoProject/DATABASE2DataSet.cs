@@ -9,6 +9,10 @@
 
 namespace DemoProject.DATABASE2DataSetTableAdapters
 {
+    partial class projectsTableAdapter
+    {
+    }
+
     partial class investmentsTableAdapter
     {
     }

@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectsControl));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.Update_Radio = new Guna.UI2.WinForms.Guna2RadioButton();
@@ -48,33 +48,6 @@
             this.guna2Shapes2 = new Guna.UI2.WinForms.Guna2Shapes();
             this.crownLabel1 = new ReaLTaiizor.Controls.CrownLabel();
             this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.dATABASE2DataSet = new DemoProject.DATABASE2DataSet();
-            this.accessBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.accessTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.accessTableAdapter();
-            this.approvalsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.approvalsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.approvalsTableAdapter();
-            this.documentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.documentsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.documentsTableAdapter();
-            this.functionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.functionsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.functionsTableAdapter();
-            this.governorateBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.governorateTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.governorateTableAdapter();
-            this.landsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.landsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.landsTableAdapter();
-            this.pagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pagesTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.pagesTableAdapter();
-            this.projectsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.projectsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.projectsTableAdapter();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usersTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.usersTableAdapter();
-            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rolesTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.rolesTableAdapter();
-            this.investmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.investmentsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.investmentsTableAdapter();
-            this.getFullProjectDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.getFullProjectDataTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.GetFullProjectDataTableAdapter();
-            this.notepageBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.note_pageTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.Note_pageTableAdapter();
             this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.crownLabel2 = new ReaLTaiizor.Controls.CrownLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -105,6 +78,12 @@
             this.guna2ImageButton8 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.advancedDataGridView2 = new Zuby.ADGV.AdvancedDataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.Error_Civil_Study = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.nightLabel15 = new ReaLTaiizor.Controls.NightLabel();
+            this.guna2ImageButton12 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
+            this.Civil_Study_COB = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.dungeonLabel22 = new ReaLTaiizor.Controls.DungeonLabel();
             this.dungeonLabel20 = new ReaLTaiizor.Controls.DungeonLabel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.Consultant_Surveying_COM = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -189,9 +168,18 @@
             this.Model_8_COB = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dungeonLabel16 = new ReaLTaiizor.Controls.DungeonLabel();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.dreamButton27 = new ReaLTaiizor.Controls.DreamButton();
+            this.dreamButton28 = new ReaLTaiizor.Controls.DreamButton();
             this.dreamButton26 = new ReaLTaiizor.Controls.DreamButton();
             this.dreamButton24 = new ReaLTaiizor.Controls.DreamButton();
             this.dreamButton23 = new ReaLTaiizor.Controls.DreamButton();
+            this.dreamButton15 = new ReaLTaiizor.Controls.DreamButton();
+            this.dreamButton8 = new ReaLTaiizor.Controls.DreamButton();
+            this.dreamButton6 = new ReaLTaiizor.Controls.DreamButton();
+            this.dreamButton7 = new ReaLTaiizor.Controls.DreamButton();
+            this.dreamButton12 = new ReaLTaiizor.Controls.DreamButton();
+            this.dreamButton16 = new ReaLTaiizor.Controls.DreamButton();
+            this.dreamButton2 = new ReaLTaiizor.Controls.DreamButton();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.RowCountSeries = new ReaLTaiizor.Controls.BigLabel();
             this.rowCountLabel = new ReaLTaiizor.Controls.BigLabel();
@@ -200,34 +188,27 @@
             this.nightLabel11 = new ReaLTaiizor.Controls.NightLabel();
             this.fileNameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.dreamButton12 = new ReaLTaiizor.Controls.DreamButton();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.dreamButton11 = new ReaLTaiizor.Controls.DreamButton();
             this.nightLabel4 = new ReaLTaiizor.Controls.NightLabel();
-            this.dreamButton10 = new ReaLTaiizor.Controls.DreamButton();
             this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.dreamButton9 = new ReaLTaiizor.Controls.DreamButton();
             this.skyButton3 = new ReaLTaiizor.Controls.SkyButton();
             this.guna2CirclePictureBox6 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.dreamButton5 = new ReaLTaiizor.Controls.DreamButton();
-            this.dreamButton4 = new ReaLTaiizor.Controls.DreamButton();
             this.skyButton2 = new ReaLTaiizor.Controls.SkyButton();
-            this.dreamButton3 = new ReaLTaiizor.Controls.DreamButton();
             this.skyButton1 = new ReaLTaiizor.Controls.SkyButton();
-            this.dreamButton1 = new ReaLTaiizor.Controls.DreamButton();
+            this.dreamButton11 = new ReaLTaiizor.Controls.DreamButton();
             this.dreamButton22 = new ReaLTaiizor.Controls.DreamButton();
             this.advancedDataGridView1 = new Zuby.ADGV.AdvancedDataGridView();
+            this.dreamButton10 = new ReaLTaiizor.Controls.DreamButton();
             this.dreamButton19 = new ReaLTaiizor.Controls.DreamButton();
             this.dreamButton14 = new ReaLTaiizor.Controls.DreamButton();
+            this.dreamButton9 = new ReaLTaiizor.Controls.DreamButton();
+            this.dreamButton1 = new ReaLTaiizor.Controls.DreamButton();
+            this.dreamButton3 = new ReaLTaiizor.Controls.DreamButton();
+            this.dreamButton5 = new ReaLTaiizor.Controls.DreamButton();
+            this.dreamButton4 = new ReaLTaiizor.Controls.DreamButton();
             this.dreamButton25 = new ReaLTaiizor.Controls.DreamButton();
             this.dreamButton21 = new ReaLTaiizor.Controls.DreamButton();
             this.dreamButton13 = new ReaLTaiizor.Controls.DreamButton();
-            this.dreamButton15 = new ReaLTaiizor.Controls.DreamButton();
-            this.dreamButton16 = new ReaLTaiizor.Controls.DreamButton();
-            this.dreamButton8 = new ReaLTaiizor.Controls.DreamButton();
-            this.dreamButton7 = new ReaLTaiizor.Controls.DreamButton();
-            this.dreamButton6 = new ReaLTaiizor.Controls.DreamButton();
-            this.dreamButton2 = new ReaLTaiizor.Controls.DreamButton();
             this.dreamButton20 = new ReaLTaiizor.Controls.DreamButton();
             this.dreamButton17 = new ReaLTaiizor.Controls.DreamButton();
             this.dreamButton18 = new ReaLTaiizor.Controls.DreamButton();
@@ -241,22 +222,35 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2CircleButton7 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton6 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.dATABASE2DataSet = new DemoProject.DATABASE2DataSet();
+            this.accessBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.accessTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.accessTableAdapter();
+            this.approvalsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.approvalsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.approvalsTableAdapter();
+            this.documentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.documentsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.documentsTableAdapter();
+            this.functionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.functionsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.functionsTableAdapter();
+            this.governorateBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.governorateTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.governorateTableAdapter();
+            this.landsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.landsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.landsTableAdapter();
+            this.pagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pagesTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.pagesTableAdapter();
+            this.projectsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projectsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.projectsTableAdapter();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usersTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.usersTableAdapter();
+            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rolesTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.rolesTableAdapter();
+            this.investmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.investmentsTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.investmentsTableAdapter();
+            this.getFullProjectDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.getFullProjectDataTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.GetFullProjectDataTableAdapter();
+            this.notepageBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.note_pageTableAdapter = new DemoProject.DATABASE2DataSetTableAdapters.Note_pageTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dATABASE2DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accessBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.approvalsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.functionsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.governorateBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.landsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.investmentsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getFullProjectDataBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.notepageBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -264,6 +258,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView2)).BeginInit();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Error_Civil_Study)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Error_Transaction_number)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Error_Model_8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Error_Environmental)).BeginInit();
@@ -289,6 +284,20 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView3)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dATABASE2DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accessBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.approvalsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.functionsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.governorateBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.landsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.investmentsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getFullProjectDataBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notepageBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2TextBox2
@@ -513,128 +522,6 @@
             this.guna2CircleButton2.TabIndex = 68;
             this.guna2CircleButton2.Text = "خروج";
             this.guna2CircleButton2.Click += new System.EventHandler(this.guna2CircleButton2_Click);
-            // 
-            // dATABASE2DataSet
-            // 
-            this.dATABASE2DataSet.DataSetName = "DATABASE2DataSet";
-            this.dATABASE2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // accessBindingSource
-            // 
-            this.accessBindingSource.DataMember = "access";
-            this.accessBindingSource.DataSource = this.dATABASE2DataSet;
-            // 
-            // accessTableAdapter
-            // 
-            this.accessTableAdapter.ClearBeforeFill = true;
-            // 
-            // approvalsBindingSource
-            // 
-            this.approvalsBindingSource.DataMember = "approvals";
-            this.approvalsBindingSource.DataSource = this.dATABASE2DataSet;
-            // 
-            // approvalsTableAdapter
-            // 
-            this.approvalsTableAdapter.ClearBeforeFill = true;
-            // 
-            // documentsBindingSource
-            // 
-            this.documentsBindingSource.DataMember = "documents";
-            this.documentsBindingSource.DataSource = this.dATABASE2DataSet;
-            // 
-            // documentsTableAdapter
-            // 
-            this.documentsTableAdapter.ClearBeforeFill = true;
-            // 
-            // functionsBindingSource
-            // 
-            this.functionsBindingSource.DataMember = "functions";
-            this.functionsBindingSource.DataSource = this.dATABASE2DataSet;
-            // 
-            // functionsTableAdapter
-            // 
-            this.functionsTableAdapter.ClearBeforeFill = true;
-            // 
-            // governorateBindingSource
-            // 
-            this.governorateBindingSource.DataMember = "governorate";
-            this.governorateBindingSource.DataSource = this.dATABASE2DataSet;
-            // 
-            // governorateTableAdapter
-            // 
-            this.governorateTableAdapter.ClearBeforeFill = true;
-            // 
-            // landsBindingSource
-            // 
-            this.landsBindingSource.DataMember = "lands";
-            this.landsBindingSource.DataSource = this.dATABASE2DataSet;
-            // 
-            // landsTableAdapter
-            // 
-            this.landsTableAdapter.ClearBeforeFill = true;
-            // 
-            // pagesBindingSource
-            // 
-            this.pagesBindingSource.DataMember = "pages";
-            this.pagesBindingSource.DataSource = this.dATABASE2DataSet;
-            // 
-            // pagesTableAdapter
-            // 
-            this.pagesTableAdapter.ClearBeforeFill = true;
-            // 
-            // projectsBindingSource
-            // 
-            this.projectsBindingSource.DataMember = "projects";
-            this.projectsBindingSource.DataSource = this.dATABASE2DataSet;
-            // 
-            // projectsTableAdapter
-            // 
-            this.projectsTableAdapter.ClearBeforeFill = true;
-            // 
-            // usersBindingSource
-            // 
-            this.usersBindingSource.DataMember = "users";
-            this.usersBindingSource.DataSource = this.dATABASE2DataSet;
-            // 
-            // usersTableAdapter
-            // 
-            this.usersTableAdapter.ClearBeforeFill = true;
-            // 
-            // rolesBindingSource
-            // 
-            this.rolesBindingSource.DataMember = "roles";
-            this.rolesBindingSource.DataSource = this.dATABASE2DataSet;
-            // 
-            // rolesTableAdapter
-            // 
-            this.rolesTableAdapter.ClearBeforeFill = true;
-            // 
-            // investmentsBindingSource
-            // 
-            this.investmentsBindingSource.DataMember = "investments";
-            this.investmentsBindingSource.DataSource = this.dATABASE2DataSet;
-            // 
-            // investmentsTableAdapter
-            // 
-            this.investmentsTableAdapter.ClearBeforeFill = true;
-            // 
-            // getFullProjectDataBindingSource
-            // 
-            this.getFullProjectDataBindingSource.DataMember = "GetFullProjectData";
-            this.getFullProjectDataBindingSource.DataSource = this.dATABASE2DataSet;
-            // 
-            // getFullProjectDataTableAdapter
-            // 
-            this.getFullProjectDataTableAdapter.ClearBeforeFill = true;
-            // 
-            // notepageBindingSource
-            // 
-            this.notepageBindingSource.DataMember = "Note_page";
-            this.notepageBindingSource.DataSource = this.dATABASE2DataSet;
-            // 
-            // note_pageTableAdapter
-            // 
-            this.note_pageTableAdapter.ClearBeforeFill = true;
             // 
             // guna2CircleButton3
             // 
@@ -1127,14 +1014,14 @@
             // advancedDataGridView2
             // 
             this.advancedDataGridView2.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.advancedDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridView2.Dock = System.Windows.Forms.DockStyle.Top;
             this.advancedDataGridView2.FilterAndSortEnabled = true;
@@ -1154,6 +1041,12 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.Error_Civil_Study);
+            this.tabPage4.Controls.Add(this.nightLabel15);
+            this.tabPage4.Controls.Add(this.guna2ImageButton12);
+            this.tabPage4.Controls.Add(this.flowLayoutPanel9);
+            this.tabPage4.Controls.Add(this.Civil_Study_COB);
+            this.tabPage4.Controls.Add(this.dungeonLabel22);
             this.tabPage4.Controls.Add(this.dungeonLabel20);
             this.tabPage4.Controls.Add(this.guna2Button2);
             this.tabPage4.Controls.Add(this.Consultant_Surveying_COM);
@@ -1211,6 +1104,94 @@
             this.tabPage4.UseVisualStyleBackColor = true;
             this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
             // 
+            // Error_Civil_Study
+            // 
+            this.Error_Civil_Study.BackColor = System.Drawing.Color.Transparent;
+            this.Error_Civil_Study.Image = ((System.Drawing.Image)(resources.GetObject("Error_Civil_Study.Image")));
+            this.Error_Civil_Study.ImageRotate = 0F;
+            this.Error_Civil_Study.Location = new System.Drawing.Point(649, 6);
+            this.Error_Civil_Study.Name = "Error_Civil_Study";
+            this.Error_Civil_Study.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.Error_Civil_Study.Size = new System.Drawing.Size(43, 37);
+            this.Error_Civil_Study.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Error_Civil_Study.TabIndex = 118;
+            this.Error_Civil_Study.TabStop = false;
+            this.Error_Civil_Study.UseTransparentBackground = true;
+            this.Error_Civil_Study.Visible = false;
+            // 
+            // nightLabel15
+            // 
+            this.nightLabel15.AutoSize = true;
+            this.nightLabel15.BackColor = System.Drawing.Color.Transparent;
+            this.nightLabel15.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.nightLabel15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(118)))), ((int)(((byte)(127)))));
+            this.nightLabel15.Location = new System.Drawing.Point(663, 142);
+            this.nightLabel15.Name = "nightLabel15";
+            this.nightLabel15.Size = new System.Drawing.Size(32, 15);
+            this.nightLabel15.TabIndex = 117;
+            this.nightLabel15.Text = "حذف";
+            this.nightLabel15.Visible = false;
+            // 
+            // guna2ImageButton12
+            // 
+            this.guna2ImageButton12.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton12.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton12.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton12.Image")));
+            this.guna2ImageButton12.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton12.ImageRotate = 0F;
+            this.guna2ImageButton12.Location = new System.Drawing.Point(653, 85);
+            this.guna2ImageButton12.Name = "guna2ImageButton12";
+            this.guna2ImageButton12.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton12.Size = new System.Drawing.Size(64, 54);
+            this.guna2ImageButton12.TabIndex = 116;
+            this.guna2ImageButton12.UseTransparentBackground = true;
+            this.guna2ImageButton12.Visible = false;
+            this.guna2ImageButton12.Click += new System.EventHandler(this.guna2ImageButton12_Click);
+            // 
+            // flowLayoutPanel9
+            // 
+            this.flowLayoutPanel9.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.flowLayoutPanel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flowLayoutPanel9.Location = new System.Drawing.Point(723, 71);
+            this.flowLayoutPanel9.Name = "flowLayoutPanel9";
+            this.flowLayoutPanel9.Size = new System.Drawing.Size(113, 102);
+            this.flowLayoutPanel9.TabIndex = 115;
+            this.flowLayoutPanel9.Visible = false;
+            // 
+            // Civil_Study_COB
+            // 
+            this.Civil_Study_COB.AutoRoundedCorners = true;
+            this.Civil_Study_COB.BackColor = System.Drawing.Color.Transparent;
+            this.Civil_Study_COB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.Civil_Study_COB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Civil_Study_COB.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Civil_Study_COB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Civil_Study_COB.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.Civil_Study_COB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.Civil_Study_COB.ItemHeight = 30;
+            this.Civil_Study_COB.Items.AddRange(new object[] {
+            "X",
+            "✔"});
+            this.Civil_Study_COB.Location = new System.Drawing.Point(690, 29);
+            this.Civil_Study_COB.Name = "Civil_Study_COB";
+            this.Civil_Study_COB.Size = new System.Drawing.Size(146, 36);
+            this.Civil_Study_COB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.Civil_Study_COB.TabIndex = 114;
+            this.Civil_Study_COB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Civil_Study_COB.SelectedIndexChanged += new System.EventHandler(this.Civil_Study_COB_SelectedIndexChanged);
+            // 
+            // dungeonLabel22
+            // 
+            this.dungeonLabel22.AutoSize = true;
+            this.dungeonLabel22.BackColor = System.Drawing.Color.Transparent;
+            this.dungeonLabel22.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.dungeonLabel22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.dungeonLabel22.Location = new System.Drawing.Point(690, 6);
+            this.dungeonLabel22.Name = "dungeonLabel22";
+            this.dungeonLabel22.Size = new System.Drawing.Size(143, 20);
+            this.dungeonLabel22.TabIndex = 113;
+            this.dungeonLabel22.Text = "دراسة الحماية المدنية";
+            // 
             // dungeonLabel20
             // 
             this.dungeonLabel20.AutoSize = true;
@@ -1244,7 +1225,7 @@
             this.guna2Button2.ImageSize = new System.Drawing.Size(40, 40);
             this.guna2Button2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.guna2Button2.IndicateFocus = true;
-            this.guna2Button2.Location = new System.Drawing.Point(499, 485);
+            this.guna2Button2.Location = new System.Drawing.Point(499, 486);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(186, 46);
             this.guna2Button2.TabIndex = 100;
@@ -2606,15 +2587,31 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.dreamButton27);
+            this.tabPage5.Controls.Add(this.dreamButton28);
             this.tabPage5.Controls.Add(this.dreamButton26);
             this.tabPage5.Controls.Add(this.dreamButton24);
             this.tabPage5.Controls.Add(this.dreamButton23);
+            this.tabPage5.Controls.Add(this.dreamButton15);
+            this.tabPage5.Controls.Add(this.dreamButton8);
+            this.tabPage5.Controls.Add(this.dreamButton6);
+            this.tabPage5.Controls.Add(this.dreamButton7);
+            this.tabPage5.Controls.Add(this.dreamButton12);
+            this.tabPage5.Controls.Add(this.dreamButton16);
+            this.tabPage5.Controls.Add(this.dreamButton2);
             this.tabPage5.Controls.Add(this.guna2Panel4);
             this.tabPage5.Controls.Add(this.guna2Panel1);
+            this.tabPage5.Controls.Add(this.dreamButton11);
             this.tabPage5.Controls.Add(this.dreamButton22);
             this.tabPage5.Controls.Add(this.advancedDataGridView1);
+            this.tabPage5.Controls.Add(this.dreamButton10);
             this.tabPage5.Controls.Add(this.dreamButton19);
             this.tabPage5.Controls.Add(this.dreamButton14);
+            this.tabPage5.Controls.Add(this.dreamButton9);
+            this.tabPage5.Controls.Add(this.dreamButton1);
+            this.tabPage5.Controls.Add(this.dreamButton3);
+            this.tabPage5.Controls.Add(this.dreamButton5);
+            this.tabPage5.Controls.Add(this.dreamButton4);
             this.tabPage5.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.tabPage5.Location = new System.Drawing.Point(4, 44);
             this.tabPage5.Name = "tabPage5";
@@ -2623,6 +2620,40 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "عرض الجدول";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // dreamButton27
+            // 
+            this.dreamButton27.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.dreamButton27.ColorB = System.Drawing.Color.DarkSlateGray;
+            this.dreamButton27.ColorC = System.Drawing.Color.DarkSlateGray;
+            this.dreamButton27.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dreamButton27.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dreamButton27.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dreamButton27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dreamButton27.ForeColor = System.Drawing.Color.White;
+            this.dreamButton27.Location = new System.Drawing.Point(375, 646);
+            this.dreamButton27.Name = "dreamButton27";
+            this.dreamButton27.Size = new System.Drawing.Size(82, 39);
+            this.dreamButton27.TabIndex = 128;
+            this.dreamButton27.Text = "دراسة";
+            this.dreamButton27.UseVisualStyleBackColor = true;
+            // 
+            // dreamButton28
+            // 
+            this.dreamButton28.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.dreamButton28.ColorB = System.Drawing.Color.DarkSlateGray;
+            this.dreamButton28.ColorC = System.Drawing.Color.DarkSlateGray;
+            this.dreamButton28.ColorD = System.Drawing.Color.White;
+            this.dreamButton28.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dreamButton28.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dreamButton28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dreamButton28.ForeColor = System.Drawing.Color.White;
+            this.dreamButton28.Location = new System.Drawing.Point(462, 646);
+            this.dreamButton28.Name = "dreamButton28";
+            this.dreamButton28.Size = new System.Drawing.Size(109, 39);
+            this.dreamButton28.TabIndex = 127;
+            this.dreamButton28.Text = "دراسة حماية مدنية";
+            this.dreamButton28.UseVisualStyleBackColor = true;
             // 
             // dreamButton26
             // 
@@ -2680,15 +2711,134 @@
             this.dreamButton23.Visible = false;
             this.dreamButton23.Click += new System.EventHandler(this.dreamButton23_Click);
             // 
+            // dreamButton15
+            // 
+            this.dreamButton15.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.dreamButton15.ColorB = System.Drawing.Color.MediumSlateBlue;
+            this.dreamButton15.ColorC = System.Drawing.Color.BlueViolet;
+            this.dreamButton15.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dreamButton15.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dreamButton15.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dreamButton15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dreamButton15.ForeColor = System.Drawing.Color.White;
+            this.dreamButton15.Location = new System.Drawing.Point(375, 512);
+            this.dreamButton15.Name = "dreamButton15";
+            this.dreamButton15.Size = new System.Drawing.Size(82, 39);
+            this.dreamButton15.TabIndex = 61;
+            this.dreamButton15.Text = "رخصة";
+            this.dreamButton15.UseVisualStyleBackColor = true;
+            // 
+            // dreamButton8
+            // 
+            this.dreamButton8.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.dreamButton8.ColorB = System.Drawing.Color.Aqua;
+            this.dreamButton8.ColorC = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.dreamButton8.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dreamButton8.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dreamButton8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dreamButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dreamButton8.ForeColor = System.Drawing.Color.White;
+            this.dreamButton8.Location = new System.Drawing.Point(375, 603);
+            this.dreamButton8.Name = "dreamButton8";
+            this.dreamButton8.Size = new System.Drawing.Size(82, 39);
+            this.dreamButton8.TabIndex = 55;
+            this.dreamButton8.Text = "الطيران";
+            this.dreamButton8.UseVisualStyleBackColor = true;
+            // 
+            // dreamButton6
+            // 
+            this.dreamButton6.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.dreamButton6.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.dreamButton6.ColorC = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.dreamButton6.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dreamButton6.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dreamButton6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dreamButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dreamButton6.ForeColor = System.Drawing.Color.White;
+            this.dreamButton6.Location = new System.Drawing.Point(463, 557);
+            this.dreamButton6.Name = "dreamButton6";
+            this.dreamButton6.Size = new System.Drawing.Size(108, 39);
+            this.dreamButton6.TabIndex = 53;
+            this.dreamButton6.Text = "نموذج 8";
+            this.dreamButton6.UseVisualStyleBackColor = true;
+            // 
+            // dreamButton7
+            // 
+            this.dreamButton7.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.dreamButton7.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.dreamButton7.ColorC = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.dreamButton7.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dreamButton7.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dreamButton7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dreamButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dreamButton7.ForeColor = System.Drawing.Color.White;
+            this.dreamButton7.Location = new System.Drawing.Point(375, 557);
+            this.dreamButton7.Name = "dreamButton7";
+            this.dreamButton7.Size = new System.Drawing.Size(82, 39);
+            this.dreamButton7.TabIndex = 54;
+            this.dreamButton7.Text = "نموذج 8";
+            this.dreamButton7.UseVisualStyleBackColor = true;
+            // 
+            // dreamButton12
+            // 
+            this.dreamButton12.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.dreamButton12.ColorB = System.Drawing.Color.YellowGreen;
+            this.dreamButton12.ColorC = System.Drawing.Color.YellowGreen;
+            this.dreamButton12.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dreamButton12.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dreamButton12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dreamButton12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dreamButton12.ForeColor = System.Drawing.Color.White;
+            this.dreamButton12.Location = new System.Drawing.Point(175, 646);
+            this.dreamButton12.Name = "dreamButton12";
+            this.dreamButton12.Size = new System.Drawing.Size(82, 36);
+            this.dreamButton12.TabIndex = 59;
+            this.dreamButton12.Text = "مرورية";
+            this.dreamButton12.UseVisualStyleBackColor = true;
+            // 
+            // dreamButton16
+            // 
+            this.dreamButton16.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.dreamButton16.ColorB = System.Drawing.Color.MediumSlateBlue;
+            this.dreamButton16.ColorC = System.Drawing.Color.BlueViolet;
+            this.dreamButton16.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dreamButton16.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dreamButton16.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dreamButton16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dreamButton16.ForeColor = System.Drawing.Color.White;
+            this.dreamButton16.Location = new System.Drawing.Point(462, 512);
+            this.dreamButton16.Name = "dreamButton16";
+            this.dreamButton16.Size = new System.Drawing.Size(109, 39);
+            this.dreamButton16.TabIndex = 60;
+            this.dreamButton16.Text = "رخصة التشغيل";
+            this.dreamButton16.UseVisualStyleBackColor = true;
+            // 
+            // dreamButton2
+            // 
+            this.dreamButton2.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.dreamButton2.ColorB = System.Drawing.Color.Aqua;
+            this.dreamButton2.ColorC = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.dreamButton2.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dreamButton2.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dreamButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dreamButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dreamButton2.ForeColor = System.Drawing.Color.White;
+            this.dreamButton2.Location = new System.Drawing.Point(463, 602);
+            this.dreamButton2.Name = "dreamButton2";
+            this.dreamButton2.Size = new System.Drawing.Size(108, 39);
+            this.dreamButton2.TabIndex = 48;
+            this.dreamButton2.Text = "موافقة الطيران";
+            this.dreamButton2.UseVisualStyleBackColor = true;
+            // 
             // guna2Panel4
             // 
             this.guna2Panel4.Controls.Add(this.RowCountSeries);
             this.guna2Panel4.Controls.Add(this.rowCountLabel);
             this.guna2Panel4.Controls.Add(this.TotalStoresLabel2);
             this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2Panel4.Location = new System.Drawing.Point(359, 494);
+            this.guna2Panel4.Location = new System.Drawing.Point(494, 494);
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(181, 188);
+            this.guna2Panel4.Size = new System.Drawing.Size(257, 188);
             this.guna2Panel4.TabIndex = 37;
             // 
             // RowCountSeries
@@ -2734,25 +2884,17 @@
             this.guna2Panel1.Controls.Add(this.nightLabel11);
             this.guna2Panel1.Controls.Add(this.fileNameTextBox);
             this.guna2Panel1.Controls.Add(this.checkedListBox1);
-            this.guna2Panel1.Controls.Add(this.dreamButton12);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox2);
-            this.guna2Panel1.Controls.Add(this.dreamButton11);
             this.guna2Panel1.Controls.Add(this.nightLabel4);
-            this.guna2Panel1.Controls.Add(this.dreamButton10);
             this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox3);
-            this.guna2Panel1.Controls.Add(this.dreamButton9);
             this.guna2Panel1.Controls.Add(this.skyButton3);
             this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox6);
-            this.guna2Panel1.Controls.Add(this.dreamButton5);
-            this.guna2Panel1.Controls.Add(this.dreamButton4);
             this.guna2Panel1.Controls.Add(this.skyButton2);
-            this.guna2Panel1.Controls.Add(this.dreamButton3);
             this.guna2Panel1.Controls.Add(this.skyButton1);
-            this.guna2Panel1.Controls.Add(this.dreamButton1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2Panel1.Location = new System.Drawing.Point(540, 494);
+            this.guna2Panel1.Location = new System.Drawing.Point(751, 494);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(786, 188);
+            this.guna2Panel1.Size = new System.Drawing.Size(575, 188);
             this.guna2Panel1.TabIndex = 1;
             // 
             // nightLabel11
@@ -2782,7 +2924,7 @@
             this.fileNameTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.fileNameTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fileNameTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.fileNameTextBox.Location = new System.Drawing.Point(31, 137);
+            this.fileNameTextBox.Location = new System.Drawing.Point(34, 130);
             this.fileNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fileNameTextBox.Name = "fileNameTextBox";
             this.fileNameTextBox.PlaceholderForeColor = System.Drawing.Color.Red;
@@ -2796,30 +2938,12 @@
             // 
             this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(553, 32);
+            this.checkedListBox1.Location = new System.Drawing.Point(348, 29);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(214, 151);
             this.checkedListBox1.TabIndex = 2;
             this.checkedListBox1.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox1_ItemCheck);
             this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
-            // 
-            // dreamButton12
-            // 
-            this.dreamButton12.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.dreamButton12.ColorB = System.Drawing.Color.YellowGreen;
-            this.dreamButton12.ColorC = System.Drawing.Color.YellowGreen;
-            this.dreamButton12.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dreamButton12.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dreamButton12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dreamButton12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dreamButton12.ForeColor = System.Drawing.Color.White;
-            this.dreamButton12.Location = new System.Drawing.Point(343, 146);
-            this.dreamButton12.Name = "dreamButton12";
-            this.dreamButton12.Size = new System.Drawing.Size(82, 39);
-            this.dreamButton12.TabIndex = 59;
-            this.dreamButton12.Text = "مرورية";
-            this.dreamButton12.UseVisualStyleBackColor = true;
-            this.dreamButton12.Visible = false;
             // 
             // guna2PictureBox2
             // 
@@ -2832,53 +2956,17 @@
             this.guna2PictureBox2.TabStop = false;
             this.guna2PictureBox2.Visible = false;
             // 
-            // dreamButton11
-            // 
-            this.dreamButton11.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.dreamButton11.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.dreamButton11.ColorC = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.dreamButton11.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dreamButton11.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dreamButton11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dreamButton11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dreamButton11.ForeColor = System.Drawing.Color.White;
-            this.dreamButton11.Location = new System.Drawing.Point(343, 98);
-            this.dreamButton11.Name = "dreamButton11";
-            this.dreamButton11.Size = new System.Drawing.Size(82, 39);
-            this.dreamButton11.TabIndex = 58;
-            this.dreamButton11.Text = "البترول";
-            this.dreamButton11.UseVisualStyleBackColor = true;
-            this.dreamButton11.Visible = false;
-            // 
             // nightLabel4
             // 
             this.nightLabel4.AutoSize = true;
             this.nightLabel4.BackColor = System.Drawing.Color.Transparent;
             this.nightLabel4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nightLabel4.ForeColor = System.Drawing.Color.Black;
-            this.nightLabel4.Location = new System.Drawing.Point(544, 3);
+            this.nightLabel4.Location = new System.Drawing.Point(339, 0);
             this.nightLabel4.Name = "nightLabel4";
             this.nightLabel4.Size = new System.Drawing.Size(228, 25);
             this.nightLabel4.TabIndex = 51;
             this.nightLabel4.Text = "أختيار الأعمده المراد طباعتها";
-            // 
-            // dreamButton10
-            // 
-            this.dreamButton10.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.dreamButton10.ColorB = System.Drawing.Color.Green;
-            this.dreamButton10.ColorC = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.dreamButton10.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dreamButton10.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dreamButton10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dreamButton10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dreamButton10.ForeColor = System.Drawing.Color.White;
-            this.dreamButton10.Location = new System.Drawing.Point(343, 52);
-            this.dreamButton10.Name = "dreamButton10";
-            this.dreamButton10.Size = new System.Drawing.Size(82, 39);
-            this.dreamButton10.TabIndex = 57;
-            this.dreamButton10.Text = "البيئة";
-            this.dreamButton10.UseVisualStyleBackColor = true;
-            this.dreamButton10.Visible = false;
             // 
             // guna2CirclePictureBox3
             // 
@@ -2892,24 +2980,6 @@
             this.guna2CirclePictureBox3.TabIndex = 58;
             this.guna2CirclePictureBox3.TabStop = false;
             this.guna2CirclePictureBox3.Visible = false;
-            // 
-            // dreamButton9
-            // 
-            this.dreamButton9.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.dreamButton9.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.dreamButton9.ColorC = System.Drawing.Color.Olive;
-            this.dreamButton9.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dreamButton9.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dreamButton9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dreamButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dreamButton9.ForeColor = System.Drawing.Color.White;
-            this.dreamButton9.Location = new System.Drawing.Point(343, 6);
-            this.dreamButton9.Name = "dreamButton9";
-            this.dreamButton9.Size = new System.Drawing.Size(82, 39);
-            this.dreamButton9.TabIndex = 56;
-            this.dreamButton9.Text = "الحماية";
-            this.dreamButton9.UseVisualStyleBackColor = true;
-            this.dreamButton9.Visible = false;
             // 
             // skyButton3
             // 
@@ -2962,42 +3032,6 @@
             this.guna2CirclePictureBox6.TabIndex = 57;
             this.guna2CirclePictureBox6.TabStop = false;
             // 
-            // dreamButton5
-            // 
-            this.dreamButton5.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.dreamButton5.ColorB = System.Drawing.Color.YellowGreen;
-            this.dreamButton5.ColorC = System.Drawing.Color.YellowGreen;
-            this.dreamButton5.ColorD = System.Drawing.Color.White;
-            this.dreamButton5.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dreamButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dreamButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dreamButton5.ForeColor = System.Drawing.Color.White;
-            this.dreamButton5.Location = new System.Drawing.Point(431, 146);
-            this.dreamButton5.Name = "dreamButton5";
-            this.dreamButton5.Size = new System.Drawing.Size(109, 39);
-            this.dreamButton5.TabIndex = 52;
-            this.dreamButton5.Text = "دراسة مرورية";
-            this.dreamButton5.UseVisualStyleBackColor = true;
-            this.dreamButton5.Visible = false;
-            // 
-            // dreamButton4
-            // 
-            this.dreamButton4.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.dreamButton4.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.dreamButton4.ColorC = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.dreamButton4.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dreamButton4.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dreamButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dreamButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dreamButton4.ForeColor = System.Drawing.Color.White;
-            this.dreamButton4.Location = new System.Drawing.Point(431, 98);
-            this.dreamButton4.Name = "dreamButton4";
-            this.dreamButton4.Size = new System.Drawing.Size(109, 39);
-            this.dreamButton4.TabIndex = 51;
-            this.dreamButton4.Text = "موافقة البترول";
-            this.dreamButton4.UseVisualStyleBackColor = true;
-            this.dreamButton4.Visible = false;
-            // 
             // skyButton2
             // 
             this.skyButton2.BackColor = System.Drawing.Color.Transparent;
@@ -3035,24 +3069,6 @@
             this.skyButton2.TabIndex = 54;
             this.skyButton2.Text = "Excel";
             this.skyButton2.Click += new System.EventHandler(this.skyButton2_Click_1);
-            // 
-            // dreamButton3
-            // 
-            this.dreamButton3.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.dreamButton3.ColorB = System.Drawing.Color.Green;
-            this.dreamButton3.ColorC = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.dreamButton3.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dreamButton3.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dreamButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dreamButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dreamButton3.ForeColor = System.Drawing.Color.White;
-            this.dreamButton3.Location = new System.Drawing.Point(431, 52);
-            this.dreamButton3.Name = "dreamButton3";
-            this.dreamButton3.Size = new System.Drawing.Size(109, 39);
-            this.dreamButton3.TabIndex = 50;
-            this.dreamButton3.Text = "موافقة البيئة";
-            this.dreamButton3.UseVisualStyleBackColor = true;
-            this.dreamButton3.Visible = false;
             // 
             // skyButton1
             // 
@@ -3093,23 +3109,22 @@
             this.skyButton1.Visible = false;
             this.skyButton1.Click += new System.EventHandler(this.skyButton1_Click);
             // 
-            // dreamButton1
+            // dreamButton11
             // 
-            this.dreamButton1.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.dreamButton1.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.dreamButton1.ColorC = System.Drawing.Color.Olive;
-            this.dreamButton1.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dreamButton1.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dreamButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dreamButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dreamButton1.ForeColor = System.Drawing.Color.White;
-            this.dreamButton1.Location = new System.Drawing.Point(431, 6);
-            this.dreamButton1.Name = "dreamButton1";
-            this.dreamButton1.Size = new System.Drawing.Size(108, 39);
-            this.dreamButton1.TabIndex = 49;
-            this.dreamButton1.Text = "الحماية المدنية";
-            this.dreamButton1.UseVisualStyleBackColor = true;
-            this.dreamButton1.Visible = false;
+            this.dreamButton11.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.dreamButton11.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.dreamButton11.ColorC = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.dreamButton11.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dreamButton11.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dreamButton11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dreamButton11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dreamButton11.ForeColor = System.Drawing.Color.White;
+            this.dreamButton11.Location = new System.Drawing.Point(175, 603);
+            this.dreamButton11.Name = "dreamButton11";
+            this.dreamButton11.Size = new System.Drawing.Size(82, 39);
+            this.dreamButton11.TabIndex = 58;
+            this.dreamButton11.Text = "البترول";
+            this.dreamButton11.UseVisualStyleBackColor = true;
             // 
             // dreamButton22
             // 
@@ -3121,7 +3136,7 @@
             this.dreamButton22.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dreamButton22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dreamButton22.ForeColor = System.Drawing.Color.White;
-            this.dreamButton22.Location = new System.Drawing.Point(180, 535);
+            this.dreamButton22.Location = new System.Drawing.Point(21, 581);
             this.dreamButton22.Name = "dreamButton22";
             this.dreamButton22.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dreamButton22.Size = new System.Drawing.Size(115, 93);
@@ -3133,14 +3148,14 @@
             // advancedDataGridView1
             // 
             this.advancedDataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.advancedDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.advancedDataGridView1.FilterAndSortEnabled = true;
@@ -3159,6 +3174,23 @@
             this.advancedDataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.advancedDataGridView1_CellEndEdit);
             this.advancedDataGridView1.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.advancedDataGridView1_RowPrePaint);
             this.advancedDataGridView1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.advancedDataGridView1_Scroll);
+            // 
+            // dreamButton10
+            // 
+            this.dreamButton10.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.dreamButton10.ColorB = System.Drawing.Color.Green;
+            this.dreamButton10.ColorC = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.dreamButton10.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dreamButton10.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dreamButton10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dreamButton10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dreamButton10.ForeColor = System.Drawing.Color.White;
+            this.dreamButton10.Location = new System.Drawing.Point(175, 557);
+            this.dreamButton10.Name = "dreamButton10";
+            this.dreamButton10.Size = new System.Drawing.Size(82, 39);
+            this.dreamButton10.TabIndex = 57;
+            this.dreamButton10.Text = "البيئة";
+            this.dreamButton10.UseVisualStyleBackColor = true;
             // 
             // dreamButton19
             // 
@@ -3198,6 +3230,91 @@
             this.dreamButton14.Visible = false;
             this.dreamButton14.Click += new System.EventHandler(this.dreamButton14_Click_1);
             // 
+            // dreamButton9
+            // 
+            this.dreamButton9.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.dreamButton9.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.dreamButton9.ColorC = System.Drawing.Color.Olive;
+            this.dreamButton9.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dreamButton9.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dreamButton9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dreamButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dreamButton9.ForeColor = System.Drawing.Color.White;
+            this.dreamButton9.Location = new System.Drawing.Point(175, 511);
+            this.dreamButton9.Name = "dreamButton9";
+            this.dreamButton9.Size = new System.Drawing.Size(82, 39);
+            this.dreamButton9.TabIndex = 56;
+            this.dreamButton9.Text = "الحماية";
+            this.dreamButton9.UseVisualStyleBackColor = true;
+            // 
+            // dreamButton1
+            // 
+            this.dreamButton1.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.dreamButton1.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.dreamButton1.ColorC = System.Drawing.Color.Olive;
+            this.dreamButton1.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dreamButton1.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dreamButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dreamButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dreamButton1.ForeColor = System.Drawing.Color.White;
+            this.dreamButton1.Location = new System.Drawing.Point(263, 511);
+            this.dreamButton1.Name = "dreamButton1";
+            this.dreamButton1.Size = new System.Drawing.Size(108, 39);
+            this.dreamButton1.TabIndex = 49;
+            this.dreamButton1.Text = "الحماية المدنية";
+            this.dreamButton1.UseVisualStyleBackColor = true;
+            // 
+            // dreamButton3
+            // 
+            this.dreamButton3.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.dreamButton3.ColorB = System.Drawing.Color.Green;
+            this.dreamButton3.ColorC = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.dreamButton3.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dreamButton3.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dreamButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dreamButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dreamButton3.ForeColor = System.Drawing.Color.White;
+            this.dreamButton3.Location = new System.Drawing.Point(263, 557);
+            this.dreamButton3.Name = "dreamButton3";
+            this.dreamButton3.Size = new System.Drawing.Size(109, 39);
+            this.dreamButton3.TabIndex = 50;
+            this.dreamButton3.Text = "موافقة البيئة";
+            this.dreamButton3.UseVisualStyleBackColor = true;
+            // 
+            // dreamButton5
+            // 
+            this.dreamButton5.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.dreamButton5.ColorB = System.Drawing.Color.YellowGreen;
+            this.dreamButton5.ColorC = System.Drawing.Color.YellowGreen;
+            this.dreamButton5.ColorD = System.Drawing.Color.White;
+            this.dreamButton5.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dreamButton5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dreamButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dreamButton5.ForeColor = System.Drawing.Color.White;
+            this.dreamButton5.Location = new System.Drawing.Point(263, 646);
+            this.dreamButton5.Name = "dreamButton5";
+            this.dreamButton5.Size = new System.Drawing.Size(109, 39);
+            this.dreamButton5.TabIndex = 52;
+            this.dreamButton5.Text = "دراسة مرورية";
+            this.dreamButton5.UseVisualStyleBackColor = true;
+            // 
+            // dreamButton4
+            // 
+            this.dreamButton4.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.dreamButton4.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.dreamButton4.ColorC = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.dreamButton4.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dreamButton4.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dreamButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dreamButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dreamButton4.ForeColor = System.Drawing.Color.White;
+            this.dreamButton4.Location = new System.Drawing.Point(263, 603);
+            this.dreamButton4.Name = "dreamButton4";
+            this.dreamButton4.Size = new System.Drawing.Size(109, 39);
+            this.dreamButton4.TabIndex = 51;
+            this.dreamButton4.Text = "موافقة البترول";
+            this.dreamButton4.UseVisualStyleBackColor = true;
+            // 
             // dreamButton25
             // 
             this.dreamButton25.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
@@ -3214,7 +3331,6 @@
             this.dreamButton25.TabIndex = 122;
             this.dreamButton25.Text = "ملاحظات هامة";
             this.dreamButton25.UseVisualStyleBackColor = true;
-            //this.dreamButton25.Click += new System.EventHandler(this.dreamButton25_Click);
             // 
             // dreamButton21
             // 
@@ -3252,114 +3368,6 @@
             this.dreamButton13.UseVisualStyleBackColor = true;
             this.dreamButton13.Visible = false;
             this.dreamButton13.Click += new System.EventHandler(this.dreamButton13_Click);
-            // 
-            // dreamButton15
-            // 
-            this.dreamButton15.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.dreamButton15.ColorB = System.Drawing.Color.MediumSlateBlue;
-            this.dreamButton15.ColorC = System.Drawing.Color.BlueViolet;
-            this.dreamButton15.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dreamButton15.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dreamButton15.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dreamButton15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dreamButton15.ForeColor = System.Drawing.Color.White;
-            this.dreamButton15.Location = new System.Drawing.Point(310, 7);
-            this.dreamButton15.Name = "dreamButton15";
-            this.dreamButton15.Size = new System.Drawing.Size(82, 39);
-            this.dreamButton15.TabIndex = 61;
-            this.dreamButton15.Text = "رخصة";
-            this.dreamButton15.UseVisualStyleBackColor = true;
-            this.dreamButton15.Visible = false;
-            // 
-            // dreamButton16
-            // 
-            this.dreamButton16.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.dreamButton16.ColorB = System.Drawing.Color.MediumSlateBlue;
-            this.dreamButton16.ColorC = System.Drawing.Color.BlueViolet;
-            this.dreamButton16.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dreamButton16.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dreamButton16.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dreamButton16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dreamButton16.ForeColor = System.Drawing.Color.White;
-            this.dreamButton16.Location = new System.Drawing.Point(410, 7);
-            this.dreamButton16.Name = "dreamButton16";
-            this.dreamButton16.Size = new System.Drawing.Size(109, 39);
-            this.dreamButton16.TabIndex = 60;
-            this.dreamButton16.Text = "رخصة التشغيل";
-            this.dreamButton16.UseVisualStyleBackColor = true;
-            this.dreamButton16.Visible = false;
-            // 
-            // dreamButton8
-            // 
-            this.dreamButton8.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.dreamButton8.ColorB = System.Drawing.Color.Aqua;
-            this.dreamButton8.ColorC = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.dreamButton8.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dreamButton8.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dreamButton8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dreamButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dreamButton8.ForeColor = System.Drawing.Color.White;
-            this.dreamButton8.Location = new System.Drawing.Point(652, 7);
-            this.dreamButton8.Name = "dreamButton8";
-            this.dreamButton8.Size = new System.Drawing.Size(82, 39);
-            this.dreamButton8.TabIndex = 55;
-            this.dreamButton8.Text = "الطيران";
-            this.dreamButton8.UseVisualStyleBackColor = true;
-            this.dreamButton8.Visible = false;
-            // 
-            // dreamButton7
-            // 
-            this.dreamButton7.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.dreamButton7.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.dreamButton7.ColorC = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.dreamButton7.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dreamButton7.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dreamButton7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dreamButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dreamButton7.ForeColor = System.Drawing.Color.White;
-            this.dreamButton7.Location = new System.Drawing.Point(652, 52);
-            this.dreamButton7.Name = "dreamButton7";
-            this.dreamButton7.Size = new System.Drawing.Size(82, 39);
-            this.dreamButton7.TabIndex = 54;
-            this.dreamButton7.Text = "نموذج 8";
-            this.dreamButton7.UseVisualStyleBackColor = true;
-            this.dreamButton7.Visible = false;
-            // 
-            // dreamButton6
-            // 
-            this.dreamButton6.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.dreamButton6.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.dreamButton6.ColorC = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.dreamButton6.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dreamButton6.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dreamButton6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dreamButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dreamButton6.ForeColor = System.Drawing.Color.White;
-            this.dreamButton6.Location = new System.Drawing.Point(757, 52);
-            this.dreamButton6.Name = "dreamButton6";
-            this.dreamButton6.Size = new System.Drawing.Size(108, 39);
-            this.dreamButton6.TabIndex = 53;
-            this.dreamButton6.Text = "نموذج 8";
-            this.dreamButton6.UseVisualStyleBackColor = true;
-            this.dreamButton6.Visible = false;
-            // 
-            // dreamButton2
-            // 
-            this.dreamButton2.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.dreamButton2.ColorB = System.Drawing.Color.Aqua;
-            this.dreamButton2.ColorC = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.dreamButton2.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dreamButton2.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dreamButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dreamButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dreamButton2.ForeColor = System.Drawing.Color.White;
-            this.dreamButton2.Location = new System.Drawing.Point(757, 7);
-            this.dreamButton2.Name = "dreamButton2";
-            this.dreamButton2.Size = new System.Drawing.Size(108, 39);
-            this.dreamButton2.TabIndex = 48;
-            this.dreamButton2.Text = "موافقة الطيران";
-            this.dreamButton2.UseVisualStyleBackColor = true;
-            this.dreamButton2.Visible = false;
             // 
             // dreamButton20
             // 
@@ -3527,28 +3535,28 @@
             // advancedDataGridView3
             // 
             this.advancedDataGridView3.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(2);
-            this.advancedDataGridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(2);
+            this.advancedDataGridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
             this.advancedDataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.advancedDataGridView3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.advancedDataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridView3.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridView3.DefaultCellStyle = dataGridViewCellStyle19;
             this.advancedDataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.advancedDataGridView3.FilterAndSortEnabled = true;
             this.advancedDataGridView3.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
@@ -3556,19 +3564,19 @@
             this.advancedDataGridView3.MaxFilterButtonImageHeight = 23;
             this.advancedDataGridView3.Name = "advancedDataGridView3";
             this.advancedDataGridView3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.advancedDataGridView3.RowHeadersWidth = 100;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(2);
-            this.advancedDataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.Padding = new System.Windows.Forms.Padding(2);
+            this.advancedDataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle21;
             this.advancedDataGridView3.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(2);
             this.advancedDataGridView3.RowTemplate.Height = 40;
             this.advancedDataGridView3.Size = new System.Drawing.Size(1323, 679);
@@ -3582,16 +3590,10 @@
             this.panel2.Controls.Add(this.dreamButton25);
             this.panel2.Controls.Add(this.dreamButton13);
             this.panel2.Controls.Add(this.dreamButton21);
-            this.panel2.Controls.Add(this.dreamButton15);
             this.panel2.Controls.Add(this.guna2CircleButton2);
-            this.panel2.Controls.Add(this.dreamButton16);
-            this.panel2.Controls.Add(this.dreamButton7);
-            this.panel2.Controls.Add(this.dreamButton8);
-            this.panel2.Controls.Add(this.dreamButton6);
             this.panel2.Controls.Add(this.guna2CircleButton7);
             this.panel2.Controls.Add(this.dreamButton20);
             this.panel2.Controls.Add(this.dreamButton17);
-            this.panel2.Controls.Add(this.dreamButton2);
             this.panel2.Controls.Add(this.dreamButton18);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 887);
@@ -3643,6 +3645,128 @@
             this.guna2CircleButton6.Text = "السابق";
             this.guna2CircleButton6.Click += new System.EventHandler(this.guna2CircleButton6_Click);
             // 
+            // dATABASE2DataSet
+            // 
+            this.dATABASE2DataSet.DataSetName = "DATABASE2DataSet";
+            this.dATABASE2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // accessBindingSource
+            // 
+            this.accessBindingSource.DataMember = "access";
+            this.accessBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // accessTableAdapter
+            // 
+            this.accessTableAdapter.ClearBeforeFill = true;
+            // 
+            // approvalsBindingSource
+            // 
+            this.approvalsBindingSource.DataMember = "approvals";
+            this.approvalsBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // approvalsTableAdapter
+            // 
+            this.approvalsTableAdapter.ClearBeforeFill = true;
+            // 
+            // documentsBindingSource
+            // 
+            this.documentsBindingSource.DataMember = "documents";
+            this.documentsBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // documentsTableAdapter
+            // 
+            this.documentsTableAdapter.ClearBeforeFill = true;
+            // 
+            // functionsBindingSource
+            // 
+            this.functionsBindingSource.DataMember = "functions";
+            this.functionsBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // functionsTableAdapter
+            // 
+            this.functionsTableAdapter.ClearBeforeFill = true;
+            // 
+            // governorateBindingSource
+            // 
+            this.governorateBindingSource.DataMember = "governorate";
+            this.governorateBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // governorateTableAdapter
+            // 
+            this.governorateTableAdapter.ClearBeforeFill = true;
+            // 
+            // landsBindingSource
+            // 
+            this.landsBindingSource.DataMember = "lands";
+            this.landsBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // landsTableAdapter
+            // 
+            this.landsTableAdapter.ClearBeforeFill = true;
+            // 
+            // pagesBindingSource
+            // 
+            this.pagesBindingSource.DataMember = "pages";
+            this.pagesBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // pagesTableAdapter
+            // 
+            this.pagesTableAdapter.ClearBeforeFill = true;
+            // 
+            // projectsBindingSource
+            // 
+            this.projectsBindingSource.DataMember = "projects";
+            this.projectsBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // projectsTableAdapter
+            // 
+            this.projectsTableAdapter.ClearBeforeFill = true;
+            // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataMember = "users";
+            this.usersBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // usersTableAdapter
+            // 
+            this.usersTableAdapter.ClearBeforeFill = true;
+            // 
+            // rolesBindingSource
+            // 
+            this.rolesBindingSource.DataMember = "roles";
+            this.rolesBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // rolesTableAdapter
+            // 
+            this.rolesTableAdapter.ClearBeforeFill = true;
+            // 
+            // investmentsBindingSource
+            // 
+            this.investmentsBindingSource.DataMember = "investments";
+            this.investmentsBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // investmentsTableAdapter
+            // 
+            this.investmentsTableAdapter.ClearBeforeFill = true;
+            // 
+            // getFullProjectDataBindingSource
+            // 
+            this.getFullProjectDataBindingSource.DataMember = "GetFullProjectData";
+            this.getFullProjectDataBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // getFullProjectDataTableAdapter
+            // 
+            this.getFullProjectDataTableAdapter.ClearBeforeFill = true;
+            // 
+            // notepageBindingSource
+            // 
+            this.notepageBindingSource.DataMember = "Note_page";
+            this.notepageBindingSource.DataSource = this.dATABASE2DataSet;
+            // 
+            // note_pageTableAdapter
+            // 
+            this.note_pageTableAdapter.ClearBeforeFill = true;
+            // 
             // ProjectsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3668,20 +3792,6 @@
             this.Leave += new System.EventHandler(this.ProjectsControl_Leave);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dATABASE2DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accessBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.approvalsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.functionsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.governorateBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.landsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.investmentsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getFullProjectDataBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.notepageBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.guna2Panel6.ResumeLayout(false);
             this.guna2Panel6.PerformLayout();
@@ -3693,6 +3803,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView2)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Error_Civil_Study)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Error_Transaction_number)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Error_Model_8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Error_Environmental)).EndInit();
@@ -3722,6 +3833,20 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView3)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dATABASE2DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accessBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.approvalsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.functionsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.governorateBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.landsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.investmentsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getFullProjectDataBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notepageBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3932,5 +4057,13 @@
         private ReaLTaiizor.Controls.DreamButton dreamButton24;
         private ReaLTaiizor.Controls.DreamButton dreamButton25;
         private ReaLTaiizor.Controls.DreamButton dreamButton26;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox Error_Civil_Study;
+        private ReaLTaiizor.Controls.NightLabel nightLabel15;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton12;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel9;
+        private Guna.UI2.WinForms.Guna2ComboBox Civil_Study_COB;
+        private ReaLTaiizor.Controls.DungeonLabel dungeonLabel22;
+        private ReaLTaiizor.Controls.DreamButton dreamButton27;
+        private ReaLTaiizor.Controls.DreamButton dreamButton28;
     }
 }

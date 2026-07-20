@@ -3637,6 +3637,8 @@ namespace DemoProject {
             
             private global::System.Data.DataColumn columnName_Projects;
             
+            private global::System.Data.DataColumn columnCivil_Defense_Study_status;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public projectsDataTable() {
@@ -3832,6 +3834,14 @@ namespace DemoProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Civil_Defense_Study_statusColumn {
+                get {
+                    return this.columnCivil_Defense_Study_status;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3887,7 +3897,8 @@ namespace DemoProject {
                         string Architectural_and_Structural_Board, 
                         string Reconciliation_Form_Stamp, 
                         string Consultant_Surveying, 
-                        string Name_Projects) {
+                        string Name_Projects, 
+                        string Civil_Defense_Study_status) {
                 projectsRow rowprojectsRow = ((projectsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         project_id,
@@ -3909,7 +3920,8 @@ namespace DemoProject {
                         Architectural_and_Structural_Board,
                         Reconciliation_Form_Stamp,
                         Consultant_Surveying,
-                        Name_Projects};
+                        Name_Projects,
+                        Civil_Defense_Study_status};
                 if ((parentgovernorateRowByFK__projects__govern__14E61A24 != null)) {
                     columnValuesArray[2] = parentgovernorateRowByFK__projects__govern__14E61A24[0];
                 }
@@ -3965,6 +3977,7 @@ namespace DemoProject {
                 this.columnReconciliation_Form_Stamp = base.Columns["Reconciliation_Form_Stamp"];
                 this.columnConsultant_Surveying = base.Columns["Consultant_Surveying"];
                 this.columnName_Projects = base.Columns["Name_Projects"];
+                this.columnCivil_Defense_Study_status = base.Columns["Civil_Defense_Study_status"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4010,6 +4023,8 @@ namespace DemoProject {
                 base.Columns.Add(this.columnConsultant_Surveying);
                 this.columnName_Projects = new global::System.Data.DataColumn("Name_Projects", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName_Projects);
+                this.columnCivil_Defense_Study_status = new global::System.Data.DataColumn("Civil_Defense_Study_status", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCivil_Defense_Study_status);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnproject_id}, true));
                 this.columnproject_id.AllowDBNull = false;
@@ -4030,6 +4045,7 @@ namespace DemoProject {
                 this.columnReconciliation_Form_Stamp.MaxLength = 255;
                 this.columnConsultant_Surveying.MaxLength = 255;
                 this.columnName_Projects.MaxLength = 255;
+                this.columnCivil_Defense_Study_status.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9621,6 +9637,22 @@ namespace DemoProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Civil_Defense_Study_status {
+                get {
+                    try {
+                        return ((string)(this[this.tableprojects.Civil_Defense_Study_statusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Civil_Defense_Study_status\' in table \'projects\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableprojects.Civil_Defense_Study_statusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public governorateRow governorateRow {
                 get {
                     return ((governorateRow)(this.GetParentRow(this.Table.ParentRelations["FK__projects__govern__14E61A24"])));
@@ -9867,6 +9899,18 @@ namespace DemoProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetName_ProjectsNull() {
                 this[this.tableprojects.Name_ProjectsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCivil_Defense_Study_statusNull() {
+                return this.IsNull(this.tableprojects.Civil_Defense_Study_statusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCivil_Defense_Study_statusNull() {
+                this[this.tableprojects.Civil_Defense_Study_statusColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18150,6 +18194,7 @@ SELECT id, Page_name, role_id FROM pages WHERE (id = @id)";
             tableMapping.ColumnMappings.Add("Reconciliation_Form_Stamp", "Reconciliation_Form_Stamp");
             tableMapping.ColumnMappings.Add("Consultant_Surveying", "Consultant_Surveying");
             tableMapping.ColumnMappings.Add("Name_Projects", "Name_Projects");
+            tableMapping.ColumnMappings.Add("Civil_Defense_Study_status", "Civil_Defense_Study_status");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -18186,7 +18231,9 @@ SELECT id, Page_name, role_id FROM pages WHERE (id = @id)";
                 "on_Form_Stamp)) AND ((@IsNull_Consultant_Surveying = 1 AND [Consultant_Surveying" +
                 "] IS NULL) OR ([Consultant_Surveying] = @Original_Consultant_Surveying)) AND ((@" +
                 "IsNull_Name_Projects = 1 AND [Name_Projects] IS NULL) OR ([Name_Projects] = @Ori" +
-                "ginal_Name_Projects)))";
+                "ginal_Name_Projects)) AND ((@IsNull_Civil_Defense_Study_status = 1 AND [Civil_De" +
+                "fense_Study_status] IS NULL) OR ([Civil_Defense_Study_status] = @Original_Civil_" +
+                "Defense_Study_status)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_project_id", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "project_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_project_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "project_name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -18227,10 +18274,29 @@ SELECT id, Page_name, role_id FROM pages WHERE (id = @id)";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Consultant_Surveying", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consultant_Surveying", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Name_Projects", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name_Projects", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name_Projects", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name_Projects", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Civil_Defense_Study_status", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Civil_Defense_Study_status", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Civil_Defense_Study_status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Civil_Defense_Study_status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [projects] ([project_id], [project_name], [governorate_fk], [Civil_Defense_Approval_status], [Environmental_Approval_status], [Traffic_Study_Status], [Model_8_Status], [Petroleum_Ministry_Approval_status], [Civil_Aviation_Approval_status], [land_fk], [Transaction_number], [Contract_expiry_date], [Total_stores], [Total_rented], [Total_Not_rented], [Secured_certificate], [Architectural_and_Structural_Board], [Reconciliation_Form_Stamp], [Consultant_Surveying], [Name_Projects]) VALUES (@project_id, @project_name, @governorate_fk, @Civil_Defense_Approval_status, @Environmental_Approval_status, @Traffic_Study_Status, @Model_8_Status, @Petroleum_Ministry_Approval_status, @Civil_Aviation_Approval_status, @land_fk, @Transaction_number, @Contract_expiry_date, @Total_stores, @Total_rented, @Total_Not_rented, @Secured_certificate, @Architectural_and_Structural_Board, @Reconciliation_Form_Stamp, @Consultant_Surveying, @Name_Projects);
-SELECT project_id, project_name, governorate_fk, Civil_Defense_Approval_status, Environmental_Approval_status, Traffic_Study_Status, Model_8_Status, Petroleum_Ministry_Approval_status, Civil_Aviation_Approval_status, land_fk, Transaction_number, Contract_expiry_date, Total_stores, Total_rented, Total_Not_rented, Secured_certificate, Architectural_and_Structural_Board, Reconciliation_Form_Stamp, Consultant_Surveying, Name_Projects FROM projects WHERE (project_id = @project_id)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [projects] ([project_id], [project_name], [governorate_fk], [Civil_De" +
+                "fense_Approval_status], [Environmental_Approval_status], [Traffic_Study_Status]," +
+                " [Model_8_Status], [Petroleum_Ministry_Approval_status], [Civil_Aviation_Approva" +
+                "l_status], [land_fk], [Transaction_number], [Contract_expiry_date], [Total_store" +
+                "s], [Total_rented], [Total_Not_rented], [Secured_certificate], [Architectural_an" +
+                "d_Structural_Board], [Reconciliation_Form_Stamp], [Consultant_Surveying], [Name_" +
+                "Projects], [Civil_Defense_Study_status]) VALUES (@project_id, @project_name, @go" +
+                "vernorate_fk, @Civil_Defense_Approval_status, @Environmental_Approval_status, @T" +
+                "raffic_Study_Status, @Model_8_Status, @Petroleum_Ministry_Approval_status, @Civi" +
+                "l_Aviation_Approval_status, @land_fk, @Transaction_number, @Contract_expiry_date" +
+                ", @Total_stores, @Total_rented, @Total_Not_rented, @Secured_certificate, @Archit" +
+                "ectural_and_Structural_Board, @Reconciliation_Form_Stamp, @Consultant_Surveying," +
+                " @Name_Projects, @Civil_Defense_Study_status);\r\nSELECT project_id, project_name," +
+                " governorate_fk, Civil_Defense_Approval_status, Environmental_Approval_status, T" +
+                "raffic_Study_Status, Model_8_Status, Petroleum_Ministry_Approval_status, Civil_A" +
+                "viation_Approval_status, land_fk, Transaction_number, Contract_expiry_date, Tota" +
+                "l_stores, Total_rented, Total_Not_rented, Secured_certificate, Architectural_and" +
+                "_Structural_Board, Reconciliation_Form_Stamp, Consultant_Surveying, Name_Project" +
+                "s, Civil_Defense_Study_status FROM projects WHERE (project_id = @project_id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@project_id", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "project_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@project_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "project_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -18252,6 +18318,7 @@ SELECT project_id, project_name, governorate_fk, Civil_Defense_Approval_status, 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reconciliation_Form_Stamp", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reconciliation_Form_Stamp", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Consultant_Surveying", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consultant_Surveying", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name_Projects", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name_Projects", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Civil_Defense_Study_status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Civil_Defense_Study_status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [projects] SET [project_id] = @project_id, [project_name] = @project_name," +
@@ -18265,46 +18332,50 @@ SELECT project_id, project_name, governorate_fk, Civil_Defense_Approval_status, 
                 "@Total_rented, [Total_Not_rented] = @Total_Not_rented, [Secured_certificate] = @" +
                 "Secured_certificate, [Architectural_and_Structural_Board] = @Architectural_and_S" +
                 "tructural_Board, [Reconciliation_Form_Stamp] = @Reconciliation_Form_Stamp, [Cons" +
-                "ultant_Surveying] = @Consultant_Surveying, [Name_Projects] = @Name_Projects WHER" +
-                "E (([project_id] = @Original_project_id) AND ((@IsNull_project_name = 1 AND [pro" +
-                "ject_name] IS NULL) OR ([project_name] = @Original_project_name)) AND ((@IsNull_" +
-                "governorate_fk = 1 AND [governorate_fk] IS NULL) OR ([governorate_fk] = @Origina" +
-                "l_governorate_fk)) AND ((@IsNull_Civil_Defense_Approval_status = 1 AND [Civil_De" +
-                "fense_Approval_status] IS NULL) OR ([Civil_Defense_Approval_status] = @Original_" +
-                "Civil_Defense_Approval_status)) AND ((@IsNull_Environmental_Approval_status = 1 " +
-                "AND [Environmental_Approval_status] IS NULL) OR ([Environmental_Approval_status]" +
-                " = @Original_Environmental_Approval_status)) AND ((@IsNull_Traffic_Study_Status " +
-                "= 1 AND [Traffic_Study_Status] IS NULL) OR ([Traffic_Study_Status] = @Original_T" +
-                "raffic_Study_Status)) AND ((@IsNull_Model_8_Status = 1 AND [Model_8_Status] IS N" +
-                "ULL) OR ([Model_8_Status] = @Original_Model_8_Status)) AND ((@IsNull_Petroleum_M" +
-                "inistry_Approval_status = 1 AND [Petroleum_Ministry_Approval_status] IS NULL) OR" +
-                " ([Petroleum_Ministry_Approval_status] = @Original_Petroleum_Ministry_Approval_s" +
-                "tatus)) AND ((@IsNull_Civil_Aviation_Approval_status = 1 AND [Civil_Aviation_App" +
-                "roval_status] IS NULL) OR ([Civil_Aviation_Approval_status] = @Original_Civil_Av" +
-                "iation_Approval_status)) AND ((@IsNull_land_fk = 1 AND [land_fk] IS NULL) OR ([l" +
-                "and_fk] = @Original_land_fk)) AND ((@IsNull_Transaction_number = 1 AND [Transact" +
-                "ion_number] IS NULL) OR ([Transaction_number] = @Original_Transaction_number)) A" +
-                "ND ((@IsNull_Contract_expiry_date = 1 AND [Contract_expiry_date] IS NULL) OR ([C" +
-                "ontract_expiry_date] = @Original_Contract_expiry_date)) AND ((@IsNull_Total_stor" +
-                "es = 1 AND [Total_stores] IS NULL) OR ([Total_stores] = @Original_Total_stores))" +
-                " AND ((@IsNull_Total_rented = 1 AND [Total_rented] IS NULL) OR ([Total_rented] =" +
-                " @Original_Total_rented)) AND ((@IsNull_Total_Not_rented = 1 AND [Total_Not_rent" +
-                "ed] IS NULL) OR ([Total_Not_rented] = @Original_Total_Not_rented)) AND ((@IsNull" +
-                "_Secured_certificate = 1 AND [Secured_certificate] IS NULL) OR ([Secured_certifi" +
-                "cate] = @Original_Secured_certificate)) AND ((@IsNull_Architectural_and_Structur" +
-                "al_Board = 1 AND [Architectural_and_Structural_Board] IS NULL) OR ([Architectura" +
-                "l_and_Structural_Board] = @Original_Architectural_and_Structural_Board)) AND ((@" +
-                "IsNull_Reconciliation_Form_Stamp = 1 AND [Reconciliation_Form_Stamp] IS NULL) OR" +
-                " ([Reconciliation_Form_Stamp] = @Original_Reconciliation_Form_Stamp)) AND ((@IsN" +
-                "ull_Consultant_Surveying = 1 AND [Consultant_Surveying] IS NULL) OR ([Consultant" +
-                "_Surveying] = @Original_Consultant_Surveying)) AND ((@IsNull_Name_Projects = 1 A" +
-                "ND [Name_Projects] IS NULL) OR ([Name_Projects] = @Original_Name_Projects)));\r\nS" +
-                "ELECT project_id, project_name, governorate_fk, Civil_Defense_Approval_status, E" +
-                "nvironmental_Approval_status, Traffic_Study_Status, Model_8_Status, Petroleum_Mi" +
-                "nistry_Approval_status, Civil_Aviation_Approval_status, land_fk, Transaction_num" +
-                "ber, Contract_expiry_date, Total_stores, Total_rented, Total_Not_rented, Secured" +
-                "_certificate, Architectural_and_Structural_Board, Reconciliation_Form_Stamp, Con" +
-                "sultant_Surveying, Name_Projects FROM projects WHERE (project_id = @project_id)";
+                "ultant_Surveying] = @Consultant_Surveying, [Name_Projects] = @Name_Projects, [Ci" +
+                "vil_Defense_Study_status] = @Civil_Defense_Study_status WHERE (([project_id] = @" +
+                "Original_project_id) AND ((@IsNull_project_name = 1 AND [project_name] IS NULL) " +
+                "OR ([project_name] = @Original_project_name)) AND ((@IsNull_governorate_fk = 1 A" +
+                "ND [governorate_fk] IS NULL) OR ([governorate_fk] = @Original_governorate_fk)) A" +
+                "ND ((@IsNull_Civil_Defense_Approval_status = 1 AND [Civil_Defense_Approval_statu" +
+                "s] IS NULL) OR ([Civil_Defense_Approval_status] = @Original_Civil_Defense_Approv" +
+                "al_status)) AND ((@IsNull_Environmental_Approval_status = 1 AND [Environmental_A" +
+                "pproval_status] IS NULL) OR ([Environmental_Approval_status] = @Original_Environ" +
+                "mental_Approval_status)) AND ((@IsNull_Traffic_Study_Status = 1 AND [Traffic_Stu" +
+                "dy_Status] IS NULL) OR ([Traffic_Study_Status] = @Original_Traffic_Study_Status)" +
+                ") AND ((@IsNull_Model_8_Status = 1 AND [Model_8_Status] IS NULL) OR ([Model_8_St" +
+                "atus] = @Original_Model_8_Status)) AND ((@IsNull_Petroleum_Ministry_Approval_sta" +
+                "tus = 1 AND [Petroleum_Ministry_Approval_status] IS NULL) OR ([Petroleum_Ministr" +
+                "y_Approval_status] = @Original_Petroleum_Ministry_Approval_status)) AND ((@IsNul" +
+                "l_Civil_Aviation_Approval_status = 1 AND [Civil_Aviation_Approval_status] IS NUL" +
+                "L) OR ([Civil_Aviation_Approval_status] = @Original_Civil_Aviation_Approval_stat" +
+                "us)) AND ((@IsNull_land_fk = 1 AND [land_fk] IS NULL) OR ([land_fk] = @Original_" +
+                "land_fk)) AND ((@IsNull_Transaction_number = 1 AND [Transaction_number] IS NULL)" +
+                " OR ([Transaction_number] = @Original_Transaction_number)) AND ((@IsNull_Contrac" +
+                "t_expiry_date = 1 AND [Contract_expiry_date] IS NULL) OR ([Contract_expiry_date]" +
+                " = @Original_Contract_expiry_date)) AND ((@IsNull_Total_stores = 1 AND [Total_st" +
+                "ores] IS NULL) OR ([Total_stores] = @Original_Total_stores)) AND ((@IsNull_Total" +
+                "_rented = 1 AND [Total_rented] IS NULL) OR ([Total_rented] = @Original_Total_ren" +
+                "ted)) AND ((@IsNull_Total_Not_rented = 1 AND [Total_Not_rented] IS NULL) OR ([To" +
+                "tal_Not_rented] = @Original_Total_Not_rented)) AND ((@IsNull_Secured_certificate" +
+                " = 1 AND [Secured_certificate] IS NULL) OR ([Secured_certificate] = @Original_Se" +
+                "cured_certificate)) AND ((@IsNull_Architectural_and_Structural_Board = 1 AND [Ar" +
+                "chitectural_and_Structural_Board] IS NULL) OR ([Architectural_and_Structural_Boa" +
+                "rd] = @Original_Architectural_and_Structural_Board)) AND ((@IsNull_Reconciliatio" +
+                "n_Form_Stamp = 1 AND [Reconciliation_Form_Stamp] IS NULL) OR ([Reconciliation_Fo" +
+                "rm_Stamp] = @Original_Reconciliation_Form_Stamp)) AND ((@IsNull_Consultant_Surve" +
+                "ying = 1 AND [Consultant_Surveying] IS NULL) OR ([Consultant_Surveying] = @Origi" +
+                "nal_Consultant_Surveying)) AND ((@IsNull_Name_Projects = 1 AND [Name_Projects] I" +
+                "S NULL) OR ([Name_Projects] = @Original_Name_Projects)) AND ((@IsNull_Civil_Defe" +
+                "nse_Study_status = 1 AND [Civil_Defense_Study_status] IS NULL) OR ([Civil_Defens" +
+                "e_Study_status] = @Original_Civil_Defense_Study_status)));\r\nSELECT project_id, p" +
+                "roject_name, governorate_fk, Civil_Defense_Approval_status, Environmental_Approv" +
+                "al_status, Traffic_Study_Status, Model_8_Status, Petroleum_Ministry_Approval_sta" +
+                "tus, Civil_Aviation_Approval_status, land_fk, Transaction_number, Contract_expir" +
+                "y_date, Total_stores, Total_rented, Total_Not_rented, Secured_certificate, Archi" +
+                "tectural_and_Structural_Board, Reconciliation_Form_Stamp, Consultant_Surveying, " +
+                "Name_Projects, Civil_Defense_Study_status FROM projects WHERE (project_id = @pro" +
+                "ject_id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@project_id", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "project_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@project_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "project_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -18326,6 +18397,7 @@ SELECT project_id, project_name, governorate_fk, Civil_Defense_Approval_status, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reconciliation_Form_Stamp", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reconciliation_Form_Stamp", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Consultant_Surveying", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consultant_Surveying", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name_Projects", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name_Projects", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Civil_Defense_Study_status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Civil_Defense_Study_status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_project_id", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "project_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_project_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "project_name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_project_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "project_name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -18365,6 +18437,8 @@ SELECT project_id, project_name, governorate_fk, Civil_Defense_Approval_status, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Consultant_Surveying", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consultant_Surveying", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Name_Projects", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name_Projects", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name_Projects", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name_Projects", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Civil_Defense_Study_status", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Civil_Defense_Study_status", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Civil_Defense_Study_status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Civil_Defense_Study_status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18381,7 +18455,7 @@ SELECT project_id, project_name, governorate_fk, Civil_Defense_Approval_status, 
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        project_id, project_name, governorate_fk, Civil_Defense_Approval_status, Environmental_Approval_status, Traffic_Study_Status, Model_8_Status, Petroleum_Ministry_Approval_status, Civil_Aviation_Approval_status, land_fk, 
-                         Transaction_number, Contract_expiry_date, Total_stores, Total_rented, Total_Not_rented, Secured_certificate, Architectural_and_Structural_Board, Reconciliation_Form_Stamp, Consultant_Surveying, Name_Projects
+                         Transaction_number, Contract_expiry_date, Total_stores, Total_rented, Total_Not_rented, Secured_certificate, Architectural_and_Structural_Board, Reconciliation_Form_Stamp, Consultant_Surveying, Name_Projects,Civil_Defense_Study_status
 FROM            projects";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
@@ -18391,7 +18465,7 @@ FROM            projects";
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@project_id", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "project_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT Architectural_and_Structural_Board, Civil_Aviation_Approval_status, Civil_Defense_Approval_status, Consultant_Surveying, Contract_expiry_date, Environmental_Approval_status, Model_8_Status, Name_Projects, Petroleum_Ministry_Approval_status, Reconciliation_Form_Stamp, Secured_certificate, Total_Not_rented, Total_rented, Total_stores, Traffic_Study_Status, Transaction_number, governorate_fk, land_fk, project_id, project_name FROM projects WHERE (project_id = @project_id)";
+            this._commandCollection[2].CommandText = @"SELECT Architectural_and_Structural_Board, Civil_Aviation_Approval_status, Civil_Defense_Approval_status, Civil_Defense_Study_status, Consultant_Surveying, Contract_expiry_date, Environmental_Approval_status, Model_8_Status, Name_Projects, Petroleum_Ministry_Approval_status, Reconciliation_Form_Stamp, Secured_certificate, Total_Not_rented, Total_rented, Total_stores, Traffic_Study_Status, Transaction_number, governorate_fk, land_fk, project_id, project_name FROM projects WHERE (project_id = @project_id)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@project_id", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "project_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
@@ -18401,7 +18475,7 @@ SET                project_name = @project_name, governorate_fk = @governorate_f
                          Traffic_Study_Status = @Traffic_Study_Status, Model_8_Status = @Model_8_Status, Petroleum_Ministry_Approval_status = @Petroleum_Ministry_Approval_status, 
                          Civil_Aviation_Approval_status = @Civil_Aviation_Approval_status, land_fk = @land_fk, Transaction_number = @Transaction_number, Contract_expiry_date = @Contract_expiry_date, Total_stores = @Total_stores, 
                          Total_rented = @Total_rented, Total_Not_rented = @Total_Not_rented, Secured_certificate = @Secured_certificate, Architectural_and_Structural_Board = @Architectural_and_Structural_Board, 
-                         Reconciliation_Form_Stamp = @Reconciliation_Form_Stamp, Consultant_Surveying = @Consultant_Surveying, Name_Projects = @Name_Projects
+                         Reconciliation_Form_Stamp = @Reconciliation_Form_Stamp, Consultant_Surveying = @Consultant_Surveying, Name_Projects = @Name_Projects , Civil_Defense_Study_status = @Civil_Defense_Study_status
 WHERE        (project_id = @project_id)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@project_name", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "project_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -18423,6 +18497,7 @@ WHERE        (project_id = @project_id)";
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reconciliation_Form_Stamp", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Reconciliation_Form_Stamp", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Consultant_Surveying", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Consultant_Surveying", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name_Projects", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Name_Projects", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Civil_Defense_Study_status", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Civil_Defense_Study_status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@project_id", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "project_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -18520,7 +18595,8 @@ WHERE        (project_id = @project_id)";
                     string Original_Architectural_and_Structural_Board, 
                     string Original_Reconciliation_Form_Stamp, 
                     string Original_Consultant_Surveying, 
-                    string Original_Name_Projects) {
+                    string Original_Name_Projects, 
+                    string Original_Civil_Defense_Study_status) {
             if ((Original_project_id == null)) {
                 throw new global::System.ArgumentNullException("Original_project_id");
             }
@@ -18679,6 +18755,14 @@ WHERE        (project_id = @project_id)";
                 this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[38].Value = ((string)(Original_Name_Projects));
             }
+            if ((Original_Civil_Defense_Study_status == null)) {
+                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[40].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[40].Value = ((string)(Original_Civil_Defense_Study_status));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18719,7 +18803,8 @@ WHERE        (project_id = @project_id)";
                     string Architectural_and_Structural_Board, 
                     string Reconciliation_Form_Stamp, 
                     string Consultant_Surveying, 
-                    string Name_Projects) {
+                    string Name_Projects, 
+                    string Civil_Defense_Study_status) {
             if ((project_id == null)) {
                 throw new global::System.ArgumentNullException("project_id");
             }
@@ -18840,6 +18925,12 @@ WHERE        (project_id = @project_id)";
             else {
                 this.Adapter.InsertCommand.Parameters[19].Value = ((string)(Name_Projects));
             }
+            if ((Civil_Defense_Study_status == null)) {
+                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(Civil_Defense_Study_status));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18881,6 +18972,7 @@ WHERE        (project_id = @project_id)";
                     string Reconciliation_Form_Stamp, 
                     string Consultant_Surveying, 
                     string Name_Projects, 
+                    string Civil_Defense_Study_status, 
                     string Original_project_id, 
                     string Original_project_name, 
                     string Original_governorate_fk, 
@@ -18900,7 +18992,8 @@ WHERE        (project_id = @project_id)";
                     string Original_Architectural_and_Structural_Board, 
                     string Original_Reconciliation_Form_Stamp, 
                     string Original_Consultant_Surveying, 
-                    string Original_Name_Projects) {
+                    string Original_Name_Projects, 
+                    string Original_Civil_Defense_Study_status) {
             if ((project_id == null)) {
                 throw new global::System.ArgumentNullException("project_id");
             }
@@ -19021,163 +19114,177 @@ WHERE        (project_id = @project_id)";
             else {
                 this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Name_Projects));
             }
+            if ((Civil_Defense_Study_status == null)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Civil_Defense_Study_status));
+            }
             if ((Original_project_id == null)) {
                 throw new global::System.ArgumentNullException("Original_project_id");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_project_id));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_project_id));
             }
             if ((Original_project_name == null)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_project_name));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_project_name));
             }
             if ((Original_governorate_fk == null)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_governorate_fk));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_governorate_fk));
             }
             if ((Original_Civil_Defense_Approval_status == null)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_Civil_Defense_Approval_status));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_Civil_Defense_Approval_status));
             }
             if ((Original_Environmental_Approval_status == null)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_Environmental_Approval_status));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_Environmental_Approval_status));
             }
             if ((Original_Traffic_Study_Status == null)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_Traffic_Study_Status));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_Traffic_Study_Status));
             }
             if ((Original_Model_8_Status == null)) {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_Model_8_Status));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_Model_8_Status));
             }
             if ((Original_Petroleum_Ministry_Approval_status == null)) {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_Petroleum_Ministry_Approval_status));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_Petroleum_Ministry_Approval_status));
             }
             if ((Original_Civil_Aviation_Approval_status == null)) {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_Civil_Aviation_Approval_status));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(Original_Civil_Aviation_Approval_status));
             }
             if ((Original_land_fk == null)) {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_land_fk));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_land_fk));
             }
             if ((Original_Transaction_number == null)) {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_Transaction_number));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_Transaction_number));
             }
             if ((Original_Contract_expiry_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((System.DateTime)(Original_Contract_expiry_date.Value));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((System.DateTime)(Original_Contract_expiry_date.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
             }
             if ((Original_Total_stores.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((int)(Original_Total_stores.Value));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((int)(Original_Total_stores.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
             }
             if ((Original_Total_rented.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((int)(Original_Total_rented.Value));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((int)(Original_Total_rented.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
             }
             if ((Original_Total_Not_rented.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((int)(Original_Total_Not_rented.Value));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((int)(Original_Total_Not_rented.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
             }
             if ((Original_Secured_certificate == null)) {
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(Original_Secured_certificate));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((string)(Original_Secured_certificate));
             }
             if ((Original_Architectural_and_Structural_Board == null)) {
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(Original_Architectural_and_Structural_Board));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((string)(Original_Architectural_and_Structural_Board));
             }
             if ((Original_Reconciliation_Form_Stamp == null)) {
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[55].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((string)(Original_Reconciliation_Form_Stamp));
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((string)(Original_Reconciliation_Form_Stamp));
             }
             if ((Original_Consultant_Surveying == null)) {
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[57].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((string)(Original_Consultant_Surveying));
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((string)(Original_Consultant_Surveying));
             }
             if ((Original_Name_Projects == null)) {
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[58].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[59].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((string)(Original_Name_Projects));
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((string)(Original_Name_Projects));
+            }
+            if ((Original_Civil_Defense_Study_status == null)) {
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[61].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((string)(Original_Civil_Defense_Study_status));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -19219,6 +19326,7 @@ WHERE        (project_id = @project_id)";
                     string Reconciliation_Form_Stamp, 
                     string Consultant_Surveying, 
                     string Name_Projects, 
+                    string Civil_Defense_Study_status, 
                     string Original_project_id, 
                     string Original_project_name, 
                     string Original_governorate_fk, 
@@ -19238,8 +19346,9 @@ WHERE        (project_id = @project_id)";
                     string Original_Architectural_and_Structural_Board, 
                     string Original_Reconciliation_Form_Stamp, 
                     string Original_Consultant_Surveying, 
-                    string Original_Name_Projects) {
-            return this.Update(Original_project_id, project_name, governorate_fk, Civil_Defense_Approval_status, Environmental_Approval_status, Traffic_Study_Status, Model_8_Status, Petroleum_Ministry_Approval_status, Civil_Aviation_Approval_status, land_fk, Transaction_number, Contract_expiry_date, Total_stores, Total_rented, Total_Not_rented, Secured_certificate, Architectural_and_Structural_Board, Reconciliation_Form_Stamp, Consultant_Surveying, Name_Projects, Original_project_id, Original_project_name, Original_governorate_fk, Original_Civil_Defense_Approval_status, Original_Environmental_Approval_status, Original_Traffic_Study_Status, Original_Model_8_Status, Original_Petroleum_Ministry_Approval_status, Original_Civil_Aviation_Approval_status, Original_land_fk, Original_Transaction_number, Original_Contract_expiry_date, Original_Total_stores, Original_Total_rented, Original_Total_Not_rented, Original_Secured_certificate, Original_Architectural_and_Structural_Board, Original_Reconciliation_Form_Stamp, Original_Consultant_Surveying, Original_Name_Projects);
+                    string Original_Name_Projects, 
+                    string Original_Civil_Defense_Study_status) {
+            return this.Update(Original_project_id, project_name, governorate_fk, Civil_Defense_Approval_status, Environmental_Approval_status, Traffic_Study_Status, Model_8_Status, Petroleum_Ministry_Approval_status, Civil_Aviation_Approval_status, land_fk, Transaction_number, Contract_expiry_date, Total_stores, Total_rented, Total_Not_rented, Secured_certificate, Architectural_and_Structural_Board, Reconciliation_Form_Stamp, Consultant_Surveying, Name_Projects, Civil_Defense_Study_status, Original_project_id, Original_project_name, Original_governorate_fk, Original_Civil_Defense_Approval_status, Original_Environmental_Approval_status, Original_Traffic_Study_Status, Original_Model_8_Status, Original_Petroleum_Ministry_Approval_status, Original_Civil_Aviation_Approval_status, Original_land_fk, Original_Transaction_number, Original_Contract_expiry_date, Original_Total_stores, Original_Total_rented, Original_Total_Not_rented, Original_Secured_certificate, Original_Architectural_and_Structural_Board, Original_Reconciliation_Form_Stamp, Original_Consultant_Surveying, Original_Name_Projects, Original_Civil_Defense_Study_status);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19295,6 +19404,7 @@ WHERE        (project_id = @project_id)";
                     string Reconciliation_Form_Stamp, 
                     string Consultant_Surveying, 
                     string Name_Projects, 
+                    string Civil_Defense_Study_status, 
                     string project_id) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((project_name == null)) {
@@ -19411,11 +19521,17 @@ WHERE        (project_id = @project_id)";
             else {
                 command.Parameters[18].Value = ((string)(Name_Projects));
             }
+            if ((Civil_Defense_Study_status == null)) {
+                command.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[19].Value = ((string)(Civil_Defense_Study_status));
+            }
             if ((project_id == null)) {
                 throw new global::System.ArgumentNullException("project_id");
             }
             else {
-                command.Parameters[19].Value = ((string)(project_id));
+                command.Parameters[20].Value = ((string)(project_id));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
