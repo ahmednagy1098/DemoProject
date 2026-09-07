@@ -30,6 +30,7 @@ namespace DemoProject
             Properties.Settings.Default.LastSort = advancedDataGridView1.SortString;
             Properties.Settings.Default.Save();
         }
+        private long? CurrentProjectId = null;
         public ProjectsControl()
         {
             InitializeComponent();
@@ -598,6 +599,7 @@ namespace DemoProject
             {
                 advancedDataGridView1.Columns["land_fk"].HeaderText = "مسلسل القطعة الكود";
                 advancedDataGridView1.Columns["Project_Id"].HeaderText = "مسلسل المشروع";
+
                 advancedDataGridView1.Columns["Project_Id"].Visible = false;
                 advancedDataGridView1.Columns["PlateNumber"].HeaderText = "رقم اللوحة";
                 advancedDataGridView1.Columns["LandName"].HeaderText = "اسم قطعة الأرض";
@@ -610,9 +612,11 @@ namespace DemoProject
                 advancedDataGridView1.Columns["LandName"].Visible = false;
                 advancedDataGridView1.Columns["GovernorateName"].HeaderText = "اسم المحافظة";
                 advancedDataGridView1.Columns["Name_Projects"].HeaderText = "اسم المكان";
+                advancedDataGridView1.Columns["Model8_date"].HeaderText = "تاريخ نموذج 8";
+                advancedDataGridView1.Columns["License_Number"].HeaderText = "رقم المعامله بالرخصه";
                 advancedDataGridView1.Columns["Civil_Defense_Approval_status"].HeaderText = "حالة موافقة الحماية المدنية";
                 advancedDataGridView1.Columns["CivilDefenseFile"].HeaderText = "ملف موافقة الحماية المدنية";
-
+                
                 advancedDataGridView1.Columns["Civil_Defense_Study_status"].HeaderText = "حالة دراسة حماية المدنية";
                 advancedDataGridView1.Columns["CivilDefenseStudyFile"].HeaderText = "ملف دراسة حماية المدنية";
 
@@ -631,14 +635,14 @@ namespace DemoProject
                 advancedDataGridView1.Columns["Model_8_Status"].HeaderText = "حالة نموذج 8 أو 10";
                 advancedDataGridView1.Columns["Model8File"].HeaderText = "ملف نموذج 8 أو 10";
                 advancedDataGridView1.Columns["Transaction_number"].HeaderText = "رخصة التشغيل";
-                advancedDataGridView1.Columns["Transaction_numberFile"].HeaderText = "ملف رقم المعاملة";
+                advancedDataGridView1.Columns["Transaction_numberFile"].HeaderText = "ملف رقم المعامله";
                 advancedDataGridView1.Columns["Contract_expiry_date"].HeaderText = "تاريخ انتهاء العقد";
                 //advancedDataGridView1.Columns["Total_stores"].HeaderText = "اجمالي محلات";
                 //advancedDataGridView1.Columns["Total_rented"].HeaderText = "مؤجر";
                 //advancedDataGridView1.Columns["Total_Not_rented"].HeaderText = "غير مؤجر";
                 advancedDataGridView1.Columns["Secured_Certificate"].HeaderText = "ملاحظات";
-                advancedDataGridView1.Columns["Architectural_and_Structural_Board"].HeaderText = "شركة ادارة المحطة";
-                // advancedDataGridView1.Columns["Reconciliation_Form_Stamp"].HeaderText = "رخصة التشغيل";
+                advancedDataGridView1.Columns["Architectural_and_Structural_Board"].HeaderText = "نوع النشاط";
+                 advancedDataGridView1.Columns["Reconciliation_Form_Stamp"].HeaderText = "رقم نموذج8";
                 //advancedDataGridView1.Columns["Consultant_Surveying"].HeaderText = "الرفع المساحي الاستشاري";
                 advancedDataGridView1.Columns["consulting_Office"].HeaderText = "المكتب الاستشاري";
                 advancedDataGridView3.Columns["Id"].HeaderText = "مسلسل مميز";
@@ -664,7 +668,7 @@ namespace DemoProject
 
                 //advancedDataGridView1.Columns["consulting_Office"].HeaderText = "المكتب الاستشاري";
 
-                //advancedDataGridView1.Columns["Architectural_and_Structural_Board"].HeaderText = "شركة ادارة المحطة";
+                //advancedDataGridView1.Columns["Architectural_and_Structural_Board"].HeaderText = "نوع النشاط";
 
 
 
@@ -736,7 +740,7 @@ namespace DemoProject
                 advancedDataGridView2.Columns["Select"].DisplayIndex = 0;
                 advancedDataGridView2.Columns["Project_Id"].HeaderText = "مسلسل مشروع";
                 advancedDataGridView2.Columns["project_name"].HeaderText = "اسم المشروع / النشاط";
-                advancedDataGridView2.Columns["Name_Projects"].HeaderText = "اسم المكان";
+                advancedDataGridView2.Columns["Name_Projects"].HeaderText = "اسم المكان";                               
                 advancedDataGridView2.Columns["MarketsFile"].HeaderText = "ملف المحل";
                 advancedDataGridView2.Columns["document_id"].Visible = false;
                 advancedDataGridView2.Columns["document_id"].HeaderText = "مسلسل المستند";
@@ -843,6 +847,8 @@ namespace DemoProject
                         project_name = p.project_name,
                         LandName = l.Island_nameNull() ? "" : l.land_name,
                         Name_Projects = p.IsName_ProjectsNull() ? "" : p.Name_Projects,
+                        Model8_date=p.IsModel8_dateNull() ? "":p.Model8_date,
+                        License_Number=p.IsLicense_NumberNull()? "":p.License_Number,
                         Address = l.IsAddressNull() ? "" : l.Address,
                         Dependent_neighborhood=l.IsDependent_neighborhoodNull()? "" :l.Dependent_neighborhood,
                         GovernorateName = g.IsgovernorateNull() ? "" : g.governorate,
@@ -869,8 +875,8 @@ namespace DemoProject
 
                         consulting_Office = l.Isconsulting_OfficeNull()?"":l.consulting_Office,
                         
-                        Architectural_and_Structural_Board = p.IsArchitectural_and_Structural_BoardNull()?"":p.Architectural_and_Structural_Board,
-                        //Reconciliation_Form_Stamp = p.IsReconciliation_Form_StampNull()?"":p.Reconciliation_Form_Stamp,
+                        Architectural_and_Structural_Board =p.IsArchitectural_and_Structural_BoardNull()?"":p.Architectural_and_Structural_Board,
+                        Reconciliation_Form_Stamp = p.IsReconciliation_Form_StampNull()?"":p.Reconciliation_Form_Stamp,
                         Consultant_Surveying = p.Consultant_Surveying,
 
                         Civil_Defense_Approval_status = p.Civil_Defense_Approval_status,
@@ -932,7 +938,7 @@ namespace DemoProject
                         Secured_Certificate = p.IsSecured_certificateNull()?"": p.Secured_certificate
                     };
                 
-                var joinedList = query.OrderBy(r => int.TryParse(r.Project_Id, out var n) ? n : int.MaxValue)
+                var joinedList = query.OrderBy(r => int.TryParse(r.land_fk, out var n) ? n : int.MaxValue)
                     .Where(r=>r.Project_Id!="0"&&r.land_fk != "215" && r.land_fk != "216"&& r.Secured_Certificate!= "تم الغاء قطعة الارض" &&
                     !r.land_fk.Contains("$")&& !r.land_fk.Contains("#")&& !r.land_fk.Contains("&")
                     )
@@ -1448,7 +1454,9 @@ namespace DemoProject
                 "x",//Reconciliation_Form_Stamp_COM.Text
                 "x",//Consultant_Surveying_COM.Text
                 Name_Pro_TB.Text,
-                Civil_Study_COB.Text
+                Civil_Study_COB.Text,
+                "x",
+                "x"
                 
                 );
             foreach (var entry in approvalFiles)
@@ -1494,8 +1502,10 @@ namespace DemoProject
             Total_rented_TB.Text = "";
             Total_Not_rented_TB.Text = "";
             Secured_certificate_COM.SelectedItem = -1;
-            Architectural_and_Structural_Board_COM.SelectedItem = -1;
-            Reconciliation_Form_Stamp_COM.SelectedItem = -1;
+            Architectural_and_Structural_Board_TB.Text = "";
+            Reconciliation_Form_Stamp_TB.Text = "";
+            Model8_date_TB.Text = "";
+            License_Number_TB.Text = "";
             Consultant_Surveying_COM.SelectedItem = -1;
             serial_number_TB.Text = "";
             approvalFiles = new Dictionary<string, List<string>>();
@@ -1860,71 +1870,26 @@ namespace DemoProject
 
         private void Land_Name_COB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //bool hasText = !string.IsNullOrWhiteSpace(Land_Name_COB.Text);
-            //Error_Land.Visible = !hasText;
-            //string selectedLandName = Land_Name_COB.SelectedItem?.ToString();
-            //if (string.IsNullOrEmpty(selectedLandName)) return;
+            if (_isSyncingSelection)
+                return;
 
-            //var matches = LandData.AsEnumerable()
-            //    .Where(row => row["land_name"].ToString() == selectedLandName)
-            //    .ToList();
-
-            //if (matches.Count == 1)
-            //{
-            //    // Only one match — auto-select
-            //    var row = matches[0];
-            //    plate_number_COB.SelectedItem = row["plate_number"].ToString();
-            //    Land_ID_COB.SelectedItem = row["land_id"].ToString();
-            //    string govId = row["governorate_fk"].ToString();
-            //    Governorate_COB.SelectedItem = governorateLookup.ContainsKey(govId) ? governorateLookup[govId] : "غير معروف";
-            //}
-            //else if (matches.Count > 1)
-            //{
-            //    // Multiple matches — populate the related combo boxes
-            //    var plateNumbers = matches.Select(r => r["plate_number"].ToString()).Distinct().ToList();
-            //    var landIds = matches.Select(r => r["land_id"].ToString()).Distinct().ToList();
-            //    var governorates = matches.Select(r =>
-            //    {
-            //        string govId = r["governorate_fk"].ToString();
-            //        return governorateLookup.ContainsKey(govId) ? governorateLookup[govId] : "غير معروف";
-            //    }).Distinct().ToList();
-
-            //    plate_number_COB.DataSource = new BindingSource(plateNumbers, null);
-            //    Land_ID_COB.DataSource = new BindingSource(landIds, null);
-            //    Governorate_COB.DataSource = new BindingSource(governorates, null);
-
-            //}
             if (Land_Name_COB.SelectedItem != null)
-                SyncSelection(selectedName: Land_Name_COB.SelectedItem.ToString());
+            {
+                SyncSelection(
+                    selectedName: Land_Name_COB.SelectedItem.ToString());
+            }
         }
 
-            private void plate_number_COB_SelectedIndexChanged(object sender, EventArgs e)
-            {
+        private void plate_number_COB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (_isSyncingSelection)
+                return;
+
             if (plate_number_COB.SelectedItem != null)
-                SyncSelection(selectedPlate: plate_number_COB.SelectedItem.ToString());
-            //bool hasText = !string.IsNullOrWhiteSpace(plate_number_COB.Text);
-            //string selectedPlate = plate_number_COB.SelectedItem?.ToString();
-            //if (string.IsNullOrEmpty(selectedPlate)) return;
-
-            //var match = LandData.AsEnumerable()
-            //    .FirstOrDefault(row => row["plate_number"].ToString() == selectedPlate);
-
-            //if (match != null)
-            //{
-            //    string landId = match["land_id"].ToString();
-            //    string landName = match["land_name"].ToString();
-            //    string govId = match["governorate_fk"].ToString();
-            //    string governorateName = governorateLookup.ContainsKey(govId) ? governorateLookup[govId] : "غير معروف";
-
-            //    Land_Name_COB.SelectedItem = landName;
-            //    Land_ID_COB.SelectedItem = landId;
-            //    Governorate_COB.SelectedItem = governorateName;
-            //    AdjustComboBox(Land_ID_COB);
-            //    AdjustComboBox(Land_Name_COB);
-            //    AdjustComboBox(Governorate_COB);
-            //}
-
-            //Error_plate.Visible = !hasText;
+            {
+                SyncSelection(
+                    selectedPlate: plate_number_COB.SelectedItem.ToString());
+            }
         }
 
         private void ProjectsControl_Leave(object sender, EventArgs e)
@@ -2414,6 +2379,8 @@ namespace DemoProject
 
             var x = this.projectsTableAdapter.GetDataByIDProjects(serialNumber);
 
+
+
             var gCivil_Defense = this.documentsTableAdapter.GetDataByProjectDoc(serialNumber, "APP001");
             var gCivil_Study = this.documentsTableAdapter.GetDataByProjectDoc(serialNumber, "APP010");
             var gEnvironmental = this.documentsTableAdapter.GetDataByProjectDoc(serialNumber, "APP002");
@@ -2461,9 +2428,14 @@ namespace DemoProject
             Total_rented_TB.Text = x.First().Total_rented.ToString();
             Total_Not_rented_TB.Text = x.First().Total_Not_rented.ToString();
             Secured_certificate_COM.SelectedItem = x.First().Secured_certificate;
-            Architectural_and_Structural_Board_COM.SelectedItem = x.First().Architectural_and_Structural_Board;
+            Architectural_and_Structural_Board_TB.Text =
+                x.First().IsArchitectural_and_Structural_BoardNull()
+                    ? ""
+                    : x.First().Architectural_and_Structural_Board;
             Consultant_Surveying_COM.SelectedItem = x.First().Consultant_Surveying;
-            Reconciliation_Form_Stamp_COM.SelectedItem = x.First().Reconciliation_Form_Stamp;
+            Reconciliation_Form_Stamp_TB.Text = x.First().Reconciliation_Form_Stamp;
+            Model8_date_TB.Text = x.First().Model8_date;
+            License_Number_TB.Text = x.First().License_Number;
             Governorate_COB.SelectedItem = governorateLookup.TryGetValue(
                 x.First().governorate_fk.ToString(), out var govName
             ) ? govName : "غير معروف";
@@ -2818,88 +2790,201 @@ namespace DemoProject
                 e.Handled = true; // Block the input
             }
         }
-        private void SyncSelection(string selectedLandId = null, string selectedPlate = null, string selectedName = null)
+        private bool _isSyncingSelection = false;
+
+        private void SyncSelection(long? selectedProjectId = null,
+                           string selectedLandId = null,
+                           string selectedPlate = null,
+                           string selectedName = null)
         {
+            if (_isSyncingSelection)
+                return;
+
             try
             {
+                _isSyncingSelection = true;
+                DataRow row = null;
 
-           
-            // نحدد أي Row محتاجينه
-            var query = LandData.AsEnumerable();
+                // ==========================================
+                // 1) لو عندنا Project_ID
+                // ==========================================
+                if (selectedProjectId.HasValue)
+                {
+                    CurrentProjectId = selectedProjectId.Value; // بنحفظه مباشرة لأنه مبعوت كـ parameter
 
-            if (!string.IsNullOrEmpty(selectedLandId))
-                query = query.Where(r => r["land_id"].ToString() == selectedLandId);
+                    // بنجيب المشروع الأول عشان نطلع منه رقم الأرض (land_fk)
+                    var projectData = projectsTableAdapter.GetDataByIDProjects(selectedProjectId.Value.ToString());
 
-            if (!string.IsNullOrEmpty(selectedPlate))
-                query = query.Where(r => r["plate_number"].ToString() == selectedPlate);
+                    if (projectData != null && projectData.Count > 0)
+                    {
+                        string landFk = projectData.First().land_fk;
 
-            if (!string.IsNullOrEmpty(selectedName))
-                query = query.Where(r => r["land_name"].ToString() == selectedName);
-
-            var matches = query.ToList();
-            if (!matches.Any()) return;
-
-            // لو فيه match وحيد → نختاره كله
-            if (matches.Count == 1)
-            {
-                var row = matches[0];
-                Land_ID_COB.SelectedItem = row["land_id"].ToString();
-                plate_number_COB.SelectedItem = row["plate_number"].ToString();
-                Land_Name_COB.SelectedItem = row["land_name"].ToString();
-
-                string govId = row["governorate_fk"].ToString();
-                Governorate_COB.SelectedItem = governorateLookup.ContainsKey(govId) ? governorateLookup[govId] : "غير معروف";
-            }
-            else
-            {
-                // أكتر من احتمال:
-                // - نخلي الـ Plate ثابت لأنه مشترك
-                // - نخلي الـ ID و Name يفضلوا مفتوحين للمستخدم
-
-                if (!string.IsNullOrEmpty(selectedPlate))
-                    plate_number_COB.SelectedItem = selectedPlate;
-
-                if (!string.IsNullOrEmpty(selectedLandId))
-                    Land_ID_COB.SelectedItem = selectedLandId;
+                        // دلوقتي نقدر ندور في جدول الأراضي براحتنا باستخدام الـ land_id
+                        row = LandData.AsEnumerable()
+                            .FirstOrDefault(r => r["land_id"]?.ToString() == landFk);
+                    }
+                }
                 else
-                    Land_ID_COB.SelectedItem = matches[0]["land_id"].ToString();
+                {
+                    // ==========================================
+                    // 2) اختيار يدوي من الـ ComboBox
+                    // ==========================================
+                    var query = LandData.AsEnumerable();
 
-                if (!string.IsNullOrEmpty(selectedName))
-                    Land_Name_COB.SelectedItem = selectedName;
-                else
-                    Land_Name_COB.SelectedItem = matches[0]["land_name"].ToString();
-            }
+                    if (!string.IsNullOrWhiteSpace(selectedLandId))
+                    {
+                        query = query.Where(r => r["land_id"]?.ToString() == selectedLandId);
+                    }
+
+                    if (!string.IsNullOrWhiteSpace(selectedPlate))
+                    {
+                        query = query.Where(r => r["plate_number"]?.ToString() == selectedPlate);
+                    }
+
+                    if (!string.IsNullOrWhiteSpace(selectedName))
+                    {
+                        query = query.Where(r => r["land_name"]?.ToString() == selectedName);
+                    }
+
+                    row = query.FirstOrDefault();
+
+                    // ملحوظة: لو الاختيار تم يدوي، الأرض ممكن يكون عليها أكتر من مشروع
+                    // فمينفعش نجيب الـ CurrentProjectId من جدول الأراضي.
+                }
+
+                if (row == null)
+                    return;
+
+                // ==========================================
+                // نحدث الـ ComboBoxes
+                // ==========================================
+                Land_ID_COB.SelectedItem = row["land_id"]?.ToString();
+                plate_number_COB.SelectedItem = row["plate_number"]?.ToString();
+                Land_Name_COB.SelectedItem = row["land_name"]?.ToString();
+
+                string govId = row["governorate_fk"]?.ToString();
+                Governorate_COB.SelectedItem = governorateLookup.ContainsKey(govId)
+                    ? governorateLookup[govId]
+                    : "غير معروف";
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message,"Error");
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                _isSyncingSelection = false;
             }
         }
+
+        //private void SyncSelection(long? selectedProjectId = null,
+        //                           string selectedLandId = null,
+        //                           string selectedPlate = null,
+        //                           string selectedName = null)
+        //{
+        //    if (_isSyncingSelection)
+        //        return;
+
+        //    try
+        //    {
+        //        _isSyncingSelection = true;
+
+        //        DataRow row = null;
+
+        //        // ==========================================
+        //        // 1) لو عندنا Project_ID -> ده الاختيار الأساسي
+        //        // ==========================================
+        //        if (selectedProjectId.HasValue)
+        //        {
+        //            row = LandData.AsEnumerable()
+        //                .FirstOrDefault(r =>
+        //                    long.TryParse(r["project_id"]?.ToString(), out long id)
+        //                    && id == selectedProjectId.Value);
+        //        }
+        //        else
+        //        {
+        //            // ==========================================
+        //            // 2) اختيار يدوي من الـ ComboBox
+        //            // ==========================================
+        //            var query = LandData.AsEnumerable();
+
+        //            if (!string.IsNullOrWhiteSpace(selectedLandId))
+        //            {
+        //                query = query.Where(r =>
+        //                    r["land_id"]?.ToString() == selectedLandId);
+        //            }
+
+        //            if (!string.IsNullOrWhiteSpace(selectedPlate))
+        //            {
+        //                query = query.Where(r =>
+        //                    r["plate_number"]?.ToString() == selectedPlate);
+        //            }
+
+        //            if (!string.IsNullOrWhiteSpace(selectedName))
+        //            {
+        //                query = query.Where(r =>
+        //                    r["land_name"]?.ToString() == selectedName);
+        //            }
+
+        //            row = query.FirstOrDefault();
+        //        }
+
+        //        if (row == null)
+        //            return;
+
+        //        // ==========================================
+        //        // نحفظ الـ Project_ID للسطر الحالي
+        //        // ==========================================
+        //        if (long.TryParse(row["project_id"]?.ToString(), out long projectId))
+        //        {
+        //            CurrentProjectId = projectId;
+        //        }
+
+        //        // ==========================================
+        //        // نحدث الـ ComboBoxes
+        //        // ==========================================
+        //        Land_ID_COB.SelectedItem =
+        //            row["land_id"]?.ToString();
+
+        //        plate_number_COB.SelectedItem =
+        //            row["plate_number"]?.ToString();
+
+        //        Land_Name_COB.SelectedItem =
+        //            row["land_name"]?.ToString();
+
+        //        string govId =
+        //            row["governorate_fk"]?.ToString();
+
+        //        Governorate_COB.SelectedItem =
+        //            governorateLookup.ContainsKey(govId)
+        //                ? governorateLookup[govId]
+        //                : "غير معروف";
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(
+        //            ex.Message,
+        //            "Error",
+        //            MessageBoxButtons.OK,
+        //            MessageBoxIcon.Error);
+        //    }
+        //    finally
+        //    {
+        //        _isSyncingSelection = false;
+        //    }
+        //}
+
+
         private void Land_ID_COB_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (_isSyncingSelection)
+                return;
+
             if (Land_ID_COB.SelectedItem != null)
-                SyncSelection(selectedLandId: Land_ID_COB.SelectedItem.ToString());
-            //string selectedLandID = Land_ID_COB.SelectedItem?.ToString();
-            //if (string.IsNullOrEmpty(selectedLandID)) return;
-
-            //var match = LandData.AsEnumerable()
-            //    .FirstOrDefault(row => row["land_id"].ToString() == selectedLandID);
-
-            //if (match != null)
-            //{
-            //    string plate = match["plate_number"].ToString();
-            //    string name = match["land_name"].ToString();
-            //    string govId = match["governorate_fk"].ToString();
-            //    string governorateName = governorateLookup.ContainsKey(govId) ? governorateLookup[govId] : "غير معروف";
-
-            //    // Set selections only
-            //    plate_number_COB.SelectedItem = plate;
-            //    Land_Name_COB.SelectedItem = name;
-            //    Governorate_COB.SelectedItem = governorateName;
-            //    AdjustComboBox(Land_Name_COB);
-            //    AdjustComboBox(plate_number_COB); 
-            //    AdjustComboBox(Governorate_COB);
-            //}
+            {
+                SyncSelection(
+                    selectedLandId: Land_ID_COB.SelectedItem.ToString());
+            }
         }
 
         private void guna2CircleButton1_Click(object sender, EventArgs e)
@@ -2941,8 +3026,10 @@ namespace DemoProject
             Total_rented_TB.Text = "";
             Total_Not_rented_TB.Text = "";
             Secured_certificate_COM.SelectedItem = -1;
-            Architectural_and_Structural_Board_COM.SelectedItem = -1;
-            Reconciliation_Form_Stamp_COM.SelectedItem = -1;
+            //Architectural_and_Structural_Board_COM.Text = "";
+            Reconciliation_Form_Stamp_TB.Text = "";
+            Model8_date_TB.Text = "";
+            License_Number_TB.Text = "";
             Consultant_Surveying_COM.SelectedItem = -1;
             serial_number_TB.Text = "";
             approvalFiles = new Dictionary<string, List<string>>();
@@ -3007,12 +3094,15 @@ namespace DemoProject
                 int.Parse(Total_rented_TB.Text),
                 int.Parse(Total_Not_rented_TB.Text),
                 Secured_certificate_COM.Text,
-                Architectural_and_Structural_Board_COM.Text,
-                Reconciliation_Form_Stamp_COM.Text,
+                Architectural_and_Structural_Board_TB.Text,
+                Reconciliation_Form_Stamp_TB.Text,
                 Consultant_Surveying_COM.Text,
                 Name_Pro_TB.Text,
                 Civil_Study_COB.Text,
+                Model8_date_TB.Text,
+                License_Number_TB.Text,
                 serial_number_TB.Text
+
 
             );
 
@@ -3151,8 +3241,10 @@ namespace DemoProject
             Total_rented_TB.Text = "";
             Total_Not_rented_TB.Text = "";
             Secured_certificate_COM.SelectedItem = -1;
-            Architectural_and_Structural_Board_COM.SelectedItem = -1;
-            Reconciliation_Form_Stamp_COM.SelectedItem = -1;
+            //Architectural_and_Structural_Board_COM.Text = "";
+            Reconciliation_Form_Stamp_TB.Text = "";
+            Model8_date_TB.Text = "";
+            License_Number_TB.Text = "";
             Consultant_Surveying_COM.SelectedItem = -1;
             serial_number_TB.Text = "";
 
@@ -3210,6 +3302,7 @@ namespace DemoProject
                     string TrafficStudyFileValue = row.Cells["TrafficStudyFile"].Value.ToString();
                     string Model8FileValue = row.Cells["Model8File"].Value.ToString();
                     string Transaction_numberValue = row.Cells["Transaction_numberFile"].Value.ToString();
+                    
 
                     if (!string.IsNullOrWhiteSpace(CivilDefenseFileValue))
                         this.documentsTableAdapter.DeleteQuery("APP001", projectId);
@@ -3462,8 +3555,10 @@ namespace DemoProject
             Total_rented_TB.Text = "";
             Total_Not_rented_TB.Text = "";
             Secured_certificate_COM.SelectedItem = -1;
-            Architectural_and_Structural_Board_COM.SelectedItem = -1;
-            Reconciliation_Form_Stamp_COM.SelectedItem = -1;
+            Architectural_and_Structural_Board_TB.Text = "";
+            Reconciliation_Form_Stamp_TB.Text = "";
+            Model8_date_TB.Text = "";
+            License_Number_TB.Text = "";
             Consultant_Surveying_COM.SelectedItem = -1;
             serial_number_TB.Text = "";
             approvalFiles = new Dictionary<string, List<string>>();
@@ -3511,8 +3606,10 @@ namespace DemoProject
             { "تاريخ انتهاء العقد", "Contract_expiry_date" },
             { "اجمالي محلات", "Total_stores" },
             { "الشهادة المؤمنه", "Secured_Certificate" },
-            { "شركة ادارة المحطة", "Architectural_and_Structural_Board" },
-            { "ختم نموذج التصالح", "Reconciliation_Form_Stamp" },
+            { "نوع النشاط", "Architectural_and_Structural_Board" },
+            { "رقم نموذج8", "Reconciliation_Form_Stamp" },
+            { "رقم المعامله بالرخصه", "License_Number" },
+            { "تاريخ نموذج 8", "Model8_date" },
             { "الرفع المساحي الاستشاري", "Consultant_Surveying" },
             { "المكتب الاستشاري", "consulting_Office" },
     };
@@ -4212,6 +4309,9 @@ namespace DemoProject
                 newRow.Reconciliation_Form_Stamp = "";
                 newRow.Consultant_Surveying = "";
                 newRow.Name_Projects = "";
+                newRow.Model8_date = "";
+                newRow.License_Number = "";
+
 
 
                 //newRow.Notes = "تم اضافة قطعة ارض جديدة";
@@ -4435,6 +4535,9 @@ namespace DemoProject
                     {
 
                         Name_Projects = p.IsName_ProjectsNull() ? "" : p.Name_Projects,
+                        Model8_date = p.IsModel8_dateNull() ? "" : p.Model8_date,
+                        License_Number = p.IsLicense_NumberNull() ? "" : p.License_Number,
+
 
                         land_fk = p.Island_fkNull() ? "" : p.land_fk,
 
@@ -4456,7 +4559,7 @@ namespace DemoProject
                         Secured_Certificate = p.IsSecured_certificateNull() ? "" : p.Secured_certificate
                     };
 
-                var joinedList = query.OrderBy(r => int.TryParse(r.Project_Id, out var n) ? n : int.MaxValue).Where(r => r.land_fk.Contains(ch)).ToList();
+                var joinedList = query.OrderBy(r => int.TryParse(r.land_fk, out var n) ? n : int.MaxValue).Where(r => r.land_fk.Contains(ch)).ToList();
                 DataTable original = ToDataTable(joinedList);
 
                 // Step 4: Convert Contract_expiry_date column
@@ -4600,8 +4703,10 @@ namespace DemoProject
             Total_rented_TB.Text = "";
             Total_Not_rented_TB.Text = "";
             Secured_certificate_COM.SelectedItem = -1;
-            Architectural_and_Structural_Board_COM.SelectedItem = -1;
-            Reconciliation_Form_Stamp_COM.SelectedItem = -1;
+            Architectural_and_Structural_Board_TB.Text = "";
+            Reconciliation_Form_Stamp_TB.Text = "";
+            Model8_date_TB.Text = "";
+            License_Number_TB.Text = "";
             Consultant_Surveying_COM.SelectedItem = -1;
             serial_number_TB.Text = "";
             approvalFiles = new Dictionary<string, List<string>>();
@@ -4655,8 +4760,10 @@ namespace DemoProject
             Total_rented_TB.Text = "";
             Total_Not_rented_TB.Text = "";
             Secured_certificate_COM.SelectedItem = -1;
-            Architectural_and_Structural_Board_COM.SelectedItem = -1;
-            Reconciliation_Form_Stamp_COM.SelectedItem = -1;
+            Architectural_and_Structural_Board_TB.Text = "";
+            Reconciliation_Form_Stamp_TB.Text = "";
+            Model8_date_TB.Text = "";
+            License_Number_TB.Text = "";
             Consultant_Surveying_COM.SelectedItem = -1;
             serial_number_TB.Text = "";
             approvalFiles = new Dictionary<string, List<string>>();
@@ -4709,6 +4816,8 @@ namespace DemoProject
                         project_name = p.project_name,
                         LandName = l.Island_nameNull() ? "" : l.land_name,
                         Name_Projects = p.IsName_ProjectsNull() ? "" : p.Name_Projects,
+                        Model8_date = p.IsModel8_dateNull() ? "" : p.Model8_date,
+                        License_Number = p.IsLicense_NumberNull() ? "" : p.License_Number,
                         Address = l.IsAddressNull() ? "" : l.Address,
                         Dependent_neighborhood = l.IsDependent_neighborhoodNull() ? "" : l.Dependent_neighborhood,
                         GovernorateName = g.IsgovernorateNull() ? "" : g.governorate,
@@ -4717,23 +4826,24 @@ namespace DemoProject
                         land_fk = p.Island_fkNull() ? "" : p.land_fk,
                         Project_Id = p.project_id,
                         area = l.Istotal_areaNull() ? "" : l.total_area,
-                        //Total_stores = inv.Where(i => i.Visable_Value == true).Sum(i => i.IsShops_CountNull() ? 0 : i.Shops_Count),
 
-                        //                    Total_rented =
-                        //inv.Where(i =>
-                        //    (!i.IsActivity_NameNull() && i.Activity_Name != "لا يوجد") &&
-                        //    i.IsRental_StatusNull() && i.Visable_Value == true
-                        //)
-                        //.Sum(i => i.IsShops_CountNull() ? 0 : i.Shops_Count),
+                //Total_stores = inv.Where(i => i.Visable_Value == true).Sum(i => i.IsShops_CountNull() ? 0 : i.Shops_Count),
 
-                        //                    Total_Not_rented =
-                        //inv.Where(i =>
-                        //    (!i.IsActivity_NameNull() && i.Activity_Name == "لا يوجد") &&
-                        //    (i.IsRental_StatusNull()||i.Rental_Status== "غير مؤجر (*)") && i.Visable_Value == true
-                        //)
-                        //.Sum(i => i.IsShops_CountNull() ? 0 : i.Shops_Count),
+                //                    Total_rented =
+                //inv.Where(i =>
+                //    (!i.IsActivity_NameNull() && i.Activity_Name != "لا يوجد") &&
+                //    i.IsRental_StatusNull() && i.Visable_Value == true
+                //)
+                //.Sum(i => i.IsShops_CountNull() ? 0 : i.Shops_Count),
 
-                        consulting_Office = l.consulting_Office,
+                //                    Total_Not_rented =
+                //inv.Where(i =>
+                //    (!i.IsActivity_NameNull() && i.Activity_Name == "لا يوجد") &&
+                //    (i.IsRental_StatusNull()||i.Rental_Status== "غير مؤجر (*)") && i.Visable_Value == true
+                //)
+                //.Sum(i => i.IsShops_CountNull() ? 0 : i.Shops_Count),
+
+                consulting_Office = l.consulting_Office,
 
                         Architectural_and_Structural_Board = p.IsArchitectural_and_Structural_BoardNull() ? "" : p.Architectural_and_Structural_Board,
                         //Reconciliation_Form_Stamp = p.IsReconciliation_Form_StampNull()?"":p.Reconciliation_Form_Stamp,
@@ -4798,7 +4908,7 @@ namespace DemoProject
                         Secured_Certificate = p.IsSecured_certificateNull() ? "" : p.Secured_certificate
                     };
 
-                var joinedList = query.OrderBy(r => int.TryParse(r.Project_Id, out var n) ? n : int.MaxValue)
+                var joinedList = query.OrderBy(r => int.TryParse(r.land_fk, out var n) ? n : int.MaxValue)
                     .Where(r => !r.land_fk.Contains("#")&& r.Project_Id!="0"&& !r.land_fk.Contains("&") && !r.land_fk.Contains("$")&& r.land_fk!="215"&& r.land_fk != "216"&& r.Secured_Certificate != "تم الغاء قطعة الارض").ToList();
                 DataTable original = ToDataTable(joinedList);
 
@@ -4925,8 +5035,10 @@ namespace DemoProject
             Total_rented_TB.Text = "";
             Total_Not_rented_TB.Text = "";
             Secured_certificate_COM.SelectedItem = -1;
-            Architectural_and_Structural_Board_COM.SelectedItem = -1;
-            Reconciliation_Form_Stamp_COM.SelectedItem = -1;
+            Architectural_and_Structural_Board_TB.Text = "";
+            Reconciliation_Form_Stamp_TB.Text = "";
+            Model8_date_TB.Text = "";
+            License_Number_TB.Text = "";
             Consultant_Surveying_COM.SelectedItem = -1;
             serial_number_TB.Text = "";
             approvalFiles = new Dictionary<string, List<string>>();
@@ -4981,8 +5093,10 @@ namespace DemoProject
             Total_rented_TB.Text = "";
             Total_Not_rented_TB.Text = "";
             Secured_certificate_COM.SelectedItem = -1;
-            Architectural_and_Structural_Board_COM.SelectedItem = -1;
-            Reconciliation_Form_Stamp_COM.SelectedItem = -1;
+            Architectural_and_Structural_Board_TB.Text = "";
+            Reconciliation_Form_Stamp_TB.Text = "";
+            Model8_date_TB.Text = "";
+            License_Number_TB.Text = "";
             Consultant_Surveying_COM.SelectedItem = -1;
             serial_number_TB.Text = "";
             approvalFiles = new Dictionary<string, List<string>>();

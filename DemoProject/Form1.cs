@@ -21,6 +21,7 @@ namespace DemoProject
         HubConnection hubConnection;
         public Form1()
         {
+
             InitializeComponent();
             //hubConnection = new HubConnectionBuilder().WithUrl("https://localhost:7212/ChatHub").Build();
             //hubConnection.Closed += HubConnection_Closed;
@@ -28,6 +29,7 @@ namespace DemoProject
             //{
             //    var newMessage = $"{user} : {message}";
             //    ShowAlert(newMessage, AlertForm.AlertType.Success);
+
             //});
         }
         //private async Task HubConnection_Closed(Exception arg)

@@ -17,7 +17,7 @@ namespace DemoProject
     public partial class EngineeringManagementControl : UserControl
     {
         public long UserId;
-        public string username; 
+        public string username;
         private TextBox editingTextBox = null;
         private DataTable originalData;
         HashSet<string> landColumns = new HashSet<string>
@@ -59,7 +59,7 @@ namespace DemoProject
             "project_name"
         };
 
-                HashSet<string> readOnlyColumns = new HashSet<string>
+        HashSet<string> readOnlyColumns = new HashSet<string>
         {
             "governorate_fk"
         };
@@ -72,10 +72,10 @@ namespace DemoProject
         public EngineeringManagementControl()
         {
             InitializeComponent();
-           // Plates_Count.Cursor = Cursors.Hand;
+            // Plates_Count.Cursor = Cursors.Hand;
             //Plates_Count.Click += (s, e) => ShowDocumentList("plate_numberFile", "مستند رقم اللوحة");
-           // Lands_Count.Cursor = Cursors.Hand;
-           // Lands_Count.Click += (s, e) => ShowDocumentList("Republican_Decree", "عقد الأرض");
+            // Lands_Count.Cursor = Cursors.Hand;
+            // Lands_Count.Click += (s, e) => ShowDocumentList("Republican_Decree", "عقد الأرض");
         }
         public static DataTable ToDataTable<T>(IList<T> data)
         {
@@ -101,7 +101,7 @@ namespace DemoProject
 
         #region this is permission code for checking user Auhtentication by tags these tags are in the 
 
-    
+
         void ApplyPermissions(Control parent)
         {
             try
@@ -119,7 +119,7 @@ namespace DemoProject
                         {
                             string funcName = tag.Substring(9).Trim();
                             ctrl.Enabled = functionAccess.ContainsKey(funcName);
-                            ctrl.Visible= functionAccess.ContainsKey(funcName);
+                            ctrl.Visible = functionAccess.ContainsKey(funcName);
                         }
                     }
                     // Recurse into nested controls
@@ -130,24 +130,24 @@ namespace DemoProject
             catch (Exception ex)
             {
                 ShowAlert("خطأ غير متوقع", AlertForm.AlertType.Error);
-                MessageBox.Show(ex.Message,"خطأ غير متوقع",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            } 
+                MessageBox.Show(ex.Message, "خطأ غير متوقع", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         #endregion
         private void comboBox1_DrawItem(object sender, DrawItemEventArgs e)
         {
             try
             {
-            if (e.Index < 0) return;
-            ComboBox combo = sender as ComboBox;
-            e.DrawBackground();
-            using (SolidBrush brush = new SolidBrush(e.ForeColor))
-            {
-                e.Graphics.DrawString(combo.Items[e.Index].ToString(), e.Font, brush, e.Bounds);
+                if (e.Index < 0) return;
+                ComboBox combo = sender as ComboBox;
+                e.DrawBackground();
+                using (SolidBrush brush = new SolidBrush(e.ForeColor))
+                {
+                    e.Graphics.DrawString(combo.Items[e.Index].ToString(), e.Font, brush, e.Bounds);
+                }
+                e.DrawFocusRectangle();
             }
-            e.DrawFocusRectangle();
-            }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ShowAlert("خطأ غير متوقع", AlertForm.AlertType.Error);
                 MessageBox.Show(ex.Message, "خطأ غير متوقع", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -181,15 +181,15 @@ namespace DemoProject
 
         public void LoadNotes()
         {
-            var query = from n in this.note_pageTableAdapter.GetData() 
-                        where n.Page_Name=="ENG"
+            var query = from n in this.note_pageTableAdapter.GetData()
+                        where n.Page_Name == "ENG"
                         select new
                         {
                             n.Id,
                             Code = n.IsCodeNull() ? 0 : n.Code,
-                            Note_Page = n.IsNote_PageNull()?"":n.Note_Page,
+                            Note_Page = n.IsNote_PageNull() ? "" : n.Note_Page,
                             DateTime = n.IsDateTimeNull() ? (DateTime?)null : n.DateTime,
-                            status=n.IsStatusNull()?"":n.Status
+                            status = n.IsStatusNull() ? "" : n.Status
                         };
             var OrderNoteId = query.OrderBy(n => n.Id).ToList();
             DataTable table = ToDataTable(OrderNoteId);
@@ -216,7 +216,7 @@ namespace DemoProject
                             l.plate_number,
 
                             Republican_Decree = l.IsRepublican_DecreeNull() ? "" : l.Republican_Decree,
-                            plate_numberFile = l.Isplate_numberFileNull()?"":l.plate_numberFile,
+                            plate_numberFile = l.Isplate_numberFileNull() ? "" : l.plate_numberFile,
                         };
             var joinedList = query.OrderBy(r => int.TryParse(r.land_id, out var n) ? n : int.MaxValue)
                 .ToList();
@@ -237,18 +237,18 @@ namespace DemoProject
             }
             advancedDataGridView2.Columns["Select"].DisplayIndex = 0;
         }
-       
+
         public void LoadSourceData()
         {
             try
             {
-                
+
 
                 // --- Part 1: Fetch data ---
                 var LandData = landsTableAdapter.GetData();
                 var Governorates = governorateTableAdapter.GetData();
                 var Projects = projectsTableAdapter.GetData();
-                
+
 
                 var joinedData =
                     from land in LandData.AsEnumerable()
@@ -279,7 +279,7 @@ namespace DemoProject
                             : "غير متوفر",
                         total_area = decimal.TryParse(land.total_area, out var areaVal) ? areaVal : 0,
                         Topographic_Survey_Status = land.IsTopographic_Survey_StatusNull() ? "" : land.Topographic_Survey_Status,
-                       // Land_Plate_Status = land.IsLand_Plate_StatusNull() ? "" : land.Land_Plate_Status,
+                        // Land_Plate_Status = land.IsLand_Plate_StatusNull() ? "" : land.Land_Plate_Status,
                         coordinates_E = land.Iscoordinates_ENull() ? "" : "\u200E" + land.coordinates_E,
                         coordinates_N = land.Iscoordinates_NNull() ? "" : "\u200E" + land.coordinates_N,
                         plate_numberFile = land.Isplate_numberFileNull() ? "" : land.plate_numberFile,
@@ -291,13 +291,13 @@ namespace DemoProject
                         (
                             !land.IsRepublican_DecreeNull() &&
                             !string.IsNullOrWhiteSpace(land.Republican_Decree)
-                            && land.Republican_Decree != "." 
+                            && land.Republican_Decree != "."
                         ? $"متوفر - (عرض القرار {land.Republican_Decree_Status})"
                         //: "غير متوفر"
-                        : land.Republican_Decree_Status == "0"? "لم يتم اصدار قرار به" : $"قرار رقم {land.Republican_Decree_Status}" + "غير متوفر"
+                        : land.Republican_Decree_Status == "0" ? "لم يتم اصدار قرار به" : $"قرار رقم {land.Republican_Decree_Status}" + "غير متوفر"
                         )
                         ,
-                       // (land.IsRepublican_Decree_StatusNull() ? "" : land.Republican_Decree_Status),
+                        // (land.IsRepublican_Decree_StatusNull() ? "" : land.Republican_Decree_Status),
                         consulting_Office = land.Isconsulting_OfficeNull() ? "" : land.consulting_Office,
                         total_Land_Price = land.Istotal_Land_PriceNull() ? 0 : land.total_Land_Price,
                         Ownership_Authority = land.IsOwnership_AuthorityNull() ? "" : land.Ownership_Authority,
@@ -312,7 +312,7 @@ namespace DemoProject
 
 
                 var joinedList = joinedData
-                .OrderBy(r => r.land_id).Where(r =>!r.Notes.Contains("تم الغاء قطعة الارض")&& !r.Notes.Contains("تم تسلمها"))
+                .OrderBy(r => r.land_id).Where(r => !r.Notes.Contains("تم الغاء قطعة الارض") && !r.Notes.Contains("تم تسلمها"))
                 .ToList();
                 DataTable table = ToDataTable(joinedList);
 
@@ -335,7 +335,7 @@ namespace DemoProject
                 if (advancedDataGridView1.Columns.Contains("total_area"))
                 {
                     advancedDataGridView1.Columns["total_area"].DefaultCellStyle.Format = "N2";
-                    
+
                 }
                 if (!advancedDataGridView1.Columns.Contains("Select"))
                 {
@@ -348,7 +348,7 @@ namespace DemoProject
                     checkBoxColumn.FalseValue = false;
                     advancedDataGridView1.Columns.Add(checkBoxColumn);
                 }
-                var getAccesUserFunction = accessTableAdapter.GetDataByOFAccessFunctionUserId(UserId,4,5);
+                var getAccesUserFunction = accessTableAdapter.GetDataByOFAccessFunctionUserId(UserId, 4, 5);
 
                 if (getAccesUserFunction.Count == 1)
                 {
@@ -398,15 +398,15 @@ namespace DemoProject
                 ShowAlert("خطأ غير متوقع", AlertForm.AlertType.Error);
                 MessageBox.Show(ex.Message, "خطأ غير متوقع", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-          
+
             LoadDocs();
         }
 
-        public void  TranslateToArabic()
+        public void TranslateToArabic()
         {
             advancedDataGridView1.Columns["land_id"].HeaderText = "رقم الكود";
             advancedDataGridView1.Columns["land_name"].HeaderText = "اسم قطعة الأرض";
-            advancedDataGridView1.Columns["project_name"].HeaderText = "اسم المشروع / النشاط"; 
+            advancedDataGridView1.Columns["project_name"].HeaderText = "اسم المشروع / النشاط";
             advancedDataGridView1.Columns["land_number"].HeaderText = "رقم القطعة";
             advancedDataGridView1.Columns["total_area"].HeaderText = "المساحة الكلية";
             advancedDataGridView1.Columns["Topographic_Survey_Status"].HeaderText = "الرفع المساحي";
@@ -451,32 +451,32 @@ namespace DemoProject
         public void ApplyGuna2StyleToGrid(DataGridView dgv)
         {
             try
-            {         
-            dgv.EnableHeadersVisualStyles = false;
-            dgv.BorderStyle = BorderStyle.None;
-            dgv.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dgv.RowHeadersVisible = false;
-            dgv.AllowUserToAddRows = false;
-            dgv.AllowUserToResizeRows = false;
-            dgv.BackgroundColor = Color.White;
-            dgv.GridColor = Color.LightGray;
-            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
-            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(80, 80, 80);
-            dgv.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10F, FontStyle.Bold);
-            dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dgv.ColumnHeadersHeight = 40;
-            dgv.CellBorderStyle = DataGridViewCellBorderStyle.Single;
-            dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dgv.DefaultCellStyle.BackColor = Color.White;
-            dgv.DefaultCellStyle.ForeColor = Color.Black;
-            dgv.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.5F, FontStyle.Regular);
-            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(44, 96, 240);
-            dgv.DefaultCellStyle.SelectionForeColor = Color.White;
-            dgv.BorderStyle = BorderStyle.Fixed3D;
-            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(250, 250, 250);
-            dgv.RowTemplate.Height = 30;
-            dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            {
+                dgv.EnableHeadersVisualStyles = false;
+                dgv.BorderStyle = BorderStyle.None;
+                dgv.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+                dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+                dgv.RowHeadersVisible = false;
+                dgv.AllowUserToAddRows = false;
+                dgv.AllowUserToResizeRows = false;
+                dgv.BackgroundColor = Color.White;
+                dgv.GridColor = Color.LightGray;
+                dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
+                dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(80, 80, 80);
+                dgv.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10F, FontStyle.Bold);
+                dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                dgv.ColumnHeadersHeight = 40;
+                dgv.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+                dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+                dgv.DefaultCellStyle.BackColor = Color.White;
+                dgv.DefaultCellStyle.ForeColor = Color.Black;
+                dgv.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.5F, FontStyle.Regular);
+                dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(44, 96, 240);
+                dgv.DefaultCellStyle.SelectionForeColor = Color.White;
+                dgv.BorderStyle = BorderStyle.Fixed3D;
+                dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(250, 250, 250);
+                dgv.RowTemplate.Height = 30;
+                dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                 if (dgv.Columns.Contains("coordinates_N"))
                 {
                     dgv.Columns["coordinates_N"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -529,9 +529,9 @@ namespace DemoProject
             comboBox.ItemHeight = 22;
         }
         public void flagforHideColumnsEnG()
-        {   
+        {
         }
-        
+
         private void UpdateRowCount()
         {
             int count = 0;
@@ -544,7 +544,7 @@ namespace DemoProject
             // New counters
             HashSet<string> plateZ = new HashSet<string>();
             HashSet<string> decreeZ = new HashSet<string>();
-     
+
             foreach (DataGridViewRow row in advancedDataGridView1.Rows)
             {
                 if (!row.Visible || row.IsNewRow)
@@ -573,7 +573,7 @@ namespace DemoProject
 
                 //}
 
-                
+
 
                 var decree = row.Cells["Republican_Decree_Status"].Value?.ToString()?.ToLower();
                 if (!string.IsNullOrWhiteSpace(decree) && !decree.Contains("غير متوفر") && !decree.Contains("لم يتم"))
@@ -591,9 +591,9 @@ namespace DemoProject
 
             // NEW labels
             Plates_Count.Text = $"عدد لوحات الاراضي {plateZ.Count} لعدد {plateZCounted} قطعة ";
-          
+
             Lands_Count.Text = $"عدد عقود الارض {decreeZ.Count} لعدد {decreeZCounted} قطعة ";
-           
+
             bigLabel1.Text = $"للانشطة عدد عقود لوح: {count2}";
 
         }
@@ -602,14 +602,14 @@ namespace DemoProject
             var bs = advancedDataGridView1.DataSource as BindingSource;
             if (bs == null)
             {
-               // MessageBox.Show("البيانات غير متاحة حالياً.", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // MessageBox.Show("البيانات غير متاحة حالياً.", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             var dv = bs.List as DataView;
             if (dv == null)
             {
-              //  MessageBox.Show("لا يمكن الوصول للبيانات.", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //  MessageBox.Show("لا يمكن الوصول للبيانات.", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -632,15 +632,15 @@ namespace DemoProject
                 MessageBox.Show("لا توجد اراضي متاحة حالياً.", "معلومات", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            var choice= new DialogResult();
+            var choice = new DialogResult();
 
             if (columnName == "plate_numberFile")
             {
-                choice = ShowArabicMessageBox($"", "" , columnName);
+                choice = ShowArabicMessageBox($"", "", columnName);
             }
             else if (columnName == "Republican_Decree")
             {
-                choice = ShowArabicMessageBox($"", "" , columnName);
+                choice = ShowArabicMessageBox($"", "", columnName);
             }
 
             if (choice == DialogResult.Cancel)
@@ -650,7 +650,7 @@ namespace DemoProject
 
             var filtered = showWithDocs
                 ? docs.Where(x => !string.IsNullOrEmpty(x.FilePath) && x.FilePath.Contains(@"Z:\")).ToList()
-                : docs.Where(x => string.IsNullOrEmpty(x.FilePath)|| x.FilePath.Contains(@"Y:\")|| x.FilePath =="0"||  x.FilePath.Contains(@".")).ToList();
+                : docs.Where(x => string.IsNullOrEmpty(x.FilePath) || x.FilePath.Contains(@"Y:\") || x.FilePath == "0" || x.FilePath.Contains(@".")).ToList();
 
             if (filtered.Count == 0)
             {
@@ -960,7 +960,7 @@ namespace DemoProject
             };
             Button yesButton = new Button();
             Button noButton = new Button();
-            
+
 
 
             if (title == "plate_numberFile") {
@@ -969,8 +969,8 @@ namespace DemoProject
             }
             else if (title == "Republican_Decree")
             {
-                yesButton = new Button() { Text = "عرض الاراضي التي تمتلك عقود", DialogResult = DialogResult.Yes, Width = 330, Height = 70,  Font = new System.Drawing.Font("Segoe UI", 15, FontStyle.Bold) };
-                noButton = new Button() { Text = "عرض الاراضي التي لا تمتلك عقود", DialogResult = DialogResult.No, Width = 330, Height = 70,  Font = new System.Drawing.Font("Segoe UI", 15, FontStyle.Bold)};
+                yesButton = new Button() { Text = "عرض الاراضي التي تمتلك عقود", DialogResult = DialogResult.Yes, Width = 330, Height = 70, Font = new System.Drawing.Font("Segoe UI", 15, FontStyle.Bold) };
+                noButton = new Button() { Text = "عرض الاراضي التي لا تمتلك عقود", DialogResult = DialogResult.No, Width = 330, Height = 70, Font = new System.Drawing.Font("Segoe UI", 15, FontStyle.Bold) };
             }
 
             buttonsPanel.Controls.AddRange(new Control[] { yesButton, noButton });
@@ -986,26 +986,26 @@ namespace DemoProject
         {
             int headerRight = guna2TabControl1.Left + guna2TabControl1.Width - guna2Button3.Width - 5;
             int headerTop = guna2TabControl1.Top;
-            guna2Button3.Location = new Point(headerRight-5, headerTop);
-           // Add_Radio.Location = new Point(headerRight - 680, headerTop);
-           // Update_Radio.Location = new Point(headerRight - 730, headerTop);
+            guna2Button3.Location = new Point(headerRight - 5, headerTop);
+            // Add_Radio.Location = new Point(headerRight - 680, headerTop);
+            // Update_Radio.Location = new Point(headerRight - 730, headerTop);
         }
 
         private void EngineeringManagementControl_Load(object sender, EventArgs e)
         {
-          
-       
+
+
             guna2Button1.Visible = Add_Radio.Checked;
             guna2Button1.Enabled = Add_Radio.Checked;
             guna2Button2.Visible = Update_Radio.Checked;
             guna2Button2.Enabled = Update_Radio.Checked;
             guna2Button3.Parent = guna2TabControl1.Parent; // Not inside the tab page
             guna2Button3.BringToFront();
-           // Add_Radio.Parent = guna2TabControl1.Parent;
+            // Add_Radio.Parent = guna2TabControl1.Parent;
             //Update_Radio.Parent = guna2TabControl1.Parent;
             Add_Radio.BringToFront();
             Update_Radio.BringToFront();
-            guna2Button3.Size = new Size(186, guna2TabControl1.ItemSize.Height-1);
+            guna2Button3.Size = new Size(186, guna2TabControl1.ItemSize.Height - 1);
             PositionHeaderButton();
             LoadSourceData();
             LoadNotes();
@@ -1018,7 +1018,7 @@ namespace DemoProject
             GenerativePanalFlow();
             flagforHideColumnsEnG();
             LoadColumnsIntoCheckedListBox();
-             // TODO: This line of code loads data into the 'database1DataSet.functions' table. You can move, or remove it, as needed.
+            // TODO: This line of code loads data into the 'database1DataSet.functions' table. You can move, or remove it, as needed.
             this.functionsTableAdapter.Fill(this.dATABASE2DataSet.functions);
             // TODO: This line of code loads data into the 'database1DataSet.pages' table. You can move, or remove it, as needed.
             this.pagesTableAdapter.Fill(this.dATABASE2DataSet.pages);
@@ -1067,23 +1067,23 @@ namespace DemoProject
                 }
             }
             ApplyPermissions(this);
-         
-          
+
+
         }
         private void dungeonLabel8_Click(object sender, EventArgs e)
         {
         }
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           /* bool hasText = !string.IsNullOrWhiteSpace(Republican_Decree_Status_COB.Text);
-            Error_Republican_Decree.Visible = !hasText;*/
+            /* bool hasText = !string.IsNullOrWhiteSpace(Republican_Decree_Status_COB.Text);
+             Error_Republican_Decree.Visible = !hasText;*/
         }
         private void tabPage4_Click(object sender, EventArgs e)
         {
         }
         private void tabPage5_Click(object sender, EventArgs e)
         {
-            
+
         }
         List<string> lastAddedFilePaths = new List<string>(); // at class level
         public void Files()
@@ -1114,10 +1114,28 @@ namespace DemoProject
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                LandfilePath = dlg.FileName;
+                LandfilePath = ConvertToNetworkPath(dlg.FileName);
                 AddFileIconToPanel(LandfilePath, Path.GetFileName(LandfilePath));
             }
         }
+
+        private string ConvertToNetworkPath(string path)
+        {
+            if (string.IsNullOrWhiteSpace(path))
+                return path;
+
+            if (path.StartsWith(@"Z:\", StringComparison.OrdinalIgnoreCase))
+                return path.Replace(@"Z:\", @"\\10.100.140.1\sho8l\");
+
+            if (path.StartsWith(@"D:\", StringComparison.OrdinalIgnoreCase))
+                return path.Replace(@"D:\sho8l", @"\\10.100.140.1\sho8l\");
+
+            if (path.StartsWith(@"C:\", StringComparison.OrdinalIgnoreCase))
+                return path.Replace(@"C:\", @"\\10.100.140.1\sho8l\");
+
+            return path;
+        }
+
         private void AddFileIconToPanel(string filePath, string fileName)
         {
             PictureBox picBox = new PictureBox();
@@ -1174,20 +1192,48 @@ namespace DemoProject
         {
             try
             {
-                if (File.Exists(filePath))
-                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
+                if (string.IsNullOrWhiteSpace(filePath))
+                {
+                    ShowAlert("المسار فارغ", AlertForm.AlertType.Error);
+                    return;
+                }
+
+                string finalPath = filePath;
+
+                // لو الملف مش موجود في المسار الأساسي
+                if (!File.Exists(finalPath))
+                {
+                    // تحويل D:\sho8l -> Z:\
+                    if (filePath.StartsWith(@"D:\sho8l\", StringComparison.OrdinalIgnoreCase))
                     {
-                        FileName = filePath,
-                        UseShellExecute = true // ensures it opens with default app
+                        finalPath = @"Z:\" + filePath.Substring(@"D:\sho8l\".Length);
+                    }
+                    // تحويل Z:\ -> D:\sho8l\
+                    else if (filePath.StartsWith(@"Z:\", StringComparison.OrdinalIgnoreCase))
+                    {
+                        finalPath = @"D:\sho8l\" + filePath.Substring(3);
+                    }
+                }
+
+                // فتح الملف لو موجود
+                if (File.Exists(finalPath))
+                {
+                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                    {
+                        FileName = finalPath,
+                        UseShellExecute = true
                     });
+                }
                 else
-                    ShowAlert(filePath + "الملف غير موجود", AlertForm.AlertType.Error);
+                {
+                    ShowAlert("الملف غير موجود في أي مسار متاح", AlertForm.AlertType.Error);
+                }
             }
             catch (Exception ex)
             {
                 ShowAlert("فشل فتح الملف\n" + ex.Message, AlertForm.AlertType.Error);
             }
-        }      
+        }
         private void skyButton2_Click(object sender, EventArgs e)
         {
             //using (var waitForm = new FrmLoading(SaveReport))
@@ -1317,7 +1363,7 @@ namespace DemoProject
             }
 
         }
-        private static int alertOffsetY = 0; 
+        private static int alertOffsetY = 0;
         private void ShowAlert(string msg, AlertForm.AlertType type)
         {
             var alert = new AlertForm(msg, type);
@@ -1586,12 +1632,12 @@ namespace DemoProject
                 consulting_Office_COB.Focus();
                 hasError = true;
             }
-           /* if (string.IsNullOrWhiteSpace(Republican_Decree_Status_COB.Text))
-            {
-                Error_Republican_Decree.Visible = true;
-                Republican_Decree_Status_COB.Focus();
-                hasError = true;
-            }*/
+            /* if (string.IsNullOrWhiteSpace(Republican_Decree_Status_COB.Text))
+             {
+                 Error_Republican_Decree.Visible = true;
+                 Republican_Decree_Status_COB.Focus();
+                 hasError = true;
+             }*/
             if (hasError)
             {
                 ShowAlert("يرجى تعبئة الحقول المطلوبة", AlertForm.AlertType.Error);
@@ -1599,42 +1645,42 @@ namespace DemoProject
             }
             else
             {
-                
+
                 var IDGovernorate = this.governorateTableAdapter.GetDataByGovernorate(Governorate_COB.Text).First().governorate_id;
-                    int lastId = int.Parse(this.landsTableAdapter.GetData()
-                    .OrderByDescending(r => Convert.ToInt32(r.land_id))
-                    .First()
-                    .land_id);
-                    int newId = lastId + 1;
-                    this.landsTableAdapter.Insert(
-                        newId.ToString(),
-                        Land_Number_TB.Text
-                        , Land_Name_TB.Text
-                        , total_area_TB.Text
-                        , Topographic_Survey_Status_COB.Text,
-                        Land_Plate_Status_COB.Text,
-                        coordinates_N_TB.Text,
-                        coordinates_E_TB.Text,
-                        serial_number_TB.Text,
-                        plate_number_TB.Text,
-                        plateFilePath,
-                        IDGovernorate,
-                        LandfilePath,
-                        //Republican_Decree_Status_COB.Text,
-                        guna2TextBox8.Text,
-                        consulting_Office_COB.Text,
-                        decimal.Parse(total_land_price_TB.Text),
-                        Ownership_Authority_TB.Text,
-                        Address_TB.Text,
-                        int.Parse(guna2TextBox1.Text.ToString()),
-                        guna2TextBox4.Text,
-                        guna2TextBox3.Text,
-                        guna2TextBox5.Text,
-                        ""
-                        );
-                    LoadSourceData();
-                    ShowAlert("تمت العملية بنجاح", AlertForm.AlertType.Success);
-                    UpdateRowCount();
+                int lastId = int.Parse(this.landsTableAdapter.GetData()
+                .OrderByDescending(r => Convert.ToInt32(r.land_id))
+                .First()
+                .land_id);
+                int newId = lastId + 1;
+                this.landsTableAdapter.Insert(
+                    newId.ToString(),
+                    Land_Number_TB.Text
+                    , Land_Name_TB.Text
+                    , total_area_TB.Text
+                    , Topographic_Survey_Status_COB.Text,
+                    Land_Plate_Status_COB.Text,
+                    coordinates_N_TB.Text,
+                    coordinates_E_TB.Text,
+                    serial_number_TB.Text,
+                    plate_number_TB.Text,
+                    plateFilePath,
+                    IDGovernorate,
+                    LandfilePath,
+                    //Republican_Decree_Status_COB.Text,
+                    guna2TextBox8.Text,
+                    consulting_Office_COB.Text,
+                    decimal.Parse(total_land_price_TB.Text),
+                    Ownership_Authority_TB.Text,
+                    Address_TB.Text,
+                    int.Parse(guna2TextBox1.Text.ToString()),
+                    guna2TextBox4.Text,
+                    guna2TextBox3.Text,
+                    guna2TextBox5.Text,
+                    ""
+                    );
+                LoadSourceData();
+                ShowAlert("تمت العملية بنجاح", AlertForm.AlertType.Success);
+                UpdateRowCount();
                 plate_number_TB.Text = "";
                 Land_Number_TB.Text = "";
                 Land_Name_TB.Text = "";
@@ -1669,7 +1715,7 @@ namespace DemoProject
             foreach (DataGridViewColumn column in advancedDataGridView1.Columns)
             {
                 checkedListBox1.Items.Add(column.HeaderText, column.Visible); // Show as checked if visible
-                if (column.HeaderText == "مستند القرار الجمهوري" || column.HeaderText== "مستند رقم اللوحة" )
+                if (column.HeaderText == "مستند القرار الجمهوري" || column.HeaderText == "مستند رقم اللوحة")
                 {
                     checkedListBox1.Items.Remove(column.HeaderText);
                 }
@@ -1739,40 +1785,74 @@ namespace DemoProject
             {
                 // Get the file path from the cell value
                 string filePath = advancedDataGridView1.Rows[e.RowIndex].Cells["Republican_Decree"].Value?.ToString();
-                if (!string.IsNullOrWhiteSpace(filePath))
+                string finalPath = filePath;
+
+                // لو الملف مش موجود في المسار الأساسي
+                if (!File.Exists(finalPath))
                 {
-                    try
+                    // تحويل D:\sho8l -> Z:\
+                    if (filePath.StartsWith(@"D:\sho8l\", StringComparison.OrdinalIgnoreCase))
                     {
-                        System.Diagnostics.Process.Start(filePath); // Opens with default PDF reader
+                        finalPath = @"Z:\" + filePath.Substring(@"D:\sho8l\".Length);
                     }
-                    catch (Exception ex)
+                    // تحويل Z:\ -> D:\sho8l\
+                    else if (filePath.StartsWith(@"Z:\", StringComparison.OrdinalIgnoreCase))
                     {
-                        MessageBox.Show("تعذر فتح الملف: " + ex.Message);
+                        finalPath = @"D:\sho8l\" + filePath.Substring(3);
                     }
+                }
+
+                // فتح الملف لو موجود
+                if (File.Exists(finalPath))
+                {
+                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                    {
+                        FileName = finalPath,
+                        UseShellExecute = true
+                    });
                 }
                 else
                 {
-                    MessageBox.Show("الملف غير موجود أو المسار فارغ.");
+                    ShowAlert("الملف غير موجود في أي مسار متاح", AlertForm.AlertType.Error);
                 }
+            
+
             }
+        
+
             if (clickedColumn.Name == "Land_Plate_Status")
             {
                 // Get the file path from the cell value
                 string filePath = advancedDataGridView1.Rows[e.RowIndex].Cells["plate_numberFile"].Value?.ToString();
-                if (!string.IsNullOrWhiteSpace(filePath))
+                string finalPath = filePath;
+
+                // لو الملف مش موجود في المسار الأساسي
+                if (!File.Exists(finalPath))
                 {
-                    try
+                    // تحويل D:\sho8l -> Z:\
+                    if (filePath.StartsWith(@"D:\sho8l\", StringComparison.OrdinalIgnoreCase))
                     {
-                        System.Diagnostics.Process.Start(filePath); // Opens with default PDF reader
+                        finalPath = @"Z:\" + filePath.Substring(@"D:\sho8l\".Length);
                     }
-                    catch (Exception ex)
+                    // تحويل Z:\ -> D:\sho8l\
+                    else if (filePath.StartsWith(@"Z:\", StringComparison.OrdinalIgnoreCase))
                     {
-                        MessageBox.Show("تعذر فتح الملف: " + ex.Message);
+                        finalPath = @"D:\sho8l\" + filePath.Substring(3);
                     }
+                }
+
+                // فتح الملف لو موجود
+                if (File.Exists(finalPath))
+                {
+                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                    {
+                        FileName = finalPath,
+                        UseShellExecute = true
+                    });
                 }
                 else
                 {
-                    MessageBox.Show("الملف غير موجود أو المسار فارغ.");
+                    ShowAlert("الملف غير موجود في أي مسار متاح", AlertForm.AlertType.Error);
                 }
             }
             if (advancedDataGridView1.Columns[e.ColumnIndex].Name == "Update"
@@ -2151,6 +2231,8 @@ namespace DemoProject
                 ShowAlert("لا يوجد هذا البيان للتعديل", AlertForm.AlertType.Error);
                 return;
             }
+            plateFilePath = ConvertToNetworkPath(plateFilePath);
+            LandfilePath = ConvertToNetworkPath(LandfilePath);
             var IDGovernorate = this.governorateTableAdapter.GetDataByGovernorate(Governorate_COB.Text).First().governorate_id;
                 this.landsTableAdapter.UpdateQuery(
                 Land_Number_TB.Text,
@@ -2295,7 +2377,7 @@ namespace DemoProject
             dlg.Multiselect = false;
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                plateFilePath = dlg.FileName;
+                plateFilePath = ConvertToNetworkPath(dlg.FileName);
                 AddFileIconToPanel(plateFilePath, Path.GetFileName(plateFilePath));
             }
         }

@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectsControl));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.Update_Radio = new Guna.UI2.WinForms.Guna2RadioButton();
@@ -125,6 +125,12 @@
             this.Petroleum_Ministry_COB = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2ImageButton3 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.Reconciliation_Form_Stamp_TB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.dungeonLabel27 = new ReaLTaiizor.Controls.DungeonLabel();
+            this.Model8_date_TB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.dungeonLabel28 = new ReaLTaiizor.Controls.DungeonLabel();
+            this.License_Number_TB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Architectural_and_Structural_Board_TB = new Guna.UI2.WinForms.Guna2TextBox();
             this.dungeonLabel26 = new ReaLTaiizor.Controls.DungeonLabel();
             this.dungeonLabel23 = new ReaLTaiizor.Controls.DungeonLabel();
             this.Name_Pro_TB = new Guna.UI2.WinForms.Guna2TextBox();
@@ -132,8 +138,6 @@
             this.dungeonLabel19 = new ReaLTaiizor.Controls.DungeonLabel();
             this.dungeonLabel18 = new ReaLTaiizor.Controls.DungeonLabel();
             this.Secured_certificate_COM = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.Architectural_and_Structural_Board_COM = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.Reconciliation_Form_Stamp_COM = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dungeonLabel17 = new ReaLTaiizor.Controls.DungeonLabel();
             this.Total_Not_rented_TB = new Guna.UI2.WinForms.Guna2TextBox();
             this.dungeonLabel14 = new ReaLTaiizor.Controls.DungeonLabel();
@@ -1014,14 +1018,14 @@
             // advancedDataGridView2
             // 
             this.advancedDataGridView2.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.advancedDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridView2.Dock = System.Windows.Forms.DockStyle.Top;
             this.advancedDataGridView2.FilterAndSortEnabled = true;
@@ -1512,9 +1516,9 @@
             this.dungeonLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
             this.dungeonLabel6.Location = new System.Drawing.Point(315, 392);
             this.dungeonLabel6.Name = "dungeonLabel6";
-            this.dungeonLabel6.Size = new System.Drawing.Size(88, 20);
+            this.dungeonLabel6.Size = new System.Drawing.Size(86, 20);
             this.dungeonLabel6.TabIndex = 5;
-            this.dungeonLabel6.Text = "رقم المعاملة";
+            this.dungeonLabel6.Text = "حالة الرخصه";
             // 
             // guna2ImageButton9
             // 
@@ -1613,7 +1617,7 @@
             this.Transaction_number_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Transaction_number_TB.Location = new System.Drawing.Point(216, 415);
             this.Transaction_number_TB.Name = "Transaction_number_TB";
-            this.Transaction_number_TB.PlaceholderText = "هنا يتم ادخال رقم المعاملة";
+            this.Transaction_number_TB.PlaceholderText = "هنا يتم ادخال حالة الرخصه";
             this.Transaction_number_TB.SelectedText = "";
             this.Transaction_number_TB.Size = new System.Drawing.Size(187, 29);
             this.Transaction_number_TB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
@@ -1808,6 +1812,12 @@
             // guna2Panel2
             // 
             this.guna2Panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Panel2.Controls.Add(this.Reconciliation_Form_Stamp_TB);
+            this.guna2Panel2.Controls.Add(this.dungeonLabel27);
+            this.guna2Panel2.Controls.Add(this.Model8_date_TB);
+            this.guna2Panel2.Controls.Add(this.dungeonLabel28);
+            this.guna2Panel2.Controls.Add(this.License_Number_TB);
+            this.guna2Panel2.Controls.Add(this.Architectural_and_Structural_Board_TB);
             this.guna2Panel2.Controls.Add(this.dungeonLabel26);
             this.guna2Panel2.Controls.Add(this.dungeonLabel23);
             this.guna2Panel2.Controls.Add(this.Name_Pro_TB);
@@ -1815,8 +1825,6 @@
             this.guna2Panel2.Controls.Add(this.dungeonLabel19);
             this.guna2Panel2.Controls.Add(this.dungeonLabel18);
             this.guna2Panel2.Controls.Add(this.Secured_certificate_COM);
-            this.guna2Panel2.Controls.Add(this.Architectural_and_Structural_Board_COM);
-            this.guna2Panel2.Controls.Add(this.Reconciliation_Form_Stamp_COM);
             this.guna2Panel2.Controls.Add(this.dungeonLabel17);
             this.guna2Panel2.Controls.Add(this.Total_Not_rented_TB);
             this.guna2Panel2.Controls.Add(this.dungeonLabel14);
@@ -1844,9 +1852,136 @@
             this.guna2Panel2.Controls.Add(this.Investment_Name_TB);
             this.guna2Panel2.Location = new System.Drawing.Point(800, 6);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(521, 474);
+            this.guna2Panel2.Size = new System.Drawing.Size(521, 571);
             this.guna2Panel2.TabIndex = 41;
             this.guna2Panel2.UseWaitCursor = true;
+            // 
+            // Reconciliation_Form_Stamp_TB
+            // 
+            this.Reconciliation_Form_Stamp_TB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Reconciliation_Form_Stamp_TB.Animated = true;
+            this.Reconciliation_Form_Stamp_TB.AutoRoundedCorners = true;
+            this.Reconciliation_Form_Stamp_TB.BorderRadius = 13;
+            this.Reconciliation_Form_Stamp_TB.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.Reconciliation_Form_Stamp_TB.DefaultText = "";
+            this.Reconciliation_Form_Stamp_TB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Reconciliation_Form_Stamp_TB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Reconciliation_Form_Stamp_TB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Reconciliation_Form_Stamp_TB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Reconciliation_Form_Stamp_TB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Reconciliation_Form_Stamp_TB.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Reconciliation_Form_Stamp_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Reconciliation_Form_Stamp_TB.Location = new System.Drawing.Point(3, 417);
+            this.Reconciliation_Form_Stamp_TB.Name = "Reconciliation_Form_Stamp_TB";
+            this.Reconciliation_Form_Stamp_TB.PlaceholderText = "هنا يتم ادخال رقم نموذج8";
+            this.Reconciliation_Form_Stamp_TB.SelectedText = "";
+            this.Reconciliation_Form_Stamp_TB.Size = new System.Drawing.Size(176, 29);
+            this.Reconciliation_Form_Stamp_TB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.Reconciliation_Form_Stamp_TB.TabIndex = 124;
+            this.Reconciliation_Form_Stamp_TB.UseWaitCursor = true;
+            this.Reconciliation_Form_Stamp_TB.Visible = false;
+            // 
+            // dungeonLabel27
+            // 
+            this.dungeonLabel27.AutoSize = true;
+            this.dungeonLabel27.BackColor = System.Drawing.Color.Transparent;
+            this.dungeonLabel27.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.dungeonLabel27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.dungeonLabel27.Location = new System.Drawing.Point(400, 510);
+            this.dungeonLabel27.Name = "dungeonLabel27";
+            this.dungeonLabel27.Size = new System.Drawing.Size(95, 20);
+            this.dungeonLabel27.TabIndex = 122;
+            this.dungeonLabel27.Text = "تاريخ نموذج 8";
+            this.dungeonLabel27.UseWaitCursor = true;
+            this.dungeonLabel27.Visible = false;
+            // 
+            // Model8_date_TB
+            // 
+            this.Model8_date_TB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Model8_date_TB.Animated = true;
+            this.Model8_date_TB.AutoRoundedCorners = true;
+            this.Model8_date_TB.BorderRadius = 13;
+            this.Model8_date_TB.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.Model8_date_TB.DefaultText = "";
+            this.Model8_date_TB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Model8_date_TB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Model8_date_TB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Model8_date_TB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Model8_date_TB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Model8_date_TB.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Model8_date_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Model8_date_TB.Location = new System.Drawing.Point(185, 501);
+            this.Model8_date_TB.Name = "Model8_date_TB";
+            this.Model8_date_TB.PlaceholderText = "هنا يتم ادخال تاريخ نموذج 8";
+            this.Model8_date_TB.SelectedText = "";
+            this.Model8_date_TB.Size = new System.Drawing.Size(209, 29);
+            this.Model8_date_TB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.Model8_date_TB.TabIndex = 123;
+            this.Model8_date_TB.UseWaitCursor = true;
+            this.Model8_date_TB.Visible = false;
+            // 
+            // dungeonLabel28
+            // 
+            this.dungeonLabel28.AutoSize = true;
+            this.dungeonLabel28.BackColor = System.Drawing.Color.Transparent;
+            this.dungeonLabel28.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.dungeonLabel28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.dungeonLabel28.Location = new System.Drawing.Point(425, 473);
+            this.dungeonLabel28.Name = "dungeonLabel28";
+            this.dungeonLabel28.Size = new System.Drawing.Size(88, 20);
+            this.dungeonLabel28.TabIndex = 120;
+            this.dungeonLabel28.Text = "رقم المعامله";
+            this.dungeonLabel28.UseWaitCursor = true;
+            this.dungeonLabel28.Visible = false;
+            // 
+            // License_Number_TB
+            // 
+            this.License_Number_TB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.License_Number_TB.Animated = true;
+            this.License_Number_TB.AutoRoundedCorners = true;
+            this.License_Number_TB.BorderRadius = 13;
+            this.License_Number_TB.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.License_Number_TB.DefaultText = "";
+            this.License_Number_TB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.License_Number_TB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.License_Number_TB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.License_Number_TB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.License_Number_TB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.License_Number_TB.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.License_Number_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.License_Number_TB.Location = new System.Drawing.Point(242, 464);
+            this.License_Number_TB.Name = "License_Number_TB";
+            this.License_Number_TB.PlaceholderText = "هنا يتم ادخال رقم المعامله";
+            this.License_Number_TB.SelectedText = "";
+            this.License_Number_TB.Size = new System.Drawing.Size(176, 29);
+            this.License_Number_TB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.License_Number_TB.TabIndex = 121;
+            this.License_Number_TB.UseWaitCursor = true;
+            this.License_Number_TB.Visible = false;
+            // 
+            // Architectural_and_Structural_Board_TB
+            // 
+            this.Architectural_and_Structural_Board_TB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Architectural_and_Structural_Board_TB.Animated = true;
+            this.Architectural_and_Structural_Board_TB.AutoRoundedCorners = true;
+            this.Architectural_and_Structural_Board_TB.BorderRadius = 13;
+            this.Architectural_and_Structural_Board_TB.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.Architectural_and_Structural_Board_TB.DefaultText = "";
+            this.Architectural_and_Structural_Board_TB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Architectural_and_Structural_Board_TB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Architectural_and_Structural_Board_TB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Architectural_and_Structural_Board_TB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Architectural_and_Structural_Board_TB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Architectural_and_Structural_Board_TB.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Architectural_and_Structural_Board_TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Architectural_and_Structural_Board_TB.Location = new System.Drawing.Point(16, 356);
+            this.Architectural_and_Structural_Board_TB.Name = "Architectural_and_Structural_Board_TB";
+            this.Architectural_and_Structural_Board_TB.PlaceholderText = "هنا يتم ادخال نوع النشاط";
+            this.Architectural_and_Structural_Board_TB.SelectedText = "";
+            this.Architectural_and_Structural_Board_TB.Size = new System.Drawing.Size(156, 29);
+            this.Architectural_and_Structural_Board_TB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.Architectural_and_Structural_Board_TB.TabIndex = 119;
+            this.Architectural_and_Structural_Board_TB.UseWaitCursor = true;
             // 
             // dungeonLabel26
             // 
@@ -1904,13 +2039,12 @@
             this.dungeonLabel21.BackColor = System.Drawing.Color.Transparent;
             this.dungeonLabel21.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.dungeonLabel21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.dungeonLabel21.Location = new System.Drawing.Point(10, 318);
+            this.dungeonLabel21.Location = new System.Drawing.Point(83, 328);
             this.dungeonLabel21.Name = "dungeonLabel21";
-            this.dungeonLabel21.Size = new System.Drawing.Size(161, 20);
+            this.dungeonLabel21.Size = new System.Drawing.Size(79, 20);
             this.dungeonLabel21.TabIndex = 112;
-            this.dungeonLabel21.Text = "لوح المعماري و الانشائي";
+            this.dungeonLabel21.Text = "نوع النشاط";
             this.dungeonLabel21.UseWaitCursor = true;
-            this.dungeonLabel21.Visible = false;
             // 
             // dungeonLabel19
             // 
@@ -1920,9 +2054,9 @@
             this.dungeonLabel19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
             this.dungeonLabel19.Location = new System.Drawing.Point(83, 388);
             this.dungeonLabel19.Name = "dungeonLabel19";
-            this.dungeonLabel19.Size = new System.Drawing.Size(88, 20);
+            this.dungeonLabel19.Size = new System.Drawing.Size(83, 20);
             this.dungeonLabel19.TabIndex = 112;
-            this.dungeonLabel19.Text = "ختم نموذج 8";
+            this.dungeonLabel19.Text = "رقم نموذج8";
             this.dungeonLabel19.UseWaitCursor = true;
             this.dungeonLabel19.Visible = false;
             // 
@@ -1962,52 +2096,6 @@
             this.Secured_certificate_COM.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Secured_certificate_COM.UseWaitCursor = true;
             this.Secured_certificate_COM.Visible = false;
-            // 
-            // Architectural_and_Structural_Board_COM
-            // 
-            this.Architectural_and_Structural_Board_COM.AutoRoundedCorners = true;
-            this.Architectural_and_Structural_Board_COM.BackColor = System.Drawing.Color.Transparent;
-            this.Architectural_and_Structural_Board_COM.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.Architectural_and_Structural_Board_COM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Architectural_and_Structural_Board_COM.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Architectural_and_Structural_Board_COM.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Architectural_and_Structural_Board_COM.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.Architectural_and_Structural_Board_COM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.Architectural_and_Structural_Board_COM.ItemHeight = 30;
-            this.Architectural_and_Structural_Board_COM.Items.AddRange(new object[] {
-            "X",
-            "✔"});
-            this.Architectural_and_Structural_Board_COM.Location = new System.Drawing.Point(10, 342);
-            this.Architectural_and_Structural_Board_COM.Name = "Architectural_and_Structural_Board_COM";
-            this.Architectural_and_Structural_Board_COM.Size = new System.Drawing.Size(157, 36);
-            this.Architectural_and_Structural_Board_COM.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.Architectural_and_Structural_Board_COM.TabIndex = 108;
-            this.Architectural_and_Structural_Board_COM.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Architectural_and_Structural_Board_COM.UseWaitCursor = true;
-            this.Architectural_and_Structural_Board_COM.Visible = false;
-            // 
-            // Reconciliation_Form_Stamp_COM
-            // 
-            this.Reconciliation_Form_Stamp_COM.AutoRoundedCorners = true;
-            this.Reconciliation_Form_Stamp_COM.BackColor = System.Drawing.Color.Transparent;
-            this.Reconciliation_Form_Stamp_COM.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.Reconciliation_Form_Stamp_COM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Reconciliation_Form_Stamp_COM.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Reconciliation_Form_Stamp_COM.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Reconciliation_Form_Stamp_COM.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.Reconciliation_Form_Stamp_COM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.Reconciliation_Form_Stamp_COM.ItemHeight = 30;
-            this.Reconciliation_Form_Stamp_COM.Items.AddRange(new object[] {
-            "X",
-            "✔"});
-            this.Reconciliation_Form_Stamp_COM.Location = new System.Drawing.Point(10, 410);
-            this.Reconciliation_Form_Stamp_COM.Name = "Reconciliation_Form_Stamp_COM";
-            this.Reconciliation_Form_Stamp_COM.Size = new System.Drawing.Size(161, 36);
-            this.Reconciliation_Form_Stamp_COM.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.Reconciliation_Form_Stamp_COM.TabIndex = 109;
-            this.Reconciliation_Form_Stamp_COM.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Reconciliation_Form_Stamp_COM.UseWaitCursor = true;
-            this.Reconciliation_Form_Stamp_COM.Visible = false;
             // 
             // dungeonLabel17
             // 
@@ -3148,14 +3236,14 @@
             // advancedDataGridView1
             // 
             this.advancedDataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.advancedDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.advancedDataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.advancedDataGridView1.FilterAndSortEnabled = true;
@@ -3535,28 +3623,28 @@
             // advancedDataGridView3
             // 
             this.advancedDataGridView3.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(2);
-            this.advancedDataGridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
+            this.advancedDataGridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.advancedDataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.advancedDataGridView3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.advancedDataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridView3.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridView3.DefaultCellStyle = dataGridViewCellStyle5;
             this.advancedDataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.advancedDataGridView3.FilterAndSortEnabled = true;
             this.advancedDataGridView3.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
@@ -3564,19 +3652,19 @@
             this.advancedDataGridView3.MaxFilterButtonImageHeight = 23;
             this.advancedDataGridView3.Name = "advancedDataGridView3";
             this.advancedDataGridView3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.advancedDataGridView3.RowHeadersWidth = 100;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.Padding = new System.Windows.Forms.Padding(2);
-            this.advancedDataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(2);
+            this.advancedDataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.advancedDataGridView3.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(2);
             this.advancedDataGridView3.RowTemplate.Height = 40;
             this.advancedDataGridView3.Size = new System.Drawing.Size(1323, 679);
@@ -3969,8 +4057,6 @@
         private ReaLTaiizor.Controls.DungeonLabel dungeonLabel19;
         private ReaLTaiizor.Controls.DungeonLabel dungeonLabel18;
         private Guna.UI2.WinForms.Guna2ComboBox Secured_certificate_COM;
-        private Guna.UI2.WinForms.Guna2ComboBox Architectural_and_Structural_Board_COM;
-        private Guna.UI2.WinForms.Guna2ComboBox Reconciliation_Form_Stamp_COM;
         private ReaLTaiizor.Controls.DungeonLabel dungeonLabel17;
         private Guna.UI2.WinForms.Guna2TextBox Total_Not_rented_TB;
         private ReaLTaiizor.Controls.DungeonLabel dungeonLabel14;
@@ -4065,5 +4151,11 @@
         private ReaLTaiizor.Controls.DungeonLabel dungeonLabel22;
         private ReaLTaiizor.Controls.DreamButton dreamButton27;
         private ReaLTaiizor.Controls.DreamButton dreamButton28;
+        private Guna.UI2.WinForms.Guna2TextBox Architectural_and_Structural_Board_TB;
+        private ReaLTaiizor.Controls.DungeonLabel dungeonLabel27;
+        private Guna.UI2.WinForms.Guna2TextBox Model8_date_TB;
+        private ReaLTaiizor.Controls.DungeonLabel dungeonLabel28;
+        private Guna.UI2.WinForms.Guna2TextBox License_Number_TB;
+        private Guna.UI2.WinForms.Guna2TextBox Reconciliation_Form_Stamp_TB;
     }
 }

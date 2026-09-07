@@ -18,7 +18,7 @@ namespace DemoProject
         private string _username;
         private long _user_id;
         private string _investment_type;
-
+        private long? CurrentProjectId = null;
         private Size originalFormSize;
         private Dictionary<Control, Rectangle> originalControls = new Dictionary<Control, Rectangle>();
 

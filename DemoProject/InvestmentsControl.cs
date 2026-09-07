@@ -2402,7 +2402,7 @@ namespace DemoProject
                     advancedDataGridView1.Columns["Address"].HeaderText = "العنوان";
                     if (SessionData.Investment_Type == "محلات شل اوت خارج")
                     {
-                        advancedDataGridView1.Columns["Architectural_and_Structural_Board"].HeaderText = "شركة ادارة المحطة";
+                        advancedDataGridView1.Columns["Architectural_and_Structural_Board"].HeaderText = "نوع النشاط";
                     }
                 }
                 advancedDataGridView1.Columns["Activity_Type"].HeaderText = "نوع النشاط";
@@ -2439,7 +2439,7 @@ namespace DemoProject
                 // Set Arabic headers manually
                 if (SessionData.Investment_Type == "محلات شل اوت داخل")
                 {
-                    advancedDataGridView1.Columns["Architectural_and_Structural_Board"].HeaderText = "شركة ادارة المحطة";
+                    advancedDataGridView1.Columns["Architectural_and_Structural_Board"].HeaderText = "نوع النشاط";
                 }
                 if (SessionData.Investment_Type == "مولات")
                 {
